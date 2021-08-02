@@ -41,6 +41,8 @@ sudo update-desktop-database
 sudo mkdir -p /usr/local/share/man/man1
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
 
+cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
+
 cd ~/
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -54,6 +56,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
+    echo "pip3をインストール"
     echo "-----------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
@@ -62,12 +65,39 @@ fi
 # powerline-shellをインストール
 pip3 install --user powerline-shell
 
+# lsdがインストールされているか確認
+lsd -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "lsdをインストール"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    cargo install lsd
+fi
+
+# batがインストールされているか確認
+bat -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "lsdをインストール"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    yes | sudo apt install bat
+fi
+
 # zshがインストールされているか確認
 which zsh > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
+    echo "zshをインストール
     echo "-----------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
