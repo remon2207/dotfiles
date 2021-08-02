@@ -48,5 +48,31 @@ cd fonts
 cd ..
 rm -rf fonts
 
-yes | sudo apt install python3-pip
+# pip3がインストールされているか確認
+pip3 -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    yes | sudo apt install python3-pip
+fi
+# powerline-shellをインストール
 pip3 install --user powerline-shell
+
+# zshがインストールされているか確認
+which zsh > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    yes | sudo apt install zsh
+fi
+# zshをデフォルトシェルにする
+zsh_which=$(which zsh)
+chsh -s $zsh_which
