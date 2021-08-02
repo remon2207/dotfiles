@@ -1,0 +1,56 @@
+[[plugins]] # スニペットの補完機能
+repo = 'Shougo/neosnippet.vim'
+[[plugins]] # スニペット集
+repo = 'Shougo/neosnippet-snippets'
+[[plugins]] # tomlファイルのシンタックス
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+[[plugins]] # ファイル、バッファの管理
+repo = 'Shougo/unite.vim'
+[[plugins]] # ヘルプの日本語化
+repo = 'vim-jp/vimdoc-ja'
+[[plugins]] # TwitVim
+repo = 'twitvim/twitvim'
+[[plugins]] # ステータスラインの表示内容強化
+repo = 'itchyny/lightline.vim'
+[[plugins]] # インデントの可視化
+repo = 'Yggdroot/indentLine'
+[[plugins]] # 末尾の全角半角空白文字を赤くハイライト
+repo = 'bronson/vim-trailing-whitespace'
+[[plugins]] # 多機能セレクタ
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]] # CtrlPの拡張プラグイン, 関数検索
+repo = 'tacahiroy/ctrlp-funky'
+[[plugins]] # CtrlPの拡張プラグイン, コマンド履歴検索
+repo = 'suy/vim-ctrlp-commandline'
+[[plugins]] # ノーマルモードでコメントアウト
+repo = 'tpope/vim-commentary'
+[[plugins]] # インデントの深さを可視化
+repo = 'nathanaelkane/vim-indent-guides'
+[[plugins]] # shの補完
+repo = 'deoplete-plugins/deoplete-zsh'
+[[plugins]] # 自動補完
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+[[plugins]] # pythonの自動補完プラグイン
+repo = 'deoplete-plugins/deoplete-jedi'
+[[plugins]] # Vim用自動補完プラグイン
+repo = 'Shougo/neco-vim'
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+[[plugins]]
+repo = 'ujihisa/neco-look'
+[[plugins]] # カラースキーマ
+repo = 'cocopon/iceberg.vim'
+hook_add = '''
+  set background=dark
+  autocmd Colorscheme * highlight Normal ctermbg=none
+  autocmd Colorscheme * highlight NonText ctermbg=none
+  autocmd Colorscheme * highlight Folded ctermbg=none
+  autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  au MyAutoCmd VimEnter * nested colorscheme iceberg
+'''
