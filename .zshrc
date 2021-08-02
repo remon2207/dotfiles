@@ -260,9 +260,9 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 
 fpath=(path/to/zsh-completions/src $fpath)
-source /home/remon/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/remon/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 
 
 function powerline_precmd() {
