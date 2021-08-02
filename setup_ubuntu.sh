@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# zshがインストールされているか確認
+which zsh > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "zshをインストール"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    yes | sudo apt install zsh
+fi
+# zshをデフォルトシェルにする
+zsh_which=$(which zsh)
+chsh -s $zsh_which
+
 # curlのインストール確認
 which curl > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
@@ -41,6 +57,7 @@ sudo update-desktop-database
 sudo mkdir -p /usr/local/share/man/man1
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
 
+mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 
 cd ~/
@@ -49,8 +66,6 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
-
-yes | sudo apt install fonts-hack-ttf
 
 # pip3がインストールされているか確認
 pip3 -V > /dev/null 2>&1
@@ -92,19 +107,3 @@ else
     yes | sudo apt upgrade
     yes | sudo apt install bat
 fi
-
-# zshがインストールされているか確認
-which zsh > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "zshをインストール"
-    echo "-----------------------------------"
-    yes | sudo apt update
-    yes | sudo apt upgrade
-    yes | sudo apt install zsh
-fi
-# zshをデフォルトシェルにする
-zsh_which=$(which zsh)
-chsh -s $zsh_which
