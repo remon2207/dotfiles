@@ -113,3 +113,10 @@ else
     yes | sudo apt upgrade
     yes | sudo apt install bat
 fi
+
+mkdir ~/appimage
+cd ~/appimage
+wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+chmod u+x nvim.appimage
+
+pip3 install pynvim
