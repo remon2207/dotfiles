@@ -40,3 +40,13 @@ sudo update-desktop-database
 # マニュアルページ
 sudo mkdir -p /usr/local/share/man/man1
 gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+
+cd ~/
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+yes | sudo apt install python3-pip
+pip3 install --user powerline-shell
