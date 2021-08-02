@@ -82,19 +82,6 @@ fi
 # powerline-shellをインストール
 pip3 install --user powerline-shell
 
-# lsdがインストールされているか確認
-lsd -V > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "lsdをインストール"
-    echo "-----------------------------------"
-    yes | sudo apt update
-    yes | sudo apt upgrade
-    cargo install lsd
-fi
-
 # batがインストールされているか確認
 bat -V > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
