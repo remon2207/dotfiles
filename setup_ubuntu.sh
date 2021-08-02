@@ -50,6 +50,8 @@ cd fonts
 cd ..
 rm -rf fonts
 
+yes | sudo apt install fonts-hack-ttf
+
 # pip3がインストールされているか確認
 pip3 -V > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
