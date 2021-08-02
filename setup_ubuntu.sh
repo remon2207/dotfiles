@@ -67,6 +67,12 @@ cd fonts
 cd ..
 rm -rf fonts
 
+git clone --branch=master --depth 1 https://github.com/ryanoasis/nerd-fonts.git
+cd nerd-fonts
+./install.sh Hack
+cd ..
+rm -rf nerd-fonts
+
 # pip3がインストールされているか確認
 pip3 -V > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
@@ -81,6 +87,19 @@ else
 fi
 # powerline-shellをインストール
 pip3 install --user powerline-shell
+
+# lsdがインストールされているか確認
+lsd -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "lsdをインストール"
+    echo "-----------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    cargo install lsd
+fi
 
 # batがインストールされているか確認
 bat -V > /dev/null 2>&1

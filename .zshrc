@@ -241,6 +241,7 @@ alias l='ls -CF'
 alias lsla='ls -lahF'
 alias sudo='sudo '
 alias vim='~/appimage/nvim.appimage'
+alias ls='lsd'
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
