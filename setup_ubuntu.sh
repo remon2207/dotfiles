@@ -97,7 +97,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zshをインストール
+    echo "zshをインストール"
     echo "-----------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
