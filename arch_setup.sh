@@ -57,8 +57,10 @@ else
 fi
 
 # ソースコードのダウンロード
-git clone https://github.com/alacritty/alacritty.git ~/alacritty
-cd ~/alacritty
+mkdir ~/git
+cd git
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
 
 # Rustのインストール
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -105,3 +107,10 @@ wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
 
 echo -e "clear lock\nclear control\nkeycode 66 = Control_L\nadd control = Control_L Control_R" > ~/.Xmodmap
+
+sudo pacman -S xarchiver arc-gtk-theme papirus-icon-theme wmctrl xdotool
+
+cd ~/git
+git clone https://github.com/calandoa/movescreen.git
+cd movescreen
+sudo cp movescreen.py /usr/local/bin
