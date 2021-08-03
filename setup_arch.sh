@@ -8,23 +8,52 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zshをインストール"
+    echo "zsh、curl、wget、lsd、batをインストール"
     echo "-----------------------------------"
     sudo pacman -S zsh
 fi
-# zshをデフォルトシェルにする
-zsh_which=$(which zsh)
-chsh -s $zsh_which
 
-# curlのインストール確認
 which curl > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "curlをインストール"
+    echo "zsh、curl、wget、lsd、batをインストール"
     echo "-----------------------------------"
     sudo pacman -S curl
+fi
+
+which wget > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S wget
+fi
+
+lsd -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S lsd
+fi
+# zshをデフォルトシェルにする
+chsh -s $(which zsh)
+
+# curlのインストール確認
+which bat > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S bat
 fi
 
 # ソースコードのダウンロード
@@ -64,31 +93,13 @@ cd ~/
 paru -S nerd-fonts-hack
 paru -S powerline-go
 
-# lsdがインストールされているか確認
-lsd -V > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "lsdをインストール"
-    echo "-----------------------------------"
-    sudo pacman -S lsd
-fi
+echo 'export PATH=$PATH:~/.local/bin' >> ~/.xprofile
+source ~/.xprofile
 
-# batがインストールされているか確認
-bat -V > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "lsdをインストール"
-    echo "-----------------------------------"
-    sudo pacman -S bat
-fi
+sudo pacman -S python-pip fuse
+pip3 install --user wheel pynvim
 
 mkdir ~/appimage
 cd ~/appimage
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
-
-pip install pynvim
