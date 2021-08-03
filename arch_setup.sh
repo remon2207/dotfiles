@@ -114,3 +114,7 @@ cd ~/git
 git clone https://github.com/calandoa/movescreen.git
 cd movescreen
 sudo cp movescreen.py /usr/local/bin
+
+#conkyインストール
+paru -S conky-lua-nv
+echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
