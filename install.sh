@@ -12,7 +12,7 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".config" ]] && continue
 
-    ln -snfv $HOME/dotfiles/"$f" $HOME/
+    ln -snfv ~/dotfiles/"$f" ~/
 done
 
 cd .config
@@ -21,7 +21,15 @@ for d_config in alacritty nvim
 do
     [[ "$d_config" == ".git" ]] && continue
     [[ "$d_config" == ".DS_Store" ]] && continue
+
+    ln -snfv ~/dotfiles/.config/"$d_config" ~/.config/
+done
+
+for nvim in dein.toml init.vim
+do
+    [[ "$d_config" == ".git" ]] && continue
+    [[ "$d_config" == ".DS_Store" ]] && continue
     [[ "$d_config" == "dein" ]] && continue
 
-    ln -snfv $HOME/dotfiles/.config/"$d_config" $HOME/.config/
+    ln -snfv ~/dotfiles/.config/"$nvim" ~/.config/nvim/
 done
