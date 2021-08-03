@@ -265,19 +265,21 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 
+if [[ ${TERM} != "linux" ]]; then
+    function powerline_precmd() {
+        PS1="$(powerline-go -error $? -shell zsh)"
+    }
+    function install_powerline_precmd() {
+        for s in "${precmd_functions[@]}"; do
+            if [ "$s" = "powerline_precmd" ]; then
+                return
+            fi
+        done
+        precmd_functions+=(powerline_precmd)
+    }
 
-function powerline_precmd() {
-    PS1="$(~/.local/bin/powerline-shell --shell zsh $?)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
+    install_powerline_precmd
+fi
 
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd

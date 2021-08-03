@@ -21,6 +21,7 @@ for d_config in alacritty nvim
 do
     [[ "$d_config" == ".git" ]] && continue
     [[ "$d_config" == ".DS_Store" ]] && continue
+    [[ "$d_config" == "dein" ]] && continue
 
     ln -snfv $HOME/dotfiles/.config/"$d_config" $HOME/.config/
 done
