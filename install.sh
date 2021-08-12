@@ -12,7 +12,7 @@ do
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".config" ]] && continue
 
-    ln -snfv ~/dotfiles/"$f" ~/
+    ln -snfv ~/git/dotfiles/"$f" ~/
 done
 
 cd .config
@@ -23,9 +23,9 @@ do
     [[ "$d_config" == ".DS_Store" ]] && continue
     [[ "$d_config" == "nvim" ]] && continue
 
-    ln -snfv ~/dotfiles/.config/"$d_config" ~/.config/
+    ln -snfv ~/git/dotfiles/.config/"$d_config" ~/.config/
 done
 
 mkdir ~/.config/nvim
-ln -snfv ~/dotfiles/.config/nvim/dein.toml ~/.config/nvim/
-ln -snfv ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/
+ln -snfv ~/git/dotfiles/.config/nvim/dein.toml ~/.config/nvim/
+ln -snfv ~/git/dotfiles/.config/nvim/init.vim ~/.config/nvim/
