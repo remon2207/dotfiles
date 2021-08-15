@@ -3,47 +3,49 @@
 # zshがインストールされているか確認
 which zsh > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo -e "-------------------------------------------------------------------------\nzsh is already installed\n-------------------------------------------------------------------------"
 else
-    echo "インストールされていない"
-    echo "zshをインストール"
-    echo "-----------------------------------"
+    echo -e "-------------------------------------------------------------------------\nWe don't have zsh installed, so we'll install it.\n-------------------------------------------------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
     yes | sudo apt install zsh
 fi
 # zshをデフォルトシェルにする
-zsh_which=$(which zsh)
-chsh -s $zsh_which
+echo -e "-------------------------------------------------------------------------\nMake zsh the default shell\n-------------------------------------------------------------------------"
+chsh -s $(which zsh)
 
 # curlのインストール確認
 which curl > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo -e "-------------------------------------------------------------------------\ncurl is already installed\n-------------------------------------------------------------------------"
 else
-    echo "インストールされていない"
-    echo "-----------------------------------"
+    echo -e "-------------------------------------------------------------------------\nWe don't have curl installed, so we'll install it.\n-------------------------------------------------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
     yes | sudo apt install curl
 fi
 
 # ソースコードのダウンロード
+echo -e "-------------------------------------------------------------------------\nClone the source alacritty\n-------------------------------------------------------------------------"
 git clone https://github.com/alacritty/alacritty.git ~/alacritty
 cd ~/alacritty
 
 # Rustのインストール
+echo -e "-------------------------------------------------------------------------\nInstall Rust\n-------------------------------------------------------------------------"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 
 # 依存関係のインストール
+echo -e "-------------------------------------------------------------------------\nInstall the build dependencies\n-------------------------------------------------------------------------"
 yes | sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 
 # ビルド
+echo -e "-------------------------------------------------------------------------\nBuild with cargo\n-------------------------------------------------------------------------"
 cargo build --release
 
 # ビルド後の設定
 # Terminfo
+echo -e "-------------------------------------------------------------------------\nPost-build configuration\n-------------------------------------------------------------------------"
 sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 infocmp alacritty
 
@@ -60,6 +62,7 @@ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 
+echo -e "-------------------------------------------------------------------------\nInstall the fonts you want to use with powerline.\n-------------------------------------------------------------------------"
 cd ~/
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -76,44 +79,55 @@ rm -rf nerd-fonts
 # pip3がインストールされているか確認
 pip3 -V > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo -e "-------------------------------------------------------------------------\npip3 is already installed\n-------------------------------------------------------------------------"
 else
-    echo "インストールされていない"
-    echo "pip3をインストール"
-    echo "-----------------------------------"
+    echo -e "-------------------------------------------------------------------------\nWe don't have pip3 installed, so we'll install it.\n-------------------------------------------------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
     yes | sudo apt install python3-pip
 fi
 # powerline-shellをインストール
+echo -e "-------------------------------------------------------------------------\nInstall powerline-shell\n-------------------------------------------------------------------------"
 pip3 install --user powerline-shell
 
 # lsdがインストールされているか確認
-lsd -V > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "lsdをインストール"
-    echo "-----------------------------------"
-    yes | sudo apt update
-    yes | sudo apt upgrade
-    cargo install lsd
-fi
+#lsd -V > /dev/null 2>&1
+#if [ "$?" -eq 0 ] ; then
+#    echo -e "-------------------------------------------------------------------------\nlsd is already installed\n-------------------------------------------------------------------------"
+#else
+#    echo -e "-------------------------------------------------------------------------\nWe don't have lsd installed, so we'll install it.\n-------------------------------------------------------------------------"
+#    yes | sudo apt update
+#    yes | sudo apt upgrade
+#    cargo install lsd
+#fi
 
 # batがインストールされているか確認
-bat -V > /dev/null 2>&1
+#bat -V > /dev/null 2>&1
+#if [ "$?" -eq 0 ] ; then
+#    echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
+#else
+#    echo -e "-------------------------------------------------------------------------\nWe don't have bat installed, so we'll install it.\n-------------------------------------------------------------------------"
+#    yes | sudo apt update
+#    yes | sudo apt upgrade
+#    yes | sudo apt install bat
+#fi
+# gdebiがインストールされているか確認
+which gdebi > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo -e "-------------------------------------------------------------------------\ngdebi is already installed\n-------------------------------------------------------------------------"
 else
-    echo "インストールされていない"
-    echo "lsdをインストール"
-    echo "-----------------------------------"
+    echo -e "-------------------------------------------------------------------------\nWe don't have gdebi installed, so we'll install it.\n-------------------------------------------------------------------------"
     yes | sudo apt update
     yes | sudo apt upgrade
-    yes | sudo apt install bat
+    yes | sudo apt install gdebi
 fi
 
+echo -e "-------------------------------------------------------------------------\nInstall bat\n-------------------------------------------------------------------------"
+cd ~/Downloads
+wget https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
+sudo gdebi bat_0.18.2_amd64.deb
+
+echo -e "-------------------------------------------------------------------------\nDownload Neovim's Appimage\n-------------------------------------------------------------------------"
 mkdir ~/appimage
 cd ~/appimage
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
