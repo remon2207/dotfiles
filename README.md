@@ -9,9 +9,9 @@ If you are on Arch Linux, use the following command
 ```
 ./arch_setup.sh
 ```
-If it is Ubuntu, use the following command  
-Enter the distribution (Ubuntu, Linux-Mint) as the first argument  
-Otherwise, do a string search for $1 and replace the script
+If it is Ubuntu, use the following command
+Enter the distribution (Ubuntu, Linux-Mint) as the first argument
+Otherwise, search for $1 in the string and replace it with your distribution
 ```
 ./ubuntu_setup.sh <$1>
 ```
