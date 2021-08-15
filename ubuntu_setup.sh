@@ -31,17 +31,6 @@ else
     yes | sudo apt install curl
 fi
 
-# wgetのインストール確認
-wget -V > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo -e "-------------------------------------------------------------------------\nwget is already installed\n-------------------------------------------------------------------------"
-else
-    echo -e "-------------------------------------------------------------------------\nWe don't have wget installed, so we'll install it.\n-------------------------------------------------------------------------"
-    yes | sudo apt update
-    yes | sudo apt upgrade
-    yes | sudo apt install wget
-fi
-
 # ソースコードのダウンロード
 echo -e "-------------------------------------------------------------------------\nClone the source alacritty\n-------------------------------------------------------------------------"
 git clone https://github.com/alacritty/alacritty.git ~/alacritty
@@ -146,9 +135,8 @@ if [ "Ubuntu" = "$1" ] ; then
         echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
     else
         echo -e "-------------------------------------------------------------------------\nInstalling bat\n-------------------------------------------------------------------------"
-        cd ~/Downloads
-        wget https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
-        sudo gdebi bat_0.18.2_amd64.deb
+        curl -Lo ~/Downloads/bat_0.18.2_amd64.deb https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
+        sudo gdebi ~/Downloads/bat_0.18.2_amd64.deb
     fi
 # 第一引数がLinux Mintのとき
 elif [ "Linux-Mint" = "$1" ] ; then
@@ -165,7 +153,7 @@ fi
 
 echo -e "-------------------------------------------------------------------------\nDownload Neovim's Appimage\n-------------------------------------------------------------------------"
 mkdir ~/appimage
-wget -O ~/appimage/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+curl -Lo ~/appimage/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x ~/appimage/nvim.appimage
 
 pip3 install pynvim
