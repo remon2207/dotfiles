@@ -1,7 +1,13 @@
 #!/bin/bash
 
+if [ $# -lt 1 ] ; then
+    echo 'Usage:'
+    echo 'ubuntu_setup.sh <distribution>'
+    exit
+fi
+
 # zshがインストールされているか確認
-which zsh
+which zsh > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo -e "-------------------------------------------------------------------------\nzsh is already installed\n-------------------------------------------------------------------------"
 else
@@ -15,7 +21,7 @@ echo -e "-----------------------------------------------------------------------
 chsh -s $(which zsh)
 
 # curlのインストール確認
-which curl
+which curl > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo -e "-------------------------------------------------------------------------\ncurl is already installed\n-------------------------------------------------------------------------"
 else
@@ -23,6 +29,17 @@ else
     yes | sudo apt update
     yes | sudo apt upgrade
     yes | sudo apt install curl
+fi
+
+# wgetのインストール確認
+wget -V > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo -e "-------------------------------------------------------------------------\nwget is already installed\n-------------------------------------------------------------------------"
+else
+    echo -e "-------------------------------------------------------------------------\nWe don't have wget installed, so we'll install it.\n-------------------------------------------------------------------------"
+    yes | sudo apt update
+    yes | sudo apt upgrade
+    yes | sudo apt install wget
 fi
 
 # ソースコードのダウンロード
@@ -77,7 +94,7 @@ cd ..
 rm -rf nerd-fonts
 
 # pip3がインストールされているか確認
-pip3 -V
+pip3 -V > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo -e "-------------------------------------------------------------------------\npip3 is already installed\n-------------------------------------------------------------------------"
 else
@@ -112,7 +129,7 @@ pip3 install --user powerline-shell
 #    yes | sudo apt install bat
 #fi
 # gdebiがインストールされているか確認
-which gdebi
+which gdebi > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo -e "-------------------------------------------------------------------------\ngdebi is already installed\n-------------------------------------------------------------------------"
 else
@@ -122,19 +139,9 @@ else
     yes | sudo apt install gdebi
 fi
 
-
-if [ $# -lt 1 ] ; then
-    echo 'Usage:'
-    echo 'ubuntu_setup.sh <distribution>'
-    exit
-fi
-
-
-# batがインストールされているか確認
-bat -V
-
 # 第一引数がUbuntuのとき
 if [ "Ubuntu" = "$1" ] ; then
+    bat -V > /dev/null 2>&1
     if [ "$?" -eq 0 ] ; then
         echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
     else
@@ -145,6 +152,7 @@ if [ "Ubuntu" = "$1" ] ; then
     fi
 # 第一引数がLinux Mintのとき
 elif [ "Linux-Mint" = "$1" ] ; then
+    bat -V > /dev/null 2>&1
     if [ "$?" -eq 0 ] ; then
         echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
     else
