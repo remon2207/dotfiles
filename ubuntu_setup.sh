@@ -31,7 +31,7 @@ git clone https://github.com/alacritty/alacritty.git ~/alacritty
 cd ~/alacritty
 
 # Rustのインストール
-echo -e "-------------------------------------------------------------------------\nInstall Rust\n-------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------\nInstalling Rust\n-------------------------------------------------------------------------"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 
@@ -87,7 +87,7 @@ else
     yes | sudo apt install python3-pip
 fi
 # powerline-shellをインストール
-echo -e "-------------------------------------------------------------------------\nInstall powerline-shell\n-------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------\nInstalling powerline-shell\n-------------------------------------------------------------------------"
 pip3 install --user powerline-shell
 
 # lsdがインストールされているか確認
@@ -122,10 +122,30 @@ else
     yes | sudo apt install gdebi
 fi
 
-echo -e "-------------------------------------------------------------------------\nInstall bat\n-------------------------------------------------------------------------"
-cd ~/Downloads
-wget https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
-sudo gdebi bat_0.18.2_amd64.deb
+# batがインストールされているか確認
+bat -V > /dev/null 2>&1
+
+# 第一引数がUbuntuのとき
+if [ "Ubuntu" = "$1" ] ; then
+    if [ "$?" -eq 0 ] ; then
+        echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
+    else
+        echo -e "-------------------------------------------------------------------------\nInstalling bat\n-------------------------------------------------------------------------"
+        cd ~/Downloads
+        wget https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb
+        sudo gdebi bat_0.18.2_amd64.deb
+    fi
+# 第一引数がLinux Mintのとき
+elif [ "Linux-Mint" = "$1" ] ; then
+    if [ "$?" -eq 0 ] ; then
+        echo -e "-------------------------------------------------------------------------\nbat is already installed\n-------------------------------------------------------------------------"
+    else
+        echo -e "-------------------------------------------------------------------------\nInstalling bat\n-------------------------------------------------------------------------"
+        yes | sudo apt update
+        yes | sudo apt upgrade
+        yes | sudo apt install bat
+    fi
+fi
 
 echo -e "-------------------------------------------------------------------------\nDownload Neovim's Appimage\n-------------------------------------------------------------------------"
 mkdir ~/appimage
