@@ -11,5 +11,5 @@ If you are on Arch Linux, use the following command
 ```
 If you are on Ubuntu, use the following command
 ```
-./ubuntu_setup.sh
+./ubuntu_setup.sh "$1"
 ```
