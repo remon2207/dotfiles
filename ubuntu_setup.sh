@@ -165,8 +165,7 @@ fi
 
 echo -e "-------------------------------------------------------------------------\nDownload Neovim's Appimage\n-------------------------------------------------------------------------"
 mkdir ~/appimage
-cd ~/appimage
-wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
-chmod u+x nvim.appimage
+wget -O ~/appimage/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+chmod u+x ~/appimage/nvim.appimage
 
 pip3 install pynvim
