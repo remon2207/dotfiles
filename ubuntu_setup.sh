@@ -122,6 +122,14 @@ else
     yes | sudo apt install gdebi
 fi
 
+
+if [ $# -lt 1 ] ; then
+    echo 'Usage:'
+    echo 'ubuntu_setup.sh <distribution>'
+    exit
+fi
+
+
 # batがインストールされているか確認
 bat -V > /dev/null 2>&1
 
