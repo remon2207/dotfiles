@@ -17,7 +17,7 @@ done
 
 cd .config
 
-for d_config in alacritty nvim conky
+for d_config in alacritty nvim conky bat
 do
     [[ "$d_config" == ".git" ]] && continue
     [[ "$d_config" == ".DS_Store" ]] && continue
