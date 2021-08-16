@@ -17,11 +17,10 @@ done
 
 cd .config
 
-for d_config in alacritty nvim conky bat
+for d_config in alacritty conky bat
 do
     [[ "$d_config" == ".git" ]] && continue
     [[ "$d_config" == ".DS_Store" ]] && continue
-    [[ "$d_config" == "nvim" ]] && continue
 
     ln -snfv ~/git/dotfiles/.config/"$d_config" ~/.config/
 done
