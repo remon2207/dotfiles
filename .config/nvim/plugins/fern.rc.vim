@@ -1,6 +1,8 @@
 " キーマップ
 nnoremap <s-n> :Fern . -reveal=% -opener=split<CR>
-nnoremap <c-n> :<C-u>Fern . -reveal=% -drawer<CR>
+" nnoremap <c-n> :<C-u>Fern . -reveal=% -drawer<CR>
+" nnoremap <c-n> :<c-u>Fern . -reveal=% -drawer -toggle<cr>
+nnoremap <c-n> <c-w>w:<c-u>Fern . -reveal=%<CR>
 
 let g:fern#disable_default_mappings = 1
 function! FernInit() abort

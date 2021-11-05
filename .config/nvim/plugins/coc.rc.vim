@@ -171,4 +171,7 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-prettier',
   \ 'coc-eslint',
+  \ 'coc-tailwindcss'
   \ ]
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

@@ -10,6 +10,10 @@ on_ft = ['json']
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript', 'javascript.jsx']
 
-[[plugins]]
+[[plugins]] # JavaScriptのprettier
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]] # pythonの自動補完プラグイン
+repo = 'deoplete-plugins/deoplete-jedi'
+on_ft = ['py']

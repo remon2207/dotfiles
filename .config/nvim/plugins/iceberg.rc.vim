@@ -1,4 +1,4 @@
-set background=dark
+set background="dark"
 autocmd Colorscheme * highlight Normal ctermbg=none
 autocmd Colorscheme * highlight NonText ctermbg=none
 autocmd Colorscheme * highlight Folded ctermbg=none

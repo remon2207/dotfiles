@@ -49,8 +49,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=2000
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 #setopt share_history         # share command history data
@@ -168,8 +167,7 @@ if [ "$color_prompt" = yes ]; then
         ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=cyan,bold
         ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]=standout
     fi
-else
-    PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
+else PROMPT='${debian_chroot:+($debian_chroot)}%n@%m:%~%# '
 fi
 unset color_prompt force_color_prompt
 
@@ -241,7 +239,7 @@ alias l='ls -CF'
 alias lsla='ls -lahF'
 alias sudo='sudo '
 alias vim='~/appimage/nvim.appimage'
-alias ls='lsd'
+#alias ls='lsd'
 alias e='exit'
 
 # enable auto-suggestions based on the history

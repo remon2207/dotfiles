@@ -1,12 +1,3 @@
-[[plugins]] # スニペットの補完機能
-repo = 'Shougo/neosnippet.vim'
-
-[[plugins]] # スニペット集
-repo = 'Shougo/neosnippet-snippets'
-
-#[[plugins]] # ファイル、バッファの管理
-#repo = 'Shougo/unite.vim'
-
 [[plugins]] # ヘルプの日本語化
 repo = 'vim-jp/vimdoc-ja'
 
@@ -15,48 +6,23 @@ repo = 'twitvim/twitvim'
 
 [[plugins]] # ステータスラインの表示内容強化
 repo = 'itchyny/lightline.vim'
+hook_add = '''
+  source ~/.config/nvim/plugins/lightline.rc.vim
+'''
+[[plugins]] # ステータスラインにbranch名
+repo = 'tpope/vim-fugitive'
 
 [[plugins]] # インデントの可視化
 repo = 'Yggdroot/indentLine'
 
-[[plugins]] # 末尾の全角半角空白文字を赤くハイライト
-repo = 'bronson/vim-trailing-whitespace'
-
-#[[plugins]] # 多機能セレクタ
-#repo = 'ctrlpvim/ctrlp.vim'
-
-#[[plugins]] # CtrlPの拡張プラグイン, 関数検索
-#repo = 'tacahiroy/ctrlp-funky'
-
-#[[plugins]] # CtrlPの拡張プラグイン, コマンド履歴検索
-#repo = 'suy/vim-ctrlp-commandline'
+# [[plugins]] # 末尾の全角半角空白文字を赤くハイライト
+# repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]] # ノーマルモードでコメントアウト
 repo = 'tpope/vim-commentary'
 
 [[plugins]] # インデントの深さを可視化
 repo = 'nathanaelkane/vim-indent-guides'
-
-[[plugins]] # shの補完
-repo = 'deoplete-plugins/deoplete-zsh'
-
-#[[plugins]] # 自動補完
-#repo = 'Shougo/deoplete.nvim'
-#hook_add = '''
-#    source ~/.config/nvim/plugins/deoplete.rc.vim
-#'''
-
-[[plugins]] # pythonの自動補完プラグイン
-repo = 'deoplete-plugins/deoplete-jedi'
-
-[[plugins]] # Vim用自動補完プラグイン
-repo = 'Shougo/neco-vim'
-
-[[plugins]]
-repo = 'Shougo/neco-syntax'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
 
 [[plugins]] # カラースキーマ
 repo = 'cocopon/iceberg.vim'
@@ -72,29 +38,47 @@ hook_add = '''
   source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
-[[plugins]] # ファイラ
-repo = 'lambdalisue/fern.vim'
+# [[plugins]] # ファイラ
+# repo = 'lambdalisue/fern.vim'
+# hook_add = '''
+#   source ~/.config/nvim/plugins/fern.rc.vim
+# '''
+
+[[plugins]]
+repo = 'Shougo/defx.nvim'
 hook_add = '''
-  source ~/.config/nvim/plugins/fern.rc.vim
+  source ~/.config/nvim/plugins/defx.rc.vim
 '''
-[[plugins]] # gitのステータス
-repo = 'lambdalisue/fern-git-status.vim'
+
+[[plugins]]
+repo = 'Shougo/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+# [[plugins]] # gitのステータス
+# repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]] # ブラケット自動入力
 repo = 'jiangmiao/auto-pairs'
+
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
-[[plugins]] # ステータスラインの表示内容強化
-repo = 'vim-airline/vim-airline'
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-[[plugins]]
-repo = 'lambdalisue/glyph-palette.vim'
-hook_add = '''
-  source ~/.config/nvim/plugins/glyph-palette.rc.vim
-'''
-[[plugins]]
-repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-hook_add = '''
-  source ~/.config/nvim/plugins/fern-renderer-nerdfont.rc.vim
-'''
+
+# [[plugins]]
+# repo = 'lambdalisue/glyph-palette.vim'
+# hook_add = '''
+#   source ~/.config/nvim/plugins/glyph-palette.rc.vim
+# '''
+
+# [[plugins]]
+# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+# hook_add = '''
+#   source ~/.config/nvim/plugins/fern-renderer-nerdfont.rc.vim
+# '''
+
+[[plugins]] # ウインドウリサイズ
+repo = 'simeji/winresizer'
