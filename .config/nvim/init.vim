@@ -63,6 +63,7 @@ lua require('options')
 lua require('keys')
 runtime! keys.rc.vim
 
+
 " set t_Co=256 " iTerm2など既に256色環境なら無くても良い
 
 ""----------------------------------------------------------
