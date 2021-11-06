@@ -5,7 +5,6 @@
 "      \ -columns=indent:mark:icon:icons:filename:git:size
 "      \ -buffer-name=tab`tabpagenr()`<CR>
 nnoremap <silent>sf :<C-u>Defx -listed -resume
-      \ -columns=indent:mark:icon:icons:filename:git:size
       \ -buffer-name=tab`tabpagenr()`
       \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
 nnoremap <silent>fi :<C-u>Defx -new `expand('%:p:h')` -search=`expand('%:p')`<CR>
@@ -26,9 +25,9 @@ autocmd FileType defx call s:defx_my_settings()
 	  nnoremap <silent><buffer><expr> E
 	  \ defx#do_action('open', 'vsplit')
 	  nnoremap <silent><buffer><expr> P
-	  \ defx#do_action('open', 'pedit')
+	  \ defx#do_action('preview')
 	  nnoremap <silent><buffer><expr> o
-	  \ defx#do_action('open_or_close_tree')
+	  \ defx#do_action('open_tree', 'toggle')
 	  nnoremap <silent><buffer><expr> K
 	  \ defx#do_action('new_directory')
 	  nnoremap <silent><buffer><expr> N
@@ -76,11 +75,13 @@ autocmd FileType defx call s:defx_my_settings()
 	  \ defx#do_action('change_vim_cwd')
 	endfunction
 
+
 call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
       \ 'opened_icon': '▾',
       \ 'root_icon': ' ',
       \ })
+
 call defx#custom#column('git', 'indicators', {
   \ 'Modified'  : 'M',
   \ 'Staged'    : '✚',
@@ -91,3 +92,12 @@ call defx#custom#column('git', 'indicators', {
   \ 'Deleted'   : '✖',
   \ 'Unknown'   : '?'
   \ })
+
+	call defx#custom#column('mark', {
+	      \ 'readonly_icon': '✗',
+	      \ 'selected_icon': '✓',
+	      \ })
+
+call defx#custom#option('_', {
+	      \ 'columns': 'indent:mark:icon:icons:space:filename:git:size:type:time',
+	      \ })

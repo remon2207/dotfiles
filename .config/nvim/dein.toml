@@ -1,84 +1,128 @@
-[[plugins]] # ヘルプの日本語化
+# ヘルプの日本語化
+[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
-[[plugins]] # TwitVim
+# 選択範囲をGoogle翻訳
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+# Twitter
+[[plugins]]
 repo = 'twitvim/twitvim'
 
-[[plugins]] # ステータスラインの表示内容強化
-repo = 'itchyny/lightline.vim'
+# ステータスラインの表示内容強化
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/lightline.rc.vim
+# '''
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = 'vim-airline-themes'
 hook_add = '''
-  source ~/.config/nvim/plugins/lightline.rc.vim
+source ~/.config/nvim/plugins/vim-airline.rc.vim
 '''
-[[plugins]] # ステータスラインにbranch名
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline-themes.rc.vim
+'''
+
+# ステータスラインにbranch名
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 
-[[plugins]] # インデントの可視化
+# インデントの可視化
+[[plugins]]
 repo = 'Yggdroot/indentLine'
 
-# [[plugins]] # 末尾の全角半角空白文字を赤くハイライト
+# 末尾の全角半角空白文字を赤くハイライト
+# [[plugins]]
 # repo = 'bronson/vim-trailing-whitespace'
 
-[[plugins]] # ノーマルモードでコメントアウト
+# ノーマルモードでコメントアウト
+[[plugins]]
 repo = 'tpope/vim-commentary'
 
-[[plugins]] # インデントの深さを可視化
+# インデントの深さを可視化
+[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
-[[plugins]] # カラースキーマ
+# カラースキーマ
+[[plugins]]
 repo = 'cocopon/iceberg.vim'
 hook_add = '''
-  source ~/.config/nvim/plugins/iceberg.rc.vim
+source ~/.config/nvim/plugins/iceberg.rc.vim
 '''
 
-[[plugins]] # IDEのような補完
+# IDEのような補完
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
 hook_add = '''
-  source ~/.config/nvim/plugins/coc.rc.vim
+source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
-# [[plugins]] # ファイラ
+# ファイラー
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'vim-devicons', 'defx-icons']
+hook_add = '''
+source ~/.config/nvim/plugins/defx.rc.vim
+'''
+[[plugins]]
+repo = 'Shougo/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+# [[plugins]]
 # repo = 'lambdalisue/fern.vim'
+# depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim']
 # hook_add = '''
 #   source ~/.config/nvim/plugins/fern.rc.vim
 # '''
 
-[[plugins]]
-repo = 'Shougo/defx.nvim'
-hook_add = '''
-  source ~/.config/nvim/plugins/defx.rc.vim
-'''
-
-[[plugins]]
-repo = 'Shougo/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-[[plugins]]
-repo = 'kristijanhusak/defx-icons'
-# [[plugins]] # gitのステータス
+# [[plugins]]
 # repo = 'lambdalisue/fern-git-status.vim'
 
-[[plugins]] # ブラケット自動入力
-repo = 'jiangmiao/auto-pairs'
+# [[plugins]]
+# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
+
+# [[plugins]]
+# repo = 'yuki-yano/fern-preview.vim'
+# hook_add = '''
+#   source ~/.config/nvim/plugins/fern-preview.rc.vim
+# '''
 
 # [[plugins]]
 # repo = 'lambdalisue/glyph-palette.vim'
 # hook_add = '''
 #   source ~/.config/nvim/plugins/glyph-palette.rc.vim
 # '''
+# ブラケット自動入力
+# [[plugins]] 
+# repo = 'jiangmiao/auto-pairs'
 
-# [[plugins]]
-# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-# hook_add = '''
-#   source ~/.config/nvim/plugins/fern-renderer-nerdfont.rc.vim
-# '''
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 
-[[plugins]] # ウインドウリサイズ
+# ウインドウリサイズ
+[[plugins]]
 repo = 'simeji/winresizer'
+
+# ファイル検索
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = 0
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
