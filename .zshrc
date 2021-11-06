@@ -302,3 +302,5 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
         screen -rx || screen -D -RR
     fi
 fi
+export PATH="$PATH:/home/remon/.local/bin"
+export PATH="$PATH:`npm bin -g`"
