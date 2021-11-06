@@ -172,7 +172,6 @@ inoremap { {}<Left>
 inoremap ( ()<Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
-let mapleader = "\<Space>"
 
 " ウインドウ
 nnoremap sh <C-w>h
@@ -188,6 +187,8 @@ nnoremap sL <C-w>L
 nnoremap <silent> tn :<C-u>tabnew<CR>
 nnoremap tl gt
 nnoremap th gT
+nnoremap <silent> fh :<C-u>bprev<CR>
+nnoremap <silent> fl :<C-u>bnext<CR>
 
 inoremap <C-d> <Del>
 inoremap <C-l> <Right>
