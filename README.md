@@ -5,12 +5,12 @@ git clone https://github.com/remon2207/dotfiles.git
 cd dotfiles
 ./install.sh
 ```
-### Arch Linux based
+### Arch Linux base
 If you are on Arch Linux, use the following command
 ```
 ./arch_setup.sh
 ```
-### Ubuntu based
+### Ubuntu base
 If it is Ubuntu, use the following command
 Enter the distribution (Ubuntu, Linux-Mint) as the first argument
 Otherwise, search for $1 in the string and replace it with your distribution
