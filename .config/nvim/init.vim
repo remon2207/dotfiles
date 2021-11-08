@@ -166,6 +166,7 @@ augroup END
 
 " <Ctrl+q>で終了
 nnoremap <silent> <C-q> :<C-u>q<CR>
+nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
 " ブラケット補完
 " inoremap { {}<Left>
