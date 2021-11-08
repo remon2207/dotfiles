@@ -104,8 +104,8 @@ source ~/.config/nvim/plugins/fern-preview.rc.vim
 #   source ~/.config/nvim/plugins/glyph-palette.rc.vim
 # '''
 # ブラケット自動入力
-# [[plugins]] 
-# repo = 'jiangmiao/auto-pairs'
+[[plugins]] 
+repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'

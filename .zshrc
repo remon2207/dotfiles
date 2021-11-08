@@ -284,7 +284,8 @@ source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 
 if [[ ${TERM} != "linux" ]]; then
     function powerline_precmd() {
-        PS1="$(powerline-go -error $? -shell zsh)"
+        PS1="
+$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
     }
     function install_powerline_precmd() {
         for s in "${precmd_functions[@]}"; do

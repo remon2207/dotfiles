@@ -168,10 +168,10 @@ augroup END
 nnoremap <silent> <C-q> :<C-u>q<CR>
 
 " ブラケット補完
-inoremap { {}<Left>
-inoremap ( ()<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
+" inoremap { {}<Left>
+" inoremap ( ()<Left>
+" inoremap ' ''<Left>
+" inoremap " ""<Left>
 
 " ウインドウ
 nnoremap sh <C-w>h
