@@ -15,18 +15,27 @@ WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 # hide EOL sign ('%')
 PROMPT_EOL_MARK=""
 
+stty stop undef
+
 # configure key keybindings
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^[[3;5~' kill-word                       # ctrl + Supr
-bindkey '^[[3~' delete-char                       # delete
-bindkey '^[[1;5C' forward-word                    # ctrl + ->
-bindkey '^[[1;5D' backward-word                   # ctrl + <-
-bindkey '^[[5~' beginning-of-buffer-or-history    # page up
-bindkey '^[[6~' end-of-buffer-or-history          # page down
-bindkey '^[[H' beginning-of-line                  # home
-bindkey '^[[F' end-of-line                        # end
-bindkey '^[[Z' undo                               # shift + tab undo last action
+# bindkey -e                                        # emacs key bindings
+bindkey -v                                        # viins key bindings
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+# bindkey ' ' magic-space                           # do history expansion on space
+# bindkey '^[[3;5~' kill-word                       # ctrl + Supr
+# bindkey '^[[3~' delete-char                       # delete
+# bindkey '^[[1;5C' forward-word                    # ctrl + ->
+# bindkey '^[[1;5D' backward-word                   # ctrl + <-
+# bindkey '^[[5~' beginning-of-buffer-or-history    # page up
+# bindkey '^[[6~' end-of-buffer-or-history          # page down
+# bindkey '^[[H' beginning-of-line                  # home
+# bindkey '^[[F' end-of-line                        # end
+# bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
 autoload -Uz compinit
@@ -88,6 +97,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# source /usr/share/git/completion/git-prompt.sh
+
 # git ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
@@ -125,9 +136,27 @@ function rprompt-git-current-branch {
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
  
-# プロンプトの右側にメソッドの結果を表示させる
-RPROMPT='`rprompt-git-current-branch`'
 
+
+# function zle-line-init zle-keymap-select {
+#     VIM_NORMAL="%K{208}%F{black}⮀%k%f%K{208}%F{white} % NORMAL %k%f%K{black}%F{208}⮀%k%f"
+#     VIM_INSERT="%K{075}%F{black}⮀%k%f%K{075}%F{white} % INSERT %k%f%K{black}%F{075}⮀%k%f"
+#     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+
+function zle-line-init zle-keymap-select {
+    VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
+    VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
+    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 
 configure_prompt() {
@@ -138,6 +167,7 @@ configure_prompt() {
             # PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
             # PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] %F{red}$(__git_ps1 "(%s)")%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
             PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] `rprompt-git-current-branch`%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
+            # PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] $(__git_ps1 " (%s)")%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
             #
             #
             #
@@ -156,6 +186,8 @@ configure_prompt() {
 # ┌─
 # └─%
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
+            # RPROMPT=$'`rprompt-git-current-branch` %(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
+            # RPROMPT='`rprompt-git-current-branch`'
             ;;
         oneline)
             PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
@@ -323,22 +355,6 @@ fpath=(path/to/zsh-completions/src $fpath)
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
-# source ~/.zsh/git-prompt.sh
-# fpath=(~/.zsh $fpath)
-# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-# autoload -Uz compinit && compinit
-# GIT_PS1_SHOWDIRTYSTATE=true
-# GIT_PS1_SHOWUNTRACKEDFILES=true
-# GIT_PS1_SHOWSTASHSTATE=true
-# GIT_PS1_SHOWUPSTREAM=auto
-
-# git-promptの読み込み
-source ~/.zsh/git-prompt.sh
-
-# git-completionの読み込み
-fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-autoload -Uz compinit && compinit
 
 # プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
