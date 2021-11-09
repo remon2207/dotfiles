@@ -124,9 +124,9 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
  " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 " 行頭へ移動
-inoremap <A-h> <Home>
+inoremap <C-a> <Home>
 " 行末へ移動
-inoremap <A-l> <End>
+inoremap <C-e> <End>
 " Exコマンドを実装する関数を定義
 function! ExecExCommand(cmd)
   silent exec a:cmd
@@ -138,7 +138,7 @@ inoremap <silent> <expr> <C-j> "<C-r>=ExecExCommand('normal j')<CR>"
 inoremap <silent> <expr> <C-b> pumvisible() ? "<C-e><C-r>=ExecExCommand('normal b')<CR>" : "<C-r>=ExecExCommand('normal b')<CR>"
 inoremap <silent> <expr> <C-f> pumvisible() ? "<C-e><C-r>=ExecExCommand('normal w')<CR>" : "<C-r>=ExecExCommand('normal w')<CR>"
 " インサートモードでファイル更新
-inoremap <silent> <C-s> <Esc>:update<CR>
+inoremap <silent> <C-s> <Esc>:<C-u>update<CR>
 " 行が折り返しされていたら表示行単位で移動
 nnoremap j gj
 nnoremap k gk
@@ -168,12 +168,6 @@ augroup END
 nnoremap <silent> <C-q> :<C-u>q<CR>
 nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
-" ブラケット補完
-" inoremap { {}<Left>
-" inoremap ( ()<Left>
-" inoremap ' ''<Left>
-" inoremap " ""<Left>
-
 " ウインドウ
 nnoremap sh <C-w>h
 nnoremap sH <C-w>H
@@ -192,5 +186,7 @@ nnoremap <silent> fh :<C-u>bprev<CR>
 nnoremap <silent> fl :<C-u>bnext<CR>
 
 inoremap <C-d> <Del>
-inoremap <C-l> <Right>
-inoremap <C-h> <Left>
+inoremap <A-l> <Right>
+inoremap <A-h> <Left>
+inoremap <A-j> <Down>
+inoremap <A-k> <Up>
