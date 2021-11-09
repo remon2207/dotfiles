@@ -88,19 +88,71 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# git ブランチ名を色付きで表示させるメソッド
+function rprompt-git-current-branch {
+  local branch_name st branch_status
+ 
+  if [ ! -e  ".git" ]; then
+    # git 管理されていないディレクトリは何も返さない
+    return
+  fi
+  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  st=`git status 2> /dev/null`
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    # 全て commit されてクリーンな状態
+    branch_status="%F{green}"
+  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    # git 管理されていないファイルがある状態
+    branch_status="%F{red}?"
+  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    # git add されていないファイルがある状態
+    branch_status="%F{red}+"
+  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    # git commit されていないファイルがある状態
+    branch_status="%F{yellow}!"
+  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    # コンフリクトが起こった状態
+    echo "%F{red}!(no branch)"
+    return
+  else
+    # 上記以外の状態の場合
+    branch_status="%F{blue}"
+  fi
+  # ブランチ名を色付きで表示する
+  echo "${branch_status}[$branch_name]"
+}
+ 
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+setopt prompt_subst
+ 
+# プロンプトの右側にメソッドの結果を表示させる
+RPROMPT='`rprompt-git-current-branch`'
+
+
+
 configure_prompt() {
     prompt_symbol=㉿
     [ "$EUID" -eq 0 ] && prompt_symbol=💀
     case "$PROMPT_ALTERNATIVE" in
         twoline)
             # PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+            # PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] %F{red}$(__git_ps1 "(%s)")%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
+            PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] `rprompt-git-current-branch`%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
+            #
+            #
+            #
+            #
+            #
+            #
+            #
+            # PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] $vcs_info_msg_0_%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
             # PROMPT='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
 # \$ '
             # PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] {red}$(__git_ps1 "(%s)")%f\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
             # setopt PROMPT_SUBST ; PS1='%F{green}┌─(%n@%m)%f-%F{cyan}[%~]%f %F{red}$(__git_ps1 "(%s)")%f
 # └─%'
-            setopt PROMPT_SUBST ; PS1='%F{green}┌─(%f%F{blue}%n@%m%f%F{green})-[%f%F{white}%~%f%F{green}]%f %F{red}$(__git_ps1 "(%s)")%f
-%F{green}└%F{blue} %#%f '
+            # setopt PROMPT_SUBST ; PS1='%F{green}┌─(%f%F{blue}%n@%m%f%F{green})-[%f%F{white}%~%f%F{green}]%f %F{red}$(__git_ps1 "(%s)")%f
+# %F{green}└%F{blue} %#%f '
 # ┌─
 # └─%
             RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
