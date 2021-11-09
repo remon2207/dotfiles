@@ -148,8 +148,8 @@ nnoremap <Up> gk
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   nnoremap <C-t> :<C-u>terminal<CR>
-  nnoremap ss :<C-u>sp<CR><C-w>w
-  nnoremap sv :<C-u>vs<CR><C-w>w
+  nnoremap <silent> ss :<C-u>sp<CR><C-w>w
+  nnoremap <silent> sv :<C-u>vs<CR><C-w>w
 endif
 
 augroup filetype
@@ -182,6 +182,8 @@ nnoremap sL <C-w>L
 nnoremap <silent> tn :<C-u>tabnew<CR>
 nnoremap tl gt
 nnoremap th gT
+
+" バッファ
 nnoremap <silent> fh :<C-u>bprev<CR>
 nnoremap <silent> fl :<C-u>bnext<CR>
 
