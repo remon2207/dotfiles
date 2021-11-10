@@ -79,8 +79,8 @@ source ~/.config/nvim/plugins/coc.rc.vim
 # repo = 'kristijanhusak/defx-icons'
 # [[plugins]]
 # repo = 'kristijanhusak/defx-git'
-# [[plugins]]
 
+[[plugins]]
 repo = 'lambdalisue/fern.vim'
 depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim']
 hook_add = '''
