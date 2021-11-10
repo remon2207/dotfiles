@@ -10,7 +10,6 @@ for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
-    [[ "$f" == ".config" ]] && continue
 
     ln -snfv ~/git/dotfiles/"$f" ~/
 done
