@@ -14,14 +14,13 @@ do
     ln -snfv ~/git/dotfiles/"$f" $HOME/
 done
 
+# for d_config in alacritty conky bat i3 i3status-rust nvim picom ranger rofi
+# do
+#     [[ "$d_config" == ".git" ]] && continue
+#     [[ "$d_config" == ".DS_Store" ]] && continue
 
-for d_config in alacritty conky bat
-do
-    [[ "$d_config" == ".git" ]] && continue
-    [[ "$d_config" == ".DS_Store" ]] && continue
-
-    ln -snfv ~/git/dotfiles/.config/"$d_config" ~/.config/
-done
+#     ln -snfv ~/git/dotfiles/.config/"$d_config" $HOME/.config/
+# done
 
 mkdir ~/.config/nvim
 ln -snfv ~/git/dotfiles/.config/nvim/dein.toml ~/.config/nvim/
