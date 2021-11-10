@@ -192,3 +192,7 @@ inoremap <A-l> <Right>
 inoremap <A-h> <Left>
 inoremap <A-j> <Down>
 inoremap <A-k> <Up>
+
+
+" for Python
+let g:python3_host_prog = '/usr/bin/python3'
