@@ -14,7 +14,6 @@ do
     ln -snfv ~/git/dotfiles/"$f" $HOME/
 done
 
-cd .config
 
 for d_config in alacritty conky bat
 do
