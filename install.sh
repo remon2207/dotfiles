@@ -11,7 +11,7 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
 
-    ln -snfv ~/git/dotfiles/"$f" ~/
+    ln -snfv ~/git/dotfiles/"$f" $HOME/
 done
 
 cd .config
