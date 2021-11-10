@@ -22,6 +22,6 @@ done
 #     ln -snfv ~/git/dotfiles/.config/"$d_config" $HOME/.config/
 # done
 
-mkdir ~/.config/nvim
-ln -snfv ~/git/dotfiles/.config/nvim/dein.toml ~/.config/nvim/
-ln -snfv ~/git/dotfiles/.config/nvim/init.vim ~/.config/nvim/
+# mkdir ~/.config/nvim
+# ln -snfv ~/git/dotfiles/.config/nvim/dein.toml ~/.config/nvim/
+# ln -snfv ~/git/dotfiles/.config/nvim/init.vim ~/.config/nvim/
