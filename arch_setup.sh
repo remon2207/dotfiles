@@ -5,10 +5,10 @@ sudo pacman -Syu
 # zshがインストールされているか確認
 zsh --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "zsh is already installed"
 else
-    echo "インストールされていない"
-    echo "zshをインストール"
+    echo "zsh is not installed"
+    echo "Installing zsh"
     echo "-----------------------------------"
     sudo pacman -S zsh
 fi
@@ -16,10 +16,10 @@ fi
 # curlがインストールされているか確認
 curl --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "curl is already installed"
 else
-    echo "インストールされていない"
-    echo "curlをインストール"
+    echo "curl is not installed"
+    echo "Installing curl"
     echo "-----------------------------------"
     sudo pacman -S curl
 fi
@@ -27,10 +27,10 @@ fi
 # wgetがインストールされているか確認
 wget --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "wget is already installed"
 else
-    echo "インストールされていない"
-    echo "wgetをインストール"
+    echo "wget is not installed"
+    echo "Installing wget"
     echo "-----------------------------------"
     sudo pacman -S wget
 fi
@@ -38,20 +38,20 @@ fi
 # lsdがインストールされているか確認
 lsd --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "lsd is already installed"
 else
-    echo "インストールされていない"
-    echo "lsdをインストール"
+    echo "lsd is not installed"
+    echo "Installing lsd"
     echo "-----------------------------------"
     sudo pacman -S lsd
 fi
 # batのインストール確認
 bat --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "bat is already installed"
 else
-    echo "インストールされていない"
-    echo "batをインストール"
+    echo "bat is not installed"
+    echo "Installing bat"
     echo "-----------------------------------"
     sudo pacman -S bat
 fi
@@ -59,10 +59,10 @@ fi
 # fzfのインストール確認
 fzf --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "fzf is already installed"
 else
-    echo "インストールされていない"
-    echo "fzfをインストール"
+    echo "fzf is not installed"
+    echo "Installing fzf"
     echo "-----------------------------------"
     sudo pacman -S fzf
 fi
@@ -70,10 +70,10 @@ fi
 # fdのインストール確認
 fd --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
+    echo "already installed"
 else
-    echo "インストールされていない"
-    echo "fdをインストール"
+    echo "fd is not installed"
+    echo "Installing fd"
     echo "-----------------------------------"
     sudo pacman -S fd
 fi
@@ -139,7 +139,7 @@ pip3 install --user wheel pynvim
 
 LC_ALL=C xdg-user-dirs-update --force
 rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレート $HOME/公開 $HOME/ドキュメント $HOME/音楽 $HOME/画像 $HOME/ビデオ $HOME/.config/i3
-source ./$HOME/git/dotfiles/install.sh
+source ./home/$5/git/dotfiles/install.sh
 
 # mkdir ~/appimage
 # cd ~/appimage
