@@ -99,5 +99,5 @@ call defx#custom#column('git', 'indicators', {
 	      \ })
 
 call defx#custom#option('_', {
-	      \ 'columns': 'indent:mark:icon:icons:space:filename:git:size:type:time',
+	      \ 'columns': 'indent:mark:icon:space:icons:space:filename:git:size:type:time',
 	      \ })
