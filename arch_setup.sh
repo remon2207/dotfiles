@@ -90,6 +90,12 @@ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 
+# paru(AUR)インストール
+cd ~/git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
 # powerline-shelインストール
 cd ~/
 paru -S nerd-fonts-hack
@@ -106,15 +112,15 @@ cd ~/appimage
 wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
 chmod u+x nvim.appimage
 
-echo -e "clear lock\nclear control\nkeycode 66 = Control_L\nadd control = Control_L Control_R" > ~/.Xmodmap
+# echo -e "clear lock\nclear control\nkeycode 66 = Control_L\nadd control = Control_L Control_R" > ~/.Xmodmap
 
-sudo pacman -S xarchiver arc-gtk-theme papirus-icon-theme wmctrl xdotool
+# sudo pacman -S xarchiver arc-gtk-theme papirus-icon-theme wmctrl xdotool
 
-cd ~/git
-git clone https://github.com/calandoa/movescreen.git
-cd movescreen
-sudo cp movescreen.py /usr/local/bin
+# cd ~/git
+# git clone https://github.com/calandoa/movescreen.git
+# cd movescreen
+# sudo cp movescreen.py /usr/local/bin
 
 #conkyインストール
-paru -S conky-lua-nv
-echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
+# paru -S conky-lua-nv
+# echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
