@@ -107,6 +107,7 @@ sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
 
 # ビルド
 cargo build --release
+sudo pacman -Rs rustup
 
 # ビルド後の設定
 # Terminfo
@@ -136,7 +137,6 @@ source ~/.xprofile
 sudo pacman -S python-pip fuse
 pip3 install --user wheel pynvim
 
-sudo pacman -Rs rustup
 LC_ALL=C xdg-user-dirs-update --force
 
 # mkdir ~/appimage
