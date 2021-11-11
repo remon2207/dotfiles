@@ -141,7 +141,14 @@ alias sudo='sudo '
 alias vim='~/appimage/nvim.appimage'
 alias ls='lsd -la'
 alias e='exit'
-
+alias vimdiff='vim -d'
+alias gs='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gc-m='git commit -m'
+alias gp='git push'
+alias rmf='rm -rf'
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=(path/to/zsh-completions/src $fpath)
