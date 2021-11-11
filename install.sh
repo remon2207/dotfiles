@@ -10,9 +10,11 @@ for f in .??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
+    [[ "$f" == ".config" ]] && continue
 
     ln -snfv ~/git/dotfiles/"$f" $HOME/
 done
+ln -snfv ~/git/dotfiles/.config/* $HOME/.config/
 
 # for d_config in alacritty conky bat i3 i3status-rust nvim picom ranger rofi
 # do
