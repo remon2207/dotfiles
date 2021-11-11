@@ -138,6 +138,7 @@ sudo pacman -S python-pip fuse
 pip3 install --user wheel pynvim
 
 LC_ALL=C xdg-user-dirs-update --force
+source ./install.sh
 
 # mkdir ~/appimage
 # cd ~/appimage
