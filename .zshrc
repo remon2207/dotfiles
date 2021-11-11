@@ -182,12 +182,12 @@ GIT_PS1_SHOWUPSTREAM=auto
 
 if [[ ${TERM} != "linux" ]]; then
     function powerline_precmd() {
+        # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
         PS1="
-$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
+$(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
+        # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
+         # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
     }
-
-
-
     function install_powerline_precmd() {
         for s in "${precmd_functions[@]}"; do
             if [ "$s" = "powerline_precmd" ]; then
