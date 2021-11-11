@@ -222,3 +222,67 @@ if [ -z "$TMUX" -a -z "$STY" ]; then
     fi
 fi
 source /usr/share/nvm/init-nvm.sh
+
+# peco
+# Ctrl+rでpeco呼び出す
+# function peco-history-selection() {
+#     BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+#     CURSOR=$#BUFFER
+#     zle reset-prompt
+# }
+
+# zle -N peco-history-selection
+# bindkey '^R' peco-history-selection
+
+# cdr
+# if [[ -n $(echo ${^fpath}/chpwd_recent_dirs(N)) && -n $(echo ${^fpath}/cdr(N)) ]]; then
+#     autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+#     add-zsh-hook chpwd chpwd_recent_dirs
+#     zstyle ':completion:*' recent-dirs-insert both
+#     zstyle ':chpwd:*' recent-dirs-default true
+#     zstyle ':chpwd:*' recent-dirs-max 1000
+#     zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+# fi
+
+# function peco-cdr () {
+#     local selected_dir="$(cdr -l | sed 's/^[0-9]\+ \+//' | peco --prompt="cdr >" --query "$LBUFFER")"
+#     if [ -n "$selected_dir" ]; then
+#         BUFFER="cd ${selected_dir}"
+#         zle accept-line
+#     fi
+# }
+# zle -N peco-cdr
+# bindkey '^E' peco-cdr
+
+# fzf-cdr 
+# alias cdd='fzf-cdr'
+# function fzf-cdr() {
+#     target_dir=`cdr -l | sed 's/^[^ ][^ ]*  *//' | fzf`
+#     target_dir=`echo ${target_dir/\~/$HOME}`
+#     if [ -n "$target_dir" ]; then
+#         cd $target_dir
+#     fi
+# }
+
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+export FZF_DEFAULT_OPTS="
+    --height 90% --reverse --border
+    --prompt='➜  ' --margin=0,1 --inline-info
+    --tiebreak=index --no-mouse --filepath-word
+    --color fg:-1,bg:-1,hl:33,fg+:250,bg+:235,hl+:33
+    --color info:37,prompt:37,pointer:230,marker:230,spinner:37
+    --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
+    --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
+    --bind='ctrl-a:toggle-all,?:toggle-preview'
+"
+
+export FZF_CTRL_T_COMMAND="fd --type f "
+export FZF_CTRL_T_OPTS="
+    --select-1 --exit-0
+    --bind 'ctrl-l:execute(tmux splitw -h -- $HOME/appimage/nvim.appimage {})'
+    --bind '>:reload($FZF_CTRL_T_COMMAND -H -E .git )'
+    --bind '<:reload($FZF_CTRL_T_COMMAND)'
+    --preview 'bat -r :100 --color=always --style=header,grid {}'"
