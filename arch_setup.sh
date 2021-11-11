@@ -94,7 +94,6 @@ chsh -s $(which zsh)
 
 
 # ソースコードのダウンロード
-mkdir ~/git
 cd ~/git
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
