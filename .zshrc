@@ -3,6 +3,25 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd extendedglob nomatch notify
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+# cd [TAB] で以前移動したディレクトリを表示
+setopt auto_pushd
+# 同時に起動したzshの間でヒストリを共有する
+setopt share_history
+# 直前と同じコマンドの場合はヒストリに追加しない
+setopt hist_ignore_dups
+# 同じコマンドをヒストリに残さない
+setopt hist_ignore_all_dups
+# スペースから始まるコマンド行はヒストリに残さない
+setopt hist_ignore_space
+# ヒストリに保存するときに余分なスペースを削除する
+setopt hist_reduce_blanks
+# コマンドのスペルを訂正する
+# setopt correct
+# pushdしたとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+setopt pushd_ignore_dups
+
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
