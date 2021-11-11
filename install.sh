@@ -11,6 +11,7 @@ do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".config" ]] && continue
+    [[ "$f" == ".gitignore" ]] && continue
 
     ln -snfv ~/git/dotfiles/"$f" $HOME/
 done

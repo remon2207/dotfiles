@@ -138,7 +138,8 @@ sudo pacman -S python-pip fuse
 pip3 install --user wheel pynvim
 
 LC_ALL=C xdg-user-dirs-update --force
-source install.sh
+rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレート $HOME/公開 $HOME/ドキュメント $HOME/音楽 $HOME/画像 $HOME/ビデオ
+source ./git/dotfiles/install.sh
 
 # mkdir ~/appimage
 # cd ~/appimage
