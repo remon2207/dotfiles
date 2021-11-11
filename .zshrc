@@ -62,7 +62,11 @@ stty stop undef
 
 # keybind
 # vim like
+bindkey -d
 bindkey -v
+
+# bindkey -r ""
+bindkey -r "^V"
 # コマンド履歴補完
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
