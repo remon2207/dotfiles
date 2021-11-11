@@ -97,35 +97,35 @@ makepkg -si
 paru -S nvm
 
 # ソースコードのダウンロード
-cd ~/git
-git clone https://github.com/alacritty/alacritty.git
-cd alacritty
+# cd ~/git
+# git clone https://github.com/alacritty/alacritty.git
+# cd alacritty
 
 
 # 依存関係のインストール
-sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
+# sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
 
 # ビルド
-cargo build --release
-sudo pacman -Rs rustup
+# cargo build --release
+# sudo pacman -Rs rustup
 
 # ビルド後の設定
 # Terminfo
-sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
-infocmp alacritty
+# sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+# infocmp alacritty
 
 # デスクトップエントリ
-sudo cp target/release/alacritty /usr/local/bin
-sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-sudo desktop-file-install extra/linux/Alacritty.desktop
-sudo update-desktop-database
+# sudo cp target/release/alacritty /usr/local/bin
+# sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+# sudo desktop-file-install extra/linux/Alacritty.desktop
+# sudo update-desktop-database
 
 # マニュアルページ
-sudo mkdir -p /usr/local/share/man/man1
-gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
+# sudo mkdir -p /usr/local/share/man/man1
+# gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
 
-mkdir -p ${ZDOTDIR:-~}/.zsh_functions
-cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
+# mkdir -p ${ZDOTDIR:-~}/.zsh_functions
+# cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 
 # powerline-shelインストール
 cd ~/
@@ -139,7 +139,7 @@ pip3 install --user wheel pynvim
 
 LC_ALL=C xdg-user-dirs-update --force
 rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレート $HOME/公開 $HOME/ドキュメント $HOME/音楽 $HOME/画像 $HOME/ビデオ $HOME/.config/i3
-source ./git/dotfiles/install.sh
+source ./$HOME/git/dotfiles/install.sh
 
 # mkdir ~/appimage
 # cd ~/appimage
