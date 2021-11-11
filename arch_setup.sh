@@ -3,7 +3,7 @@
 sudo pacman -Syu
 
 # zshがインストールされているか確認
-which zsh > /dev/null 2>&1
+zsh --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
@@ -13,7 +13,8 @@ else
     sudo pacman -S zsh
 fi
 
-which curl > /dev/null 2>&1
+# curlがインストールされているか確認
+curl --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
@@ -23,7 +24,8 @@ else
     sudo pacman -S curl
 fi
 
-which wget > /dev/null 2>&1
+# wgetがインストールされているか確認
+wget --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
@@ -33,7 +35,8 @@ else
     sudo pacman -S wget
 fi
 
-lsd -V > /dev/null 2>&1
+# lsdがインストールされているか確認
+lsd --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
@@ -42,11 +45,8 @@ else
     echo "-----------------------------------"
     sudo pacman -S lsd
 fi
-# zshをデフォルトシェルにする
-chsh -s $(which zsh)
-
-# curlのインストール確認
-which bat > /dev/null 2>&1
+# batのインストール確認
+bat --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
@@ -56,15 +56,54 @@ else
     sudo pacman -S bat
 fi
 
+# fzfのインストール確認
+fzf --version > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S bat
+fi
+
+# fdのインストール確認
+fd --version > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S bat
+fi
+
+# nvmのインストール確認
+nvm --version > /dev/null 2>&1
+if [ "$?" -eq 0 ] ; then
+    echo "インストール済み"
+else
+    echo "インストールされていない"
+    echo "curl、wget、lsd、batをインストール"
+    echo "-----------------------------------"
+    sudo pacman -S bat
+fi
+
+# zshをデフォルトシェルにする
+chsh -s $(which zsh)
+
+
 # ソースコードのダウンロード
 mkdir ~/git
-cd git
+cd ~/git
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 
-# Rustのインストール
+# Rustupのインストール
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
+echo "$HOME/.cargo/bin" >> ~/.zshenv
+source ~/.zshenv
 
 # 依存関係のインストール
 sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
