@@ -93,6 +93,7 @@ cd ~/git
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+paru -S nvm
 
 # ソースコードのダウンロード
 cd ~/git
