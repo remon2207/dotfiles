@@ -120,6 +120,10 @@ set title
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" 改行時の自動コメントアウトを無効化
+au FileType * setlocal formatoptions-=r
+au FileType * setlocal formatoptions-=o
+
 " keymap ---------------------------------------------------------------
  " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
