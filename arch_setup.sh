@@ -84,7 +84,6 @@ chsh -s $(which zsh)
 # Rustupのインストール
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
-echo "$HOME/.cargo/bin" >> ~/.zshenv
 source ~/.zshenv
 # rustup install stable
 rustup override set stable
@@ -136,6 +135,9 @@ source ~/.xprofile
 
 sudo pacman -S python-pip fuse
 pip3 install --user wheel pynvim
+
+sudo pacman -Rs rustup
+LC_ALL=C xdg-user-dirs-update --force
 
 # mkdir ~/appimage
 # cd ~/appimage
