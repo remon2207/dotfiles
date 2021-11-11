@@ -139,7 +139,7 @@ pip3 install --user wheel pynvim
 
 LC_ALL=C xdg-user-dirs-update --force
 rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレート $HOME/公開 $HOME/ドキュメント $HOME/音楽 $HOME/画像 $HOME/ビデオ $HOME/.config/i3
-source ./home/$5/git/dotfiles/install.sh
+# source ./home/$5/git/dotfiles/install.sh
 
 # mkdir ~/appimage
 # cd ~/appimage
