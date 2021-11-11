@@ -65,38 +65,37 @@ source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
 # ファイラー
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'vim-devicons', 'defx-icons', 'defx-git', 'nerdfont.vim']
+hook_add = '''
+source ~/.config/nvim/plugins/defx.rc.vim
+'''
+[[plugins]]
+repo = 'Shougo/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
 # [[plugins]]
-# repo = 'Shougo/defx.nvim'
-# depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'vim-devicons', 'defx-icons']
+# repo = 'lambdalisue/fern.vim'
+# depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim']
 # hook_add = '''
-# source ~/.config/nvim/plugins/defx.rc.vim
+#   source ~/.config/nvim/plugins/fern.rc.vim
 # '''
 # [[plugins]]
-# repo = 'Shougo/nvim-yarp'
+# repo = 'lambdalisue/fern-git-status.vim'
 # [[plugins]]
-# repo = 'roxma/vim-hug-neovim-rpc'
+# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 # [[plugins]]
-# repo = 'kristijanhusak/defx-icons'
-# [[plugins]]
-# repo = 'kristijanhusak/defx-git'
-
-[[plugins]]
-repo = 'lambdalisue/fern.vim'
-depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim']
-hook_add = '''
-  source ~/.config/nvim/plugins/fern.rc.vim
-'''
-[[plugins]]
-repo = 'lambdalisue/fern-git-status.vim'
-[[plugins]]
-repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+# repo = 'yuki-yano/fern-preview.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/fern-preview.rc.vim
+# '''
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
-[[plugins]]
-repo = 'yuki-yano/fern-preview.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/fern-preview.rc.vim
-'''
 
 # [[plugins]]
 # repo = 'lambdalisue/glyph-palette.vim'
