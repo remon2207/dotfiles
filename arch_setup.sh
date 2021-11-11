@@ -8,7 +8,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "zshをインストール"
     echo "-----------------------------------"
     sudo pacman -S zsh
 fi
@@ -19,7 +19,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "curlをインストール"
     echo "-----------------------------------"
     sudo pacman -S curl
 fi
@@ -30,7 +30,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "wgetをインストール"
     echo "-----------------------------------"
     sudo pacman -S wget
 fi
@@ -41,7 +41,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "zsh、curl、wget、lsd、batをインストール"
+    echo "lsdをインストール"
     echo "-----------------------------------"
     sudo pacman -S lsd
 fi
@@ -51,7 +51,7 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "curl、wget、lsd、batをインストール"
+    echo "batをインストール"
     echo "-----------------------------------"
     sudo pacman -S bat
 fi
@@ -62,9 +62,9 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "curl、wget、lsd、batをインストール"
+    echo "fzfをインストール"
     echo "-----------------------------------"
-    sudo pacman -S bat
+    sudo pacman -S fzf
 fi
 
 # fdのインストール確認
@@ -73,36 +73,32 @@ if [ "$?" -eq 0 ] ; then
     echo "インストール済み"
 else
     echo "インストールされていない"
-    echo "curl、wget、lsd、batをインストール"
+    echo "fdをインストール"
     echo "-----------------------------------"
-    sudo pacman -S bat
-fi
-
-# nvmのインストール確認
-nvm --version > /dev/null 2>&1
-if [ "$?" -eq 0 ] ; then
-    echo "インストール済み"
-else
-    echo "インストールされていない"
-    echo "curl、wget、lsd、batをインストール"
-    echo "-----------------------------------"
-    sudo pacman -S bat
+    sudo pacman -S fd
 fi
 
 # zshをデフォルトシェルにする
 chsh -s $(which zsh)
-
-
-# ソースコードのダウンロード
-cd ~/git
-git clone https://github.com/alacritty/alacritty.git
-cd alacritty
 
 # Rustupのインストール
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env
 echo "$HOME/.cargo/bin" >> ~/.zshenv
 source ~/.zshenv
+rustup install stable
+
+# paru(AUR)インストール
+cd ~/git
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
+# ソースコードのダウンロード
+cd ~/git
+git clone https://github.com/alacritty/alacritty.git
+cd alacritty
+
 
 # 依存関係のインストール
 sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
@@ -127,12 +123,6 @@ gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz 
 
 mkdir -p ${ZDOTDIR:-~}/.zsh_functions
 cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
-
-# paru(AUR)インストール
-cd ~/git
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
 
 # powerline-shelインストール
 cd ~/
