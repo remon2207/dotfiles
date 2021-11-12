@@ -118,7 +118,8 @@ set title
 
 " タブ・空白・改行等の表示
 set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
 
 " 改行時の自動コメントアウトを無効化
 au FileType * setlocal formatoptions-=r
@@ -188,8 +189,8 @@ nnoremap tl gt
 nnoremap th gT
 
 " バッファ
-" nnoremap <silent> fh :<C-u>bprev<CR>
-" nnoremap <silent> fl :<C-u>bnext<CR>
+nnoremap <silent> fj :<C-u>bprev<CR>
+nnoremap <silent> fk :<C-u>bnext<CR>
 
 inoremap <C-d> <Del>
 inoremap <A-l> <Right>

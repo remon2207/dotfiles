@@ -55,6 +55,10 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,bold,underline"
+
+
 # gitのカラー表示
 git config --global color.ui auto
 # Ctrl+Sを無効化
@@ -65,8 +69,6 @@ stty stop undef
 bindkey -d
 bindkey -v
 
-# bindkey -r ""
-bindkey -r "^V"
 # コマンド履歴補完
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -280,10 +282,18 @@ export FZF_DEFAULT_OPTS="
     --bind='ctrl-a:toggle-all,?:toggle-preview'
 "
 
-export FZF_CTRL_T_COMMAND="fd --type f "
+export FZF_CTRL_T_COMMAND="fd --type f -H -E .git "
 export FZF_CTRL_T_OPTS="
     --select-1 --exit-0
     --bind 'ctrl-l:execute(tmux splitw -h -- $HOME/appimage/nvim.appimage {})'
     --bind '>:reload($FZF_CTRL_T_COMMAND -H -E .git )'
     --bind '<:reload($FZF_CTRL_T_COMMAND)'
     --preview 'bat -r :100 --color=always --style=header,grid {}'"
+
+# export FZF_CTRL_T_COMMAND="fd --type f "
+# export FZF_CTRL_T_OPTS="
+#     --select-1 --exit-0
+#     --bind 'ctrl-l:execute(tmux splitw -h -- $HOME/appimage/nvim.appimage {})'
+#     --bind '>:reload($FZF_CTRL_T_COMMAND -H -E .git )'
+#     --bind '<:reload($FZF_CTRL_T_COMMAND)'
+#     --preview 'bat -r :100 --color=always --style=header,grid {}'"

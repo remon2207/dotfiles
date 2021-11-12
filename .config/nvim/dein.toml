@@ -33,21 +33,18 @@ source ~/.config/nvim/plugins/vim-airline.rc.vim
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-source ~/.config/nvim/plugins/vim-airline-themes.rc.vim
-'''
 
 # ステータスラインにbranch名
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
 # インデントの可視化
-# [[plugins]]
-# repo = 'Yggdroot/indentLine'
+[[plugins]]
+repo = 'Yggdroot/indentLine'
 
 # 末尾の全角半角空白文字を赤くハイライト
-# [[plugins]]
-# repo = 'bronson/vim-trailing-whitespace'
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
 
 # ノーマルモードでコメントアウト
 [[plugins]]
@@ -58,11 +55,26 @@ repo = 'tpope/vim-commentary'
 repo = 'nathanaelkane/vim-indent-guides'
 
 # カラースキーマ
+# iceberg
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/colors.rc.vim
+# '''
+
+# solarized
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'altercation/vim-colors-solarized'
 hook_add = '''
 source ~/.config/nvim/plugins/colors.rc.vim
 '''
+
+# onedark
+# [[plugins]]
+# repo = 'joshdick/onedark.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/colors.rc.vim
+# '''
 
 [[plugins]]
 repo = 'gkeep/iceberg-dark'
