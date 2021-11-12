@@ -10,23 +10,32 @@ repo = 'skanehira/translate.vim'
 [[plugins]]
 repo = 'twitvim/twitvim'
 
-# ステータスラインの表示内容強化
+# markdown
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo = 'skanehira/preview-markdown.vim'
 hook_add = '''
-source ~/.config/nvim/plugins/lightline.rc.vim
+source ~/.config/nvim/plugins/preview-markdown.rc.vim
 '''
+
+# ステータスラインの表示内容強化
 # [[plugins]]
-# repo = 'vim-airline/vim-airline'
-# depends = 'vim-airline-themes'
+# repo = 'itchyny/lightline.vim'
 # hook_add = '''
-# source ~/.config/nvim/plugins/vim-airline.rc.vim
+# source ~/.config/nvim/plugins/lightline.rc.vim
 # '''
-# [[plugins]]
-# repo = 'vim-airline/vim-airline-themes'
-# hook_add = '''
-# source ~/.config/nvim/plugins/vim-airline-themes.rc.vim
-# '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline.rc.vim
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline-themes.rc.vim
+'''
 
 # ステータスラインにbranch名
 [[plugins]]
@@ -52,8 +61,11 @@ repo = 'nathanaelkane/vim-indent-guides'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 hook_add = '''
-source ~/.config/nvim/plugins/iceberg.rc.vim
+source ~/.config/nvim/plugins/colors.rc.vim
 '''
+
+[[plugins]]
+repo = 'gkeep/iceberg-dark'
 
 # IDEのような補完
 [[plugins]]
@@ -65,46 +77,73 @@ source ~/.config/nvim/plugins/coc.rc.vim
 '''
 
 # ファイラー
+# [[plugins]]
+# repo = 'Shougo/defx.nvim'
+# depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'vim-devicons', 'defx-icons', 'defx-git', 'nerdfont.vim']
+# hook_add = '''
+# source ~/.config/nvim/plugins/defx.rc.vim
+# '''
+# [[plugins]]
+# repo = 'Shougo/nvim-yarp'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
+# [[plugins]]
+# repo = 'kristijanhusak/defx-icons'
+# [[plugins]]
+# repo = 'kristijanhusak/defx-git'
 [[plugins]]
-repo = 'Shougo/defx.nvim'
-depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'vim-devicons', 'defx-icons', 'defx-git', 'nerdfont.vim']
+repo = 'lambdalisue/fern.vim'
+depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim', 'fern-hijack']
 hook_add = '''
-source ~/.config/nvim/plugins/defx.rc.vim
+  source ~/.config/nvim/plugins/fern.rc.vim
 '''
+
 [[plugins]]
-repo = 'Shougo/nvim-yarp'
+repo = 'lambdalisue/fern-git-status.vim'
+
 [[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/fern-renderer-nerdfont.rc.vim
+'''
+
 [[plugins]]
-repo = 'kristijanhusak/defx-icons'
-[[plugins]]
-repo = 'kristijanhusak/defx-git'
-# [[plugins]]
-# repo = 'lambdalisue/fern.vim'
-# depends = ['fern-git-status.vim', 'fern-renderer-nerdfont.vim', 'nerdfont.vim', 'fern-preview.vim']
-# hook_add = '''
-#   source ~/.config/nvim/plugins/fern.rc.vim
-# '''
-# [[plugins]]
-# repo = 'lambdalisue/fern-git-status.vim'
-# [[plugins]]
-# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-# [[plugins]]
-# repo = 'yuki-yano/fern-preview.vim'
-# hook_add = '''
-# source ~/.config/nvim/plugins/fern-preview.rc.vim
-# '''
+repo = 'yuki-yano/fern-preview.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/fern-preview.rc.vim
+'''
+
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
 
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+
 # [[plugins]]
-# repo = 'lambdalisue/glyph-palette.vim'
+# repo = 'lambdalisue/fern-renderer-devicons.vim'
 # hook_add = '''
-#   source ~/.config/nvim/plugins/glyph-palette.rc.vim
+# source ~/.config/nvim/plugins/fern-renderer-devicons.rc.vim
 # '''
+
+# [[plugins]]
+# repo = 'preservim/nerdtree'
+
+# [[plugins]]
+# repo = 'mhinz/vim-startify'
+
 # ブラケット自動入力
 # [[plugins]]
 # repo = 'jiangmiao/auto-pairs'
+
+# [[plugins]]
+# repo = 'preservim/nerdtree'
+# depends = 'nerdtree-git-plugin'
+# hook_add = '''
+# source ~/.config/nvim/plugins/nerdtree.rc.vim
+# '''
+
+# [[plugins]]
+# repo = 'Xuyuanp/nerdtree-git-plugin'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'

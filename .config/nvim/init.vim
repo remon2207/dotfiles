@@ -136,8 +136,8 @@ function! ExecExCommand(cmd)
   silent exec a:cmd
   return ''
 endfunction
-inoremap <silent> <expr> <C-k> "<C-r>=ExecExCommand('normal k')<CR>"
-inoremap <silent> <expr> <C-j> "<C-r>=ExecExCommand('normal j')<CR>"
+inoremap <silent> <expr> <C-b> "<C-r>=ExecExCommand('normal k')<CR>"
+inoremap <silent> <expr> <C-f> "<C-r>=ExecExCommand('normal j')<CR>"
 " 補完せず補完ウィンドウを閉じてから移動
 inoremap <silent> <expr> <C-b> pumvisible() ? "<C-e><C-r>=ExecExCommand('normal b')<CR>" : "<C-r>=ExecExCommand('normal b')<CR>"
 inoremap <silent> <expr> <C-f> pumvisible() ? "<C-e><C-r>=ExecExCommand('normal w')<CR>" : "<C-r>=ExecExCommand('normal w')<CR>"
@@ -173,14 +173,14 @@ nnoremap <silent> <C-q> :<C-u>q<CR>
 nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
 " ウインドウ
-nnoremap sh <C-w>h
-nnoremap sH <C-w>H
-nnoremap sj <C-w>j
-nnoremap sJ <C-w>J
-nnoremap sk <C-w>k
-nnoremap sK <C-w>K
-nnoremap sl <C-w>l
-nnoremap sL <C-w>L
+nnoremap wh <C-w>h
+nnoremap wH <C-w>H
+nnoremap wj <C-w>j
+nnoremap wJ <C-w>J
+nnoremap wk <C-w>k
+nnoremap wK <C-w>K
+nnoremap wl <C-w>l
+nnoremap wL <C-w>L
 
 " タブ
 nnoremap <silent> tn :<C-u>tabnew<CR>
@@ -188,8 +188,8 @@ nnoremap tl gt
 nnoremap th gT
 
 " バッファ
-nnoremap <silent> fh :<C-u>bprev<CR>
-nnoremap <silent> fl :<C-u>bnext<CR>
+" nnoremap <silent> fh :<C-u>bprev<CR>
+" nnoremap <silent> fl :<C-u>bnext<CR>
 
 inoremap <C-d> <Del>
 inoremap <A-l> <Right>
@@ -200,3 +200,8 @@ inoremap <A-k> <Up>
 
 " for Python
 let g:python3_host_prog = '/usr/bin/python3'
+
+augroup markdown
+  autocmd!
+  autocmd FileType markdown inoremap <C-s> <Esc>:<C-u>PreviewMarkdown right<CR><C-w>h
+augroup END
