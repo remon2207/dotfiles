@@ -60,7 +60,7 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 
-" vim and vscode
+" vim or vscode
 call plug#begin('~/.config/nvim/plugged')
   if exists('g:vscode')
     Plug 'tpope/vim-commentary'
@@ -70,6 +70,13 @@ call plug#begin('~/.config/nvim/plugged')
   else
   " □や○文字が崩れる問題を解決
     set ambiwidth=double
+    nnoremap <Left> <Nop>
+    nnoremap <Down> <Nop>
+    nnoremap <Up> <Nop>
+    nnoremap <Right> <Nop>
+    " nnoremap <Down> gj
+    " nnoremap <Up> gk
+
   endif
 call plug#end()
 
@@ -158,8 +165,6 @@ inoremap <silent> <C-s> <Esc>:<C-u>update<CR>
 " 行が折り返しされていたら表示行単位で移動
 nnoremap j gj
 nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
 
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
@@ -184,7 +189,7 @@ augroup END
 nnoremap <silent> <C-q> :<C-u>q<CR>
 nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
-" ウインドウ
+" window
 nnoremap sh <C-w>h
 nnoremap sH <C-w>H
 nnoremap sj <C-w>j
@@ -194,20 +199,21 @@ nnoremap sK <C-w>K
 nnoremap sl <C-w>l
 nnoremap sL <C-w>L
 
-" タブ
+" tab
 nnoremap <silent> tn :<C-u>tabnew<CR>
 nnoremap tl gt
 nnoremap th gT
 
-" バッファ
+" buffer
 nnoremap <silent> fj :<C-u>bprev<CR>
 nnoremap <silent> fk :<C-u>bnext<CR>
 
+" cursor
 inoremap <C-d> <Del>
-inoremap <A-l> <Right>
 inoremap <A-h> <Left>
 inoremap <A-j> <Down>
 inoremap <A-k> <Up>
+inoremap <A-l> <Right>
 
 
 " for Python
