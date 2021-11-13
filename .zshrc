@@ -68,7 +68,7 @@ stty stop undef
 
 # keybind
 # vim like
-
+bindkey -v
 # コマンド履歴補完
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -115,15 +115,15 @@ bindkey "^N" history-beginning-search-forward-end
 # setopt prompt_subst
 
 # vimのインサートモードとノーマルモードを表示
-# function zle-line-init zle-keymap-select {
-#     VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
-#     VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
-#     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-#     RPS2=$RPS1
-#     zle reset-prompt
-# }
-# zle -N zle-line-init
-# zle -N zle-keymap-select
+function zle-line-init zle-keymap-select {
+    VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
+    VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
+    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 
 # git-promptの読み込み
@@ -155,6 +155,7 @@ precmd () { vcs_info }
 PROMPT='
  %F{white}%B%~%b%f %F{cyan}$vcs_info_msg_0_%f
  %F{blue}>%f '
+ RPROMPT=''
 
 
 
@@ -186,6 +187,8 @@ alias gc='git commit'
 alias gc-m='git commit -m'
 alias gp='git push'
 alias rmf='rm -rf'
+alias sshremon='ssh -i ~/.ssh/ed25519_ssh_remon_pc -p 53927 remon@192.168.1.36'
+alias sshlenovo='ssh -i ~/.ssh/ed25519_ssh_lenovo_ubuntu_connect_pc -p 58731 lenovo-ubuntu@192.168.1.78'
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=(path/to/zsh-completions/src $fpath)
