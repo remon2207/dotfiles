@@ -56,7 +56,9 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,bold,underline"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,bold,underline"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c"
 
 
 # gitのカラー表示
@@ -66,8 +68,6 @@ stty stop undef
 
 # keybind
 # vim like
-bindkey -d
-bindkey -v
 
 # コマンド履歴補完
 autoload history-search-end
@@ -115,24 +115,57 @@ bindkey "^N" history-beginning-search-forward-end
 # setopt prompt_subst
 
 # vimのインサートモードとノーマルモードを表示
-function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
-    VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
-    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
+#     VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
+#     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+
+
+# git-promptの読み込み
+# source ~/.zsh/git-prompt.sh
+
+# # git-completionの読み込み
+# fpath=(~/.zsh $fpath)
+# zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+# autoload -Uz compinit && compinit
+
+# # プロンプトの表示設定(好きなようにカスタマイズ可)
+# setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
+# \$ '
+
+
+
+
+# git
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{magenta}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
+zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+
+# プロンプトカスタマイズ
+PROMPT='
+ %F{white}%B%~%b%f %F{cyan}$vcs_info_msg_0_%f
+ %F{blue}>%f '
+
+
 
 # PROMPT=$'%F{%(#.blue.green)}┌── ${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n$prompt_symbol%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}] `rprompt-git-current-branch`%f\n%F{%(#.blue.green)}└─%B%(#.%F{red}#.%F{blue} %#)%b%F{reset} '
 
 # PROMPT='
-# %F{green}┌─ (%f%F{blue}%B%n@%m%b%f%F{green}%b)-[%f%F{white}%B%~%b%f%F{green}]%f `rprompt-git-current-branch`
-# %F{green}└─ %f%F{blue}%#%f '
-# RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)  (%*)'
-# RPROMPT='%W%*'
-RPROMPT=''
+# %F{green}┌─  %f%F{white}%B%~%b
+# %F{green}└─ %f%F{blue}>%f '
+# # RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)  (%*)'
+# RPROMPT='%*'
+# RPROMPT=''
 
 # alias
 alias ll='ls -l'
@@ -140,10 +173,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lsla='ls -lahF'
 alias sudo='sudo '
-alias vim='~/appimage/nvim.appimage'
+# alias vim='~/appimage/nvim.appimage'
 alias ls='lsd -la'
 alias e='exit'
-alias vimdiff='vim -d'
+alias vim='nvim'
+alias vimdiff='nvim -d'
 alias gs='git status'
 alias gd='git diff'
 alias ga='git add'
@@ -183,25 +217,25 @@ GIT_PS1_SHOWUPSTREAM=auto
 #    install_powerline_precmd
 #fi
 
-if [[ ${TERM} != "linux" ]]; then
-    function powerline_precmd() {
-        # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
-        PS1="
-$(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
-        # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
-         # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
-    }
-    function install_powerline_precmd() {
-        for s in "${precmd_functions[@]}"; do
-            if [ "$s" = "powerline_precmd" ]; then
-                return
-            fi
-        done
-        precmd_functions+=(powerline_precmd)
-    }
+# if [[ ${TERM} != "linux" ]]; then
+#     function powerline_precmd() {
+#         # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
+#         PS1="
+# $(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
+#         # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
+#          # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
+#     }
+#     function install_powerline_precmd() {
+#         for s in "${precmd_functions[@]}"; do
+#             if [ "$s" = "powerline_precmd" ]; then
+#                 return
+#             fi
+#         done
+#         precmd_functions+=(powerline_precmd)
+#     }
 
-    install_powerline_precmd
-fi
+#     install_powerline_precmd
+# fi
 
 # tmux/screenの自動起動設定
 #  Note: .bashrc or .zshrc に設定して使用して下さい。

@@ -18,21 +18,21 @@ source ~/.config/nvim/plugins/preview-markdown.rc.vim
 '''
 
 # ステータスラインの表示内容強化
-# [[plugins]]
-# repo = 'itchyny/lightline.vim'
-# hook_add = '''
-# source ~/.config/nvim/plugins/lightline.rc.vim
-# '''
-
 [[plugins]]
-repo = 'vim-airline/vim-airline'
-depends = ['vim-airline-themes']
+repo = 'itchyny/lightline.vim'
 hook_add = '''
-source ~/.config/nvim/plugins/vim-airline.rc.vim
+source ~/.config/nvim/plugins/lightline.rc.vim
 '''
 
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+# [[plugins]]
+# repo = 'vim-airline/vim-airline'
+# depends = ['vim-airline-themes']
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-airline.rc.vim
+# '''
+
+# [[plugins]]
+# repo = 'vim-airline/vim-airline-themes'
 
 # ステータスラインにbranch名
 [[plugins]]
@@ -63,18 +63,18 @@ repo = 'nathanaelkane/vim-indent-guides'
 # '''
 
 # solarized
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-hook_add = '''
-source ~/.config/nvim/plugins/colors.rc.vim
-'''
-
-# onedark
 # [[plugins]]
-# repo = 'joshdick/onedark.vim'
+# repo = 'altercation/vim-colors-solarized'
 # hook_add = '''
 # source ~/.config/nvim/plugins/colors.rc.vim
 # '''
+
+# onedark
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/colors.rc.vim
+'''
 
 [[plugins]]
 repo = 'gkeep/iceberg-dark'

@@ -60,6 +60,19 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 
+" vim and vscode
+call plug#begin('~/.config/nvim/plugged')
+if exists('g:vscode')
+  Plug 'tpope/vim-commentary'
+
+  " □や○文字が崩れる問題を解決
+  set ambiwidth=single
+else
+  " □や○文字が崩れる問題を解決
+  set ambiwidth=double
+endif
+call plug#end()
+
 " option ---------------------------------------------------------------
 " 保存時の文字コード
 set fileencoding=utf-8
@@ -67,8 +80,6 @@ set fileencoding=utf-8
 set fileencodings=ucs-boms,utf-8,euc-jp,cp932
 " 改行コードの自動判別. 左側が優先される
 set fileformats=unix,dos,mac
-" □や○文字が崩れる問題を解決
-set ambiwidth=double
 " レジスタ、クリップボードの共有
 set clipboard+=unnamed,unnamedplus
 " iTerm2など既に256色環境なら無くても良い
@@ -160,13 +171,13 @@ endif
 augroup filetype
   autocmd!
   " ts
-  autocmd FileType typescript inoremap <C-s><C-f> <Esc>:<C-u>Format<CR>i
+  autocmd FileType typescript inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
   " tsx
-  autocmd FileType typescriptreact inoremap <C-s><C-f> <Esc>:<C-u>Format<CR>i
+  autocmd FileType typescriptreact inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
   " js
-  autocmd FileType javascript inoremap <C-s><C-f> <Esc>:<C-u>Format<CR>i
+  autocmd FileType javascript inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
   " jsx
-  autocmd FileType javascriptreact inoremap <C-s><C-f> <Esc>:<C-u>Format<CR>i
+  autocmd FileType javascriptreact inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
 augroup END
 
 " <Ctrl+q>で終了
@@ -174,14 +185,14 @@ nnoremap <silent> <C-q> :<C-u>q<CR>
 nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
 " ウインドウ
-nnoremap wh <C-w>h
-nnoremap wH <C-w>H
-nnoremap wj <C-w>j
-nnoremap wJ <C-w>J
-nnoremap wk <C-w>k
-nnoremap wK <C-w>K
-nnoremap wl <C-w>l
-nnoremap wL <C-w>L
+nnoremap sh <C-w>h
+nnoremap sH <C-w>H
+nnoremap sj <C-w>j
+nnoremap sJ <C-w>J
+nnoremap sk <C-w>k
+nnoremap sK <C-w>K
+nnoremap sl <C-w>l
+nnoremap sL <C-w>L
 
 " タブ
 nnoremap <silent> tn :<C-u>tabnew<CR>
