@@ -62,15 +62,15 @@ endif
 
 " vim and vscode
 call plug#begin('~/.config/nvim/plugged')
-if exists('g:vscode')
-  Plug 'tpope/vim-commentary'
+  if exists('g:vscode')
+    Plug 'tpope/vim-commentary'
 
+    " □や○文字が崩れる問題を解決
+    set ambiwidth=single
+  else
   " □や○文字が崩れる問題を解決
-  set ambiwidth=single
-else
-  " □や○文字が崩れる問題を解決
-  set ambiwidth=double
-endif
+    set ambiwidth=double
+  endif
 call plug#end()
 
 " option ---------------------------------------------------------------
