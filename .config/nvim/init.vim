@@ -5,7 +5,6 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-
 " dein.vim settings {{{
 " install dir {{{
 let s:dein_dir = expand('~/.config/nvim/dein')
@@ -222,4 +221,16 @@ let g:python3_host_prog = '/usr/bin/python3'
 augroup markdown
   autocmd!
   autocmd FileType markdown inoremap <C-s> <Esc>:<C-u>PreviewMarkdown right<CR><C-w>h
+augroup END
+
+
+
+
+" inoremap <silent> <Esc> <Esc>:<C-u>call system('fcitx-remote -o')<CR>
+augroup IME
+  if has('unix')
+    autocmd!
+    autocmd InsertLeave * call system('fcitx-remote -o')
+    autocmd InsertEnter * call system('fcitx-remote -c')
+  endif
 augroup END
