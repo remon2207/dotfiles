@@ -152,9 +152,9 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
 # プロンプトカスタマイズ
-PROMPT='
-%F{white}%B[%~]%b%f %F{cyan}$vcs_info_msg_0_%f
- %F{blue}%B>%b%f '
+# PROMPT='
+# %F{white}%B[%~]%b%f %F{cyan}$vcs_info_msg_0_%f
+#  %F{blue}%B>%b%f '
  RPROMPT=''
 
 
@@ -220,25 +220,25 @@ GIT_PS1_SHOWUPSTREAM=auto
 #    install_powerline_precmd
 #fi
 
-# if [[ ${TERM} != "linux" ]]; then
-#     function powerline_precmd() {
-#         # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
-#         PS1="
-# $(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
-#         # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
-#          # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
-#     }
-#     function install_powerline_precmd() {
-#         for s in "${precmd_functions[@]}"; do
-#             if [ "$s" = "powerline_precmd" ]; then
-#                 return
-#             fi
-#         done
-#         precmd_functions+=(powerline_precmd)
-#     }
+if [[ ${TERM} != "linux" ]]; then
+    function powerline_precmd() {
+        # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
+        PS1="
+$(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
+        # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
+         # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
+    }
+    function install_powerline_precmd() {
+        for s in "${precmd_functions[@]}"; do
+            if [ "$s" = "powerline_precmd" ]; then
+                return
+            fi
+        done
+        precmd_functions+=(powerline_precmd)
+    }
 
-#     install_powerline_precmd
-# fi
+    install_powerline_precmd
+fi
 
 # tmux/screenの自動起動設定
 #  Note: .bashrc or .zshrc に設定して使用して下さい。
