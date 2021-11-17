@@ -153,7 +153,7 @@ precmd () { vcs_info }
 
 # プロンプトカスタマイズ
 PROMPT='
- %F{white}%B%~%b%f %F{cyan}$vcs_info_msg_0_%f
+%F{white}%B[%~]%b%f %F{cyan}$vcs_info_msg_0_%f
  %F{blue}>%f '
  RPROMPT=''
 

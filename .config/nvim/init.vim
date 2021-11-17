@@ -62,6 +62,7 @@ endif
 " vim or vscode
 call plug#begin('~/.config/nvim/plugged')
   if exists('g:vscode')
+    " plugin
     Plug 'tpope/vim-commentary'
 
     " □や○文字が崩れる問題を解決
