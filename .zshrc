@@ -154,7 +154,7 @@ precmd () { vcs_info }
 # プロンプトカスタマイズ
 PROMPT='
 %F{white}%B[%~]%b%f %F{cyan}$vcs_info_msg_0_%f
- %F{blue}>%f '
+ %F{blue}%B>%b%f '
  RPROMPT=''
 
 
@@ -182,9 +182,9 @@ alias vimdiff='nvim -d'
 alias gs='git status'
 alias gd='git diff'
 alias ga='git add'
-alias ga-p='git add -p'
+alias gap='git add -p'
 alias gc='git commit'
-alias gc-m='git commit -m'
+alias gcm='git commit -m'
 alias gp='git push'
 alias rmf='rm -rf'
 alias sshremon='ssh -i ~/.ssh/ed25519_ssh_remon_pc -p 53927 remon@192.168.1.36'
