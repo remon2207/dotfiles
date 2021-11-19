@@ -18,7 +18,7 @@ set $mod Mod4
 # font pango:HackGenNerd Console 10
 # font pango:JetBrains Mono 10
 # font pango:FiraCode Nerd Font 10
-font pango:Ricty 10
+font pango:RictyDiscord Nerd Font 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -31,7 +31,11 @@ font pango:Ricty 10
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id fcitx-autostart
 # exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/reflected.jpg"
-exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
+# exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
+# exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/89.png"
+exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/76.jpg"
+# exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/72.png"
+# exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/29.jpg"
 # exec --no-startup-id "$HOME/.config/polybar/launch.sh --forest"
 exec --no-startup-id picom -b
 exec --no-startup-id slack
@@ -39,6 +43,7 @@ exec --no-startup-id slack
 # start apps
 bindsym $mod+F2 exec --no-startup-id google-chrome-stable
 bindsym $mod+F1 exec --no-startup-id alacritty -e ranger
+
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -247,9 +252,7 @@ gaps outer 10
 # finds out, if available)
 bar {
         status_command i3status
-        # status_command i3blocks
-        output primary
-        # position top
+        tray_output primary
 }
 
 #

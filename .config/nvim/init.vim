@@ -139,6 +139,9 @@ set list
 " set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
 
+" swap無効
+set noswapfile
+
 " 改行時の自動コメントアウトを無効化
 au FileType * setlocal formatoptions-=r
 au FileType * setlocal formatoptions-=o
