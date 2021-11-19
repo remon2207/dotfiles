@@ -1,4 +1,7 @@
 //@theme "/home/remon/.config/rofi/themes/iceberg-dark.rasi"
 //@theme "/usr/share/rofi/themes/solarized.rasi"
 //@theme "/usr/share/rofi/themes/arthur.rasi"
-@theme "/usr/share/rofi/themes/solarized.rasi"
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+//@theme "/home/remon/.config/rofi/themes/iceberg-dark.rasi"
+//@theme "/usr/share/rofi/themes/solarized.rasi"
+@theme "/home/remon/.config/rofi/themes/iceberg-dark.rasi"

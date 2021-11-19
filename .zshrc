@@ -115,15 +115,15 @@ bindkey "^N" history-beginning-search-forward-end
 # setopt prompt_subst
 
 # vimのインサートモードとノーマルモードを表示
-function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
-    VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
-    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     VIM_NORMAL="%F{208}⮀ % NORMAL ⮀%f"
+#     VIM_INSERT="%F{075}⮀ % INSERT ⮀%f"
+#     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 
 # git-promptの読み込み
