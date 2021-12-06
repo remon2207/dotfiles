@@ -189,6 +189,8 @@ alias gp='git push'
 alias rmf='rm -rf'
 alias sshremon='ssh -i ~/.ssh/ed25519_ssh_remon_pc -p 53927 remon@192.168.1.36'
 alias sshlenovo='ssh -i ~/.ssh/ed25519_ssh_lenovo_ubuntu_connect_pc -p 58731 lenovo-ubuntu@192.168.1.78'
+alias sysctl='sudo systemctl'
+
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=(path/to/zsh-completions/src $fpath)
@@ -247,20 +249,20 @@ fi
 #  デタッチ済みセッションが存在すればアタッチし、なければ新規セッションを生成
 #  tmuxを優先して起動し、tmuxが使えなければscreenを起動する
 #
-if [ -z "$TMUX" -a -z "$STY" ]; then
-    if type tmuxx >/dev/null 2>&1; then
-        tmuxx
-    elif type tmux >/dev/null 2>&1; then
-        if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
-            # デタッチ済みセッションが存在する
-            tmux attach && echo "tmux attached session "
-        else
-            tmux new-session && echo "tmux created new session"
-        fi
-    elif type screen >/dev/null 2>&1; then
-        screen -rx || screen -D -RR
-    fi
-fi
+# if [ -z "$TMUX" -a -z "$STY" ]; then
+#     if type tmuxx >/dev/null 2>&1; then
+#         tmuxx
+#     elif type tmux >/dev/null 2>&1; then
+#         if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
+#             # デタッチ済みセッションが存在する
+#             tmux attach && echo "tmux attached session "
+#         else
+#             tmux new-session && echo "tmux created new session"
+#         fi
+#     elif type screen >/dev/null 2>&1; then
+#         screen -rx || screen -D -RR
+#     fi
+# fi
 source /usr/share/nvm/init-nvm.sh
 
 # peco
@@ -322,7 +324,7 @@ export FZF_DEFAULT_OPTS="
 export FZF_CTRL_T_COMMAND="fd --type f -H -E .git "
 export FZF_CTRL_T_OPTS="
     --select-1 --exit-0
-    --bind 'ctrl-l:execute(tmux splitw -h -- $HOME/appimage/nvim.appimage {})'
+    --bind 'ctrl-l:execute(tmux splitw -h -- /usr/bin/nvim {})'
     --bind '>:reload($FZF_CTRL_T_COMMAND -H -E .git )'
     --bind '<:reload($FZF_CTRL_T_COMMAND)'
     --preview 'bat -r :100 --color=always --style=header,grid {}'"
