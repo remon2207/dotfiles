@@ -8,7 +8,7 @@ else
     echo "zsh is not installed"
     echo "Installing zsh"
     echo "-----------------------------------"
-    pacman -S zsh
+    sudo pacman -S zsh
 fi
 
 # curlがインストールされているか確認
@@ -19,7 +19,7 @@ else
     echo "curl is not installed"
     echo "Installing curl"
     echo "-----------------------------------"
-    pacman -S curl
+    sudo pacman -S curl
 fi
 
 # wgetがインストールされているか確認
@@ -30,7 +30,7 @@ else
     echo "wget is not installed"
     echo "Installing wget"
     echo "-----------------------------------"
-    pacman -S wget
+    sudo pacman -S wget
 fi
 
 # lsdがインストールされているか確認
@@ -41,7 +41,7 @@ else
     echo "lsd is not installed"
     echo "Installing lsd"
     echo "-----------------------------------"
-    pacman -S lsd
+    sudo pacman -S lsd
 fi
 # batのインストール確認
 bat --version > /dev/null 2>&1
@@ -51,7 +51,7 @@ else
     echo "bat is not installed"
     echo "Installing bat"
     echo "-----------------------------------"
-    pacman -S bat
+    sudo pacman -S bat
 fi
 
 # fzfのインストール確認
@@ -62,7 +62,7 @@ else
     echo "fzf is not installed"
     echo "Installing fzf"
     echo "-----------------------------------"
-    pacman -S fzf
+    sudo pacman -S fzf
 fi
 
 # fdのインストール確認
@@ -73,7 +73,7 @@ else
     echo "fd is not installed"
     echo "Installing fd"
     echo "-----------------------------------"
-    pacman -S fd
+    sudo pacman -S fd
 fi
 
 # zshをデフォルトシェルにする
