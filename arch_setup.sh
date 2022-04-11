@@ -80,12 +80,12 @@ fi
 chsh -s $(which zsh)
 
 # Rustupのインストール
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-source ~/.zshenv
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# source $HOME/.cargo/env
+# source ~/.zshenv
 # rustup install stable
-rustup override set stable
-rustup update stable
+# rustup override set stable
+# rustup update stable
 
 # paru(AUR)インストール
 cd ~/git
@@ -129,8 +129,8 @@ paru -S nvm
 cd ~/
 paru -S nerd-fonts-hack nerd-fonts-source-code-pro powerline-go
 
-echo 'export PATH=$PATH:~/.local/bin' >> ~/.xprofile
-source ~/.xprofile
+echo 'export PATH="$PATH:~/.local/bin"' >> ~/.zshrc
+source ~/.zshrc
 
 sudo pacman -S python-pip fuse
 pip3 install --user wheel pynvim
