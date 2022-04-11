@@ -1,7 +1,5 @@
 #!/bin/bash
 
-sudo pacman -Syu
-
 # zshがインストールされているか確認
 zsh --version > /dev/null 2>&1
 if [ "$?" -eq 0 ] ; then
@@ -10,7 +8,7 @@ else
     echo "zsh is not installed"
     echo "Installing zsh"
     echo "-----------------------------------"
-    sudo pacman -S zsh
+    pacman -S zsh
 fi
 
 # curlがインストールされているか確認
@@ -21,7 +19,7 @@ else
     echo "curl is not installed"
     echo "Installing curl"
     echo "-----------------------------------"
-    sudo pacman -S curl
+    pacman -S curl
 fi
 
 # wgetがインストールされているか確認
@@ -32,7 +30,7 @@ else
     echo "wget is not installed"
     echo "Installing wget"
     echo "-----------------------------------"
-    sudo pacman -S wget
+    pacman -S wget
 fi
 
 # lsdがインストールされているか確認
@@ -43,7 +41,7 @@ else
     echo "lsd is not installed"
     echo "Installing lsd"
     echo "-----------------------------------"
-    sudo pacman -S lsd
+    pacman -S lsd
 fi
 # batのインストール確認
 bat --version > /dev/null 2>&1
@@ -53,7 +51,7 @@ else
     echo "bat is not installed"
     echo "Installing bat"
     echo "-----------------------------------"
-    sudo pacman -S bat
+    pacman -S bat
 fi
 
 # fzfのインストール確認
@@ -64,7 +62,7 @@ else
     echo "fzf is not installed"
     echo "Installing fzf"
     echo "-----------------------------------"
-    sudo pacman -S fzf
+    pacman -S fzf
 fi
 
 # fdのインストール確認
@@ -75,7 +73,7 @@ else
     echo "fd is not installed"
     echo "Installing fd"
     echo "-----------------------------------"
-    sudo pacman -S fd
+    pacman -S fd
 fi
 
 # zshをデフォルトシェルにする
@@ -103,7 +101,7 @@ paru -S nvm
 
 
 # 依存関係のインストール
-# sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
+# pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
 
 # ビルド
 # cargo build --release
@@ -156,5 +154,5 @@ rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレー�
 # sudo cp movescreen.py /usr/local/bin
 
 #conkyインストール
-# paru -S conky-lua-nv
-# echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
+paru -S conky-lua-nv
+echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
