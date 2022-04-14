@@ -56,18 +56,18 @@ repo = 'nathanaelkane/vim-indent-guides'
 
 # カラースキーマ
 # iceberg
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/iceberg.rc.vim
-'''
+#[[plugins]]
+#repo = 'cocopon/iceberg.vim'
+#hook_add = '''
+#source ~/.config/nvim/plugins/iceberg.rc.vim
+#'''
 
 # solarized
-# [[plugins]]
-# repo = 'altercation/vim-colors-solarized'
-# hook_add = '''
-# source ~/.config/nvim/plugins/solarized.rc.vim
-# '''
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+source ~/.config/nvim/plugins/solarized.rc.vim
+'''
 
 # onedark
 # [[plugins]]
