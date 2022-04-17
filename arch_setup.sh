@@ -88,7 +88,8 @@ chsh -s $(which zsh)
 # rustup update stable
 
 # paru(AUR)インストール
-cd ~/git
+sudo chown remon /usr/local/src
+cd /usr/local/src
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -127,7 +128,7 @@ paru -S nvm
 
 # powerline-shelインストール
 cd ~/
-paru -S nerd-fonts-hack nerd-fonts-source-code-pro powerline-go
+paru -S nerd-fonts-hack powerline-go
 
 echo 'export PATH="$PATH:~/.local/bin"' >> ~/.zshrc
 source ~/.zshrc
@@ -154,5 +155,5 @@ rm -rf $HOME/デスクトップ $HOME/ダウンロード $HOME/テンプレー�
 # sudo cp movescreen.py /usr/local/bin
 
 #conkyインストール
-paru -S conky-lua-nv
-echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
+#paru -S conky-lua-nv
+#echo -e "[Desktop Entry]\nEncoding=UTF-8\nVersion=0.9.4\nType=Application\nName=conky\nComment=\nExec=conky -d\nStartupNotify=false\nTerminal=false\nHidden=false" > ~/.config/autostart/conky.desktop
