@@ -25,7 +25,7 @@ setopt pushd_ignore_dups
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/remon/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -73,8 +73,8 @@ bindkey -v
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
+bindkey "^K" history-beginning-search-backward-end
+bindkey "^J" history-beginning-search-forward-end
 
 # prompt
 # git ブランチ名を色付きで表示させるメソッド
@@ -179,16 +179,7 @@ alias ls='lsd -la'
 alias e='exit'
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias gs='git status'
-alias gd='git diff'
-alias ga='git add'
-alias gap='git add -p'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gp='git push'
 alias rmf='rm -rf'
-alias sshremon='ssh -i ~/.ssh/ed25519_ssh_remon_pc -p 53927 remon@192.168.1.36'
-alias sshlenovo='ssh -i ~/.ssh/ed25519_ssh_lenovo_ubuntu_connect_pc -p 58731 lenovo-ubuntu@192.168.1.78'
 alias sysctl='sudo systemctl'
 
 # plugin
