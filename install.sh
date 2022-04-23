@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 
@@ -16,4 +16,4 @@ do
     ln -snfv ~/dotfiles/"$f" $HOME/
 done
 ln -snfv ~/dotfiles/.config/* $HOME/.config/
-sudo cp -rf fonts /usr/share/
+# sudo cp -rf fonts /usr/share/
