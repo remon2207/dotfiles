@@ -59,7 +59,9 @@ elif [[ "$1" == "--colorblocks" ]]; then
 
 elif [[ "$1" == "--forest" ]]; then
 	style="forest"
-	launch_bar
+	# launch_bar
+  polybar DP-2  -c ~/.config/polybar/forest/launch.sh &
+  polybar HDMI-0 -c ~/.config/polybar/forest/launch.sh &
 
 elif [[ "$1" == "--pwidgets" ]]; then
 	style="pwidgets"

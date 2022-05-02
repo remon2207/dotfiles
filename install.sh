@@ -13,7 +13,13 @@ do
     [[ "$f" == ".config" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
 
-    ln -snfv ~/dotfiles/"$f" $HOME/
+    ln -snfv $HOME/dotfiles/${f} $HOME/
 done
-ln -snfv ~/dotfiles/.config/* $HOME/.config/
-# sudo cp -rf fonts /usr/share/
+
+for conf in .config/*
+do
+  ln -snfv $HOME/dotfiles/${conf} $HOME/.config/
+done
+
+sudo ln -snfv $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+sudo ln -snfv $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
