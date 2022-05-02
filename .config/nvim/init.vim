@@ -7,10 +7,20 @@ augroup END
 
 " vim or vscode
 if exists('g:vscode')
+  call plug#begin('~/.config/nvim/plugged')
+  Plug 'tpope/vim-commentary'
+  Plug 'asvetliakov/vim-easymotion'
+  call plug#end()
 
   " □や○文字が崩れる問題を解決
   set ambiwidth=single
 
+  if executable('fcitx5')
+    autocmd InsertLeave * :call system('fcitx5-remote -c')
+    autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+  endif
+
+ nmap s <Plug>(easymotion-s2)
 else
   " dein.vim settings {{{
   " install dir {{{
@@ -239,9 +249,17 @@ augroup IME
   endif
 augroup END
 
+if executable('fcitx5')
+   autocmd InsertLeave * :call system('fcitx5-remote -c')
+   autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+endif
 " augroup IME
 "   if has('unix')
 "     autocmd!
 "     autocmd <C-@> call system('fcitx-remote -o')
 "   endif
 " augroup END
+
+
+" vim-operator-replace
+map _ <Plug>(operator-replace)

@@ -8,14 +8,18 @@
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
 #
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:SauceCodePro Nerd Font 10
-font pango:SauceCodePro 10
+# font pango:PlemolJP 10
 # font pango:"SauceCodePro Nerd Font" 10
-# font pango:HackGenNerd Console 10
+# font pango:HackGen 10
+font pango:Noto Sans CJK JP 10
+# font pango:Cica 10
+# font pango:IPAGothic 10
+# font pango:IBM Plex Sans JP 10
 # font pango:JetBrains Mono 7
 # font pango:FiraCode Nerd Font 8
 # font pango:RictyDiscord Nerd Font 10
@@ -29,26 +33,34 @@ font pango:SauceCodePro 10
 
 # autostart apps
 exec --no-startup-id "dex --autostart --environment i3"
-exec --no-startup-id "fcitx-autostart"
+exec --no-startup-id "bash $HOME/scripts/xrandr-setup.sh"
+exec --no-startup-id "fcitx5"
 # exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/reflected.jpg"
 # exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
 # exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/89.png"
-exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/76.jpg"
+#exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/76.jpg"
 # exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/72.png"
 # exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/29.jpg"
-# exec --no-startup-id "$HOME/.config/polybar/launch.sh --forest"
+# exec --no-startup-id "feh --bg-fill $HOME/.local/wallpapers/iceberg/iceberg-night.png"
+# exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/awesome.png"
+exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
+exec --no-startup-id "$HOME/.config/polybar/forest/launch.sh"
 exec --no-startup-id "picom -b"
-exec --no-startup-id "slack"
+# exec --no-startup-id "slack"
 exec --no-startup-id "xfce4-power-manager"
 # exec --no-startup-id "xss-lock -- i3lock"
 exec --no-startup-id "xautolock -time 60 -locker i3lock -lockaftersleep"
-exec --no-startup-id "polychromatic-tray-applet"
+# exec --no-startup-id "polychromatic-tray-applet"
 exec --no-startup-id "unclutter"
-exec --no-startup-id "imwheel -b 45"
+# exec --no-startup-id "imwheel -b 45"
+exec --no-startup-id "discord"
+# exec --no-startup-id "conky"
 
 # start apps
 bindsym $mod+F2 exec --no-startup-id google-chrome-stable
 bindsym $mod+F1 exec --no-startup-id alacritty -e ranger
+bindsym Ctrl+Print exec --no-startup-id "scrot -bu $HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`
+bindsym $mod+Ctrl+Print exec --no-startup-id "scrot -s $HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -266,10 +278,10 @@ gaps outer 10
 #         status_command i3status
 #         tray_output primary
 # }
-bar {
-        # status_command i3status
-        tray_output DP-2
-}
+# bar {
+#         # status_command i3status
+#         tray_output DP-2
+# }
 # bar {
 #     font pango:DejaVu Sans Mono, FontAwesome 12
 #     position top

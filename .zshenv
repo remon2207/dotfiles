@@ -1,5 +1,0 @@
-export PATH="$PATH:$HOME/.local/bin:$HOME/appimage:$HOME/.local/share/applications"
-# export BAT_THEME="iceberg"
-# export BAT_THEME="Nord"
-export BAT_THEME="Visual Studio Dark+"
-# export BAT_THEME="Solarized (dark)"

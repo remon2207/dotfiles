@@ -33,6 +33,9 @@ source ~/.config/nvim/plugins/lightline.rc.vim
 
 # [[plugins]]
 # repo = 'vim-airline/vim-airline-themes'
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-airline.rc.vim
+# '''
 
 # ステータスラインにbranch名
 [[plugins]]
@@ -56,24 +59,44 @@ repo = 'nathanaelkane/vim-indent-guides'
 
 # カラースキーマ
 # iceberg
-#[[plugins]]
-#repo = 'cocopon/iceberg.vim'
-#hook_add = '''
-#source ~/.config/nvim/plugins/iceberg.rc.vim
-#'''
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/iceberg.rc.vim
+# '''
+
+# gruvbox
+# [[plugins]]
+# repo = 'morhetz/gruvbox'
+# hook_add = '''
+# source ~/.config/nvim/plugins/gruvbox.rc.vim
+# '''
+
+# dracula
+# [[plugins]]
+# repo = 'dracula/vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/dracula.rc.vim
+# '''
 
 # solarized
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-hook_add = '''
-source ~/.config/nvim/plugins/solarized.rc.vim
-'''
+# [[plugins]]
+# repo = 'altercation/vim-colors-solarized'
+# hook_add = '''
+# source ~/.config/nvim/plugins/solarized.rc.vim
+# '''
 
 # onedark
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/onedark.rc.vim
+'''
+
 # [[plugins]]
-# repo = 'joshdick/onedark.vim'
+# repo = 'haishanh/night-owl.vim'
 # hook_add = '''
-# source ~/.config/nvim/plugins/onedark.rc.vim
+# source ~/.config/nvim/plugins/nightowl.rc.vim
 # '''
 
 [[plugins]]
@@ -173,3 +196,13 @@ merged = 0
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depends = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'

@@ -68,13 +68,13 @@ stty stop undef
 
 # keybind
 # vim like
-# bindkey -v
+bindkey -v
 # コマンド履歴補完
 autoload history-search-end
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^K" history-beginning-search-backward-end
-# bindkey "^J" history-beginning-search-forward-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^K" history-beginning-search-backward-end
+bindkey "^J" history-beginning-search-forward-end
 
 # prompt
 # git ブランチ名を色付きで表示させるメソッド
@@ -213,25 +213,25 @@ GIT_PS1_SHOWUPSTREAM=auto
 #    install_powerline_precmd
 #fi
 
-if [[ ${TERM} != "linux" ]]; then
-    function powerline_precmd() {
-        # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
-        PS1="
-$(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
-        # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
-         # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
-    }
-    function install_powerline_precmd() {
-        for s in "${precmd_functions[@]}"; do
-            if [ "$s" = "powerline_precmd" ]; then
-                return
-            fi
-        done
-        precmd_functions+=(powerline_precmd)
-    }
+# if [[ ${TERM} != "linux" ]]; then
+#     function powerline_precmd() {
+#         # PS1="$(powerline-go -error $? -newline -modules venv,user,host,ssh,cwd,perms,git,hg,jobs,exit)"
+#         PS1="
+# $(powerline-go -error $? -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit)"
+#         # eval "$(powerline-go -error $? -eval -newline -modules venv,ssh,cwd,perms,git,hg,jobs,exit -modules-right time)"
+#          # eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -newline -modules 'venv,cwd,perms,git,jobs,exit,root,vgo' -modules-right 'git')"
+#     }
+#     function install_powerline_precmd() {
+#         for s in "${precmd_functions[@]}"; do
+#             if [ "$s" = "powerline_precmd" ]; then
+#                 return
+#             fi
+#         done
+#         precmd_functions+=(powerline_precmd)
+#     }
 
-    install_powerline_precmd
-fi
+#     install_powerline_precmd
+# fi
 
 # tmux/screenの自動起動設定
 #  Note: .bashrc or .zshrc に設定して使用して下さい。
@@ -327,3 +327,15 @@ export FZF_CTRL_T_OPTS="
 #     --bind '>:reload($FZF_CTRL_T_COMMAND -H -E .git )'
 #     --bind '<:reload($FZF_CTRL_T_COMMAND)'
 #     --preview 'bat -r :100 --color=always --style=header,grid {}'"
+
+eval "$(starship init zsh)"
+
+
+
+export PATH="$PATH:$HOME/.local/bin"
+# export BAT_THEME="iceberg"
+# export BAT_THEME="Nord"
+export BAT_THEME="Visual Studio Dark+"
+# export BAT_THEME="Solarized (dark)"
+#export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
