@@ -1,3 +1,9 @@
 [submodule ".tmux/plugins/tmux-fzf"]
 	path = .tmux/plugins/tmux-fzf
 	url = https://github.com/sainnhe/tmux-fzf.git
+[submodule "tmux-fzf"]
+	path = tmux-fzf
+	url = https://github.com/sainnhe/tmux-fzf.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug.git
