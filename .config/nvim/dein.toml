@@ -73,11 +73,11 @@ repo = 'nathanaelkane/vim-indent-guides'
 # '''
 
 # dracula
-# [[plugins]]
-# repo = 'dracula/vim'
-# hook_add = '''
-# source ~/.config/nvim/plugins/dracula.rc.vim
-# '''
+[[plugins]]
+repo = 'dracula/vim'
+hook_add = '''
+source ~/.config/nvim/plugins/dracula.rc.vim
+'''
 
 # solarized
 # [[plugins]]
@@ -87,11 +87,11 @@ repo = 'nathanaelkane/vim-indent-guides'
 # '''
 
 # onedark
-[[plugins]]
-repo = 'joshdick/onedark.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/onedark.rc.vim
-'''
+# [[plugins]]
+# repo = 'joshdick/onedark.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/onedark.rc.vim
+# '''
 
 # [[plugins]]
 # repo = 'haishanh/night-owl.vim'
