@@ -248,19 +248,37 @@ GIT_PS1_SHOWUPSTREAM=auto
 #  デタッチ済みセッションが存在すればアタッチし、なければ新規セッションを生成
 #  tmuxを優先して起動し、tmuxが使えなければscreenを起動する
 #
-if [ -z "$TMUX" -a -z "$STY" ]; then
-    if type tmuxx >/dev/null 2>&1; then
-        tmuxx
-    elif type tmux >/dev/null 2>&1; then
-        if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
-            # デタッチ済みセッションが存在する
-            tmux attach && echo "tmux attached session "
-        else
-            tmux new-session && echo "tmux created new session"
-        fi
-    elif type screen >/dev/null 2>&1; then
-        screen -rx || screen -D -RR
-    fi
+# if [ -z "$TMUX" -a -z "$STY" ]; then
+#     if type tmuxx >/dev/null 2>&1; then
+#         tmuxx
+#     elif type tmux >/dev/null 2>&1; then
+#         if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
+#             # デタッチ済みセッションが存在する
+#             tmux attach && echo "tmux attached session "
+#         else
+#             tmux new-session && echo "tmux created new session"
+#         fi
+#     elif type screen >/dev/null 2>&1; then
+#         screen -rx || screen -D -RR
+#     fi
+# fi
+
+if [[ ! -n $TMUX ]]; then
+  # get the IDs
+  ID="`tmux list-sessions`"
+  if [[ -z "$ID" ]]; then
+    tmux new-session
+  fi
+  create_new_session="Create New Session"
+  ID="$ID\n${create_new_session}:"
+  ID="`echo $ID | $PERCOL | cut -d: -f1`"
+  if [[ "$ID" = "${create_new_session}" ]]; then
+    tmux new-session
+  elif [[ -n "$ID" ]]; then
+    tmux attach-session -t "$ID"
+  else
+    :  # Start terminal normally
+  fi
 fi
 
 # peco
