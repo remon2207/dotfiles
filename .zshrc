@@ -185,9 +185,17 @@ alias sysctl='sudo systemctl'
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=(path/to/zsh-completions/src $fpath)
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source /usr/share/nvm/init-nvm.sh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source ~/.zplug/init.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zplug "dracula/zsh", as:theme
+
 
 # gitプロンプト
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -240,21 +248,20 @@ GIT_PS1_SHOWUPSTREAM=auto
 #  デタッチ済みセッションが存在すればアタッチし、なければ新規セッションを生成
 #  tmuxを優先して起動し、tmuxが使えなければscreenを起動する
 #
-# if [ -z "$TMUX" -a -z "$STY" ]; then
-#     if type tmuxx >/dev/null 2>&1; then
-#         tmuxx
-#     elif type tmux >/dev/null 2>&1; then
-#         if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
-#             # デタッチ済みセッションが存在する
-#             tmux attach && echo "tmux attached session "
-#         else
-#             tmux new-session && echo "tmux created new session"
-#         fi
-#     elif type screen >/dev/null 2>&1; then
-#         screen -rx || screen -D -RR
-#     fi
-# fi
-source /usr/share/nvm/init-nvm.sh
+if [ -z "$TMUX" -a -z "$STY" ]; then
+    if type tmuxx >/dev/null 2>&1; then
+        tmuxx
+    elif type tmux >/dev/null 2>&1; then
+        if tmux has-session && tmux list-sessions | egrep -q '.*]$'; then
+            # デタッチ済みセッションが存在する
+            tmux attach && echo "tmux attached session "
+        else
+            tmux new-session && echo "tmux created new session"
+        fi
+    elif type screen >/dev/null 2>&1; then
+        screen -rx || screen -D -RR
+    fi
+fi
 
 # peco
 # Ctrl+rでpeco呼び出す
@@ -298,15 +305,14 @@ source /usr/share/nvm/init-nvm.sh
 # }
 
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
 export FZF_DEFAULT_OPTS="
     --height 90% --reverse --border
     --prompt='➜  ' --margin=0,1 --inline-info
     --tiebreak=index --no-mouse --filepath-word
-    --color fg:-1,bg:-1,hl:33,fg+:250,bg+:235,hl+:33
-    --color info:37,prompt:37,pointer:230,marker:230,spinner:37
+    --color fg:#f8f8f2,bg:#282a36,hl:#bd93f9
+    --color fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9
+    --color info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6
+    --color marker:#ff79c6,spinner:#ffb86c,header:#6272a4
     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
     --bind='ctrl-a:toggle-all,?:toggle-preview'
@@ -331,11 +337,5 @@ export FZF_CTRL_T_OPTS="
 eval "$(starship init zsh)"
 
 
-
 export PATH="$PATH:$HOME/.local/bin"
-# export BAT_THEME="iceberg"
-# export BAT_THEME="Nord"
-export BAT_THEME="Visual Studio Dark+"
-# export BAT_THEME="Solarized (dark)"
-#export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"

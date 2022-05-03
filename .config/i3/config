@@ -43,8 +43,10 @@ exec --no-startup-id "fcitx5"
 # exec --no-startup-id "feh --bg-fill $HOME/Pictures/wallpaper_linux/29.jpg"
 # exec --no-startup-id "feh --bg-fill $HOME/.local/wallpapers/iceberg/iceberg-night.png"
 # exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/awesome.png"
-exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
-exec --no-startup-id "$HOME/.config/polybar/forest/launch.sh"
+# exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png"
+exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/Dracula/arch.png"
+# exec --no-startup-id "$HOME/.config/polybar/forest/launch.sh"
+exec --no-startup-id "$HOME/.config/polybar/docky/launch.sh"
 exec --no-startup-id "picom -b"
 # exec --no-startup-id "slack"
 exec --no-startup-id "xfce4-power-manager"
@@ -59,8 +61,9 @@ exec --no-startup-id "discord"
 # start apps
 bindsym $mod+F2 exec --no-startup-id google-chrome-stable
 bindsym $mod+F1 exec --no-startup-id alacritty -e ranger
-bindsym Ctrl+Print exec --no-startup-id "scrot -bu $HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`
-bindsym $mod+Ctrl+Print exec --no-startup-id "scrot -s $HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
+bindsym Ctrl+Print exec --no-startup-id scrot -bu "$HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -217,10 +220,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $right       resize shrink width 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
         bindsym $down       resize grow height 10 px or 10 ppt
         bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $left      resize grow width 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt

@@ -1,131 +1,51 @@
-How to install
---------------
+### [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-### Using packages
+#### Install using Git
 
-* Arch Linux: [community/zsh-syntax-highlighting][arch-package] / [AUR/zsh-syntax-highlighting-git][AUR-package]
-* Debian: `zsh-syntax-highlighting` package [in `stretch`][debian-package] (or in [OBS repository][obs-repository])
-* Fedora: [zsh-syntax-highlighting package][fedora-package-alt] in Fedora 24+ (or in [OBS repository][obs-repository])
-* FreeBSD: `pkg install zsh-syntax-highlighting` (port name: [`shells/zsh-syntax-highlighting`][freebsd-port])
-* Gentoo: [app-shells/zsh-syntax-highlighting][gentoo-repository]
-* Mac OS X / Homebrew: [brew install zsh-syntax-highlighting][brew-package]
-* NetBSD: `pkg_add zsh-syntax-highlighting` (port name: [`shells/zsh-syntax-highlighting`][netbsd-port])
-* OpenBSD: `pkg_add zsh-syntax-highlighting` (port name: [`shells/zsh-syntax-highlighting`][openbsd-port])
-* openSUSE / SLE: `zsh-syntax-highlighting` package in [OBS repository][obs-repository]
-* RHEL / CentOS / Scientific Linux: `zsh-syntax-highlighting` package in [OBS repository][obs-repository]
-* Ubuntu: `zsh-syntax-highlighting` package [in Xenial][ubuntu-package] (or in [OBS repository][obs-repository])
-* Void Linux: `zsh-syntax-highlighting package` [in XBPS][void-package]
+If you are a git user, you can install the theme and keep up to date by cloning the repo:
 
-[arch-package]: https://www.archlinux.org/packages/zsh-syntax-highlighting
-[AUR-package]: https://aur.archlinux.org/packages/zsh-syntax-highlighting-git
-[brew-package]: https://github.com/Homebrew/homebrew-core/blob/master/Formula/zsh-syntax-highlighting.rb
-[debian-package]: https://packages.debian.org/zsh-syntax-highlighting
-[fedora-package]: https://apps.fedoraproject.org/packages/zsh-syntax-highlighting
-[fedora-package-alt]: https://bodhi.fedoraproject.org/updates/?packages=zsh-syntax-highlighting
-[freebsd-port]: http://www.freshports.org/textproc/zsh-syntax-highlighting/
-[gentoo-repository]: https://packages.gentoo.org/packages/app-shells/zsh-syntax-highlighting
-[netbsd-port]: http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/shells/zsh-syntax-highlighting/
-[obs-repository]: https://software.opensuse.org/download.html?project=shells%3Azsh-users%3Azsh-syntax-highlighting&package=zsh-syntax-highlighting
-[openbsd-port]: https://cvsweb.openbsd.org/ports/shells/zsh-syntax-highlighting/
-[ubuntu-package]: https://launchpad.net/ubuntu/+source/zsh-syntax-highlighting
-[void-package]: https://github.com/void-linux/void-packages/tree/master/srcpkgs/zsh-syntax-highlighting
+    git clone https://github.com/dracula/zsh-syntax-highlighting.git
 
-See also [repology's cross-distro index](https://repology.org/metapackage/zsh-syntax-highlighting/versions)
+#### Install manually
 
+Download using the [GitHub .zip download](https://github.com/dracula/zsh-syntax-highlighting/archive/master.zip) option and unzip them.
 
-### In your ~/.zshrc
+#### Activating theme
 
-Simply clone this repository and source the script:
+1. Before being able to use the Dracula theme for zsh-syntax-highlighting, you must first have [downloaded and installed the zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md) utility (and be using [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)).
 
-```zsh
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+2. Copy the contents of the [Dracula zsh-syntax-highlighting](https://github.com/dracula/zsh-syntax-highlighting/blob/master/zsh-syntax-highlighting.sh) file, and paste into your zshrc file, likely at `~/.zshrc`.
+
+   * **Note**: If you installed zsh-syntax-highlighting [via git](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#in-your-zshrc), or [site wide](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#system-wide-installation), be sure to paste the contents of the file _before_ the following line in your `~/.zshrc` file:
+
+      ```bash
+      # ...
+      source /some/path/to/your/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      # ...
+      ```
+
+   * **Note**: If you installed zsh-syntax-highlighting [via a plugin manager](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager), be sure to paste the contents of the file _before_ you activate the utility via it's plugin invocation.
+
+3. Start a new zsh session: `exec zsh` and confirm it's working.
+
+#### Implementation
+
+This theme attempts to cover all possible zsh-syntax-highlighting options for the [**main** highlighter](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md). The coloring was implemented/modelled after the [official Dracula color specification](https://spec.draculatheme.com/) as much as logically possible.
+
+As such, the theme is grouped by Dracula spec section; Each section in the spec is 1:1 with a `## <header>` in the theme file. For settings that didn't seem to fall under any of the Dracula spec, they are under the `## No category relevant in spec` section.
+
+Within a section, the options occur in the same order they do on the [main highlighter doc page](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md).
+
+#### Accompanying Screnshot Prompt
+
+Though not related to this theme nor included as a specific Dracula offering, the prompt in the screenshot is [typewritten: "A minimal zsh prompt"](https://typewritten.dev/#/). Relevant `~/.zshrc` settings are so:
+
+```bash
+# Typwritten: https://typewritten.dev/#/installation; Dracula compliment, purple based
+ZSH_THEME="typewritten"
+
+export TYPEWRITTEN_SYMBOL="λ "
+export DRACULA_TYPEWRITTEN_COLOR_MAPPINGS="primary:#d5ccff;secondary:#9580ff;info_neutral_1:#d0ffcc;info_neutral_2:#ffffcc;info_special:#ff9580;info_negative:#ff5555;notice:#ffff80;accent:#d5ccff"
+export TYPEWRITTEN_COLOR_MAPPINGS="${DRACULA_TYPEWRITTEN_COLOR_MAPPINGS}"
+export TYPEWRITTEN_PROMPT_LAYOUT="half_pure"
 ```
-
-  Then, enable syntax highlighting in the current interactive shell:
-
-```zsh
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-```
-
-  If `git` is not installed, download and extract a snapshot of the latest
-  development tree from:
-
-```
-https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz
-```
-
-  Note the `source` command must be **at the end** of `~/.zshrc`.
-
-
-### With a plugin manager
-
-Note that `zsh-syntax-highlighting` must be the last plugin sourced.
-
-The zsh-syntax-highlighting authors recommend manual installation over the use
-of a framework or plugin manager.
-
-This list is incomplete as there are too many
-[frameworks / plugin managers][framework-list] to list them all here.
-
-[framework-list]: https://github.com/unixorn/awesome-zsh-plugins#frameworks
-
-#### [Antigen](https://github.com/zsh-users/antigen)
-
-Add `antigen bundle zsh-users/zsh-syntax-highlighting` as the last bundle in
-your `.zshrc`.
-
-#### [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-1. Clone this repository in oh-my-zsh's plugins directory:
-
-    ```zsh
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    ```
-
-2. Activate the plugin in `~/.zshrc`:
-
-    ```zsh
-    plugins=( [plugins...] zsh-syntax-highlighting)
-    ```
-
-3. Restart zsh (such as by opening a new instance of your terminal emulator).
-
-#### [Prezto](https://github.com/sorin-ionescu/prezto)
-
-Zsh-syntax-highlighting is included with Prezto. See the
-[Prezto documentation][prezto-docs] to enable and configure highlighters.
-
-[prezto-docs]: https://github.com/sorin-ionescu/prezto/tree/master/modules/syntax-highlighting
-
-#### [zgen](https://github.com/tarjoilija/zgen)
-
-Add `zgen load zsh-users/zsh-syntax-highlighting` to the end of your `.zshrc`.
-
-#### [zplug](https://github.com/zplug/zplug)
-
-Add `zplug "zsh-users/zsh-syntax-highlighting", defer:2` to your `.zshrc`.
-
-#### [zplugin](https://github.com/psprint/zplugin)
-
-Add `zplugin load zsh-users/zsh-syntax-highlighting` to the end of your
-`.zshrc`.
-
-
-### System-wide installation
-
-Any of the above methods is suitable for a single-user installation,
-which requires no special privileges.  If, however, you desire to install
-zsh-syntax-highlighting system-wide, you may do so by running
-
-```zsh
-make install
-```
-
-and directing your users to add
-
-```zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-```
-
-to their `.zshrc`s.
