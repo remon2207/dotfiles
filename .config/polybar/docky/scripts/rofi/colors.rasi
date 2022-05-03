@@ -7,5 +7,4 @@
   bar:  #FFFFFFFF;
   fg:   #FFFFFFFF;
   ac:   #8e24aaFF;
-  purple: #bd93f9;
 }

@@ -38,14 +38,14 @@ prompt {
     enabled: 						true;
 	padding: 						0px;
 	background-color: 				@al;
-	text-color: 					@bar;
-	font:							"feather 12";
+	text-color: 					#f8f8f2;
+	font:							"Noto Sans CJK JP 12";
 }
 
 entry {
-    background-color:               @al;
-    text-color:                     @bar;
-    placeholder-color:              @bar;
+    background-color:               #282a36;
+    text-color:                     #f8f8f2;
+    placeholder-color:              #282a36;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
@@ -55,8 +55,8 @@ entry {
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               @ac;
-    text-color:                     @bar;
+    background-color:               #44475a;
+    text-color:                     #f8f8f2;
     expand:                         false;
 	border:							0px;
     border-radius:                  0px;
@@ -66,7 +66,7 @@ inputbar {
 }
 
 listview {
-    background-color:               @al;
+    background-color:               #282a36;
     padding:                        0px;
     columns:                        1;
     lines:                          5;
@@ -77,7 +77,7 @@ listview {
 }
 
 mainbox {
-    background-color:               @al;
+    background-color:               #282a36;
 	border:							0px;
     border-radius:                  0px;
 	border-color:					@ac;
@@ -87,8 +87,8 @@ mainbox {
 }
 
 element {
-    background-color:               @al;
-    text-color:                     @fg;
+    background-color:               #282a36;
+    text-color:                     #f8f8f2;
     orientation:                    horizontal;
     border-radius:                  0px;
     padding:                        10px;
@@ -107,9 +107,9 @@ element-text {
 }
 
 element selected {
-    background-color:               @bga;
-    text-color:                     @fg;
+    background-color:               #6272a4;
+    text-color:                     #f8f8f2;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
-    border-color:                  	@ac;
+    border-color:                   #f1fa8c;
 }
