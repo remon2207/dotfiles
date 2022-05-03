@@ -7,3 +7,9 @@
 [submodule "zplug"]
 	path = zplug
 	url = https://github.com/zplug/zplug.git
+[submodule ".tmux/plugins/tmux"]
+	path = .tmux/plugins/tmux
+	url = https://github.com/dracula/tmux.git
+[submodule ".zplug"]
+	path = .zplug
+	url = https://github.com/zplug/zplug.git
