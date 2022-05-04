@@ -175,7 +175,7 @@ alias l='ls -CF'
 alias lsla='ls -lahF'
 alias sudo='sudo '
 # alias vim='~/appimage/nvim.appimage'
-alias ls='lsd -la'
+alias ls='lsd -lahF'
 alias e='exit'
 alias vim='nvim'
 alias vimdiff='nvim -d'
@@ -283,8 +283,11 @@ GIT_PS1_SHOWUPSTREAM=auto
 
 
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+# [[ $- != *i* ]] && return
+# [[ -z "$TMUX" ]] && exec tmux
+if [[ ! -n $TMUX ]]; then
+  tmux new-session
+fi
 
 # peco
 # Ctrl+rでpeco呼び出す
