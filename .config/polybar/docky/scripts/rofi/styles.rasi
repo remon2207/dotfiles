@@ -8,7 +8,7 @@
  */
 
 configuration {
-	font:							"Noto Sans CJK JP 10";
+	font:							"IBM Plex Sans JP 10";
     show-icons:                     true;
 	icon-theme: 					"Papirus";
     display-drun: 					"";
@@ -46,7 +46,7 @@ textbox-prompt-colon {
 	text-color: 					#f8f8f2;
 	expand: false;
 	str: "";
-	font:							"Noto Sans CJK JP 12";
+	font:							"IBM Plex Sans JP 12";
 }
 
 entry {

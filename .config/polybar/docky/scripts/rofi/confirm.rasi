@@ -5,7 +5,7 @@
 * {
     background-color:       #282a36;
     text-color:             #f8f8f2;
-	font:				 	"Noto Sans CJK JP 10";
+	font:				 	"IBM Plex Sans JP 10";
 }
 
 window {
