@@ -18,18 +18,18 @@ source ~/.config/nvim/plugins/preview-markdown.rc.vim
 '''
 
 # ステータスラインの表示内容強化
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/lightline.rc.vim
-'''
-
 # [[plugins]]
-# repo = 'vim-airline/vim-airline'
-# depends = ['vim-airline-themes']
+# repo = 'itchyny/lightline.vim'
 # hook_add = '''
-# source ~/.config/nvim/plugins/vim-airline.rc.vim
+# source ~/.config/nvim/plugins/lightline.rc.vim
 # '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline.rc.vim
+'''
 
 # [[plugins]]
 # repo = 'vim-airline/vim-airline-themes'
@@ -154,17 +154,23 @@ repo = 'lambdalisue/nerdfont.vim'
 [[plugins]]
 repo = 'lambdalisue/fern-hijack.vim'
 
-# [[plugins]]
-# repo = 'lambdalisue/fern-renderer-devicons.vim'
-# hook_add = '''
-# source ~/.config/nvim/plugins/fern-renderer-devicons.rc.vim
-# '''
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/fern-renderer-devicons.rc.vim
+'''
 
-# [[plugins]]
-# repo = 'preservim/nerdtree'
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 
-# [[plugins]]
-# repo = 'mhinz/vim-startify'
+[[plugins]]
+repo = 'preservim/nerdtree'
+
+[[plugins]]
+repo = 'mhinz/vim-startify'
+
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
 
 # ブラケット自動入力
 # [[plugins]]
@@ -180,8 +186,8 @@ repo = 'lambdalisue/fern-hijack.vim'
 # [[plugins]]
 # repo = 'Xuyuanp/nerdtree-git-plugin'
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
 
 # ウインドウリサイズ
 [[plugins]]

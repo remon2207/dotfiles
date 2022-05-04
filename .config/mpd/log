@@ -1884,3 +1884,7 @@ May 03 08:41 : output: Failed to play on "PipeWire Sound Server" (pipewire): no 
 May 03 08:41 : exception: Failed to open audio output
 May 03 21:29 : player: played "作業用/Home_(Official)_-_Chill_House.mp3"
 May 04 09:12 : config: option 'path' on line 423 was not recognized
+May 04 15:03 : player: played "作業用/Home_(Official)_-_Chill_House.mp3"
+May 04 15:04 : config: option 'path' on line 423 was not recognized
+May 04 15:17 : player: played "作業用/Home_(Official)_-_Chill_House.mp3"
+May 04 15:18 : config: option 'path' on line 423 was not recognized

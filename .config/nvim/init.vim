@@ -145,7 +145,7 @@ else
   au FileType * setlocal formatoptions-=r
   au FileType * setlocal formatoptions-=o
   " □や○文字が崩れる問題を解決
-  set ambiwidth=double
+  " set ambiwidth=double
   nnoremap <Left> <Nop>
   nnoremap <Down> <Nop>
   nnoremap <Up> <Nop>
@@ -241,17 +241,17 @@ endif
 
 
 " inoremap <silent> <Esc> <Esc>:<C-u>call system('fcitx-remote -o')<CR>
-augroup IME
-  if has('unix')
-    autocmd!
-    autocmd InsertLeave * call system('fcitx-remote -o')
-    autocmd InsertEnter * call system('fcitx-remote -c')
-  endif
-augroup END
+" augroup IME
+"   if has('unix')
+"     autocmd!
+"     autocmd InsertLeave * call system('fcitx-remote -o')
+"     autocmd InsertEnter * call system('fcitx-remote -c')
+"   endif
+" augroup END
 
 if executable('fcitx5')
    autocmd InsertLeave * :call system('fcitx5-remote -c')
-   autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+   " autocmd CmdlineLeave * :call system('fcitx5-remote -c')
 endif
 " augroup IME
 "   if has('unix')
@@ -263,3 +263,8 @@ endif
 
 " vim-operator-replace
 map _ <Plug>(operator-replace)
+" augroup my-glyph-palette
+"   autocmd! *
+"   autocmd FileType fern call glyph_palette#apply()
+"   autocmd FileType nerdtree,startify call glyph_palette#apply()
+" augroup END

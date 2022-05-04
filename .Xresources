@@ -18,4 +18,6 @@
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 Xcursor.size: 16
-Xcursor.them: Dracula-cursors
+Xcursor.theme: Dracula-cursors
+xterm*faceName: PlemolJP Console NF:size=12:antialias=true:renderFont:false
+xterm*font: 6x13

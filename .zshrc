@@ -58,7 +58,7 @@ zstyle ':completion:*:manuals' separate-sections true
 
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,bold,underline"
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242,underline"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6c6c6c"
 
 
 # gitのカラー表示
