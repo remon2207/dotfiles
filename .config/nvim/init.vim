@@ -88,6 +88,8 @@ else
     call dein#add('cespare/vim-toml', { 'lazy': 'true', 'on_ft': ['toml'] })
     " JavaScriptのシンタックス
     call dein#add('pangloss/vim-javascript', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx'] })
+    call dein#add('othree/yajs.vim', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact'] })
+    call dein#add('othree/es.next.syntax.vim', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact'] })
     " " JavaScriptのPrettier
     call dein#add('maxmellon/vim-jsx-pretty', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx'] })
     call dein#add('yuezk/vim-js', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx'] })
