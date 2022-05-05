@@ -67,6 +67,7 @@ else
     call dein#add('nathanaelkane/vim-indent-guides')
     " カラースキーム
     call dein#add('dracula/vim')
+    call dein#add('cocopon/iceberg.vim')
     " IDEのような補完
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
     " ファイラー
@@ -94,7 +95,7 @@ else
     call dein#add('maxmellon/vim-jsx-pretty', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx'] })
     call dein#add('yuezk/vim-js', { 'lazy': 'true', 'on_ft': ['javascript', 'javascript.jsx'] })
     " TypeScriptのシンタックス
-    " call dein#add('leafgarland/typescript-vim', { 'lazy': 'true', 'on_ft': ['typescript', 'typescriptreact'] })
+    call dein#add('leafgarland/typescript-vim', { 'lazy': 'true', 'on_ft': ['typescript', 'typescriptreact'] })
     call dein#add('HerringtonDarkholme/yats.vim', { 'lazy': 'true', 'on_ft': ['typescript', 'typescriptreact'] })
     " jsonのシンタックス
     call dein#add('elzr/vim-json', { 'lazy': 'true', 'on_ft' : ['json'] })
@@ -103,6 +104,16 @@ else
     " Dockerfileのシンタックス
     call dein#add('ekalinin/Dockerfile.vim')
     call dein#add('Townk/vim-autoclose')
+    " HTML/CSSの入力補助
+    call dein#add('mattn/emmet-vim')
+    call dein#add('hail2u/vim-css3-syntax')
+    " ブラケットの自動補完
+    call dein#add('jiangmiao/auto-pairs')
+    " 引用符
+    call dein#add('tpope/vim-surround')
+
+    call dein#add('junegunn/fzf')
+    call dein#add('junegunn/fzf.vim')
 
     let s:rc_dir = expand('~/.config/nvim')
     if !isdirectory(s:rc_dir)
@@ -241,19 +252,8 @@ else
 
   augroup filetype
     autocmd!
-    " ts
-    autocmd FileType typescript inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
-    " tsx
-    autocmd FileType typescriptreact inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
-    " js
-    autocmd FileType javascript inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
-    " jsx
-    autocmd FileType javascriptreact inoremap <C-s> <Esc>:<C-u>Format<CR>:<C-u>w<CR>i
+    autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx execute 'Format'
   augroup END
-
-  " <Ctrl+q>で終了
-  nnoremap <silent> <C-q> :<C-u>q<CR>
-  nnoremap <silent> <C-S-q> :<C-u>q!<CR>
 
   " window
   nnoremap sh <C-w>h
@@ -271,8 +271,8 @@ else
   nnoremap th gT
 
   " buffer
-  nnoremap <silent> fj :<C-u>bprev<CR>
-  nnoremap <silent> fk :<C-u>bnext<CR>
+  nnoremap <silent> bh :<C-u>bprev<CR>
+  nnoremap <silent> bl :<C-u>bnext<CR>
 
   " cursor
   inoremap <C-d> <Del>
@@ -489,6 +489,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-tsserver',
+    \ 'coc-prettier',
+    \ 'coc-eslint',
+    \ 'coc-html',
+    \ 'coc-css'
+    \ ]
+
 
 " set background="dark"
 autocmd Colorscheme * highlight Normal ctermbg=none
@@ -497,12 +506,13 @@ autocmd Colorscheme * highlight Folded ctermbg=none
 autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
 " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
 " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-au MyAutoCmd VimEnter * nested colorscheme dracula
+" au MyAutoCmd VimEnter * nested colorscheme dracula
+au MyAutoCmd VimEnter * nested colorscheme iceberg
 
 
 " fern
 " nnoremap <C-n> :Fern . -reveal=% -drawer -width=40<CR>
-nnoremap <C-n> :<C-u>Fern . -reveal=%<CR>
+nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
 let g:fern#default_hidden = 1
 function! FernInit() abort
   nmap <buffer> v <Plug>(fern-action-open:side)
@@ -568,4 +578,28 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline_theme='dracula'
+" let g:airline_theme='dracula'
+let g:airline_theme='iceberg'
+
+
+" emmet-vim
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'ja'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<title></title>\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}

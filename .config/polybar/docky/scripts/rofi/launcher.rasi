@@ -23,10 +23,10 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               @bg;
-    text-color:                     @fg;
+    background-color:               #161821;
+    text-color:                     #c6c8d1;
 	border:							0px 0px 2px 0px;
-	border-color:					@ac;
+	border-color:					#c6c8d1;
     border-radius:                  0px;
 	width:							350px;
     location:                       center;
@@ -37,15 +37,15 @@ window {
 prompt {
     enabled: 						true;
 	padding: 						0px;
-	background-color: 				@al;
-	text-color: 					#f8f8f2;
+	background-color: 				#161821;
+	text-color: 					#c6c8d1;
 	font:							"IBM Plex Sans JP 12";
 }
 
 entry {
-    background-color:               #282a36;
-    text-color:                     #f8f8f2;
-    placeholder-color:              #282a36;
+    background-color:               #161821;
+    text-color:                     #c6c8d1;
+    placeholder-color:              #161821;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
@@ -55,18 +55,18 @@ entry {
 
 inputbar {
 	children: 						[ prompt, entry ];
-    background-color:               #44475a;
-    text-color:                     #f8f8f2;
+    background-color:               #161821;
+    text-color:                     #c6c8d1;
     expand:                         false;
 	border:							0px;
     border-radius:                  0px;
-	border-color:					@ac;
+	border-color:					#c6c8d1;
     margin:                         0px;
     padding:                        12px;
 }
 
 listview {
-    background-color:               #282a36;
+    background-color:               #161821;
     padding:                        0px;
     columns:                        1;
     lines:                          5;
@@ -77,18 +77,18 @@ listview {
 }
 
 mainbox {
-    background-color:               #282a36;
+    background-color:               #161821;
 	border:							0px;
     border-radius:                  0px;
-	border-color:					@ac;
+	border-color:					#c6c8d1;
     children:                       [ inputbar, listview ];
     spacing:                       	0px;
     padding:                        0px;
 }
 
 element {
-    background-color:               #282a36;
-    text-color:                     #f8f8f2;
+    background-color:               #161821;
+    text-color:                     #c6c8d1;
     orientation:                    horizontal;
     border-radius:                  0px;
     padding:                        10px;
@@ -107,9 +107,9 @@ element-text {
 }
 
 element selected {
-    background-color:               #6272a4;
-    text-color:                     #f8f8f2;
+    background-color:               #3f455e;
+    text-color:                     #c6c8d1;
 	border:							0px 0px 0px 0px;
     border-radius:                  0px;
-    border-color:                   #f1fa8c;
+    border-color:                   #c6c8d1;
 }
