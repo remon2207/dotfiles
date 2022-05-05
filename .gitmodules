@@ -13,3 +13,6 @@
 [submodule ".zplug"]
 	path = .zplug
 	url = https://github.com/zplug/zplug.git
+[submodule ".config/polybar/polybar-fcitx5-script"]
+  path = .config/polybar/polybar-fcitx5-script
+  url = https://github.com/polybar/polybar-scripts.git
