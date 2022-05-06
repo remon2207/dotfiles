@@ -1,12 +1,21 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "css",
+    "markdown",
+    "javascript",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact"
+  ],
   "eslint.run": "onSave",
   "eslint.format.enable": true,
   "eslint.autoFixOnSave": true,
   "eslint.autoFix": true,
   "prettier.tabWidth": 2,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.printWidth": 120,
   "prettier.singleQuote": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "tailwindCSS.emmetCompletions": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",

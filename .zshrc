@@ -143,7 +143,7 @@ fi
 #     install_powerline_precmd
 # fi
 function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%K{005}%F{black}⮀%k%f%K{005}%F{black} % NORMAL %k%f%K{black}%F{005}⮀%k%f"
+    VIM_NORMAL="%K{001}%F{black}⮀%k%f%K{001}%F{black} % NORMAL %k%f%K{black}%F{001}⮀%k%f"
     VIM_INSERT="%K{004}%F{black}⮀%k%f%K{004}%F{black} % INSERT %k%f%K{black}%F{004}⮀%k%f"
     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
     RPS2=$RPS1

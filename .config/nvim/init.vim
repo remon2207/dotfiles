@@ -117,6 +117,8 @@ else
     call dein#add('junegunn/fzf.vim')
     " 色を視覚的に表示する
     call dein#add('chrisbra/Colorizer')
+    " html ライブ編集
+    call dein#add('turbio/bracey.vim')
 
     let s:rc_dir = expand('~/.config/nvim')
     if !isdirectory(s:rc_dir)
@@ -261,9 +263,12 @@ else
   augroup fileRead
     autocmd!
     autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
-    " autocmd BufWrite *.js,*.jsx,*.ts,*.tsx execute 'Format'
-    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.html execute 'Format'
   augroup END
+
+  augroup source-vimrc
+  autocmd!
+  autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
+augroup END
 
   " window
   nnoremap sh <C-w>h
@@ -281,8 +286,8 @@ else
   nnoremap th gT
 
   " buffer
-  nnoremap <silent> bh :<C-u>bprev<CR>
-  nnoremap <silent> bl :<C-u>bnext<CR>
+  nnoremap <silent> fh :<C-u>bprev<CR>
+  nnoremap <silent> fl :<C-u>bnext<CR>
 
   " cursor
   inoremap <C-d> <Del>
@@ -309,15 +314,9 @@ endif
 " augroup END
 
 if executable('fcitx5')
-   autocmd InsertLeave * :call system('fcitx5-remote -c')
-   " autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+  autocmd InsertLeave * :call system('fcitx5-remote -c')
+  " autocmd CmdlineLeave * :call system('fcitx5-remote -c')
 endif
-" augroup IME
-"   if has('unix')
-"     autocmd!
-"     autocmd <C-@> call system('fcitx-remote -o')
-"   endif
-" augroup END
 
 
 " プラグインの設定
