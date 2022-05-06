@@ -89,7 +89,7 @@
     frame_width = 3
 
     # Defines color of the frame around the notification window.
-    frame_color = "#6272a4"
+    frame_color = #c6c8d1"
 
     # Define a color for the separator.
     # possible values are:
@@ -111,7 +111,7 @@
 
     ### Text ###
 
-    font = "IBM Plex Sans JP 10"
+    font = "Noto Sans CJK JP 10"
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.

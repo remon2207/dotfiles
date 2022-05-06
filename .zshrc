@@ -119,6 +119,40 @@ if [[ ! -n $TMUX ]]; then
   tmux new-session
 fi
 
+#function powerline_precmd() {
+#    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules-right git)"
+
+#    # Uncomment the following line to automatically clear errors after showing
+#    # them once. This not only clears the error for powerline-go, but also for
+#    # everything else you run in that shell. Don't enable this if you're not
+#    # sure this is what you want.
+
+#    #set "?"
+#}
+
+#function install_powerline_precmd() {
+#  for s in "${precmd_functions[@]}"; do
+#    if [ "$s" = "powerline_precmd" ]; then
+#      return
+#    fi
+#  done
+#  precmd_functions+=(powerline_precmd)
+#}
+
+# if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+#     install_powerline_precmd
+# fi
+function zle-line-init zle-keymap-select {
+    VIM_NORMAL="%K{005}%F{black}⮀%k%f%K{005}%F{black} % NORMAL %k%f%K{black}%F{005}⮀%k%f"
+    VIM_INSERT="%K{004}%F{black}⮀%k%f%K{004}%F{black} % INSERT %k%f%K{black}%F{004}⮀%k%f"
+    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+
 export FZF_DEFAULT_OPTS="
     --height 90% --reverse --border
     --prompt='➜  ' --margin=0,1 --inline-info

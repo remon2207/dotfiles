@@ -112,8 +112,11 @@ else
     " 引用符
     call dein#add('tpope/vim-surround')
 
+    " ファイル検索
     call dein#add('junegunn/fzf')
     call dein#add('junegunn/fzf.vim')
+    " 色を視覚的に表示する
+    call dein#add('chrisbra/Colorizer')
 
     let s:rc_dir = expand('~/.config/nvim')
     if !isdirectory(s:rc_dir)
@@ -252,7 +255,14 @@ else
 
   augroup filetype
     autocmd!
-    autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx execute 'Format'
+    " autocmd Filetype css execute 'ColorHighlight'
+  augroup END
+
+  augroup fileRead
+    autocmd!
+    autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
+    " autocmd BufWrite *.js,*.jsx,*.ts,*.tsx execute 'Format'
+    autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.css,*.scss,*.html execute 'Format'
   augroup END
 
   " window
