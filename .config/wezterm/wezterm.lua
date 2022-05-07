@@ -4,7 +4,7 @@ return {
   font = wezterm.font('HackGenNerd Console'),
   color_scheme = 'iceberg-dark',
   window_background_opacity = 0.9,
-  freetype_load_target = 'HorizontalLcd',
+  -- freetype_load_target = 'HorizontalLcd',
   enable_scroll_bar = true,
   window_padding = {
     left = 0,
