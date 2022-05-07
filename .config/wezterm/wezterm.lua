@@ -52,4 +52,5 @@ return {
     {key = "b", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=-1}},
     {key = "f", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=1}},
   },
+  exit_behavior = 'Close',
 }
