@@ -16,13 +16,13 @@ set $mod Mod1
 # font pango:PlemolJP 10
 # font pango:"SauceCodePro Nerd Font" 10
 # font pango:HackGen 10
-# font pango:Noto Sans CJK JP 10
-font pango:Noto Sans 10
+# font pango:Noto Sans 10
+font pango:NotoSans Nerd Font 10
 # font pango:Cica 10
 # font pango:IPAGothic 10
 # font pango:IBM Plex Sans JP 10
 # font pango:JetBrains Mono 7
-# font pango:FiraCode Nerd Font 8
+# font pango:FiraCode Nerd Font 10
 # font pango:RictyDiscord Nerd Font 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left

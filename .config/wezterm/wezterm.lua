@@ -53,4 +53,5 @@ return {
     {key = "f", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=1}},
   },
   exit_behavior = 'Close',
+  show_tab_index_in_tab_bar = false
 }
