@@ -17,9 +17,10 @@ set $mod Mod1
 # font pango:"SauceCodePro Nerd Font" 10
 # font pango:HackGen 10
 # font pango:Noto Sans CJK JP 10
+font pango:Noto Sans 10
 # font pango:Cica 10
 # font pango:IPAGothic 10
-font pango:IBM Plex Sans JP 10
+# font pango:IBM Plex Sans JP 10
 # font pango:JetBrains Mono 7
 # font pango:FiraCode Nerd Font 8
 # font pango:RictyDiscord Nerd Font 10
@@ -36,7 +37,8 @@ exec --no-startup-id "dex --autostart --environment i3"
 exec --no-startup-id "bash $HOME/scripts/xrandr-setup.sh"
 exec --no-startup-id "fcitx5"
 # exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/Dracula/arch.png"
-exec --no-startup-id "feh --bg-fill $HOME/.local/wallpapers/wallpaper_linux/wp_ATRI.jpg"
+# exec --no-startup-id "feh --bg-fill $HOME/.local/wallpapers/wallpaper_linux/wp_ATRI.jpg"
+exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/wallpaper_linux/75.png"
 # exec --no-startup-id "$HOME/.config/polybar/docky/launch.sh"
 exec --no-startup-id "picom -b"
 # exec --no-startup-id "slack"
@@ -89,7 +91,7 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,7 +206,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec --no-startup-id \
-        "i3-nagbar -t warning -p -f 'pango:IBM Plex Sans JP 10' -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Logout' 'i3-msg exit'"
+        "i3-nagbar -t warning -p -f 'pango:Noto Sans 10' -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Logout' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

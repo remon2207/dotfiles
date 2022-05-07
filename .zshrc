@@ -68,13 +68,13 @@ stty stop undef
 
 # keybind
 # vim like
-bindkey -v
-# コマンド履歴補完
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^K" history-beginning-search-backward-end
-bindkey "^J" history-beginning-search-forward-end
+# bindkey -v
+# # コマンド履歴補完
+# autoload history-search-end
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end history-search-end
+# bindkey "^K" history-beginning-search-backward-end
+# bindkey "^J" history-beginning-search-forward-end
 
 # git
 autoload -Uz vcs_info
@@ -115,9 +115,10 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
-if [[ ! -n $TMUX ]]; then
-  tmux new-session
-fi
+
+# if [[ ! -n $TMUX ]]; then
+#   tmux new-session
+# fi
 
 #function powerline_precmd() {
 #    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules-right git)"
@@ -142,15 +143,15 @@ fi
 # if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
 #     install_powerline_precmd
 # fi
-function zle-line-init zle-keymap-select {
-    VIM_NORMAL="%K{001}%F{black}⮀%k%f%K{001}%F{black} % NORMAL %k%f%K{black}%F{001}⮀%k%f"
-    VIM_INSERT="%K{004}%F{black}⮀%k%f%K{004}%F{black} % INSERT %k%f%K{black}%F{004}⮀%k%f"
-    RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+#     VIM_NORMAL="%K{001}%F{black}⮀%k%f%K{001}%F{black} % NORMAL %k%f%K{black}%F{001}⮀%k%f"
+#     VIM_INSERT="%K{004}%F{black}⮀%k%f%K{004}%F{black} % INSERT %k%f%K{black}%F{004}⮀%k%f"
+#     RPS1="${${KEYMAP/vicmd/$VIM_NORMAL}/(main|viins)/$VIM_INSERT}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 
 export FZF_DEFAULT_OPTS="
