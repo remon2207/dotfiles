@@ -1,7 +1,11 @@
 local wezterm = require 'wezterm';
 
 return {
-  font = wezterm.font('HackGenNerd Console'),
+  -- font = wezterm.font('HackGenNerd Console'),
+  font = wezterm.font_with_fallback({
+    'Cica Nerd Font',
+  }),
+  font_size = 12.0,
   color_scheme = 'iceberg-dark',
   window_background_opacity = 0.9,
   -- freetype_load_target = 'HorizontalLcd',
@@ -53,5 +57,6 @@ return {
     {key = "f", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=1}},
   },
   exit_behavior = 'Close',
-  show_tab_index_in_tab_bar = false
+  show_tab_index_in_tab_bar = false,
+  warn_about_missing_glyphs = false
 }

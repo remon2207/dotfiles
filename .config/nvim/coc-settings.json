@@ -6,7 +6,8 @@
     "javascript",
     "javascript.jsx",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "html"
   ],
   "eslint.run": "onSave",
   "eslint.format.enable": true,

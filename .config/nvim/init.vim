@@ -119,6 +119,12 @@ else
     call dein#add('chrisbra/Colorizer')
     " html ライブ編集
     call dein#add('turbio/bracey.vim')
+    " 自動補完
+    " call dein#add('Shougo/ddc.vim')
+    " call dein#add('vim-denops/denops.vim')
+    " call dein#add('Shougo/ddc-around')
+    " call dein#add('Shougo/ddc-matcher_head')
+    " call dein#add('Shougo/ddc-sorter_rank')
 
     let s:rc_dir = expand('~/.config/nvim')
     if !isdirectory(s:rc_dir)
@@ -250,7 +256,7 @@ else
 
   if has('nvim')
     tnoremap <Esc> <C-\><C-n>
-    nnoremap <C-t> :<C-u>terminal<CR>
+    nnoremap <silent> <C-t> :<C-u>terminal<CR>
     nnoremap <silent> ss :<C-u>sp<CR><C-w>w
     nnoremap <silent> sv :<C-u>vs<CR><C-w>w
   endif
@@ -612,3 +618,7 @@ let g:user_emmet_settings = {
 \    },
 \  },
 \}
+
+
+" fzf.vim
+let g:fzf_command_prefix = 'Fzf'
