@@ -3,7 +3,7 @@ local wezterm = require 'wezterm';
 return {
   -- font = wezterm.font('HackGenNerd Console'),
   font = wezterm.font_with_fallback({
-    'Cica Nerd Font',
+    'Cica'
   }),
   font_size = 12.0,
   color_scheme = 'iceberg-dark',

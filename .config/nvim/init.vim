@@ -584,6 +584,7 @@ augroup END
 
 " fern-renderer-devicons
 let g:fern#renderer = "devicons"
+let g:fern_renderer_devicons_disable_warning = 1
 
 
 " vim-airline
