@@ -1,14 +1,13 @@
 local wezterm = require 'wezterm';
 
 return {
-  -- font = wezterm.font('HackGenNerd Console'),
   font = wezterm.font_with_fallback({
-    'Cica'
+    'JetBrainsMono Nerd Font',
+    'IBM Plex Sans JP'
   }),
-  font_size = 12.0,
+  font_size = 11.0,
   color_scheme = 'iceberg-dark',
   window_background_opacity = 0.9,
-  -- freetype_load_target = 'HorizontalLcd',
   enable_scroll_bar = true,
   window_padding = {
     left = 0,

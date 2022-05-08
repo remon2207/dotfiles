@@ -19,7 +19,8 @@ if exists('g:vscode')
   call plug#end()
 
   " □や○文字が崩れる問題を解決
-  set ambiwidth=single
+  " set ambiwidth=single
+  set ambiwidth=double
 
   if executable('fcitx5')
     autocmd InsertLeave * :call system('fcitx5-remote -c')

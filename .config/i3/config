@@ -17,10 +17,13 @@ set $mod Mod1
 # font pango:"SauceCodePro Nerd Font" 10
 # font pango:HackGen 10
 # font pango:Noto Sans 10
-font pango:NotoSans Nerd Font 10
+# font pango:NotoSans Nerd Font 10
+# font pango:Cica 10
+# font pango:Cica Nerd Font 10
+# font pango:PlemolJP Console NF 10
 # font pango:Cica 10
 # font pango:IPAGothic 10
-# font pango:IBM Plex Sans JP 10
+font pango:IBM Plex Sans JP 10
 # font pango:JetBrains Mono 7
 # font pango:FiraCode Nerd Font 10
 # font pango:RictyDiscord Nerd Font 10
@@ -208,7 +211,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec --no-startup-id \
-        "i3-nagbar -t warning -p -f 'pango:Noto Sans 10' -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Logout' 'i3-msg exit'"
+        "i3-nagbar -t warning -p -f 'pango:IBM Plex Sans JP 10' -m 'Do you really want to exit i3?' -b 'Shutdown' 'systemctl poweroff' -b 'Reboot' 'systemctl reboot' -b 'Suspend' 'systemctl suspend' -b 'Logout' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
