@@ -26,7 +26,7 @@ font pango:NotoSans Nerd Font 10
 # font pango:IBM Plex Sans JP 10
 # font pango:JetBrains Mono 7
 # font pango:FiraCode Nerd Font 10
-# font pango:RictyDiscord Nerd Font 10
+# font pango:RictyDiscord Nerd Font 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
