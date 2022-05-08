@@ -2,10 +2,12 @@ local wezterm = require 'wezterm';
 
 return {
   font = wezterm.font_with_fallback({
-    'JetBrainsMono Nerd Font',
-    'IBM Plex Sans JP'
+    -- 'JetBrainsMono Nerd Font',
+    -- 'Cica'
+    'HackGenNerd Console'
+    -- 'PlemolJP Console NF'
   }),
-  font_size = 11.0,
+  font_size = 12.0,
   color_scheme = 'iceberg-dark',
   window_background_opacity = 0.9,
   enable_scroll_bar = true,
