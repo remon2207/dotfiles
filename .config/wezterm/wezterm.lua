@@ -4,7 +4,8 @@ return {
   font = wezterm.font_with_fallback({
     -- 'JetBrainsMono Nerd Font',
     -- 'Cica'
-    'HackGenNerd Console'
+    -- 'HackGenNerd Console'
+    'RictyDiscord Nerd Font'
     -- 'PlemolJP Console NF'
   }),
   font_size = 12.0,

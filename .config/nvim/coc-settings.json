@@ -18,7 +18,6 @@
   "prettier.singleQuote": true,
   "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "tailwindCSS.emmetCompletions": true,
-  "colors.filetypes": ["*"],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
