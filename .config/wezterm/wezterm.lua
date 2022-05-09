@@ -2,8 +2,8 @@ local wezterm = require 'wezterm';
 
 return {
   font = wezterm.font_with_fallback({
-    'RictyDiscord Nerd Font'
-    -- 'HackGenNerd Console'
+    -- 'RictyDiscord Nerd Font'
+    'HackGenNerd Console'
     -- 'PlemolJP Console NF'
   }),
   font_size = 12.0,
