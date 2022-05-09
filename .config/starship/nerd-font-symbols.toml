@@ -6,7 +6,7 @@ format = """
 read_only = " "
 truncation_length = 100
 truncate_to_repo = false
-format = "[$path](bold #e9b189)[$read_only]($read_only_style) "
+format = "[$path](bold #c6c8d1)[$read_only]($read_only_style) "
 
 [aws]
 symbol = "  "
