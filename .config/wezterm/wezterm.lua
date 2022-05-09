@@ -5,8 +5,9 @@ return {
     -- 'JetBrainsMono Nerd Font',
     -- 'Cica'
     -- 'HackGenNerd Console'
-    'RictyDiscord Nerd Font'
     -- 'PlemolJP Console NF'
+    'RictyDiscord Nerd Font'
+    -- 'Ricty Discord'
   }),
   font_size = 12.0,
   color_scheme = 'iceberg-dark',
