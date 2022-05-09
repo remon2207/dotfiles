@@ -2,11 +2,13 @@ local wezterm = require 'wezterm';
 
 return {
   font = wezterm.font_with_fallback({
+    'FiraCode Nerd Font',
+    -- 'JetBrainsMono Nerd Font',
     -- 'RictyDiscord Nerd Font'
     'HackGenNerd Console'
     -- 'PlemolJP Console NF'
   }),
-  font_size = 12.0,
+  font_size = 10.0,
   color_scheme = 'iceberg-dark',
   window_background_opacity = 0.9,
   enable_scroll_bar = true,
