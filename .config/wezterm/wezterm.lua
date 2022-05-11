@@ -31,31 +31,31 @@ return {
   use_fancy_tab_bar = false,
   colors = {
     tab_bar = {
-      background = "#1e2132",
+      background = "#002b36",
       active_tab = {
-        bg_color = "#3d425b",
-        fg_color = "#c6c8d1",
+        bg_color = "#586e75",
+        fg_color = "#fdf6e3",
         intensity = "Normal",
         underline = "None",
         italic = false,
         strikethrough = false,
       },
       inactive_tab = {
-        bg_color = "#242940",
-        fg_color = "#808080",
+        bg_color = "#073642",
+        fg_color = "#93a1a1",
       },
       inactive_tab_hover = {
-        bg_color = "#3e445e",
-        fg_color = "#c6c8d1",
+        bg_color = "#586e75",
+        fg_color = "#eee8d5",
         italic = false,
       },
       new_tab = {
-        bg_color = "#515e97",
-        fg_color = "#c6c8d1",
+        bg_color = "#657b83",
+        fg_color = "#eee8d5",
       },
       new_tab_hover = {
-        bg_color = "#515e97",
-        fg_color = "#c6c8d1",
+        bg_color = "#93a1a1",
+        fg_color = "#fdf6e3",
         italic = false,
       }
     },

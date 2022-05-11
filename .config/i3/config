@@ -305,32 +305,38 @@ gaps outer 10
 bar {
   position bottom \
   tray_output DP-2 \
+# solarized-dark
+  colors {
+        background #002b36
+        statusline #ffffff
+        separator #666666
+
+        focused_workspace  #4c7899 #285577 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+    }
+# iceberg
   # colors {
-  #   background #000000
+  #   background #1e2132
   #   statusline #ffffff
   #   separator #666666
 
-  #   focused_workspace  #4c7899 #285577 #ffffff
-  #   active_workspace   #333333 #5f676a #ffffff
-  #   inactive_workspace #333333 #222222 #888888
+  #   focused_workspace  #c6c8d1 #a093c7 #ffffff
+  #   active_workspace   #333333 #3f455e #ffffff
+  #   inactive_workspace #333333 #161821 #888888
   #   urgent_workspace   #2f343a #900000 #ffffff
   #   binding_mode       #2f343a #900000 #ffffff
   # }
-  colors {
-    background #1e2132
-    statusline #ffffff
-    separator #666666
-
-    focused_workspace  #c6c8d1 #a093c7 #ffffff
-    active_workspace   #333333 #3f455e #ffffff
-    inactive_workspace #333333 #161821 #888888
-    urgent_workspace   #2f343a #900000 #ffffff
-    binding_mode       #2f343a #900000 #ffffff
-  }
+  # status_command bumblebee-status \
+  #   -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
+  #   -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
+  #   -t iceberg-dark-powerline
   status_command bumblebee-status \
     -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
     -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
-    -t iceberg-dark-powerline
+    -t solarized-dark-awesome
 }
 
 
