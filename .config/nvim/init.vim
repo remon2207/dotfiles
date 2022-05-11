@@ -52,6 +52,7 @@ else
     " カラースキーム
     Jetpack 'dracula/vim'
     Jetpack 'cocopon/iceberg.vim'
+    Jetpack 'joshdick/onedark.vim'
     " IDEのような補完
     Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
     " ファイラー
@@ -79,7 +80,7 @@ else
     Jetpack 'maxmellon/vim-jsx-pretty'
     Jetpack 'yuezk/vim-js'
     " TypeScriptのシンタックス
-    Jetpack 'leafgarland/typescript-vim'
+    " Jetpack 'leafgarland/typescript-vim'
     Jetpack 'HerringtonDarkholme/yats.vim'
     " jsonのシンタックス
     Jetpack 'elzr/vim-json'
@@ -111,6 +112,7 @@ else
 
 
   " option ---------------------------------------------------------------
+  filetype on
   filetype plugin indent on
   syntax enable
   " 保存時の文字コード
@@ -203,6 +205,7 @@ else
   augroup fileRead
     autocmd!
     autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
+    " autocmd BufNewFile,BufRead, *.ts setfiletype typescript
   augroup END
 
   augroup color-highlight
@@ -451,6 +454,7 @@ else
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   " au MyAutoCmd VimEnter * nested colorscheme dracula
   au MyAutoCmd VimEnter * nested colorscheme iceberg
+  " au MyAutoCmd VimEnter * nested colorscheme onedark
 
 
   " fern
@@ -524,6 +528,7 @@ else
   let g:airline#extensions#branch#enabled = 1
   " let g:airline_theme='dracula'
   let g:airline_theme='iceberg'
+  " let g:airline_theme='onedark'
 
 
   " emmet-vim
