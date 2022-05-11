@@ -154,20 +154,35 @@ GIT_PS1_SHOWUPSTREAM=auto
 # zle -N zle-keymap-select
 
 
+# export FZF_DEFAULT_OPTS="
+#     --prompt='➜  ' --margin=0,1 --inline-info
+#     --tiebreak=index --no-mouse --filepath-word
+#     --color fg:#c6c8d1,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6 \
+#     --color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82
+#     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
+#     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
+#     --bind='ctrl-a:toggle-all,?:toggle-preview'
+# "
+# export FZF_DEFAULT_OPTS="
+#     --height 90% --reverse --border
+#     --prompt='➜  ' --margin=0,1 --inline-info
+#     --tiebreak=index --no-mouse --filepath-word
+#     --color fg:#c6c8d1,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6 \
+#     --color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82
+#     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
+#     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
+#     --bind='ctrl-a:toggle-all,?:toggle-preview'
+# "
 export FZF_DEFAULT_OPTS="
     --height 90% --reverse --border
     --prompt='➜  ' --margin=0,1 --inline-info
     --tiebreak=index --no-mouse --filepath-word
-    --color fg:#c6c8d1,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6 \
-    --color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82
+    --color fg:#93a1a1,hl:#268bd2,fg+:#eee8d5,bg+:#002b36,hl+:#268bd2 \
+    --color pointer:#dc322f,border:#073642,info:#cb4b16,spinner:#89b8c2,header:#b4be82,prompt:#b58900,marker:#268bd2
     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
     --bind='ctrl-a:toggle-all,?:toggle-preview'
 "
-# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-# --color fg:#c6c8d1,hl:#84a0c6,fg+:#c6c8d1,bg+:#1e2132,hl+:#84a0c6 \
-# --color pointer:#84a0c6,border:#444b71,info:#e2a478,spinner:#89b8c2,header:#b4be82,prompt:#84a0c6,marker:#b4be82"
-
 export FZF_CTRL_T_COMMAND="fd --type f -H -E .git "
 export FZF_CTRL_T_OPTS="
     --select-1 --exit-0
