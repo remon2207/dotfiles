@@ -196,5 +196,5 @@ eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="/usr/bin/nvim"
-# export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+# export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
