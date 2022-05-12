@@ -67,6 +67,7 @@ return {
     {key = "n", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByLine=1}},
     {key = "b", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=-1}},
     {key = "f", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=1}},
+    {key = "?", mods = "CTRL|SHIFT", action =wezterm.action{Search={CaseSensitiveString=""}}}
   },
   exit_behavior = 'Close',
   show_tab_index_in_tab_bar = false,
