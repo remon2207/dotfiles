@@ -451,14 +451,14 @@ else
   autocmd Colorscheme * highlight NonText ctermbg=none
   autocmd Colorscheme * highlight Folded ctermbg=none
   autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
-  autocmd Colorscheme * highlight Visual ctermbg=232 guibg=none
+  " autocmd Colorscheme * highlight Visual ctermbg=232 guibg=none
   " colorscheme solarized
   " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   " au MyAutoCmd VimEnter * nested colorscheme dracula
-  " au MyAutoCmd VimEnter * nested colorscheme iceberg
+  au MyAutoCmd VimEnter * nested colorscheme iceberg
   " au MyAutoCmd VimEnter * nested colorscheme onedark
-  au MyAutoCmd VimEnter * nested colorscheme solarized
+  " au MyAutoCmd VimEnter * nested colorscheme solarized
 
 
   " fern
@@ -530,10 +530,9 @@ else
   let g:airline#extensions#tabline#formatter = 'default'
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#branch#enabled = 1
-  let g:airline_solarized_bg='dark'
   " let g:airline_theme='dracula'
-  " let g:airline_theme='iceberg'
-  let g:airline_theme='solarized'
+  let g:airline_theme='iceberg'
+  " let g:airline_theme='solarized'
   " let g:airline_theme='onedark'
 
 
