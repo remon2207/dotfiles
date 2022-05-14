@@ -115,7 +115,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "FiraCode Nerd Font"
+    family: "JetBrainsMono Nerd Font"
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -126,7 +126,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "FiraCode Nerd Font"
+    family: "JetBrainsMono Nerd Font"
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -137,7 +137,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "FiraCode Nerd Font"
+    family: "JetBrainsMono Nerd Font"
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -148,7 +148,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "FiraCode Nerd Font"
+    family: "JetBrainsMono Nerd Font"
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -241,38 +241,38 @@ font:
 
 
 # Colors (Solarized Dark)
-colors:
-   # Default colors
-   primary:
-     background: '#002b36' # base03
-     foreground: '#839496' # base0
+# colors:
+#    # Default colors
+#    primary:
+#      background: '#002b36' # base03
+#      foreground: '#839496' # base0
 
-       #    Cursor colors
-   cursor:
-     text:   '#002b36' # base03
-     cursor: '#839496' # base0
+#        #    Cursor colors
+#    cursor:
+#      text:   '#002b36' # base03
+#      cursor: '#839496' # base0
 
-       #    Normal colors
-   normal:
-     black:   '#073642' # base02
-     red:     '#dc322f' # red
-     green:   '#859900' # green
-     yellow:  '#b58900' # yellow
-     blue:    '#268bd2' # blue
-     magenta: '#d33682' # magenta
-     cyan:    '#2aa198' # cyan
-     white:   '#eee8d5' # base2
+#        #    Normal colors
+#    normal:
+#      black:   '#073642' # base02
+#      red:     '#dc322f' # red
+#      green:   '#859900' # green
+#      yellow:  '#b58900' # yellow
+#      blue:    '#268bd2' # blue
+#      magenta: '#d33682' # magenta
+#      cyan:    '#2aa198' # cyan
+#      white:   '#eee8d5' # base2
 
-       #    Bright colors
-   bright:
-     black:   '#00485B' # base03
-     red:     '#cb4b16' # orange
-     green:   '#586e75' # base01
-     yellow:  '#657b83' # base00
-     blue:    '#839496' # base0
-     magenta: '#6c71c4' # violet
-     cyan:    '#93a1a1' # base1
-     white:   '#fdf6e3' # base3
+#        #    Bright colors
+#    bright:
+#      black:   '#00485B' # base03
+#      red:     '#cb4b16' # orange
+#      green:   '#586e75' # base01
+#      yellow:  '#657b83' # base00
+#      blue:    '#839496' # base0
+#      magenta: '#6c71c4' # violet
+#      cyan:    '#93a1a1' # base1
+#      white:   '#fdf6e3' # base3
 
 
 # Colors (Iceberg Dark)
@@ -314,58 +314,58 @@ colors:
 # Template
 # https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 
-# colors:
-#   primary:
-#     background: '#282a36'
-#     foreground: '#f8f8f2'
-#     bright_foreground: '#ffffff'
-#   cursor:
-#     text: CellBackground
-#     cursor: CellForeground
-#   vi_mode_cursor:
-#     text: CellBackground
-#     cursor: CellForeground
-#   search:
-#     matches:
-#       foreground: '#44475a'
-#       background: '#50fa7b'
-#     focused_match:
-#       foreground: '#44475a'
-#       background: '#ffb86c'
-#     bar:
-#       background: '#282a36'
-#       foreground: '#f8f8f2'
-#   hints:
-#     start:
-#       foreground: '#282a36'
-#       background: '#f1fa8c'
-#     end:
-#       foreground: '#f1fa8c'
-#       background: '#282a36'
-#   line_indicator:
-#     foreground: None
-#     background: None
-#   selection:
-#     text: CellForeground
-#     background: '#44475a'
-#   normal:
-#     black: '#21222c'
-#     red: '#ff5555'
-#     green: '#50fa7b'
-#     yellow: '#f1fa8c'
-#     blue: '#bd93f9'
-#     magenta: '#ff79c6'
-#     cyan: '#8be9fd'
-#     white: '#f8f8f2'
-#   bright:
-#     black: '#6272a4'
-#     red: '#ff6e6e'
-#     green: '#69ff94'
-#     yellow: '#ffffa5'
-#     blue: '#d6acff'
-#     magenta: '#ff92df'
-#     cyan: '#a4ffff'
-#     white: '#ffffff'
+colors:
+  primary:
+    background: '#282a36'
+    foreground: '#f8f8f2'
+    bright_foreground: '#ffffff'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '#44475a'
+      background: '#50fa7b'
+    focused_match:
+      foreground: '#44475a'
+      background: '#ffb86c'
+    bar:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+  hints:
+    start:
+      foreground: '#282a36'
+      background: '#f1fa8c'
+    end:
+      foreground: '#f1fa8c'
+      background: '#282a36'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '#44475a'
+  normal:
+    black: '#21222c'
+    red: '#ff5555'
+    green: '#50fa7b'
+    yellow: '#f1fa8c'
+    blue: '#bd93f9'
+    magenta: '#ff79c6'
+    cyan: '#8be9fd'
+    white: '#f8f8f2'
+  bright:
+    black: '#6272a4'
+    red: '#ff6e6e'
+    green: '#69ff94'
+    yellow: '#ffffa5'
+    blue: '#d6acff'
+    magenta: '#ff92df'
+    cyan: '#a4ffff'
+    white: '#ffffff'
 
 # Colors (Gruvbox dark)
 # colors:
