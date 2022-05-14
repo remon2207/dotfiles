@@ -18,9 +18,10 @@ set $mod Mod1
 # font pango:SauceCodePro Nerd Font, Source Han Sans JP 10
 # font pango:Source Han Code JP 10
 # font pango:HackGen 10
+# font pango:JetBrainsMono Nerd Font 10
 # font pango:Noto Sans 10
 font pango:NotoSans Nerd Font 10
-# font pango:UDEV Gothic 35NF 10
+# font pango:UDEV Gothic NF 10
 # font pango:Firge35Nerd 10
 # font pango:Cica 10
 # font pango:Cica Nerd Font 10
