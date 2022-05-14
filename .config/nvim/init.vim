@@ -13,21 +13,22 @@ endif
 
 " vim or vscode
 if exists('g:vscode')
-  call plug#begin('~/.config/nvim/plugged')
-  Plug 'tpope/vim-commentary'
-  Plug 'asvetliakov/vim-easymotion'
-  call plug#end()
+  call jetpack#begin()
+    " 引用符
+    Jetpack 'tpope/vim-surround'
+  call jetpack#end()
 
   " □や○文字が崩れる問題を解決
-  " set ambiwidth=single
-  set ambiwidth=double
+  set ambiwidth=single
 
   if executable('fcitx5')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
     autocmd CmdlineLeave * :call system('fcitx5-remote -c')
   endif
 
- nmap s <Plug>(easymotion-s2)
+  " nmap s <Plug>(easymotion-s2)
+
+  let g:fern_renderer_devicons_disable_warning = 1
 else
   call jetpack#begin()
     " ヘルプの日本語化
@@ -251,13 +252,12 @@ else
   " for Python
   let g:python3_host_prog = '/usr/bin/python3'
 
-  let mapleader = "\<Space>"
 
   if executable('fcitx5')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
   endif
 
-
+" --------------------------------------------------------------------------
   " プラグインの設定
   " vim-operator-replace
   map _ <Plug>(operator-replace)
@@ -456,8 +456,8 @@ else
   " colorscheme solarized
   " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  " au MyAutoCmd VimEnter * nested colorscheme dracula
-  au MyAutoCmd VimEnter * nested colorscheme iceberg
+  au MyAutoCmd VimEnter * nested colorscheme dracula
+  " au MyAutoCmd VimEnter * nested colorscheme iceberg
   " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized
@@ -571,3 +571,5 @@ else
   " vim-floaterm
   let g:floaterm_keymap_new = '<Leader>ft'
 endif
+" neovim and vscode
+let mapleader = "\<Space>"
