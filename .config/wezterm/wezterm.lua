@@ -10,15 +10,19 @@ return {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    -- 'HackGenNerd Console',
+    {
+      family='Inconsolata Nerd Font',
+      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    },
+    'HackGen35 Console',
     -- 'PlemolJP Console NF'
     -- 'Ricty Nerd Font'
-    'RictyDiscord Nerd Font'
-    -- {family='RictyDiscord Nerd Font', weight='Bold'}
+    -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
   font_size = 12.0,
   color_scheme = 'iceberg-dark',
+  -- color_scheme = 'nord',
   -- color_scheme = 'Solarized Dark - Patched',
   window_background_opacity = 0.9,
   enable_scroll_bar = true,
@@ -29,6 +33,7 @@ return {
     bottom = 0,
   },
   use_fancy_tab_bar = false,
+  -- iceberg
   colors = {
     tab_bar = {
       background = "#1e2132",
@@ -60,6 +65,38 @@ return {
       }
     },
   },
+  -- Nord
+  -- colors = {
+  --   tab_bar = {
+  --     background = "#2E3440",
+  --     active_tab = {
+  --       bg_color = "#4C566A",
+  --       fg_color = "#ECEFF4",
+  --       intensity = "Normal",
+  --       underline = "None",
+  --       italic = false,
+  --       strikethrough = false,
+  --     },
+  --     inactive_tab = {
+  --       bg_color = "#3B4252",
+  --       fg_color = "#D8DEE9",
+  --     },
+  --     inactive_tab_hover = {
+  --       bg_color = "#434C5E",
+  --       fg_color = "#E5E9F0",
+  --       italic = false,
+  --     },
+  --     new_tab = {
+  --       bg_color = "#434C5E",
+  --       fg_color = "#D8DEE9",
+  --     },
+  --     new_tab_hover = {
+  --       bg_color = "#4C566A",
+  --       fg_color = "#E5E9F0",
+  --       italic = false,
+  --     }
+  --   },
+  -- },
   keys = {
     {key = "[", mods = "CTRL", action=wezterm.action{ActivateTabRelative=-1}},
     {key = "]", mods = "CTRL", action=wezterm.action{ActivateTabRelative=1}},

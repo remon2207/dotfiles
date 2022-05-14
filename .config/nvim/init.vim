@@ -54,6 +54,7 @@ else
     Jetpack 'cocopon/iceberg.vim'
     Jetpack 'joshdick/onedark.vim'
     Jetpack 'altercation/vim-colors-solarized'
+    Jetpack 'arcticicestudio/nord-vim'
     " IDEのような補完
     Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
     " ファイラー
@@ -457,6 +458,7 @@ else
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   " au MyAutoCmd VimEnter * nested colorscheme dracula
   au MyAutoCmd VimEnter * nested colorscheme iceberg
+  " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized
 
@@ -531,7 +533,8 @@ else
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#branch#enabled = 1
   " let g:airline_theme='dracula'
-  let g:airline_theme='iceberg'
+  " let g:airline_theme='iceberg'
+  " let g:airline_theme='nord'
   " let g:airline_theme='solarized'
   " let g:airline_theme='onedark'
 

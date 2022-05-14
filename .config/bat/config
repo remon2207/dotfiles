@@ -1,4 +1,5 @@
 # Set the theme to "TwoDark"
---theme="iceberg"
+# --theme="iceberg"
 # --theme="Solarized"
 # --theme="Solarized (dark)"
+--theme='Nord'

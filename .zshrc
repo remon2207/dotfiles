@@ -163,6 +163,7 @@ GIT_PS1_SHOWUPSTREAM=auto
 #     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
 #     --bind='ctrl-a:toggle-all,?:toggle-preview'
 # "
+# iceberg
 export FZF_DEFAULT_OPTS="
     --height 90% --reverse --border
     --prompt='➜  ' --margin=0,1 --inline-info
@@ -183,6 +184,19 @@ export FZF_DEFAULT_OPTS="
 #     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
 #     --bind='ctrl-a:toggle-all,?:toggle-preview'
 # "
+# nord
+# export FZF_DEFAULT_OPTS="
+#     --height 90% --reverse --border
+#     --prompt='➜  ' --margin=0,1 --inline-info
+#     --tiebreak=index --no-mouse --filepath-word
+#     --color=fg:#e5e9f0,hl:#81a1c1
+#     --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+#     --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+#     --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
+#     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
+#     --bind='ctrl-a:toggle-all,?:toggle-preview'
+# "
+
 export FZF_CTRL_T_COMMAND="fd --type f -H -E .git "
 export FZF_CTRL_T_OPTS="
     --select-1 --exit-0
