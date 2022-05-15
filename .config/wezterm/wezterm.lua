@@ -2,10 +2,10 @@ local wezterm = require 'wezterm';
 
 return {
   font = wezterm.font_with_fallback({
-    -- {
-    --   family='JetBrainsMono Nerd Font',
-    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    -- },
+    {
+      family='JetBrainsMono Nerd Font',
+      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    },
     -- {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -18,15 +18,16 @@ return {
     -- 'SauceCodePro Nerd Font',
     -- 'Source Han Code JP'
     -- 'HackGen35 Console',
-    'HackGenNerd Console'
+    -- 'HackGenNerd Console'
+    'Cica'
     -- 'PlemolJP Console NF'
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
-  font_size = 12.0,
-  -- color_scheme = 'Dracula',
-  color_scheme = 'Atom',
+  font_size = 11.0,
+  color_scheme = 'Dracula',
+  -- color_scheme = 'Atom',
   -- color_scheme = 'iceberg-dark',
   -- color_scheme = 'nord',
   -- color_scheme = 'Solarized Dark - Patched',

@@ -456,8 +456,8 @@ else
   " colorscheme solarized
   " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  " au MyAutoCmd VimEnter * nested colorscheme dracula
-  au MyAutoCmd VimEnter * nested colorscheme iceberg
+  au MyAutoCmd VimEnter * nested colorscheme dracula
+  " au MyAutoCmd VimEnter * nested colorscheme iceberg
   " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized

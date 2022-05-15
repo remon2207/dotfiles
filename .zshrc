@@ -103,17 +103,17 @@ alias sysctl='sudo systemctl'
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=(path/to/zsh-completions/src $fpath)
-# source /usr/share/zsh/scripts/zplug/init.zsh
-# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-# zplug "dracula/zsh", as:theme
+zplug "dracula/zsh", as:theme
 
 # gitプロンプト
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -121,9 +121,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-if [[ ! -n $TMUX ]]; then
-  tmux new-session
-fi
+# if [[ ! -n $TMUX ]]; then
+#   tmux new-session
+# fi
 
 #function powerline_precmd() {
 #    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules-right git)"
@@ -180,26 +180,26 @@ fi
 #     --bind='ctrl-a:toggle-all,?:toggle-preview'
 # "
 # dracula
-# export FZF_DEFAULT_OPTS="
-#     --height 90% --reverse --border
-#     --prompt='➜  ' --margin=0,1 --inline-info
-#     --tiebreak=index --no-mouse --filepath-word
-#     --color=fg:#f8f8f2,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4
-#     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
-#     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
-#     --bind='ctrl-a:toggle-all,?:toggle-preview'
-# "
 export FZF_DEFAULT_OPTS="
     --height 90% --reverse --border
-    --inline-info
+    --prompt='➜  ' --margin=0,1 --inline-info
     --tiebreak=index --no-mouse --filepath-word
-    --color=dark
-    --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe
-    --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
+    --color=fg:#f8f8f2,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4
     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
     --bind='ctrl-a:toggle-all,?:toggle-preview'
 "
+# export FZF_DEFAULT_OPTS="
+#     --height 90% --reverse --border
+#     --inline-info
+#     --tiebreak=index --no-mouse --filepath-word
+#     --color=dark
+#     --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#4b5263,hl+:#d858fe
+#     --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
+#     --bind='ctrl-w:backward-kill-word,ctrl-x:jump,down:preview-page-down'
+#     --bind='ctrl-z:ignore,ctrl-]:replace-query,up:preview-page-up'
+#     --bind='ctrl-a:toggle-all,?:toggle-preview'
+# "
 # export FZF_DEFAULT_OPTS="
 #     --height 90% --reverse --border
 #     --prompt='➜  ' --margin=0,1 --inline-info
@@ -236,7 +236,7 @@ eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="/usr/bin/nvim"
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-# export STARSHIP_CONFIG="$HOME/.config/starship/dracula.toml"
+# export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/dracula.toml"
 # export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
-# export ZSH_THEME="dracula"
+export ZSH_THEME="dracula"
