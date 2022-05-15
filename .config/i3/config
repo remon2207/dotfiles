@@ -64,11 +64,12 @@ exec --no-startup-id "dunst"
 # start apps
 # bindsym $mod+F2 exec --no-startup-id "google-chrome-stable"
 bindsym $mod+F2 exec --no-startup-id "vivaldi-stable"
-bindsym $mod+F1 exec --no-startup-id "wezterm start ranger"
+# bindsym $mod+F1 exec --no-startup-id "wezterm start ranger"
+bindsym $mod+F1 exec --no-startup-id "alacritty -e ranger"
 bindsym Print exec --no-startup-id "maim /home/$USER/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
 bindsym Ctrl+Print exec --no-startup-id "scrot -bu $HOME/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
 bindsym Shift+Print exec --no-startup-id "maim --select /home/$USER/Pictures/screenshot_`date '+%Y-%m-%d_%H-%M-%S'.png`"
-bindsym $mod+F3 exec --no-startup-id "wezterm start watch nvidia-smi"
+bindsym $mod+F3 exec --no-startup-id "alacritty -e watch nvidia-smi"
 bindsym $mod+F4 exec --no-startup-id "pavucontrol"
 bindsym $mod+F5 exec --no-startup-id "mupdf $HOME/user_db/password.pdf"
 
@@ -102,7 +103,8 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm
+# bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -258,6 +260,16 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused        #333333 #222222 #888888 #292d2e
 client.urgent           #2f343a #900000 #ffffff #900000
 
+# class                 border  bground text    indicator child_border
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+# client.background       #F8F8F2
+
+
 # Examples
 # gaps inner 20
 # gaps outer 5
@@ -289,6 +301,26 @@ gaps outer 10
 #         tray_output primary
 # }
 # bar {
+#     output            DP-2
+#     status_command    i3status
+#     position          top
+#     # mode              hide
+#     workspace_buttons yes
+#     tray_output       none
+    
+#     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+#     colors {
+#         background #000000
+#         statusline #ffffff
+
+#         focused_workspace  #ffffff #285577
+#         active_workspace   #ffffff #333333
+#         inactive_workspace #888888 #222222
+#         urgent_workspace   #ffffff #900000
+#     }
+# }
+# bar {
 #         # status_command i3status
 #         tray_output DP-2
 # }
@@ -307,10 +339,9 @@ gaps outer 10
 #         urgent_workspace #2f343a #900000 #ffffff
 #     }
 # }
-
 bar {
-  position bottom \
-  tray_output DP-2 \
+  position bottom
+  tray_output DP-2
 # solarized-dark
   # colors {
   #       background #002b36
@@ -348,21 +379,43 @@ bar {
   #       binding_mode       #2f343a #900000 #ECEFF4
   #   }
   # Dracula
+  # colors {
+  #       background #282a36
+  #       statusline #f8f8f2
+  #       separator #666666
+
+  #       focused_workspace  #bd93f9 #6272a4 #f8f8f2
+  #       active_workspace   #333333 #5f676a #f8f8f2
+  #       inactive_workspace #333333 #44475a #888888
+  #       urgent_workspace   #2f343a #900000 #f8f8f2
+  #       binding_mode       #2f343a #900000 #f8f8f2
+  #   }
+  # colors {
+  #   background #282A36
+  #   statusline #F8F8F2
+  #   separator  #44475A
+
+  #   focused_workspace  #44475A #44475A #F8F8F2
+  #   active_workspace   #282A36 #44475A #F8F8F2
+  #   inactive_workspace #282A36 #282A36 #BFBFBF
+  #   urgent_workspace   #FF5555 #FF5555 #F8F8F2
+  #   binding_mode       #FF5555 #FF5555 #F8F8F2
+  # }
   colors {
-        background #282a36
-        statusline #f8f8f2
+        background #282C34
+        statusline #ABB2BF
         separator #666666
 
-        focused_workspace  #bd93f9 #6272a4 #f8f8f2
-        active_workspace   #333333 #5f676a #f8f8f2
-        inactive_workspace #333333 #44475a #888888
-        urgent_workspace   #2f343a #900000 #f8f8f2
-        binding_mode       #2f343a #900000 #f8f8f2
+        focused_workspace  #4c7899 #285577 #ABB2BF
+        active_workspace   #333333 #5f676a #ABB2BF
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ABB2BF
+        binding_mode       #2f343a #900000 #ABB2BF
     }
   status_command bumblebee-status \
     -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
     -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
-    -t dracula-powerline
+    -t onedark-powerline
 }
 
 
