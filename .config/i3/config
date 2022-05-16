@@ -21,6 +21,7 @@ set $mod Mod1
 # font pango:JetBrainsMono Nerd Font 10
 # font pango:Noto Sans 10
 font pango:NotoSans Nerd Font 10
+# font pango:FontAwesome 10
 # font pango:UDEV Gothic NF 10
 # font pango:Firge35Nerd 10
 # font pango:Cica 10
@@ -49,6 +50,7 @@ exec --no-startup-id "fcitx5"
 # exec --no-startup-id "feh --bg-fill $HOME/.local/wallpapers/wallpaper_linux/wp_ATRI.jpg"
 exec --no-startup-id "feh --bg-fill /usr/share/backgrounds/wallpaper_linux/75.png"
 # exec --no-startup-id "$HOME/.config/polybar/docky/launch.sh"
+exec --no-startup-id "$HOME/.config/polybar/forest/launsh.sh"
 exec --no-startup-id "picom -b"
 # exec --no-startup-id "slack"
 exec --no-startup-id "xfce4-power-manager"
@@ -340,9 +342,9 @@ gaps outer 10
 #         urgent_workspace #2f343a #900000 #ffffff
 #     }
 # }
-bar {
-  position bottom
-  tray_output DP-2
+# bar {
+#   position bottom
+#   tray_output DP-2
 # solarized-dark
   # colors {
   #       background #002b36
@@ -356,17 +358,17 @@ bar {
   #       binding_mode       #2f343a #900000 #ffffff
   #   }
 # iceberg
-  colors {
-    background #1e2132
-    statusline #ffffff
-    separator #666666
+  # colors {
+  #   background #1e2132
+  #   statusline #ffffff
+  #   separator #666666
 
-    focused_workspace  #c6c8d1 #a093c7 #ffffff
-    active_workspace   #333333 #3f455e #ffffff
-    inactive_workspace #333333 #161821 #888888
-    urgent_workspace   #2f343a #900000 #ffffff
-    binding_mode       #2f343a #900000 #ffffff
-  }
+  #   focused_workspace  #c6c8d1 #a093c7 #ffffff
+  #   active_workspace   #333333 #3f455e #ffffff
+  #   inactive_workspace #333333 #161821 #888888
+  #   urgent_workspace   #2f343a #900000 #ffffff
+  #   binding_mode       #2f343a #900000 #ffffff
+  # }
 # nord
   # colors {
   #       background #2E3440
@@ -414,11 +416,11 @@ bar {
   #       urgent_workspace   #2f343a #900000 #ABB2BF
   #       binding_mode       #2f343a #900000 #ABB2BF
   #   }
-  status_command bumblebee-status \
-    -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
-    -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
-    -t iceberg-dark-powerline
-}
+  # status_command bumblebee-status \
+  #   -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
+  #   -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
+  #   -t iceberg-dark-powerline
+# }
 
 
 

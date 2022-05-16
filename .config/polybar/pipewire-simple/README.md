@@ -7,6 +7,7 @@ A script to control pipewire with your mouse buttons and scroll wheel.
 
 ## Dependencies
 
+* `pactl`
 * `pamixer`
 
 Maybe `pavucontrol` is a good idea. In the example it is opened with a right mouse click.
@@ -17,7 +18,7 @@ Maybe `pavucontrol` is a good idea. In the example it is opened with a right mou
 ```ini
 [module/pipewire-simple]
 type = custom/script
-exec = ~/.config/polybar/pipewire.sh
+exec = ~/polybar-scripts/pipewire-simple.sh
 interval = 3
 click-right = exec pavucontrol &
 click-left = ~/polybar-scripts/pipewire-simple.sh --mute &
