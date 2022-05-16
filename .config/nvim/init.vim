@@ -15,7 +15,7 @@ endif
 if exists('g:vscode')
   call jetpack#begin()
     " 引用符
-    Jetpack 'tpope/vim-surround'
+    " Jetpack 'tpope/vim-surround'
   call jetpack#end()
 
   " □や○文字が崩れる問題を解決
@@ -56,6 +56,8 @@ else
     Jetpack 'joshdick/onedark.vim'
     Jetpack 'altercation/vim-colors-solarized'
     Jetpack 'arcticicestudio/nord-vim'
+    Jetpack 'sickill/vim-monokai'
+    Jetpack 'tomasr/molokai'
     " IDEのような補完
     Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
     " ファイラー
@@ -456,8 +458,10 @@ else
   " colorscheme solarized
   " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  au MyAutoCmd VimEnter * nested colorscheme dracula
+  " au MyAutoCmd VimEnter * nested colorscheme dracula
   " au MyAutoCmd VimEnter * nested colorscheme iceberg
+  au MyAutoCmd VimEnter * nested colorscheme monokai
+  " au MyAutoCmd VimEnter * nested colorscheme molokai
   " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized
@@ -537,6 +541,7 @@ else
   " let g:airline_theme='nord'
   " let g:airline_theme='solarized'
   " let g:airline_theme='onedark'
+  " let g:airline_theme='monokai'
 
 
   " emmet-vim
@@ -573,3 +578,4 @@ else
 endif
 " neovim and vscode
 let mapleader = "\<Space>"
+set guicursor=

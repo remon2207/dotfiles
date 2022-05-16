@@ -3,4 +3,5 @@
 # --theme="Solarized"
 # --theme="Solarized (dark)"
 # --theme='Nord'
---theme='Dracula'
+# --theme='Dracula'
+--theme='Monokai Extended'

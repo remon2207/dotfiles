@@ -2,10 +2,10 @@ local wezterm = require 'wezterm';
 
 return {
   font = wezterm.font_with_fallback({
-    {
-      family='JetBrainsMono Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='JetBrainsMono Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
     -- {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -19,16 +19,21 @@ return {
     -- 'Source Han Code JP'
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
-    'Cica'
+    -- 'Cica'
+    'Ricty'
     -- 'PlemolJP Console NF'
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
-  font_size = 11.0,
-  color_scheme = 'Dracula',
+  font_size = 12.0,
+  -- color_scheme = 'Dracula',
   -- color_scheme = 'Atom',
   -- color_scheme = 'iceberg-dark',
+  -- color_scheme = 'Molokai',
+  -- color_scheme = 'Monokai Remastered',
+  color_scheme = 'Monokai Soda',
+  -- color_scheme = 'monokai Vivid',
   -- color_scheme = 'nord',
   -- color_scheme = 'Solarized Dark - Patched',
   window_background_opacity = 0.9,
@@ -105,37 +110,37 @@ return {
   --   },
   -- },
   -- Dracula
-  colors = {
-    tab_bar = {
-      background = "#282a36",
-      active_tab = {
-        bg_color = "#44475a",
-        fg_color = "#f8f8f2",
-        intensity = "Normal",
-        underline = "None",
-        italic = false,
-        strikethrough = false,
-      },
-      inactive_tab = {
-        bg_color = "#242940",
-        fg_color = "#6272a4",
-      },
-      inactive_tab_hover = {
-        bg_color = "#3e445e",
-        fg_color = "#f8f8f2",
-        italic = false,
-      },
-      new_tab = {
-        bg_color = "#44475a",
-        fg_color = "#f8f8f2",
-      },
-      new_tab_hover = {
-        bg_color = "#6272a4",
-        fg_color = "#f8f8f2",
-        italic = false,
-      }
-    },
-  },
+  -- colors = {
+  --   tab_bar = {
+  --     background = "#282a36",
+  --     active_tab = {
+  --       bg_color = "#44475a",
+  --       fg_color = "#f8f8f2",
+  --       intensity = "Normal",
+  --       underline = "None",
+  --       italic = false,
+  --       strikethrough = false,
+  --     },
+  --     inactive_tab = {
+  --       bg_color = "#242940",
+  --       fg_color = "#6272a4",
+  --     },
+  --     inactive_tab_hover = {
+  --       bg_color = "#3e445e",
+  --       fg_color = "#f8f8f2",
+  --       italic = false,
+  --     },
+  --     new_tab = {
+  --       bg_color = "#44475a",
+  --       fg_color = "#f8f8f2",
+  --     },
+  --     new_tab_hover = {
+  --       bg_color = "#6272a4",
+  --       fg_color = "#f8f8f2",
+  --       italic = false,
+  --     }
+  --   },
+  -- },
   keys = {
     {key = "[", mods = "CTRL", action=wezterm.action{ActivateTabRelative=-1}},
     {key = "]", mods = "CTRL", action=wezterm.action{ActivateTabRelative=1}},
