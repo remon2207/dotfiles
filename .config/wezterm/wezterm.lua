@@ -10,17 +10,17 @@ return {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    -- {
-    --   family='Inconsolata Nerd Font',
-    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    -- },
+    {
+      family='Inconsolata Nerd Font',
+      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    },
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
     -- 'Source Han Code JP'
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
-    -- 'Cica'
-    'Ricty'
+    'Cica'
+    -- 'Ricty'
     -- 'PlemolJP Console NF'
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'

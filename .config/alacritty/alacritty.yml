@@ -115,7 +115,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "HackGenNerd Console"
+    family: "Ricty"
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -126,7 +126,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd Console"
+    family: "Ricty"
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -137,7 +137,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd Console"
+    family: "Ricty"
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -148,7 +148,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd Console"
+    family: "Ricty"
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -238,6 +238,35 @@ font:
 #     white:   '#ffffff'
 
 
+# Colors (Molokai Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#1B1D1E'
+    foreground: '#F8F8F2'
+  # Normal colors
+  normal:
+    black:   '#333333'
+    red:     '#C4265E'
+    green:   '#86B42B'
+    yellow:  '#B3B42B'
+    blue:    '#6A7EC8'
+    magenta: '#8C6BC8'
+    cyan:    '#56ADBC'
+    white:   '#E3E3DD'
+  # Bright colors
+  bright:
+    black:   '#666666'
+    red:     '#F92672'
+    green:   '#A6E22E'
+    yellow:  '#E2E22E'
+    blue:    '#819AFF'
+    magenta: '#AE81FF'
+    cyan:    '#66D9EF'
+    white:   '#F8F8F2'
+
+
+
 
 
 # Colors (Solarized Dark)
@@ -275,34 +304,122 @@ font:
 #      white:   '#fdf6e3' # base3
 
 
+# Colors (Monokai Pro)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2D2A2E'
+#     foreground: '#FCFCFA'
+
+#   # Normal colors
+#   normal:
+#     black:   '#403E41'
+#     red:     '#FF6188'
+#     green:   '#A9DC76'
+#     yellow:  '#FFD866'
+#     blue:    '#FC9867'
+#     magenta: '#AB9DF2'
+#     cyan:    '#78DCE8'
+#     white:   '#FCFCFA'
+
+#   # Bright colors
+#   bright:
+#     black:   '#727072'
+#     red:     '#FF6188'
+#     green:   '#A9DC76'
+#     yellow:  '#FFD866'
+#     blue:    '#FC9867'
+#     magenta: '#AB9DF2'
+#     cyan:    '#78DCE8'
+#     white:   '#FCFCFA'
+
+
+      # Colors (Monokai Soda)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#1a1a1a'
+#     foreground: '#c4c5b5'
+
+#   # Normal colors
+#   normal:
+#     black:   '#1a1a1a'
+#     red:     '#f4005f'
+#     green:   '#98e024'
+#     yellow:  '#fa8419'
+#     blue:    '#9d65ff'
+#     magenta: '#f4005f'
+#     cyan:    '#58d1eb'
+#     white:   '#c4c5b5'
+
+#   # Bright colors
+#   bright:
+#     black:   '#625e4c'
+#     red:     '#f4005f'
+#     green:   '#98e024'
+#     yellow:  '#e0d561'
+#     blue:    '#9d65ff'
+#     magenta: '#f4005f'
+#     cyan:    '#58d1eb'
+#     white:   '#f6f6ef'
+
+# Colors (Monokai Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#272822'
+#     foreground: '#F8F8F2'
+
+#   # Normal colors
+#   normal:
+#    black:   '#272822'
+#    red:     '#F92672'
+#    green:   '#A6E22E'
+#    yellow:  '#F4BF75'
+#    blue:    '#66D9EF'
+#    magenta: '#AE81FF'
+#    cyan:    '#A1EFE4'
+#    white:   '#F8F8F2'
+
+#   # Bright colors
+#   bright:
+#    black:   '#75715E'
+#    red:     '#F92672'
+#    green:   '#A6E22E'
+#    yellow:  '#F4BF75'
+#    blue:    '#66D9EF'
+#    magenta: '#AE81FF'
+#    cyan:    '#A1EFE4'
+#    white:   '#F9F8F5'
+
 # Colors (Iceberg Dark)
-colors:
-  # Default colors
-  primary:
-    background: '#161821'
-    foreground: '#d2d4de'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#161821'
+#     foreground: '#d2d4de'
 
-  # Normal colors
-  normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
+#   # Normal colors
+#   normal:
+#     black:   '#161821'
+#     red:     '#e27878'
+#     green:   '#b4be82'
+#     yellow:  '#e2a478'
+#     blue:    '#84a0c6'
+#     magenta: '#a093c7'
+#     cyan:    '#89b8c2'
+#     white:   '#c6c8d1'
 
-  # Bright colors
-  bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
+#   # Bright colors
+#   bright:
+#     black:   '#6b7089'
+#     red:     '#e98989'
+#     green:   '#c0ca8e'
+#     yellow:  '#e9b189'
+#     blue:    '#91acd1'
+#     magenta: '#ada0d3'
+#     cyan:    '#95c4ce'
+#     white:   '#d2d4de'
 
 
 # Dracula theme for Alacritty

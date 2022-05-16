@@ -121,9 +121,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-# if [[ ! -n $TMUX ]]; then
-#   tmux new-session
-# fi
+if [[ ! -n $TMUX ]]; then
+  tmux new-session
+fi
 
 #function powerline_precmd() {
 #    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules-right git)"

@@ -38,8 +38,9 @@ else
     " markdown
     Jetpack 'skanehira/preview-markdown.vim'
     " ステータスラインの表示内容強化
-    Jetpack 'vim-airline/vim-airline'
-    Jetpack 'vim-airline/vim-airline-themes'
+    " Jetpack 'vim-airline/vim-airline'
+    " Jetpack 'vim-airline/vim-airline-themes'
+    Jetpack 'itchyny/lightline.vim'
     " ステータスラインにbranch名
     Jetpack 'tpope/vim-fugitive'
     " インデントの可視化
@@ -460,8 +461,8 @@ else
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
   " au MyAutoCmd VimEnter * nested colorscheme dracula
   " au MyAutoCmd VimEnter * nested colorscheme iceberg
-  au MyAutoCmd VimEnter * nested colorscheme monokai
-  " au MyAutoCmd VimEnter * nested colorscheme molokai
+  " au MyAutoCmd VimEnter * nested colorscheme monokai
+  au MyAutoCmd VimEnter * nested colorscheme molokai
   " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized
@@ -530,18 +531,24 @@ else
 
 
   " vim-airline
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline#extensions#tabline#formatter = 'default'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#branch#enabled = 1
+  " let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#left_sep = ' '
+  " let g:airline#extensions#tabline#left_alt_sep = '|'
+  " let g:airline#extensions#tabline#formatter = 'default'
+  " let g:airline_powerline_fonts = 1
+  " let g:airline#extensions#branch#enabled = 1
   " let g:airline_theme='dracula'
   " let g:airline_theme='iceberg'
   " let g:airline_theme='nord'
   " let g:airline_theme='solarized'
   " let g:airline_theme='onedark'
   " let g:airline_theme='monokai'
+
+
+  " lightline
+  let g:lightline = {
+      \ 'colorscheme': 'molokai',
+      \ }
 
 
   " emmet-vim
