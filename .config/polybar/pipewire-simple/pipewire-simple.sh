@@ -8,7 +8,8 @@ getDefaultSink() {
 
 getDefaultSource() {
     defaultSource=$(pactl info | awk -F : '/Default Source:/{print $2}')
-    description=$(pactl list sources | sed -n "/${defaultSource}/,/Description/p; /Description/q" | sed -n 's/^.*Description: \(.*\)$/\1/p')
+    # description=$(pactl list sources | sed -n "/${defaultSource}/,/Description/p; /Description/q" | sed -n 's/^.*Description: \(.*\)$/\1/p')
+    description=$(pactl list sources | sed -n "/${defaultSource}/,/Description/p;" | sed -n 's/^.*Description: \(.*\)$/\1/p')
     echo "${description}"
 }
 

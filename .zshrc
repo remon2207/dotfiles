@@ -87,6 +87,7 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
 # alias
+alias grep='grep --color=always'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -98,7 +99,7 @@ alias e='exit'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 alias rmf='rm -rf'
-alias sysctl='sudo systemctl'
+alias sys='sudo systemctl'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -121,9 +122,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
-if [[ ! -n $TMUX ]]; then
-  tmux new-session
-fi
+# if [[ ! -n $TMUX ]]; then
+#   tmux new-session
+# fi
 
 #function powerline_precmd() {
 #    eval "$($GOPATH/bin/powerline-go -error $? -shell zsh -eval -modules-right git)"

@@ -14,12 +14,15 @@ return {
       family='Inconsolata Nerd Font',
       harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     },
+    -- 'Inconsolata',
+    'Migu 1M',
+    -- 'NotoSans Nerd Font',
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
     -- 'Source Han Code JP'
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
-    'Cica'
+    -- 'Cica'
     -- 'Ricty'
     -- 'PlemolJP Console NF'
     -- 'Ricty Nerd Font'
