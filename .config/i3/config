@@ -359,17 +359,17 @@ bar {
   #       binding_mode       #2f343a #900000 #ffffff
   #   }
 # iceberg
-  # colors {
-  #   background #1e2132
-  #   statusline #ffffff
-  #   separator #666666
+  colors {
+    background #1e2132
+    statusline #ffffff
+    separator #666666
 
-  #   focused_workspace  #c6c8d1 #a093c7 #ffffff
-  #   active_workspace   #333333 #3f455e #ffffff
-  #   inactive_workspace #333333 #161821 #888888
-  #   urgent_workspace   #2f343a #900000 #ffffff
-  #   binding_mode       #2f343a #900000 #ffffff
-  # }
+    focused_workspace  #c6c8d1 #a093c7 #ffffff
+    active_workspace   #333333 #3f455e #ffffff
+    inactive_workspace #333333 #161821 #888888
+    urgent_workspace   #2f343a #900000 #ffffff
+    binding_mode       #2f343a #900000 #ffffff
+  }
 # nord
   # colors {
   #       background #2E3440
@@ -394,17 +394,17 @@ bar {
   #       urgent_workspace   #2f343a #900000 #f8f8f2
   #       binding_mode       #2f343a #900000 #f8f8f2
   #   }
-  colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
+  # colors {
+  #   background #282A36
+  #   statusline #F8F8F2
+  #   separator  #44475A
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
+  #   focused_workspace  #44475A #44475A #F8F8F2
+  #   active_workspace   #282A36 #44475A #F8F8F2
+  #   inactive_workspace #282A36 #282A36 #BFBFBF
+  #   urgent_workspace   #FF5555 #FF5555 #F8F8F2
+  #   binding_mode       #FF5555 #FF5555 #F8F8F2
+  # }
 # onedark
   # colors {
   #       background #282C34
@@ -420,7 +420,7 @@ bar {
   status_command bumblebee-status \
     -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
     -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
-    -t dracula-powerline
+    -t iceberg-dark-powerline
 }
 
 

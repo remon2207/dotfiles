@@ -10,12 +10,12 @@ return {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    {
-      family='Inconsolata Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='Inconsolata Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
     -- 'Inconsolata',
-    'Migu 1M',
+    -- 'Migu 1M',
     -- 'NotoSans Nerd Font',
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
@@ -23,19 +23,19 @@ return {
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
     -- 'HackGen',
-    -- 'HackGenNerd Console'
+    -- 'HackGenNerd'
     -- 'Cica'
     -- 'Ricty',
     -- 'PlemolJP Console NF'
     -- {family='PlemolJP Console', weight='Regular'},
-    -- 'Ricty Nerd Font'
+    'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
   font_size = 12.0,
-  color_scheme = 'Dracula',
+  -- color_scheme = 'Dracula',
   -- color_scheme = 'Atom',
-  -- color_scheme = 'iceberg-dark',
+  color_scheme = 'iceberg-dark',
   -- color_scheme = 'Molokai',
   -- color_scheme = 'Monokai Remastered',
   -- color_scheme = 'Monokai Soda',
@@ -52,37 +52,37 @@ return {
   },
   use_fancy_tab_bar = false,
   -- iceberg
-  -- colors = {
-  --   tab_bar = {
-  --     background = "#1e2132",
-  --     active_tab = {
-  --       bg_color = "#3d425b",
-  --       fg_color = "#c6c8d1",
-  --       intensity = "Normal",
-  --       underline = "None",
-  --       italic = false,
-  --       strikethrough = false,
-  --     },
-  --     inactive_tab = {
-  --       bg_color = "#242940",
-  --       fg_color = "#808080",
-  --     },
-  --     inactive_tab_hover = {
-  --       bg_color = "#3e445e",
-  --       fg_color = "#c6c8d1",
-  --       italic = false,
-  --     },
-  --     new_tab = {
-  --       bg_color = "#515e97",
-  --       fg_color = "#c6c8d1",
-  --     },
-  --     new_tab_hover = {
-  --       bg_color = "#515e97",
-  --       fg_color = "#c6c8d1",
-  --       italic = false,
-  --     }
-  --   },
-  -- },
+  colors = {
+    tab_bar = {
+      background = "#1e2132",
+      active_tab = {
+        bg_color = "#3d425b",
+        fg_color = "#c6c8d1",
+        intensity = "Normal",
+        underline = "None",
+        italic = false,
+        strikethrough = false,
+      },
+      inactive_tab = {
+        bg_color = "#242940",
+        fg_color = "#808080",
+      },
+      inactive_tab_hover = {
+        bg_color = "#3e445e",
+        fg_color = "#c6c8d1",
+        italic = false,
+      },
+      new_tab = {
+        bg_color = "#515e97",
+        fg_color = "#c6c8d1",
+      },
+      new_tab_hover = {
+        bg_color = "#515e97",
+        fg_color = "#c6c8d1",
+        italic = false,
+      }
+    },
+  },
   -- Nord
   -- colors = {
   --   tab_bar = {
@@ -116,37 +116,37 @@ return {
   --   },
   -- },
   -- Dracula
-  colors = {
-    tab_bar = {
-      background = "#282a36",
-      active_tab = {
-        bg_color = "#44475a",
-        fg_color = "#f8f8f2",
-        intensity = "Normal",
-        underline = "None",
-        italic = false,
-        strikethrough = false,
-      },
-      inactive_tab = {
-        bg_color = "#242940",
-        fg_color = "#6272a4",
-      },
-      inactive_tab_hover = {
-        bg_color = "#3e445e",
-        fg_color = "#f8f8f2",
-        italic = false,
-      },
-      new_tab = {
-        bg_color = "#44475a",
-        fg_color = "#f8f8f2",
-      },
-      new_tab_hover = {
-        bg_color = "#6272a4",
-        fg_color = "#f8f8f2",
-        italic = false,
-      }
-    },
-  },
+  -- colors = {
+  --   tab_bar = {
+  --     background = "#282a36",
+  --     active_tab = {
+  --       bg_color = "#44475a",
+  --       fg_color = "#f8f8f2",
+  --       intensity = "Normal",
+  --       underline = "None",
+  --       italic = false,
+  --       strikethrough = false,
+  --     },
+  --     inactive_tab = {
+  --       bg_color = "#242940",
+  --       fg_color = "#6272a4",
+  --     },
+  --     inactive_tab_hover = {
+  --       bg_color = "#3e445e",
+  --       fg_color = "#f8f8f2",
+  --       italic = false,
+  --     },
+  --     new_tab = {
+  --       bg_color = "#44475a",
+  --       fg_color = "#f8f8f2",
+  --     },
+  --     new_tab_hover = {
+  --       bg_color = "#6272a4",
+  --       fg_color = "#f8f8f2",
+  --       italic = false,
+  --     }
+  --   },
+  -- },
   keys = {
     {key = "[", mods = "CTRL", action=wezterm.action{ActivateTabRelative=-1}},
     {key = "]", mods = "CTRL", action=wezterm.action{ActivateTabRelative=1}},
