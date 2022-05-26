@@ -13,11 +13,6 @@ endif
 
 " vim or vscode
 if exists('g:vscode')
-  call jetpack#begin()
-    " 引用符
-    " Jetpack 'tpope/vim-surround'
-  call jetpack#end()
-
   " □や○文字が崩れる問題を解決
   set ambiwidth=single
 
@@ -585,4 +580,3 @@ else
 endif
 " neovim and vscode
 let mapleader = "\<Space>"
-" set guicursor=

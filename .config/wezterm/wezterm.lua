@@ -21,14 +21,14 @@ return {
     -- 'SauceCodePro Nerd Font',
     -- 'Source Han Code JP',
     -- 'HackGen35 Console',
-    -- 'HackGenNerd Console'
+    'HackGenNerd Console'
     -- 'HackGen',
     -- 'HackGenNerd'
     -- 'Cica'
     -- 'Ricty',
     -- 'PlemolJP Console NF'
     -- {family='PlemolJP Console', weight='Regular'},
-    'Ricty Nerd Font'
+    -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
