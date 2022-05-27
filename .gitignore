@@ -1,2 +1,3 @@
 .config/nvim/dein
 .config/nvim/plugged
+.config/mpd/log
