@@ -1,6 +1,5 @@
 scriptencoding utf-8
 set encoding=utf-8
-
 augroup MyAutoCmd
   autocmd!
 augroup END
@@ -15,6 +14,9 @@ endif
 if exists('g:vscode')
   " □や○文字が崩れる問題を解決
   set ambiwidth=single
+  " 改行時の自動コメントアウトを無効化
+  au FileType * setlocal formatoptions-=r
+  au FileType * setlocal formatoptions-=o
 
   if executable('fcitx5')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
@@ -25,91 +27,129 @@ if exists('g:vscode')
 
   let g:fern_renderer_devicons_disable_warning = 1
 else
-  call jetpack#begin()
-    " ヘルプの日本語化
-    Jetpack 'vim-jp/vimdoc-ja'
-    " 選択範囲をGoogle翻訳
-    Jetpack 'skanehira/translate.vim'
-    " markdown
-    Jetpack 'skanehira/preview-markdown.vim'
-    " ステータスラインの表示内容強化
-    " Jetpack 'vim-airline/vim-airline'
-    " Jetpack 'vim-airline/vim-airline-themes'
-    Jetpack 'itchyny/lightline.vim'
-    " ステータスラインにbranch名
-    Jetpack 'tpope/vim-fugitive'
-    " インデントの可視化
-    Jetpack 'Yggdroot/indentLine'
-    " 末尾の全角半角空白文字を赤くハイライト
-    Jetpack 'bronson/vim-trailing-whitespace'
-    " ノーマルモードでコメントアウト
-    Jetpack 'tpope/vim-commentary'
-    " インデントの深さを可視化
-    Jetpack 'nathanaelkane/vim-indent-guides'
-    " カラースキーム
-    Jetpack 'dracula/vim'
-    Jetpack 'cocopon/iceberg.vim'
-    Jetpack 'joshdick/onedark.vim'
-    Jetpack 'altercation/vim-colors-solarized'
-    Jetpack 'arcticicestudio/nord-vim'
-    Jetpack 'sickill/vim-monokai'
-    Jetpack 'tomasr/molokai'
-    " IDEのような補完
-    Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
-    " ファイラー
-    Jetpack 'lambdalisue/fern.vim'
-    Jetpack 'lambdalisue/fern-git-status.vim'
-    Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
-    Jetpack 'lambdalisue/nerdfont.vim'
-    Jetpack 'yuki-yano/fern-preview.vim'
-    Jetpack 'lambdalisue/fern-hijack.vim'
-    Jetpack 'lambdalisue/fern-renderer-devicons.vim'
-    Jetpack 'ryanoasis/vim-devicons'
-    Jetpack 'lambdalisue/glyph-palette.vim'
-    " 置換
-    Jetpack 'kana/vim-operator-replace'
-    Jetpack 'kana/vim-operator-user'
-    " 高速移動
-    Jetpack 'easymotion/vim-easymotion'
-    " tomlファイルのシンタックス
-    Jetpack 'cespare/vim-toml'
-    " JavaScriptのシンタックス
-    Jetpack 'pangloss/vim-javascript'
-    Jetpack 'othree/yajs.vim'
-    Jetpack 'othree/es.next.syntax.vim'
-    " " JavaScriptのPrettier
-    Jetpack 'maxmellon/vim-jsx-pretty'
-    Jetpack 'yuezk/vim-js'
-    " TypeScriptのシンタックス
-    " Jetpack 'leafgarland/typescript-vim'
-    Jetpack 'HerringtonDarkholme/yats.vim'
-    " jsonのシンタックス
-    Jetpack 'elzr/vim-json'
-    " jsxのシンタックス
-    Jetpack 'peitalin/vim-jsx-typescript'
-    " Dockerfileのシンタックス
-    Jetpack 'ekalinin/Dockerfile.vim'
-    Jetpack 'Townk/vim-autoclose'
-    " HTML/CSSの入力補助
-    Jetpack 'mattn/emmet-vim'
-    Jetpack 'hail2u/vim-css3-syntax'
-    " ブラケットの自動補完
-    Jetpack 'jiangmiao/auto-pairs'
-    " 引用符
-    Jetpack 'tpope/vim-surround'
-    " ファイル検索
-    Jetpack 'junegunn/fzf'
-    Jetpack 'junegunn/fzf.vim'
-    " 色を視覚的に表示する
-    Jetpack 'chrisbra/Colorizer'
-    " html ライブ編集
-    Jetpack 'turbio/bracey.vim'
-    " ファイルを指定しなかったときのスタート画面
-    Jetpack 'mhinz/vim-startify'
-    " csv
-    Jetpack 'mechatroner/rainbow_csv'
-    Jetpack 'voldikss/vim-floaterm'
-  call jetpack#end()
+    " dein.vim settings {{{
+  " install dir {{{
+  let s:dein_dir = expand('~/.cache/dein')
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+  " }}}
+
+  " dein installation check {{{
+  if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . s:dein_repo_dir
+  endif
+  " }}}
+
+  " begin settings {{{
+  if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+
+  " ヘルプの日本語化
+  call dein#add('vim-jp/vimdoc-ja')
+  " 選択範囲をGoogle翻訳
+  call dein#add('skanehira/translate.vim')
+  " markdown
+  call dein#add('skanehira/preview-markdown.vim')
+  " ステータスラインの表示内容強化
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  " call dein#add('itchyny/lightline.vim')
+  " ステータスラインにbranch名
+  call dein#add('tpope/vim-fugitive')
+  " インデントの可視化
+  call dein#add('Yggdroot/indentLine')
+  " 末尾の全角半角空白文字を赤くハイライト
+  call dein#add('bronson/vim-trailing-whitespace')
+  " ノーマルモードでコメントアウト
+  call dein#add('tpope/vim-commentary')
+  " インデントの深さを可視化
+  call dein#add('nathanaelkane/vim-indent-guides')
+  " カラースキーム
+  call dein#add('dracula/vim')
+  call dein#add('cocopon/iceberg.vim')
+  call dein#add('joshdick/onedark.vim')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('arcticicestudio/nord-vim')
+  call dein#add('sickill/vim-monokai')
+  call dein#add('tomasr/molokai')
+  call dein#add('morhetz/gruvbox')
+  " IDEのような補完
+  call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
+  " ファイラー
+  call dein#add('lambdalisue/fern.vim')
+  call dein#add('lambdalisue/fern-git-status.vim')
+  call dein#add('lambdalisue/fern-renderer-nerdfont.vim')
+  call dein#add('lambdalisue/nerdfont.vim')
+  call dein#add('yuki-yano/fern-preview.vim')
+  call dein#add('lambdalisue/fern-hijack.vim')
+  call dein#add('lambdalisue/fern-renderer-devicons.vim')
+  call dein#add('ryanoasis/vim-devicons')
+  call dein#add('lambdalisue/glyph-palette.vim')
+  " 置換
+  call dein#add('kana/vim-operator-replace')
+  call dein#add('kana/vim-operator-user')
+  " 高速移動
+  call dein#add('easymotion/vim-easymotion')
+  " tomlファイルのシンタックス
+  call dein#add('cespare/vim-toml')
+  " JavaScriptのシンタックス
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('othree/yajs.vim')
+  call dein#add('othree/es.next.syntax.vim')
+  " " JavaScriptのPrettier
+  call dein#add('maxmellon/vim-jsx-pretty')
+  call dein#add('yuezk/vim-js')
+  " TypeScriptのシンタックス
+  " call dein#add('leafgarland/typescript-vim')
+  call dein#add('HerringtonDarkholme/yats.vim')
+  " jsonのシンタックス
+  call dein#add('elzr/vim-json')
+  " jsxのシンタックス
+  call dein#add('peitalin/vim-jsx-typescript')
+  " Dockerfileのシンタックス
+  call dein#add('ekalinin/Dockerfile.vim')
+  call dein#add('Townk/vim-autoclose')
+  " HTML/CSSの入力補助
+  call dein#add('mattn/emmet-vim')
+  call dein#add('hail2u/vim-css3-syntax')
+  " ブラケットの自動補完
+  call dein#add('jiangmiao/auto-pairs')
+  " 引用符
+  call dein#add('tpope/vim-surround')
+  " ファイル検索
+  call dein#add('junegunn/fzf')
+  call dein#add('junegunn/fzf.vim')
+  " 色を視覚的に表示する
+  call dein#add('chrisbra/Colorizer')
+  " html ライブ編集
+  call dein#add('turbio/bracey.vim')
+  " ファイルを指定しなかったときのスタート画面
+  call dein#add('mhinz/vim-startify')
+  " csv
+  call dein#add('mechatroner/rainbow_csv')
+  call dein#add('voldikss/vim-floaterm')
+
+    " end settings
+    call dein#end()
+    call dein#save_state()
+  endif
+  " }}}
+
+  " plugin installation check {{{
+  if dein#check_install()
+    call dein#install()
+  endif
+  " }}}
+
+  " plugin remove check {{{
+  let s:removed_plugins = dein#check_clean()
+  if len(s:removed_plugins) > 0
+    call map(s:removed_plugins, "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+  endif
+  " }}}
 
 
   " option ---------------------------------------------------------------
@@ -170,7 +210,6 @@ else
   set title
   " タブ・空白・改行等の表示
   set list
-  " set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
   set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
   " swap無効
   set noswapfile
@@ -214,10 +253,10 @@ else
     autocmd CursorHold * silent call CocActionAsync('highlight')
   augroup END
 
-  augroup source-vimrc
-    autocmd!
-    autocmd BufWritePost init.vim source $HOME/.config/nvim/init.vim | set foldmethod=marker
-  augroup END
+  " augroup source-vimrc
+  "   autocmd!
+  "   autocmd BufWritePost init.vim source $HOME/.config/nvim/init.vim | set foldmethod=marker
+  " augroup END
 
   augroup markdown
   autocmd!
@@ -445,7 +484,7 @@ else
       \ ]
 
 
-  " set background=dark
+  set background=dark
   autocmd Colorscheme * highlight Normal ctermbg=none
   autocmd Colorscheme * highlight NonText ctermbg=none
   autocmd Colorscheme * highlight Folded ctermbg=none
@@ -461,6 +500,7 @@ else
   " au MyAutoCmd VimEnter * nested colorscheme nord
   " au MyAutoCmd VimEnter * nested colorscheme onedark
   " au MyAutoCmd VimEnter * nested colorscheme solarized
+  " au MyAutoCmd VimEnter * nested colorscheme gruvbox
 
 
   " fern
@@ -526,12 +566,13 @@ else
 
 
   " vim-airline
-  " let g:airline#extensions#tabline#enabled = 1
-  " let g:airline#extensions#tabline#left_sep = ' '
-  " let g:airline#extensions#tabline#left_alt_sep = '|'
-  " let g:airline#extensions#tabline#formatter = 'default'
-  " let g:airline_powerline_fonts = 1
-  " let g:airline#extensions#branch#enabled = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = '|'
+  let g:airline#extensions#tabline#formatter = 'default'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#branch#enabled = 1
+  " let g:airline_solarized_bg='dark'
   " let g:airline_theme='dracula'
   " let g:airline_theme='iceberg'
   " let g:airline_theme='nord'
@@ -541,9 +582,9 @@ else
 
 
   " lightline
-  let g:lightline = {
-      \ 'colorscheme': 'iceberg',
-      \ }
+  " let g:lightline = {
+  "     \ 'colorscheme': 'iceberg',
+  "     \ }
 
 
   " emmet-vim

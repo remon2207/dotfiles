@@ -100,6 +100,7 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 alias rmf='rm -rf'
 alias sys='sudo systemctl'
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions

@@ -10,10 +10,13 @@ return {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    {
-      family='Inconsolata Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='Inconsolata Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
+    -- 'MesloLGM Nerd Font',
+    -- 'MesloLGL Nerd Font',
+    -- 'MesloLGS Nerd Font',
     -- 'Inconsolata',
     -- 'Migu 1M',
     -- 'NotoSans Nerd Font',
@@ -22,9 +25,10 @@ return {
     -- 'Source Han Code JP',
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
-    'HackGen',
+    -- 'HackGen',
     -- 'HackGenNerd'
     -- 'Cica'
+    -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP Console NF'
     -- {family='PlemolJP Console', weight='Regular'},
@@ -42,6 +46,7 @@ return {
   -- color_scheme = 'monokai Vivid',
   -- color_scheme = 'nord',
   -- color_scheme = 'Solarized Dark - Patched',
+  -- color_scheme = 'Gruvbox Dark',
   window_background_opacity = 0.9,
   enable_scroll_bar = true,
   window_padding = {

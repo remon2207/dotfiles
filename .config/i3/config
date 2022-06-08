@@ -364,11 +364,11 @@ bar {
     statusline #ffffff
     separator #666666
 
-    focused_workspace  #c6c8d1 #a093c7 #ffffff
-    active_workspace   #333333 #3f455e #ffffff
-    inactive_workspace #333333 #161821 #888888
-    urgent_workspace   #2f343a #900000 #ffffff
-    binding_mode       #2f343a #900000 #ffffff
+    # focused_workspace  #c6c8d1 #a093c7 #ffffff
+    # active_workspace   #333333 #3f455e #ffffff
+    # inactive_workspace #333333 #161821 #888888
+    # urgent_workspace   #2f343a #900000 #ffffff
+    # binding_mode       #2f343a #900000 #ffffff
   }
 # nord
   # colors {

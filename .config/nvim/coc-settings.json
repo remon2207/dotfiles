@@ -9,15 +9,6 @@
     "typescriptreact",
     "html"
   ],
-  "eslint.run": "onSave",
-  "eslint.format.enable": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.autoFix": true,
-  "prettier.tabWidth": 2,
-  "prettier.printWidth": 120,
-  "prettier.singleQuote": true,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "tailwindCSS.emmetCompletions": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
