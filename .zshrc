@@ -101,6 +101,9 @@ alias vimdiff='nvim -d'
 alias rmf='rm -rf'
 alias sys='sudo systemctl'
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias t='tmux'
+alias repos='ghq list -p | fzf'
+alias repo='cd $(repos)'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
