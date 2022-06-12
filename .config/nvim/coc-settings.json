@@ -1,13 +1,9 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "json",
-    "css",
-    "markdown",
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "html"
+    "typescriptReact"
   ],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
