@@ -30,9 +30,12 @@ return {
     -- 'Cica'
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
-    -- 'PlemolJP Console NF'
+    -- 'PlemolJP Console NF',
+    -- 'PlemolJP',
+    -- 'PlemolJP Console',
+    'PlemolJP',
     -- {family='PlemolJP Console', weight='Regular'},
-    'Ricty Nerd Font'
+    -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
   }),
