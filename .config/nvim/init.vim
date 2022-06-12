@@ -51,7 +51,8 @@ else
   " 選択範囲をGoogle翻訳
   call dein#add('skanehira/translate.vim')
   " markdown
-  call dein#add('skanehira/preview-markdown.vim')
+  call dein#add('godlygeek/tabular')
+  call dein#add('preservim/vim-markdown')
   " ステータスラインの表示内容強化
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -125,8 +126,6 @@ else
   call dein#add('chrisbra/Colorizer')
   " html ライブ編集
   call dein#add('turbio/bracey.vim')
-  " ファイルを指定しなかったときのスタート画面
-  call dein#add('mhinz/vim-startify')
   " csv
   call dein#add('mechatroner/rainbow_csv')
   call dein#add('voldikss/vim-floaterm')
