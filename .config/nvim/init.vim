@@ -130,6 +130,10 @@ else
   " csv
   call dein#add('mechatroner/rainbow_csv')
   call dein#add('voldikss/vim-floaterm')
+  " PHP
+  call dein#add('stephpy/vim-php-cs-fixer')
+  " SQL
+  call dein#add('vim-scripts/dbext.vim')
 
     " end settings
     call dein#end()
