@@ -488,7 +488,9 @@ else
       \ 'coc-prettier',
       \ 'coc-eslint',
       \ 'coc-html',
-      \ 'coc-css'
+      \ 'coc-css',
+      \ 'coc-phpls',
+      \ 'coc-sql'
       \ ]
 
 
