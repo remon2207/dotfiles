@@ -418,8 +418,8 @@ bar {
   #       binding_mode       #2f343a #900000 #ABB2BF
   #   }
   status_command bumblebee-status \
-    -m title arch-update mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
-    -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" title.max=100 ,title.scroll=false \
+    -m mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
+    -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" \
     -t iceberg-dark-powerline
 }
 
