@@ -67,8 +67,10 @@ git config --global color.ui auto
 stty stop undef
 
 # keybind
-# vim like
+# vimモード
 # bindkey -v
+# emacsモード
+bindkey -e
 # コマンド履歴補完
 autoload history-search-end
 # zle -N history-beginning-search-backward-end history-search-end
@@ -92,7 +94,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias lsla='ls -lahF $1'
-alias tree='tree -laF $1'
+# alias tree='tree -laF $1'
+alias tree='ls --tree'
 alias sudo='sudo '
 alias ls='lsd -lahF'
 alias e='exit'
@@ -104,6 +107,7 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias t='tmux'
 alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
+alias dexec='docker-compose exec'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -252,3 +256,4 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 # export STARSHIP_CONFIG="$HOME/.config/starship/dracula.toml"
 # export STARSHIP_CONFIG="$HOME/.config/starship/nerd-font-symbols.toml"
 # export ZSH_THEME="dracula"
+# export TERM="xterm-256color"

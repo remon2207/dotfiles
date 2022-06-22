@@ -3,8 +3,9 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptReact"
+    "typescriptreact",
   ],
+  "eslint.autoFixOnSave": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",

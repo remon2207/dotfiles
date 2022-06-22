@@ -27,136 +27,120 @@ if exists('g:vscode')
 
   let g:fern_renderer_devicons_disable_warning = 1
 else
-    " dein.vim settings {{{
-  " install dir {{{
-  let s:dein_dir = expand('~/.cache/dein')
-  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-  " }}}
-
-  " dein installation check {{{
-  if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . s:dein_repo_dir
-  endif
-  " }}}
-
-  " begin settings {{{
-  if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-
-  " ヘルプの日本語化
-  call dein#add('vim-jp/vimdoc-ja')
-  " 選択範囲をGoogle翻訳
-  call dein#add('skanehira/translate.vim')
-  " markdown
-  call dein#add('godlygeek/tabular')
-  call dein#add('preservim/vim-markdown')
-  " ステータスラインの表示内容強化
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  " call dein#add('itchyny/lightline.vim')
-  " ステータスラインにbranch名
-  call dein#add('tpope/vim-fugitive')
-  " インデントの可視化
-  call dein#add('Yggdroot/indentLine')
-  " 末尾の全角半角空白文字を赤くハイライト
-  call dein#add('bronson/vim-trailing-whitespace')
-  " ノーマルモードでコメントアウト
-  call dein#add('tpope/vim-commentary')
-  " インデントの深さを可視化
-  call dein#add('nathanaelkane/vim-indent-guides')
-  " カラースキーム
-  call dein#add('dracula/vim')
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('joshdick/onedark.vim')
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('arcticicestudio/nord-vim')
-  call dein#add('sickill/vim-monokai')
-  call dein#add('tomasr/molokai')
-  call dein#add('morhetz/gruvbox')
-  " IDEのような補完
-  call dein#add('neoclide/coc.nvim', { 'rev': 'release' })
-  " ファイラー
-  call dein#add('lambdalisue/fern.vim')
-  call dein#add('lambdalisue/fern-git-status.vim')
-  call dein#add('lambdalisue/fern-renderer-nerdfont.vim')
-  call dein#add('lambdalisue/nerdfont.vim')
-  call dein#add('yuki-yano/fern-preview.vim')
-  call dein#add('lambdalisue/fern-hijack.vim')
-  call dein#add('lambdalisue/fern-renderer-devicons.vim')
-  call dein#add('ryanoasis/vim-devicons')
-  call dein#add('lambdalisue/glyph-palette.vim')
-  " 置換
-  call dein#add('kana/vim-operator-replace')
-  call dein#add('kana/vim-operator-user')
-  " 高速移動
-  call dein#add('easymotion/vim-easymotion')
-  " tomlファイルのシンタックス
-  call dein#add('cespare/vim-toml')
-  " JavaScriptのシンタックス
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('othree/yajs.vim')
-  call dein#add('othree/es.next.syntax.vim')
-  " " JavaScriptのPrettier
-  call dein#add('maxmellon/vim-jsx-pretty')
-  call dein#add('yuezk/vim-js')
-  " TypeScriptのシンタックス
-  " call dein#add('leafgarland/typescript-vim')
-  call dein#add('HerringtonDarkholme/yats.vim')
-  " jsonのシンタックス
-  call dein#add('elzr/vim-json')
-  " jsxのシンタックス
-  call dein#add('peitalin/vim-jsx-typescript')
-  " Dockerfileのシンタックス
-  call dein#add('ekalinin/Dockerfile.vim')
-  call dein#add('Townk/vim-autoclose')
-  " HTML/CSSの入力補助
-  call dein#add('mattn/emmet-vim')
-  call dein#add('hail2u/vim-css3-syntax')
-  " ブラケットの自動補完
-  call dein#add('jiangmiao/auto-pairs')
-  " 引用符
-  call dein#add('tpope/vim-surround')
-  " ファイル検索
-  call dein#add('junegunn/fzf')
-  call dein#add('junegunn/fzf.vim')
-  " 色を視覚的に表示する
-  call dein#add('chrisbra/Colorizer')
-  " html ライブ編集
-  call dein#add('turbio/bracey.vim')
-  " csv
-  call dein#add('mechatroner/rainbow_csv')
-  call dein#add('voldikss/vim-floaterm')
-  " PHP
-  call dein#add('stephpy/vim-php-cs-fixer')
-  " SQL
-  call dein#add('vim-scripts/dbext.vim')
-
-    " end settings
-    call dein#end()
-    call dein#save_state()
-  endif
-  " }}}
-
-  " plugin installation check {{{
-  if dein#check_install()
-    call dein#install()
-  endif
-  " }}}
-
-  " plugin remove check {{{
-  let s:removed_plugins = dein#check_clean()
-  if len(s:removed_plugins) > 0
-    call map(s:removed_plugins, "delete(v:val, 'rf')")
-    call dein#recache_runtimepath()
-  endif
-  " }}}
-
+  call plug#begin()
+    " ヘルプの日本語化
+    Plug 'vim-jp/vimdoc-ja'
+    " 選択範囲をGoogle翻訳
+    Plug 'skanehira/translate.vim'
+    " markdown
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/vim-markdown'
+    " ステータスラインの表示内容強化
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    " ステータスラインにbranch名
+    Plug 'tpope/vim-fugitive'
+    " インデントの可視化
+    Plug 'Yggdroot/indentLine'
+    " 末尾の全角半角空白文字を赤くハイライト
+    " Plug 'bronson/vim-trailing-whitespace'
+    " ノーマルモードでコメントアウト
+    Plug 'tpope/vim-commentary'
+    " カラースキーム
+    Plug 'dracula/vim'
+    Plug 'cocopon/iceberg.vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'sickill/vim-monokai'
+    Plug 'tomasr/molokai'
+    Plug 'morhetz/gruvbox'
+    Plug 'haishanh/night-owl.vim'
+    Plug 'w0ng/vim-hybrid'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'folke/tokyonight.nvim'
+    " IDEのような補完
+    Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+    " Plug 'prabirshrestha/vim-lsp'
+    " Plug 'mattn/vim-lsp-settings'
+    " 補完
+    Plug 'Shougo/ddc.vim'
+    Plug 'vim-denops/denops.vim'
+    Plug 'Shougo/ddc-around'
+    Plug 'Shougo/ddc-matcher_head'
+    Plug 'Shougo/ddc-sorter_rank'
+    " Plug 'prabirshrestha/asyncomplete.vim'
+    " Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    " Plug 'shun/ddc-vim-lsp'
+    " ファイラー
+    Plug 'lambdalisue/fern.vim'
+    Plug 'lambdalisue/fern-git-status.vim'
+    Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+    Plug 'lambdalisue/nerdfont.vim'
+    Plug 'yuki-yano/fern-preview.vim'
+    Plug 'lambdalisue/fern-hijack.vim'
+    Plug 'lambdalisue/fern-renderer-devicons.vim'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'lambdalisue/glyph-palette.vim'
+    " 置換
+    Plug 'kana/vim-operator-replace'
+    Plug 'kana/vim-operator-user'
+    " 高速移動
+    Plug 'easymotion/vim-easymotion'
+    " tomlファイルのシンタックス
+    Plug 'cespare/vim-toml'
+    " JavaScriptのシンタックス
+    Plug 'pangloss/vim-javascript'
+    Plug 'othree/yajs.vim'
+    Plug 'othree/es.next.syntax.vim'
+    " " JavaScriptのPrettier
+    Plug 'maxmellon/vim-jsx-pretty'
+    Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript',  'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+    Plug 'yuezk/vim-js'
+    " TypeScriptのシンタックス
+    " Plug 'leafgarland/typescript-vim'
+    Plug 'HerringtonDarkholme/yats.vim'
+    " jsonのシンタックス
+    Plug 'elzr/vim-json'
+    " jsxのシンタックス
+    Plug 'peitalin/vim-jsx-typescript'
+    " Dockerfileのシンタックス
+    Plug 'ekalinin/Dockerfile.vim'
+    Plug 'Townk/vim-autoclose'
+    " HTML/CSSの入力補助
+    Plug 'mattn/emmet-vim'
+    Plug 'hail2u/vim-css3-syntax'
+    " ブラケットの自動補完
+    Plug 'jiangmiao/auto-pairs'
+    " 引用符
+    Plug 'tpope/vim-surround'
+    " ファイル検索
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+    " 色を視覚的に表示する
+    Plug 'chrisbra/Colorizer'
+    " html ライブ編集
+    Plug 'turbio/bracey.vim'
+    " csv
+    Plug 'mechatroner/rainbow_csv'
+    Plug 'voldikss/vim-floaterm'
+    " PHP
+    Plug 'stephpy/vim-php-cs-fixer'
+    "syntax highlight
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    " スニペット
+    Plug 'SirVer/ultisnips'
+    " Plug 'honza/vim-snippets'
+  call plug#end()
 
   " option ---------------------------------------------------------------
-  filetype on
+
+  " filetype plugin indent on
+  " syntax enable
+
   filetype plugin indent on
   syntax enable
   " 保存時の文字コード
@@ -172,13 +156,14 @@ else
   " タブ入力を複数の空白入力に置き換える
   set expandtab
   " 画面上でタブ文字が占める幅
-  set tabstop=2
+  set tabstop=4
   " 改行時に前の行のインデントを継続する
   set autoindent
   " 改行時に前の行の構文をチェックし次の行のインデントを増減する
   set smartindent
   " smartindentで増減する幅
-  set shiftwidth=2
+  set shiftwidth=4
+  set softtabstop=4
   " インクリメンタルサーチ. １文字入力毎に検索を行う
   set incsearch
   " 検索パターンに大文字小文字を区別しない
@@ -208,19 +193,29 @@ else
   " ステータスラインの右側にカーソルの現在位置を表示する
   set ruler
   " マウス操作を有効
-  set mouse=a
+  " set mouse=a
   " タイトルバーにファイルパスを表示
   set title
   " タブ・空白・改行等の表示
   set list
-  set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
+  " set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
+  set listchars=tab:»-,extends:»,precedes:«,nbsp:%
   " swap無効
   set noswapfile
+  set autoread
   " 改行時の自動コメントアウトを無効化
-  au FileType * setlocal formatoptions-=r
-  au FileType * setlocal formatoptions-=o
+  autocmd FileType * set formatoptions-=r
+  autocmd FileType * set formatoptions-=o
   " □や○文字が崩れる問題を解決
   " set ambiwidth=double
+
+  " プロバイダを無効化
+  let g:loaded_node_provider = 0
+  let g:loaded_perl_provider = 0
+  let g:loaded_ruby_provider = 0
+
+
+  " keymap ---------------------------------------------------------------
   nnoremap <Left> <Nop>
   nnoremap <Down> <Nop>
   nnoremap <Up> <Nop>
@@ -228,7 +223,6 @@ else
   " nnoremap <Down> gj
   " nnoremap <Up> gk
 
-  " keymap ---------------------------------------------------------------
   " ESCキー2度押しでハイライトの切り替え
   nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
   " インサートモードでファイル更新
@@ -244,21 +238,29 @@ else
     nnoremap <silent> sv :<C-u>vs<CR><C-w>w
   endif
 
-  " autocmd
   augroup fileRead
     autocmd!
     autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
     " autocmd BufNewFile,BufRead, *.ts setfiletype typescript
+    autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+    autocmd BufNewFile,BufRead Dockerfile set ft=dockerfile
+    " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
   augroup END
 
-  augroup color-highlight
-    autocmd!
-    autocmd CursorHold * silent call CocActionAsync('highlight')
-  augroup END
+  " augroup color-highlight
+  "   autocmd!
+  "   autocmd CursorHold * silent call CocActionAsync('highlight')
+  " augroup END
 
   augroup php
     autocmd!
     autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+  augroup END
+
+  augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx,*.json,*.yml,*.vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    " autocmd VimEnter *.js,*.jsx,*.ts,*.tsx,*.json,*.yml,*.vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
   augroup END
 
   " window
@@ -480,66 +482,82 @@ else
       \ 'coc-html',
       \ 'coc-css',
       \ 'coc-phpls',
-      \ 'coc-sql'
       \ ]
 
+  if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
+  set termguicolors
   set background=dark
-  autocmd Colorscheme * highlight Normal ctermbg=none
-  autocmd Colorscheme * highlight NonText ctermbg=none
-  autocmd Colorscheme * highlight Folded ctermbg=none
-  autocmd Colorscheme * highlight EndOfBuffer ctermbg=none
-  " autocmd Colorscheme * highlight Visual ctermbg=232 guibg=none
-  " colorscheme solarized
   " " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  " au MyAutoCmd VimEnter * nested colorscheme dracula
-  au MyAutoCmd VimEnter * nested colorscheme iceberg
-  " au MyAutoCmd VimEnter * nested colorscheme monokai
-  " au MyAutoCmd VimEnter * nested colorscheme molokai
-  " au MyAutoCmd VimEnter * nested colorscheme nord
-  " au MyAutoCmd VimEnter * nested colorscheme onedark
-  " au MyAutoCmd VimEnter * nested colorscheme solarized
-  " au MyAutoCmd VimEnter * nested colorscheme gruvbox
+  " autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+  " autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
+  " autocmd MyAutoCmd VimEnter * nested colorscheme night-owl
+  " autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
+  " autocmd MyAutoCmd VimEnter * nested colorscheme monokai
+  " autocmd MyAutoCmd VimEnter * nested colorscheme molokai
+  " autocmd MyAutoCmd VimEnter * nested colorscheme tokyonight
+  " autocmd MyAutoCmd VimEnter * nested colorscheme nord
+  autocmd MyAutoCmd VimEnter * nested colorscheme onedark
+  " autocmd MyAutoCmd VimEnter * nested colorscheme gruvbox
+  " autocmd MyAutoCmd VimEnter * nested colorscheme solarized
+  " autocmd MyAutoCmd VimEnter * nested colorscheme gruvbox-material
 
+
+  "molokai
+  let g:molokai_original = 0
+
+  " tokyonight
+  let tokyonight_italic_comments = 0
+  let tokyonight_italic_keywords = 0
+
+  " dracula
+  let g:dracula_italic = 0
+
+  " onedark
+  let g:onedark_termcolors=256
+  " let g:onedark_termcolors=16
 
   " fern
   " nnoremap <C-n> :Fern . -reveal=% -drawer -width=40<CR>
   nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
   let g:fern#default_hidden = 1
   function! FernInit() abort
-    nmap <buffer> v <Plug>(fern-action-open:side)
-    nmap <buffer> M <Plug>(fern-action-new-dir)
-    nmap <buffer> ! <Plug>(fern-action-hidden:toggle)
-    nmap <buffer> - <Plug>(fern-action-mark:toggle)
-    vmap <buffer> - <Plug>(fern-action-mark:toggle)
-    nmap <buffer> C <Plug>(fern-action-clipboard-copy)
-    nmap <buffer> X <Plug>(fern-action-clipboard-move)
-    nmap <buffer> P <Plug>(fern-action-clipboard-paste)
-    nmap <buffer> h <Plug>(fern-action-collapse)
-    nmap <buffer> c <Plug>(fern-action-copy)
-    nmap <buffer> <leader>h <Plug>(fern-action-leave)
-    nmap <buffer> m <Plug>(fern-action-move)
-    nmap <buffer> N <Plug>(fern-action-new-file)
-    nmap <buffer> <cr> <Plug>(fern-action-open-or-enter)
-    nmap <buffer> l <Plug>(fern-action-open-or-expand)
-    nmap <buffer> s <Plug>(fern-action-open:select)
-    nmap <buffer> t <Plug>(fern-action-open:tabedit)
-    nmap <buffer> <C-l> <Plug>(fern-action-reload)
-    nmap <buffer> r <Plug>(fern-action-rename)
-    nmap <buffer> i <Plug>(fern-action-reveal)
-    nmap <buffer> D <Plug>(fern-action-trash)
-    nmap <buffer> y <Plug>(fern-action-yank)
-    nmap <buffer> gr <Plug>(fern-action-grep)
+  "   nmap <buffer> v <Plug>(fern-action-open:side)
+  "   nmap <buffer> M <Plug>(fern-action-new-dir)
+  "   nmap <buffer> ! <Plug>(fern-action-hidden:toggle)
+  "   nmap <buffer> - <Plug>(fern-action-mark:toggle)
+  "   vmap <buffer> - <Plug>(fern-action-mark:toggle)
+  "   nmap <buffer> C <Plug>(fern-action-clipboard-copy)
+  "   nmap <buffer> X <Plug>(fern-action-clipboard-move)
+  "   nmap <buffer> P <Plug>(fern-action-clipboard-paste)
+  "   nmap <buffer> h <Plug>(fern-action-collapse)
+  "   nmap <buffer> c <Plug>(fern-action-copy)
+  "   nmap <buffer> <leader>h <Plug>(fern-action-leave)
+  "   nmap <buffer> m <Plug>(fern-action-move)
+  "   nmap <buffer> N <Plug>(fern-action-new-file)
+  "   nmap <buffer> <cr> <Plug>(fern-action-open-or-enter)
+  "   nmap <buffer> l <Plug>(fern-action-open-or-expand)
+  "   nmap <buffer> s <Plug>(fern-action-open:select)
+  "   nmap <buffer> t <Plug>(fern-action-open:tabedit)
+  "   nmap <buffer> <C-l> <Plug>(fern-action-reload)
+  "   nmap <buffer> r <Plug>(fern-action-rename)
+  "   nmap <buffer> i <Plug>(fern-action-reveal)
+  "   nmap <buffer> D <Plug>(fern-action-trash)
+  "   nmap <buffer> y <Plug>(fern-action-yank)
+  "   nmap <buffer> gr <Plug>(fern-action-grep)
     nmap <buffer> d <Plug>(fern-action-remove)
-    nmap <buffer> B <Plug>(fern-action-save-as-bookmark)
-    nmap <buffer> cd <Plug>(fern-action-tcd)
+  "   nmap <buffer> B <Plug>(fern-action-save-as-bookmark)
+  "   nmap <buffer> cd <Plug>(fern-action-tcd)
   endfunction
   augroup FernEvents
     autocmd!
     autocmd FileType fern call FernInit()
   augroup END
-  let g:fern#disable_default_mappings = 1
+  " let g:fern#disable_default_mappings = 1
 
 
   " fern-renderer-nerdfont
@@ -566,13 +584,14 @@ else
 
 
   " vim-airline
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline#extensions#tabline#formatter = 'default'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#branch#enabled = 1
+  " let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#left_sep = ' '
+  " let g:airline#extensions#tabline#left_alt_sep = '|'
+  " let g:airline#extensions#tabline#formatter = 'default'
+  " let g:airline_powerline_fonts = 1
+  " let g:airline#extensions#branch#enabled = 1
   " let g:airline_solarized_bg='dark'
+  " let g:airline_theme='night-owl'
   " let g:airline_theme='dracula'
   " let g:airline_theme='iceberg'
   " let g:airline_theme='nord'
@@ -582,9 +601,9 @@ else
 
 
   " lightline
-  " let g:lightline = {
-  "     \ 'colorscheme': 'iceberg',
-  "     \ }
+  let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ }
 
 
   " emmet-vim
@@ -599,13 +618,17 @@ else
   \      'html:5': "<!DOCTYPE html>\n"
   \              ."<html lang=\"${lang}\">\n"
   \              ."\t<head>\n"
-  \              ."\t\t<meta charset=\"${charset}\">\n"
-  \              ."\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
-  \              ."\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+  \              ."\t\t<meta charset=\"${charset}\" />\n"
+  \              ."\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n"
+  \              ."\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n"
   \              ."\t\t<title></title>\n"
   \              ."\t</head>\n"
   \              ."\t<body>\n\t\t${child}|\n\t</body>\n"
   \              ."</html>",
+  \      '!': "\t\t<meta charSet=\"${charset}\" />\n"
+  \              ."\t\t<meta httpEquiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n"
+  \              ."\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n"
+  \              ."\t\t<title>{title}</title>\n",
   \    },
   \  },
   \}
@@ -614,12 +637,15 @@ else
   " fzf.vim
   let g:fzf_command_prefix = 'Fzf'
   nnoremap <silent> <S-f> :<C-u>FzfFiles<CR>
+  nnoremap <silent> f<S-f> :<C-u>FzfBuffers<CR>
 
 
   " vim-floaterm
   let g:floaterm_keymap_new = '<Leader>ft'
+
+
   " If php-cs-fixer is in $PATH, you don't need to define line below
-  let g:php_cs_fixer_path = "~/vscode_projects/password_manager/api/tools/php-cs-fixer/php-cs-fixer-v3.phar" "define the path to the php-cs-fixer.phar
+  let g:php_cs_fixer_path = "~/.config/nvim/php-cs-fixer-v3.phar" "define the path to the php-cs-fixer.phar
 
   " If you use php-cs-fixer version 1.x
   let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
@@ -635,13 +661,176 @@ else
   "let g:php_cs_fixer_config_file = '.php_cs' " options: --config
   " End of php-cs-fixer version 2 config params
 
-  let g:php_cs_fixer_php_path = "php"               " Path to PHP
+  let g:php_cs_fixer_php_path = "/usr/bin/php"               " Path to PHP
   let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
   let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
   let g:php_cs_fixer_verbose = 0
 
 
+  " ddc.vim
+  " Customize global settings
+  " Use around source.
+  " https://github.com/Shougo/ddc-around
+  call ddc#custom#patch_global('sources', ['around'])
+
+  " Use matcher_head and sorter_rank.
+  " https://github.com/Shougo/ddc-matcher_head
+  " https://github.com/Shougo/ddc-sorter_rank
+  call ddc#custom#patch_global('sourceOptions', {
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ })
+
+  " Change source options
+  call ddc#custom#patch_global('sourceOptions', {
+        \ 'around': {'mark': 'A'},
+        \ })
+  call ddc#custom#patch_global('sourceParams', {
+        \ 'around': {'maxSize': 500},
+        \ })
+
+  " Customize settings on a filetype
+  call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+  call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+        \ 'clangd': {'mark': 'C'},
+        \ })
+  call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+        \ 'around': {'maxSize': 100},
+        \ })
+
+  " Mappings
+
+  " <TAB>: completion.
+  inoremap <silent><expr> <TAB>
+  \ ddc#map#pum_visible() ? '<C-n>' :
+  \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+  \ '<TAB>' : ddc#map#manual_complete()
+
+  " <S-TAB>: completion back.
+  inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+
+  " Use ddc.
+  " call ddc#enable()
+
+  " if executable('intelephense')
+  "   " pip install python-language-server
+  "   au User lsp_setup call lsp#register_server({
+  "       \ 'name': 'intelephense',
+  "       \ 'cmd': {server_info->['php']},
+  "       \ 'allowlist': ['php'],
+  "       \ })
+" endif
+
+
+  " function! s:on_lsp_buffer_enabled() abort
+  "   setlocal omnifunc=lsp#complete
+  "   setlocal signcolumn=yes
+  "   if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+  "   nmap <buffer> gd <plug>(lsp-definition)
+  "   nmap <buffer> gs <plug>(lsp-document-symbol-search)
+  "   nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+  "   nmap <buffer> gr <plug>(lsp-references)
+  "   nmap <buffer> gi <plug>(lsp-implementation)
+  "   nmap <buffer> gt <plug>(lsp-type-definition)
+  "   nmap <buffer> <leader>rn <plug>(lsp-rename)
+  "   nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+  "   nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+  "   nmap <buffer> K <plug>(lsp-hover)
+  "   " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+  "   " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+  "   let g:lsp_format_sync_timeout = 1000
+  "   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+  "   " refer to doc to add more commands
+  " endfunction
+
+  " augroup lsp_install
+  "   au!
+  "   " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+  "   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  " augroup END
+
+
+  " " vim-prettier
+  " let g:prettier#exec_cmd_async = 1
+  " let g:prettier#quickfix_enabled = 0
+
+  " " Max line length that prettier will wrap on: a number or 'auto' (use
+  " " textwidth).
+  " " default: 'auto'
+  " let g:prettier#config#print_width = 120
+  
+  " " number of spaces per indentation level: a number or 'auto' (use
+  " " softtabstop)
+  " " default: 'auto'
+  " let g:prettier#config#tab_width = 2
+  
+  " " use tabs instead of spaces: true, false, or auto (use the expandtab setting).
+  " " default: 'auto'
+  " let g:prettier#config#use_tabs = 'false'
+  
+  " " flow|babylon|typescript|css|less|scss|json|graphql|markdown or empty string
+  " " (let prettier choose).
+  " " default: ''
+  " let g:prettier#config#parser = ''
+  
+  " " cli-override|file-override|prefer-file
+  " " default: 'file-override'
+  " let g:prettier#config#config_precedence = 'file-override'
+  
+  " " always|never|preserve
+  " " default: 'preserve'
+  " let g:prettier#config#prose_wrap = 'preserve'
+  
+  " " css|strict|ignore
+  " " default: 'css'
+  " let g:prettier#config#html_whitespace_sensitivity = 'css'
+  
+  " " false|true
+  " " default: 'false'
+  " let g:prettier#config#require_pragma = 'false'
+  
+  " " Define the flavor of line endings
+  " " lf|crlf|cr|all
+  " " defaut: 'lf'
+  " let g:prettier#config#end_of_line = get(g:, 'prettier#config#end_of_line', 'lf')
+
+
+  
+let g:UltiSnipsJumpForwardTrigger='<c-f>'
+let g:UltiSnipsJumpBackwardTrigger='<c-b>'
+
+
+" nvim-treesitter
+lua <<EOF
+require("nvim-treesitter.configs").setup {
+    highlight = {
+        enable = true
+    },
+    ensure_installed = {
+        "javascript",
+        "bash",
+        "css",
+        "scss",
+        "dockerfile",
+        "lua",
+        "html",
+        "json",
+        "jsonc",
+        "markdown",
+        "php",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml"
+    }
+}
+EOF
+
 endif
 
-" neovim and vscode
+" neovim and vscode settings
 let mapleader = "\<Space>"
