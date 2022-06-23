@@ -20,39 +20,41 @@ if exists('g:vscode')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
     autocmd CmdlineLeave * :call system('fcitx5-remote -c')
   endif
+  runtime configs/global.vim
 
   let g:fern_renderer_devicons_disable_warning = 1
 else
-  runtime plugin/main.vim
-  runtime config/option.vim
-  runtime config/setting.vim
-  runtime config/keymap.vim
-  runtime config/autocmd.vim
+  runtime configs/global.vim
+  runtime plugins/main.vim
+  runtime configs/option.vim
+  runtime configs/setting.vim
+  runtime configs/keymap.vim
+  runtime configs/autocmd.vim
 
 " -------------------------
   " プラグインの設定
-  runtime plugin/coc.vim
-  runtime plugin/vim-php-cs-fixer.vim
-  runtime plugin/vim-operator-replace.vim
-  runtime plugin/glyph-palette.vim
+  " runtime plugins/coc.vim
+  runtime plugins/vim-php-cs-fixer.vim
+  runtime plugins/vim-operator-replace.vim
+  runtime plugins/glyph-palette.vim
   runtime colors/main.vim
-  runtime plugin/molokai.vim
-  runtime plugin/tokyonight.vim
-  runtime plugin/dracula.vim
-  runtime plugin/onedark.vim
-  runtime plugin/fern.vim
-  runtime plugin/vim-airline.vim
-  runtime plugin/lightline.vim
-  runtime plugin/emmet-vim.vim
-  runtime plugin/fzf.vim
-  runtime plugin/vim-floaterm.vim
-  runtime plugin/ddc.vim
-  runtime plugin/vim-lsp.vim
-  runtime plugin/vim-prettier.vim
-  runtime plugin/ultisnips.vim
-  runtime plugin/nvim-treesitter.vim
+  runtime plugins/molokai.vim
+  runtime plugins/onedark.vim
+  runtime plugins/dracula.vim
+  runtime plugins/tokyonight.vim
+  runtime plugins/vim-colors-solarized.vim
+  runtime plugins/fern.vim
+  runtime plugins/vim-airline.vim
+  runtime plugins/lightline.vim
+  runtime plugins/emmet-vim.vim
+  runtime plugins/fzf.vim
+  runtime plugins/vim-floaterm.vim
+  runtime plugins/ddc.vim
+  runtime plugins/vim-lsp.vim
+  runtime plugins/vim-prettier.vim
+  runtime plugins/ultisnips.vim
+  runtime plugins/nvim-treesitter.vim
+  runtime plugins/indentLine.vim
+  runtime plugins/ale.vim
 
 endif
-
-" neovim and vscode settings
-runtime config/global.vim

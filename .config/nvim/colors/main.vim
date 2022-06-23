@@ -1,15 +1,17 @@
-set termguicolors
-set background=dark
-colorscheme gruvbox
-" autocmd MyAutoCmd VimEnter * nested colorscheme dracula
-" autocmd MyAutoCmd VimEnter * nested colorscheme iceberg
-" autocmd MyAutoCmd VimEnter * nested colorscheme night-owl
-" autocmd MyAutoCmd VimEnter * nested colorscheme hybrid
-" autocmd MyAutoCmd VimEnter * nested colorscheme monokai
-" autocmd MyAutoCmd VimEnter * nested colorscheme molokai
-" autocmd MyAutoCmd VimEnter * nested colorscheme tokyonight
-" autocmd MyAutoCmd VimEnter * nested colorscheme nord
-" autocmd MyAutoCmd VimEnter * nested colorscheme onedark
-" autocmd MyAutoCmd VimEnter * nested colorscheme gruvbox
-" autocmd MyAutoCmd VimEnter * nested colorscheme solarized
-" autocmd MyAutoCmd VimEnter * nested colorscheme gruvbox-material
+augroup colors
+  autocmd!
+  autocmd VimEnter * ++nested set termguicolors
+  autocmd VimEnter * ++nested set background=dark
+  " autocmd VimEnter * ++nested colorscheme gruvbox
+  " autocmd VimEnter * ++nested colorscheme hybrid
+  " autocmd VimEnter * ++nested colorscheme onedark
+  " autocmd VimEnter * ++nested colorscheme palenight
+  " autocmd VimEnter * ++nested colorscheme nord
+  " autocmd VimEnter * ++nested colorscheme night-owl
+  " autocmd VimEnter * ++nested colorscheme molokai
+  autocmd VimEnter * ++nested colorscheme tokyonight
+  " autocmd VimEnter * ++nested colorscheme monokai
+  " autocmd VimEnter * ++nested colorscheme iceberg
+  " autocmd VimEnter * ++nested colorscheme solarized
+  " autocmd VimEnter * ++nested colorscheme dracula
+augroup END

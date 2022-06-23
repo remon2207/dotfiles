@@ -41,3 +41,4 @@ nnoremap <silent> fl :<C-u>bnext<CR>
 
 " cursor
 inoremap <C-d> <Del>
+nnoremap <leader>i :<C-u>IndentLinesToggle<CR>

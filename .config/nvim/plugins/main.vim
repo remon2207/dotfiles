@@ -12,10 +12,10 @@ call plug#begin()
   Plug 'itchyny/lightline.vim'
   " ステータスラインにbranch名
   Plug 'tpope/vim-fugitive'
+  " jsonのシンタックス
+  Plug 'elzr/vim-json'
   " インデントの可視化
   Plug 'Yggdroot/indentLine'
-  " 末尾の全角半角空白文字を赤くハイライト
-  " Plug 'bronson/vim-trailing-whitespace'
   " ノーマルモードでコメントアウト
   Plug 'tpope/vim-commentary'
   " カラースキーム
@@ -30,20 +30,17 @@ call plug#begin()
   Plug 'haishanh/night-owl.vim'
   Plug 'w0ng/vim-hybrid'
   Plug 'sainnhe/gruvbox-material'
-  Plug 'folke/tokyonight.nvim'
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+  Plug 'drewtempelmeyer/palenight.vim'
   " IDEのような補完
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  " Plug 'prabirshrestha/vim-lsp'
-  " Plug 'mattn/vim-lsp-settings'
+  " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
   " 補完
-  " Plug 'Shougo/ddc.vim'
-  " Plug 'vim-denops/denops.vim'
-  " Plug 'Shougo/ddc-around'
-  " Plug 'Shougo/ddc-matcher_head'
-  " Plug 'Shougo/ddc-sorter_rank'
-  " Plug 'prabirshrestha/asyncomplete.vim'
-  " Plug 'prabirshrestha/asyncomplete-lsp.vim'
-  " Plug 'shun/ddc-vim-lsp'
+  Plug 'Shougo/ddc.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+  Plug 'shun/ddc-vim-lsp'
   " ファイラー
   Plug 'lambdalisue/fern.vim'
   Plug 'lambdalisue/fern-git-status.vim'
@@ -72,14 +69,9 @@ call plug#begin()
   \ 'for': ['javascript', 'typescript',  'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
   Plug 'yuezk/vim-js'
   " TypeScriptのシンタックス
-  " Plug 'leafgarland/typescript-vim'
   Plug 'HerringtonDarkholme/yats.vim'
-  " jsonのシンタックス
-  Plug 'elzr/vim-json'
   " jsxのシンタックス
   Plug 'peitalin/vim-jsx-typescript'
-  " Dockerfileのシンタックス
-  Plug 'ekalinin/Dockerfile.vim'
   Plug 'Townk/vim-autoclose'
   " HTML/CSSの入力補助
   Plug 'mattn/emmet-vim'
@@ -101,8 +93,9 @@ call plug#begin()
   " PHP
   Plug 'stephpy/vim-php-cs-fixer'
   "syntax highlight
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter'
+  " 非同期
+  Plug 'dense-analysis/ale'
   " スニペット
   Plug 'SirVer/ultisnips'
-  " Plug 'honza/vim-snippets'
 call plug#end()
