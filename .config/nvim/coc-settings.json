@@ -3,7 +3,7 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "eslint.autoFixOnSave": true,
   "suggest.completionItemKindLabels": {
