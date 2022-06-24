@@ -27,8 +27,8 @@ return {
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
     -- 'HackGen',
-    -- 'HackGenNerd',
-    'Cica'
+    'HackGenNerd',
+    -- 'Cica'
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP',
@@ -48,6 +48,8 @@ return {
   -- color_scheme = 'Atom',
   -- color_scheme = 'Brogrammer',
   color_scheme = 'iceberg-dark',
+  -- color_scheme = 'tokyonight-storm',
+  -- color_scheme = 'tokyonight',
   -- color_scheme = 'Molokai',
   -- color_scheme = 'Monokai Remastered',
   -- color_scheme = 'Monokai Soda',
