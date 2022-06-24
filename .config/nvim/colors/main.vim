@@ -1,17 +1,13 @@
-augroup colors
-  autocmd!
-  autocmd VimEnter * ++nested set termguicolors
-  autocmd VimEnter * ++nested set background=dark
-  " autocmd VimEnter * ++nested colorscheme gruvbox
-  " autocmd VimEnter * ++nested colorscheme hybrid
-  " autocmd VimEnter * ++nested colorscheme onedark
-  " autocmd VimEnter * ++nested colorscheme palenight
-  " autocmd VimEnter * ++nested colorscheme nord
-  " autocmd VimEnter * ++nested colorscheme night-owl
-  " autocmd VimEnter * ++nested colorscheme molokai
-  autocmd VimEnter * ++nested colorscheme tokyonight
-  " autocmd VimEnter * ++nested colorscheme monokai
-  " autocmd VimEnter * ++nested colorscheme iceberg
-  " autocmd VimEnter * ++nested colorscheme solarized
-  " autocmd VimEnter * ++nested colorscheme dracula
-augroup END
+runtime plugins/tokyonight.vim
+runtime plugins/molokai.vim
+runtime plugins/onedark.vim
+runtime plugins/dracula.vim
+runtime plugins/vim-colors-solarized.vim
+
+" colorscheme tokyonight
+" colorscheme solarized
+colorscheme onedark
+" colorscheme iceberg
+" colorscheme hybrid
+" colorscheme gruvbox
+" colorscheme dracula

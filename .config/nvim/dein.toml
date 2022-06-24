@@ -1,0 +1,179 @@
+# ステータスラインの表示内容強化
+# [[plugins]]
+# repo = 'vim-airline/vim-airline'
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-airline.vim
+# '''
+# [[plugins]]
+# repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/lightline.vim
+'''
+
+# ステータスラインにbranch名
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# インデントの可視化
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+source ~/.config/nvim/plugins/indentLine.vim
+'''
+
+# カラースキーム
+# [[plugins]]
+# repo = 'dracula/vim'
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+# [[plugins]]
+# repo = 'altercation/vim-colors-solarized'
+# [[plugins]]
+# repo = 'arcticicestudio/nord-vim'
+# [[plugins]]
+# repo = 'sickill/vim-monokai'
+# [[plugins]]
+# repo = 'tomasr/molokai'
+# [[plugins]]
+# repo = 'morhetz/gruvbox'
+# [[plugins]]
+# repo = 'haishanh/night-owl.vim'
+# [[plugins]]
+# repo = 'w0ng/vim-hybrid'
+# [[plugins]]
+# repo = 'sainnhe/gruvbox-material'
+# [[plugins]]
+# repo = 'folke/tokyonight.nvim'
+# rev = 'main'
+# [[plugins]]
+# repo = 'drewtempelmeyer/palenight.vim'
+
+# LSP
+# [[plugins]]
+# repo = 'neoclide/coc.nvim'
+# rev = 'release'
+# hook_add = '''
+# source ~/.config/nvim/plugins/coc.vim
+# '''
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-lsp.vim
+'''
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+# 非同期
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+source ~/.config/nvim/plugins/ale.vim
+'''
+
+#syntax highlight
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_add = '''
+source ~/.config/nvim/plugins/nvim-treesitter.vim
+'''
+
+# 色を視覚的に表示する
+[[plugins]]
+repo = 'chrisbra/Colorizer'
+
+# ヘルプの日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# 選択範囲をGoogle翻訳
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+# ノーマルモードでコメントアウト
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+# フローティングウィンドウ
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-floaterm.vim
+'''
+
+# スニペット
+[[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+source ~/.config/nvim/plugins/ultisnips.vim
+'''
+
+# 引用符
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# ファイル検索
+[[plugins]]
+repo = 'junegunn/fzf'
+hook_add = '''
+source ~/.config/nvim/plugins/fzf.vim
+'''
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+# 置換
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-operator-replace.vim
+'''
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+# 高速移動
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+# ファイラー
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/fern.vim
+'''
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/glyph-palette.vim
+'''
+
+# ブラケットの自動補完
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+# 補完
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/asyncomplete.vim
+'''
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/async.vim'

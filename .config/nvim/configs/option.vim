@@ -59,3 +59,6 @@ set list
 set listchars=tab:»-,extends:»,precedes:«,nbsp:%
 " swap無効
 set noswapfile
+
+set termguicolors
+set background=dark

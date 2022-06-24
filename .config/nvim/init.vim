@@ -1,5 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
+
 augroup MyAutoCmd
   autocmd!
 augroup END
@@ -25,36 +26,10 @@ if exists('g:vscode')
   let g:fern_renderer_devicons_disable_warning = 1
 else
   runtime configs/global.vim
-  runtime plugins/main.vim
+  runtime configs/plugin-manager.vim
   runtime configs/option.vim
   runtime configs/setting.vim
   runtime configs/keymap.vim
   runtime configs/autocmd.vim
-
-" -------------------------
-  " プラグインの設定
-  " runtime plugins/coc.vim
-  runtime plugins/vim-php-cs-fixer.vim
-  runtime plugins/vim-operator-replace.vim
-  runtime plugins/glyph-palette.vim
   runtime colors/main.vim
-  runtime plugins/molokai.vim
-  runtime plugins/onedark.vim
-  runtime plugins/dracula.vim
-  runtime plugins/tokyonight.vim
-  runtime plugins/vim-colors-solarized.vim
-  runtime plugins/fern.vim
-  runtime plugins/vim-airline.vim
-  runtime plugins/lightline.vim
-  runtime plugins/emmet-vim.vim
-  runtime plugins/fzf.vim
-  runtime plugins/vim-floaterm.vim
-  runtime plugins/ddc.vim
-  runtime plugins/vim-lsp.vim
-  runtime plugins/vim-prettier.vim
-  runtime plugins/ultisnips.vim
-  runtime plugins/nvim-treesitter.vim
-  runtime plugins/indentLine.vim
-  runtime plugins/ale.vim
-
 endif

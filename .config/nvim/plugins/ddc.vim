@@ -2,6 +2,9 @@
 " Use around source.
 " https://github.com/Shougo/ddc-around
 " call ddc#custom#patch_global('sources', ['around'])
+" call ddc#custom#patch_global('sources', [
+"       \ 'around',
+"       \ ])
 
 " " Use matcher_head and sorter_rank.
 " " https://github.com/Shougo/ddc-matcher_head
@@ -15,6 +18,7 @@
 " " Change source options
 " call ddc#custom#patch_global('sourceOptions', {
 "       \ 'around': {'mark': 'A'},
+"       \ 'vim-lsp': {'mark': 'vim-lsp'}
 "       \ })
 " call ddc#custom#patch_global('sourceParams', {
 "       \ 'around': {'maxSize': 500},
@@ -40,5 +44,23 @@
 " " <S-TAB>: completion back.
 " inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
 
+
+call ddc#custom#patch_global('sources', ['vim-lsp'])
+call ddc#custom#patch_global('sourceOptions', {
+    \ 'vim-lsp': {
+    \   'matchers': ['matcher_head'],
+    \   'mark': 'lsp',
+    \ },
+    \ })
+
+" if you want to use the unsupported CompleteProvider Server,
+" set true by'ignoreCompleteProvider'.
+call ddc#custom#patch_filetype(['css'], {
+   \ 'sourceParams': {
+   \   'vim-lsp': {
+   \     'ignoreCompleteProvider': v:true,
+   \   },
+   \ },
+   \ })
 " Use ddc.
-" call ddc#enable()
+call ddc#enable()
