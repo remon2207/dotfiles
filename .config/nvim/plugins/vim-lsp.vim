@@ -12,8 +12,7 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> [g <plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <plug>(lsp-next-diagnostic)
   nmap <buffer> K <plug>(lsp-hover)
-  " nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-  " nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+  nmap <buffer> <C-c> <Plug>(lsp-preview-close)
 
   let g:lsp_format_sync_timeout = 1000
   autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -27,4 +26,5 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_preview_autoclose = 0

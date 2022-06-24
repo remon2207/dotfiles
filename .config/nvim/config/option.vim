@@ -62,3 +62,5 @@ set noswapfile
 
 set termguicolors
 set background=dark
+
+set ambiwidth=double

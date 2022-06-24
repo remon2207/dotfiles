@@ -14,6 +14,7 @@ let g:ale_linters = {
       \ 'javascriptreact': ['eslint'],
       \ 'typescript': ['tsserver','eslint'],
       \ 'typescriptreact': ['tsserver','eslint'],
+      \ 'php': ['phpstan']
       \ }
 
 let g:ale_open_list = 1

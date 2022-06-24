@@ -24,33 +24,33 @@ source ~/.config/nvim/plugins/indentLine.vim
 '''
 
 # カラースキーム
-# [[plugins]]
-# repo = 'dracula/vim'
-# [[plugins]]
-# repo = 'cocopon/iceberg.vim'
+[[plugins]]
+repo = 'dracula/vim'
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'joshdick/onedark.vim'
-# [[plugins]]
-# repo = 'altercation/vim-colors-solarized'
-# [[plugins]]
-# repo = 'arcticicestudio/nord-vim'
-# [[plugins]]
-# repo = 'sickill/vim-monokai'
-# [[plugins]]
-# repo = 'tomasr/molokai'
-# [[plugins]]
-# repo = 'morhetz/gruvbox'
-# [[plugins]]
-# repo = 'haishanh/night-owl.vim'
-# [[plugins]]
-# repo = 'w0ng/vim-hybrid'
-# [[plugins]]
-# repo = 'sainnhe/gruvbox-material'
-# [[plugins]]
-# repo = 'folke/tokyonight.nvim'
-# rev = 'main'
-# [[plugins]]
-# repo = 'drewtempelmeyer/palenight.vim'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+[[plugins]]
+repo = 'sickill/vim-monokai'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'morhetz/gruvbox'
+[[plugins]]
+repo = 'haishanh/night-owl.vim'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+rev = 'main'
+[[plugins]]
+repo = 'drewtempelmeyer/palenight.vim'
 
 # LSP
 # [[plugins]]
@@ -177,3 +177,7 @@ source ~/.config/nvim/plugins/asyncomplete.vim
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
+
+# ウィンドウリサイズ
+[[plugins]]
+repo = 'simeji/winresizer'

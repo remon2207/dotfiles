@@ -6,10 +6,10 @@
 "   \ 'colorscheme': 'iceberg',
 "   \ }
 
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }
-
 " let g:lightline = {
-"   \ 'colorscheme': 'tokyonight',
+"   \ 'colorscheme': 'onedark',
 "   \ }
+
+let g:lightline = {
+  \ 'colorscheme': 'tokyonight',
+  \ }

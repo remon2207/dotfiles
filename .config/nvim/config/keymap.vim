@@ -41,4 +41,12 @@ nnoremap <silent> fl :<C-u>bnext<CR>
 
 " cursor
 inoremap <C-d> <Del>
-nnoremap <leader>i :<C-u>IndentLinesToggle<CR>
+
+" quite and write
+nnoremap <Leader>w :<C-u>w<CR>
+nnoremap <Leader>q :<C-u>q<CR>
+nnoremap <Leader>Q :<C-u>q!<CR>
+nnoremap <Leader>W :<C-u>wq<CR>
+
+" disable suspend
+nnoremap <C-z> <Nop>

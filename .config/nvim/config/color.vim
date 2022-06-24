@@ -4,9 +4,9 @@ runtime plugins/onedark.vim
 runtime plugins/dracula.vim
 runtime plugins/vim-colors-solarized.vim
 
-" colorscheme tokyonight
+colorscheme tokyonight
 " colorscheme solarized
-colorscheme onedark
+" colorscheme onedark
 " colorscheme iceberg
 " colorscheme hybrid
 " colorscheme gruvbox

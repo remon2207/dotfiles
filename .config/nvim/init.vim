@@ -21,15 +21,15 @@ if exists('g:vscode')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
     autocmd CmdlineLeave * :call system('fcitx5-remote -c')
   endif
-  runtime configs/global.vim
 
-  let g:fern_renderer_devicons_disable_warning = 1
+  runtime config/global.vim
+
 else
-  runtime configs/global.vim
-  runtime configs/plugin-manager.vim
-  runtime configs/option.vim
-  runtime configs/setting.vim
-  runtime configs/keymap.vim
-  runtime configs/autocmd.vim
-  runtime colors/main.vim
+  runtime config/global.vim
+  runtime config/plugin-manager.vim
+  runtime config/option.vim
+  runtime config/setting.vim
+  runtime config/keymap.vim
+  runtime config/autocmd.vim
+  runtime config/color.vim
 endif
