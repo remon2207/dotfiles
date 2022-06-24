@@ -9,10 +9,8 @@ if &compatible
   set nocompatible " Be iMproved
 endif
 
-" vim or vscode
+" vim or vscode-neovim
 if exists('g:vscode')
-  " □や○文字が崩れる問題を解決
-  set ambiwidth=single
   " 改行時の自動コメントアウトを無効化
   au FileType * setlocal formatoptions-=r
   au FileType * setlocal formatoptions-=o
