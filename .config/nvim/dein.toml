@@ -1,16 +1,16 @@
 # ステータスラインの表示内容強化
-# [[plugins]]
-# repo = 'vim-airline/vim-airline'
-# hook_add = '''
-# source ~/.config/nvim/plugins/vim-airline.vim
-# '''
-# [[plugins]]
-# repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo = 'vim-airline/vim-airline'
 hook_add = '''
-source ~/.config/nvim/plugins/lightline.vim
+source ~/.config/nvim/plugins/vim-airline.vim
 '''
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/lightline.vim
+# '''
 
 # ステータスラインにbranch名
 [[plugins]]
@@ -21,35 +21,35 @@ repo = 'tpope/vim-fugitive'
 repo = 'Yggdroot/indentLine'
 
 # カラースキーム
-[[plugins]]
-repo = 'dracula/vim'
+# [[plugins]]
+# repo = 'dracula/vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'joshdick/onedark.vim'
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-[[plugins]]
-repo = 'arcticicestudio/nord-vim'
-[[plugins]]
-repo = 'sickill/vim-monokai'
-[[plugins]]
-repo = 'tomasr/molokai'
-[[plugins]]
-repo = 'morhetz/gruvbox'
-[[plugins]]
-repo = 'haishanh/night-owl.vim'
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
+# [[plugins]]
+# repo = 'altercation/vim-colors-solarized'
+# [[plugins]]
+# repo = 'arcticicestudio/nord-vim'
+# [[plugins]]
+# repo = 'sickill/vim-monokai'
+# [[plugins]]
+# repo = 'tomasr/molokai'
+# [[plugins]]
+# repo = 'morhetz/gruvbox'
+# [[plugins]]
+# repo = 'haishanh/night-owl.vim'
+# [[plugins]]
+# repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
-[[plugins]]
-repo = 'folke/tokyonight.nvim'
-rev = 'main'
-[[plugins]]
-repo = 'drewtempelmeyer/palenight.vim'
-[[plugins]]
-repo = 'lifepillar/vim-solarized8'
+# [[plugins]]
+# repo = 'folke/tokyonight.nvim'
+# rev = 'main'
+# [[plugins]]
+# repo = 'drewtempelmeyer/palenight.vim'
+# [[plugins]]
+# repo = 'lifepillar/vim-solarized8'
 
 # LSP
 # [[plugins]]
