@@ -1,5 +1,6 @@
-" nnoremap <C-n> :Fern . -reveal=% -drawer -width=40<CR>
-nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
+nnoremap <silent> <C-n> :<C-u>Fern . -reveal=% -drawer<CR>
+" nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
+
 let g:fern#default_hidden = 1
 function! FernInit() abort
   nmap <buffer> d <Plug>(fern-action-remove)
@@ -30,3 +31,5 @@ augroup END
 " fern-renderer-devicons
 let g:fern#renderer = "devicons"
 let g:fern_renderer_devicons_disable_warning = 1
+
+" let g:fern#default_exclude = '^\(node_modules\|\package-lock.json\)'

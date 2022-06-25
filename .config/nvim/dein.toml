@@ -19,9 +19,6 @@ repo = 'tpope/vim-fugitive'
 # インデントの可視化
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-hook_add = '''
-source ~/.config/nvim/plugins/indentLine.vim
-'''
 
 # カラースキーム
 [[plugins]]
@@ -66,6 +63,9 @@ source ~/.config/nvim/plugins/vim-lsp.vim
 '''
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-lsp-settings.vim
+'''
 
 # 非同期
 [[plugins]]
@@ -77,8 +77,10 @@ source ~/.config/nvim/plugins/ale.vim
 #syntax highlight
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-hook_add = '''
-source ~/.config/nvim/plugins/nvim-treesitter.vim
+merged = false
+hook_post_update = 'TSUpdate'
+hook_source = '''
+source ~/.config/nvim/plugins/nvim-treesitter.lua
 '''
 
 # 色を視覚的に表示する
@@ -138,45 +140,74 @@ repo = 'kana/vim-operator-user'
 repo = 'easymotion/vim-easymotion'
 
 # ファイラー
-[[plugins]]
-repo = 'lambdalisue/fern.vim'
-hook_add = '''
-source ~/.config/nvim/plugins/fern.vim
-'''
-[[plugins]]
-repo = 'lambdalisue/fern-git-status.vim'
-[[plugins]]
-repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+# [[plugins]]
+# repo = 'lambdalisue/fern.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/fern.vim
+# '''
+# [[plugins]]
+# repo = 'lambdalisue/fern-git-status.vim'
+# [[plugins]]
+# repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
-[[plugins]]
-repo = 'yuki-yano/fern-preview.vim'
-[[plugins]]
-repo = 'lambdalisue/fern-hijack.vim'
-[[plugins]]
-repo = 'lambdalisue/fern-renderer-devicons.vim'
+# [[plugins]]
+# repo = 'yuki-yano/fern-preview.vim'
+# [[plugins]]
+# repo = 'lambdalisue/fern-hijack.vim'
+# [[plugins]]
+# repo = 'lambdalisue/fern-renderer-devicons.vim'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'lambdalisue/glyph-palette.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/glyph-palette.vim
+# '''
 [[plugins]]
-repo = 'lambdalisue/glyph-palette.vim'
+repo = 'preservim/nerdtree'
 hook_add = '''
-source ~/.config/nvim/plugins/glyph-palette.vim
+source ~/.config/nvim/plugins/nerdtree.vim
 '''
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
 
 # ブラケットの自動補完
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
 # 補完
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/asyncomplete.vim
+# '''
+# [[plugins]]
+# repo = 'prabirshrestha/asyncomplete-lsp.vim'
+# [[plugins]]
+# repo = 'prabirshrestha/async.vim'
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
+repo = 'Shougo/ddc.vim'
 hook_add = '''
-source ~/.config/nvim/plugins/asyncomplete.vim
+source ~/.config/nvim/plugins/ddc.vim
 '''
 [[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
+repo = 'shun/ddc-vim-lsp'
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
+repo = 'vim-denops/denops.vim'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+[[plugins]]
+repo = 'Shougo/ddc-around'
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+# [[plugins]]
+# repo = 'Shougo/pum.vim'
+# hook_add = '''
+# source ~/.config/nvim/plugins/pum.vim
+# '''
 
 # ウィンドウリサイズ
 [[plugins]]

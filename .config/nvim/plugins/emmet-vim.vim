@@ -1,3 +1,4 @@
+let g:user_emmet_mode = 'i'
 let g:user_emmet_settings = {
 \  'variables': {'lang': 'ja'},
 \  'html': {
