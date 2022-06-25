@@ -10,7 +10,13 @@ runtime plugins/vim-colors-solarized.vim
 " colorscheme tokyonight
 " colorscheme solarized
 " colorscheme onedark
-colorscheme iceberg
+" colorscheme iceberg
 " colorscheme hybrid
 " colorscheme gruvbox
 " colorscheme dracula
+" colorscheme molokai
+" colorscheme nord
+colorscheme gruvbox-material
+" colorscheme palenight
+" colorscheme palenight
+" colorscheme solarized8

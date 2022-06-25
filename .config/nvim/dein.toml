@@ -48,6 +48,8 @@ repo = 'folke/tokyonight.nvim'
 rev = 'main'
 [[plugins]]
 repo = 'drewtempelmeyer/palenight.vim'
+[[plugins]]
+repo = 'lifepillar/vim-solarized8'
 
 # LSP
 # [[plugins]]
@@ -203,6 +205,8 @@ repo = 'Shougo/ddc-around'
 repo = 'Shougo/ddc-sorter_rank'
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
+
+# ポップアップウィンドウ
 # [[plugins]]
 # repo = 'Shougo/pum.vim'
 # hook_add = '''
