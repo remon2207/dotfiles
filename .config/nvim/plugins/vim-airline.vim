@@ -13,3 +13,4 @@ let g:airline#extensions#branch#enabled = 1
 " let g:airline_theme='onedark'
 " let g:airline_theme='monokai'
 " let g:airline_theme = 'gruvbox-material'
+let g:airline_theme = 'tokyonight'

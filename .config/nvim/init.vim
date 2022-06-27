@@ -1,14 +1,3 @@
-scriptencoding utf-8
-set encoding=utf-8
-
-augroup MyAutoCmd
-  autocmd!
-augroup END
-
-if &compatible
-  set nocompatible " Be iMproved
-endif
-
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
 let g:did_indent_on             = 1
@@ -27,6 +16,17 @@ let g:loaded_tarPlugin          = 1
 let g:loaded_tutor_mode_plugin  = 1
 let g:loaded_zipPlugin          = 1
 let g:skip_loading_mswin        = 1
+
+scriptencoding utf-8
+set encoding=utf-8
+
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+if &compatible
+  set nocompatible " Be iMproved
+endif
 
 " vim or vscode-neovim
 if exists('g:vscode')

@@ -10,14 +10,14 @@
 "   \ 'colorscheme': 'one',
 "   \ }
 
-" let g:lightline = {
-"   \ 'colorscheme': 'tokyonight',
-"   \ }
+let g:lightline = {
+  \ 'colorscheme': 'tokyonight',
+  \ }
 
 " let g:lightline = {
 "   \ 'colorscheme': 'gruvbox-material',
 "   \ }
 
-let g:lightline = {
-  \ 'colorscheme': 'apprentice',
-  \ }
+" let g:lightline = {
+"   \ 'colorscheme': 'apprentice',
+"   \ }

@@ -6,8 +6,9 @@ runtime plugins/molokai.vim
 runtime plugins/onedark.vim
 runtime plugins/dracula.vim
 runtime plugins/vim-colors-solarized.vim
+runtime plugins/gruvbox-material.vim
 
-" colorscheme tokyonight
+colorscheme tokyonight
 " colorscheme solarized
 " colorscheme onedark
 " colorscheme iceberg
@@ -16,7 +17,7 @@ runtime plugins/vim-colors-solarized.vim
 " colorscheme dracula
 " colorscheme molokai
 " colorscheme nord
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
 " colorscheme palenight
 " colorscheme palenight
 " colorscheme solarized8

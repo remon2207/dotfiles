@@ -1,16 +1,16 @@
 # ステータスラインの表示内容強化
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-source ~/.config/nvim/plugins/vim-airline.vim
-'''
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 # [[plugins]]
-# repo = 'itchyny/lightline.vim'
+# repo = 'vim-airline/vim-airline'
 # hook_add = '''
-# source ~/.config/nvim/plugins/lightline.vim
+# source ~/.config/nvim/plugins/vim-airline.vim
 # '''
+# [[plugins]]
+# repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/lightline.vim
+'''
 
 # ステータスラインにbranch名
 [[plugins]]
@@ -43,8 +43,8 @@ repo = 'joshdick/onedark.vim'
 # repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
-# [[plugins]]
-# repo = 'folke/tokyonight.nvim'
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
 # rev = 'main'
 # [[plugins]]
 # repo = 'drewtempelmeyer/palenight.vim'
