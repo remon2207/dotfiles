@@ -1,14 +1,4 @@
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-
-runtime plugins/tokyonight.vim
-runtime plugins/molokai.vim
-runtime plugins/onedark.vim
-runtime plugins/dracula.vim
-runtime plugins/vim-colors-solarized.vim
-runtime plugins/gruvbox-material.vim
-
-colorscheme tokyonight
+" colorscheme tokyonight
 " colorscheme solarized
 " colorscheme onedark
 " colorscheme iceberg
@@ -21,3 +11,10 @@ colorscheme tokyonight
 " colorscheme palenight
 " colorscheme palenight
 " colorscheme solarized8
+
+augroup colors
+    autocmd!
+    autocmd ColorScheme * highlight Normal ctermbg=none
+    autocmd ColorScheme * highlight LineNr ctermbg=none
+    autocmd VimEnter * ++nested colorscheme tokyonight
+augroup END

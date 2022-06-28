@@ -1,26 +1,22 @@
-nnoremap <Left> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Up> <Nop>
-nnoremap <Right> <Nop>
-" nnoremap <Down> gj
-" nnoremap <Up> gk
-
 " ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+
 " インサートモードでファイル更新
 inoremap <silent> <C-s> <Esc>:<C-u>update<CR>
+
 " 行が折り返しされていたら表示行単位で移動
 nnoremap j gj
 nnoremap k gk
 
+" terminal
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   nnoremap <silent> <C-t> :<C-u>terminal<CR>
-  nnoremap <silent> ss :<C-u>sp<CR><C-w>w
-  nnoremap <silent> sv :<C-u>vs<CR><C-w>w
 endif
 
 " window
+nnoremap <silent> ss :<C-u>sp<CR><C-w>w
+nnoremap <silent> sv :<C-u>vs<CR><C-w>w
 nnoremap sh <C-w>h
 nnoremap sH <C-w>H
 nnoremap sj <C-w>j
@@ -48,5 +44,5 @@ nnoremap <Leader>q :<C-u>q<CR>
 nnoremap <Leader>Q :<C-u>q!<CR>
 nnoremap <Leader>W :<C-u>wq<CR>
 
-" disable suspend
+" disabled suspend
 nnoremap <C-z> <Nop>

@@ -1,12 +1,14 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup {
     highlight = {
+        enable = true
+    },
+    autotag = {
         enable = true
     },
     ensure_installed = {
         "javascript",
         "bash",
         "css",
-        "scss",
         "dockerfile",
         "lua",
         "html",

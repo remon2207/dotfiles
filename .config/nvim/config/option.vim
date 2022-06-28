@@ -1,9 +1,7 @@
-filetype plugin indent on
-syntax enable
 " 保存時の文字コード
 set fileencoding=utf-8
 " 読み込み時の文字コードの自動判別. 左側が優先される
-set fileencodings=ucs-boms,utf-8,euc-jp,cp932
+set fileencodings=utf-8,cp932
 " 改行コードの自動判別. 左側が優先される
 set fileformats=unix,dos,mac
 " レジスタ、クリップボードの共有
@@ -59,6 +57,6 @@ set list
 set listchars=tab:»-,extends:»,precedes:«,nbsp:%
 " swap無効
 set noswapfile
-
+" カラー
 set termguicolors
 set background=dark

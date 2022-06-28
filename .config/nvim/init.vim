@@ -1,22 +1,3 @@
-let g:did_install_default_menus = 1
-let g:did_install_syntax_menu   = 1
-let g:did_indent_on             = 1
-let g:did_load_filetypes        = 1
-let g:did_load_ftplugin         = 1
-let g:loaded_2html_plugin       = 1
-let g:loaded_gzip               = 1
-let g:loaded_man                = 1
-let g:loaded_matchit            = 1
-let g:loaded_matchparen         = 1
-let g:loaded_netrwPlugin        = 1
-let g:loaded_remote_plugins     = 1
-let g:loaded_shada_plugin       = 1
-let g:loaded_spellfile_plugin   = 1
-let g:loaded_tarPlugin          = 1
-let g:loaded_tutor_mode_plugin  = 1
-let g:loaded_zipPlugin          = 1
-let g:skip_loading_mswin        = 1
-
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -28,11 +9,13 @@ if &compatible
   set nocompatible " Be iMproved
 endif
 
-" vim or vscode-neovim
-if exists('g:vscode')
+filetype plugin indent on
+syntax enable
+
+" vscode-neovim
+if !exists('g:vscode')
   " 改行時の自動コメントアウトを無効化
-  au FileType * setlocal formatoptions-=r
-  au FileType * setlocal formatoptions-=o
+  au FileType * setlocal formatoptions-=ro
 
   if executable('fcitx5')
     autocmd InsertLeave * :call system('fcitx5-remote -c')
@@ -40,13 +23,16 @@ if exists('g:vscode')
   endif
 
   runtime config/global.vim
-
-else
-  runtime config/global.vim
-  runtime config/plugin-manager.vim
-  runtime config/option.vim
-  runtime config/setting.vim
-  runtime config/keymap.vim
-  runtime config/autocmd.vim
-  runtime config/color.vim
 endif
+
+" file load ---------- {{{
+
+runtime ./config/global.vim
+runtime ./plugin.vim
+runtime ./config/option.vim
+runtime ./config/setting.vim
+runtime ./config/autocmd.vim
+runtime ./config/keymap.vim
+runtime ./config/color.vim
+
+" }}}
