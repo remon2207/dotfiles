@@ -4,36 +4,36 @@ repo = 'preservim/vim-markdown'
 on_ft = ['markdown']
 
 # jsonのシンタックス
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = ['json']
-hook_add = '''
-source ~/.config/nvim/plugins/vim-json.vim
-'''
+# [[plugins]]
+# repo = 'elzr/vim-json'
+# on_ft = ['json']
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-json.vim
+# '''
 
 # tomlファイルのシンタックス
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
+# [[plugins]]
+# repo = 'cespare/vim-toml'
+# on_ft = ['toml']
 
 # JavaScriptのシンタックス
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
-[[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
-[[plugins]]
-repo = 'othree/es.next.syntax.vim'
-on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'pangloss/vim-javascript'
+# on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'othree/yajs.vim'
+# on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'othree/es.next.syntax.vim'
+# on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
 
 # JavaScriptのPrettier
-[[plugins]]
-repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
-[[plugins]]
-repo = 'yuezk/vim-js'
-on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'maxmellon/vim-jsx-pretty'
+# on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'yuezk/vim-js'
+# on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
 
 # コードフォーマッター
 # [[plugins]]
@@ -45,17 +45,17 @@ on_ft = ['javascript', 'javascript', 'typescript', 'typescriptreact']
 # '''
 
 # TypeScriptのシンタックス
-[[plugins]]
-repo = 'HerringtonDarkholme/yats.vim'
-on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'HerringtonDarkholme/yats.vim'
+# on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'leafgarland/typescript-vim'
+# on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
 
 # jsxのシンタックス
-[[plugins]]
-repo = 'peitalin/vim-jsx-typescript'
-on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
+# [[plugins]]
+# repo = 'peitalin/vim-jsx-typescript'
+# on_ft = ['javascript', 'javascriptreact', 'typescript', 'typescriptreact']
 
 # HTML/CSSの入力補助
 [[plugins]]
@@ -64,14 +64,14 @@ on_ft = ['html', 'javascriptreact', 'typescriptreact']
 hook_add = '''
 source ~/.config/nvim/plugins/emmet-vim.vim
 '''
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-on_ft = ['css']
+# [[plugins]]
+# repo = 'hail2u/vim-css3-syntax'
+# on_ft = ['css']
 
 # html ライブ編集
-[[plugins]]
-repo = 'turbio/bracey.vim'
-on_ft = ['html']
+# [[plugins]]
+# repo = 'turbio/bracey.vim'
+# on_ft = ['html']
 
 # csv
 [[plugins]]
@@ -86,10 +86,212 @@ hook_add = '''
 source ~/.config/nvim/plugins/vim-php-cs-fixer.vim
 '''
 
-# タグ自動補完
+# # タグ自動補完
+# [[plugins]]
+# repo = 'alvan/vim-closetag'
+# on_ft = ['html', 'javascriptreact', 'typescriptreact']
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-closetag.vim
+# '''
+
+# ウィンドウリサイズ
 [[plugins]]
-repo = 'alvan/vim-closetag'
-on_ft = ['html', 'javascriptreact', 'typescriptreact']
+repo = 'simeji/winresizer'
+on_event = ['WinNew']
+
+
+# ブラケットの自動補完
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+on_event = ['BufNewFile', 'BufRead']
+
+# ステータスラインの表示内容強化
+# [[plugins]]
+# repo = 'vim-airline/vim-airline'
+# hook_add = '''
+# source ~/.config/nvim/plugins/vim-airline.vim
+# '''
+# [[plugins]]
+# repo = 'vim-airline/vim-airline-themes'
+
+# ステータスラインにbranch名
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_event = ['BufNewFile', 'BufRead']
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+on_event = ['BufNewFile', 'BufRead']
 hook_add = '''
-source ~/.config/nvim/plugins/vim-closetag.vim
+source ~/.config/nvim/plugins/lightline.vim
+'''
+
+# インデントの可視化
+[[plugins]]
+on_event = ['BufNewFile', 'BufRead']
+repo = 'Yggdroot/indentLine'
+
+# カラースキーム
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'dracula/vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'joshdick/onedark.vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'altercation/vim-colors-solarized'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'arcticicestudio/nord-vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'sickill/vim-monokai'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'tomasr/molokai'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'morhetz/gruvbox'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'haishanh/night-owl.vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'w0ng/vim-hybrid'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'sainnhe/gruvbox-material'
+# rev = 'main'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'drewtempelmeyer/palenight.vim'
+# on_event = ['ColorSchemePre']
+# [[plugins]]
+# repo = 'lifepillar/vim-solarized8'
+# on_event = ['ColorSchemePre']
+
+
+#syntax highlight
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+merged = false
+hook_post_update = 'TSUpdate'
+on_event = ['BufNewFile', 'BufRead']
+hook_source = '''
+source ~/.config/nvim/plugins/nvim-treesitter.lua
+'''
+
+# 色を視覚的に表示する
+[[plugins]]
+repo = 'chrisbra/Colorizer'
+on_ft = ['html', 'css', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact']
+
+# ヘルプの日本語化
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# 選択範囲をGoogle翻訳
+[[plugins]]
+repo = 'skanehira/translate.vim'
+
+# ノーマルモードでコメントアウト
+[[plugins]]
+repo = 'tpope/vim-commentary'
+on_event = ['BufNewFile', 'BufRead']
+
+# スニペット
+[[plugins]]
+repo = 'SirVer/ultisnips'
+on_event = ['InsertEnter']
+hook_add = '''
+source ~/.config/nvim/plugins/ultisnips.vim
+'''
+# ファイラー
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_event = ['VimEnter']
+hook_add = '''
+source ~/.config/nvim/plugins/fern.vim
+'''
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_event = ['VimEnter']
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+on_event = ['VimEnter']
+hook_add = '''
+source ~/.config/nvim/plugins/glyph-palette.vim
+'''
+
+# フローティングウィンドウ
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+on_event = ['BufNewFile', 'BufRead']
+hook_add = '''
+source ~/.config/nvim/plugins/vim-floaterm.vim
+'''
+
+# ファイル検索
+[[plugins]]
+repo = 'junegunn/fzf'
+on_event = ['BufNewFile', 'BufRead']
+hook_add = '''
+source ~/.config/nvim/plugins/fzf.vim
+'''
+[[plugins]]
+on_event = ['BufNewFile', 'BufRead']
+repo = 'junegunn/fzf.vim'
+
+# 引用符
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_event = ['BufNewFile', 'BufRead']
+
+# 置換
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+on_event = ['ModeChanged']
+hook_add = '''
+source ~/.config/nvim/plugins/vim-operator-replace.vim
+'''
+[[plugins]]
+repo = 'kana/vim-operator-user'
+on_event = ['ModeChanged']
+
+# 高速移動
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+on_event = ['BufNewFile', 'BufRead']
+
+# LSP
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_event = ['BufNewFile', 'BufRead']
+hook_add = '''
+source ~/.config/nvim/plugins/coc.vim
 '''

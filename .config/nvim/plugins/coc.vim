@@ -175,5 +175,6 @@ let g:coc_global_extensions = [
   \ 'coc-phpls',
   \ 'coc-docker',
   \ 'coc-yaml',
-  \ 'coc-sql'
+  \ 'coc-sql',
+  \ 'coc-snippets'
   \ ]

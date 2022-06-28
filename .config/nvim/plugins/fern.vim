@@ -1,5 +1,5 @@
-nnoremap <silent> <C-n> :<C-u>Fern . -reveal=% -drawer<CR>
-" nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
+" nnoremap <silent> <C-n> :<C-u>Fern . -reveal=% -drawer<CR>
+nnoremap <silent> <C-n> :<C-u>Fern . -reveal=%<CR>
 
 let g:fern#default_hidden = 1
 function! FernInit() abort
