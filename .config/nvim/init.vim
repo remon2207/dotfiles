@@ -13,7 +13,7 @@ filetype plugin indent on
 syntax enable
 
 " vscode-neovim
-if !exists('g:vscode')
+if exists('g:vscode')
   " 改行時の自動コメントアウトを無効化
   au FileType * setlocal formatoptions-=ro
 
@@ -22,17 +22,22 @@ if !exists('g:vscode')
     autocmd CmdlineLeave * :call system('fcitx5-remote -c')
   endif
 
+  call plug#begin()
+  Plug 'phaazon/hop.nvim'
+  call plug#end()
+
   runtime config/global.vim
+else
+
+  " file load ---------- {{{
+  
+  runtime ./config/global.vim
+  runtime ./plugin.vim
+  runtime ./config/option.vim
+  runtime ./config/setting.vim
+  runtime ./config/autocmd.vim
+  runtime ./config/keymap.vim
+  runtime ./config/color.vim
+  
+  " }}}
 endif
-
-" file load ---------- {{{
-
-runtime ./config/global.vim
-runtime ./plugin.vim
-runtime ./config/option.vim
-runtime ./config/setting.vim
-runtime ./config/autocmd.vim
-runtime ./config/keymap.vim
-runtime ./config/color.vim
-
-" }}}

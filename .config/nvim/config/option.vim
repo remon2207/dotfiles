@@ -60,3 +60,5 @@ set noswapfile
 " カラー
 set termguicolors
 set background=dark
+" サイン列を常時表示
+set signcolumn=yes

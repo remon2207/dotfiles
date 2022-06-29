@@ -1,4 +1,4 @@
-" let g:ale_linters_explicit = 1
+let g:ale_linters_explicit = 1
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -16,6 +16,13 @@ let g:ale_fix_on_save = 1
 "       \ 'typescriptreact': ['tsserver','eslint'],
 "       \ 'dockerfile': ['hadolint'],
 "       \ }
+
+let g:ale_linters = {
+      \ 'javascript': ['cspell'],
+      \ 'typescript': ['cspell'],
+      \ 'javascriptreact': ['cspell'],
+      \ 'typescriptreact': ['cspell']
+      \ }
 
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'

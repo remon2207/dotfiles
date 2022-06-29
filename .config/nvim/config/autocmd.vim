@@ -3,13 +3,13 @@ autocmd FileType * set formatoptions-=ro
 
 augroup fileRead
   autocmd!
-  autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
+  " autocmd BufEnter *.css,*.scss,*.js,*.jsx,*.ts,*.tsx execute 'ColorHighlight'
   autocmd VimEnter tsconfig.json,jsconfig.json setlocal ft=jsonc commentstring=//\ %s
 augroup END
 
 augroup fileWrite
   autocmd!
-  autocmd BufWrite *.sql CocCommand sql.Format
+  " autocmd BufWrite *.sql CocCommand sql.Format
 augroup END
 
 augroup fileTypeIndent

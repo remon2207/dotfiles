@@ -1,5 +1,10 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+-- local cmp = require'cmp'
+local status, cmp = pcall(require, 'cmp')
+
+if (not status) then return end
+
+vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
     snippet = {
@@ -18,8 +23,13 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'ultisnips' }, -- For ultisnips users.
-    }, {
-        { name = 'buffer' },
+        {
+            name = 'buffer',
+            option = {
+                keyword_length = 1
+            }
+        },
+        { name = 'path' }
     }),
 })
 

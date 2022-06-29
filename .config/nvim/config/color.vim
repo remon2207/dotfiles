@@ -16,5 +16,9 @@ augroup colors
     autocmd!
     autocmd ColorScheme * highlight Normal ctermbg=none
     autocmd ColorScheme * highlight LineNr ctermbg=none
-    autocmd VimEnter * ++nested colorscheme tokyonight
+    " autocmd VimEnter * ++nested colorscheme tokyonight
+    " autocmd VimEnter * ++nested colorscheme solarized8
+    " autocmd VimEnter * ++nested colorscheme solarized8
+    autocmd VimEnter * ++nested colorscheme github_dark
+    " colorscheme solarized
 augroup END

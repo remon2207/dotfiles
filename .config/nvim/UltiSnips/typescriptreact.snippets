@@ -1,4 +1,4 @@
-snippet start "import type { NextPage } from 'next'"
+snippet next "import type { NextPage } from 'next'"
 import type { NextPage } from 'next';
 
 const $1:NextPage = () => {
@@ -9,4 +9,14 @@ const $1:NextPage = () => {
 };
 
 export default $1;
+endsnippet
+
+snippet component "export const $1: React.FC = () => ..."
+export const $1: React.FC = () => {
+  return (
+    <>
+      $2
+    </>
+  )
+}
 endsnippet

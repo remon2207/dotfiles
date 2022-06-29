@@ -1,3 +1,9 @@
+local status, lsp_installer = pcall(require, 'nvim-lsp-installer')
+if (not status) then return end
+
+-- local status, lspconfig = pcall(require, 'lspconfig')
+-- if (not status) then return end
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -12,9 +18,11 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-    require('lsp_signature').on_attach {}
+    -- require('lsp_signature').on_attach {}
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    client.resolved_capabilities.document_formatting = false
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -56,10 +64,11 @@ local install_servers = {
     'dockerls',
     'sqls',
     'sumneko_lua',
-    'yamlls'
+    'yamlls',
+    'sqlls'
 }
 
-require('nvim-lsp-installer').setup {
+lsp_installer.setup {
     automatic_installation = true
 }
 
