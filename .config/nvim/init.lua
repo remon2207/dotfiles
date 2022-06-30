@@ -1,4 +1,4 @@
-require('impatient')
+-- require('impatient')
 require('default-plugin-skip')
 
 vim.g.scriptencoding = 'utf-8'
