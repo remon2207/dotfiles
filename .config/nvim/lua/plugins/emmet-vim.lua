@@ -1,4 +1,5 @@
 -- api.nvim_set_var('user_emmet_mode', '1')
+
 vim.cmd[[
 let g:user_emmet_settings = {
 \    'variables': {'lang': 'ja'},

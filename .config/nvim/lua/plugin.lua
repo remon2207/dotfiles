@@ -10,10 +10,17 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
+    use 'lewis6991/impatient.nvim'
+
+    use {
+        'nathom/filetype.nvim',
+        config = function() require('plugins/filetype') end
+    }
+
     -- ステータスラインを強化
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons'},
+        requires = { 'kyazdani42/nvim-web-devicons' },
         config = function() require('plugins/lualine') end
     }
 
@@ -21,7 +28,7 @@ require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         branch = 'main',
-        requires = {'kyazdani42/nvim-web-devicons'},
+        requires = {'kyazdani42/nvim-web-devicons' },
         config = function() require('plugins/bufferline') end
     }
 
@@ -99,7 +106,10 @@ require('packer').startup(function(use)
     -- ファイル検索
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' },
+        opt = true,
+        event = { 'BufEnter' },
+        requires = {
+            { 'nvim-lua/plenary.nvim' },
             { 'kyazdani42/nvim-web-devicons' }
         },
         config = function() require('plugins/telescope') end
@@ -131,10 +141,11 @@ require('packer').startup(function(use)
     -- ファイラー
     use {
         'kyazdani42/nvim-tree.lua',
-        requires = {'kyazdani42/nvim-web-devicons'},
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        requires = {'kyazdani42/nvim-web-devicons' },
         config = function() require('plugins/nvim-tree') end
     }
-
 
     -- LSP
     use {
@@ -200,14 +211,13 @@ require('packer').startup(function(use)
         'glepnir/lspsaga.nvim',
         branch = 'main',
         opt = true,
-        event = {'BufNewFile', 'BufRead'},
+        event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/lspsaga') end
     }
 
     use {
         'windwp/nvim-ts-autotag',
         ft = {'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript', 'xml', 'php', 'markdown', 'glimmer','handlebars','hbs'},
-        -- config = function() require('plugins/nvim-ts-autotag') end
     }
 
     if packer_bootstrap then

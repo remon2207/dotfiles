@@ -1,14 +1,13 @@
+require('impatient')
 require('default-plugin-skip')
 
 vim.g.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugin.lua source <afile> | PackerCompile
-  augroup end
-]])
+vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = { 'plugin.lua' },
+    command = 'source <afile> | PackerCompile'
+})
 
 vim.g.mapleader = ' '
 

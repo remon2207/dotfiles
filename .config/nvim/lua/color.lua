@@ -1,11 +1,14 @@
-vim.cmd[[
-augroup color-config
-    autocmd!
-    autocmd ColorScheme * highlight Normal ctermbg=none
-    autocmd ColorScheme * highlight LineNr ctermbg=none
-    " autocmd VimEnter * ++nested colorscheme onedark
-    autocmd VimEnter * ++nested colorscheme github_dark
-    " autocmd VimEnter * ++nested colorscheme dracula
-    " autocmd VimEnter * ++nested colorscheme tokyonight
-augroup END
-]]
+local api = vim.api
+
+api.nvim_create_augroup('color_config', {
+    clear = true
+})
+
+api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
+    pattern = '*',
+    group = 'color_config',
+    nested = true,
+    command = 'highlight Normal ctermbg=none',
+    command = 'highlight LineNr ctermbg=none',
+    command = 'colorscheme github_dark'
+})

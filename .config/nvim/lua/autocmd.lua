@@ -1,30 +1,40 @@
+local api = vim.api
+
 -- 改行時の自動コメントアウトを無効化
-vim.cmd[[autocmd FileType * set formatoptions-=ro]]
+api.nvim_create_autocmd('FileType', {
+    pattern = '*',
+    command = 'set formatoptions-=ro'
+})
 
 -- 'IMEの自動無効化
-vim.cmd[[
-if executable('fcitx5')
-    autocmd InsertLeave * :call system('fcitx5-remote -c')
-endif
-]]
+api.nvim_create_autocmd('InsertLeave', {
+    pattern = '*',
+    callback = function()
+        if os.execute('fcitx5 2> /dev/null') then
+            api.nvim_exec('call system("fcitx5-remote -c")', true)
+        end
+    end
+})
 
-vim.cmd[[
-augroup fileRead
-    autocmd!
-    " autocmd BufWritePort *.php silent! call PhpCsFixerFixFile()
-    autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-augroup END
-]]
+api.nvim_create_augroup('file', {
+    clear = true
+})
 
-vim.cmd[[
-augroup fileLoad
-    autocmd!
-    autocmd BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx,*.json,*.yml,*.vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd VimEnter tsconfig.json,jsconfig.json set ft=jsonc
-augroup END
-]]
-
--- vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.lsp.diagnostic.show_line_diagnostics({show_header=false})')
+api.nvim_create_autocmd('BufWritePre', {
+    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
+    group = 'file',
+    command = 'EslintFixAll'
+})
 
 
--- vim.cmd[[autocmd CursorHold * lua vim.diagnostic.open_float({scope="line"})]]
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim' },
+    group = 'file',
+    command = 'setlocal tabstop=2 softtabstop=2 shiftwidth=2',
+})
+
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    pattern = { 'tsconfig.json', 'jsconfig.json' },
+    group = 'file',
+    command = 'setlocal ft=jsonc'
+})
