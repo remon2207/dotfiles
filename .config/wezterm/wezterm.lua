@@ -6,8 +6,12 @@ return {
     --   family='JetBrainsMono Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
+    {
+      family='FiraCode Nerd Font',
+      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    },
     -- {
-    --   family='FiraCode Nerd Font',
+    --   family='InconsolataGo Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
     -- {
@@ -25,7 +29,7 @@ return {
     -- 'MesloLGL Nerd Font',
     -- 'MesloLGS Nerd Font',
     -- 'Inconsolata',
-    -- 'Migu 1M',
+    'Migu 1M',
     -- 'NotoSans Nerd Font',
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
@@ -36,7 +40,7 @@ return {
     -- 'HackGenNerd',
     -- 'Cica'
     -- 'Gen Shin Gothic Monospace',
-    'Ricty',
+    -- 'Ricty',
     -- 'PlemolJP',
     -- 'PlemolJP Console NF',
     -- 'PlemolJP Console',
@@ -47,16 +51,17 @@ return {
     -- 'Source Han Code JP'
   }),
   -- font_size = 10.0,
-  -- font_size = 9.0,
-  font_size = 12.0,
+  font_size = 9.0,
+  -- font_size = 12.0,
   -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',
+  color_scheme = 'GitHub Dark',
   -- color_scheme = 'Atom',
   -- color_scheme = 'Brogrammer',
   -- color_scheme = 'iceberg-dark',
   -- color_scheme = 'tokyonight-storm',
-  color_scheme = 'tokyonight',
+  -- color_scheme = 'tokyonight',
   -- color_scheme = 'Molokai',
   -- color_scheme = 'Monokai Remastered',
   -- color_scheme = 'Monokai Soda',
