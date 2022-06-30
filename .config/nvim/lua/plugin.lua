@@ -188,11 +188,6 @@ require('packer').startup(function(use)
         config = function() require('plugins/ale') end
     }
 
-    -- 起動時間短縮
-    use {
-        'lewis6991/impatient.nvim'
-    }
-
     use {
         'kosayoda/nvim-lightbulb',
         opt = true,
