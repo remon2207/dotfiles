@@ -8,19 +8,10 @@ vim.g.ale_fixers = {
 
 vim.g.ale_fix_on_save = 1
 
-vim.g.ale_linters = {
-    javascript = {'cspell'},
-    javascriptreact = {'cspell'},
-    typescript = {'cspell'},
-    typescriptreact = {'cspell'},
-    json = {'cspell'},
-    lua = {'cspell'}
-}
-
 vim.g.ale_sign_column_always = 1
 vim.g.ale_echo_msg_error_str = 'E'
 vim.g.ale_echo_msg_warning_str = 'W'
 vim.g.ale_echo_msg_format = '[%linter%] (%code%): %s [%severity%]'
 
-vim.keymap.set('n', '<C-w>j', '<Plug>(ale_next_wrap)')
-vim.keymap.set('n', '<C-w>k', '<Plug>(ale_previous_wrap)')
+-- vim.keymap.set('n', '<C-w>j', '<Plug>(ale_next_wrap)')
+-- vim.keymap.set('n', '<C-w>k', '<Plug>(ale_previous_wrap)')

@@ -5,13 +5,14 @@ require('filetype').setup {
             jsx = 'javascriptreact',
             ts = 'typescript',
             tsx = 'typescriptreact',
-            json = 'json',
             lua = 'lua',
-            vim = 'vim'
+            vim = 'vim',
+            snippets = 'snippets',
         },
         complex = {
+            ['*.json'] = 'json',
             ['tsconfig.json'] = 'jsonc',
-            ['jsconfig.json'] = 'jsonc'
+            ['jsconfig.json'] = 'jsonc',
         }
     }
 }

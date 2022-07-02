@@ -10,12 +10,12 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'lewis6991/impatient.nvim'
+    -- use 'lewis6991/impatient.nvim'
 
-    use {
-        'nathom/filetype.nvim',
-        config = function() require('plugins/filetype') end
-    }
+    -- use {
+    --     'nathom/filetype.nvim',
+    --     config = function() require('plugins/filetype') end
+    -- }
 
     -- ステータスラインを強化
     use {
@@ -42,16 +42,21 @@ require('packer').startup(function(use)
 
     -- カラースキーム
     use {
-        'projekt0n/github-nvim-theme',
-        opt = true,
-        event = {'ColorSchemePre'},
-        config = function() require('plugins/github-nvim-theme') end
+        'arcticicestudio/nord-vim',
+        -- opt = true,
+        -- event = { 'ColorSchemePre' }
+    }
+    use {
+        'EdenEast/nightfox.nvim',
+        -- opt = true,
+        -- event = { 'ColorSchemePre' }
     }
 
     -- 'ヘルプの日本語化
     use {
         'vim-jp/vimdoc-ja',
-        opt = true
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' }
     }
 
     -- '選択範囲をGoogle翻訳
@@ -65,7 +70,7 @@ require('packer').startup(function(use)
     use {
         'tpope/vim-commentary',
         opt = true,
-        event = { 'BufNewFile', 'BufRead' }
+        event = { 'BufNewFile', 'BufRead' },
     }
 
     -- シンタックスハイライト
@@ -89,11 +94,6 @@ require('packer').startup(function(use)
         opt = true,
         event = { 'InsertEnter' },
         config = function() require('plugins/ultisnips') end
-    }
-    use {
-        'mattn/emmet-vim',
-        ft = {'javascriptreact', 'typescriptreact', 'html'},
-        config = function() require('plugins/emmet-vim') end
     }
 
     -- 引用符
@@ -128,7 +128,7 @@ require('packer').startup(function(use)
         'windwp/nvim-autopairs',
         opt = true,
         event = { 'InsertEnter' },
-        config = function() require('nvim-autopairs').setup {} end
+        config = function() require('plugins/nvim-autopairs') end
     }
 
     -- ウィンドウリサイズ
@@ -139,12 +139,35 @@ require('packer').startup(function(use)
     }
 
     -- ファイラー
+    -- use {
+    --     'kyazdani42/nvim-tree.lua',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     requires = {'kyazdani42/nvim-web-devicons' },
+    --     config = function() require('plugins/nvim-tree') end
+    -- }
     use {
-        'kyazdani42/nvim-tree.lua',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        requires = {'kyazdani42/nvim-web-devicons' },
-        config = function() require('plugins/nvim-tree') end
+        'lambdalisue/fern.vim',
+        config = function() require('plugins/fern') end
+    }
+    use {
+        'lambdalisue/glyph-palette.vim',
+        config = function() require('plugins/glyph-palette') end
+    }
+    use {
+        'lambdalisue/fern-renderer-nerdfont.vim',
+        requires = {
+            { 'lambdalisue/nerdfont.vim' },
+            { 'lambdalisue/fern.vim' }
+        },
+        config = function() require('plugins/fern') end
+    }
+    use {
+        'lambdalisue/fern-git-status.vim',
+    }
+    use {
+        'yuki-yano/fern-preview.vim',
+        config = function() require('plugins/fern') end
     }
 
     -- LSP
@@ -179,9 +202,10 @@ require('packer').startup(function(use)
     }
 
     -- 関数の引数を入力しているときにシグネチャヘルプを表示
-    -- use {
-    --     'ray-x/lsp_signature.nvim',
-    -- }
+    use {
+        'ray-x/lsp_signature.nvim',
+        config = function() require('plugins/lsp_signature') end
+    }
 
     -- 不足のカラースキームを追加
     use {
@@ -192,19 +216,31 @@ require('packer').startup(function(use)
     }
 
     -- 非同期
+    -- use {
+    --     'dense-analysis/ale',
+    --     opt = true,
+    --     event = {'BufNewFile', 'BufRead'},
+    --     config = function() require('plugins/ale') end
+    -- }
+
+    -- フォーマッター
     use {
-        'dense-analysis/ale',
-        opt = true,
-        event = {'BufNewFile', 'BufRead'},
-        config = function() require('plugins/ale') end
+        'prettier/vim-prettier',
+        run = 'npm install --omit=dev',
+        ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html' },
+        config = function() require('plugins/vim-prettier') end
     }
 
+    -- use {
+    --     'kosayoda/nvim-lightbulb',
+    --     opt = true,
+    --     event = {'BufNewFile', 'BufRead'},
+    --     requires = { { 'antoinemadec/FixCursorHold.nvim', config = function() require('plugins/FixCursorHold') end } },
+    --     config = function() require('plugins/nvim-lightbulb') end
+    -- }
     use {
-        'kosayoda/nvim-lightbulb',
-        opt = true,
-        event = {'BufNewFile', 'BufRead'},
-        requires = {{'antoinemadec/FixCursorHold.nvim'}},
-        config = function() require('plugins/nvim-lightbulb') end
+        'antoinemadec/FixCursorHold.nvim',
+        config = function() require('plugins/FixCursorHold') end
     }
 
     use {
@@ -214,10 +250,51 @@ require('packer').startup(function(use)
         event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/lspsaga') end
     }
+    use {
+        'folke/trouble.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/trouble') end
+    }
 
     use {
         'windwp/nvim-ts-autotag',
         ft = {'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript', 'xml', 'php', 'markdown', 'glimmer','handlebars','hbs'},
+    }
+
+    -- フローティングターミナル
+    use {
+        'voldikss/vim-floaterm',
+        opt = true,
+        event = { 'BufNewFile', 'Bufread' },
+        config = function() require('plugins/vim-floaterm') end
+    }
+    -- キーバインド
+    use {
+        'folke/which-key.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/which-key') end
+    }
+    use {
+        'j-hui/fidget.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/fidget') end
+    }
+    -- git
+    use {
+        'lewis6991/gitsigns.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/gitsigns') end
+    }
+    use {
+        'TimUntersberger/neogit',
+        opt = true,
+        event = { 'BufEnter' },
+        requires = { { 'nvim-lua/plenary.nvim' } },
+        config = function() require('plugins/neogit') end
     }
 
     if packer_bootstrap then

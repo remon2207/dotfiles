@@ -31,10 +31,12 @@ opt.wrapscan = true
 opt.number = true
 -- カーソルラインをハイライト
 opt.cursorline = true
+opt.cursorcolumn = true
 -- バックスペースキーの有効化
 opt.backspace = 'indent,eol,start'
 -- 括弧の対応関係を一瞬表示する
 opt.showmatch = true
+-- opt.matchtime = 1
 -- コマンドモードの補完
 opt.wildmenu = true
 -- 保存するコマンド履歴の数
@@ -64,3 +66,5 @@ opt.background = 'dark'
 opt.completeopt = 'menu,menuone,noselect'
 
 opt.signcolumn = 'yes'
+
+opt.helplang = 'ja,en'
