@@ -299,6 +299,21 @@ require('packer').startup(function(use)
     use {
         'rhysd/committia.vim'
     }
+    -- SQL文の小文字を大文字に変換
+    use {
+        'jsborjesson/vim-uppercase-sql',
+        ft = { 'sql' }
+    }
+    use {
+        'tversteeg/registers.nvim',
+        opt = true,
+        cmd = { 'Registers' }
+    }
+
+    -- 依存
+    use {
+        'nvim-lua/plenary.nvim'
+    }
 
     if packer_bootstrap then
         require('packer').sync()
