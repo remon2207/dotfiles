@@ -296,6 +296,9 @@ require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } },
         config = function() require('plugins/neogit') end
     }
+    use {
+        'rhysd/committia.vim'
+    }
 
     if packer_bootstrap then
         require('packer').sync()
