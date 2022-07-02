@@ -1,9 +1,10 @@
-snippet next "import type { NextPage } from 'next'"
+snippet next "import type { NextPage } from 'next'" b
 import type { NextPage } from 'next';
 
-const $1:NextPage = () => {
+const $1: NextPage = () => {
   return (
     <>
+      $2
     </>
   )
 };
@@ -11,7 +12,7 @@ const $1:NextPage = () => {
 export default $1;
 endsnippet
 
-snippet component "export const $1: React.FC = () => ..."
+snippet component "export const $1: React.FC = () => ..." b
 export const $1: React.FC = () => {
   return (
     <>
@@ -19,4 +20,32 @@ export const $1: React.FC = () => {
     </>
   )
 }
+endsnippet
+
+snippet tag "<h1></h1>" b
+<$1>$2</$1>
+endsnippet
+
+snippet pc "media query 1024px" b
+'@media screen and (min-width: 1024px)': {
+  $1
+}
+endsnippet
+
+snippet mobile "media query 768px" b
+'@media screen and (max-width: 768px)': {
+  $1
+}
+endsnippet
+
+snippet sxP "Material-UI sx" b
+const $1: SxProps<Theme> = {
+  $2
+};
+endsnippet
+
+snippet sc "material-UI component" b
+const $1 = styled($2)({
+  $3
+});
 endsnippet

@@ -182,6 +182,35 @@ font:
 
 
 
+# tokyo night
+# colors:
+#   primary:
+#       background: '0x1a1b26'
+#       foreground: '0xa9b1d6'
+
+#     # Normal colors
+#   normal:
+#     black:   '0x32344a'
+#     red:     '0xf7768e'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xad8ee6'
+#     cyan:    '0x449dab'
+#     white:   '0x787c99'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x444b6a'
+#     red:     '0xff7a93'
+#     green:   '0xb9f27c'
+#     yellow:  '0xff9e64'
+#     blue:    '0x7da6ff'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x0db9d7'
+#     white:   '0xacb0d0'
+
+
 ## Colors (Hybrid)
 # colors:
 #   # Default colors
@@ -400,33 +429,33 @@ font:
       
 
 # Colors (Nord)
-# colors:
-#    # Default colors
-#    primary:
-#      background: '#2E3440'
-#      foreground: '#D8DEE9'
+colors:
+   # Default colors
+   primary:
+     background: '#2E3440'
+     foreground: '#D8DEE9'
 
-#    # Normal colors
-#    normal:
-#      black:   '#3B4252'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#88C0D0'
-#      white:   '#E5E9F0'
+   # Normal colors
+   normal:
+     black:   '#3B4252'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#88C0D0'
+     white:   '#E5E9F0'
 
-#    # Bright colors
-#    bright:
-#      black:   '#4C566A'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#8FBCBB'
-#      white:   '#ECEFF4'
+   # Bright colors
+   bright:
+     black:   '#4C566A'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#8FBCBB'
+     white:   '#ECEFF4'
 
 
 
@@ -626,28 +655,28 @@ font:
 
     
 # The 'Dark dimmed' colorscheme from Github.
-colors:
-  primary:
-    background: '#2d333b'
-    foreground: '#adbac7'
-  normal:
-    black:   '#2d333b'
-    red:     '#f47067'
-    green:   '#8ddb8c'
-    yellow:  '#f69d50'
-    blue:    '#6cb6ff'
-    magenta: '#dcbdfb'
-    cyan:    '#96d0ff'
-    white:   '#adbac7'
-  bright:
-    black:   '#768390'
-    red:     '#f47067'
-    green:   '#8ddb8c'
-    yellow:  '#f69d50'
-    blue:    '#6cb6ff'
-    magenta: '#dcbdfb'
-    cyan:    '#96d0ff'
-    white:   '#adbac7'
+# colors:
+#   primary:
+#     background: '#2d333b'
+#     foreground: '#adbac7'
+#   normal:
+#     black:   '#2d333b'
+#     red:     '#f47067'
+#     green:   '#8ddb8c'
+#     yellow:  '#f69d50'
+#     blue:    '#6cb6ff'
+#     magenta: '#dcbdfb'
+#     cyan:    '#96d0ff'
+#     white:   '#adbac7'
+#   bright:
+#     black:   '#768390'
+#     red:     '#f47067'
+#     green:   '#8ddb8c'
+#     yellow:  '#f69d50'
+#     blue:    '#6cb6ff'
+#     magenta: '#dcbdfb'
+#     cyan:    '#96d0ff'
+#     white:   '#adbac7'
 
 
 # Dracula theme for Alacritty

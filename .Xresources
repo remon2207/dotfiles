@@ -38,4 +38,4 @@
 Xcursor.size: 16
 Xcursor.theme: WhiteSur-cursors
 xterm*faceName: HackGenNerd Console:size=12:antialias=true
-xterm*font: 7x13
+xterm*font: 7x10

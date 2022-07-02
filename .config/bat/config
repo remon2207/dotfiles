@@ -2,8 +2,8 @@
 # --theme="iceberg"
 # --theme="Solarized"
 # --theme="Solarized (dark)"
-# --theme='Nord'
+--theme='Nord'
 # --theme='Dracula'
---theme='Visual Studio Dark+'
+# --theme='Visual Studio Dark+'
 # --theme='gruvbox-dark'
 # --theme='Monokai Extended'

@@ -1,15 +1,15 @@
-local wezterm = require 'wezterm';
+local wezterm = require('wezterm')
 
 return {
-  font = wezterm.font_with_fallback({
+  font = wezterm.font_with_fallback {
     -- {
     --   family='JetBrainsMono Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    {
-      family='FiraCode Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='FiraCode Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
     -- {
     --   family='InconsolataGo Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -29,7 +29,7 @@ return {
     -- 'MesloLGL Nerd Font',
     -- 'MesloLGS Nerd Font',
     -- 'Inconsolata',
-    'Migu 1M',
+    -- 'Migu 1M',
     -- 'NotoSans Nerd Font',
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
@@ -38,7 +38,7 @@ return {
     -- 'HackGenNerd Console'
     -- 'HackGen',
     -- 'HackGenNerd',
-    -- 'Cica'
+    'Cica',
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP',
@@ -49,14 +49,16 @@ return {
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
     -- 'Source Han Code JP'
-  }),
+  },
+  -- font_size = 9.0,
   -- font_size = 10.0,
-  font_size = 9.0,
+  -- font_size = 11.0,
   -- font_size = 12.0,
+  font_size = 12.0,
   -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',
-  color_scheme = 'GitHub Dark',
+  -- color_scheme = 'GitHub Dark',
   -- color_scheme = 'Atom',
   -- color_scheme = 'Brogrammer',
   -- color_scheme = 'iceberg-dark',
@@ -66,7 +68,7 @@ return {
   -- color_scheme = 'Monokai Remastered',
   -- color_scheme = 'Monokai Soda',
   -- color_scheme = 'monokai Vivid',
-  -- color_scheme = 'nord',
+  color_scheme = 'nord',
   -- color_scheme = 'Solarized Dark - Patched',
   -- color_scheme = 'Gruvbox Dark',
   window_background_opacity = 0.9,

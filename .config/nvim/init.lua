@@ -1,5 +1,5 @@
-require('impatient')
-require('default-plugin-skip')
+-- require('impatient')
+-- require('default-plugin-skip')
 
 vim.g.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
