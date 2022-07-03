@@ -1,0 +1,62 @@
+call plug#begin()
+  " ステータスラインにbranch名
+  Plug 'tpope/vim-fugitive'
+  " インデントの可視化
+  Plug 'Yggdroot/indentLine'
+  " バッファステータス
+  Plug 'akinsho/bufferline.nvim'
+  " ステータスライン
+  Plug 'itchyny/lightline.vim'
+  " カラースキーム
+  Plug 'arcticicestudio/nord-vim'
+  " シンタックスハイライト
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  " 色を視覚的に表示する
+  Plug 'chrisbra/Colorizer'
+  " ヘルプを日本語化
+  Plug 'vim-jp/vimdoc-ja'
+  " ノーマルモードでコメントアウト
+  Plug 'tpope/vim-commentary'
+  " フローティングウィンドウ
+  Plug 'voldikss/vim-floaterm'
+  " スニペット
+  Plug 'SirVer/ultisnips'
+  " テキストオブジェクト
+  Plug 'tpope/vim-surround'
+  " ファイル検索
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " ジャンプ
+  Plug 'easymotion/vim-easymotion'
+  " ファイラー
+  Plug 'lambdalisue/fern.vim'
+  Plug 'lambdalisue/fern-git-status.vim'
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+  Plug 'yuki-yano/fern-preview.vim'
+  Plug 'lambdalisue/fern-hijack.vim'
+  Plug 'lambdalisue/fern-renderer-devicons.vim'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'lambdalisue/glyph-palette.vim'
+  " ブラケット自動補完
+  Plug 'jiangmiao/auto-pairs'
+  " ウィンドウサイズ
+  Plug 'simeji/winresizer', { 'on': 'WinResizerStartResize' }
+  " フォーマッター
+  Plug 'prettier/vim-prettier', { 'do': 'npm install --omit=dev', 'for': ['javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+  " タグ自動補完
+  Plug 'alvan/vim-closetag'
+  " 範囲選択をGoogle翻訳
+  Plug 'skanehira/translate.vim', { 'on': 'Translate' }
+  " LSP
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  Plug 'ray-x/lsp_signature.nvim'
+  Plug 'folke/lsp-colors.nvim'
+  Plug 'glepnir/lspsaga.nvim'
+call plug#end()
