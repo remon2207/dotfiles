@@ -20,10 +20,12 @@ return {
     -- },
     -- 'Cica',
     -- 'Source Han Code JP',
-    -- {
-    --     family='SauceCodePro Nerd Font',
-    --     harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    -- }
+    'Source Code Pro',
+    {
+        family='SauceCodePro Nerd Font',
+        harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    },
+    'Source Han Code JP',
     -- 'FiraCode Nerd Font',
     -- 'MesloLGM Nerd Font',
     -- 'MesloLGL Nerd Font',
@@ -38,7 +40,7 @@ return {
     -- 'HackGenNerd Console'
     -- 'HackGen',
     -- 'HackGenNerd',
-    'Cica',
+    -- 'Cica',
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP',
@@ -48,13 +50,11 @@ return {
     -- {family='PlemolJP Console', weight='Regular'},
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
-    -- 'Source Han Code JP'
   },
   -- font_size = 9.0,
-  -- font_size = 10.0,
+  font_size = 10.0,
   -- font_size = 11.0,
   -- font_size = 12.0,
-  font_size = 12.0,
   -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',

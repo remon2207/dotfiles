@@ -108,6 +108,7 @@ alias t='tmux'
 alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
 alias dexec='docker-compose exec'
+alias drun='docker-compose run --rm'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions
