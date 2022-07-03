@@ -107,8 +107,8 @@ set $right l
 floating_modifier $mod
 
 # start a terminal
-# bindsym $mod+Return exec --no-startup-id wezterm
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id wezterm
+# bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -420,7 +420,7 @@ bar {
   status_command bumblebee-status \
     -m mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
     -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" \
-    -t nord-powerline
+    -t iceberg-dark-powerline
 }
 
 
