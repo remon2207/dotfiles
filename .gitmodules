@@ -19,3 +19,9 @@
 [submodule ".tmux/plugins/tmux-onedark-theme"]
 	path = .tmux/plugins/tmux-onedark-theme
 	url = https://github.com/odedlaz/tmux-onedark-theme
+[submodule "nord-tmux"]
+	path = nord-tmux
+	url = https://github.com/arcticicestudio/nord-tmux
+[submodule ".tmux/plugins/nord-tmux"]
+	path = .tmux/plugins/nord-tmux
+	url = https://github.com/arcticicestudio/nord-tmux
