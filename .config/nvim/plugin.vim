@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'itchyny/lightline.vim'
   " カラースキーム
   Plug 'arcticicestudio/nord-vim'
+  Plug 'dracula/vim'
   " シンタックスハイライト
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   " 色を視覚的に表示する

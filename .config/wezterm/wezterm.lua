@@ -39,8 +39,8 @@ return {
     -- 'HackGen35 Console',
     -- 'HackGenNerd Console'
     -- 'HackGen',
-    -- 'HackGenNerd',
-    'Cica',
+    'HackGenNerd',
+    -- 'Cica',
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP',

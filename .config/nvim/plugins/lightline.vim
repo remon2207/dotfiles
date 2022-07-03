@@ -18,6 +18,10 @@
 "   \ 'colorscheme': 'gruvbox-material',
 "   \ }
 
+" let g:lightline = {
+"   \ 'colorscheme': 'apprentice',
+"   \ }
+
 let g:lightline = {
-  \ 'colorscheme': 'apprentice',
+  \ 'colorscheme': 'dracula',
   \ }
