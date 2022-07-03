@@ -10,22 +10,13 @@ if !exists('g:vscode')
     set nocompatible " Be iMproved
   endif
 
-  " 改行時の自動コメントアウトを無効化
-  autocmd FileType * setlocal formatoptions-=ro
-
-
   runtime! ./config/*.vim
   runtime ./plugin.vim
   runtime! ./plugins/*.{vim,lua}
   runtime ./color.vim
 
 else
-  runtime ./config/global.vim
-
-  if executable('fcitx5')
-    autocmd InsertLeave * :call system('fcitx5-remote -c')
-    autocmd CmdlineLeave * :call system('fcitx5-remote -c')
-  endif
+  runtime! ./config/*.vim
 
   call plug#begin()
     Plug 'easymotion/vim-easymotion'
