@@ -68,15 +68,15 @@ stty stop undef
 
 # keybind
 # vimモード
-# bindkey -v
+bindkey -v
 # emacsモード
-bindkey -e
+# bindkey -e
 # コマンド履歴補完
 autoload history-search-end
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^P" history-beginning-search-backward-end
-# bindkey "^N" history-beginning-search-forward-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 
 # git
 autoload -Uz vcs_info

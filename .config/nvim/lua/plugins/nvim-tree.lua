@@ -37,4 +37,4 @@ require('nvim-tree').setup {
 
 -- vim.keymap.set('n', '<C-n>', ':lua require("nvim-tree").open_replacing_current_buffer()<CR>', { noremap = true, silent = true})
 vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>n', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })

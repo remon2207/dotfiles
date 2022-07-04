@@ -44,6 +44,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", { silent = true,noremap = true })
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<C-l>', '<Cmd>LspRestart<CR>', { silent = true, noremap = true })
 
 end
 

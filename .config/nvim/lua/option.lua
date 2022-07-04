@@ -31,7 +31,7 @@ opt.wrapscan = true
 opt.number = true
 -- カーソルラインをハイライト
 opt.cursorline = true
-opt.cursorcolumn = true
+-- opt.cursorcolumn = true
 -- バックスペースキーの有効化
 opt.backspace = 'indent,eol,start'
 -- 括弧の対応関係を一瞬表示する
@@ -55,8 +55,8 @@ opt.ruler = true
 opt.title = true
 -- タブ・空白・改行等の表示
 opt.list = true
--- vim.opt.listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
-opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
+opt.listchars = 'tab:»-,eol:↲,extends:»,precedes:«,nbsp:%'
+-- opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
 -- swap無効
 opt.swapfile = false
 

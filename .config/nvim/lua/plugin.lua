@@ -35,26 +35,27 @@ require('packer').startup(function(use)
     }
 
     -- インデントの可視化
+    -- use {
+    --     'Yggdroot/indentLine',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     config = function() require('plugins/indentLine') end
+    -- }
     use {
-        'Yggdroot/indentLine',
+        'lukas-reineke/indent-blankline.nvim',
         opt = true,
         event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/indentLine') end
+        config = function() require('plugins/indent-blankline') end
     }
 
     -- カラースキーム
     use {
-        'arcticicestudio/nord-vim',
-        opt = true,
-        event = { 'ColorSchemePre' }
-    }
-    use {
-        'EdenEast/nightfox.nvim',
-        opt = true,
-        event = { 'ColorSchemePre' }
-    }
-    use {
         'dracula/vim',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
+    use {
+        'joshdick/onedark.vim',
         opt = true,
         event = { 'ColorSchemePre' }
     }
@@ -85,7 +86,7 @@ require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         opt = true,
-        event = {'BufNewFile', 'BufRead'},
+        event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/nvim-treesitter') end
     }
 

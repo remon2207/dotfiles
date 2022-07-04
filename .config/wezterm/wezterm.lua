@@ -2,6 +2,7 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback {
+    -- 'Ricty',
     -- {
     --   family='JetBrainsMono Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -53,13 +54,13 @@ return {
   -- font_size = 10.0,
   -- font_size = 11.0,
   font_size = 12.0,
-  -- color_scheme = 'Dracula',
+  color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',
   -- color_scheme = 'GitHub Dark',
   -- color_scheme = 'Atom',
   -- color_scheme = 'Brogrammer',
-  color_scheme = 'iceberg-dark',
+  -- color_scheme = 'iceberg-dark',
   -- color_scheme = 'tokyonight-storm',
   -- color_scheme = 'tokyonight',
   -- color_scheme = 'Molokai',
@@ -182,6 +183,8 @@ return {
     {key = "b", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=-1}},
     {key = "f", mods = "CTRL|SHIFT", action=wezterm.action{ScrollByPage=1}},
     {key = "?", mods = "CTRL|SHIFT", action =wezterm.action{Search={CaseSensitiveString=""}}},
+    {key = "PageUp", mods = "CTRL|SHIFT", action=wezterm.action{MoveTabRelative=-1}},
+    {key = "PageDown", mods = "CTRL|SHIFT", action=wezterm.action{MoveTabRelative=1}},
   },
   -- disable_default_key_bindings = true,
   exit_behavior = 'Close',
