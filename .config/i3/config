@@ -360,9 +360,9 @@ bar {
   #   }
 # iceberg
   colors {
-    background #1e2132
-    statusline #ffffff
-    separator #666666
+    # background #1e2132
+    # statusline #ffffff
+    # separator #666666
 
     # focused_workspace  #c6c8d1 #a093c7 #ffffff
     # active_workspace   #333333 #3f455e #ffffff
@@ -420,7 +420,7 @@ bar {
   status_command bumblebee-status \
     -m mpd cpu sensors memory nvidiagpu bluetooth dunst date time \
     -p mpd.format="{artist} - {title}" cpu.format="CPU: {:.01f}%" bluetooth.right_click_popup=false time.format="%H:%M" nvidiagpu.format="GPU: {temp}°C {mem_used}/{mem_total} MiB" date.format="%m/%d" memory.format="{percent:05.02f}%" \
-    -t iceberg-dark-powerline
+    -t night-powerline
 }
 
 
