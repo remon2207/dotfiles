@@ -207,6 +207,9 @@ require('packer').startup(function(use)
     use {
         'quangnguyen30192/cmp-nvim-ultisnips',
     }
+    use {
+        'onsails/lspkind.nvim'
+    }
 
     -- 関数の引数を入力しているときにシグネチャヘルプを表示
     use {

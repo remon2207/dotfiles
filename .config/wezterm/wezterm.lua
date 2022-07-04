@@ -2,10 +2,10 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback {
-    {
-      family='JetBrainsMono Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='JetBrainsMono Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
     -- {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -18,8 +18,6 @@ return {
     --   family='Inconsolata Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
-    -- 'Cica',
-    -- 'Source Han Code JP',
     -- 'Source Code Pro',
     -- {
     --     family='SauceCodePro Nerd Font',
@@ -31,7 +29,7 @@ return {
     -- 'MesloLGL Nerd Font',
     -- 'MesloLGS Nerd Font',
     -- 'Inconsolata',
-    'Migu 1M',
+    -- 'Migu 1M',
     -- 'NotoSans Nerd Font',
     -- 'IBM Plex Sans JP'
     -- 'SauceCodePro Nerd Font',
@@ -40,7 +38,7 @@ return {
     -- 'HackGenNerd Console'
     -- 'HackGen',
     -- 'HackGenNerd',
-    -- 'Cica',
+    'Cica',
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
     -- 'PlemolJP',
@@ -52,9 +50,9 @@ return {
     -- 'RictyDiscord Nerd Font'
   },
   -- font_size = 9.0,
-  font_size = 10.0,
+  -- font_size = 10.0,
   -- font_size = 11.0,
-  -- font_size = 12.0,
+  font_size = 12.0,
   -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',

@@ -1,6 +1,5 @@
 local cmp = require('cmp')
--- local lspkind = require('lspkind')
--- local saga = require('lspsaga')
+local lspkind = require('lspkind')
 
 
 cmp.setup {
@@ -25,8 +24,22 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'ultisnips' }, -- For ultisnips users.
     { name = 'path' },
-    { name = 'buffer', keyword_length = 1 },
-  })
+    {
+        name = 'buffer',
+        option = {
+            keyword_length = 1,
+            get_bufnrs = function()
+                return vim.api.nvim_list_bufs()
+            end
+        },
+    },
+  }),
+  formatting = {
+      format = lspkind.cmp_format({
+          mode = 'symbol',
+          maxwidth = 50
+      })
+  }
 }
 
 -- Set configuration for specific filetype.
