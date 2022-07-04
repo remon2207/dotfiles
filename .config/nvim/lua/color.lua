@@ -10,10 +10,6 @@ api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
     nested = true,
     command = 'highlight Normal ctermbg=NONE',
     command = 'highlight LineNr ctermbg=NONE',
-    -- command = 'colorscheme nord',
     command = 'colorscheme dracula',
     -- command = 'colorscheme onedark',
-    -- command = 'colorscheme iceberg',
-    -- command = 'colorscheme nightfox',
-    -- command = 'colorscheme duskfox',
 })
