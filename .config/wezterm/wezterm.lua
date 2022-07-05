@@ -3,10 +3,13 @@ local wezterm = require('wezterm')
 return {
   font = wezterm.font_with_fallback {
     -- 'Ricty',
+    -- 'Hurmit Nerd Font',
+    -- 'Hermit',
     -- {
     --   family='JetBrainsMono Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
+    -- 'JetBrainsMono Nerd Font',
     -- {
     --   family='FiraCode Nerd Font',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -39,6 +42,7 @@ return {
     -- 'HackGenNerd Console'
     -- 'HackGen',
     -- 'HackGenNerd',
+    -- 'Roboto Mono',
     'Cica',
     -- 'Gen Shin Gothic Monospace',
     -- 'Ricty',
@@ -54,7 +58,7 @@ return {
   -- font_size = 10.0,
   -- font_size = 11.0,
   font_size = 12.0,
-  color_scheme = 'Dracula',
+  -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',
   -- color_scheme = 'OneHalfDark',
   -- color_scheme = 'GitHub Dark',
@@ -68,7 +72,7 @@ return {
   -- color_scheme = 'Monokai Soda',
   -- color_scheme = 'monokai Vivid',
   -- color_scheme = 'nord',
-  -- color_scheme = 'Solarized Dark - Patched',
+  color_scheme = 'Solarized Dark - Patched',
   -- color_scheme = 'Gruvbox Dark',
   window_background_opacity = 0.9,
   enable_scroll_bar = true,

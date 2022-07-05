@@ -34,9 +34,6 @@ opt.cursorline = true
 -- opt.cursorcolumn = true
 -- バックスペースキーの有効化
 opt.backspace = 'indent,eol,start'
--- 括弧の対応関係を一瞬表示する
-opt.showmatch = true
--- opt.matchtime = 1
 -- コマンドモードの補完
 opt.wildmenu = true
 -- 保存するコマンド履歴の数
@@ -55,8 +52,8 @@ opt.ruler = true
 opt.title = true
 -- タブ・空白・改行等の表示
 opt.list = true
-opt.listchars = 'tab:»-,eol:↲,extends:»,precedes:«,nbsp:%'
--- opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
+-- opt.listchars = 'tab:»-,eol:↲,extends:»,precedes:«,nbsp:%'
+opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
 -- swap無効
 opt.swapfile = false
 
@@ -68,3 +65,9 @@ opt.completeopt = 'menu,menuone,noselect'
 opt.signcolumn = 'yes'
 
 opt.helplang = 'ja,en'
+
+-- 背景透過
+opt.winblend = 0
+opt.wildmenu = true
+opt.wildoptions = 'pum'
+opt.pumblend = 10

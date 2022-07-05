@@ -35,18 +35,18 @@ require('packer').startup(function(use)
     }
 
     -- インデントの可視化
-    -- use {
-    --     'Yggdroot/indentLine',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins/indentLine') end
-    -- }
     use {
-        'lukas-reineke/indent-blankline.nvim',
+        'Yggdroot/indentLine',
         opt = true,
         event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/indent-blankline') end
+        config = function() require('plugins/indentLine') end
     }
+    -- use {
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     config = function() require('plugins/indent-blankline') end
+    -- }
 
     -- カラースキーム
     use {
@@ -58,6 +58,18 @@ require('packer').startup(function(use)
         'joshdick/onedark.vim',
         opt = true,
         event = { 'ColorSchemePre' }
+    }
+    use {
+        'lifepillar/vim-solarized8',
+        opt = true,
+        event = { 'ColorSchemePre' },
+        config = function() require('plugins/vim-solarized8') end
+    }
+    use {
+        'overcache/NeoSolarized',
+        opt = true,
+        event = { 'ColorSchemePre' },
+        config = function() require('plugins/NeoSolarized') end
     }
 
     -- 'ヘルプの日本語化
@@ -147,36 +159,36 @@ require('packer').startup(function(use)
     }
 
     -- ファイラー
+    -- use {
+    --     'kyazdani42/nvim-tree.lua',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     requires = {'kyazdani42/nvim-web-devicons' },
+    --     config = function() require('plugins/nvim-tree') end
+    -- }
     use {
-        'kyazdani42/nvim-tree.lua',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        requires = {'kyazdani42/nvim-web-devicons' },
-        config = function() require('plugins/nvim-tree') end
+        'lambdalisue/fern.vim',
+        config = function() require('plugins/fern') end
     }
-    -- use {
-    --     'lambdalisue/fern.vim',
-    --     config = function() require('plugins/fern') end
-    -- }
-    -- use {
-    --     'lambdalisue/glyph-palette.vim',
-    --     config = function() require('plugins/glyph-palette') end
-    -- }
-    -- use {
-    --     'lambdalisue/fern-renderer-nerdfont.vim',
-    --     requires = {
-    --         { 'lambdalisue/nerdfont.vim' },
-    --         { 'lambdalisue/fern.vim' }
-    --     },
-    --     config = function() require('plugins/fern') end
-    -- }
-    -- use {
-    --     'lambdalisue/fern-git-status.vim',
-    -- }
-    -- use {
-    --     'yuki-yano/fern-preview.vim',
-    --     config = function() require('plugins/fern') end
-    -- }
+    use {
+        'lambdalisue/glyph-palette.vim',
+        config = function() require('plugins/glyph-palette') end
+    }
+    use {
+        'lambdalisue/fern-renderer-nerdfont.vim',
+        requires = {
+            { 'lambdalisue/nerdfont.vim' },
+            { 'lambdalisue/fern.vim' }
+        },
+        config = function() require('plugins/fern') end
+    }
+    use {
+        'lambdalisue/fern-git-status.vim',
+    }
+    use {
+        'yuki-yano/fern-preview.vim',
+        config = function() require('plugins/fern') end
+    }
 
     -- LSP
     use {

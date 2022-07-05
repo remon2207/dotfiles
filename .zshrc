@@ -109,6 +109,10 @@ alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
 alias dexec='docker-compose exec'
 alias drun='docker-compose run --rm'
+alias ddown='docker-compose down'
+alias dup='docker-compose up -d'
+alias dlog='docker-compose logs'
+alias dps='docker-compose ps -a'
 
 # plugin
 fpath+=${ZDOTDIR:-~}/.zsh_functions

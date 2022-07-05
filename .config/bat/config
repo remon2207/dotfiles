@@ -1,9 +1,9 @@
 # Set the theme to "TwoDark"
 # --theme="iceberg"
 # --theme="Solarized"
-# --theme="Solarized (dark)"
+--theme="Solarized (dark)"
 # --theme='Nord'
---theme='Dracula'
+# --theme='Dracula'
 # --theme='Visual Studio Dark+'
 # --theme='gruvbox-dark'
 # --theme='Monokai Extended'
