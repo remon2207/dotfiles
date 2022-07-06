@@ -25,3 +25,6 @@
 [submodule ".tmux/plugins/nord-tmux"]
 	path = .tmux/plugins/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
+[submodule ".tmux/plugins/tmux-colors-solarized"]
+	path = .tmux/plugins/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized

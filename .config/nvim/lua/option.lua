@@ -19,6 +19,8 @@ opt.smartindent = true
 -- smartindentで増減する幅
 opt.shiftwidth = 4
 opt.softtabstop = 4
+opt.smarttab = true
+-- opt.cindent = true
 -- インクリメンタルサーチ. １文字入力毎に検索を行う
 opt.incsearch = true
 -- 検索パターンに大文字小文字を区別しない

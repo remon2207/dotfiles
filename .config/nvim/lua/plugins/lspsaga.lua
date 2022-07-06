@@ -7,4 +7,4 @@ saga.init_lsp_saga {
     }
 }
 
-vim.keymap.set("n", "<Leader>ft", "<cmd>Lspsaga open_floaterm<CR>", { silent = true,noremap = true })
+-- vim.keymap.set("n", "<Leader>ft", "<cmd>Lspsaga open_floaterm<CR>", { silent = true,noremap = true })

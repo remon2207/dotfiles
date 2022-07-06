@@ -22,6 +22,8 @@ require('packer').startup(function(use)
     -- ステータスラインを強化
     use {
         'nvim-lualine/lualine.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
         requires = { 'kyazdani42/nvim-web-devicons' },
         config = function() require('plugins/lualine') end
     }
@@ -30,46 +32,42 @@ require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         branch = 'main',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
         requires = {'kyazdani42/nvim-web-devicons' },
         config = function() require('plugins/bufferline') end
     }
 
     -- インデントの可視化
     use {
-        'Yggdroot/indentLine',
+        'lukas-reineke/indent-blankline.nvim',
         opt = true,
         event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/indentLine') end
+        config = function() require('plugins/indent-blankline') end
     }
-    -- use {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins/indent-blankline') end
-    -- }
 
     -- カラースキーム
+    -- use {
+    --     'joshdick/onedark.vim',
+    --     opt = true,
+    --     event = { 'ColorSchemePre' }
+    -- }
+    -- use {
+    --     'lifepillar/vim-solarized8',
+    --     opt = true,
+    --     event = { 'ColorSchemePre' },
+    --     config = function() require('plugins/vim-solarized8') end
+    -- }
     use {
-        'dracula/vim',
-        opt = true,
-        event = { 'ColorSchemePre' }
-    }
-    use {
-        'joshdick/onedark.vim',
-        opt = true,
-        event = { 'ColorSchemePre' }
-    }
-    use {
-        'lifepillar/vim-solarized8',
-        opt = true,
-        event = { 'ColorSchemePre' },
-        config = function() require('plugins/vim-solarized8') end
-    }
-    use {
-        'overcache/NeoSolarized',
+        'folke/tokyonight.nvim',
         opt = true,
         event = { 'ColorSchemePre' },
-        config = function() require('plugins/NeoSolarized') end
+        config = function() require('plugins/tokyonight') end
+    }
+    use {
+        'EdenEast/nightfox.nvim',
+        opt = true,
+        event = { 'ColorSchemePre' },
     }
 
     -- 'ヘルプの日本語化
@@ -88,9 +86,10 @@ require('packer').startup(function(use)
 
     -- 'ノーマルモードでコメントアウト
     use {
-        'tpope/vim-commentary',
+        'numToStr/Comment.nvim',
         opt = true,
         event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/Comment') end
     }
 
     -- シンタックスハイライト
@@ -105,15 +104,16 @@ require('packer').startup(function(use)
     -- hex codeを自覚的に表示
     use {
         'norcalli/nvim-colorizer.lua',
-        ft = { 'javascriptreact', 'typescriptreact', 'css', 'html' }
+        ft = { 'javascriptreact', 'typescriptreact', 'css', 'html' },
+        config = function() require('plugins/nvim-colorizer') end
     }
 
     -- スニペット
     use {
-        'SirVer/ultisnips',
+        'L3MON4D3/LuaSnip',
         opt = true,
         event = { 'InsertEnter' },
-        config = function() require('plugins/ultisnips') end
+        config = function() require('plugins/LuaSnip') end
     }
 
     -- 引用符
@@ -155,39 +155,16 @@ require('packer').startup(function(use)
     use {
         'simeji/winresizer',
         opt = true,
-        event = { 'WinNew' }
+        cmd = { 'WinResizerStartResize' }
     }
 
     -- ファイラー
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     requires = {'kyazdani42/nvim-web-devicons' },
-    --     config = function() require('plugins/nvim-tree') end
-    -- }
     use {
-        'lambdalisue/fern.vim',
-        config = function() require('plugins/fern') end
-    }
-    use {
-        'lambdalisue/glyph-palette.vim',
-        config = function() require('plugins/glyph-palette') end
-    }
-    use {
-        'lambdalisue/fern-renderer-nerdfont.vim',
-        requires = {
-            { 'lambdalisue/nerdfont.vim' },
-            { 'lambdalisue/fern.vim' }
-        },
-        config = function() require('plugins/fern') end
-    }
-    use {
-        'lambdalisue/fern-git-status.vim',
-    }
-    use {
-        'yuki-yano/fern-preview.vim',
-        config = function() require('plugins/fern') end
+        'kyazdani42/nvim-tree.lua',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        requires = {'kyazdani42/nvim-web-devicons' },
+        config = function() require('plugins/nvim-tree') end
     }
 
     -- LSP
@@ -218,7 +195,7 @@ require('packer').startup(function(use)
         'hrsh7th/cmp-nvim-lsp',
     }
     use {
-        'quangnguyen30192/cmp-nvim-ultisnips',
+        'saadparwaiz1/cmp_luasnip'
     }
     use {
         'onsails/lspkind.nvim'
@@ -254,13 +231,6 @@ require('packer').startup(function(use)
         config = function() require('plugins/vim-prettier') end
     }
 
-    -- use {
-    --     'kosayoda/nvim-lightbulb',
-    --     opt = true,
-    --     event = {'BufNewFile', 'BufRead'},
-    --     requires = { { 'antoinemadec/FixCursorHold.nvim', config = function() require('plugins/FixCursorHold') end } },
-    --     config = function() require('plugins/nvim-lightbulb') end
-    -- }
     use {
         'antoinemadec/FixCursorHold.nvim',
         config = function() require('plugins/FixCursorHold') end
@@ -275,8 +245,7 @@ require('packer').startup(function(use)
     }
     use {
         'folke/trouble.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
+        ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
         config = function() require('plugins/trouble') end
     }
 
@@ -286,12 +255,12 @@ require('packer').startup(function(use)
     }
 
     -- フローティングターミナル
-    -- use {
-    --     'voldikss/vim-floaterm',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'Bufread' },
-    --     config = function() require('plugins/vim-floaterm') end
-    -- }
+    use {
+        'akinsho/toggleterm.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/toggleterm') end
+    }
     -- キーバインド
     use {
         'folke/which-key.nvim',
@@ -299,12 +268,7 @@ require('packer').startup(function(use)
         event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/which-key') end
     }
-    use {
-        'j-hui/fidget.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/fidget') end
-    }
+
     -- git
     use {
         'lewis6991/gitsigns.nvim',
@@ -319,23 +283,21 @@ require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' },
         config = function() require('plugins/neogit') end
     }
-    use {
-        'rhysd/committia.vim'
-    }
+
     -- SQL文の小文字を大文字に変換
-    -- use {
-    --     'jsborjesson/vim-uppercase-sql',
-    --     ft = { 'sql' }
-    -- }
     use {
-        'tpope/vim-capslock',
+        'jsborjesson/vim-uppercase-sql',
         ft = { 'sql' }
     }
+    -- use {
+    --     'tpope/vim-capslock',
+    --     ft = { 'sql' }
+    -- }
 
     use {
         'tversteeg/registers.nvim',
         opt = true,
-        cmd = { 'Registers' }
+        event = { 'InsertEnter' }
     }
 
     -- 依存
