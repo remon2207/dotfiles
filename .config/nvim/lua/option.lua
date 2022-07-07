@@ -37,8 +37,6 @@ opt.cursorline = true
 opt.backspace = 'indent,eol,start'
 -- コマンドモードの補完
 opt.wildmenu = true
--- 保存するコマンド履歴の数
--- opt.history = 5000
 -- ステータスラインを常に表示
 opt.laststatus = 2
 -- 現在のモードを表示
@@ -49,10 +47,6 @@ opt.showcmd = true
 opt.ruler = true
 -- タイトルバーにファイルパスを表示
 opt.title = true
--- タブ・空白・改行等の表示
--- opt.list = true
--- opt.listchars = 'tab:»-,eol:↲,extends:»,precedes:«,nbsp:%'
--- opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
 -- swap無効
 opt.swapfile = false
 
@@ -61,9 +55,7 @@ opt.background = 'dark'
 
 opt.completeopt = 'menu,menuone,noselect'
 
--- サイン列常時表示
--- opt.signcolumn = 'yes'
-
+-- ヘルプの言語の優先順位
 opt.helplang = 'ja,en'
 
 opt.scrolloff = 999
