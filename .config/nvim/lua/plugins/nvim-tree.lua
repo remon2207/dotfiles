@@ -1,6 +1,12 @@
 require('nvim-tree').setup {
     sort_by = 'case_sensitive',
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
     view = {
+        centralize_selection = true,
         mappings = {
             list = {
                 {
@@ -18,14 +24,8 @@ require('nvim-tree').setup {
             },
         },
     },
-    update_focused_file = {
-        enable = true
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = false,
-    },
+    git = {
+        ignore = false
+    }
 }
 vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })

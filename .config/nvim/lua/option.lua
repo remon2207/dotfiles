@@ -3,7 +3,7 @@ local opt = vim.opt
 -- 保存時の文字コード
 opt.fileencoding = 'utf-8'
 -- 読み込み時の文字コードの自動判別. 左側が優先される
-opt.fileencodings = 'ucs-boms,utf-8,euc-jp,cp932'
+opt.fileencodings = 'utf-8,cp932,ucs-boms,euc-jp,'
 -- 改行コードの自動判別. 左側が優先される
 opt.fileformats = 'unix,dos,mac'
 -- レジスタ、クリップボードの共有
@@ -20,7 +20,6 @@ opt.smartindent = true
 opt.shiftwidth = 4
 opt.softtabstop = 4
 opt.smarttab = true
--- opt.cindent = true
 -- インクリメンタルサーチ. １文字入力毎に検索を行う
 opt.incsearch = true
 -- 検索パターンに大文字小文字を区別しない
@@ -39,7 +38,7 @@ opt.backspace = 'indent,eol,start'
 -- コマンドモードの補完
 opt.wildmenu = true
 -- 保存するコマンド履歴の数
-opt.history = 5000
+-- opt.history = 5000
 -- ステータスラインを常に表示
 opt.laststatus = 2
 -- 現在のモードを表示
@@ -48,14 +47,12 @@ opt.showmode = false
 opt.showcmd = true
 -- ステータスラインの右側にカーソルの現在位置を表示する
 opt.ruler = true
--- マウス操作を有効
--- vim.opt.mouse=a
 -- タイトルバーにファイルパスを表示
 opt.title = true
 -- タブ・空白・改行等の表示
-opt.list = true
+-- opt.list = true
 -- opt.listchars = 'tab:»-,eol:↲,extends:»,precedes:«,nbsp:%'
-opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
+-- opt.listchars = 'tab:»-,extends:»,precedes:«,nbsp:%'
 -- swap無効
 opt.swapfile = false
 
@@ -64,9 +61,12 @@ opt.background = 'dark'
 
 opt.completeopt = 'menu,menuone,noselect'
 
-opt.signcolumn = 'yes'
+-- サイン列常時表示
+-- opt.signcolumn = 'yes'
 
 opt.helplang = 'ja,en'
+
+opt.scrolloff = 999
 
 -- 背景透過
 opt.winblend = 0

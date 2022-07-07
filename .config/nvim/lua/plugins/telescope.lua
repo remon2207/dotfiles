@@ -1,3 +1,24 @@
+local telescope = require('telescope')
+local a = require('telescope.actions')
+
+-- require('telescope').setup {
+telescope.setup {
+    defaults = {
+        mappings = {
+            i = {
+                ['<Esc>'] = a.close,
+                ['<C-n>'] = false,
+                ['<C-p>'] = false,
+                ['<C-j>'] = a.move_selection_next,
+                ['<C-k>'] = a.move_selection_previous
+            }
+        }
+    }
+}
+
+
+
+
 vim.keymap.set('n', '<Leader>ff', '<Cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>fg', '<Cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<Leader>fb', '<Cmd>Telescope buffers<CR>', { noremap = true, silent = true })

@@ -7,7 +7,12 @@ require('nvim-treesitter.configs').setup {
     },
     indent = {
         enable = true,
-        disable = { 'lua' }
+        disable = {
+            'lua',
+            'javascript',
+            'typescript',
+            'yaml'
+        }
     },
     ensure_installed = {
         "javascript",
