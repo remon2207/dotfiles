@@ -53,6 +53,11 @@ require('packer').startup(function(use)
         event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/vim-solarized8') end
     }
+    use {
+        'joshdick/onedark.vim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+    }
 
     -- 'ヘルプの日本語化
     use {
