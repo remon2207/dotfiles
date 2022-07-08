@@ -56,12 +56,6 @@ require('packer').startup(function(use)
 
     -- カラースキーム
     use {
-        'lifepillar/vim-solarized8',
-        opt = true,
-        event = { 'BufEnter' },
-        config = function() require('plugins/vim-solarized8') end
-    }
-    use {
         'joshdick/onedark.vim',
         opt = true,
         event = { 'ColorSchemePre' }
@@ -265,6 +259,12 @@ require('packer').startup(function(use)
         config = function() require('plugins/lsp-colors') end,
         opt = true,
         event = { 'BufNewFile', 'BufRead' }
+    }
+    use {
+        'glepnir/lspsaga.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/lspsaga') end
     }
 
     -- フォーマッター
