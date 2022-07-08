@@ -8,8 +8,12 @@ api.nvim_create_autocmd('VimEnter', {
     pattern = '*',
     group = 'color_config',
     nested = true,
-    command = 'colorscheme onedark',
-    -- command = 'colorscheme solarized8',
+    -- command = 'colorscheme onedark',
+    -- command = 'colorscheme onedark-nvim',
+    -- command = 'colorscheme gruvbox',
+    -- command = 'colorscheme gruvbox-material',
+    -- command = 'colorscheme tokyonight',
+    command = 'colorscheme solarized8',
 })
 
 api.nvim_create_autocmd('ColorScheme', {
@@ -21,9 +25,9 @@ api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- vim-colarized8
--- api.nvim_create_autocmd('ColorScheme', {
---     pattern = '*',
---     group = 'color_config',
---     nested = true,
---     command = 'highlight StatusLine guifg=#0c404f',
--- })
+api.nvim_create_autocmd('ColorScheme', {
+    pattern = '*',
+    group = 'color_config',
+    nested = true,
+    command = 'highlight StatusLine guifg=#0c404f',
+})

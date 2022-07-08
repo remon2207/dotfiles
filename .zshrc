@@ -113,7 +113,7 @@ alias dexec='docker-compose exec'
 alias drun='docker-compose run --rm'
 alias ddown='docker-compose down'
 alias dup='docker-compose up -d'
-alias dlog='docker-compose logs'
+alias dlog='docker-compose logs --tail'
 alias dps='docker-compose ps -a'
 
 # plugin

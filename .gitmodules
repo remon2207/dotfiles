@@ -28,3 +28,6 @@
 [submodule ".tmux/plugins/tmux-colors-solarized"]
 	path = .tmux/plugins/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule ".tmux/plugins/tmux-gruvbox"]
+	path = .tmux/plugins/tmux-gruvbox
+	url = https://github.com/egel/tmux-gruvbox
