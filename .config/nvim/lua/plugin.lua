@@ -58,8 +58,13 @@ require('packer').startup(function(use)
     use {
         'lifepillar/vim-solarized8',
         opt = true,
-        event = { 'BufNewFile', 'BufRead' },
+        event = { 'BufEnter' },
         config = function() require('plugins/vim-solarized8') end
+    }
+    use {
+        'joshdick/onedark.vim',
+        opt = true,
+        event = { 'ColorSchemePre' }
     }
 
     -- 'ヘルプの日本語化
@@ -152,43 +157,40 @@ require('packer').startup(function(use)
     }
 
     -- ウィンドウリサイズ
-    use {
-        'simeji/winresizer',
-        opt = true,
-        cmd = { 'WinResizerStartResize' }
-    }
+    -- use {
+    --     'simeji/winresized',
+    --     opt = true,
+    --     cmd = { 'WinResizerStartResize' }
+    -- }
 
     -- ファイラー
-    use {
-        'kyazdani42/nvim-tree.lua',
-        opt = true,
-        event = { 'BufEnter' },
-        config = function() require('plugins/nvim-tree') end,
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-            opt = true,
-            event = { 'BufEnter' }
-        },
-    }
     -- use {
-    --     'preservim/nerdtree',
+    --     'kyazdani42/nvim-tree.lua',
     --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins/nerdtree') end,
+    --     event = { 'BufEnter' },
+    --     config = function() require('plugins/nvim-tree') end,
     --     requires = {
-    --         {
-    --             'Xuyuanp/nerdtree-git-plugin',
-    --             opt = true,
-    --             event = { 'BufNewFile', 'BufRead' },
-    --             config = function() require('plugins/nerdtree-git-plugin') end
-    --         },
-    --         {
-    --             'tiagofumo/vim-nerdtree-syntax-highlight',
-    --             opt = true,
-    --             event = { 'BufNewFile', 'BufRead' }
-    --         }
-    --     }
+    --         'kyazdani42/nvim-web-devicons',
+    --         opt = true,
+    --         event = { 'BufEnter' }
+    --     },
     -- }
+    use {
+        'preservim/nerdtree',
+        config = function() require('plugins/nerdtree') end,
+        requires = {
+            {
+                'ryanoasis/vim-devicons',
+            },
+            {
+                'Xuyuanp/nerdtree-git-plugin',
+                config = function() require('plugins/nerdtree-git-plugin') end
+            },
+            {
+                'tiagofumo/vim-nerdtree-syntax-highlight',
+            }
+        }
+    }
     -- use {
     --     'lambdalisue/fern.vim',
     --     config = function() require('plugins/fern') end,

@@ -1,5 +1,5 @@
 require('lualine').setup {
-    sections = {
-        lualine_b = { 'branch' }
+    options = {
+        section_separators = { left = '', right = ' '},
     }
 }
