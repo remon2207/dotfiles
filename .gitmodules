@@ -28,6 +28,3 @@
 [submodule ".tmux/plugins/tmux-gruvbox"]
 	path = .tmux/plugins/tmux-gruvbox
 	url = https://github.com/egel/tmux-gruvbox
-[submodule ".tmux/plugins/tmux-onedark-theme"]
-	path = .tmux/plugins/tmux-onedark-theme
-	url = https://github.com/odedlaz/tmux-onedark-theme
