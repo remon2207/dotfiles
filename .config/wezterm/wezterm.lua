@@ -83,11 +83,11 @@ return {
     -- 'Ricty Nerd Font'
     -- 'RictyDiscord Nerd Font'
   },
-  -- font_size = 8.0,
+  font_size = 8.0,
   -- font_size = 9.0,
   -- font_size = 10.0,
   -- font_size = 11.0,
-  font_size = 12.0,
+  -- font_size = 12.0,
   -- font_size = 14.0,
   -- color_scheme = 'Dracula',
   -- color_scheme = 'Hybrid',

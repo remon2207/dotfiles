@@ -135,7 +135,7 @@ require('packer').startup(function(use)
         },
     }
 
-    -- 高速移動
+    -- ジャンプ
     use {
         'phaazon/hop.nvim',
         opt = true,
@@ -159,32 +159,36 @@ require('packer').startup(function(use)
     }
 
     -- ファイラー
+    use {
+        'kyazdani42/nvim-tree.lua',
+        opt = true,
+        event = { 'BufEnter' },
+        config = function() require('plugins/nvim-tree') end,
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+            opt = true,
+            event = { 'BufEnter' }
+        },
+    }
     -- use {
-    --     'kyazdani42/nvim-tree.lua',
+    --     'preservim/nerdtree',
     --     opt = true,
     --     event = { 'BufNewFile', 'BufRead' },
-    --     requires = {'kyazdani42/nvim-web-devicons' },
-    --     config = function() require('plugins/nvim-tree') end
+    --     config = function() require('plugins/nerdtree') end,
+    --     requires = {
+    --         {
+    --             'Xuyuanp/nerdtree-git-plugin',
+    --             opt = true,
+    --             event = { 'BufNewFile', 'BufRead' },
+    --             config = function() require('plugins/nerdtree-git-plugin') end
+    --         },
+    --         {
+    --             'tiagofumo/vim-nerdtree-syntax-highlight',
+    --             opt = true,
+    --             event = { 'BufNewFile', 'BufRead' }
+    --         }
+    --     }
     -- }
-    use {
-        'preservim/nerdtree',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/nerdtree') end,
-        requires = {
-            {
-                'Xuyuanp/nerdtree-git-plugin',
-                opt = true,
-                event = { 'BufNewFile', 'BufRead' },
-                config = function() require('plugins/nerdtree-git-plugin') end
-            },
-            {
-                'tiagofumo/vim-nerdtree-syntax-highlight',
-                opt = true,
-                event = { 'BufNewFile', 'BufRead' }
-            }
-        }
-    }
     -- use {
     --     'lambdalisue/fern.vim',
     --     config = function() require('plugins/fern') end,
@@ -294,6 +298,13 @@ require('packer').startup(function(use)
         'tversteeg/registers.nvim',
         opt = true,
         event = { 'InsertEnter' }
+    }
+    -- キーマップ一覧を表示
+    use {
+        'folke/which-key.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/which-key') end
     }
 
     if packer_bootstrap then
