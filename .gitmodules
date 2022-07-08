@@ -16,9 +16,6 @@
 [submodule ".config/polybar/polybar-fcitx5-script"]
   path = .config/polybar/polybar-fcitx5-script
   url = https://github.com/polybar/polybar-scripts.git
-[submodule ".tmux/plugins/tmux-onedark-theme"]
-	path = .tmux/plugins/tmux-onedark-theme
-	url = https://github.com/odedlaz/tmux-onedark-theme
 [submodule "nord-tmux"]
 	path = nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
@@ -31,3 +28,6 @@
 [submodule ".tmux/plugins/tmux-gruvbox"]
 	path = .tmux/plugins/tmux-gruvbox
 	url = https://github.com/egel/tmux-gruvbox
+[submodule ".tmux/plugins/tmux-onedark-theme"]
+	path = .tmux/plugins/tmux-onedark-theme
+	url = https://github.com/odedlaz/tmux-onedark-theme
