@@ -1,15 +1,9 @@
-[submodule ".tmux/plugins/tmux-fzf"]
-	path = .tmux/plugins/tmux-fzf
-	url = https://github.com/sainnhe/tmux-fzf.git
 [submodule "tmux-fzf"]
 	path = tmux-fzf
 	url = https://github.com/sainnhe/tmux-fzf.git
 [submodule "zplug"]
 	path = zplug
 	url = https://github.com/zplug/zplug.git
-[submodule ".tmux/plugins/tmux"]
-	path = .tmux/plugins/tmux
-	url = https://github.com/dracula/tmux.git
 [submodule ".zplug"]
 	path = .zplug
 	url = https://github.com/zplug/zplug.git
@@ -19,12 +13,3 @@
 [submodule "nord-tmux"]
 	path = nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
-[submodule ".tmux/plugins/nord-tmux"]
-	path = .tmux/plugins/nord-tmux
-	url = https://github.com/arcticicestudio/nord-tmux
-[submodule ".tmux/plugins/tmux-colors-solarized"]
-	path = .tmux/plugins/tmux-colors-solarized
-	url = https://github.com/seebi/tmux-colors-solarized
-[submodule ".tmux/plugins/tmux-gruvbox"]
-	path = .tmux/plugins/tmux-gruvbox
-	url = https://github.com/egel/tmux-gruvbox
