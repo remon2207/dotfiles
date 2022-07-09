@@ -47,18 +47,35 @@ require('packer').startup(function(use)
     }
 
     -- インデントの可視化
-    -- use {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins/indent-blankline') end
-    -- }
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/indent-blankline') end
+    }
 
     -- カラースキーム
     use {
         'joshdick/onedark.vim',
         opt = true,
         event = { 'ColorSchemePre' }
+    }
+    use {
+        'lifepillar/vim-solarized8',
+        opt = true,
+        event = { 'ColorSchemePre' },
+        config = function() require('plugins/vim-solarized8') end
+    }
+    use {
+        'cocopon/iceberg.vim',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
+    use {
+        'morhetz/gruvbox',
+        opt = true,
+        event = { 'ColorSchemePre' },
+        config = function() require('plugins/gruvbox') end
     }
 
     -- 'ヘルプの日本語化
@@ -100,11 +117,17 @@ require('packer').startup(function(use)
     }
 
     -- スニペット
+    -- use {
+    --     'SirVer/ultisnips',
+    --     opt = true,
+    --     event = { 'InsertEnter' },
+    --     config = function() require('plugins/ultisnips') end
+    -- }
     use {
-        'SirVer/ultisnips',
+        'L3MON4D3/LuaSnip',
         opt = true,
         event = { 'InsertEnter' },
-        config = function() require('plugins/ultisnips') end
+        config = function() require('plugins/LuaSnip') end
     }
 
     -- 引用符
@@ -169,83 +192,67 @@ require('packer').startup(function(use)
     --         event = { 'BufEnter' }
     --     },
     -- }
-    use {
-        'preservim/nerdtree',
-        config = function() require('plugins/nerdtree') end,
-        requires = {
-            {
-                'ryanoasis/vim-devicons',
-            },
-            {
-                'Xuyuanp/nerdtree-git-plugin',
-                config = function() require('plugins/nerdtree-git-plugin') end
-            },
-            {
-                'tiagofumo/vim-nerdtree-syntax-highlight',
-            }
-        }
-    }
     -- use {
-    --     'lambdalisue/fern.vim',
-    --     config = function() require('plugins/fern') end,
+    --     'preservim/nerdtree',
+    --     config = function() require('plugins/nerdtree') end,
     --     requires = {
     --         {
-    --             'lambdalisue/nerdfont.vim',
-    --             opt = true,
-    --             event = { 'BufNewFile', 'BufRead' }
+    --             'ryanoasis/vim-devicons',
     --         },
     --         {
-    --             'lambdalisue/fern-renderer-nerdfont.vim',
-    --             opt = true,
-    --             event = { 'BufNewFile', 'BufRead' }
+    --             'Xuyuanp/nerdtree-git-plugin',
+    --             config = function() require('plugins/nerdtree-git-plugin') end
     --         },
     --         {
-    --             'lambdalisue/glyph-palette.vim',
-    --             opt = true,
-    --             event = { 'BufNewFile', 'BufRead' },
-    --             config = function() require('plugins/glyph-palette') end
+    --             'tiagofumo/vim-nerdtree-syntax-highlight',
     --         }
     --     }
     -- }
+    use {
+        'lambdalisue/fern.vim',
+        opt = true,
+        event = { 'BufEnter' },
+        config = function() require('plugins/fern') end
+    }
+    use {
+        'lambdalisue/nerdfont.vim',
+        opt = true,
+        event = { 'VimEnter' }
+    }
+    use {
+        'lambdalisue/fern-renderer-nerdfont.vim',
+        opt = true,
+        event = { 'VimEnter' }
+    }
+    use {
+        'lambdalisue/glyph-palette.vim',
+        opt = true,
+        event = { 'VimEnter' },
+        config = function() require('plugins/glyph-palette') end
+    }
 
     -- LSP
     use {
         'neovim/nvim-lspconfig',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/nvim-lspconfig') end,
-        requires = {
-            {
-                'williamboman/nvim-lsp-installer',
-                opt = true,
-                event = { 'BufNewFile', 'BufRead' },
-            }
-        }
+        config = function() require('plugins/nvim-lspconfig') end
+    }
+    use {
+        'williamboman/nvim-lsp-installer',
+        config = function() require('plugins/nvim-lspconfig') end
     }
 
     -- 補完
     use {
         'hrsh7th/nvim-cmp',
-        config = function() require('plugins/nvim-cmp') end,
+        config = function() require('plugins/nvim-cmp') end
     }
-    use {
-        'hrsh7th/cmp-nvim-lsp',
-    }
-    use {
-        'hrsh7th/cmp-buffer',
-    }
-    use {
-        'hrsh7th/cmp-path',
-    }
-    use {
-        'hrsh7th/cmp-cmdline',
-    }
-    use {
-        'quangnguyen30192/cmp-nvim-ultisnips',
-    }
-    use {
-        'onsails/lspkind.nvim',
-    }
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'onsails/lspkind.nvim'
+    use 'saadparwaiz1/cmp_luasnip'
+    -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
     -- 関数の引数を入力しているときにシグネチャヘルプを表示
     use {

@@ -6,9 +6,13 @@ require('nvim-tree').setup {
         open_file = {
             quit_on_open = true,
         },
+        change_dir = {
+            enable = false
+        }
     },
     view = {
         centralize_selection = true,
+        hide_root_folder = true,
         mappings = {
             list = {
                 {
@@ -34,6 +38,26 @@ require('nvim-tree').setup {
                 {
                     key = 'h',
                     action = 'close_node'
+                },
+                {
+                    key = 's',
+                    action = ''
+                },
+                {
+                    key = '<C-x>',
+                    action = ''
+                },
+                {
+                    key = 'ss',
+                    action = 'split'
+                },
+                {
+                    key = '<C-v>',
+                    action = ''
+                },
+                {
+                    key = 'sv',
+                    action = 'vsplit'
                 }
             },
         },
