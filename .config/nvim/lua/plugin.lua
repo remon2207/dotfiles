@@ -22,13 +22,9 @@ require('packer').startup(function(use)
     -- ステータスラインを強化
     use {
         'nvim-lualine/lualine.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/lualine') end,
         requires = {
             'kyazdani42/nvim-web-devicons',
-            opt = true,
-            event = { 'BufNewFile', 'BufRead' }
         },
     }
 
@@ -36,13 +32,9 @@ require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         branch = 'main',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/bufferline') end,
         requires = {
             'kyazdani42/nvim-web-devicons',
-            opt = true,
-            event = { 'BufNewFile', 'BufRead' }
         },
     }
 
@@ -76,6 +68,12 @@ require('packer').startup(function(use)
         opt = true,
         event = { 'ColorSchemePre' },
         config = function() require('plugins/gruvbox') end
+    }
+    use {
+        'dracula/vim',
+        opt = true,
+        event = { 'ColorSchemePre' },
+        as = 'dracula'
     }
 
     -- 'ヘルプの日本語化
@@ -140,19 +138,13 @@ require('packer').startup(function(use)
     -- ファイル検索
     use {
         'nvim-telescope/telescope.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/telescope') end,
         requires = {
             {
                 'nvim-lua/plenary.nvim',
-                opt = true,
-                event = { 'BufNewFile', 'BufRead' }
             },
             {
                 'kyazdani42/nvim-web-devicons',
-                opt = true,
-                event = { 'BufNewFile', 'BufRead' }
             }
         },
     }
@@ -181,17 +173,13 @@ require('packer').startup(function(use)
     -- }
 
     -- ファイラー
-    -- use {
-    --     'kyazdani42/nvim-tree.lua',
-    --     opt = true,
-    --     event = { 'BufEnter' },
-    --     config = function() require('plugins/nvim-tree') end,
-    --     requires = {
-    --         'kyazdani42/nvim-web-devicons',
-    --         opt = true,
-    --         event = { 'BufEnter' }
-    --     },
-    -- }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        config = function() require('plugins/nvim-tree') end,
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+        },
+    }
     -- use {
     --     'preservim/nerdtree',
     --     config = function() require('plugins/nerdtree') end,
@@ -208,28 +196,28 @@ require('packer').startup(function(use)
     --         }
     --     }
     -- }
-    use {
-        'lambdalisue/fern.vim',
-        opt = true,
-        event = { 'BufEnter' },
-        config = function() require('plugins/fern') end
-    }
-    use {
-        'lambdalisue/nerdfont.vim',
-        opt = true,
-        event = { 'VimEnter' }
-    }
-    use {
-        'lambdalisue/fern-renderer-nerdfont.vim',
-        opt = true,
-        event = { 'VimEnter' }
-    }
-    use {
-        'lambdalisue/glyph-palette.vim',
-        opt = true,
-        event = { 'VimEnter' },
-        config = function() require('plugins/glyph-palette') end
-    }
+    -- use {
+    --     'lambdalisue/fern.vim',
+    --     opt = true,
+    --     event = { 'BufEnter' },
+    --     config = function() require('plugins/fern') end
+    -- }
+    -- use {
+    --     'lambdalisue/nerdfont.vim',
+    --     opt = true,
+    --     event = { 'VimEnter' }
+    -- }
+    -- use {
+    --     'lambdalisue/fern-renderer-nerdfont.vim',
+    --     opt = true,
+    --     event = { 'VimEnter' }
+    -- }
+    -- use {
+    --     'lambdalisue/glyph-palette.vim',
+    --     opt = true,
+    --     event = { 'VimEnter' },
+    --     config = function() require('plugins/glyph-palette') end
+    -- }
 
     -- LSP
     use {

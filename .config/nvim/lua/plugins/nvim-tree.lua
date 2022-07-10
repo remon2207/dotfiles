@@ -28,18 +28,6 @@ require('nvim-tree').setup {
                     action = 'live_filter'
                 },
                 {
-                    key = 'o',
-                    action = ''
-                },
-                {
-                    key = 'l',
-                    action = 'edit'
-                },
-                {
-                    key = 'h',
-                    action = 'close_node'
-                },
-                {
                     key = 's',
                     action = ''
                 },
