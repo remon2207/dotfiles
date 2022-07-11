@@ -2,7 +2,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt autocd extendedglob nomatch notify
+setopt extendedglob nomatch notify
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 # cd [TAB] で以前移動したディレクトリを表示
@@ -50,9 +50,6 @@ alias dlog='docker-compose logs -f'
 alias dps='docker-compose ps -a'
 alias dbuild='docker-compose build'
 
-export PATH="$PATH:$HOME/.local/bin"
-export EDITOR="/usr/bin/nvim"
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -71,3 +68,13 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
 eval "$(starship init zsh)"
+
+export PATH="$PATH:$HOME/.local/bin"
+export EDITOR="/usr/bin/nvim"
+export FZF_DEFAULT_OPTS='--no-mouse --inline-info --reverse --border'
+export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid {}"'
+export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/nvm/init-nvm.sh

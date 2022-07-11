@@ -27,14 +27,14 @@ return {
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
     -- },
     -- 'Fira Code',
-    {
-      family='Fira Code',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
-    {
-      family='FiraCode Nerd Font',
-      harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
-    },
+    -- {
+    --   family='Fira Code',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
+    -- {
+    --   family='FiraCode Nerd Font',
+    --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+    -- },
     -- {
     --     family='Cascadia Code',
     --   harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -79,7 +79,8 @@ return {
     -- 'HackGen',
     -- { family = 'HackGen', weight = 'Bold' },
     -- 'HackGen35',
-    'HackGenNerd',
+    -- 'HackGenNerd',
+    'monospace',
     -- 'Roboto Mono',
     -- 'Cica',
     -- {
@@ -101,8 +102,8 @@ return {
     -- 'RictyDiscord Nerd Font'
   },
   -- font_size = 8.0,
-  font_size = 9.0,
-  -- font_size = 10.0,
+  -- font_size = 9.0,
+  font_size = 10.0,
   -- font_size = 11.0,
   -- font_size = 12.0,
   -- font_size = 14.0,

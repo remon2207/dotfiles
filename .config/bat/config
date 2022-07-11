@@ -7,4 +7,6 @@
 # --theme='Visual Studio Dark+'
 # --theme='gruvbox-dark'
 # --theme='Monokai Extended'
---theme='OneHalfDark'
+# --theme='OneHalfDark'
+# --theme='base16-256'
+--theme='base16'
