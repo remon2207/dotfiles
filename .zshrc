@@ -68,9 +68,9 @@ stty stop undef
 
 # keybind
 # vimモード
-bindkey -v
+# bindkey -v
 # emacsモード
-# bindkey -e
+bindkey -e
 # コマンド履歴補完
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end

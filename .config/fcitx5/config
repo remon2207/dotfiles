@@ -3,15 +3,17 @@
 EnumerateWithTriggerKeys=True
 # 一時的に第1入力メソッドに切り替える
 AltTriggerKeys=
-# 次の入力メソッドに切り替える
-EnumerateForwardKeys=
-# 前の入力メソッドに切り替える
-EnumerateBackwardKeys=
 # 切り替え時は第1入力メソッドをスキップする
 EnumerateSkipFirst=False
 
 [Hotkey/TriggerKeys]
 0=Control+space
+
+[Hotkey/EnumerateForwardKeys]
+0=Control+Shift_L
+
+[Hotkey/EnumerateBackwardKeys]
+0=Control+Shift_R
 
 [Hotkey/EnumerateGroupForwardKeys]
 0=Super+space

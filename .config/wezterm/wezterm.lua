@@ -246,5 +246,5 @@ return {
   },
   -- disable_default_key_bindings = true,
   -- exit_behavior = 'Close',
-  -- warn_about_missing_glyphs = false
+  warn_about_missing_glyphs = false
 }
