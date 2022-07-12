@@ -22,3 +22,4 @@ esac
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 export PATH="$PATH:$HOME/.local/bin"
+source /usr/share/nvm/init-nvm.sh
