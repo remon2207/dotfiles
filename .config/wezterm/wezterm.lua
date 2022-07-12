@@ -79,8 +79,8 @@ return {
     -- 'HackGen',
     -- { family = 'HackGen', weight = 'Bold' },
     -- 'HackGen35',
-    -- 'HackGenNerd',
-    'monospace',
+    'HackGenNerd',
+    -- 'monospace',
     -- 'Roboto Mono',
     -- 'Cica',
     -- {
@@ -115,7 +115,6 @@ return {
   -- color_scheme = 'DotGov',
   -- color_scheme = 'GitHub Dark',
   -- color_scheme = 'Lavandula',
-  -- color_scheme = 'Hybrid',
   -- color_scheme = 'Atom',
   -- color_scheme = 'Brogrammer',
   color_scheme = 'iceberg-dark',

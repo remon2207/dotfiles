@@ -71,7 +71,7 @@ eval "$(starship init zsh)"
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="/usr/bin/nvim"
-export FZF_DEFAULT_OPTS='--no-mouse --inline-info --reverse --border'
+export FZF_DEFAULT_OPTS='--no-mouse'
 export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid {}"'
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
 
