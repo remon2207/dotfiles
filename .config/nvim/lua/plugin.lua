@@ -180,44 +180,6 @@ require('packer').startup(function(use)
             'kyazdani42/nvim-web-devicons',
         },
     }
-    -- use {
-    --     'preservim/nerdtree',
-    --     config = function() require('plugins/nerdtree') end,
-    --     requires = {
-    --         {
-    --             'ryanoasis/vim-devicons',
-    --         },
-    --         {
-    --             'Xuyuanp/nerdtree-git-plugin',
-    --             config = function() require('plugins/nerdtree-git-plugin') end
-    --         },
-    --         {
-    --             'tiagofumo/vim-nerdtree-syntax-highlight',
-    --         }
-    --     }
-    -- }
-    -- use {
-    --     'lambdalisue/fern.vim',
-    --     opt = true,
-    --     event = { 'BufEnter' },
-    --     config = function() require('plugins/fern') end
-    -- }
-    -- use {
-    --     'lambdalisue/nerdfont.vim',
-    --     opt = true,
-    --     event = { 'VimEnter' }
-    -- }
-    -- use {
-    --     'lambdalisue/fern-renderer-nerdfont.vim',
-    --     opt = true,
-    --     event = { 'VimEnter' }
-    -- }
-    -- use {
-    --     'lambdalisue/glyph-palette.vim',
-    --     opt = true,
-    --     event = { 'VimEnter' },
-    --     config = function() require('plugins/glyph-palette') end
-    -- }
 
     -- LSP
     use {
@@ -238,7 +200,6 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use 'onsails/lspkind.nvim'
     use 'saadparwaiz1/cmp_luasnip'
     -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
