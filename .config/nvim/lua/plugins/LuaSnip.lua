@@ -17,7 +17,8 @@ local postfix = require("luasnip.extras.postfix").postfix
 
 local set = vim.keymap.set
 
-set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
+-- set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
+set('i', '<Tab>', 'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"', { silent = true, expr = true, noremap = false })
 set('i', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })
 set('i', '<C-f>', '<Cmd>lua require("luasnip").jump(1)<CR>', { noremap = true, silent = true })
 set('s', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })

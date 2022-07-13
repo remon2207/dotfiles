@@ -61,7 +61,7 @@ opt.helplang = 'ja,en'
 opt.scrolloff = 999
 
 -- 背景透過
-opt.winblend = 0
-opt.wildmenu = true
-opt.wildoptions = 'pum'
-opt.pumblend = 10
+-- opt.winblend = 0
+-- opt.wildmenu = true
+-- opt.wildoptions = 'pum'
+-- opt.pumblend = 10
