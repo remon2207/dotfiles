@@ -3,10 +3,10 @@
 # --theme="Solarized"
 # --theme="Solarized (dark)"
 # --theme='Nord'
-# --theme='Dracula'
+--theme='Dracula'
 # --theme='Visual Studio Dark+'
 # --theme='gruvbox-dark'
 # --theme='Monokai Extended'
 # --theme='OneHalfDark'
 # --theme='base16-256'
---theme='base16'
+# --theme='base16'

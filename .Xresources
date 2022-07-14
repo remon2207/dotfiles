@@ -35,7 +35,14 @@
 *.color7:       #c6c8d1
 *.color15:      #d2d4de
 
+Xcursor.theme: Adwaita
 Xcursor.size: 16
-Xcursor.theme: WhiteSur-cursors
-xterm*faceName: HackGenNerd Console:size=12:antialias=true
-xterm*font: 7x10
+
+xterm*faceName: Cica:antialias=true
+xterm*faceSize: 12
+xterm*fontDoublesize: true
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*scrollTtyKeypress: false
+URxvt.font: xft:Cica:size=10

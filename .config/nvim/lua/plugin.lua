@@ -75,6 +75,21 @@ require('packer').startup(function(use)
         event = { 'ColorSchemePre' },
         as = 'dracula'
     }
+    use {
+        'arcticicestudio/nord-vim',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
+    use {
+        'EdenEast/nightfox.nvim',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
+    use {
+        'sainnhe/gruvbox-material',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
 
     -- 'ヘルプの日本語化
     use {

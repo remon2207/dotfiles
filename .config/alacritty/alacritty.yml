@@ -116,7 +116,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "HackGenNerd"
+    family: "Cica"
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -127,7 +127,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd"
+    family: "Cica"
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -138,7 +138,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd"
+    family: "Cica"
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -149,7 +149,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGenNerd"
+    family: "Cica"
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -300,7 +300,7 @@ font:
 #     magenta: '#8f3f71'
 #     cyan:    '#427b58'
 #     white:   '#928374'
-  # indexed_colors: []
+#   indexed_colors: []
 
 
 
@@ -344,25 +344,25 @@ font:
 
 
 # Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
-colors:
-   primary:
-     background: '#282c34'
-     foreground: '#abb2bf'
-   cursor:
-     text:       CellBackground
-     cursor:     '#528bff' # syntax-cursor-color
-   selection:
-     text:       CellForeground
-     background: '#3e4451' # syntax-selection-color
-   normal:
-     black:      '#5c6370' # mono-3
-     red:        '#e06c75' # red 1
-     green:      '#98c379'
-     yellow:     '#e5c07b' # orange 2
-     blue:       '#61afef'
-     magenta:    '#c678dd'
-     cyan:       '#56b6c2'
-     white:      '#828997' # mono-2
+# colors:
+#    primary:
+#      background: '#282c34'
+#      foreground: '#abb2bf'
+#    cursor:
+#      text:       CellBackground
+#      cursor:     '#528bff' # syntax-cursor-color
+#    selection:
+#      text:       CellForeground
+#      background: '#3e4451' # syntax-selection-color
+#    normal:
+#      black:      '#5c6370' # mono-3
+#      red:        '#e06c75' # red 1
+#      green:      '#98c379'
+#      yellow:     '#e5c07b' # orange 2
+#      blue:       '#61afef'
+#      magenta:    '#c678dd'
+#      cyan:       '#56b6c2'
+#      white:      '#828997' # mono-2
 
 
 # Colors (Night Owl)
@@ -432,33 +432,33 @@ colors:
       
 
 # Colors (Nord)
-# colors:
-#    # Default colors
-#    primary:
-#      background: '#2E3440'
-#      foreground: '#D8DEE9'
+colors:
+   # Default colors
+   primary:
+     background: '#2E3440'
+     foreground: '#D8DEE9'
 
-#    # Normal colors
-#    normal:
-#      black:   '#3B4252'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#88C0D0'
-#      white:   '#E5E9F0'
+   # Normal colors
+   normal:
+     black:   '#3B4252'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#88C0D0'
+     white:   '#E5E9F0'
 
-#    # Bright colors
-#    bright:
-#      black:   '#4C566A'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#8FBCBB'
-#      white:   '#ECEFF4'
+   # Bright colors
+   bright:
+     black:   '#4C566A'
+     red:     '#BF616A'
+     green:   '#A3BE8C'
+     yellow:  '#EBCB8B'
+     blue:    '#81A1C1'
+     magenta: '#B48EAD'
+     cyan:    '#8FBCBB'
+     white:   '#ECEFF4'
 
 
 
