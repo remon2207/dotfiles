@@ -75,11 +75,8 @@ export EDITOR="/usr/bin/nvim"
 export FZF_DEFAULT_OPTS='--no-mouse'
 export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid {}"'
 export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
-export FZF_DEFAULT_OPTS='
-    --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4
-'
 # solarized
-# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444444,bold"
+# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444444"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

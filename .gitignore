@@ -1,7 +1,2 @@
-/.config/nvim/dein/
-/.config/nvim/plugged/
-/.config/mpd/log
-/.config/mpd/state
-
 /.config/nvim/plugin/
-/.tmux/plugins/
+/.tmux/

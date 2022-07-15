@@ -8,4 +8,4 @@ require('indent_blankline').setup {}
 --         'IndentBlanklineIndent1',
 --     },
 -- }
--- vim.g.indent_blankline_char_blankline = ''
+vim.g.indent_blankline_char_blankline = ''

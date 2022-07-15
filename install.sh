@@ -21,6 +21,6 @@ do
   ln -snfv $HOME/dotfiles/${conf} $HOME/.config/
 done
 
-sudo ln -snfv $HOME/dotfiles/etc/* /etc/
-sudo ln -snfv $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
-sudo ln -snfv $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+# sudo ln -snfv $HOME/dotfiles/etc/* /etc/
+# sudo ln -snfv $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+# sudo ln -snfv $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
