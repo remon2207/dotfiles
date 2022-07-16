@@ -51,6 +51,7 @@ alias dlog='docker-compose logs -f'
 alias dps='docker-compose ps -a'
 alias dbuild='docker-compose build'
 alias t='tmux'
+alias tree='tree -C'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
