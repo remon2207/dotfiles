@@ -49,7 +49,7 @@ else
     alias la='ls -A --color=auto'
 fi
 if type bat > /dev/null 2>&1; then
-    alias bat='bat'
+    alias cat='bat'
 fi
 if type rg > /dev/null 2>&1; then
     alias grep='rg'
@@ -103,9 +103,9 @@ fi
 
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="/usr/bin/nvim"
-export FZF_DEFAULT_OPTS='--no-mouse'
+export FZF_DEFAULT_OPTS="--no-mouse"
 export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid {}"'
-export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
+export FZF_CTRL_T_COMMAND="fd --type f --hidden --exclude .git"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
