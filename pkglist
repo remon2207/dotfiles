@@ -32,8 +32,10 @@ gettext
 git
 github-cli
 gnome-keyring
+go
 grep
 groff
+gtk2
 gufw
 gvfs
 gzip
@@ -47,6 +49,7 @@ linux-firmware
 linux-zen
 linux-zen-headers
 lsd
+lxappearance-gtk3
 m4
 make
 man-db
@@ -68,16 +71,20 @@ pavucontrol
 pipewire
 pipewire-pulse
 pkgconf
+ripgrep
 ristretto
+sd
 sed
 starship
 sudo
+tealdeer
 texinfo
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tumbler
+unzip
 vi
 wget
 which
@@ -127,4 +134,5 @@ xfconf
 xfdesktop
 xfwm4
 xfwm4-themes
+zip
 zsh

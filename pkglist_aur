@@ -34,9 +34,11 @@ ghq-bin
 git
 github-cli
 gnome-keyring
+go
 google-chrome
 grep
 groff
+gtk2
 gufw
 gvfs
 gzip
@@ -50,6 +52,7 @@ linux-firmware
 linux-zen
 linux-zen-headers
 lsd
+lxappearance-gtk3
 m4
 make
 man-db
@@ -62,6 +65,7 @@ noto-fonts-emoji
 ntfs-3g
 nvidia-dkms
 nvidia-settings
+nvm
 openssh
 pacman
 papirus-icon-theme
@@ -72,17 +76,23 @@ pavucontrol
 pipewire
 pipewire-pulse
 pkgconf
+ripgrep
 ristretto
+sd
 sed
 starship
 sudo
+tealdeer
 texinfo
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 ttf-cica
+ttf-symbola
+ttf-twemoji-color
 tumbler
+unzip
 vi
 visual-studio-code-bin
 wget
@@ -133,4 +143,5 @@ xfconf
 xfdesktop
 xfwm4
 xfwm4-themes
+zip
 zsh
