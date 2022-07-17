@@ -14,8 +14,12 @@ $HOME/音楽 \
 $HOME/画像 \
 $HOME/ビデオ
 
+echo ''
+echo '======================================'
 echo 'Change /etc/makepkg.conf as follows'
 echo ''
 echo 'CFLAGS="-march=native ..."'
 echo 'MAKEFLAGS="-j$(($(nproc)+1))"'
 echo 'BUILDDIR=/tmp/makepkg'
+echo '======================================'
+echo ''
