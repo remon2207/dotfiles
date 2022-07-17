@@ -25,3 +25,5 @@ done
 
 sudo ln -snfv ./.gtkrc-2.0 /etc/gtk-2.0/gtkrc
 sudo ln -snfv ./.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+
+echo "end setup"
