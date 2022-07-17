@@ -51,7 +51,8 @@ local servers = {
     'dockerls',
     'yamlls',
     'sqls',
-    'tailwindcss'
+    'tailwindcss',
+    'bashls'
 }
 
 for _, lsp in pairs(servers) do

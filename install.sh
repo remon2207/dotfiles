@@ -13,14 +13,15 @@ do
     [[ "$f" == ".config" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
 
-    ln -snfv $HOME/dotfiles/${f} $HOME/
+    ln -snfv ./${f} $HOME/
 done
 
-for conf in .config/*
+cd ./.config
+
+for conf in ./*
 do
-  ln -snfv $HOME/dotfiles/${conf} $HOME/.config/
+  ln -snfv ./config/${conf} $HOME/.config/
 done
 
-# sudo ln -snfv $HOME/dotfiles/etc/* /etc/
-# sudo ln -snfv $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
-# sudo ln -snfv $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+sudo ln -snfv ./.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+sudo ln -snfv ./.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
