@@ -62,6 +62,9 @@ fi
 if type fd > /dev/null 2>&1; then
     alias find='fd'
 fi
+if type sd > /dev/null 2>&1; then
+    alias sed='sd'
+fi
 alias vim='nvim'
 alias sudo='sudo '
 alias repos='ghq list -p | fzf'
@@ -106,5 +109,4 @@ export FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-# source /usr/share/nvm/init-nvm.sh
-abcdefghijklmnopqrstuvwxyz
+source /usr/share/nvm/init-nvm.sh
