@@ -1,10 +1,4 @@
-#!/bin/bash
-
-if [ $# -lt 1 ] ; then
-    echo 'Usage:'
-    echo 'ubuntu_setup.sh <distribution>'
-    exit
-fi
+#!/usr/bin/env bash
 
 sudo apt install -y \
 git \
