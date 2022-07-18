@@ -74,15 +74,15 @@ chsh -s $(which zsh)
 
 LC_ALL=C xdg-user-dirs-update --force
 
-rm -rf $HOME/デスクトップ \
-$HOME/ダウンロード \
-$HOME/テンプレート \
-$HOME/公開 \
-$HOME/ドキュメント \
-$HOME/音楽 \
-$HOME/画像 \
-$HOME/ビデオ \
-$HOME
+# rm -rf $HOME/デスクトップ \
+# $HOME/ダウンロード \
+# $HOME/テンプレート \
+# $HOME/公開 \
+# $HOME/ドキュメント \
+# $HOME/音楽 \
+# $HOME/画像 \
+# $HOME/ビデオ \
+# $HOME
 
 for dir in デスクトップ ダウンロード テンプレート 公開 ドキュメント 音楽 ピクチャ ミュージック ビデオ
 do
