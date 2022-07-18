@@ -2,28 +2,24 @@
 
 THIS_DIR=$(cd $(dirname $0); pwd)
 
-cd $THIS_DIR
-
 echo "start setup..."
 
-for f in .??*
+for f in ${THIS_DIR}/.??*
 do
     [[ "$f" == ".git" ]] && continue
     [[ "$f" == ".DS_Store" ]] && continue
     [[ "$f" == ".config" ]] && continue
     [[ "$f" == ".gitignore" ]] && continue
 
-    ln -snfv ./${f} $HOME/
+    ln -snfv ${f} $HOME/
 done
 
-cd ./.config
-
-for conf in ./*
+for conf in ${THIS_DIR}/.config/*
 do
-  ln -snfv ./config/${conf} $HOME/.config/
+  ln -snfv ${conf} $HOME/.config/
 done
 
-sudo ln -snfv ./.gtkrc-2.0 /etc/gtk-2.0/gtkrc
-sudo ln -snfv ./.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+sudo ln -snfv ${THIS_DIR}/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+sudo ln -snfv ${THIS_DIR}/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
 
 echo "end setup"
