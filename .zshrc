@@ -100,6 +100,13 @@ if type starship > /dev/null 2>&1; then
     eval "$(starship init zsh)"
 fi
 
+os_name=$(bat /etc/os-release | grep "^NAME" | awk -F '"' '{print $2}')
+
+if [ ${os_name} = "Ubuntu" ]; then
+    export PATH="$PATH:$HOME/.cargo/env"
+fi
+unset os_name
+
 export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="/usr/bin/nvim"
 export FZF_DEFAULT_OPTS="--no-mouse"
