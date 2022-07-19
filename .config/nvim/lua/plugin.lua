@@ -90,6 +90,11 @@ require('packer').startup(function(use)
         opt = true,
         event = { 'ColorSchemePre' }
     }
+    use {
+        'projekt0n/github-nvim-theme',
+        opt = true,
+        event = { 'ColorSchemePre' }
+    }
 
     -- 'ヘルプの日本語化
     use {
