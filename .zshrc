@@ -38,33 +38,6 @@ zstyle ':completion:*' list-colors ''
 # keybind
 bindkey -e
 
-# alias
-if type lsd > /dev/null 2>&1; then
-    alias ls='lsd'
-    alias ll='lsd -l'
-    alias la='lsd -A'
-else
-    alias ls='ls --color=auto'
-    alias ll='ls -l --color=auto'
-    alias la='ls -A --color=auto'
-fi
-if type bat > /dev/null 2>&1; then
-    alias cat='bat'
-fi
-if type rg > /dev/null 2>&1; then
-    alias grep='rg'
-else
-    alias grep='grep --color=auto'
-fi
-if type tldr > /dev/null 2>&1; then
-    alias man='tldr'
-fi
-if type fd > /dev/null 2>&1; then
-    alias find='fd'
-fi
-if type sd > /dev/null 2>&1; then
-    alias sed='sd'
-fi
 alias vim='nvim'
 alias sudo='sudo '
 alias repos='ghq list -p | fzf'
@@ -76,8 +49,6 @@ alias dup='docker-compose up -d'
 alias dlogs='docker-compose logs -f'
 alias dps='docker-compose ps -a'
 alias dbuild='docker-compose build'
-alias t='tmux'
-alias tree='tree -C'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -96,23 +67,7 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
-if type starship > /dev/null 2>&1; then
-    eval "$(starship init zsh)"
-fi
-
-os_name=$(bat /etc/os-release | grep "^NAME" | awk -F '"' '{print $2}')
-
-if [ ${os_name} = "Ubuntu" ]; then
-    export PATH="$PATH:$HOME/.cargo/env"
-fi
-unset os_name
-
-export PATH="$PATH:$HOME/.local/bin"
-export EDITOR="/usr/bin/nvim"
 export FZF_DEFAULT_OPTS="--no-mouse"
-export FZF_CTRL_T_OPTS='--preview "bat --color=always --style=header,grid {}"'
-export FZF_CTRL_T_COMMAND="fd --type f --hidden --exclude .git"
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-source /usr/share/nvm/init-nvm.sh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
