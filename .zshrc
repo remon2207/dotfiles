@@ -60,7 +60,7 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vim='nvim'
+alias vim="${HOME}/Applications/nvim.appimage"
 alias sudo='sudo '
 alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
