@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sudo apt update
+
 sudo apt install -y \
     git \
     curl \
@@ -36,12 +38,9 @@ sudo gdebi code.deb
 
 rm -rf *.{deb,zip} ghq_linux_amd64
 
-sudo apt purge docker docker-engine docker.io containerd runc
-
-sudo apt update
-
-sudo apt install -y \
+sudo apt install \
     ca-certificates \
+    curl \
     gnupg \
     lsb-release
 
@@ -54,6 +53,9 @@ echo \
 
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # zshをデフォルトシェルにする
 chsh -s $(which zsh)
