@@ -36,6 +36,8 @@ sudo gdebi code.deb
 
 rm -rf *.{deb,zip} ghq_linux_amd64
 
+sudo apt purge docker docker-engine docker.io containerd runc
+
 sudo apt update
 
 sudo apt install -y \
@@ -43,7 +45,8 @@ sudo apt install -y \
     gnupg \
     lsb-release
 
-sudo mkdir -p /etc/apt/keyringscurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
