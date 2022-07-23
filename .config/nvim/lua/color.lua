@@ -8,7 +8,7 @@ api.nvim_create_autocmd('VimEnter', {
     pattern = '*',
     group = 'color_config',
     nested = true,
-    command = 'colorscheme onedark',
+    command = 'colorscheme onedark'
     -- command = 'colorscheme github_dark',
     -- command = 'colorscheme dracula',
     -- command = 'colorscheme nord',

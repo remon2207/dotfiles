@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 
 sudo apt install -y \
-git \
-curl \
-zsh \
-gdebi \
-gh
+    git \
+    curl \
+    zsh \
+    gdebi \
+    gh
 
-# neovim_dlname=$(curl -L https://github.com/neovim/neovim/releases/latest/ | \
-#     grep nvim-linux64.deb | \
-#     awk -F 'a href=' '{print $2 $2}' | \
-#     grep '^' | \
-#     awk -F '"' '{print $2 $1}' | \
-#     grep -m 1 "/")
-# 
-# curl -OL https://github.com${neovim_dlname}
-# yes | sudo gdebi nvim-linux64.deb
+neovim_dlname=$(curl -L https://github.com/neovim/neovim/releases/latest/ | \
+    grep nvim-linux64.deb | \
+    awk -F 'a href=' '{print $2 $2}' | \
+    grep '^' | \
+    awk -F '"' '{print $2 $1}' | \
+    grep -m 1 "/")
+
+curl -OL https://github.com${neovim_dlname}
+yes | sudo gdebi nvim-linux64.deb
 
 ghq_dlname=$(curl -L https://github.com/x-motemen/ghq/releases/latest | \
     grep -E "ghq_linux_amd64.zip" | \
@@ -34,14 +34,23 @@ yes | sudo gdebi discord-*.deb
 curl -o code.deb -L "https://go.microsoft.com/fwlink/?LinkID=760868"
 sudo gdebi code.deb
 
-rm -rf *.{deb,zip}
+rm -rf *.{deb,zip} ghq_linux_amd64
 
-LC_ALL=C xdg-user-dirs-update --force
+sudo apt update
 
-for dir in デスクトップ ダウンロード テンプレート 公開 ドキュメント ピクチャ ミュージック ビデオ
-do
-    rm -rf ${HOME}/${dir}
-done
+sudo apt install -y \
+    ca-certificates \
+    gnupg \
+    lsb-release
+
+sudo mkdir -p /etc/apt/keyringscurl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # zshをデフォルトシェルにする
 chsh -s $(which zsh)
