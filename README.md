@@ -19,6 +19,7 @@ and
 # pacman -S --needed - < pkglist
 ```
 or
+```
 # pacman -S --needed - < pkglist-aur
 ```
 
