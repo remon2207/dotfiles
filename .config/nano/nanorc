@@ -8,8 +8,6 @@
 ## Inside string parameters, quotes should not be escaped -- the last
 ## double quote on the line will be seen as the closing quote.
 
-set minibar
-
 ## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
 ## stop at word ends instead of at beginnings.
 # set afterends
@@ -22,7 +20,6 @@ set minibar
 ## tabs and/or spaces as the preceding line -- or as the next line
 ## if the preceding line is the beginning of a paragraph.
 # set autoindent
-set autoindent
 
 ## Back up files to the current filename plus a tilde.
 # set backup
@@ -75,7 +72,6 @@ set autoindent
 # set jumpyscrolling
 
 ## Display line numbers to the left (and any anchors in the margin).
-# set linenumbers
 set linenumbers
 
 ## Enable vim-style lock-files.  This is just to let a vim user know you
@@ -93,7 +89,7 @@ set linenumbers
 
 ## Suppress the title bar and show the filename plus a cursor-position
 ## percentage in the space of the status bar.
-# set minibar
+set minibar
 
 ## Enable mouse support, if available for your system.  When enabled,
 ## mouse clicks can be used to place the cursor, set the mark (with a
@@ -176,11 +172,9 @@ set linenumbers
 # set stateflags
 
 ## Use this tab size instead of the default; it must be greater than 0.
-# set tabsize 8
 set tabsize 4
 
 ## Convert each typed tab to the fitting number of spaces.
-# set tabstospaces
 set tabstospaces
 
 ## Snip whitespace at the end of lines when justifying or hard-wrapping.
@@ -247,7 +241,7 @@ set tabstospaces
 
 ## To include most of the existing syntax definitions, you can do:
 include "/usr/share/nano/*.nanorc"
-include "/usr/share/nano-syntax-highlighting/*.nanorc"
+include "~/ghq/github.com/scopatz/nanorc/*.nanorc"
 
 ## Or you can select just the ones you need.  For example:
 # include "/usr/share/nano/html.nanorc"
@@ -297,9 +291,6 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"
 ## and then pipe the selected text through a sed command.)
 # bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'" main
 # bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'" main
-
-## For copying a marked region to the system clipboard:
-# bind Sh-M-T "|xsel -ibu" main
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
