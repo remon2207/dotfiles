@@ -65,13 +65,6 @@ alias vim="${HOME}/Applications/nvim.appimage"
 alias sudo='sudo '
 alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
-# alias dexec='docker-compose exec'
-# alias drun='docker-compose run --rm'
-# alias ddown='docker-compose down'
-# alias dup='docker-compose up -d'
-# alias dlogs='docker-compose logs -f'
-# alias dps='docker-compose ps -a'
-# alias dbuild='docker-compose build'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -99,5 +92,8 @@ zinit light zsh-users/zsh-autosuggestions
 
 export FZF_DEFAULT_OPTS="--no-mouse"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
