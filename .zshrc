@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt extendedglob nomatch notify
@@ -41,7 +41,7 @@ bindkey -e
 # PROMPT='%B%F{blue}%~%f%b'
 
 # git-promptの読み込み
-source ~/.zsh/git-prompt.sh
+source "$HOME/.zsh/git-prompt.sh"
 
 # プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
