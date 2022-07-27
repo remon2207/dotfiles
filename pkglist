@@ -1,3 +1,4 @@
+archlinux-keyring
 audacious
 autoconf
 automake
@@ -39,7 +40,6 @@ grep
 groff
 gufw
 gvfs
-gvfs-smb
 gzip
 htop
 intel-ucode
@@ -76,9 +76,6 @@ sudo
 texinfo
 unzip
 vi
-virtualbox
-virtualbox-guest-iso
-virtualbox-host-dkms
 wget
 which
 wireplumber

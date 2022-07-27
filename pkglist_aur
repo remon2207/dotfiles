@@ -1,3 +1,4 @@
+archlinux-keyring
 audacious
 autoconf
 automake
@@ -41,7 +42,6 @@ grep
 groff
 gufw
 gvfs
-gvfs-smb
 gzip
 htop
 intel-ucode
@@ -72,18 +72,16 @@ pavucontrol
 pipewire
 pipewire-pulse
 pkgconf
+postman-bin
 qt5ct
 rustup
 sed
+spotify
 sudo
 texinfo
 ttf-cica
 unzip
 vi
-virtualbox
-virtualbox-ext-oracle
-virtualbox-guest-iso
-virtualbox-host-dkms
 visual-studio-code-bin
 wget
 which
