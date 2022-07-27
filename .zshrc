@@ -61,7 +61,6 @@ alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias vim="${HOME}/Applications/nvim.appimage"
 alias sudo='sudo '
 alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
@@ -92,8 +91,8 @@ zinit light zsh-users/zsh-autosuggestions
 
 export FZF_DEFAULT_OPTS="--no-mouse"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
 
-# source /usr/share/fzf/key-bindings.zsh
-# source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

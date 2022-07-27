@@ -19,7 +19,7 @@
 ## Automatically indent a newly created line to the same number of
 ## tabs and/or spaces as the preceding line -- or as the next line
 ## if the preceding line is the beginning of a paragraph.
-# set autoindent
+set autoindent
 
 ## Back up files to the current filename plus a tilde.
 # set backup
@@ -241,7 +241,7 @@ set tabstospaces
 
 ## To include most of the existing syntax definitions, you can do:
 include "/usr/share/nano/*.nanorc"
-include "~/ghq/github.com/scopatz/nanorc/*.nanorc"
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
 
 ## Or you can select just the ones you need.  For example:
 # include "/usr/share/nano/html.nanorc"
@@ -291,6 +291,9 @@ include "~/ghq/github.com/scopatz/nanorc/*.nanorc"
 ## and then pipe the selected text through a sed command.)
 # bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'" main
 # bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'" main
+
+## For copying a marked region to the system clipboard:
+# bind Sh-M-T "|xsel -ibu" main
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
