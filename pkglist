@@ -76,9 +76,13 @@ sudo
 texinfo
 unzip
 vi
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-dkms
 wget
 which
 wireplumber
+xarchiver
 xdg-user-dirs-gtk
 zip
 zsh
