@@ -46,6 +46,7 @@ gvfs
 gzip
 htop
 intel-ucode
+jdim-git
 kvantum
 libtool
 linux-firmware
@@ -70,6 +71,7 @@ pacman
 paru
 patch
 pavucontrol
+perl-lwp-protocol-https
 pipewire
 pipewire-pulse
 pkgconf

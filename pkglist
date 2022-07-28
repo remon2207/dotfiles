@@ -67,6 +67,7 @@ openssh
 pacman
 patch
 pavucontrol
+perl-lwp-protocol-https
 pipewire
 pipewire-pulse
 pkgconf
