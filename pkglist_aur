@@ -82,11 +82,17 @@ texinfo
 ttf-cica
 unzip
 vi
+virtualbox
+virtualbox-ext-oracle
+virtualbox-guest-iso
+virtualbox-host-dkms
 visual-studio-code-bin
 wget
 which
 wireplumber
 xarchiver
 xdg-user-dirs-gtk
+yaru-gtk-theme
+yaru-icon-theme
 zip
 zsh
