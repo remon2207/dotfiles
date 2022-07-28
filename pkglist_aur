@@ -11,6 +11,7 @@ dconf-editor
 discord
 docker
 docker-compose
+downgrade
 evince
 exfat-utils
 fakeroot
@@ -82,6 +83,7 @@ sed
 spotify
 sudo
 texinfo
+tree
 ttf-cica
 unzip
 vi
