@@ -12,6 +12,7 @@ discord
 docker
 docker-compose
 evince
+exfat-utils
 fakeroot
 fcitx5
 fcitx5-configtool
@@ -76,9 +77,6 @@ sudo
 texinfo
 unzip
 vi
-virtualbox
-virtualbox-guest-iso
-virtualbox-host-dkms
 wget
 which
 wireplumber

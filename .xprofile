@@ -1,5 +1,3 @@
-eval $(ssh-agent)
-
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export VISUAL="nano"
 export EDITOR="nano"
