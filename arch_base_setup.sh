@@ -28,9 +28,6 @@ man \
 ntfs-3g \
 firefox \
 firefox-i18n-ja \
-wireplumber \
-pipewire \
-pipewire-alsa \
 pavucontrol \
 rustup \
 xdg-user-dirs-gtk \
