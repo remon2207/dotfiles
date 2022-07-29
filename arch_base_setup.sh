@@ -8,8 +8,8 @@ sudo sed -i "s/^#BUILDDIR/BUILDDIR/" /etc/makepkg.conf
 sudo sed -i "s/^COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z --threads=0 -)/" /etc/makepkg.conf
 sudo sed -i "s/^#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=10s/" /etc/systemd/system.conf
 
+sudo pacman -S --noconfirm --needed base-devel
 sudo pacman -S --noconfirm --needed \
-base-devel \
 vi \
 nano \
 nano-syntax-highlighting \
