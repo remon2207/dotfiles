@@ -10,7 +10,7 @@ paru_install() {
     pkgname="paru-bin"
     git clone https://aur.archlinux.org/${pkgname}.git
     cd ${pkgname}
-    makepkg -si
+    makepkg -si --noconfirm
     cd ${HOME}
     rm -rf ${pkgname}
 }
@@ -21,7 +21,7 @@ aur_install() {
     cd $_
     paru -G jdim-git
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
-    makepkg -si
+    makepkg -si --noconfirm
 }
 
 2chproxy() {
