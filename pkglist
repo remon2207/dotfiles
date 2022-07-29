@@ -66,6 +66,7 @@ nvidia-dkms
 nvidia-settings
 openssh
 pacman
+papirus-icon-theme
 patch
 pavucontrol
 perl-lwp-protocol-https
