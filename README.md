@@ -7,11 +7,11 @@ For Arch Linux, run the following command
 ```
 and
 ```
-# pacman -S --needed - < pkglist
+# pacman -S --noconfirm --needed - < pkglist
 ```
 or
 ```
-# pacman -S --needed - < pkglist-aur
+# pacman -S --noconfirm --needed - < pkglist-aur
 ```
 
 ## Arch Linux base
@@ -21,11 +21,11 @@ For Arch Linux base, execute the following command
 ```
 and
 ```
-# pacman -S --needed - < pkglist
+# pacman -S --noconfirm --needed - < pkglist
 ```
 or
 ```
-# pacman -S --needed - < pkglist-aur
+# pacman -S --noconfirm --needed - < pkglist-aur
 ```
 
 ## Ubuntu
