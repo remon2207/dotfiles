@@ -50,7 +50,8 @@ xarchiver \
 discord \
 neofetch \
 tree \
-gsmartcontrol
+gsmartcontrol \
+manjaro-pipewire
 
 cd $(dirname $0)
 ./arch_setup.sh
