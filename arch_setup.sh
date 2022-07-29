@@ -10,10 +10,12 @@ paru_install() {
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si
+    cd ${HOME}
+    rm -rf paru
 }
 
 aur_install() {
-    paru -S --skipreview google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica
+    paru -S --noconfirm --skipreview google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica
     mkdir ${HOME}/.cache/paru/clone/jdim-git
     cd $_
     paru -G jdim-git
@@ -29,7 +31,7 @@ aur_install() {
 
     pacman -Q ghq-bin > /dev/null 2>&1
     if [ ${?} -eq 1 ]; then
-        paru -S ghq-bin
+        paru -S --noconfirm ghq-bin
     fi
 
     cd ${HOME}
