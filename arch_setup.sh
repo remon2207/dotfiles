@@ -20,6 +20,7 @@ aur_install() {
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
+    cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
 }
