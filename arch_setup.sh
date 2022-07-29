@@ -2,7 +2,7 @@
 
 paru_install() {
     pacman -Q rustup > /dev/null 2>&1
-    if [ ${?} -eq 1]; then
+    if [ ${?} -eq 1 ]; then
         sudo pacman -S --noconfirm rustup
     fi
 
