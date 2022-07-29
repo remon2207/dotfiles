@@ -7,11 +7,12 @@ paru_install() {
     fi
 
     rustup default stable
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
+    pkgname="paru-bin"
+    git clone https://aur.archlinux.org/${pkgname}.git
+    cd ${pkgname}
     makepkg -si
     cd ${HOME}
-    rm -rf paru
+    rm -rf ${pkgname}
 }
 
 aur_install() {
