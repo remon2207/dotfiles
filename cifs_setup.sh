@@ -11,7 +11,7 @@ fi
 
 pacman -Q cifs-utils > /dev/null 2>&1
 if [ ${?} -eq 1 ]; then
-    sudo pacman -S cifs-utils
+    sudo pacman -S --noconfirm cifs-utils
 fi
 
 echo -e "username=${1}\n\

@@ -3,7 +3,7 @@
 paru_install() {
     pacman -Q rustup > /dev/null 2>&1
     if [ ${?} -eq 1]; then
-        sudo pacman -S rustup
+        sudo pacman -S --noconfirm rustup
     fi
 
     rustup default stable
@@ -24,7 +24,7 @@ aur_install() {
 2chproxy() {
     pacman -Q perl-lwp-protocol-https > /dev/null 2>&1
     if [ ${?} -eq 1 ]; then
-        sudo pacman -S perl-lwp-protocol-https
+        sudo pacman -S --noconfirm perl-lwp-protocol-https
     fi
 
     pacman -Q ghq-bin > /dev/null 2>&1
