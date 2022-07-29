@@ -37,6 +37,7 @@ xdg-user-dirs-gtk \
 noto-fonts \
 noto-fonts-cjk \
 noto-fonts-emoji \
+ipa-fonts \
 fcitx5 \
 fcitx5-im \
 fcitx5-mozc \
