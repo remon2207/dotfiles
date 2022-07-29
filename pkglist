@@ -66,6 +66,9 @@ ntfs-3g
 nvidia-dkms
 nvidia-settings
 openssh
+otf-ipaexfont
+otf-ipafont
+otf-ipamjfont
 pacman
 papirus-icon-theme
 patch
