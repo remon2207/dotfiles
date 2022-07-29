@@ -15,11 +15,11 @@ paru_install() {
 }
 
 aur_install() {
-    paru -S --noconfirm --skipreview google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica
-    mkdir ${HOME}/.cache/paru/clone/jdim-git
+    paru -S --noconfirm google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica
+    mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
-    sed -i "s/^source=('git/source=('git+https" PKGBUILD
+    sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si
 }
 
@@ -36,7 +36,8 @@ aur_install() {
 
     cd ${HOME}
     ghq get yama-natuki/2chproxy.pl
-    mkdir ${HOME}/.local/bin/
+    mkdir -p ${HOME}/.local/bin/
+    jdim; killall jdim
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
 }
 
