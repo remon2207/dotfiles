@@ -42,6 +42,7 @@ gnome-tweaks
 google-chrome
 grep
 groff
+gsmartcontrol
 gufw
 gvfs
 gzip
@@ -87,6 +88,10 @@ tree
 ttf-cica
 unzip
 vi
+virtualbox
+virtualbox-ext-oracle
+virtualbox-guest-iso
+virtualbox-host-dkms
 visual-studio-code-bin
 wget
 which

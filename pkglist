@@ -39,6 +39,7 @@ gnome-themes-extra
 gnome-tweaks
 grep
 groff
+gsmartcontrol
 gufw
 gvfs
 gzip
@@ -79,6 +80,9 @@ texinfo
 tree
 unzip
 vi
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-dkms
 wget
 which
 wireplumber
