@@ -44,7 +44,7 @@ aur_install() {
 }
 
 desktop_entry() {
-cat << EOF >> ${HOME}/.local/share/applications/mozc.desktop
+cat << EOF > ${HOME}/.local/share/applications/mozc.desktop
 [Desktop Entry]
 Type=Application
 Name=Mozc の 設定
