@@ -9,6 +9,11 @@ ${0} <username> <password>
 EOF
 fi
 
+pacman -Q cifs-utils > /dev/null 2>&1
+if [ ${?} -eq 1 ]; then
+    sudo pacman -S cifs-utils
+fi
+
 echo -e "username=${1}\n\
 password=${2}" | sudo tee -a /etc/cifs-utils/.samba-rh
 
