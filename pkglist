@@ -1,4 +1,5 @@
 archlinux-keyring
+archlinux-wallpaper
 audacious
 autoconf
 automake
@@ -11,6 +12,8 @@ dconf-editor
 discord
 docker
 docker-compose
+elementary-wallpapers
+eog
 evince
 exfat-utils
 fakeroot
@@ -35,6 +38,7 @@ gdm
 gettext
 git
 github-cli
+gnome-backgrounds
 gnome-control-center
 gnome-keyring
 gnome-shell
