@@ -23,7 +23,11 @@ fcitx5-qt
 file
 findutils
 firefox
+firefox-i18n-en-us
 firefox-i18n-ja
+firefox-i18n-ko
+firefox-i18n-zh-cn
+firefox-i18n-zh-tw
 flex
 fzf
 gawk
