@@ -1,5 +1,4 @@
 archlinux-keyring
-archlinux-wallpaper
 audacious
 autoconf
 automake
@@ -13,7 +12,6 @@ discord
 docker
 docker-compose
 downgrade
-elementary-wallpapers
 eog
 evince
 exfat-utils
