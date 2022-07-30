@@ -69,6 +69,7 @@ noto-fonts-emoji
 ntfs-3g
 nvidia-dkms
 nvidia-settings
+openrazer-meta
 openssh
 otf-ipaexfont
 otf-ipafont
@@ -82,6 +83,7 @@ perl-lwp-protocol-https
 pipewire
 pipewire-pulse
 pkgconf
+polychromatic
 postman-bin
 qt5ct
 rustup
