@@ -83,7 +83,6 @@ pipewire
 pipewire-pulse
 pkgconf
 qt5ct
-rustup
 sed
 sudo
 texinfo

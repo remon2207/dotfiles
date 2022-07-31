@@ -29,7 +29,6 @@ ntfs-3g \
 firefox \
 firefox-i18n-ja \
 pavucontrol \
-rustup \
 xdg-user-dirs-gtk \
 noto-fonts \
 noto-fonts-cjk \

@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
 paru_install() {
-    pacman -Q rustup > /dev/null 2>&1
-    if [ ${?} -eq 1 ]; then
-        sudo pacman -S --noconfirm --needed rustup
-    fi
-
-    rustup default stable
     pkgname="paru-bin"
     git clone https://aur.archlinux.org/${pkgname}.git
     cd ${pkgname}
