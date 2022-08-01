@@ -7,6 +7,7 @@ elif [ ${1} == "--help" ]; then
 Usage:
 ${0} <username> <password>
 EOF
+exit
 fi
 
 pacman -Q cifs-utils > /dev/null 2>&1
