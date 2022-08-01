@@ -15,7 +15,7 @@ else
     fi
 
     echo -e "username=${1}\n\
-    password=${2}" | sudo tee -a /etc/cifs-utils/.samba-rh
+password=${2}" | sudo tee -a /etc/cifs-utils/.samba-rh
 
     sudo mkdir /mnt/RH
     echo -e "# /mnt/RH\n\
