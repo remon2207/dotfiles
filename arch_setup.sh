@@ -48,11 +48,10 @@ Terminal=false
 EOF
 }
 
-paru_install
-aur_install
-2chproxy
-
 get_de=$(neofetch | grep "GNOME" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} == "GNOME" ]; then
     desktop_entry
 fi
+paru_install
+aur_install
+2chproxy
