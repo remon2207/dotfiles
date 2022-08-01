@@ -46,7 +46,7 @@ aur_install() {
 }
 
 other() {
-    cat << EOF > ${HOME}/.local/share/applications/mozc.desktop > /dev/null
+    cat << EOF > ${HOME}/.local/share/applications/mozc.desktop
 [Desktop Entry]
 Type=Application
 Name=Mozc の 設定
@@ -62,7 +62,7 @@ get_de=$(neofetch | grep "GNOME" | awk -F ':' '{print $2}' | awk -F ' ' '{print 
 if [ ${get_de} == "GNOME" ]; then
     other
 
-    exit 0
+    return 0
 fi
 paru_install
 aur_install
