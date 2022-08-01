@@ -54,7 +54,6 @@ Icon=/usr/share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx-mozc.png
 Exec=/usr/lib/mozc/mozc_tool --mode=config_dialog
 Terminal=false
 EOF
-    gnome-extensions enable $(gnome-extensions list | grep -m 1 appindicatorsupport)
 
     return 0
 }
