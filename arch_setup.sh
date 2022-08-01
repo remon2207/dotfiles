@@ -7,6 +7,8 @@ paru_install() {
     makepkg -si --noconfirm --needed
     cd ${HOME}
     rm -rf ${pkgname}
+
+    return 0
 }
 
 aur_install() {
@@ -17,6 +19,8 @@ aur_install() {
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
+
+    return 0
 }
 
 2chproxy() {
@@ -37,6 +41,8 @@ aur_install() {
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
     firefox_version=$(firefox --version | awk -F ' ' '{print $3}' | awk -F '.' '{print $1}')
     sed -i "s/Firefox\/[0-9][0-9]/Firefox\/${firefox_version}/" ${HOME}/.local/bin/2chproxy.pl
+
+    return 0
 }
 
 other() {
@@ -49,11 +55,15 @@ Exec=/usr/lib/mozc/mozc_tool --mode=config_dialog
 Terminal=false
 EOF
     gnome-extensions enable $(gnome-extensions list | grep -m 1 appindicatorsupport)
+
+    return 0
 }
 
 get_de=$(neofetch | grep "GNOME" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} == "GNOME" ]; then
     other
+
+    exit 0
 fi
 paru_install
 aur_install
