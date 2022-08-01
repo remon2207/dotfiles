@@ -56,11 +56,10 @@ setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
 
-alias ls="ls --color=auto"
+alias ls="lsd --color=auto"
 alias grep="grep --color=auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias l="ls -CF"
+alias ll="lsd -alF"
+alias la="lsd -A"
 alias sudo="sudo "
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'
@@ -97,3 +96,5 @@ export FZF_DEFAULT_OPTS="--no-mouse"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+eval "$(starship init zsh)"
