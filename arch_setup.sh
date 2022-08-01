@@ -61,8 +61,6 @@ EOF
 get_de=$(neofetch | grep "GNOME" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} == "GNOME" ]; then
     other
-
-    return 0
 fi
 paru_install
 aur_install
