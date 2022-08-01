@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Mozc の 設定
-Icon=/usr/share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx-mozc.png
-Exec=/usr/lib/mozc/mozc_tool --mode=config_dialog
-Terminal=false
