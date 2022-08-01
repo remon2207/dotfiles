@@ -40,11 +40,11 @@ gnome-backgrounds
 gnome-control-center
 gnome-keyring
 gnome-shell
-gnome-shell-extension-appindicator
 gnome-terminal
 gnome-themes-extra
 gnome-tweaks
 google-chrome
+gparted
 grep
 groff
 gsmartcontrol
@@ -95,11 +95,12 @@ texinfo
 tree
 ttf-cica
 unzip
-vi
 visual-studio-code-bin
 wget
 which
 wireplumber
 xdg-user-dirs-gtk
+xorg-server
+xorg-xinit
 zip
 zsh
