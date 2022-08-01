@@ -35,6 +35,8 @@ aur_install() {
     mkdir -p ${HOME}/.local/bin/
     jdim
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
+    firefox_version=$(firefox --version | awk -F ' ' '{print $3}' | awk -F '.' '{print $1}')
+    sed -i "s/Firefox\/[0-9][0-9]/Firefox\/${firefox_version}/" ${HOME}/.local/bin/2chproxy.pl
 }
 
 other() {
