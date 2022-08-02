@@ -58,7 +58,7 @@ EOF
     return 0
 }
 
-get_de=$(neofetch | grep "GNOME" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
+get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} == "GNOME" ]; then
     other
 fi
