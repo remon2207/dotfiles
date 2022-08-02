@@ -12,7 +12,7 @@ paru_install() {
 }
 
 aur_install() {
-    paru -S --noconfirm --needed gamin google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica downgrade
+    paru -S --noconfirm --needed google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica downgrade
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
@@ -45,7 +45,7 @@ aur_install() {
     return 0
 }
 
-other() {
+gnome() {
     cat << EOF > ${HOME}/.local/share/applications/mozc.desktop
 [Desktop Entry]
 Type=Application
@@ -60,7 +60,9 @@ EOF
 
 get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} == "GNOME" ]; then
-    other
+    gnome
+elif [ ${get_de} == "Xfce" ]; then
+    paru -S --noconfirm --needed gamin
 fi
 paru_install
 aur_install
