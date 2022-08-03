@@ -12,7 +12,16 @@ paru_install() {
 }
 
 aur_install() {
-    paru -S --noconfirm --needed gamin google-chrome ghq-bin postman-bin visual-studio-code-bin spotify ttf-cica downgrade virtualbox-ext-oracle
+    paru -S --noconfirm --needed \
+        gamin \
+        google-chrome \
+        ghq-bin \
+        postman-bin \
+        visual-studio-code-bin \
+        spotify \
+        ttf-cica \
+        downgrade \
+        virtualbox-ext-oracle
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
