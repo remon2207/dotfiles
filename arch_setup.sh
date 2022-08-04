@@ -13,7 +13,6 @@ paru_install() {
 
 aur_install() {
     paru -S --noconfirm --needed \
-        gamin \
         google-chrome \
         ghq-bin \
         postman-bin \
@@ -65,12 +64,12 @@ EOF
     return 0
 }
 
-# get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
-# if [ ${get_de} == "GNOME" ]; then
-#     gnome
-# elif [ ${get_de} == "Xfce" ]; then
-#     paru -S --noconfirm --needed gamin
-# fi
 paru_install
+get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
+if [ ${get_de} == "GNOME" ]; then
+    gnome
+elif [ ${get_de} == "Xfce" ]; then
+    paru -S --noconfirm --needed gamin
+fi
 aur_install
 2chproxy
