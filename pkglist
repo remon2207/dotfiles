@@ -1,8 +1,10 @@
 arc-gtk-theme
 archlinux-keyring
+audacious
 autoconf
 automake
 base
+bat
 binutils
 bison
 cifs-utils
@@ -89,6 +91,7 @@ thunar-volman
 tree
 tumbler
 unzip
+vim
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
