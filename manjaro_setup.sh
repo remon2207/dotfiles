@@ -11,8 +11,7 @@ sudo sed -i "s/^#DefaultTimeoutStopSec=90s/DefaultTimeoutStopSec=10s/" /etc/syst
 sudo pacman -S --noconfirm --needed \
     base-devel \
     vi \
-    nano \
-    nano-syntax-highlighting \
+    vim \
     zsh \
     curl \
     wget \
