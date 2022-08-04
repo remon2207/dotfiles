@@ -7,8 +7,6 @@ paru_install() {
     makepkg -si --noconfirm --needed
     cd ${HOME}
     rm -rf ${pkgname}
-
-    return 0
 }
 
 aur_install() {
@@ -27,8 +25,6 @@ aur_install() {
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
-
-    return 0
 }
 
 2chproxy() {
@@ -47,8 +43,6 @@ aur_install() {
     mkdir -p ${HOME}/.local/bin/
     jdim
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
-
-    return 0
 }
 
 gnome() {
@@ -60,8 +54,6 @@ Icon=/usr/share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx-mozc.png
 Exec=/usr/lib/mozc/mozc_tool --mode=config_dialog
 Terminal=false
 EOF
-
-    return 0
 }
 
 paru_install
