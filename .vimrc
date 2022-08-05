@@ -4,7 +4,6 @@ set nocompatible
 set autoindent
 set autoread
 set clipboard^=unnamed
-set cursorline
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
