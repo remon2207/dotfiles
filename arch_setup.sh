@@ -45,22 +45,9 @@ aur_install() {
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
 }
 
-gnome() {
-    cat << EOF > ${HOME}/.local/share/applications/mozc.desktop
-[Desktop Entry]
-Type=Application
-Name=Mozc の 設定
-Icon=/usr/share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx-mozc.png
-Exec=/usr/lib/mozc/mozc_tool --mode=config_dialog
-Terminal=false
-EOF
-}
-
 paru_install
 get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
-if [ ${get_de} = "GNOME" ]; then
-    gnome
-elif [ ${get_de} = "Xfce" ]; then
+if [ ${get_de} = "Xfce" ]; then
     paru -S --noconfirm --needed gamin
 fi
 aur_install
