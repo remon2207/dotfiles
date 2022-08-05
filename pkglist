@@ -20,6 +20,7 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
+fd
 file
 findutils
 firefox
@@ -33,6 +34,7 @@ gettext
 git
 github-cli
 gnome-keyring
+go
 gparted
 grep
 groff
@@ -58,6 +60,7 @@ man-db
 man-pages
 mousepad
 neofetch
+neovim
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -76,6 +79,7 @@ pipewire-pulse
 pkgconf
 qt5ct
 reflector
+ripgrep
 ristretto
 rmlint
 rsync
@@ -91,7 +95,6 @@ tree
 tumbler
 unzip
 vi
-vim
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
@@ -99,6 +102,7 @@ wget
 which
 wireplumber
 xarchiver
+xclip
 xdg-user-dirs-gtk
 xf86-video-vesa
 xfburn

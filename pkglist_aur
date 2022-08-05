@@ -21,6 +21,7 @@ fcitx5-configtool
 fcitx5-gtk
 fcitx5-mozc
 fcitx5-qt
+fd
 file
 findutils
 firefox
@@ -36,6 +37,7 @@ ghq-bin
 git
 github-cli
 gnome-keyring
+go
 google-chrome
 gparted
 grep
@@ -64,12 +66,14 @@ man-pages
 man-pages-ja
 mousepad
 neofetch
+neovim
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ntfs-3g
 nvidia-dkms
 nvidia-settings
+nvm
 openssh
 pacman
 papirus-icon-theme
@@ -84,6 +88,7 @@ pkgconf
 postman-bin
 qt5ct
 reflector
+ripgrep
 ristretto
 rmlint
 rsync
@@ -101,7 +106,6 @@ ttf-cica
 tumbler
 unzip
 vi
-vim
 virtualbox
 virtualbox-ext-oracle
 virtualbox-guest-iso
@@ -111,6 +115,7 @@ wget
 which
 wireplumber
 xarchiver
+xclip
 xdg-user-dirs-gtk
 xf86-video-vesa
 xfburn

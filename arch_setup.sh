@@ -19,13 +19,15 @@ aur_install() {
         ttf-cica \
         downgrade \
         virtualbox-ext-oracle \
-	man-pages-ja
+        nvm \
+	    man-pages-ja
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
+    nvm install --lts
 }
 
 2chproxy() {
