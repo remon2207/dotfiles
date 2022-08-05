@@ -18,7 +18,8 @@ aur_install() {
         spotify \
         ttf-cica \
         downgrade \
-        virtualbox-ext-oracle
+        virtualbox-ext-oracle \
+	man-pages-ja
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git

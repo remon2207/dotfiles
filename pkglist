@@ -55,6 +55,7 @@ lxappearance-gtk3
 m4
 make
 man-db
+man-pages
 mousepad
 neofetch
 noto-fonts
