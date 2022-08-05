@@ -71,6 +71,12 @@ git_settings() {
     git config --global user.name "${git_name}"
 }
 
+psd_settings() {
+    psd
+    sed -i "s/BROWSERS=()/BROWSERS=(firefox google-chrome)/" ${HOME}/.config/psd/psd.conf
+    systemctl --user enable --now psd.service
+}
+
 paru_install
 get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
 if [ ${get_de} = "Xfce" ]; then
@@ -79,3 +85,4 @@ fi
 aur_install
 2chproxy
 git_settings
+psd_settings
