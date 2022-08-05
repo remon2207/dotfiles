@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+if [ "${#}" -eq 0 ]; then
+    exit 1
+elif [ "${1}" = "--help" ] || [ "${1}" = "-h" ]; then
+    cat << EOF
+USAGE:
+    ${0} [-e GIT_EMAIL] [-n GIT_NAME]
+
+OPTIONS:
+        --help or -h
+            help
+EOF
+    exit 0
+fi
+
 paru_install() {
     pkgname="paru-bin"
     git clone https://aur.archlinux.org/${pkgname}.git
@@ -57,7 +71,7 @@ git_settings() {
 }
 
 paru_install
-get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
+get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
 if [ ${get_de} = "Xfce" ]; then
     paru -S --noconfirm --needed gamin
 fi
