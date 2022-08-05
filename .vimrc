@@ -1,5 +1,3 @@
-let skip_defaults_vim = 1
-
 set nocompatible
 set autoindent
 set autoread
@@ -26,3 +24,5 @@ set incsearch
 
 syntax on
 filetype plugin indent on
+
+let skip_defaults_vim = 1
