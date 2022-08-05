@@ -11,6 +11,7 @@ set laststatus=2
 set number
 set scrolloff=999
 set showcmd
+set shiftwidth=4
 set smartindent
 set smarttab
 set softtabstop=4
