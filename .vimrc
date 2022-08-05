@@ -11,6 +11,7 @@ set fileformat=unix
 set helplang=ja,en
 set laststatus=2
 set number
+set scrolloff=999
 set showcmd
 set smartindent
 set smarttab
