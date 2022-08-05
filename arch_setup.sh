@@ -48,6 +48,14 @@ aur_install() {
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
 }
 
+git_email="${1}"
+git_name="${2}"
+
+git_settings() {
+    git config --global user.email "${git_email}"
+    git config --global user.name "${git_name}"
+}
+
 paru_install
 get_de=$(neofetch | grep "DE" | awk -F ':' '{print $2}' | awk -F ' ' '{print $2}')
 if [ ${get_de} = "Xfce" ]; then
@@ -55,3 +63,4 @@ if [ ${get_de} = "Xfce" ]; then
 fi
 aur_install
 2chproxy
+git_settings
