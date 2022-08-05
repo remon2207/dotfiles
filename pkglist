@@ -78,6 +78,7 @@ perl-lwp-protocol-https
 pipewire
 pipewire-pulse
 pkgconf
+profile-sync-daemon
 qt5ct
 reflector
 ripgrep

@@ -88,6 +88,7 @@ pipewire
 pipewire-pulse
 pkgconf
 postman-bin
+profile-sync-daemon
 qt5ct
 reflector
 ripgrep
