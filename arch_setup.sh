@@ -34,7 +34,7 @@ aur_install() {
         downgrade \
         virtualbox-ext-oracle \
         nvm \
-	    man-pages-ja \
+        man-pages-ja \
         informant
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
