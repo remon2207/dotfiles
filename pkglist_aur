@@ -78,6 +78,7 @@ ntfs-3g
 nvidia-dkms
 nvidia-settings
 nvm
+obs-studio
 openssh
 pacman
 papirus-icon-theme
@@ -116,6 +117,7 @@ virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
 visual-studio-code-bin
+vlc
 wget
 which
 wireplumber

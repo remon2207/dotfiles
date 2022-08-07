@@ -70,6 +70,7 @@ noto-fonts-emoji
 ntfs-3g
 nvidia-dkms
 nvidia-settings
+obs-studio
 openssh
 pacman
 papirus-icon-theme
@@ -102,6 +103,7 @@ vi
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
+vlc
 wget
 which
 wireplumber
