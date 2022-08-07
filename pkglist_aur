@@ -7,6 +7,8 @@ base
 bat
 binutils
 bison
+blueman
+bluez
 cifs-utils
 curl
 discord
