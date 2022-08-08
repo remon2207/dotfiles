@@ -33,6 +33,7 @@ aur_install() {
         ttf-cica \
         downgrade \
         virtualbox-ext-oracle \
+        nvm \
         man-pages-ja \
         informant
     mkdir -p ${HOME}/.cache/paru/clone/
@@ -41,6 +42,7 @@ aur_install() {
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
+    nvm install --lts
 }
 
 2chproxy() {
