@@ -35,7 +35,8 @@ aur_install() {
         virtualbox-ext-oracle \
         nvm \
         man-pages-ja \
-        informant
+        informant \
+        ttf-hackgen
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
