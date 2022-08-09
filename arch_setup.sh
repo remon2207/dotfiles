@@ -30,7 +30,6 @@ aur_install() {
         postman-bin \
         visual-studio-code-bin \
         spotify \
-        ttf-cica \
         downgrade \
         virtualbox-ext-oracle \
         nvm \
