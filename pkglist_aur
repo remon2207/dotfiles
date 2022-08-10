@@ -1,5 +1,6 @@
 arc-gtk-theme
 archlinux-keyring
+archlinux-wallpaper
 audacious
 autoconf
 automake
@@ -46,6 +47,7 @@ gparted
 grep
 groff
 gsmartcontrol
+gst-libav
 gufw
 gvfs
 gzip
@@ -71,6 +73,7 @@ man-pages-ja
 mousepad
 neofetch
 neovim
+nerd-fonts-inconsolata
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -109,6 +112,8 @@ thunar-media-tags-plugin
 thunar-volman
 tree
 ttf-cica
+ttf-hackgen
+ttf-inconsolata
 tumbler
 unzip
 vi
