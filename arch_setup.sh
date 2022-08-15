@@ -35,7 +35,8 @@ aur_install() {
         nvm \
         man-pages-ja \
         informant \
-        ttf-hackgen
+        ttf-hackgen \
+        xcursor-dmz
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
