@@ -35,7 +35,7 @@ aur_install() {
         nvm \
         man-pages-ja \
         informant \
-        ttf-hackgen \
+        ttf-cica \
         xcursor-dmz
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
