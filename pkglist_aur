@@ -1,6 +1,5 @@
 arc-gtk-theme
 archlinux-keyring
-archlinux-wallpaper
 audacious
 autoconf
 automake
@@ -47,7 +46,6 @@ gparted
 grep
 groff
 gsmartcontrol
-gst-libav
 gufw
 gvfs
 gzip
@@ -64,7 +62,6 @@ linux-firmware
 linux-zen
 linux-zen-headers
 lsd
-lxappearance-gtk3
 m4
 make
 man-db
@@ -73,7 +70,6 @@ man-pages-ja
 mousepad
 neofetch
 neovim
-nerd-fonts-inconsolata
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -105,6 +101,7 @@ sed
 spotify
 starship
 sudo
+sweet-dark-theme
 texinfo
 thunar
 thunar-archive-plugin
@@ -112,8 +109,6 @@ thunar-media-tags-plugin
 thunar-volman
 tree
 ttf-cica
-ttf-hackgen
-ttf-inconsolata
 tumbler
 unzip
 vi
@@ -122,8 +117,6 @@ virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
 visual-studio-code-bin
-vivaldi
-vivaldi-ffmpeg-codecs
 vlc
 wget
 which

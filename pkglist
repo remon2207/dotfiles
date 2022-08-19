@@ -1,6 +1,5 @@
 arc-gtk-theme
 archlinux-keyring
-archlinux-wallpaper
 audacious
 autoconf
 automake
@@ -43,7 +42,6 @@ gparted
 grep
 groff
 gsmartcontrol
-gst-libav
 gufw
 gvfs
 gzip
@@ -58,7 +56,6 @@ linux-firmware
 linux-zen
 linux-zen-headers
 lsd
-lxappearance-gtk3
 m4
 make
 man-db
@@ -99,15 +96,12 @@ thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tree
-ttf-inconsolata
 tumbler
 unzip
 vi
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
-vivaldi
-vivaldi-ffmpeg-codecs
 vlc
 wget
 which
