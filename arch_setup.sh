@@ -44,8 +44,6 @@ aur_install() {
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
-    source ${current_dir}/.zshrc
-    nvm install --lts
 }
 
 2chproxy() {
