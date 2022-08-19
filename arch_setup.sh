@@ -34,7 +34,6 @@ aur_install() {
         virtualbox-ext-oracle \
         nvm \
         man-pages-ja \
-        informant \
         ttf-cica \
         xcursor-dmz
     mkdir -p ${HOME}/.cache/paru/clone/
@@ -62,6 +61,7 @@ aur_install() {
     mkdir -p ${HOME}/.local/bin/
     jdim
     ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
+    paru -S --noconfirm --needed informant
 }
 
 git_email="${1}"
