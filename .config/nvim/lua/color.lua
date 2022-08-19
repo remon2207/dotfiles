@@ -26,7 +26,7 @@ api.nvim_create_autocmd('ColorScheme', {
     group = 'color_config',
     nested = true,
     command = 'highlight Normal ctermbg=NONE',
-    command = 'highlight LineNr ctermbg=NONE',
+    command = 'highlight LineNr ctermbg=NONE'
 })
 
 -- vim-colarized8

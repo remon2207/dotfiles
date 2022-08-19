@@ -8,46 +8,74 @@ require('bufferline').setup {
     },
     highlights = {
         buffer_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         diagnostic_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         info_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         info_diagnostic_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         warning_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         warning_diagnostic_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         error_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         error_diagnostic_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         duplicate_selected = {
-            gui = nil
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         duplicate_visible = {
-            gui = nil
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         duplicate = {
-            gui = nil
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         pick_selected = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         pick_visible = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         },
         pick = {
-            gui = 'bold'
+            underline = false,
+            undercurl = false,
+            italic = false
         }
     }
 }
