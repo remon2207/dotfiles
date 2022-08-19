@@ -23,6 +23,8 @@ paru_install() {
     rm -rf ${pkgname}
 }
 
+current_dir=$(dirname $0)
+
 aur_install() {
     paru -S --noconfirm --needed \
         google-chrome \
@@ -42,6 +44,7 @@ aur_install() {
     cd $_
     sed -i "s/^source=('git/source=('git+https/" PKGBUILD
     makepkg -si --noconfirm --needed
+    source ${current_dir}/.zshrc
     nvm install --lts
 }
 
