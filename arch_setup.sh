@@ -23,8 +23,6 @@ paru_install() {
     rm -rf ${pkgname}
 }
 
-current_dir=$(dirname $0)
-
 aur_install() {
     paru -S --noconfirm --needed \
         google-chrome \
