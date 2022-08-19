@@ -22,7 +22,7 @@ EOF
     sudo mkdir /mnt/RH
     cat << EOF | sudo tee -a /etc/fstab > /dev/null
 # /mntRH
-//192.168.1.73/RH /mnt/RH cifs vers=3.0,credentials=/etc/cifs-utils/.samba-rh,iocharset=utf8,uid=1000,gid=1000,file_mode=0644,dir_mode=0755,rw,nodev,nosuid,noatime,nodiratime,noexec,nofail,noauto,_netdev,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,x-systemd.idle-timeout=1min 0 0
+//192.168.1.73/RH /mnt/RH cifs vers=3.0,credentials=/etc/cifs-utils/.samba-rh,iocharset=utf8,uid=1000,gid=1000,file_mode=0644,dir_mode=0755,rw,nodev,nosuid,noatime,noexec,nofail,noauto,_netdev,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,x-systemd.idle-timeout=1min 0 0
 EOF
     sudo systemctl daemon-reload
 
