@@ -72,6 +72,7 @@ git_settings() {
 }
 
 psd_settings() {
+    firefox
     google-chrome-stable
     psd
     sed -i "s/^#BROWSERS=()/BROWSERS=(firefox google-chrome)/" ${HOME}/.config/psd/psd.conf
