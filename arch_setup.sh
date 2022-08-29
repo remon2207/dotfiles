@@ -35,7 +35,6 @@ aur_install() {
         nvm \
         man-pages-ja \
         ttf-hackgen \
-        sweet-dark-theme \
         xcursor-dmz
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
