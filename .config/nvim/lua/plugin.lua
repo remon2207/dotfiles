@@ -236,12 +236,12 @@ require('packer').startup(function(use)
         opt = true,
         event = { 'BufNewFile', 'BufRead' }
     }
-    use {
-        'glepnir/lspsaga.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/lspsaga') end
-    }
+    -- use {
+    --     'glepnir/lspsaga.nvim',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     config = function() require('plugins/lspsaga') end
+    -- }
 
     -- フォーマッター
     use {
