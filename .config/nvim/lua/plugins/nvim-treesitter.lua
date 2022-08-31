@@ -30,6 +30,8 @@ require('nvim-treesitter.configs').setup {
         "tsx",
         "typescript",
         "vim",
-        "yaml"
+        "yaml",
+        "gitignore",
+        "sql"
     }
 }
