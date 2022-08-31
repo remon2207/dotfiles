@@ -77,7 +77,6 @@ ntfs-3g
 nvidia-dkms
 nvidia-settings
 nvm
-obs-studio
 openssh
 pacman
 papirus-icon-theme
@@ -102,13 +101,14 @@ spotify
 starship
 sudo
 sweet-dark-theme
+sweet-kvantum-theme-git
 texinfo
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
 tree
-ttf-cica
+ttf-hackgen
 tumbler
 unzip
 vi
