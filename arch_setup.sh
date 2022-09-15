@@ -34,8 +34,7 @@ aur_install() {
         virtualbox-ext-oracle \
         nvm \
         man-pages-ja \
-        ttf-hackgen \
-        xcursor-dmz
+        ttf-hackgen
     mkdir -p ${HOME}/.cache/paru/clone/
     cd $_
     paru -G jdim-git
@@ -82,7 +81,7 @@ psd_settings() {
 paru_install
 get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
 if [ ${get_de} = "Xfce" ]; then
-    paru -S --noconfirm --needed gamin
+    paru -S --noconfirm --needed gamin xcursor-dmz
 fi
 aur_install
 2chproxy
