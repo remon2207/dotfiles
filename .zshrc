@@ -56,11 +56,10 @@ setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
 
-alias ls="lsd --color=auto"
+alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias ll="lsd -alF"
-alias la="lsd -A"
-alias vim="nvim"
+alias ll="ls -alF"
+alias la="ls -A"
 alias sudo="sudo "
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'
