@@ -14,7 +14,7 @@ else
         sudo pacman -S --noconfirm cifs-utils
     fi
 
-    cat << EOF | sudo tee /etc/cifs-utils/.samba-rh > /dev/null
+    cat << EOF | sudo tee /etc/cifs-utils/.samba > /dev/null
 username=${1}
 password=${2}
 EOF
