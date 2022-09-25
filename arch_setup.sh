@@ -36,32 +36,9 @@ aur_install() {
         nvm \
         man-pages-ja \
         ttf-hackgen
-    mkdir -p ${HOME}/.cache/paru/clone/
-    cd $_
-    paru -G jdim-git
-    cd $_
-    sed -i "s/^source=('git/source=('git+https/" PKGBUILD
-    makepkg -si --noconfirm --needed
-}
-
-2chproxy() {
-    pacman -Q perl-lwp-protocol-https > /dev/null 2>&1
-    if [ ${?} -eq 1 ]; then
-        sudo pacman -S --noconfirm --needed perl-lwp-protocol-https
-    fi
-
-    pacman -Q ghq-bin > /dev/null 2>&1
-    if [ ${?} -eq 1 ]; then
-        paru -S --noconfirm --needed ghq-bin
-    fi
-
-    cd ${HOME}
-    ghq get yama-natuki/2chproxy.pl
-    mkdir -p ${HOME}/.local/bin/
-    jdim
-    ./ghq/github.com/yama-natuki/2chproxy.pl/install.sh ${HOME}/.local/bin
     paru -S --noconfirm --needed informant
 }
+
 
 git_email="${1}"
 git_name="${2}"
@@ -85,6 +62,5 @@ if [ ${get_de} = "Xfce" ]; then
     paru -S --noconfirm --needed gamin xcursor-dmz
 fi
 aur_install
-2chproxy
 git_settings
 psd_settings
