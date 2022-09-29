@@ -10,15 +10,6 @@ vim.cmd [[packadd packer.nvim]]
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    -- 起動時間短縮
-    use {
-        'lewis6991/impatient.nvim'
-    }
-    use {
-        'nathom/filetype.nvim',
-        config = function() require('plugins/filetype') end
-    }
-
     -- ステータスラインを強化
     use {
         'nvim-lualine/lualine.nvim',
@@ -236,12 +227,12 @@ require('packer').startup(function(use)
         opt = true,
         event = { 'BufNewFile', 'BufRead' }
     }
-    -- use {
-    --     'glepnir/lspsaga.nvim',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins/lspsaga') end
-    -- }
+    use {
+        'glepnir/lspsaga.nvim',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins/lspsaga') end
+    }
 
     -- フォーマッター
     use {

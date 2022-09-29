@@ -14,21 +14,18 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-env:
+#env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  # TERM: alacritty
-  TERM: xterm-256color
+  #TERM: alacritty
 
-window:
+#window:
   # Window dimensions (changes require restart)
   #
-  # opacity: 1.0
-  opacity: 0.9
   # Number of lines/columns (not pixels) in the terminal. The number of columns
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
@@ -64,7 +61,13 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: full
+  #decorations: full
+
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  #opacity: 1.0
 
   # Startup Mode (changes require restart)
   #
@@ -75,8 +78,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Windowed
-  #startup_mode: Fullscreen
+  #startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -106,56 +108,55 @@ window:
   #multiplier: 3
 
 # Font configuration
-font:
+#font:
   # Normal (roman) font face
-  size: 12
-  normal:
+  #normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: "HackGen Console NF"
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Regular
+    #style: Regular
 
   # Bold font face
-  bold:
+  #bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGen Console NF"
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    #style: Bold
 
   # Italic font face
-  italic:
+  #italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGen Console NF"
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    #style: Italic
 
   # Bold italic font face
-  bold_italic:
+  #bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: "HackGen Console NF"
+    #family: monospace
 
     # The `style` can be specified to pick a specific face.
-    style: Bold Italic
+    #style: Bold Italic
 
   # Point size
-  # size: 9.0
+  #size: 11.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -177,658 +178,15 @@ font:
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
 
+  # Use built-in font for box drawing characters.
+  #
+  # If `true`, Alacritty will use a custom built-in font for box drawing
+  # characters (Unicode points 2500 - 259f).
+  #
+  #builtin_box_drawing: true
+
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-
-
-
-# tokyo night
-# colors:
-#   primary:
-#       background: '0x1a1b26'
-#       foreground: '0xa9b1d6'
-
-#     # Normal colors
-#   normal:
-#     black:   '0x32344a'
-#     red:     '0xf7768e'
-#     green:   '0x9ece6a'
-#     yellow:  '0xe0af68'
-#     blue:    '0x7aa2f7'
-#     magenta: '0xad8ee6'
-#     cyan:    '0x449dab'
-#     white:   '0x787c99'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x444b6a'
-#     red:     '0xff7a93'
-#     green:   '0xb9f27c'
-#     yellow:  '0xff9e64'
-#     blue:    '0x7da6ff'
-#     magenta: '0xbb9af7'
-#     cyan:    '0x0db9d7'
-#     white:   '0xacb0d0'
-
-
-## Colors (Hybrid)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#27292c'
-#     foreground: '#d0d2d1'
-
-#   # Normal colors
-#   normal:
-#     black:   '#35383b'
-#     red:     '#b05655'
-#     green:   '#769972'
-#     yellow:  '#e1a574'
-#     blue:    '#7693ac'
-#     magenta: '#977ba0'
-#     cyan:    '#749e99'
-#     white:   '#848b92'
-
-#   # Bright colors
-#   bright:
-#     black:   '#484c52'
-#     red:     '#d27c7b'
-#     green:   '#dffebe'
-#     yellow:  '#f0d189'
-#     blue:    '#96b1c9'
-#     magenta: '#bfa5c7'
-#     cyan:    '#9fc9c3'
-#     white:   '#fcf7e2'
-
-
-
-# Colors (Gruvbox dark)
-# colors:
-#   primary:
-#     # hard contrast background - '#1d2021'
-#     background:        &gruvbox_dark_bg '#282828'
-#     # soft contrast background - '#32302f'
-#     foreground:        '#ebdbb2'
-#     bright_foreground: '#fbf1c7'
-#     dim_foreground:    '#a89984'
-#   cursor:
-#     text:   CellBackground
-#     cursor: CellForeground
-#   vi_mode_cursor:
-#     text:   CellBackground
-#     cursor: CellForeground
-#   # search:
-#   #   matches:
-#   #     foreground: '#000000'
-#   #     background: '#ffffff'
-#   #   focused_match:
-#   #    foreground: CellBackground
-#   #    background: CellForeground
-#   #   bar:
-#   #     background: ''
-#   #     foreground: ''
-#   # line_indicator:
-#   #   foreground: None
-#   #   background: None
-#   selection:
-#     text:       CellBackground
-#     background: CellForeground
-#   bright:
-#     black:   '#928374'
-#     red:     '#fb4934'
-#     green:   '#b8bb26'
-#     yellow:  '#fabd2f'
-#     blue:    '#83a598'
-#     magenta: '#d3869b'
-#     cyan:    '#8ec07c'
-#     white:   '#ebdbb2'
-#   normal:
-#     black:   *gruvbox_dark_bg
-#     red:     '#cc241d'
-#     green:   '#98971a'
-#     yellow:  '#d79921'
-#     blue:    '#458588'
-#     magenta: '#b16286'
-#     cyan:    '#689d6a'
-#     white:   '#a89984'
-#   dim:
-#     black:   '#32302f'
-#     red:     '#9d0006'
-#     green:   '#79740e'
-#     yellow:  '#b57614'
-#     blue:    '#076678'
-#     magenta: '#8f3f71'
-#     cyan:    '#427b58'
-#     white:   '#928374'
-#   indexed_colors: []
-
-
-
-
-# Colors (Base16 Default Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#181818'
-#     foreground: '#d8d8d8'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '#d8d8d8'
-#     cursor: '#d8d8d8'
-
-#   # Normal colors
-#   normal:
-#     black:   '#181818'
-#     red:     '#ab4642'
-#     green:   '#a1b56c'
-#     yellow:  '#f7ca88'
-#     blue:    '#7cafc2'
-#     magenta: '#ba8baf'
-#     cyan:    '#86c1b9'
-#     white:   '#d8d8d8'
-
-#   # Bright colors
-#   bright:
-#     black:   '#585858'
-#     red:     '#ab4642'
-#     green:   '#a1b56c'
-#     yellow:  '#f7ca88'
-#     blue:    '#7cafc2'
-#     magenta: '#ba8baf'
-#     cyan:    '#86c1b9'
-#     white:   '#f8f8f8'
-
-
-
-
-
-# Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
-colors:
-   primary:
-     background: '#282c34'
-     foreground: '#abb2bf'
-   cursor:
-     text:       CellBackground
-     cursor:     '#528bff' # syntax-cursor-color
-   selection:
-     text:       CellForeground
-     background: '#3e4451' # syntax-selection-color
-   normal:
-     black:      '#5c6370' # mono-3
-     red:        '#e06c75' # red 1
-     green:      '#98c379'
-     yellow:     '#e5c07b' # orange 2
-     blue:       '#61afef'
-     magenta:    '#c678dd'
-     cyan:       '#56b6c2'
-     white:      '#828997' # mono-2
-
-
-# Colors (Night Owl)
-# colors:
-#    # Default colors
-#   primary:
-#     background: '#011627'
-#     foreground: '#d6deeb'
-
-#   cursor:
-#     text: '#011627'
-#     cursor: '#d6deeb'
-
-#   selection:
-#     background: '#1b90dd'
-
-#    # Normal colors
-#   normal:
-#     black:   '#011627'
-#     red:     '#ef5350'
-#     green:   '#22da6e'
-#     yellow:  '#c5e478'
-#     blue:    '#82aaff'
-#     magenta: '#c792ea'
-#     cyan:    '#21c7a8'
-#     white:   '#ffffff'
-
-#    # Bright colors
-#   bright:
-#     black:   '#575656'
-#     red:     '#ef5350'
-#     green:   '#22da6e'
-#     yellow:  '#ffeb95'
-#     blue:    '#82aaff'
-#     magenta: '#c792ea'
-#     cyan:    '#7fdbca'
-#     white:   '#ffffff'
-
-
-# Colors (Molokai Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#1B1D1E'
-#     foreground: '#F8F8F2'
-#   # Normal colors
-#   normal:
-#     black:   '#333333'
-#     red:     '#C4265E'
-#     green:   '#86B42B'
-#     yellow:  '#B3B42B'
-#     blue:    '#6A7EC8'
-#     magenta: '#8C6BC8'
-#     cyan:    '#56ADBC'
-#     white:   '#E3E3DD'
-#   # Bright colors
-#   bright:
-#     black:   '#666666'
-#     red:     '#F92672'
-#     green:   '#A6E22E'
-#     yellow:  '#E2E22E'
-#     blue:    '#819AFF'
-#     magenta: '#AE81FF'
-#     cyan:    '#66D9EF'
-#     white:   '#F8F8F2'
-
-      
-
-# Colors (Nord)
-# colors:
-#    # Default colors
-#    primary:
-#      background: '#2E3440'
-#      foreground: '#D8DEE9'
-#
-#    # Normal colors
-#    normal:
-#      black:   '#3B4252'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#88C0D0'
-#      white:   '#E5E9F0'
-#
-#    # Bright colors
-#    bright:
-#      black:   '#4C566A'
-#      red:     '#BF616A'
-#      green:   '#A3BE8C'
-#      yellow:  '#EBCB8B'
-#      blue:    '#81A1C1'
-#      magenta: '#B48EAD'
-#      cyan:    '#8FBCBB'
-#      white:   '#ECEFF4'
-
-
-
-
-# Colors (Solarized Dark)
-# colors:
-#    # Default colors
-#    primary:
-#      background: '#002b36' # base03
-#      foreground: '#839496' # base0
-#
-#        #    Cursor colors
-#    cursor:
-#      text:   '#002b36' # base03
-#      cursor: '#839496' # base0
-#
-#        #    Normal colors
-#    normal:
-#      black:   '#073642' # base02
-#      red:     '#dc322f' # red
-#      green:   '#859900' # green
-#      yellow:  '#b58900' # yellow
-#      blue:    '#268bd2' # blue
-#      magenta: '#d33682' # magenta
-#      cyan:    '#2aa198' # cyan
-#      white:   '#eee8d5' # base2
-#
-#        #    Bright colors
-#    bright:
-#      black:   '#00485B' # base03
-#      red:     '#cb4b16' # orange
-#      green:   '#586e75' # base01
-#      yellow:  '#657b83' # base00
-#      blue:    '#839496' # base0
-#      magenta: '#6c71c4' # violet
-#      cyan:    '#93a1a1' # base1
-#      white:   '#fdf6e3' # base3
-
-
-# Colors (Monokai Pro)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#2D2A2E'
-#     foreground: '#FCFCFA'
-
-#   # Normal colors
-#   normal:
-#     black:   '#403E41'
-#     red:     '#FF6188'
-#     green:   '#A9DC76'
-#     yellow:  '#FFD866'
-#     blue:    '#FC9867'
-#     magenta: '#AB9DF2'
-#     cyan:    '#78DCE8'
-#     white:   '#FCFCFA'
-
-#   # Bright colors
-#   bright:
-#     black:   '#727072'
-#     red:     '#FF6188'
-#     green:   '#A9DC76'
-#     yellow:  '#FFD866'
-#     blue:    '#FC9867'
-#     magenta: '#AB9DF2'
-#     cyan:    '#78DCE8'
-#     white:   '#FCFCFA'
-
-
-      # Colors (Monokai Soda)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#1a1a1a'
-#     foreground: '#c4c5b5'
-
-#   # Normal colors
-#   normal:
-#     black:   '#1a1a1a'
-#     red:     '#f4005f'
-#     green:   '#98e024'
-#     yellow:  '#fa8419'
-#     blue:    '#9d65ff'
-#     magenta: '#f4005f'
-#     cyan:    '#58d1eb'
-#     white:   '#c4c5b5'
-
-#   # Bright colors
-#   bright:
-#     black:   '#625e4c'
-#     red:     '#f4005f'
-#     green:   '#98e024'
-#     yellow:  '#e0d561'
-#     blue:    '#9d65ff'
-#     magenta: '#f4005f'
-#     cyan:    '#58d1eb'
-#     white:   '#f6f6ef'
-
-# Colors (Monokai Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#272822'
-#     foreground: '#F8F8F2'
-
-#   # Normal colors
-#   normal:
-#    black:   '#272822'
-#    red:     '#F92672'
-#    green:   '#A6E22E'
-#    yellow:  '#F4BF75'
-#    blue:    '#66D9EF'
-#    magenta: '#AE81FF'
-#    cyan:    '#A1EFE4'
-#    white:   '#F8F8F2'
-
-#   # Bright colors
-#   bright:
-#    black:   '#75715E'
-#    red:     '#F92672'
-#    green:   '#A6E22E'
-#    yellow:  '#F4BF75'
-#    blue:    '#66D9EF'
-#    magenta: '#AE81FF'
-#    cyan:    '#A1EFE4'
-#    white:   '#F9F8F5'
-
-# Colors (Night Owl)
-# colors:
-#    # Default colors
-#   primary:
-#     background: '#011627'
-#     foreground: '#d6deeb'
-
-#   cursor:
-#     text: '#011627'
-#     cursor: '#d6deeb'
-
-#   selection:
-#     background: '#1b90dd'
-
-#    # Normal colors
-#   normal:
-#     black:   '#011627'
-#     red:     '#ef5350'
-#     green:   '#22da6e'
-#     yellow:  '#c5e478'
-#     blue:    '#82aaff'
-#     magenta: '#c792ea'
-#     cyan:    '#21c7a8'
-#     white:   '#ffffff'
-
-#    # Bright colors
-#   bright:
-#     black:   '#575656'
-#     red:     '#ef5350'
-#     green:   '#22da6e'
-#     yellow:  '#ffeb95'
-#     blue:    '#82aaff'
-#     magenta: '#c792ea'
-#     cyan:    '#7fdbca'
-#     white:   '#ffffff'
-
-
-# Colors (Iceberg Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#161821'
-#     foreground: '#d2d4de'
-#
-#   # Normal colors
-#   normal:
-#     black:   '#161821'
-#     red:     '#e27878'
-#     green:   '#b4be82'
-#     yellow:  '#e2a478'
-#     blue:    '#84a0c6'
-#     magenta: '#a093c7'
-#     cyan:    '#89b8c2'
-#     white:   '#c6c8d1'
-#
-#   # Bright colors
-#   bright:
-#     black:   '#6b7089'
-#     red:     '#e98989'
-#     green:   '#c0ca8e'
-#     yellow:  '#e9b189'
-#     blue:    '#91acd1'
-#     magenta: '#ada0d3'
-#     cyan:    '#95c4ce'
-#     white:   '#d2d4de'
-
-
-
-    
-# The 'Dark dimmed' colorscheme from Github.
-# colors:
-#   primary:
-#     background: '#2d333b'
-#     foreground: '#adbac7'
-#   normal:
-#     black:   '#2d333b'
-#     red:     '#f47067'
-#     green:   '#8ddb8c'
-#     yellow:  '#f69d50'
-#     blue:    '#6cb6ff'
-#     magenta: '#dcbdfb'
-#     cyan:    '#96d0ff'
-#     white:   '#adbac7'
-#   bright:
-#     black:   '#768390'
-#     red:     '#f47067'
-#     green:   '#8ddb8c'
-#     yellow:  '#f69d50'
-#     blue:    '#6cb6ff'
-#     magenta: '#dcbdfb'
-#     cyan:    '#96d0ff'
-#     white:   '#adbac7'
-
-
-# Dracula theme for Alacritty
-# https://draculatheme.com/alacritty
-#
-# Color palette
-# https://spec.draculatheme.com
-#
-# Template
-# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
-
-# colors:
-#   primary:
-#     background: '#282a36'
-#     foreground: '#f8f8f2'
-#     bright_foreground: '#ffffff'
-#   cursor:
-#     text: CellBackground
-#     cursor: CellForeground
-#   vi_mode_cursor:
-#     text: CellBackground
-#     cursor: CellForeground
-#   search:
-#     matches:
-#       foreground: '#44475a'
-#       background: '#50fa7b'
-#     focused_match:
-#       foreground: '#44475a'
-#       background: '#ffb86c'
-#     bar:
-#       background: '#282a36'
-#       foreground: '#f8f8f2'
-#   hints:
-#     start:
-#       foreground: '#282a36'
-#       background: '#f1fa8c'
-#     end:
-#       foreground: '#f1fa8c'
-#       background: '#282a36'
-#   line_indicator:
-#     foreground: None
-#     background: None
-#   selection:
-#     text: CellForeground
-#     background: '#44475a'
-#   normal:
-#     black: '#21222c'
-#     red: '#ff5555'
-#     green: '#50fa7b'
-#     yellow: '#f1fa8c'
-#     blue: '#bd93f9'
-#     magenta: '#ff79c6'
-#     cyan: '#8be9fd'
-#     white: '#f8f8f2'
-#   bright:
-#     black: '#6272a4'
-#     red: '#ff6e6e'
-#     green: '#69ff94'
-#     yellow: '#ffffa5'
-#     blue: '#d6acff'
-#     magenta: '#ff92df'
-#     cyan: '#a4ffff'
-#     white: '#ffffff'
-
-
-# Colors (Iceberg)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#161821'
-#     foreground: '#abb0c9'
-
-#    # Bright and dim foreground colors
-#    #
-#    # The dimmed foreground color is calculated automatically if it is not
-#    # present. If the bright foreground color is not set, or
-#    # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
-#    # color will be used.
-#    #dim_foreground: '#828482'
-#    #bright_foreground: '#eaeaea'
-
-#  # Cursor colors
-#  #
-#  # Colors which should be used to draw the terminal cursor.
-#  #
-#  # Allowed values are CellForeground and CellBackground, which reference the
-#  # affected cell, or hexadecimal colors like #ff00ff.
-#  cursor:
-#    text: CellBackground
-#    cursor: '#84a0c6'
-
-#  # Vi mode cursor colors
-#  #
-#  # Colors for the cursor when the vi mode is active.
-#  #
-#  # Allowed values are CellForeground and CellBackground, which reference the
-#  # affected cell, or hexadecimal colors like #ff00ff.
-#  vi_mode_cursor:
-#    text: CellBackground
-#    cursor: '#e2a478'
-
-#  # Selection colors
-#  #
-#  # Colors which should be used to draw the selection area.
-#  #
-#  # Allowed values are CellForeground and CellBackground, which reference the
-#  # affected cell, or hexadecimal colors like #ff00ff.
-#  selection:
-#    text: CellBackground
-#    background: '#84a0c6'
-
-#  # Search colors
-#  #
-#  # Colors used for the search bar and match highlighting.
-#  search:
-#    # Allowed values are CellForeground and CellBackground, which reference the
-#    # affected cell, or hexadecimal colors like #ff00ff.
-#    matches:
-#      foreground: CellBackground
-#      background: '#84a0c6'
-#    focused_match:
-#      foreground: CellBackground
-#      background: '#b4be82'
-
-#    bar:
-#      background: '#84a0c6'
-#      #foreground: '#1d1f21'
-
-#  # Normal colors
-#  normal:
-#    black:   '#2e3244'
-#    red:     '#e27878'
-#    #green:   '#b4be82'
-#    green:   '#a3be8c'
-#    yellow:  '#e2a478'
-#    blue:    '#84a0c6'
-#    magenta: '#a093c7'
-#    cyan:    '#89b8c2'
-#    white:   '#abb0c9'
-
-#  # Bright colors
-#  bright:
-#    black:   '#444b71'
-#    red:     '#e27878'
-#    #green:   '#b4be82'
-#    green:   '#a3be8c'
-#    yellow:  '#e2a478'
-#    blue:    '#84a0c6'
-#    magenta: '#a093c7'
-#    cyan:    '#89b8c2'
-#    white:   '#abb0c9'
 
 # Colors (Tomorrow Night)
 #colors:
@@ -967,6 +325,13 @@ colors:
   #
   #indexed_colors: []
 
+  # Transparent cell backgrounds
+  #
+  # Whether or not `window.opacity` applies to all cell backgrounds or only to
+  # the default background. When set to `true` all cells will be transparent
+  # regardless of their background color.
+  #transparent_background_colors: false
+
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
@@ -1007,12 +372,6 @@ colors:
   #     args: ["Hello, World!"]
   #
   #command: None
-
-# Background opacity
-#
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
-# background_opacity: 0.8
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -1088,6 +447,9 @@ colors:
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
+# Offer IPC using `alacritty msg` (unix only)
+#ipc_socket: true
+
 #mouse:
   # Click settings
   #
@@ -1162,13 +524,20 @@ colors:
 #   - Right
 #   - Numeric identifier such as `5`
 #
-# - `action` (see key bindings)
+# - `action` (see key bindings for actions not exclusive to mouse mode)
+#
+# - Mouse exclusive actions:
+#
+#   - ExpandSelection
+#       Expand the selection to the current mouse cursor location.
 #
 # And optionally:
 #
 # - `mods` (see key bindings)
 #mouse_bindings:
-#  - { mouse: Middle, action: PasteSelection }
+#  - { mouse: Right,                 action: ExpandSelection }
+#  - { mouse: Right,  mods: Control, action: ExpandSelection }
+#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
 
 # Key bindings
 #
@@ -1237,6 +606,8 @@ colors:
 #   - ToggleFullscreen
 #   - SpawnNewInstance
 #       Spawn a new instance of Alacritty.
+#   - CreateNewWindow
+#       Create a new Alacritty window from the current process.
 #   - ClearLogNotice
 #       Clear Alacritty's UI warning and error notice.
 #   - ClearSelection

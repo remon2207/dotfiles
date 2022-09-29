@@ -67,4 +67,4 @@ opt.wildoptions = 'pum'
 opt.pumblend = 10
 
 -- 行数を相対行にする
-opt.relativenumber = true
+--opt.relativenumber = true

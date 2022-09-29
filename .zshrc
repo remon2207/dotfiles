@@ -60,6 +60,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias ll="ls -alF"
 alias la="ls -A"
+alias vim="nvim"
 alias sudo="sudo "
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'

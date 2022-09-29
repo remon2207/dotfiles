@@ -46,7 +46,7 @@ set showcmd
 " ステータスラインの右側にカーソルの現在位置を表示する
 set ruler
 " タイトルバーにファイルパスを表示
-set title
+" set title
 " swap無効
 set noswapfile
 
