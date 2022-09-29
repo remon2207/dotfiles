@@ -28,7 +28,6 @@ aur_install() {
         google-chrome \
         ghq-bin \
         postman-bin \
-        visual-studio-code-bin \
         spotify \
         slack-desktop \
         downgrade \
