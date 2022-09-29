@@ -35,7 +35,9 @@ aur_install() {
         virtualbox-ext-oracle \
         nvm \
         man-pages-ja \
-        ttf-hackgen
+        ttf-hackgen \
+        notion-app-enhanced \
+        libva-vdpau-driver-chromium
     paru -S --noconfirm --needed informant
 }
 
