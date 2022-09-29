@@ -71,7 +71,7 @@ alias dup="docker compose up -d"
 alias dlogs="docker compose logs -f"
 alias dps="docker compose ps -a"
 alias dbuild="docker compose build"
-# alias mlinux-win="mount -t ntfs-3g -o rw,uid=1000,gid=1000,dmask=022,fmask=133,nouser,async,nodev,nosuid,nofail /dev/sdc1 /mnt/linux_windows"
+alias glog="git log --oneline --graph"
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
