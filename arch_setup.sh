@@ -30,7 +30,6 @@ aur_install() {
         postman-bin \
         spotify \
         slack-desktop \
-        visual-studio-code-bin \
         downgrade \
         virtualbox-ext-oracle \
         nvm \
@@ -59,10 +58,10 @@ psd_settings() {
 }
 
 paru_install
-get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
-if [ ${get_de} = "Xfce" ]; then
-    paru -S --noconfirm --needed gamin xcursor-dmz
-fi
+# get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
+# if [ ${get_de} = "Xfce" ]; then
+#     paru -S --noconfirm --needed gamin xcursor-dmz
+# fi
 aur_install
 git_settings
 psd_settings
