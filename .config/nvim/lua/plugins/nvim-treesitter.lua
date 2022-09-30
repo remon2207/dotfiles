@@ -32,6 +32,8 @@ require('nvim-treesitter.configs').setup {
         "vim",
         "yaml",
         "gitignore",
-        "sql"
+        "sql",
+        "graphql",
+        "prisma"
     }
 }

@@ -276,10 +276,10 @@ require('packer').startup(function(use)
         config = function() require('plugins/which-key') end
     }
     -- prisma
-    use {
-        'pantharshit00/vim-prisma',
-        ft = {'prisma'}
-    }
+    -- use {
+    --     'pantharshit00/vim-prisma',
+    --     ft = {'prisma'}
+    -- }
 
     if packer_bootstrap then
         require('packer').sync()
