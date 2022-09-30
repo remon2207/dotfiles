@@ -54,7 +54,9 @@ local servers = {
     'sqls',
     'tailwindcss',
     'bashls',
-    'vimls'
+    'vimls',
+    'prismals',
+    'graphql'
 }
 
 for _, lsp in pairs(servers) do

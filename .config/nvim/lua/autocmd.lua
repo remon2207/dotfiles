@@ -28,9 +28,9 @@ api.nvim_create_autocmd('BufWritePre', {
 
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim' },
+    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim', '*.prisma', '*.graphql' },
     group = 'file',
-    command = 'setlocal expandtab tabstop=2 autoindent smartindent shiftwidth=2 softtabstop=2 smarttab',
+    command = 'setlocal tabstop=2 shiftwidth=2 softtabstop=2',
 })
 
 -- api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
