@@ -37,8 +37,7 @@ aur_install() {
         man-pages-ja \
         ttf-hackgen \
         notion-app-enhanced \
-        libva-vdpau-driver-chromium \
-        xcursor-dmz
+        libva-vdpau-driver-chromium
     paru -S --noconfirm --needed informant
 }
 
