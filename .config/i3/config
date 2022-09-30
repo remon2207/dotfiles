@@ -31,9 +31,9 @@ exec --no-startup-id fcitx5
 exec --no-startup-id picom -b
 exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/wp_ATRI.jpg
 # exec --no-startup-id polychromatic-tray-applet
-# exec --no-startup-id discord
-# exec --no-startup-id slack
-# exec --no-startup-id alacritty -e htop
+exec --no-startup-id discord
+exec --no-startup-id slack
+exec --no-startup-id alacritty -e htop
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -191,6 +191,7 @@ bindsym $mod+r mode "resize"
 
 for_window [class=".*"] border pixel 2
 for_window [class="Pavucontrol"] floating enable
+for_window [class="fcitx5-config-qt"] floating enable
 for_window [class="discord"] move container to workspace 2
 for_window [class="Slack"] move container to workspace 2
 for_window [title="TweetDeck"] move container to workspace 3
