@@ -33,8 +33,9 @@ api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     command = 'setlocal tabstop=2 shiftwidth=2 softtabstop=2',
 })
 
--- api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
---     pattern = { 'tsconfig.json', 'jsconfig.json' },
---     group = 'file',
---     command = 'setlocal ft=jsonc'
--- })
+
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    pattern = { 'tsconfig.json', 'jsconfig.json' },
+    group = 'file',
+    command = 'setlocal ft=jsonc'
+})
