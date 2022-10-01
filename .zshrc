@@ -22,6 +22,8 @@ setopt correct
 # pushdしたとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
 setopt pushd_ignore_dups
 
+setopt no_flow_control
+
 # unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
