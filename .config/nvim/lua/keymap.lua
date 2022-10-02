@@ -25,3 +25,5 @@ vim.keymap.set('n', 'fh', '<Cmd>bprev<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', 'fl', '<Cmd>bnext<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-z>', '<Nop>', { noremap = true, silent = true })
+
+-- vim.keymap.set('n', '<ScrollWheelUp>', '<Nop>', { noremap = true, silent = true })

@@ -2,6 +2,9 @@ local saga = require('lspsaga')
 
 -- use default config
 saga.init_lsp_saga {
+    symbol_in_winbar = {
+        in_custom = false
+    },
     code_action_lightbulb = {
         virtual_text = false
     }

@@ -28,14 +28,14 @@ api.nvim_create_autocmd('BufWritePre', {
 
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim', '*.prisma', '*.graphql' },
+    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim', '*.prisma', '*.graphql', '*.css' },
     group = 'file',
     command = 'setlocal tabstop=2 shiftwidth=2 softtabstop=2',
 })
 
 
-api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-    pattern = { 'tsconfig.json', 'jsconfig.json' },
-    group = 'file',
-    command = 'setlocal ft=jsonc'
-})
+-- api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+--     pattern = { 'tsconfig.json', 'jsconfig.json' },
+--     group = 'file',
+--     command = 'setlocal ft=jsonc'
+-- })

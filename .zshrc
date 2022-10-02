@@ -73,7 +73,11 @@ alias dup="docker compose up -d"
 alias dlogs="docker compose logs -f"
 alias dps="docker compose ps -a"
 alias dbuild="docker compose build"
-alias glog="git log --oneline --graph"
+alias ga="git add"
+alias gs="git status"
+alias gd="git diff"
+alias gc="git commit"
+alias gl="git log --oneline --graph"
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then

@@ -9,10 +9,17 @@ vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'lewis6991/impatient.nvim'
+    use {
+        'nathom/filetype.nvim',
+        config = function() require('plugins/filetype') end
+    }
 
     -- ステータスラインを強化
     use {
         'nvim-lualine/lualine.nvim',
+        opt = true,
+        event = { 'VimEnter' },
         config = function() require('plugins/lualine') end,
         requires = {
             'kyazdani42/nvim-web-devicons',
@@ -23,6 +30,8 @@ require('packer').startup(function(use)
     use {
         'akinsho/bufferline.nvim',
         branch = 'main',
+        opt = true,
+        event = { 'VimEnter' },
         config = function() require('plugins/bufferline') end,
         requires = {
             'kyazdani42/nvim-web-devicons',
@@ -186,6 +195,8 @@ require('packer').startup(function(use)
     -- ファイラー
     use {
         'kyazdani42/nvim-tree.lua',
+        opt = true,
+        event = { 'VimEnter' },
         config = function() require('plugins/nvim-tree') end,
         requires = {
             'kyazdani42/nvim-web-devicons',
@@ -229,6 +240,8 @@ require('packer').startup(function(use)
     }
     use {
         'glepnir/lspsaga.nvim',
+        -- branch = 'main',
+        branch = 'version_2.2',
         opt = true,
         event = { 'BufNewFile', 'BufRead' },
         config = function() require('plugins/lspsaga') end
@@ -245,7 +258,12 @@ require('packer').startup(function(use)
     use {
         'windwp/nvim-ts-autotag',
         ft = {'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript', 'xml', 'php', 'markdown', 'glimmer','handlebars','hbs'},
+        -- config = function() require('plugins/nvim-ts-autotag') end
     }
+    -- use {
+    --     'alvan/vim-closetag',
+    --     config = function() require('plugins/vim-closetag') end
+    -- }
 
     -- フローティングターミナル
     use {
@@ -263,23 +281,24 @@ require('packer').startup(function(use)
         config = function() require('plugins/gitsigns') end
     }
 
-    use {
-        'tversteeg/registers.nvim',
-        opt = true,
-        event = { 'InsertEnter' }
-    }
-    -- キーマップ一覧を表示
-    use {
-        'folke/which-key.nvim',
-        opt = true,
-        event = { 'BufNewFile', 'BufRead' },
-        config = function() require('plugins/which-key') end
-    }
-    -- prisma
     -- use {
-    --     'pantharshit00/vim-prisma',
-    --     ft = {'prisma'}
+    --     'tversteeg/registers.nvim',
+    --     opt = true,
+    --     event = { 'InsertEnter' }
     -- }
+    -- キーマップ一覧を表示
+    -- use {
+    --     'folke/which-key.nvim',
+    --     opt = true,
+    --     event = { 'BufNewFile', 'BufRead' },
+    --     config = function() require('plugins/which-key') end
+    -- }
+    -- use {
+    --     'jason0x43/vim-js-indent',
+    --     config = function() require('plugins/vim-js-indent') end
+    -- }
+    -- use 'HerringtonDarkholme/yats.vim'
+    -- use 'leafgarland/typescript-vim'
 
     if packer_bootstrap then
         require('packer').sync()

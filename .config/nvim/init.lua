@@ -1,3 +1,6 @@
+require('default_skip')
+require('impatient')
+
 vim.g.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 
