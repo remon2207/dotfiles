@@ -1,10 +1,11 @@
-require('nvim-lsp-installer').setup {
-    automatic_installation = true
-}
+-- require('nvim-lsp-installer').setup {
+--     automatic_installation = true
+-- }
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
+-- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -24,8 +25,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wl', function()
@@ -33,7 +36,9 @@ local on_attach = function(client, bufnr)
   end, bufopts)
   vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
   -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
@@ -45,24 +50,66 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+-- local servers = {
+--     'tsserver',
+--     'eslint',
+--     'sumneko_lua',
+--     'dockerls',
+--     'yamlls',
+--     'sqls',
+--     'tailwindcss',
+--     'bashls',
+--     'vimls',
+--     'prismals',
+--     'graphql',
+--     'cssls',
+--     'stylelint_lsp'
+-- }
 local servers = {
     'tsserver',
-    'eslint',
     'sumneko_lua',
     'dockerls',
+    -- 'eslint',
     'yamlls',
+    'sqlls',
     'sqls',
     'tailwindcss',
-    'bashls',
+    -- 'cssls',
+    -- 'stylelint_lsp',
     'vimls',
     'prismals',
-    'graphql'
+    'graphql',
 }
 
-for _, lsp in pairs(servers) do
-    require('lspconfig')[lsp].setup {
-        on_attach = on_attach,
-        flags = lsp_flags,
-        capabilities = capabilities,
-    }
-end
+local mason_lspconfig = require('mason-lspconfig')
+
+mason_lspconfig.setup {
+    ensure_installed = servers
+}
+mason_lspconfig.setup_handlers {
+    function (servers)
+        require('lspconfig')[servers].setup {
+            on_attach = on_attach,
+            flags = lsp_flags,
+            capabilities = capabilities
+        }
+    end,
+}
+
+-- for _, lsp in pairs(servers) do
+--     require('lspconfig')[lsp].setup {
+--         on_attach = on_attach,
+--         flags = lsp_flags,
+--         capabilities = capabilities,
+--     }
+-- end
+
+
+local api = vim.api
+
+-- api.nvim_create_autocmd('BufWritePre', {
+--     pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
+--     group = 'file',
+--     command = 'EslintFixAll'
+-- })
+

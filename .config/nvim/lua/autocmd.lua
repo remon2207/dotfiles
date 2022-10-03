@@ -20,12 +20,6 @@ api.nvim_create_augroup('file', {
     clear = true
 })
 
-api.nvim_create_autocmd('BufWritePre', {
-    pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },
-    group = 'file',
-    command = 'EslintFixAll'
-})
-
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim', '*.prisma', '*.graphql', '*.css' },
