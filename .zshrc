@@ -78,6 +78,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gc="git commit"
 alias gl="git log --oneline --graph"
+alias gr="git reset"
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
