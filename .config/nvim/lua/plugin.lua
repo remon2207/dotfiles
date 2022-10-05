@@ -108,9 +108,9 @@ require('packer').startup(function(use)
             }
         },
     }
-    -- use {
-    --     'nvim-telescope/telescope-file-browser.nvim'
-    -- }
+    use {
+        'nvim-telescope/telescope-file-browser.nvim'
+    }
 
     -- ジャンプ
     use {
@@ -132,13 +132,13 @@ require('packer').startup(function(use)
     -- }
 
     -- ファイラー
-    use {
-        'kyazdani42/nvim-tree.lua',
-        config = function() require('plugins.nvim-tree') end,
-        requires = {
-            'kyazdani42/nvim-web-devicons',
-        },
-    }
+    -- use {
+    --     'kyazdani42/nvim-tree.lua',
+    --     config = function() require('plugins.nvim-tree') end,
+    --     requires = {
+    --         'kyazdani42/nvim-web-devicons',
+    --     },
+    -- }
 
     -- LSP
     use {
@@ -181,14 +181,15 @@ require('packer').startup(function(use)
         'folke/lsp-colors.nvim',
         config = function() require('plugins.lsp-colors') end,
     }
-    -- use {
-    --     'glepnir/lspsaga.nvim',
-    --     branch = 'main',
-    --     -- branch = 'version_2.2',
-    --     opt = true,
-    --     event = { 'BufNewFile', 'BufRead' },
-    --     config = function() require('plugins.lspsaga') end
-    -- }
+    use {
+        'glepnir/lspsaga.nvim',
+        branch = 'main',
+        commit = "04e8167740c66193686ea3d14b511c7b160ea755",
+        -- branch = 'version_2.2',
+        opt = true,
+        event = { 'BufNewFile', 'BufRead' },
+        config = function() require('plugins.lspsaga') end
+    }
 
     -- フォーマッター
     -- use {
