@@ -1,18 +1,16 @@
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup({
     highlight = {
-        enable = true
+        enable = true,
     },
     autotag = {
-        enable = true
+        enable = true,
     },
     indent = {
         enable = true,
         disable = {
-            'lua',
-            'javascript',
-            'typescript',
-            'yaml'
-        }
+            "typescript",
+            "graphql",
+        },
     },
     ensure_installed = {
         "javascript",
@@ -34,6 +32,6 @@ require('nvim-treesitter.configs').setup {
         "gitignore",
         "sql",
         "graphql",
-        "prisma"
-    }
-}
+        "prisma",
+    },
+})

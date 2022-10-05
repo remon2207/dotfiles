@@ -6,9 +6,12 @@ require('formatter').setup {
         typescriptreact = {
             require('formatter.filetypes.typescriptreact').prettier
         },
-        css = {
-            require('formatter.filetypes.css').prettier
-        }
+        typescript = {
+            require('formatter.filetypes.typescript').prettier
+        },
+        -- css = {
+        --     require('formatter.filetypes.css').prettier
+        -- }
     }
 }
 
