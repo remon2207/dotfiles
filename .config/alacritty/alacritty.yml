@@ -177,180 +177,180 @@ font:
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
 
-# If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+  # If `true`, bold text is drawn using the bright color variants.
+  #draw_bold_text_with_bright_colors: false
 
-# tokyo night
-# colors:
-#   primary:
-#       background: '0x1a1b26'
-#       foreground: '0xa9b1d6'
+  # tokyo night
+  # colors:
+  #   primary:
+  #       background: '0x1a1b26'
+  #       foreground: '0xa9b1d6'
 
-#     # Normal colors
-#   normal:
-#     black:   '0x32344a'
-#     red:     '0xf7768e'
-#     green:   '0x9ece6a'
-#     yellow:  '0xe0af68'
-#     blue:    '0x7aa2f7'
-#     magenta: '0xad8ee6'
-#     cyan:    '0x449dab'
-#     white:   '0x787c99'
+  #     # Normal colors
+  #   normal:
+  #     black:   '0x32344a'
+  #     red:     '0xf7768e'
+  #     green:   '0x9ece6a'
+  #     yellow:  '0xe0af68'
+  #     blue:    '0x7aa2f7'
+  #     magenta: '0xad8ee6'
+  #     cyan:    '0x449dab'
+  #     white:   '0x787c99'
 
-#   # Bright colors
-#   bright:
-#     black:   '0x444b6a'
-#     red:     '0xff7a93'
-#     green:   '0xb9f27c'
-#     yellow:  '0xff9e64'
-#     blue:    '0x7da6ff'
-#     magenta: '0xbb9af7'
-#     cyan:    '0x0db9d7'
-#     white:   '0xacb0d0'
+  #   # Bright colors
+  #   bright:
+  #     black:   '0x444b6a'
+  #     red:     '0xff7a93'
+  #     green:   '0xb9f27c'
+  #     yellow:  '0xff9e64'
+  #     blue:    '0x7da6ff'
+  #     magenta: '0xbb9af7'
+  #     cyan:    '0x0db9d7'
+  #     white:   '0xacb0d0'
 
-## Colors (Hybrid)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#27292c'
-#     foreground: '#d0d2d1'
+  ## Colors (Hybrid)
+  # colors:
+  #   # Default colors
+  #   primary:
+  #     background: '#27292c'
+  #     foreground: '#d0d2d1'
 
-#   # Normal colors
-#   normal:
-#     black:   '#35383b'
-#     red:     '#b05655'
-#     green:   '#769972'
-#     yellow:  '#e1a574'
-#     blue:    '#7693ac'
-#     magenta: '#977ba0'
-#     cyan:    '#749e99'
-#     white:   '#848b92'
+  #   # Normal colors
+  #   normal:
+  #     black:   '#35383b'
+  #     red:     '#b05655'
+  #     green:   '#769972'
+  #     yellow:  '#e1a574'
+  #     blue:    '#7693ac'
+  #     magenta: '#977ba0'
+  #     cyan:    '#749e99'
+  #     white:   '#848b92'
 
-#   # Bright colors
-#   bright:
-#     black:   '#484c52'
-#     red:     '#d27c7b'
-#     green:   '#dffebe'
-#     yellow:  '#f0d189'
-#     blue:    '#96b1c9'
-#     magenta: '#bfa5c7'
-#     cyan:    '#9fc9c3'
-#     white:   '#fcf7e2'
+  #   # Bright colors
+  #   bright:
+  #     black:   '#484c52'
+  #     red:     '#d27c7b'
+  #     green:   '#dffebe'
+  #     yellow:  '#f0d189'
+  #     blue:    '#96b1c9'
+  #     magenta: '#bfa5c7'
+  #     cyan:    '#9fc9c3'
+  #     white:   '#fcf7e2'
 
-# Colors (Gruvbox dark)
-# colors:
-#   primary:
-#     # hard contrast background - '#1d2021'
-#     background:        &gruvbox_dark_bg '#282828'
-#     # soft contrast background - '#32302f'
-#     foreground:        '#ebdbb2'
-#     bright_foreground: '#fbf1c7'
-#     dim_foreground:    '#a89984'
-#   cursor:
-#     text:   CellBackground
-#     cursor: CellForeground
-#   vi_mode_cursor:
-#     text:   CellBackground
-#     cursor: CellForeground
-#   # search:
-#   #   matches:
-#   #     foreground: '#000000'
-#   #     background: '#ffffff'
-#   #   focused_match:
-#   #    foreground: CellBackground
-#   #    background: CellForeground
-#   #   bar:
-#   #     background: ''
-#   #     foreground: ''
-#   # line_indicator:
-#   #   foreground: None
-#   #   background: None
-#   selection:
-#     text:       CellBackground
-#     background: CellForeground
-#   bright:
-#     black:   '#928374'
-#     red:     '#fb4934'
-#     green:   '#b8bb26'
-#     yellow:  '#fabd2f'
-#     blue:    '#83a598'
-#     magenta: '#d3869b'
-#     cyan:    '#8ec07c'
-#     white:   '#ebdbb2'
-#   normal:
-#     black:   *gruvbox_dark_bg
-#     red:     '#cc241d'
-#     green:   '#98971a'
-#     yellow:  '#d79921'
-#     blue:    '#458588'
-#     magenta: '#b16286'
-#     cyan:    '#689d6a'
-#     white:   '#a89984'
-#   dim:
-#     black:   '#32302f'
-#     red:     '#9d0006'
-#     green:   '#79740e'
-#     yellow:  '#b57614'
-#     blue:    '#076678'
-#     magenta: '#8f3f71'
-#     cyan:    '#427b58'
-#     white:   '#928374'
-#   indexed_colors: []
+  # Colors (Gruvbox dark)
+  # colors:
+  #   primary:
+  #     # hard contrast background - '#1d2021'
+  #     background:        &gruvbox_dark_bg '#282828'
+  #     # soft contrast background - '#32302f'
+  #     foreground:        '#ebdbb2'
+  #     bright_foreground: '#fbf1c7'
+  #     dim_foreground:    '#a89984'
+  #   cursor:
+  #     text:   CellBackground
+  #     cursor: CellForeground
+  #   vi_mode_cursor:
+  #     text:   CellBackground
+  #     cursor: CellForeground
+  #   # search:
+  #   #   matches:
+  #   #     foreground: '#000000'
+  #   #     background: '#ffffff'
+  #   #   focused_match:
+  #   #    foreground: CellBackground
+  #   #    background: CellForeground
+  #   #   bar:
+  #   #     background: ''
+  #   #     foreground: ''
+  #   # line_indicator:
+  #   #   foreground: None
+  #   #   background: None
+  #   selection:
+  #     text:       CellBackground
+  #     background: CellForeground
+  #   bright:
+  #     black:   '#928374'
+  #     red:     '#fb4934'
+  #     green:   '#b8bb26'
+  #     yellow:  '#fabd2f'
+  #     blue:    '#83a598'
+  #     magenta: '#d3869b'
+  #     cyan:    '#8ec07c'
+  #     white:   '#ebdbb2'
+  #   normal:
+  #     black:   *gruvbox_dark_bg
+  #     red:     '#cc241d'
+  #     green:   '#98971a'
+  #     yellow:  '#d79921'
+  #     blue:    '#458588'
+  #     magenta: '#b16286'
+  #     cyan:    '#689d6a'
+  #     white:   '#a89984'
+  #   dim:
+  #     black:   '#32302f'
+  #     red:     '#9d0006'
+  #     green:   '#79740e'
+  #     yellow:  '#b57614'
+  #     blue:    '#076678'
+  #     magenta: '#8f3f71'
+  #     cyan:    '#427b58'
+  #     white:   '#928374'
+  #   indexed_colors: []
 
-# Colors (Base16 Default Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '#181818'
-#     foreground: '#d8d8d8'
+  # Colors (Base16 Default Dark)
+  # colors:
+  #   # Default colors
+  #   primary:
+  #     background: '#181818'
+  #     foreground: '#d8d8d8'
 
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '#d8d8d8'
-#     cursor: '#d8d8d8'
+  #   # Colors the cursor will use if `custom_cursor_colors` is true
+  #   cursor:
+  #     text: '#d8d8d8'
+  #     cursor: '#d8d8d8'
 
-#   # Normal colors
-#   normal:
-#     black:   '#181818'
-#     red:     '#ab4642'
-#     green:   '#a1b56c'
-#     yellow:  '#f7ca88'
-#     blue:    '#7cafc2'
-#     magenta: '#ba8baf'
-#     cyan:    '#86c1b9'
-#     white:   '#d8d8d8'
+  #   # Normal colors
+  #   normal:
+  #     black:   '#181818'
+  #     red:     '#ab4642'
+  #     green:   '#a1b56c'
+  #     yellow:  '#f7ca88'
+  #     blue:    '#7cafc2'
+  #     magenta: '#ba8baf'
+  #     cyan:    '#86c1b9'
+  #     white:   '#d8d8d8'
 
-#   # Bright colors
-#   bright:
-#     black:   '#585858'
-#     red:     '#ab4642'
-#     green:   '#a1b56c'
-#     yellow:  '#f7ca88'
-#     blue:    '#7cafc2'
-#     magenta: '#ba8baf'
-#     cyan:    '#86c1b9'
-#     white:   '#f8f8f8'
+  #   # Bright colors
+  #   bright:
+  #     black:   '#585858'
+  #     red:     '#ab4642'
+  #     green:   '#a1b56c'
+  #     yellow:  '#f7ca88'
+  #     blue:    '#7cafc2'
+  #     magenta: '#ba8baf'
+  #     cyan:    '#86c1b9'
+  #     white:   '#f8f8f8'
 
 # Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
-colors:
-  primary:
-    background: "#282c34"
-    foreground: "#abb2bf"
-  cursor:
-    text: CellBackground
-    cursor: "#528bff" # syntax-cursor-color
-  selection:
-    text: CellForeground
-    background: "#3e4451" # syntax-selection-color
-  normal:
-    black: "#5c6370" # mono-3
-    red: "#e06c75" # red 1
-    green: "#98c379"
-    yellow: "#e5c07b" # orange 2
-    blue: "#61afef"
-    magenta: "#c678dd"
-    cyan: "#56b6c2"
-    white: "#828997" # mono-2
+# colors:
+#   primary:
+#     background: "#282c34"
+#     foreground: "#abb2bf"
+#   cursor:
+#     text: CellBackground
+#     cursor: "#528bff" # syntax-cursor-color
+#   selection:
+#     text: CellForeground
+#     background: "#3e4451" # syntax-selection-color
+#   normal:
+#     black: "#5c6370" # mono-3
+#     red: "#e06c75" # red 1
+#     green: "#98c379"
+#     yellow: "#e5c07b" # orange 2
+#     blue: "#61afef"
+#     magenta: "#c678dd"
+#     cyan: "#56b6c2"
+#     white: "#828997" # mono-2
 
 
   # Colors (Night Owl)
@@ -444,45 +444,40 @@ colors:
   #      magenta: '#B48EAD'
   #      cyan:    '#8FBCBB'
   #      white:   '#ECEFF4'
+# Colors (Solarized Dark)
+colors:
+  # Default colors
+  primary:
+    background: "#002b36" # base03
+    foreground: "#839496" # base0
 
-  # Colors (Solarized Dark)
-  # colors:
-  #   # Default colors
-  #   primary:
-  #     background: "#002b36" # base03
-  #     foreground:
-  #       "#839496" # base0
-  #
-  #
-  #       #    Cursor colors
-  #   cursor:
-  #     text: "#002b36" # base03
-  #     cursor:
-  #       "#839496" # base0
-  #
-  #
-  #       #    Normal colors
-  #   normal:
-  #     black: "#073642" # base02
-  #     red: "#dc322f" # red
-  #     green: "#859900" # green
-  #     yellow: "#b58900" # yellow
-  #     blue: "#268bd2" # blue
-  #     magenta: "#d33682" # magenta
-  #     cyan: "#2aa198" # cyan
-  #     white:
-  #       "#eee8d5" # base2
+  # Cursor colors
+  cursor:
+    text: "#002b36" # base03
+    cursor: "#839496" # base0
 
-  #    Bright colors
-  # bright:
-  #   black: "#00485B" # base03
-  #   red: "#cb4b16" # orange
-  #   green: "#586e75" # base01
-  #   yellow: "#657b83" # base00
-  #   blue: "#839496" # base0
-  #   magenta: "#6c71c4" # violet
-  #   cyan: "#93a1a1" # base1
-  #   white: "#fdf6e3" # base3
+  # Normal colors
+  normal:
+    black: "#073642" # base02
+    red: "#dc322f" # red
+    green: "#859900" # green
+    yellow: "#b58900" # yellow
+    blue: "#268bd2" # blue
+    magenta: "#d33682" # magenta
+    cyan: "#2aa198" # cyan
+    white: "#eee8d5" # base2
+
+  # Bright colors
+  bright:
+    black: "#002b36" # base03
+    red: "#cb4b16" # orange
+    green: "#586e75" # base01
+    yellow: "#657b83" # base00
+    blue: "#839496" # base0
+    magenta: "#6c71c4" # violet
+    cyan: "#93a1a1" # base1
+    white: "#fdf6e3" # base3
+
 # Colors (Monokai Pro)
 # colors:
 #   # Default colors
