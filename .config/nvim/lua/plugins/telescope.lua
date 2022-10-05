@@ -20,8 +20,6 @@ telescope.setup({
         mappings = {
             i = {
                 ["<Esc><Esc>"] = a.close,
-                -- ['<C-n>'] = false,
-                -- ['<C-p>'] = false,
                 ["<C-j>"] = a.move_selection_next,
                 ["<C-k>"] = a.move_selection_previous,
                 ["<C-o>"] = false,
