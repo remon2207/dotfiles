@@ -30,7 +30,8 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id fcitx5
 exec --no-startup-id picom -b
 # exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/wp_ATRI.jpg
-exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/50.jpg
+# exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/50.jpg
+exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/16.png
 # exec --no-startup-id polychromatic-tray-applet
 exec --no-startup-id discord
 exec --no-startup-id slack
