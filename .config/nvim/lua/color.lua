@@ -5,6 +5,7 @@ api.nvim_create_augroup('color_config', {
     clear = true
 })
 
+
 api.nvim_create_autocmd('VimEnter', {
     pattern = '*',
     group = 'color_config',
@@ -14,7 +15,7 @@ api.nvim_create_autocmd('VimEnter', {
     command = 'highlight LineNr ctermbg=NONE guibg=NONE',
     command = 'highlight Folded ctermbg=NONE guibg=NONE',
     command = 'highlight EndOfBuffer ctermbg=NONE guibg=NONE',
-    command = 'colorscheme onedark'
+    -- command = 'colorscheme onedark'
     -- command = 'colorscheme iceberg',
     -- command = 'colorscheme github_dark',
     -- command = 'colorscheme dracula',
@@ -24,9 +25,8 @@ api.nvim_create_autocmd('VimEnter', {
     -- command = 'colorscheme gruvbox',
     -- command = 'colorscheme gruvbox-material',
     -- command = 'colorscheme tokyonight',
-    -- command = 'colorscheme solarized8',
+    command = 'colorscheme solarized8',
 })
-
 
 -- vim-colarized8
 api.nvim_create_autocmd('ColorScheme', {
