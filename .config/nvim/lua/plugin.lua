@@ -271,4 +271,16 @@ require("packer").startup(function(use)
 			require("plugins.gitsigns")
 		end,
 	})
+
+    -- markdown
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
