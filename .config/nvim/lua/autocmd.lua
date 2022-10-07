@@ -32,7 +32,7 @@ api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 	command = "setlocal shiftwidth=2 softtabstop=0 tabstop=2",
 })
 api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-	pattern = { "*.graphql" },
+	pattern = { "*.graphql", "*.prisma" },
 	group = "file",
 	command = "setlocal nosmartindent",
 })
