@@ -34,7 +34,7 @@ aur_install() {
         virtualbox-ext-oracle \
         nvm \
         man-pages-ja \
-        ttf-cica \
+        ttf-ricty \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
         lazydocker-bin \
