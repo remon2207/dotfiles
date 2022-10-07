@@ -60,16 +60,10 @@ GIT_PS1_SHOWUPSTREAM=auto
 # %# '
 
 # aliases
-
-
- file with 10 additions and 37 deletions.
-  47  
-.zshrc
 @@ -38,12 +38,13 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 
 # keybind
-bindkey -e
 # bindkey -e
 bindkey -v
 
