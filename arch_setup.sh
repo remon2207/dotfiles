@@ -36,6 +36,7 @@ aur_install() {
         nvm \
         man-pages-ja \
         ttf-ricty \
+        ttf-hackgen \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
         lazydocker-bin \
