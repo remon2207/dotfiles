@@ -60,8 +60,6 @@ GIT_PS1_SHOWUPSTREAM=auto
 # %# '
 
 # aliases
-@@ -38,12 +38,13 @@ zstyle ':completion:*' menu select=2
-zstyle ':completion:*' list-colors ''
 
 # keybind
 # bindkey -e
@@ -71,12 +69,6 @@ bindkey -v
 
 # git-promptの読み込み
 # source "${HOME}/.zsh/git-prompt.sh"
-source "${HOME}/.zsh/git-prompt.sh"
-
-# プロンプトのオプション表示設定
-GIT_PS1_SHOWDIRTYSTATE=true
-@@ -59,39 +60,6 @@ setopt PROMPT_SUBST ; PS1='
-%# '
 
 # aliases
 
