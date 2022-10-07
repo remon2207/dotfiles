@@ -33,7 +33,7 @@ aur_install() {
         slack-desktop \
         downgrade \
         man-pages-ja \
-        ttf-ricty \
+        ttf-cica \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
         lazydocker-bin
