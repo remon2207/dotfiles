@@ -34,6 +34,8 @@ aur_install() {
         downgrade \
         man-pages-ja \
         ttf-cica \
+        virtualbox-ext-oracle \
+        nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
         lazydocker-bin
