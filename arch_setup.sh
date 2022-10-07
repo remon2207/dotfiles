@@ -32,11 +32,8 @@ aur_install() {
         visual-studio-code-bin \
         slack-desktop \
         downgrade \
-        virtualbox-ext-oracle \
-        nvm \
         man-pages-ja \
         ttf-ricty \
-        ttf-hackgen \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
         lazydocker-bin \
