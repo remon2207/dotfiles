@@ -36,7 +36,7 @@ aur_install() {
         ttf-ricty \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
-        lazydocker-bin \
+        lazydocker-bin
     paru -S --noconfirm --needed informant
 }
 
