@@ -58,11 +58,50 @@ setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
 
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias vim="nvim"
+# aliases
+
+if type lsd > /dev/null; then
+    alias ls="lsd"
+    alias ll="lsd -alF"
+    alias la="lsd -A"
+else
+    alias ls="ls --color=auto"
+    alias ll="ls -alF"
+    alias la="ls -A"
+fi
+
+if type nvim > /dev/null; then
+    alias vim="nvim"
+fi
+
+if type rg > /dev/null; then
+    alias grep="rg --color auto"
+else
+    alias grep="grep --color auto"
+fi
+
+if type bat > /dev/null; then
+    alias cat="bat"
+fi
+
+if type fd > /dev/null; then
+    alias find="fd"
+fi
+
+if type ranger > /dev/null; then
+    alias r="ranger"
+fi
+
+if [ -e /usr/share/z/z.sh ]; type fzf > /dev/null; then
+    alias zc="z | fzf"
+fi
+
+if type lazydocker > /dev/null; then
+    alias lzd="lazydocker"
+fi
+
+alias e="e"
+alias c="clear"
 alias sudo="sudo "
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'
@@ -100,10 +139,14 @@ zinit light zsh-users/zsh-autosuggestions
 export FZF_DEFAULT_OPTS="--no-mouse"
 
 # solarized
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
+
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 eval "$(starship init zsh)"

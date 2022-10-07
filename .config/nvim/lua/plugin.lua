@@ -220,7 +220,7 @@ require("packer").startup(function(use)
 	use({
 		"glepnir/lspsaga.nvim",
 		branch = "main",
-		commit = "04e8167740c66193686ea3d14b511c7b160ea755",
+		-- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
 		-- branch = 'version_2.2',
 		opt = true,
 		event = { "BufNewFile", "BufRead" },
