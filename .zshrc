@@ -104,11 +104,6 @@ if type ranger > /dev/null; then
     alias r="ranger"
 fi
 
-
-if [ -e /usr/share/z/z.sh ]; type fzf > /dev/null; then
-    alias zc="z | fzf"
-fi
-
 if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
@@ -167,8 +162,5 @@ export FZF_DEFAULT_OPTS="--no-mouse"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
-
-
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 eval "$(starship init zsh)"
