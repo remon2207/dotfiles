@@ -100,9 +100,11 @@ if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
 
-alias e="e"
+alias e="exit"
 alias c="clear"
 alias sudo="sudo "
+alias mkcd='(){ mkdir -p $1 && cd $1 }'
+alias rm="rm -rf"
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'
 alias dexec="docker compose exec"
@@ -118,6 +120,7 @@ alias gd="git diff"
 alias gc="git commit"
 alias gl="git log --oneline --graph"
 alias gr="git reset"
+alias gp="git push"
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
