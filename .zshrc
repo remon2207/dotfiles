@@ -38,12 +38,13 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 
 # keybind
-bindkey -e
+# bindkey -e
+bindkey -v
 
 # PROMPT='%B%F{blue}%~%f%b'
 
 # git-promptの読み込み
-# source "${HOME}/.zsh/git-prompt.sh"
+source "${HOME}/.zsh/git-prompt.sh"
 
 # プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -59,39 +60,6 @@ setopt PROMPT_SUBST ; PS1='
 %# '
 
 # aliases
-
-if type lsd > /dev/null; then
-    alias ls="lsd"
-    alias ll="lsd -alF"
-    alias la="lsd -A"
-else
-    alias ls="ls --color=auto"
-    alias ll="ls -alF"
-    alias la="ls -A"
-fi
-
-if type nvim > /dev/null; then
-    alias vim="nvim"
-fi
-
-if type rg > /dev/null; then
-    alias grep="rg --color auto"
-else
-    alias grep="grep --color auto"
-fi
-
-if type bat > /dev/null; then
-    alias cat="bat"
-fi
-
-if type fd > /dev/null; then
-    alias find="fd"
-fi
-
-if type ranger > /dev/null; then
-    alias r="ranger"
-fi
-
 if [ -e /usr/share/z/z.sh ]; type fzf > /dev/null; then
     alias zc="z | fzf"
 fi
@@ -99,6 +67,11 @@ fi
 if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
+
+alias ls="ls --color=auto"
+alias ll="ls -alF"
+alias la="ls -A"
+alias grep="grep --color auto"
 
 alias e="exit"
 alias c="clear"
@@ -148,9 +121,9 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
