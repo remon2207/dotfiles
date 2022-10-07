@@ -29,6 +29,7 @@ aur_install() {
         ghq-bin \
         postman-bin \
         spotify \
+        visual-studio-code-bin \
         slack-desktop \
         downgrade \
         virtualbox-ext-oracle \
