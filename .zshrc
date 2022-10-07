@@ -121,6 +121,7 @@ alias gc="git commit"
 alias gl="git log --oneline --graph"
 alias gr="git reset"
 alias gp="git push"
+alias repoinit="echo $(basename $(pwd)) > README.md && git add . && git commit -m 'Initial commit' && git push -u origin main"
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
