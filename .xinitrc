@@ -48,4 +48,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+fcitx5 &
+picom -b &
+feh --bg-scale ${HOME}/Pictures/wallpaper_linux/75.png &
+bash ${HOME}/.config/polybar/launch.sh &
+discord &
+slack &
+wezterm start htop &
 exec i3

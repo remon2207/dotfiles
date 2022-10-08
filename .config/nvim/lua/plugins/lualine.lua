@@ -1,7 +1,7 @@
 require('lualine').setup {
-    options = {
+    -- options = {
         -- icons_enabled = true,
         -- section_separators = { left = nil, right = nil}
-        section_separators = { left = '', right = ' '},
-    }
+        -- section_separators = { left = '', right = ' '},
+    -- }
 }
