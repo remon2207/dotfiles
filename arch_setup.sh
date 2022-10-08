@@ -31,7 +31,6 @@ aur_install() {
         spotify \
         slack-desktop \
         downgrade \
-        man-pages-ja \
         ttf-cica \
         virtualbox-ext-oracle \
         nvm \
