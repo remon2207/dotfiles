@@ -55,4 +55,6 @@ bash ${HOME}/.config/polybar/launch.sh &
 discord &
 slack &
 wezterm start htop &
+google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+google-chrome-stable &
 exec i3
