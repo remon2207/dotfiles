@@ -108,11 +108,6 @@ if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
 
-alias ls="ls --color=auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias grep="grep --color auto"
-
 alias e="exit"
 alias c="clear"
 alias sudo="sudo "
