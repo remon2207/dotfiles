@@ -2,8 +2,9 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=nvidia
+export GTK_IM_MODULE="fcitx5"
+export QT_IM_MODULE="fcitx5"
+export XMODIFIERS="@im=fcitx5"
+export LIBVA_DRIVER_NAME="vdpau"
+export VDPAU_DRIVER="nvidia"
+export FZF_DEFAULT_OPTS="--no-mouse"
