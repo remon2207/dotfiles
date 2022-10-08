@@ -30,7 +30,7 @@ aur_install() {
         spotify \
         slack-desktop \
         downgrade \
-        ttf-cica \
+        ttf-hackgen \
         virtualbox-ext-oracle \
         nvm \
         notion-app-enhanced \
