@@ -29,7 +29,6 @@ aur_install() {
         ghq-bin \
         postman-bin \
         spotify \
-        visual-studio-code-bin \
         slack-desktop \
         downgrade \
         man-pages-ja \
