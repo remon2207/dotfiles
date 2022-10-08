@@ -27,21 +27,21 @@ exec --no-startup-id dex --autostart --environment i3
 # they are included here as an example. Modify as you see fit.
 
 # startup
-exec --no-startup-id fcitx5
-exec --no-startup-id picom -b
+# exec --no-startup-id fcitx5
+# exec --no-startup-id picom -b
 # exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/wp_ATRI.jpg
 # exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/50.jpg
-exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/16.png
+# exec --no-startup-id feh --bg-scale ${HOME}/Pictures/wallpaper_linux/16.png
 # exec --no-startup-id polychromatic-tray-applet
-exec --no-startup-id discord
-exec --no-startup-id slack
+# exec --no-startup-id discord
+# exec --no-startup-id slack
 # exec --no-startup-id alacritty -e htop
-exec --no-startup-id wezterm start htop
-exec --no-startup-id ~/.config/polybar/launch.sh --forest
+# exec --no-startup-id wezterm start htop
+# exec --no-startup-id ~/.config/polybar/launch.sh --forest
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
