@@ -27,7 +27,6 @@ aur_install() {
     paru -S --noconfirm --needed \
         google-chrome \
         ghq-bin \
-        postman-bin \
         spotify \
         slack-desktop \
         downgrade \
