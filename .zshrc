@@ -148,8 +148,6 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
-export FZF_DEFAULT_OPTS="--no-mouse"
-
 # solarized
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
