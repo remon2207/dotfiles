@@ -35,7 +35,7 @@ aur_install() {
         nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
-        bibata-cursor-theme \
+        bibata-cursor-theme-bin \
         lazydocker-bin
     paru -S --noconfirm --needed informant
 }
