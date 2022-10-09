@@ -52,4 +52,9 @@ fcitx5 &
 xss-lock --transfer-sleep-lock -- i3lock --nofork &
 picom -b &
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/75.png &
+discord &
+slack &
+google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+google-chrome-stable &
+alacritty -e htop &
 exec i3
