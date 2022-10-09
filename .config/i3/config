@@ -68,7 +68,8 @@ bindsym Mod4+e exec --no-startup-id alacritty -e ranger
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -204,6 +205,7 @@ for_window [class="Nvidia-settings"] floating enable
 for_window [class="Kvantum Manager"] floating enable
 for_window [class="qt5ct"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="vlc"] floating enable
 for_window [title="Spotify"] floating enable
 for_window [title="LINE"] floating enable
 

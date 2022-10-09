@@ -109,9 +109,9 @@ if type lazydocker > /dev/null; then
 fi
 
 alias e="exit"
+alias :q="exit"
 alias c="clear"
 alias sudo="sudo "
-alias mkcd='(){ mkdir -p $1 && cd $1 }'
 alias rm="rm -rf"
 alias repos="ghq list -p | fzf"
 alias repo='cd $(repos)'
@@ -130,6 +130,10 @@ alias gl="git log --oneline --graph"
 alias gr="git reset"
 alias gp="git push"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+
+mkcd() {
+    mkdir -p ${1} && cd ${1}
+}
 
 ### Added by Zinit's installer
 if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
