@@ -210,7 +210,7 @@ for_window [class="discord"] move container to workspace 2
 for_window [class="Slack"] move container to workspace 2
 for_window [title="TweetDeck"] move container to workspace 3
 
-gaps inner 50
+gaps inner 25
 # gaps outer 50
 
 # Start i3bar to display a workspace bar (plus the system information i3status
