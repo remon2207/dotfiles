@@ -203,6 +203,7 @@ for_window [class="fcitx5-config-qt"] floating enable
 for_window [class="Nvidia-settings"] floating enable
 for_window [class="Kvantum Manager"] floating enable
 for_window [class="qt5ct"] floating enable
+for_window [class="Lxappearance"] floating enable
 for_window [title="Spotify"] floating enable
 for_window [title="LINE"] floating enable
 
