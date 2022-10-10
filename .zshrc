@@ -59,8 +59,6 @@ GIT_PS1_SHOWUPSTREAM=auto
 # %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 # %# '
 
-# aliases
-
 # keybind
 # bindkey -e
 bindkey -v
@@ -108,13 +106,16 @@ if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
 
+if type fzf > /dev/null; then
+    alias repos="ghq list -p | fzf"
+    alias repo='cd $(repos)'
+fi
+
 alias e="exit"
 alias :q="exit"
 alias c="clear"
 alias sudo="sudo "
 alias rm="rm -rf"
-alias repos="ghq list -p | fzf"
-alias repo='cd $(repos)'
 alias dexec="docker compose exec"
 alias drun="docker compose run --rm"
 alias ddown="docker compose down"
@@ -122,13 +123,8 @@ alias dup="docker compose up -d"
 alias dlogs="docker compose logs -f"
 alias dps="docker compose ps -a"
 alias dbuild="docker compose build"
-alias ga="git add"
-alias gs="git status"
-alias gd="git diff"
-alias gc="git commit"
-alias gl="git log --oneline --graph"
-alias gr="git reset"
-alias gp="git push"
+alias g="git"
+alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 
 mkcd() {

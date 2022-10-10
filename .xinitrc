@@ -52,6 +52,9 @@ xautolock -time 60 -locker "systemctl suspend" &
 fcitx5 &
 picom -b &
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/75.png &
+polybar dp &
+polybar dvi &
+polybar hdmi &
 discord &
 slack &
 google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
