@@ -34,7 +34,6 @@ aur_install() {
         nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
-        bibata-cursor-theme-bin \
         lazydocker-bin
 }
 
