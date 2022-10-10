@@ -37,10 +37,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 
-# keybind
-# bindkey -e
-bindkey -v
-
 # PROMPT='%B%F{blue}%~%f%b'
 
 # git-promptの読み込み
