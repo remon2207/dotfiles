@@ -124,7 +124,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -197,7 +197,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 for_window [class="Pavucontrol"] floating enable
 for_window [class="fcitx5-config-qt"] floating enable
