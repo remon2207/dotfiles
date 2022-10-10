@@ -31,7 +31,6 @@ aur_install() {
         slack-desktop \
         downgrade \
         ttf-hackgen \
-        virtualbox-ext-oracle \
         nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
