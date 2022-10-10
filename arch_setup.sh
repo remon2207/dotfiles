@@ -37,7 +37,6 @@ aur_install() {
         libva-vdpau-driver-chromium \
         bibata-cursor-theme-bin \
         lazydocker-bin
-    paru -S --noconfirm --needed informant
 }
 
 
