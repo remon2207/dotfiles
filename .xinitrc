@@ -51,7 +51,7 @@ fi
 xautolock -time 60 -locker "systemctl suspend" &
 fcitx5 &
 picom -b &
-feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
+feh --bg-scale ${HOME}/Pictures/wallpaper_linux/75.png &
 polybar dp &
 polybar dvi &
 polybar hdmi &
