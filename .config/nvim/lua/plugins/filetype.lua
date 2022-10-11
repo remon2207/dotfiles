@@ -4,8 +4,8 @@ if not status then
 end
 
 filetype.setup({
-	-- overrides = {
-	-- 	extensions = {
+	overrides = {
+		extensions = {
 	-- 		js = "javascript",
 	-- 		jsx = "javascriptreact",
 	-- 		ts = "typescript",
@@ -13,12 +13,13 @@ filetype.setup({
 	-- 		lua = "lua",
 	-- 		vim = "vim",
 	-- 		snippets = "snippets",
-	-- 	},
+            service = "systemd"
+		},
 	-- 	complex = {
 	-- 		["*.json"] = "json",
 	-- 		["tsconfig.json"] = "jsonc",
 	-- 		["jsconfig.json"] = "jsonc",
 	-- 		["**/i3/config"] = "i3config",
 	-- 	},
-	-- },
+	},
 })
