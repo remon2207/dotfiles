@@ -4,6 +4,7 @@ if not status then
 	    pattern = { "plugin.lua" },
 	    command = "source <afile> | PackerCompile",
         })
+        require("plugin")
 	return
 end
 
