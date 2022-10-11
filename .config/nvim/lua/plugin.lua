@@ -1,18 +1,34 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap =
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+local status, packer = pcall(require, "packer")
+if not status then
+	local fn = vim.fn
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		packer_bootstrap =
+			fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+	end
+
+	vim.cmd([[packadd packer.nvim]])
+	return
 end
 
-vim.cmd([[packadd packer.nvim]])
-
-require("packer").startup(function(use)
+packer.startup(function(use)
 	use("wbthomason/packer.nvim")
+	-- 起動高速化
+	use({
+		"lewis6991/impatient.nvim",
+	})
+	use({
+		"nathom/filetype.nvim",
+		config = function()
+			require("plugins.filetype")
+		end,
+	})
 
 	-- ステータスラインを強化
 	use({
 		"nvim-lualine/lualine.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.lualine")
 		end,
@@ -24,6 +40,8 @@ require("packer").startup(function(use)
 	-- バッファステータス
 	use({
 		"akinsho/bufferline.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		branch = "main",
 		config = function()
 			require("plugins.bufferline")
@@ -36,44 +54,66 @@ require("packer").startup(function(use)
 	-- インデントの可視化
 	use({
 		"lukas-reineke/indent-blankline.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.indent-blankline")
 		end,
 	})
 
 	-- カラースキーム
-	use("joshdick/onedark.vim")
+	-- use("joshdick/onedark.vim")
+	-- use({
+	-- 	"lifepillar/vim-solarized8",
+	-- 	config = function()
+	-- 		require("plugins.vim-solarized8")
+	-- 	end,
+	-- })
 	use({
-		"lifepillar/vim-solarized8",
+		"svrana/neosolarized.nvim",
 		config = function()
-			require("plugins.vim-solarized8")
+			require("plugins.neosolarized")
 		end,
+		requires = {
+			"tjdevries/colorbuddy.nvim",
+            opt = true,
+            event = { "VimEnter" },
+			config = function()
+				require("plugins.colorbuddy")
+			end,
+		},
 	})
-	use("cocopon/iceberg.vim")
-	use({
-		"morhetz/gruvbox",
-		config = function()
-			require("plugins.gruvbox")
-		end,
-	})
-	use({
-		"dracula/vim",
-		as = "dracula",
-	})
-	use("arcticicestudio/nord-vim")
-	use("EdenEast/nightfox.nvim")
-	use("sainnhe/gruvbox-material")
-	use("projekt0n/github-nvim-theme")
+	-- use("cocopon/iceberg.vim")
+	-- use({
+	-- 	"morhetz/gruvbox",
+	-- 	config = function()
+	-- 		require("plugins.gruvbox")
+	-- 	end,
+	-- })
+	-- use({
+	-- 	"dracula/vim",
+	-- 	as = "dracula",
+	-- })
+	-- use("arcticicestudio/nord-vim")
+	-- use("EdenEast/nightfox.nvim")
+	-- use("sainnhe/gruvbox-material")
+	-- use("projekt0n/github-nvim-theme")
 
 	-- 'ヘルプの日本語化
 	use("vim-jp/vimdoc-ja")
 
 	-- '選択範囲をGoogle翻訳
-	use("skanehira/translate.vim")
+	use({
+		"skanehira/translate.vim",
+		opt = true,
+		cmd = "Translate",
+	})
 
 	-- 'ノーマルモードでコメントアウト
 	use({
 		"numToStr/Comment.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.Comment")
 		end,
@@ -82,6 +122,8 @@ require("packer").startup(function(use)
 	-- シンタックスハイライト
 	use({
 		"nvim-treesitter/nvim-treesitter",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		run = ":TSUpdate",
 		config = function()
 			require("plugins.nvim-treesitter")
@@ -91,6 +133,7 @@ require("packer").startup(function(use)
 	-- hex codeを視覚的にに表示
 	use({
 		"norcalli/nvim-colorizer.lua",
+		ft = { "css", "javascriptreact", "typescriptreact" },
 		config = function()
 			require("plugins.nvim-colorizer")
 		end,
@@ -105,13 +148,19 @@ require("packer").startup(function(use)
 	-- }
 	use({
 		"L3MON4D3/LuaSnip",
+		opt = true,
+		event = { "InsertEnter" },
 		config = function()
 			require("plugins.LuaSnip")
 		end,
 	})
 
 	-- 引用符
-	use("tpope/vim-surround")
+	use({
+		"tpope/vim-surround",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
+	})
 
 	-- ファイル検索
 	use({
@@ -135,6 +184,8 @@ require("packer").startup(function(use)
 	-- ジャンプ
 	use({
 		"phaazon/hop.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.hop")
 		end,
@@ -143,6 +194,8 @@ require("packer").startup(function(use)
 	-- ブラケット自動補完
 	use({
 		"windwp/nvim-autopairs",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.nvim-autopairs")
 		end,
@@ -222,8 +275,6 @@ require("packer").startup(function(use)
 		branch = "main",
 		-- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
 		-- branch = 'version_2.2',
-		opt = true,
-		event = { "BufNewFile", "BufRead" },
 		config = function()
 			require("plugins.lspsaga")
 		end,
@@ -242,6 +293,8 @@ require("packer").startup(function(use)
 	-- }
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.null-ls")
 		end,
@@ -249,6 +302,8 @@ require("packer").startup(function(use)
 
 	use({
 		"windwp/nvim-ts-autotag",
+        opt = true,
+        event = { "InsertEnter" }
 		-- config = function() require('plugins/nvim-ts-autotag') end
 	})
 	-- use {
@@ -259,6 +314,8 @@ require("packer").startup(function(use)
 	-- フローティングターミナル
 	use({
 		"akinsho/toggleterm.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.toggleterm")
 		end,
@@ -267,20 +324,28 @@ require("packer").startup(function(use)
 	-- git
 	use({
 		"lewis6991/gitsigns.nvim",
+		opt = true,
+		event = { "BufRead", "BufNewFile" },
 		config = function()
 			require("plugins.gitsigns")
 		end,
 	})
 
-    -- markdown
+	-- markdown
 	use({
 		"iamcco/markdown-preview.nvim",
+		ft = { "markdown" },
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	use({
+		"simeji/winresizer",
+		opt = true,
+		cmd = { "WinResizerStartResize" },
+	})
 
 	if packer_bootstrap then
-		require("packer").sync()
+		packer.sync()
 	end
 end)

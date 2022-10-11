@@ -1,12 +1,16 @@
-require('indent_blankline').setup {}
+local status, indent = pcall(require, "indent_blankline")
+if not status then
+	return
+end
 
--- vim.cmd[[highlight IndentBlanklineIndent1 guifg=#595959 gui=nocombine]]
--- vim.cmd[[highlight IndentBlanklineSpaceCharBlankline guifg=#00FF00 gui=nocombine]]
+indent.setup()
 
--- require('indent_blankline').setup {
---     char_highlight_list = {
---         'IndentBlanklineIndent1',
---     },
--- }
+vim.cmd([[highlight IndentBlanklineIndent1 guifg=#586e75 gui=nocombine]])
 
-vim.g.indent_blankline_char_blankline = ''
+require("indent_blankline").setup({
+	char_highlight_list = {
+		"IndentBlanklineIndent1",
+	},
+})
+
+vim.g.indent_blankline_char_blankline = ""

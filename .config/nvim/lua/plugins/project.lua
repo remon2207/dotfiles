@@ -1,4 +1,9 @@
-require('project_nvim').setup {
-    manual_mode = true,
-    silent_chdir = false,
-}
+local status, project = pcall(require, "project_nvim")
+if not status then
+	return
+end
+
+project.setup({
+	manual_mode = true,
+	silent_chdir = false,
+})

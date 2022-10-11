@@ -1,7 +1,11 @@
-require('lualine').setup {
-    -- options = {
-        -- icons_enabled = true,
-        -- section_separators = { left = nil, right = nil}
-        -- section_separators = { left = '', right = ' '},
-    -- }
-}
+local status, lualine = pcall(require, "lualine")
+if not status then
+	return
+end
+
+lualine.setup({
+	options = {
+		icons_enabled = true,
+		section_separators = { left = "", right = " " },
+	},
+})

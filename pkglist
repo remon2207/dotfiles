@@ -1,3 +1,5 @@
+adobe-source-han-sans-jp-fonts
+adobe-source-han-serif-jp-fonts
 alacritty
 arc-gtk-theme
 archlinux-keyring
@@ -11,6 +13,7 @@ bluez
 bluez-utils
 cifs-utils
 curl
+debugedit
 discord
 docker
 docker-compose
@@ -45,7 +48,6 @@ gzip
 htop
 i3-gaps
 i3lock
-i3status
 intel-ucode
 kvantum
 libtool
@@ -76,6 +78,7 @@ picom
 pipewire
 pipewire-pulse
 pkgconf
+polkit
 polybar
 profile-sync-daemon
 qt5ct
@@ -88,17 +91,11 @@ silicon
 starship
 stylua
 sudo
-terminus-font
 texinfo
-thunderbird
-thunderbird-i18n-en-us
-thunderbird-i18n-ja
 tig
 tmux
-ttf-droid
-ttf-fantasque-sans-mono
+ttf-sourcecodepro-nerd
 ufw
-unzip
 upower
 vdpauinfo
 vi
@@ -106,10 +103,10 @@ virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
 w3m
-wezterm
 wget
 which
 wireplumber
+xautolock
 xdg-user-dirs
 xf86-video-nouveau
 xf86-video-vesa
@@ -163,7 +160,4 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xsel
-xss-lock
-z
-zip
 zsh

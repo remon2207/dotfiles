@@ -1,3 +1,8 @@
-require('which-key').setup {}
+local status, key = pcall(require, "which-key")
+if not status then
+	return
+end
 
-vim.keymap.set('n', '<Leader>wk', '<Cmd>WhichKey<CR>', { noremap = true, silent = true })
+key.setup()
+
+vim.keymap.set("n", "<Leader>wk", "<Cmd>WhichKey<CR>", { noremap = true, silent = true })
