@@ -89,6 +89,7 @@ local servers = {
 	"vimls",
 	"prismals",
 	"graphql",
+	"bashls",
 }
 
 local mason_lspconfig = require("mason-lspconfig")
