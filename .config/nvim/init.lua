@@ -1,9 +1,5 @@
 local status, impatient = pcall(require, "impatient")
 if not status then
-        vim.api.nvim_create_autocmd("BufWritePost", {
-	    pattern = { "plugin.lua" },
-	    command = "source <afile> | PackerCompile",
-        })
         require("plugin")
 	return
 end
