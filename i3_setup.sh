@@ -30,7 +30,7 @@ cp ${current_dir}/.config/systemd/user/ssh-agent.service ${HOME}/.config/systemd
 sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/
 
 systemctl --user enable --now ssh-agent.service
-sudo systemctl enable auto-lock@${HOME}.service
+sudo systemctl enable auto-lock@${USER}.service
 
 echo "======================="
 echo "done!!!"
