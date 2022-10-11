@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
+echo "======================="
+echo "start!!!"
+echo "======================="
+
+git_email="${1}"
+git_name="${2}"
+de_wm="${3}"
+current_dir=$(cd $(dirname $0); pwd)
+
 if [ "${#}" -eq 0 ]; then
     exit 1
 elif [ "${1}" = "--help" ] || [ "${1}" = "-h" ]; then
     cat << EOF
 USAGE:
-    ${0} [-e GIT_EMAIL] [-n GIT_NAME]
+    ${0} [GIT_EMAIL] [GIT_NAME] [DE_OR_WM]
 
 OPTIONS:
         --help or -h
@@ -39,10 +48,6 @@ aur_install() {
         lazydocker-bin
 }
 
-
-git_email="${1}"
-git_name="${2}"
-
 git_settings() {
     git config --global user.email "${git_email}"
     git config --global user.name "${git_name}"
@@ -56,6 +61,12 @@ psd_settings() {
     systemctl --user enable --now psd.service
 }
 
+if_de_wm() {
+    if [ "${de_wm}" = "i3" ]; then
+        source ${current_dir}/i3_setup.sh
+    fi
+}
+
 paru_install
 # get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
 # if [ ${get_de} = "Xfce" ]; then
@@ -64,3 +75,8 @@ paru_install
 aur_install
 git_settings
 psd_settings
+if_de_wm
+
+echo "======================="
+echo "done!!!"
+echo "======================="
