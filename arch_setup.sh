@@ -31,6 +31,7 @@ aur_install() {
         slack-desktop \
         downgrade \
         ttf-hackgen \
+        ttf-cica \
         virtualbox-ext-oracle \
         nvm \
         notion-app-enhanced \
