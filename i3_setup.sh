@@ -20,8 +20,11 @@ repeat() {
 
 repeat
 
-cp ${current_dir}/.config/systemd/user/ssh-agent.service ~/.config/systemd/user/
-sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/auto-lock@${USER}.service
+cp ${current_dir}/.config/systemd/user/ssh-agent.service ${HOME}/.config/systemd/user/
+sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/
+
+systemctl --user enable --now ssh-agent.service
+sudo systemctl enable auto-lock@${HOME}.service
 
 echo "======================="
 echo "done!!!"
