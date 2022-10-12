@@ -279,6 +279,14 @@ packer.startup(function(use)
             require("plugins.lspsaga")
         end,
     })
+    use({
+        "onsails/lspkind.nvim",
+        -- opt = true,
+        -- event = { "BufRead", "BufNewFile" },
+        config = function()
+            require("plugins.lspkind")
+        end,
+    })
 
     -- フォーマッター
     -- use {

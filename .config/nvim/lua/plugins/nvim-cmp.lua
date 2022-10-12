@@ -3,6 +3,8 @@ if not status then
     return
 end
 
+local lspkind = require("lspkind")
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -37,6 +39,16 @@ cmp.setup({
             },
         },
     }),
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = "symbol",
+            maxwidth = 50,
+            ellipsis_char = "...",
+            -- before = function(entry, vim_item)
+            --     return vim_item
+            -- end,
+        }),
+    },
 })
 
 -- Set configuration for specific filetype.
