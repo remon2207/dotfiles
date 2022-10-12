@@ -6,7 +6,7 @@ echo "======================="
 
 current_dir=$(cd $(dirname $0); pwd)
 file_name=$(basename $0)
-home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc" ".zsh")
+home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc" ".zsh" "commit.template")
 conf_symbolic=("alacritty" "bat" "dunst" "fontconfig" "gtk-3.0" "htop" "i3" "neofetch" "nvim" "picom" "polybar" "ranger" "rofi" "silicon" "starship.toml")
 
 repeat() {
@@ -25,6 +25,8 @@ repeat() {
 }
 
 repeat
+
+git config --global commit.template ~/commit.template
 
 cp ${current_dir}/.config/systemd/user/ssh-agent.service ${HOME}/.config/systemd/user/
 sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/
