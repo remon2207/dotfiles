@@ -37,6 +37,7 @@ repeat
 services
 
 git config --global commit.template ${HOME}/commit.template
+chsh -s $(which zsh)
 
 
 echo "======================="
