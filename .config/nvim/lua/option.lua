@@ -60,7 +60,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.helplang = "ja,en"
 
 -- カーソルを中央にする
-opt.scrolloff = 999
+-- opt.scrolloff = 999
 
 -- 背景透過
 opt.winblend = 0
