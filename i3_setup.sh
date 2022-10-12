@@ -10,7 +10,7 @@ home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".
 conf_symbolic=("alacritty" "bat" "dunst" "fontconfig" "gtk-3.0" "htop" "i3" "neofetch" "nvim" "picom" "polybar" "ranger" "rofi" "silicon" "starship.toml")
 
 repeat() {
-    rm -rf ${HOME}/.xinitrc ${HOME}/.config/i3
+    rm -rf ${HOME}/.xinitrc ${HOME}/.config/i3 ${HOME}/.config/neofetch
 
     for home in ${home_symbolic[@]}; do
         ln -snfv ${current_dir}/${home} ${HOME}/
