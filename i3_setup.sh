@@ -25,15 +25,19 @@ repeat() {
     ln -s ${current_dir}/.local/share/applications/lazydocker.desktop ~/.local/share/applications/
 }
 
+services() {
+    cp ${current_dir}/.config/systemd/user/ssh-agent.service ${HOME}/.config/systemd/user/
+    sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/
+
+    systemctl --user enable --now ssh-agent.service
+    sudo systemctl enable auto-lock@${USER}.service
+}
+
 repeat
+services
 
-git config --global commit.template ~/commit.template
+git config --global commit.template ${HOME}/commit.template
 
-cp ${current_dir}/.config/systemd/user/ssh-agent.service ${HOME}/.config/systemd/user/
-sudo cp ${current_dir}/etc/systemd/system/auto-lock@.service /etc/systemd/system/
-
-systemctl --user enable --now ssh-agent.service
-sudo systemctl enable auto-lock@${USER}.service
 
 echo "======================="
 echo "done!!!"
