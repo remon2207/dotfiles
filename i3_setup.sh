@@ -6,7 +6,7 @@ echo "======================="
 
 current_dir=$(cd $(dirname $0); pwd)
 file_name=$(basename $0)
-home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc", ".zsh")
+home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc" ".zsh")
 conf_symbolic=("alacritty" "bat" "dunst" "fontconfig" "gtk-3.0" "htop" "i3" "neofetch" "nvim" "picom" "polybar" "ranger" "rofi" "silicon" "starship.toml")
 
 repeat() {
