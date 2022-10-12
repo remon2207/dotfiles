@@ -10,7 +10,7 @@ opt.fileformats = "unix,dos,mac"
 opt.clipboard = "unnamed,unnamedplus"
 -- タブ入力を複数の空白入力に置き換える
 opt.expandtab = true
--- 画面上でタブ文字が占める幅 opt.tabstop = 4
+-- 画面上でタブ文字が占める幅
 -- 改行時に前の行のインデントを継続する
 opt.autoindent = true
 opt.smartindent = true
@@ -59,6 +59,7 @@ opt.completeopt = "menu,menuone,noselect"
 -- ヘルプの言語の優先順位
 opt.helplang = "ja,en"
 
+-- カーソルを中央にする
 opt.scrolloff = 999
 
 -- 背景透過
@@ -67,7 +68,8 @@ opt.winblend = 0
 opt.wildoptions = "pum"
 opt.pumblend = 5
 
+-- サインカラムを常時表示
 opt.signcolumn = "yes"
 
 -- 行数を相対行にする
---opt.relativenumber = true
+opt.relativenumber = true
