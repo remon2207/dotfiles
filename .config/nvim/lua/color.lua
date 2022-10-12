@@ -1,7 +1,7 @@
 local api = vim.api
 
 api.nvim_create_augroup("color_config", {
-	clear = true,
+    clear = true,
 })
 
 -- vim-colarized8

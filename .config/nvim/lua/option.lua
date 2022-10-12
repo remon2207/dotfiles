@@ -67,5 +67,7 @@ opt.winblend = 0
 opt.wildoptions = "pum"
 opt.pumblend = 5
 
+opt.signcolumn = "yes"
+
 -- 行数を相対行にする
 --opt.relativenumber = true

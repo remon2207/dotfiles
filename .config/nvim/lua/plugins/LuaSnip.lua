@@ -1,6 +1,6 @@
 local status, ls = pcall(require, "luasnip")
 if not status then
-	return
+    return
 end
 
 local s = ls.snippet
@@ -23,49 +23,49 @@ local set = vim.keymap.set
 
 -- set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
 set(
-	"i",
-	"<Tab>",
-	'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"',
-	{ silent = true, expr = true, noremap = false }
+    "i",
+    "<Tab>",
+    'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"',
+    { silent = true, expr = true, noremap = false }
 )
 set("i", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })
 set("i", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', { noremap = true, silent = true })
 set("s", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })
 set("s", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', { noremap = true, silent = true })
 set(
-	"i",
-	"<C-E>",
-	'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)" : "<C-E>"',
-	{ silent = true, expr = true, noremap = false }
+    "i",
+    "<C-E>",
+    'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)" : "<C-E>"',
+    { silent = true, expr = true, noremap = false }
 )
 set(
-	"s",
-	"<C-E>",
-	'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)": "<C-E>"',
-	{ silent = true, expr = true, noremap = false }
+    "s",
+    "<C-E>",
+    'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)": "<C-E>"',
+    { silent = true, expr = true, noremap = false }
 )
 
 ls.add_snippets("typescript", {
-	s(
-		"try",
-		fmt(
-			[[
+    s(
+        "try",
+        fmt(
+            [[
         try {{
           {1}
         }} catch(e) {{
           {2}
         }}
     ]],
-			{
-				i(1),
-				i(2),
-			}
-		)
-	),
-	s(
-		"finally",
-		fmt(
-			[[
+            {
+                i(1),
+                i(2),
+            }
+        )
+    ),
+    s(
+        "finally",
+        fmt(
+            [[
         try {{
           {1}
         }} catch(e) {{
@@ -74,49 +74,60 @@ ls.add_snippets("typescript", {
           {3}
         }}
     ]],
-			{
-				i(1),
-				i(2),
-				i(3),
-			}
-		)
-	),
+            {
+                i(1),
+                i(2),
+                i(3),
+            }
+        )
+    ),
 })
 
 ls.add_snippets("all", {
-	s("!!!", {
-		t({
-			'<meta charSet="UTF-8" />',
-			'<meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
-			'<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
-			"<title>{title}</title>",
-		}),
-	}),
+    s("!!!", {
+        t({
+            '<meta charSet="UTF-8" />',
+            '<meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+            "<title>{title}</title>",
+        }),
+    }),
+    s(
+        "err",
+        fmt(
+            [[
+            console.error({1});
+            ]],
+            {
+                i(1),
+            }
+        )
+    ),
 })
 
 ls.add_snippets("typescriptreact", {
-	s("!", {
-		t({
-			"type Props = {",
-			"  title: string;",
-			"}",
-			"",
-			"export const Header: React.FC<Props> = ({ title }) => {",
-			"  return (",
-			"    <>",
-			'      <meta charSet="UTF-8" />',
-			'      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
-			'      <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
-			"      <title>{title}</title>",
-			"    </>",
-			"  );",
-			"};",
-		}),
-	}),
-	s(
-		"reactc",
-		fmt(
-			[[
+    s("!", {
+        t({
+            "type Props = {",
+            "  title: string;",
+            "}",
+            "",
+            "export const Header: React.FC<Props> = ({ title }) => {",
+            "  return (",
+            "    <>",
+            '      <meta charSet="UTF-8" />',
+            '      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
+            '      <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+            "      <title>{title}</title>",
+            "    </>",
+            "  );",
+            "};",
+        }),
+    }),
+    s(
+        "reactc",
+        fmt(
+            [[
         export const {1}: React.FC = () => {{
           return (
             <>
@@ -125,16 +136,16 @@ ls.add_snippets("typescriptreact", {
           );
         }};
     ]],
-			{
-				i(1),
-				i(2),
-			}
-		)
-	),
-	s(
-		"nextc",
-		fmt(
-			[[
+            {
+                i(1),
+                i(2),
+            }
+        )
+    ),
+    s(
+        "nextc",
+        fmt(
+            [[
         import type {{ NextPage }} from 'next';
 
         const {1}: NextPage = () => {{
@@ -147,19 +158,19 @@ ls.add_snippets("typescriptreact", {
 
         export default {2};
     ]],
-			{
-				i(1),
-				f(function(args)
-					return args[1]
-				end, ai[1]),
-				i(2),
-			}
-		)
-	),
-	s(
-		"nextc",
-		fmt(
-			[[
+            {
+                i(1),
+                f(function(args)
+                    return args[1]
+                end, ai[1]),
+                i(2),
+            }
+        )
+    ),
+    s(
+        "nextc",
+        fmt(
+            [[
         import fdsafdsfasdf afda fdtype {{ NextPage }} from 'next';
 
         const {1}: NextPage = () => {{
@@ -172,13 +183,13 @@ ls.add_snippets("typescriptreact", {
 
         export default {2};
     ]],
-			{
-				i(1),
-				f(function(args)
-					return args[1]
-				end, ai[1]),
-				i(2),
-			}
-		)
-	),
+            {
+                i(1),
+                f(function(args)
+                    return args[1]
+                end, ai[1]),
+                i(2),
+            }
+        )
+    ),
 })

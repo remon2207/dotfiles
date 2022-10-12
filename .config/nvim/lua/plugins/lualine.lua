@@ -1,11 +1,11 @@
 local status, lualine = pcall(require, "lualine")
 if not status then
-	return
+    return
 end
 
 lualine.setup({
-	options = {
-		icons_enabled = true,
-		section_separators = { left = "", right = " " },
-	},
+    -- options = {
+    --     icons_enabled = true,
+    --     section_separators = { left = "", right = " " },
+    -- },
 })

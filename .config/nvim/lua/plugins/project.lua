@@ -1,9 +1,9 @@
 local status, project = pcall(require, "project_nvim")
 if not status then
-	return
+    return
 end
 
 project.setup({
-	manual_mode = true,
-	silent_chdir = false,
+    manual_mode = true,
+    silent_chdir = false,
 })
