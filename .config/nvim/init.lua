@@ -4,7 +4,7 @@ if not status then
     return
 end
 
--- require("default_skip")
+require("default_skip")
 
 vim.g.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
