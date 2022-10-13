@@ -31,7 +31,7 @@ null_ls.setup({
         formatting.eslint_d.with({
             extra_args = { "--cache" },
         }),
-        formatting.prettier,
+        formatting.prettierd,
         formatting.stylua.with({
             extra_args = { "--indent-type", "Spaces" },
         }),
