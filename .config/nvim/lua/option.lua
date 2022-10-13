@@ -7,7 +7,7 @@ opt.fileencodings = { "utf-8", "cp932", "ucs-boms", "euc-jp" }
 -- 改行コードの自動判別. 左側が優先される
 opt.fileformats = { "unix", "dos", "mac" }
 -- レジスタ、クリップボードの共有
-opt.clipboard:append { "unnamed", "unnamedplus" }
+opt.clipboard:append({ "unnamed", "unnamedplus" })
 -- タブ入力を複数の空白入力に置き換える
 opt.expandtab = true
 -- 画面上でタブ文字が占める幅
@@ -63,13 +63,18 @@ opt.helplang = { "ja", "en" }
 -- opt.scrolloff = 999
 
 -- 背景透過
--- opt.winblend = 30
--- opt.wildmenu = true
+-- opt.winblend = 0
 -- opt.wildoptions = "pum"
 -- opt.pumblend = 10
 
 -- サインカラムを常時表示
 opt.signcolumn = "yes"
+
+opt.autoread = true
+
+vim.cmd([[set t_Co=256]])
+
+opt.list = true
 
 -- 行数を相対行にする
 -- opt.relativenumber = true

@@ -39,7 +39,7 @@ api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 -- api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
--- 	pattern = { "tsconfig.json", "jsconfig.json" },
--- 	group = "file",
--- 	command = "setlocal ft=jsonc",
+-- pattern = { "tsconfig.json", "jsconfig.json" },
+-- group = "file",
+-- command = "setlocal ft=jsonc",
 -- })

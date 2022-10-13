@@ -133,7 +133,7 @@ packer.startup(function(use)
         "kylechui/nvim-surround",
         config = function()
             require("plugins.nvim-surround")
-        end
+        end,
     })
 
     -- ファイル検索
@@ -315,16 +315,16 @@ packer.startup(function(use)
         "j-hui/fidget.nvim",
         config = function()
             require("plugins.fidget")
-        end
+        end,
     })
+    -- use({
+    --     "rcarriga/nvim-notify",
+    --     config = function()
+    --         require("plugins.nvim-notify")
+    --     end
+    -- })
     use({
-        "rcarriga/nvim-notify",
-        config = function()
-            require("plugins.nvim-notify")
-        end
-    })
-    use({
-        "famiu/bufdelete.nvim"
+        "famiu/bufdelete.nvim",
     })
 
     if packer_bootstrap then
