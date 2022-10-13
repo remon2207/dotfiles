@@ -58,10 +58,10 @@ psd_settings() {
 }
 
 paru_install
-get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
-if [ ${get_de} = "Xfce" ]; then
-    paru -S --noconfirm --needed gamin
-fi
+# get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
+# if [ ${get_de} = "Xfce" ]; then
+#     paru -S --noconfirm --needed gamin
+# fi
 aur_install
 git_settings
 psd_settings
