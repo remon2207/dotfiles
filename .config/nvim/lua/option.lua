@@ -75,6 +75,7 @@ opt.autoread = true
 vim.cmd([[set t_Co=256]])
 
 opt.list = true
+opt.listchars = "tab:> "
 
 opt.wildignore:append({ "*/node_modules/*" })
 
