@@ -3,6 +3,10 @@ local opt = vim.opt
 
 api.nvim_create_augroup("file", {})
 
+api.nvim_clear_autocmds({
+    pattern = "*",
+    group = "file"
+})
 -- 改行時の自動コメントアウトを無効化
 api.nvim_create_autocmd("FileType", {
     pattern = { "*" },
