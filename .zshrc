@@ -84,6 +84,9 @@ if [[ ${DISPLAY} = ":0" ]]; then
         alias repos="ghq list -p | fzf"
         alias repo='cd $(repos)'
     fi
+    if type tldr > /dev/null; then
+        alias man="tldr"
+    fi
 
     alias e="exit"
     alias :q="exit"
@@ -153,6 +156,10 @@ else
         alias repos="ghq list -p | fzf"
         alias repo='cd $(repos)'
     fi
+    if type tldr > /dev/null; then
+        alias man="tldr"
+    fi
+
     alias ls="ls --color always"
     alias ll="ls -alF"
     alias la="ls -A"
