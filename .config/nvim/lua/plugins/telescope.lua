@@ -49,6 +49,7 @@ vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers <CR>", { noremap = tru
 vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", { noremap = true, silent = true })
 
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("notify")
 
 local ex_fb = require("telescope").extensions.file_browser
 

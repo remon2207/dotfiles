@@ -60,4 +60,5 @@ slack &
 google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
 google-chrome-stable &
 alacritty -e htop &
+# xset r rate 195 62 &
 exec i3

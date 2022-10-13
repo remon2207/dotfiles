@@ -3,11 +3,11 @@ local opt = vim.opt
 -- 保存時の文字コード
 opt.fileencoding = "utf-8"
 -- 読み込み時の文字コードの自動判別. 左側が優先される
-opt.fileencodings = "utf-8,cp932,ucs-boms,euc-jp,"
+opt.fileencodings = { "utf-8", "cp932", "ucs-boms", "euc-jp" }
 -- 改行コードの自動判別. 左側が優先される
-opt.fileformats = "unix,dos,mac"
+opt.fileformats = { "unix", "dos", "mac" }
 -- レジスタ、クリップボードの共有
-opt.clipboard = "unnamed,unnamedplus"
+opt.clipboard:append { "unnamed", "unnamedplus" }
 -- タブ入力を複数の空白入力に置き換える
 opt.expandtab = true
 -- 画面上でタブ文字が占める幅
@@ -35,11 +35,11 @@ opt.number = true
 opt.cursorline = true
 -- opt.cursorcolumn = true
 -- バックスペースキーの有効化
-opt.backspace = "indent,eol,start"
+opt.backspace = { "indent", "eol", "start" }
 -- コマンドモードの補完
 opt.wildmenu = true
 -- ステータスラインを常に表示
-opt.laststatus = 2
+opt.laststatus = 1
 -- 現在のモードを表示
 opt.showmode = false
 -- 打ったコマンドをステータスラインの下に表示
@@ -54,22 +54,26 @@ opt.swapfile = false
 opt.background = "dark"
 opt.termguicolors = true
 
-opt.completeopt = "menu,menuone,noselect"
+opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- ヘルプの言語の優先順位
-opt.helplang = "ja,en"
+opt.helplang = { "ja", "en" }
 
 -- カーソルを中央にする
 -- opt.scrolloff = 999
 
 -- 背景透過
-opt.winblend = 0
+-- opt.winblend = 30
 -- opt.wildmenu = true
-opt.wildoptions = "pum"
-opt.pumblend = 5
+-- opt.wildoptions = "pum"
+-- opt.pumblend = 10
 
 -- サインカラムを常時表示
 opt.signcolumn = "yes"
 
 -- 行数を相対行にする
-opt.relativenumber = true
+-- opt.relativenumber = true
+
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])

@@ -8,7 +8,7 @@ export XMODIFIERS="@im=fcitx5"
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
---layout reverse --border --no-mouse \
+--height 40% --layout reverse --border --no-mouse \
 --color bg+:#073642,spinner:#2aa198,hl:#268bd2 \
 --color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"

@@ -63,7 +63,7 @@ local lsp_flags = {
 -- local servers = {
 --     'tsserver',
 --     'eslint',
---     'sumneko_lua',
+-- 'sumneko_lua',
 --     'dockerls',
 --     'yamlls',
 --     'sqls',
@@ -77,6 +77,7 @@ local lsp_flags = {
 -- }
 local servers = {
     "tsserver",
+    -- "sumneko_lua",
     "sumneko_lua",
     "dockerls",
     -- 'eslint',
@@ -89,7 +90,7 @@ local servers = {
     "vimls",
     "prismals",
     "graphql",
-    "bashls",
+    -- "bashls",
 }
 
 local mason_lspconfig = require("mason-lspconfig")

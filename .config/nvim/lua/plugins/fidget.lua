@@ -3,4 +3,8 @@ if not status then
     return
 end
 
-fidget.setup()
+fidget.setup({
+    window = {
+        blend = 0,
+    }
+})

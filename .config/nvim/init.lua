@@ -1,11 +1,3 @@
-local status, impatient = pcall(require, "impatient")
-if not status then
-    require("plugin")
-    return
-end
-
-require("default_skip")
-
 vim.g.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 

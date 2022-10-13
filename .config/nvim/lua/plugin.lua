@@ -13,22 +13,10 @@ end
 
 packer.startup(function(use)
     use("wbthomason/packer.nvim")
-    -- 起動高速化
-    use({
-        "lewis6991/impatient.nvim",
-    })
-    use({
-        "nathom/filetype.nvim",
-        config = function()
-            require("plugins.filetype")
-        end,
-    })
 
     -- ステータスラインを強化
     use({
         "nvim-lualine/lualine.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.lualine")
         end,
@@ -40,8 +28,6 @@ packer.startup(function(use)
     -- バッファステータス
     use({
         "akinsho/bufferline.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         branch = "main",
         config = function()
             require("plugins.bufferline")
@@ -54,8 +40,6 @@ packer.startup(function(use)
     -- インデントの可視化
     -- use({
     --     "lukas-reineke/indent-blankline.nvim",
-    --     opt = true,
-    --     event = { "BufRead", "BufNewFile" },
     --     config = function()
     --         require("plugins.indent-blankline")
     --     end,
@@ -76,10 +60,8 @@ packer.startup(function(use)
         end,
         requires = {
             "tjdevries/colorbuddy.nvim",
-            opt = true,
-            event = { "VimEnter" },
             config = function()
-                require("plugins.colorbuddy")
+                require("plugins.neosolarized")
             end,
         },
     })
@@ -103,17 +85,11 @@ packer.startup(function(use)
     use("vim-jp/vimdoc-ja")
 
     -- '選択範囲をGoogle翻訳
-    use({
-        "skanehira/translate.vim",
-        opt = true,
-        cmd = "Translate",
-    })
+    use("skanehira/translate.vim")
 
     -- 'ノーマルモードでコメントアウト
     use({
         "numToStr/Comment.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.Comment")
         end,
@@ -122,18 +98,18 @@ packer.startup(function(use)
     -- シンタックスハイライト
     use({
         "nvim-treesitter/nvim-treesitter",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         run = ":TSUpdate",
         config = function()
             require("plugins.nvim-treesitter")
         end,
     })
+    -- use({
+    --     "nvim-treesitter/nvim-treesitter-textobjects"
+    -- })
 
     -- hex codeを視覚的にに表示
     use({
         "norcalli/nvim-colorizer.lua",
-        ft = { "css", "javascriptreact", "typescriptreact" },
         config = function()
             require("plugins.nvim-colorizer")
         end,
@@ -142,24 +118,22 @@ packer.startup(function(use)
     -- スニペット
     -- use {
     --     'SirVer/ultisnips',
-    --     opt = true,
-    --     event = { 'InsertEnter' },
     --     config = function() require('plugins.ultisnips') end
     -- }
     use({
         "L3MON4D3/LuaSnip",
-        opt = true,
-        event = { "InsertEnter" },
         config = function()
             require("plugins.LuaSnip")
         end,
     })
 
     -- 引用符
+    -- use("tpope/vim-surround")
     use({
-        "tpope/vim-surround",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
+        "kylechui/nvim-surround",
+        config = function()
+            require("plugins.nvim-surround")
+        end
     })
 
     -- ファイル検索
@@ -177,15 +151,11 @@ packer.startup(function(use)
             },
         },
     })
-    use({
-        "nvim-telescope/telescope-file-browser.nvim",
-    })
+    use("nvim-telescope/telescope-file-browser.nvim")
 
     -- ジャンプ
     use({
         "phaazon/hop.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.hop")
         end,
@@ -194,19 +164,10 @@ packer.startup(function(use)
     -- ブラケット自動補完
     use({
         "windwp/nvim-autopairs",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.nvim-autopairs")
         end,
     })
-
-    -- ウィンドウリサイズ
-    -- use {
-    --     'simeji/winresized',
-    --     opt = true,
-    --     cmd = { 'WinResizerStartResize' }
-    -- }
 
     -- ファイラー
     -- use {
@@ -253,6 +214,7 @@ packer.startup(function(use)
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
     use("saadparwaiz1/cmp_luasnip")
+    use("petertriho/cmp-git")
     -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
     -- 関数の引数を入力しているときにシグネチャヘルプを表示
@@ -281,18 +243,21 @@ packer.startup(function(use)
     })
     use({
         "onsails/lspkind.nvim",
-        -- opt = true,
-        -- event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.lspkind")
         end,
     })
+    -- use({
+    --     "SmiteshP/nvim-navic",
+    --     config = function()
+    --         require("plugins.nvim-lspconfig")
+    --     end
+    -- })
 
     -- フォーマッター
     -- use {
     --     'prettier/vim-prettier',
     --     run = 'npm install --omit=dev',
-    --     ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html' },
     --     config = function() require('plugins.vim-prettier') end
     -- }
     -- use {
@@ -301,8 +266,6 @@ packer.startup(function(use)
     -- }
     use({
         "jose-elias-alvarez/null-ls.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.null-ls")
         end,
@@ -310,8 +273,6 @@ packer.startup(function(use)
 
     use({
         "windwp/nvim-ts-autotag",
-        opt = true,
-        event = { "InsertEnter" },
         -- config = function() require('plugins/nvim-ts-autotag') end
     })
     -- use {
@@ -322,8 +283,6 @@ packer.startup(function(use)
     -- フローティングターミナル
     use({
         "akinsho/toggleterm.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.toggleterm")
         end,
@@ -332,8 +291,6 @@ packer.startup(function(use)
     -- git
     use({
         "lewis6991/gitsigns.nvim",
-        opt = true,
-        event = { "BufRead", "BufNewFile" },
         config = function()
             require("plugins.gitsigns")
         end,
@@ -342,24 +299,32 @@ packer.startup(function(use)
     -- markdown
     use({
         "iamcco/markdown-preview.nvim",
-        ft = { "markdown" },
         run = function()
             vim.fn["mkdp#util#install"]()
         end,
     })
-    use({
-        "simeji/winresizer",
-        opt = true,
-        -- cmd = { "WinResizerStartResize" },
-        keys = { "<C-e>" },
-    })
+    use("simeji/winresizer")
+
     use({
         "folke/which-key.nvim",
-        opt = true,
-        keys = { "<Leader>wk" },
         config = function()
             require("plugins.which-key")
         end,
+    })
+    use({
+        "j-hui/fidget.nvim",
+        config = function()
+            require("plugins.fidget")
+        end
+    })
+    use({
+        "rcarriga/nvim-notify",
+        config = function()
+            require("plugins.nvim-notify")
+        end
+    })
+    use({
+        "famiu/bufdelete.nvim"
     })
 
     if packer_bootstrap then
