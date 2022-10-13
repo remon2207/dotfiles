@@ -5,7 +5,8 @@ end
 
 lualine.setup({
     -- options = {
-    --     icons_enabled = true,
-    --     section_separators = { left = "", right = " " },
+        -- theme = "neosolarized"
+    --     -- icons_enabled = true,
+    --     -- section_separators = { left = "", right = " " },
     -- },
 })

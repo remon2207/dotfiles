@@ -9,7 +9,7 @@ local fb_actions = require("telescope").extensions.file_browser.actions
 telescope.setup({
     defaults = {
         initial_mode = "normal",
-        file_ignore_patterns = { "/.git/" },
+        file_ignore_patterns = { "/.git/", "/node_modules/" },
         vimgrep_arguments = {
             "rg",
             "--color=auto",

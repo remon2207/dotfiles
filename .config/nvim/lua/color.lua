@@ -5,11 +5,11 @@ api.nvim_create_augroup("color_config", {
 })
 
 -- vim-colarized8
--- api.nvim_create_autocmd('ColorScheme', {
+-- api.nvim_create_autocmd('VimEnter', {
 --     pattern = '*',
 --     group = 'color_config',
 --     nested = true,
---     command = 'highlight StatusLine guifg=#0c404f',
+--     command = 'colorscheme solarized8'
 -- })
 
 -- vim.cmd([[colorscheme iceberg]])

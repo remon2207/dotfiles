@@ -1,23 +1,25 @@
 local api = vim.api
+local opt = vim.opt
+
+api.nvim_create_augroup("file", {})
 
 -- 改行時の自動コメントアウトを無効化
 api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    command = "set formatoptions-=ro",
+    pattern = { "*" },
+    group = "file",
+    callback = function()
+        opt.formatoptions:remove({ "r", "o" })
+    end,
 })
 
 -- 'IMEの自動無効化
 api.nvim_create_autocmd("InsertLeave", {
     pattern = "*",
     callback = function()
-        if os.execute("fcitx5 2> /dev/null") then
+        if os.execute("fcitx5 > /dev/null 2>&1") then
             api.nvim_exec('call system("fcitx5-remote -c")', true)
         end
     end,
-})
-
-api.nvim_create_augroup("file", {
-    clear = true,
 })
 
 api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
@@ -38,8 +40,13 @@ api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     command = "setlocal nosmartindent",
 })
 
--- api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
--- pattern = { "tsconfig.json", "jsconfig.json" },
--- group = "file",
--- command = "setlocal ft=jsonc",
+api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = { "tsconfig.json", "jsconfig.json" },
+    group = "file",
+    command = "setlocal ft=jsonc",
+})
+
+-- api.nvim_create_autocmd("InsertLeave", {
+--     pattern = { "*" },
+--     command = "set nopaste",
 -- })

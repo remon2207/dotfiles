@@ -7,6 +7,18 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+local lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        async = true,
+        filter = function(client)
+            return client.name == "null-ls"
+        end,
+        bufnr = bufnr,
+    })
+end
+
 null_ls.setup({
     sources = {
         diagnostics.eslint_d.with({
@@ -24,22 +36,19 @@ null_ls.setup({
             extra_args = { "--indent-type", "Spaces" },
         }),
     },
-    on_attach = function()
-        -- vim.api.nvim_create_autocmd("BufWritePre", {
-        --     buffer = 0,
-        --     callback = function()
-        --         vim.lsp.buf.format({ async = true })
-        --     end,
-        -- })
-        vim.api.nvim_set_keymap(
-            "n",
-            "<Leader>fa",
-            "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>",
-            { silent = true }
-        )
-        -- vim.api.nvim_create_autocmd('BufWritePre', {
-        --     pattern = {'*.js', '*.jsx', '*.mjs', '*.ts', '*.tsx', '*.css', '*.less', '*.scss', '*.json', '*.graphql', '*.md', '*.vue', '*.svelte', '*.yaml', '*.html'},
-        --     command = 'PrettierAsync'
-        -- })
+    on_attach = function(client, bufnr)
+        if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    lsp_formatting(bufnr)
+                end,
+            })
+            vim.keymap.set("n", "<Leader>fa", function()
+                lsp_formatting(bufnr)
+            end, { noremap = true, silent = true })
+        end
     end,
 })

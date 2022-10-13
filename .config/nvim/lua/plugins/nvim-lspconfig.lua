@@ -8,6 +8,16 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
+local prisma_lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        async = true,
+        filter = function(client)
+            return client.name == "prismals"
+        end,
+        bufnr = bufnr,
+    })
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -37,14 +47,15 @@ local on_attach = function(client, bufnr)
     -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
-    -- if client.name == "tsserver" then
-    --     client.server_capabilities.document_formatting = false
-    -- elseif client.name == "sumneko_lua" then
-    --     -- client.server_capabilities.document_formatting = false
-    --     client.server_capabilities.document_formatting = false
-    --     print(client.name)
-    -- end
+    if client.name == "tsserver" then
+        client.server_capabilities.documentFormattingProvider = false
+    elseif client.name == "sumneko_lua" then
+        client.server_capabilities.documentFormattingProvider = false
+    elseif client.name == "" then
+        vim.keymap.set("n", "<Leader>fa", function()
+            prisma_lsp_formatting(bufnr)
+        end, bufopts)
+    end
 
     -- api.nvim_create_autocmd('BufWritePre', {
     -- pattern = { '*.js', '*.jsx', '*.ts', '*.tsx' },

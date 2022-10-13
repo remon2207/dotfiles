@@ -1,6 +1,5 @@
-local status, notify = pcall(require, "notify")
-if not status then
-    return
-end
+vim.notify = require("notify")
 
-vim.notify("This is an error message", "error")
+vim.notify.setup({
+    background_colour = "#000000",
+})
