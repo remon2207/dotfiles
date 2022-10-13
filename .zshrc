@@ -88,6 +88,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
         alias man="tldr"
     fi
 
+    alias dc="cd"
     alias e="exit"
     alias :q="exit"
     alias c="clear"
@@ -160,6 +161,7 @@ else
         alias man="tldr"
     fi
 
+    alias dc="cd"
     alias ls="ls --color always"
     alias ll="ls -alF"
     alias la="ls -A"
