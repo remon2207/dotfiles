@@ -63,6 +63,9 @@ packer.startup({
                 "tjdevries/colorbuddy.nvim",
             },
         })
+        -- use({
+        --     "overcache/NeoSolarized"
+        -- })
         -- use("cocopon/iceberg.vim")
         -- use({
         -- 	"morhetz/gruvbox",
