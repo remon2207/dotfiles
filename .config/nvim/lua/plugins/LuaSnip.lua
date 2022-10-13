@@ -20,6 +20,7 @@ local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
 local set = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 -- set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
 set(
@@ -28,10 +29,11 @@ set(
     'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"',
     { silent = true, expr = true, noremap = false }
 )
-set("i", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })
-set("i", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', { noremap = true, silent = true })
-set("s", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', { noremap = true, silent = true })
-set("s", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', { noremap = true, silent = true })
+set("i", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
+set("i", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
+set("s", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
+set("s", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
+
 set(
     "i",
     "<C-E>",
@@ -97,6 +99,17 @@ ls.add_snippets("all", {
         fmt(
             [[
             console.error({1});
+            ]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s(
+        "log",
+        fmt(
+            [[
+            console.log({1});
             ]],
             {
                 i(1),
