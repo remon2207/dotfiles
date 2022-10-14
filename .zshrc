@@ -109,6 +109,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
     alias g="git"
     alias glog="git log --oneline --graph"
     alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+    alias vimconf="cd ${HOME}/.config/nvim/lua"
 
     mkcd() {
         mkdir -p ${1} && cd ${1}
@@ -189,6 +190,7 @@ else
     alias g="git"
     alias glog="git log --oneline --graph"
     alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+    alias vimconf="cd ${HOME}/.config/nvim/lua"
 
     mkcd() {
         mkdir -p ${1} && cd ${1}
