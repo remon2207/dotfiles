@@ -54,6 +54,10 @@ packer.startup({
         --         require("plugins.vim-solarized8")
         --     end,
         -- })
+        -- use({
+        --     "altercation/vim-colors-solarized",
+        --     config = function() require('plugins.vim-colors-solarized') end
+        -- })
         use({
             "svrana/neosolarized.nvim",
             config = function()
@@ -81,6 +85,9 @@ packer.startup({
         -- use("EdenEast/nightfox.nvim")
         -- use("sainnhe/gruvbox-material")
         -- use("projekt0n/github-nvim-theme")
+        -- use({
+        --     "shaunsingh/nord.nvim"
+        -- })
 
         -- 'ヘルプの日本語化
         use("vim-jp/vimdoc-ja")

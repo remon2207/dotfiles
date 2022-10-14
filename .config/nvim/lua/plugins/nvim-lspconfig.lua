@@ -34,8 +34,7 @@ local on_attach = function(client, bufnr)
     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set({ "n", "i" }, "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wl", function()
@@ -51,7 +50,7 @@ local on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     elseif client.name == "sumneko_lua" then
         client.server_capabilities.documentFormattingProvider = false
-    elseif client.name == "" then
+    elseif client.name == "prismals" then
         vim.keymap.set("n", "<Leader>fa", function()
             prisma_lsp_formatting(bufnr)
         end, bufopts)

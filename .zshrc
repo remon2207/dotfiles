@@ -87,6 +87,9 @@ if [[ ${DISPLAY} = ":0" ]]; then
     if type tldr > /dev/null; then
         alias man="tldr"
     fi
+    if type tmux > /dev/null; then
+        alias t="tmux"
+    fi
 
     alias dc="cd"
     alias e="exit"
@@ -159,6 +162,9 @@ else
     fi
     if type tldr > /dev/null; then
         alias man="tldr"
+    fi
+    if type tmux > /dev/null; then
+        alias t="tmux"
     fi
 
     alias dc="cd"

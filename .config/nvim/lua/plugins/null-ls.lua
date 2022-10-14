@@ -9,13 +9,22 @@ local formatting = null_ls.builtins.formatting
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local lsp_formatting = function(bufnr)
+-- local lsp_formatting = function(bufnr)
+--     vim.lsp.buf.format({
+--         async = true,
+--         filter = function(client)
+--             return client.name == "null-ls"
+--         end,
+--         bufnr = bufnr,
+--     })
+-- end
+
+local lsp_formatting = function()
     vim.lsp.buf.format({
         async = true,
         filter = function(client)
             return client.name == "null-ls"
-        end,
-        bufnr = bufnr,
+        end
     })
 end
 
@@ -36,7 +45,7 @@ null_ls.setup({
             extra_args = { "--indent-type", "Spaces" },
         }),
     },
-    on_attach = function(client, bufnr)
+    on_attach = function(client)
         if client.supports_method("textDocument/formatting") then
             -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             -- vim.api.nvim_create_autocmd("BufWritePre", {
@@ -47,7 +56,7 @@ null_ls.setup({
             --     end,
             -- })
             vim.keymap.set("n", "<Leader>fa", function()
-                lsp_formatting(bufnr)
+                lsp_formatting()
             end, { noremap = true, silent = true })
         end
     end,
