@@ -37,9 +37,7 @@ aur_install() {
         spotify \
         slack-desktop \
         downgrade \
-        ttf-hackgen \
         ttf-cica \
-        ttf-plemoljp \
         nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \
