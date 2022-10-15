@@ -92,8 +92,9 @@ packer.startup({
         -- 'ヘルプの日本語化
         use("vim-jp/vimdoc-ja")
 
-        -- '選択範囲をGoogle翻訳
-        use("skanehira/translate.vim")
+        -- DeepL翻訳
+        use("vim-denops/denops.vim")
+        use("skanehira/denops-translate.vim")
 
         -- 'ノーマルモードでコメントアウト
         use({
