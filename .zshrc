@@ -7,6 +7,8 @@ setopt extendedglob nomatch notify
 setopt print_eight_bit
 # cd [TAB] で以前移動したディレクトリを表示
 setopt auto_pushd
+# cdコマンドなしでディレクトリを移動
+setopt auto_cd
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 # 直前と同じコマンドの場合はヒストリに追加しない
