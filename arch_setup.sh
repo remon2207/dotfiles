@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-git_email="${1}"
-git_name="${2}"
-
 if [ "${#}" -eq 0 ]; then
     exit 1
 elif [ "${1}" = "--help" ] || [ "${1}" = "-h" ]; then
@@ -20,6 +17,9 @@ fi
 echo "======================="
 echo "start!!!"
 echo "======================="
+
+git_email="${1}"
+git_name="${2}"
 
 paru_install() {
     pkgname="paru-bin"
