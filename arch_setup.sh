@@ -38,6 +38,8 @@ aur_install() {
         slack-desktop \
         downgrade \
         ttf-hackgen \
+        ttf-cica \
+        ttf-plemoljp \
         nvm \
         notion-app-enhanced \
         libva-vdpau-driver-chromium \

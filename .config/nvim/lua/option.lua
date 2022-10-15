@@ -31,6 +31,8 @@ opt.smartcase = true
 opt.wrapscan = true
 -- 行数表示
 opt.number = true
+-- 相対行
+opt.relativenumber = true
 -- カーソルラインをハイライト
 opt.cursorline = true
 -- opt.cursorcolumn = true

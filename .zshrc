@@ -45,13 +45,13 @@ if [[ ${DISPLAY} = ":0" ]]; then
     # aliases
 
     if type lsd > /dev/null; then
-        alias ls="lsd --color always"
-        alias ll="lsd -alF --color always"
-        alias la="lsd -A --color always"
+        alias ls="lsd --color auto"
+        alias ll="lsd -alF --color auto"
+        alias la="lsd -A --color auto"
     else
-        alias ls="ls --color always"
-        alias ll="ls -alF --color always"
-        alias la="ls -A --color always"
+        alias ls="ls --color auto"
+        alias ll="ls -alF --color auto"
+        alias la="ls -A --color auto"
     fi
 
     if type nvim > /dev/null; then
@@ -59,9 +59,9 @@ if [[ ${DISPLAY} = ":0" ]]; then
     fi
 
     if type rg > /dev/null; then
-        alias grep="rg --color always"
+        alias grep="rg --color auto"
     else
-        alias grep="grep --color always"
+        alias grep="grep --color auto"
     fi
 
     if type bat > /dev/null; then
@@ -97,7 +97,6 @@ if [[ ${DISPLAY} = ":0" ]]; then
     alias c="clear"
     alias sudo="sudo "
     alias rm="rm -rf"
-    alias less="less -R"
     alias x="startx"
     alias dexec="docker compose exec"
     alias drun="docker compose run --rm"
@@ -169,16 +168,15 @@ else
     fi
 
     alias dc="cd"
-    alias ls="ls --color always"
+    alias ls="ls --color auto"
     alias ll="ls -alF"
     alias la="ls -A"
-    alias grep="grep --color always"
+    alias grep="grep --color auto"
     alias e="exit"
     alias :q="exit"
     alias c="clear"
     alias sudo="sudo "
     alias rm="rm -rf"
-    alias less="less -R"
     alias x="startx"
     alias dexec="docker compose exec"
     alias drun="docker compose run --rm"
