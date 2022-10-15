@@ -4,9 +4,7 @@ if not status then
 end
 
 lualine.setup({
-    -- options = {
-        -- theme = "neosolarized"
-    --     -- icons_enabled = true,
-    --     -- section_separators = { left = "", right = " " },
-    -- },
+    options = {
+        section_separators = { left = "", right = " " },
+    },
 })
