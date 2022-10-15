@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-echo "======================="
-echo "start!!!"
-echo "======================="
-
 git_email="${1}"
 git_name="${2}"
 
@@ -20,6 +16,10 @@ OPTIONS:
 EOF
     exit 0
 fi
+
+echo "======================="
+echo "start!!!"
+echo "======================="
 
 paru_install() {
     pkgname="paru-bin"
