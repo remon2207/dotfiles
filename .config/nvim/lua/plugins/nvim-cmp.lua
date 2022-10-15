@@ -3,7 +3,10 @@ if not status then
     return
 end
 
-local lspkind = require("lspkind")
+-- local ok, lspkind = pcall(require, "lspkind")
+-- if not ok then
+--     return
+-- end
 
 cmp.setup({
     snippet = {
@@ -39,16 +42,13 @@ cmp.setup({
             },
         },
     }),
-    formatting = {
-        format = lspkind.cmp_format({
-            mode = "symbol",
-            maxwidth = 50,
-            ellipsis_char = "...",
-            -- before = function(entry, vim_item)
-            --     return vim_item
-            -- end,
-        }),
-    },
+    -- formatting = {
+    --     format = lspkind.cmp_format({
+    --         mode = "symbol",
+    --         maxwidth = 50,
+    --         ellipsis_char = "...",
+    --     }),
+    -- },
 })
 
 -- Set configuration for specific filetype.

@@ -249,12 +249,12 @@ packer.startup({
                 require("plugins.lspsaga")
             end,
         })
-        use({
-            "onsails/lspkind.nvim",
-            config = function()
-                require("plugins.lspkind")
-            end,
-        })
+        -- use({
+        --     "onsails/lspkind.nvim",
+        --     config = function()
+        --         require("plugins.lspkind")
+        --     end,
+        -- })
         -- use({
         --     "SmiteshP/nvim-navic",
         --     config = function()
