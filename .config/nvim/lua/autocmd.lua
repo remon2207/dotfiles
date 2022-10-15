@@ -29,20 +29,20 @@ api.nvim_create_autocmd("InsertLeave", {
 api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.yml", "*.vim", "*.prisma", "*.graphql", "*.css" },
     group = "file",
-    command = "setlocal shiftwidth=2 softtabstop=0 tabstop=2",
+    command = "setlocal tabstop=2 shiftwidth=2",
 })
 
 api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "xml" },
     group = "file",
-    command = "setlocal shiftwidth=2 softtabstop=0 tabstop=2",
+    command = "setlocal tabstop=2 shiftwidth=2",
 })
 
-api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-    pattern = { "*.graphql", "*.prisma" },
-    group = "file",
-    command = "setlocal nosmartindent",
-})
+-- api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+--     pattern = { "*.graphql", "*.prisma" },
+--     group = "file",
+--     command = "setlocal nosmartindent",
+-- })
 
 api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "tsconfig.json", "jsconfig.json" },

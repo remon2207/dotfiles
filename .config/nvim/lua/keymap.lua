@@ -5,9 +5,6 @@ local opts = { noremap = true, silent = true }
 -- ESCキー2度押しでハイライトの有無の切り替え
 keymap.set("n", "<Esc><Esc>", "<Cmd>set nohlsearch!<CR>", opts)
 
-keymap.set("n", "j", "gj", opts)
-keymap.set("n", "k", "gk", opts)
-
 keymap.set("t", "<Esc>", "<C-|><C-n>", opts)
 keymap.set("n", "<C-t>", "<Cmd>terminal<CR>", opts)
 

@@ -12,10 +12,6 @@ t.setup({
     },
     indent = {
         enable = true,
-        disable = {
-            "typescript",
-            "graphql",
-        },
     },
     ensure_installed = {
         "javascript",

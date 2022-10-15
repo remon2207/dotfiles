@@ -20,15 +20,14 @@ opt.smarttab = true
 -- smartindentで増減する幅
 opt.tabstop = 4
 opt.shiftwidth = 4
-opt.softtabstop = 4
 -- インクリメンタルサーチ. １文字入力毎に検索を行う
-opt.incsearch = true
+-- opt.incsearch = true
 -- 検索パターンに大文字小文字を区別しない
 opt.ignorecase = true
 -- 検索パターンに大文字を含んでいたら大文字小文字を区別する
-opt.smartcase = true
+-- opt.smartcase = true
 -- 一番下の単語まで行ったら一番上に戻る
-opt.wrapscan = true
+-- opt.wrapscan = true
 -- 行数表示
 opt.number = true
 -- 相対行
@@ -39,7 +38,7 @@ opt.cursorline = true
 -- バックスペースキーの有効化
 opt.backspace = { "indent", "eol", "start" }
 -- コマンドモードの補完
-opt.wildmenu = true
+-- opt.wildmenu = true
 -- ステータスラインを常に表示
 opt.laststatus = 1
 -- 現在のモードを表示
@@ -49,7 +48,7 @@ opt.showcmd = true
 -- ステータスラインの右側にカーソルの現在位置を表示する
 opt.ruler = true
 -- タイトルバーにファイルパスを表示
-opt.title = true
+opt.title = false
 -- swap無効
 opt.swapfile = false
 
@@ -65,9 +64,9 @@ opt.helplang = { "ja", "en" }
 opt.scrolloff = 999
 
 -- 背景透過
--- opt.winblend = 0
--- opt.wildoptions = "pum"
--- opt.pumblend = 10
+opt.winblend = 0
+opt.wildoptions = "pum"
+opt.pumblend = 10
 
 -- サインカラムを常時表示
 opt.signcolumn = "yes"
