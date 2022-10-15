@@ -52,6 +52,8 @@ opt.title = false
 -- swap無効
 opt.swapfile = false
 
+opt.hlsearch = false
+
 opt.background = "dark"
 opt.termguicolors = true
 
