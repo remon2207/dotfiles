@@ -99,6 +99,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
     alias c="clear"
     alias sudo="sudo "
     alias rm="rm -rf"
+    alias killstartup="killall Discord slack"
     alias dexec="docker compose exec"
     alias drun="docker compose run --rm"
     alias ddown="docker compose down"
@@ -168,7 +169,6 @@ else
         alias t="tmux"
     fi
 
-    alias killstartup="killall Discord slack"
     alias dc="cd"
     alias ls="ls --color auto"
     alias ll="ls -alF"
