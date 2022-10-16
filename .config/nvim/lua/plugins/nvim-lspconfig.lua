@@ -8,11 +8,13 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
-local prisma_lsp_formatting = function(bufnr)
+local lsp_formatting = function(bufnr)
     vim.lsp.buf.format({
         async = true,
         filter = function(client)
-            return client.name == "prismals"
+            if client.name == "prismals" then
+                return client.name
+            end
         end,
         bufnr = bufnr,
     })
@@ -52,7 +54,7 @@ local on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     elseif client.name == "prismals" then
         vim.keymap.set("n", "<Leader>fa", function()
-            prisma_lsp_formatting(bufnr)
+            lsp_formatting(bufnr)
         end, bufopts)
     end
 
