@@ -4,7 +4,10 @@ echo "======================="
 echo "start!!!"
 echo "======================="
 
-current_dir=$(cd $(dirname $0); pwd)
+current_dir=$(
+    cd $(dirname $0)
+    pwd
+)
 file_name=$(basename $0)
 home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc" ".zsh" "commit.template")
 conf_symbolic=("alacritty" "bat" "dunst" "fontconfig" "gtk-3.0" "htop" "i3" "neofetch" "nvim" "picom" "polybar" "ranger" "rofi" "silicon" "starship.toml")
@@ -38,7 +41,6 @@ services
 
 git config --global commit.template ${HOME}/commit.template
 chsh -s $(which zsh)
-
 
 echo "======================="
 echo "done!!!"

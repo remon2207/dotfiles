@@ -19,10 +19,10 @@ sudo apt install -y \
 #curl -OL https://github.com${neovim_dlname}
 #yes | sudo gdebi nvim-linux64.deb
 
-ghq_dlname=$(curl -L https://github.com/x-motemen/ghq/releases/latest | \
-    grep -E "ghq_linux_amd64.zip" | \
-    awk -F 'a href="' '{print $2}' | \
-    awk -F '"' '{print $1}' | \
+ghq_dlname=$(curl -L https://github.com/x-motemen/ghq/releases/latest |
+    grep -E "ghq_linux_amd64.zip" |
+    awk -F 'a href="' '{print $2}' |
+    awk -F '"' '{print $1}' |
     head -n 1)
 
 curl -OL https://github.com${ghq_dlname}
@@ -47,8 +47,8 @@ sudo apt install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
