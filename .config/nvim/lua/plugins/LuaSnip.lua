@@ -206,3 +206,18 @@ ls.add_snippets("typescriptreact", {
         )
     ),
 })
+
+ls.add_snippets("javascript", {
+    s("prc", {
+        t({
+            "const config = {",
+            "  endOfLine: 'lf',",
+            "  trailingComma: 'none',",
+            "  singleQuote: true,",
+            "  semi: false",
+            "};",
+            "",
+            "module.exports = config;"
+        })
+    })
+})
