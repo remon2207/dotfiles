@@ -45,7 +45,7 @@ null_ls.setup({
             extra_args = { "--indent-type", "Spaces" },
         }),
         formatting.shfmt.with({
-            extra_args = { "-i", "4" }
+            extra_args = { "--indent", "4", "--space-redirects" }
         })
     },
     on_attach = function(client)

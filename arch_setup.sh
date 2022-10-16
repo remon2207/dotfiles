@@ -3,7 +3,7 @@
 if [ "${#}" -eq 0 ]; then
     exit 1
 elif [ "${1}" = "--help" ] || [ "${1}" = "-h" ]; then
-    cat <<EOF
+    cat << EOF
 USAGE:
     ${0} [GIT_EMAIL] [GIT_NAME]
 
