@@ -320,12 +320,12 @@ packer.startup({
                 require("plugins.which-key")
             end,
         })
-        use({
-            "j-hui/fidget.nvim",
-            config = function()
-                require("plugins.fidget")
-            end,
-        })
+        -- use({
+        --     "j-hui/fidget.nvim",
+        --     config = function()
+        --         require("plugins.fidget")
+        --     end,
+        -- })
         -- use({
         --     "rcarriga/nvim-notify",
         --     config = function()

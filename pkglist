@@ -12,6 +12,7 @@ bluez-utils
 cifs-utils
 curl
 debugedit
+deno
 discord
 docker
 docker-compose
@@ -54,6 +55,7 @@ linux-firmware
 linux-zen
 linux-zen-headers
 lsd
+lxappearance-gtk3
 m4
 make
 man-db
@@ -84,6 +86,7 @@ ranger
 reflector
 ripgrep
 rofi
+scrot
 sed
 silicon
 starship

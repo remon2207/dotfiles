@@ -39,6 +39,10 @@ font pango:monospace 10
 # exec --no-startup-id wezterm start htop
 # exec --no-startup-id ~/.config/polybar/launch.sh --forest
 
+bindsym --release Ctrl+Shift+Print exec --no-startup-id "scrot --quality 100 ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
+bindsym --release Shift+Print exec --no-startup-id "scrot --quality 100 -s ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
+bindsym --release Print exec --no-startup-id "scrot --quality 100 --focused ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
