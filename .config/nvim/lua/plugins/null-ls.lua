@@ -44,6 +44,9 @@ null_ls.setup({
         formatting.stylua.with({
             extra_args = { "--indent-type", "Spaces" },
         }),
+        formatting.shfmt.with({
+            extra_args = { "-i", "4" }
+        })
     },
     on_attach = function(client)
         if client.supports_method("textDocument/formatting") then
