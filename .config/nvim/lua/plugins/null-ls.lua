@@ -24,7 +24,7 @@ local lsp_formatting = function()
         async = true,
         filter = function(client)
             return client.name == "null-ls"
-        end
+        end,
     })
 end
 
@@ -32,7 +32,7 @@ null_ls.setup({
     sources = {
         diagnostics.eslint_d.with({
             diagnostics_format = "[#{c}] #{m} (#{s})",
-            extra_args = { "--cache" },
+            extra_args = { "--cache", "--ignore-pattern", "**/linter-config/.prettierrc.js" },
         }),
         code_actions.eslint_d.with({
             extra_args = { "--cache" },
@@ -40,13 +40,17 @@ null_ls.setup({
         formatting.eslint_d.with({
             extra_args = { "--cache" },
         }),
-        formatting.prettierd,
+        formatting.prettierd.with({
+            env = {
+                PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/utils/linter-config/.prettierrc.js")
+            }
+        }),
         formatting.stylua.with({
             extra_args = { "--indent-type", "Spaces" },
         }),
         formatting.shfmt.with({
-            extra_args = { "--indent", "4", "--space-redirects" }
-        })
+            extra_args = { "--indent", "4", "--space-redirects" },
+        }),
     },
     on_attach = function(client)
         if client.supports_method("textDocument/formatting") then
