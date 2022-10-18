@@ -97,7 +97,7 @@ local servers = {
     "sqlls",
     "sqls",
     "tailwindcss",
-    -- 'cssls',
+    'cssls',
     -- 'stylelint_lsp',
     "vimls",
     "prismals",

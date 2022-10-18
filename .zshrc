@@ -93,6 +93,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
         alias t="tmux"
     fi
 
+    alias j="jobs"
     alias dc="cd"
     alias e="exit"
     alias :q="exit"
@@ -169,6 +170,7 @@ else
         alias t="tmux"
     fi
 
+    alias j="jobs"
     alias dc="cd"
     alias ls="ls --color auto"
     alias ll="ls -alF"
