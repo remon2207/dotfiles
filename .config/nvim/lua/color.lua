@@ -20,3 +20,4 @@
 -- vim.cmd([[colorscheme nord]])
 -- vim.cmd([[colorscheme nightfox]])
 -- vim.cmd([[colorscheme nordfox]])
+-- vim.cmd([[colorscheme onedark]])

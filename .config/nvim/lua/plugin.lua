@@ -107,6 +107,7 @@ packer.startup({
         -- シンタックスハイライト
         use({
             "nvim-treesitter/nvim-treesitter",
+            commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
             run = ":TSUpdate",
             config = function()
                 require("plugins.nvim-treesitter")
@@ -231,6 +232,19 @@ packer.startup({
             "ray-x/lsp_signature.nvim",
             config = function()
                 require("plugins.lsp_signature")
+            end,
+        })
+        -- DAP
+        use({
+            "mfussenegger/nvim-dap",
+            config = function()
+                require("plugins.nvim-dap")
+            end,
+        })
+        use({
+            "rcarriga/nvim-dap-ui",
+            config = function()
+                require("plugins.nvim-dap-ui")
             end,
         })
 
