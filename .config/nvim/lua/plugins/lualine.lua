@@ -4,7 +4,7 @@ if not status then
 end
 
 lualine.setup({
-    options = {
-        section_separators = { left = "", right = " " },
-    },
+    -- options = {
+    --     section_separators = { left = "", right = " " },
+    -- },
 })
