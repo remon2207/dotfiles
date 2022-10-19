@@ -255,15 +255,15 @@ packer.startup({
                 require("plugins.lsp-colors")
             end,
         })
-        use({
-            "glepnir/lspsaga.nvim",
-            branch = "main",
-            -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
-            -- branch = 'version_2.2',
-            config = function()
-                require("plugins.lspsaga")
-            end,
-        })
+        -- use({
+        --     "glepnir/lspsaga.nvim",
+        --     branch = "main",
+        --     -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
+        --     -- branch = 'version_2.2',
+        --     config = function()
+        --         require("plugins.lspsaga")
+        --     end,
+        -- })
         use({
             "onsails/lspkind.nvim",
             config = function()
@@ -334,12 +334,12 @@ packer.startup({
                 require("plugins.which-key")
             end,
         })
-        -- use({
-        --     "j-hui/fidget.nvim",
-        --     config = function()
-        --         require("plugins.fidget")
-        --     end,
-        -- })
+        use({
+            "j-hui/fidget.nvim",
+            config = function()
+                require("plugins.fidget")
+            end,
+        })
         -- use({
         --     "rcarriga/nvim-notify",
         --     config = function()
@@ -351,6 +351,7 @@ packer.startup({
         })
         -- emmet for HTML
         use("mattn/emmet-vim")
+        -- styled-components
 
         if packer_bootstrap then
             packer.sync()

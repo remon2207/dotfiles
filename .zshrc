@@ -60,58 +60,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
         alias vim="nvim"
     fi
 
-    if type rg > /dev/null; then
-        alias grep="rg --color auto"
-    else
-        alias grep="grep --color auto"
-    fi
-
-    if type bat > /dev/null; then
-        alias cat="bat"
-    fi
-
-    if type fd > /dev/null; then
-        alias find="fd"
-    fi
-
-    if type ranger > /dev/null; then
-        alias r="ranger"
-    fi
-
-    if type lazydocker > /dev/null; then
-        alias lzd="lazydocker"
-    fi
-
-    if type fzf > /dev/null; then
-        alias repos="ghq list -p | fzf"
-        alias repo='cd $(repos)'
-    fi
-    if type tldr > /dev/null; then
-        alias man="tldr"
-    fi
-    if type tmux > /dev/null; then
-        alias t="tmux"
-    fi
-
-    alias j="jobs"
-    alias dc="cd"
-    alias e="exit"
-    alias :q="exit"
-    alias c="clear"
-    alias sudo="sudo "
-    alias rm="rm -rf"
     alias killstartup="killall Discord slack"
-    alias dexec="docker compose exec"
-    alias drun="docker compose run --rm"
-    alias ddown="docker compose down"
-    alias dup="docker compose up -d"
-    alias dlogs="docker compose logs -f"
-    alias dps="docker compose ps -a"
-    alias dbuild="docker compose build"
-    alias g="git"
-    alias glog="git log --oneline --graph"
-    alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-    alias vimconf="cd ${HOME}/.config/nvim/lua"
 
     mkcd() {
         mkdir -p ${1} && cd ${1}
@@ -153,46 +102,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
 
     eval "$(starship init zsh)"
 else
-    if type fd > /dev/null; then
-        alias find="fd"
-    fi
-    if type lazydocker > /dev/null; then
-        alias lzd="lazydocker"
-    fi
-    if type fzf > /dev/null; then
-        alias repos="ghq list -p | fzf"
-        alias repo='cd $(repos)'
-    fi
-    if type tldr > /dev/null; then
-        alias man="tldr"
-    fi
-    if type tmux > /dev/null; then
-        alias t="tmux"
-    fi
-
-    alias j="jobs"
-    alias dc="cd"
-    alias ls="ls --color auto"
-    alias ll="ls -alF"
-    alias la="ls -A"
-    alias grep="grep --color auto"
-    alias e="exit"
-    alias :q="exit"
-    alias c="clear"
-    alias sudo="sudo "
-    alias rm="rm -rf"
     alias x="startx"
-    alias dexec="docker compose exec"
-    alias drun="docker compose run --rm"
-    alias ddown="docker compose down"
-    alias dup="docker compose up -d"
-    alias dlogs="docker compose logs -f"
-    alias dps="docker compose ps -a"
-    alias dbuild="docker compose build"
-    alias g="git"
-    alias glog="git log --oneline --graph"
-    alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-    alias vimconf="cd ${HOME}/.config/nvim/lua"
 
     mkcd() {
         mkdir -p ${1} && cd ${1}
@@ -236,3 +146,75 @@ else
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
 fi
+
+# common aliases
+if type fd > /dev/null; then
+    alias find="fd"
+fi
+if type lazydocker > /dev/null; then
+    alias lzd="lazydocker"
+fi
+if type fzf > /dev/null; then
+    alias repos="ghq list -p | fzf"
+    alias repo='cd $(repos)'
+fi
+if type tldr > /dev/null; then
+    alias man="tldr"
+fi
+if type tmux > /dev/null; then
+    alias t="tmux"
+fi
+if type rg > /dev/null; then
+    alias grep="rg --color auto"
+else
+    alias grep="grep --color auto"
+fi
+if type bat > /dev/null; then
+    alias cat="bat"
+fi
+
+if type fd > /dev/null; then
+    alias find="fd"
+fi
+
+if type ranger > /dev/null; then
+    alias r="ranger"
+fi
+
+if type lazydocker > /dev/null; then
+    alias lzd="lazydocker"
+fi
+
+if type fzf > /dev/null; then
+    alias repos="ghq list -p | fzf"
+    alias repo='cd $(repos)'
+fi
+if type tldr > /dev/null; then
+    alias man="tldr"
+fi
+if type tmux > /dev/null; then
+    alias t="tmux"
+fi
+
+alias j="jobs"
+alias dc="cd"
+alias e="exit"
+alias :q="exit"
+alias c="clear"
+alias sudo="sudo "
+alias rm="rm -rf"
+alias ls="ls --color auto"
+alias ll="ls -alF"
+alias la="ls -A"
+alias grep="grep --color auto"
+alias dexec="docker compose exec"
+alias drun="docker compose run --rm"
+alias ddown="docker compose down"
+alias dup="docker compose up -d"
+alias dlogs="docker compose logs -f"
+alias dps="docker compose ps -a"
+alias dbuild="docker compose build"
+alias g="git"
+alias glog="git log --oneline --graph"
+alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+alias vimconf="cd ${HOME}/.config/nvim/lua"

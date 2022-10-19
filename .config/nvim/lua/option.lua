@@ -93,3 +93,4 @@ opt.confirm = true
 opt.guicursor = {
     i = 'block'
 }
+opt.mouse:remove({ "n", "i", "c", "r", "v"})

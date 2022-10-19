@@ -32,4 +32,4 @@ keymap.set("n", "x", '"_x', opts)
 -- keymap.set("n", "m", "<Nop>", opts)
 
 keymap.set("n", "<ScrollWheelUp>", "<Nop>", opts)
-keymap.set("n", "<ScrollWheelDown>", "<Nop>", opts)
+keymap.set("n", "ScrollWheelDown>", "<Nop>", opts)

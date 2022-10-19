@@ -6,9 +6,9 @@ end
 
 -- use default config
 saga.init_lsp_saga({
-    -- symbol_in_winbar = {
-    --     in_custom = true,
-    -- },
+    symbol_in_winbar = {
+        enable = true
+    },
     code_action_lightbulb = {
         virtual_text = false,
     },
