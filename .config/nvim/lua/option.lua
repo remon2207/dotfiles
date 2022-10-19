@@ -88,3 +88,8 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- 保存するかの確認ダイアログを表示
 opt.confirm = true
+
+-- cursor style
+opt.guicursor = {
+    i = 'block'
+}
