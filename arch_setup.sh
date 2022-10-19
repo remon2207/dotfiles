@@ -36,6 +36,7 @@ aur_install() {
         ghq-bin \
         spotify \
         slack-desktop \
+        xcursor-breeze \
         downgrade \
         ttf-cica \
         ttf-hackgen \
