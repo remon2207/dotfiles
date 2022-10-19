@@ -43,17 +43,41 @@ zstyle ':completion:*' list-colors ''
 # bindkey -e
 bindkey -v
 
+alias j="jobs"
+alias dc="cd"
+alias e="exit"
+alias :q="exit"
+alias c="clear"
+alias sudo="sudo "
+alias rm="rm -rf"
+alias ls="ls --color=auto"
+alias ll="ls -alF"
+alias la="ls -A"
+alias sl="ls"
+alias grep="grep --color=auto"
+alias dexec="docker compose exec"
+alias drun="docker compose run --rm"
+alias ddown="docker compose down"
+alias dup="docker compose up -d"
+alias dlogs="docker compose logs -f"
+alias dps="docker compose ps -a"
+alias dbuild="docker compose build"
+alias g="git"
+alias glog="git log --oneline --graph"
+alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+alias vimconf="cd ${HOME}/.config/nvim/lua"
+
 if [[ ${DISPLAY} = ":0" ]]; then
     # aliases
 
     if type lsd > /dev/null; then
-        alias ls="lsd --color auto"
-        alias ll="lsd -alF --color auto"
-        alias la="lsd -A --color auto"
+        alias ls="lsd --color=auto"
+        alias ll="lsd -alF --color=auto"
+        alias la="lsd -A --color=auto"
     else
-        alias ls="ls --color auto"
-        alias ll="ls -alF --color auto"
-        alias la="ls -A --color auto"
+        alias ls="ls --color=auto"
+        alias ll="ls -alF --color=auto"
+        alias la="ls -A --color=auto"
     fi
 
     if type nvim > /dev/null; then
@@ -165,9 +189,9 @@ if type tmux > /dev/null; then
     alias t="tmux"
 fi
 if type rg > /dev/null; then
-    alias grep="rg --color auto"
+    alias grep="rg --color=auto"
 else
-    alias grep="grep --color auto"
+    alias grep="grep --color=auto"
 fi
 if type bat > /dev/null; then
     alias cat="bat"
@@ -195,26 +219,3 @@ fi
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
-
-alias j="jobs"
-alias dc="cd"
-alias e="exit"
-alias :q="exit"
-alias c="clear"
-alias sudo="sudo "
-alias rm="rm -rf"
-alias ls="ls --color auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias grep="grep --color auto"
-alias dexec="docker compose exec"
-alias drun="docker compose run --rm"
-alias ddown="docker compose down"
-alias dup="docker compose up -d"
-alias dlogs="docker compose logs -f"
-alias dps="docker compose ps -a"
-alias dbuild="docker compose build"
-alias g="git"
-alias glog="git log --oneline --graph"
-alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-alias vimconf="cd ${HOME}/.config/nvim/lua"

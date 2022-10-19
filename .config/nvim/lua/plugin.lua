@@ -54,10 +54,6 @@ packer.startup({
         --         require("plugins.vim-solarized8")
         --     end,
         -- })
-        -- use({
-        --     "altercation/vim-colors-solarized",
-        --     config = function() require('plugins.vim-colors-solarized') end
-        -- })
         use({
             "svrana/neosolarized.nvim",
             config = function()
@@ -67,27 +63,6 @@ packer.startup({
                 "tjdevries/colorbuddy.nvim",
             },
         })
-        -- use({
-        --     "overcache/NeoSolarized"
-        -- })
-        -- use("cocopon/iceberg.vim")
-        -- use({
-        -- 	"morhetz/gruvbox",
-        -- 	config = function()
-        -- 		require("plugins.gruvbox")
-        -- 	end,
-        -- })
-        -- use({
-        -- 	"dracula/vim",
-        -- 	as = "dracula",
-        -- })
-        -- use("arcticicestudio/nord-vim")
-        -- use("EdenEast/nightfox.nvim")
-        -- use("sainnhe/gruvbox-material")
-        -- use("projekt0n/github-nvim-theme")
-        -- use({
-        --     "shaunsingh/nord.nvim"
-        -- })
 
         -- 'ヘルプの日本語化
         use("vim-jp/vimdoc-ja")
@@ -351,7 +326,6 @@ packer.startup({
         })
         -- emmet for HTML
         use("mattn/emmet-vim")
-        -- styled-components
 
         if packer_bootstrap then
             packer.sync()
