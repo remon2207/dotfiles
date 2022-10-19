@@ -1,3 +1,9 @@
+adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-otc-fonts
+adobe-source-han-serif-jp-fonts
+adobe-source-han-serif-otc-fonts
+adobe-source-sans-fonts
+adobe-source-serif-fonts
 alacritty
 arc-gtk-theme
 archlinux-keyring
@@ -48,6 +54,7 @@ htop
 i3-gaps
 i3lock
 intel-ucode
+jq
 kvantum
 libtool
 libva-utils
