@@ -65,7 +65,6 @@ alias dbuild="docker compose build"
 alias g="git"
 alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-alias vimconf="cd ${HOME}/.config/nvim/lua"
 
 if [[ ${DISPLAY} = ":0" ]]; then
     # aliases
@@ -219,3 +218,6 @@ fi
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
+
+alias fontconf="cd ${HOME}/.config/fontconfig"
+alias vimconf="cd ${HOME}/.config/nvim/lua"
