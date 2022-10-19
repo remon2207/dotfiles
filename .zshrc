@@ -54,6 +54,8 @@ alias ls="ls --color=auto"
 alias ll="ls -alF"
 alias la="ls -A"
 alias sl="ls"
+alias fontconf="cd ${HOME}/.config/fontconfig"
+alias vimconf="cd ${HOME}/.config/nvim/lua"
 alias grep="grep --color=auto"
 alias dexec="docker compose exec"
 alias drun="docker compose run --rm"
@@ -218,6 +220,3 @@ fi
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
-
-alias fontconf="cd ${HOME}/.config/fontconfig"
-alias vimconf="cd ${HOME}/.config/nvim/lua"
