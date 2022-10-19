@@ -176,24 +176,30 @@ fi
 if type fd > /dev/null; then
     alias find="fd"
 fi
+
 if type lazydocker > /dev/null; then
     alias lzd="lazydocker"
 fi
+
 if type fzf > /dev/null; then
     alias repos="ghq list -p | fzf"
     alias repo='cd $(repos)'
 fi
+
 if type tldr > /dev/null; then
     alias man="tldr"
 fi
+
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
+
 if type rg > /dev/null; then
     alias grep="rg --color=auto"
 else
     alias grep="grep --color=auto"
 fi
+
 if type bat > /dev/null; then
     alias cat="bat"
 fi
@@ -214,9 +220,11 @@ if type fzf > /dev/null; then
     alias repos="ghq list -p | fzf"
     alias repo='cd $(repos)'
 fi
+
 if type tldr > /dev/null; then
     alias man="tldr"
 fi
+
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
