@@ -228,3 +228,7 @@ fi
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
+
+alias po="sudo systemctl poweroff"
+alias sp="sudo systemctl suspend"
+alias rb="sudo systemctl reboot"
