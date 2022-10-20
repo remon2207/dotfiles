@@ -230,3 +230,7 @@ fi
 if type tmux > /dev/null; then
     alias t="tmux"
 fi
+
+if type sd > /dev/null; then
+    alias sed="sd"
+fi
