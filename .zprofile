@@ -1,7 +1,15 @@
 export PATH="${PATH}:${HOME}/go/bin"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export EDITOR="nvim"
-export VISUAL="nvim"
+
+if [[ -n ${DISPLAY} ]]; then
+    export EDITOR="nvim"
+    export VISUAL="nvim"
+else
+    export EDITOR="vi"
+    export VISUAL="vi"
+fi
+
+export BROWSER="firefox"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_IM_MODULE="fcitx5"
 export QT_IM_MODULE="fcitx5"

@@ -75,7 +75,6 @@ opt.signcolumn = 'yes'
 
 opt.autoread = true
 
-vim.cmd([[set t_Co=256]])
 
 opt.list = true
 opt.listchars = 'tab:> '
@@ -85,6 +84,11 @@ opt.wildignore:append({ '*/node_modules/*' })
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
+vim.cmd([[let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"]])
+vim.cmd([[let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"]])
+
+-- 256 color
+vim.cmd([[set t_Co=256]])
 
 -- 保存するかの確認ダイアログを表示
 opt.confirm = true
