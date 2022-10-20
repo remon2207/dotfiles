@@ -1348,7 +1348,7 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
 #- { key: Paste,                                       action: Paste          }
 #- { key: Copy,                                        action: Copy           }
 #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -1429,9 +1429,11 @@ colors:
 #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
 #- { key: Key0,           mods: Control,                         action: ResetFontSize    }
 #- { key: Equals,         mods: Control,                         action: IncreaseFontSize }
-#- { key: Plus,           mods: Control,                         action: IncreaseFontSize }
+- { key: Equals,         mods: Control,                         action: None }
+- { key: Plus,           mods: Control,                         action: None }
 #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
 #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
+- { key: Minus,          mods: Control,                         action: None }
 #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
 
 # (Windows only)

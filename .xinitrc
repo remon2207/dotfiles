@@ -58,9 +58,5 @@ polybar dvi &
 polybar hdmi &
 discord &
 slack &
-google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-google-chrome-stable &
-# vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
-# vivaldi-stable &
 alacritty -e htop &
 exec i3
