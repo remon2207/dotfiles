@@ -86,6 +86,7 @@ if [[ ${DISPLAY} = ":0" ]]; then
     fi
 
     alias killstartup="killall Discord slack"
+    alias b="bluetoothctl"
 
     mkcd() {
         mkdir -p ${1} && cd ${1}
@@ -184,6 +185,7 @@ fi
 if type fzf > /dev/null; then
     alias repos="ghq list -p | fzf"
     alias repo='cd $(repos)'
+    alias fontlist="fc-list | fzf"
 fi
 
 if type tldr > /dev/null; then
