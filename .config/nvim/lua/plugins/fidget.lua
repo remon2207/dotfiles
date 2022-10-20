@@ -1,4 +1,4 @@
-local status, fidget = pcall(require, "fidget")
+local status, fidget = pcall(require, 'fidget')
 if not status then
     return
 end
@@ -6,5 +6,5 @@ end
 fidget.setup({
     window = {
         blend = 0,
-    }
+    },
 })

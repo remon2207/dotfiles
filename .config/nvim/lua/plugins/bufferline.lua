@@ -1,4 +1,4 @@
-local status, bufferline = pcall(require, "bufferline")
+local status, bufferline = pcall(require, 'bufferline')
 if not status then
     return
 end
@@ -9,9 +9,9 @@ bufferline.setup({
         -- number_style = nil,
         show_buffer_close_icons = false,
         show_close_icon = false,
-        separator_style = "thick",
+        separator_style = 'thick',
         -- separator_style = "slant",
-        diagnostics = "nvim_lsp"
+        diagnostics = 'nvim_lsp',
     },
     highlights = {
         buffer_selected = {

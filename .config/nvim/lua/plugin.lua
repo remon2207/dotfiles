@@ -1,10 +1,10 @@
-local status, packer = pcall(require, "packer")
+local status, packer = pcall(require, 'packer')
 if not status then
     local fn = vim.fn
-    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
     if fn.empty(fn.glob(install_path)) > 0 then
         packer_bootstrap =
-            fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+            fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     end
 
     vim.cmd([[packadd packer.nvim]])
@@ -13,28 +13,28 @@ end
 
 packer.startup({
     function(use)
-        use("wbthomason/packer.nvim")
+        use('wbthomason/packer.nvim')
 
         -- ステータスラインを強化
         use({
-            "nvim-lualine/lualine.nvim",
+            'nvim-lualine/lualine.nvim',
             config = function()
-                require("plugins.lualine")
+                require('plugins.lualine')
             end,
             requires = {
-                "kyazdani42/nvim-web-devicons",
+                'kyazdani42/nvim-web-devicons',
             },
         })
 
         -- バッファステータス
         use({
-            "akinsho/bufferline.nvim",
-            branch = "main",
+            'akinsho/bufferline.nvim',
+            branch = 'main',
             config = function()
-                require("plugins.bufferline")
+                require('plugins.bufferline')
             end,
             requires = {
-                "kyazdani42/nvim-web-devicons",
+                'kyazdani42/nvim-web-devicons',
             },
         })
 
@@ -55,37 +55,37 @@ packer.startup({
         --     end,
         -- })
         use({
-            "svrana/neosolarized.nvim",
+            'svrana/neosolarized.nvim',
             config = function()
-                require("plugins.neosolarized")
+                require('plugins.neosolarized')
             end,
             requires = {
-                "tjdevries/colorbuddy.nvim",
+                'tjdevries/colorbuddy.nvim',
             },
         })
 
         -- 'ヘルプの日本語化
-        use("vim-jp/vimdoc-ja")
+        use('vim-jp/vimdoc-ja')
 
         -- DeepL翻訳
-        use("vim-denops/denops.vim")
-        use("skanehira/denops-translate.vim")
+        use('vim-denops/denops.vim')
+        use('skanehira/denops-translate.vim')
 
         -- 'ノーマルモードでコメントアウト
         use({
-            "numToStr/Comment.nvim",
+            'numToStr/Comment.nvim',
             config = function()
-                require("plugins.Comment")
+                require('plugins.Comment')
             end,
         })
 
         -- シンタックスハイライト
         use({
-            "nvim-treesitter/nvim-treesitter",
-            commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
-            run = ":TSUpdate",
+            'nvim-treesitter/nvim-treesitter',
+            commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
+            run = ':TSUpdate',
             config = function()
-                require("plugins.nvim-treesitter")
+                require('plugins.nvim-treesitter')
             end,
         })
         -- use({
@@ -94,9 +94,9 @@ packer.startup({
 
         -- hex codeを視覚的にに表示
         use({
-            "norcalli/nvim-colorizer.lua",
+            'norcalli/nvim-colorizer.lua',
             config = function()
-                require("plugins.nvim-colorizer")
+                require('plugins.nvim-colorizer')
             end,
         })
 
@@ -106,51 +106,51 @@ packer.startup({
         --     config = function() require('plugins.ultisnips') end
         -- }
         use({
-            "L3MON4D3/LuaSnip",
+            'L3MON4D3/LuaSnip',
             config = function()
-                require("plugins.LuaSnip")
+                require('plugins.LuaSnip')
             end,
         })
 
         -- 引用符
         -- use("tpope/vim-surround")
         use({
-            "kylechui/nvim-surround",
+            'kylechui/nvim-surround',
             config = function()
-                require("plugins.nvim-surround")
+                require('plugins.nvim-surround')
             end,
         })
 
         -- ファイル検索
         use({
-            "nvim-telescope/telescope.nvim",
+            'nvim-telescope/telescope.nvim',
             config = function()
-                require("plugins.telescope")
+                require('plugins.telescope')
             end,
             requires = {
                 {
-                    "nvim-lua/plenary.nvim",
+                    'nvim-lua/plenary.nvim',
                 },
                 {
-                    "kyazdani42/nvim-web-devicons",
+                    'kyazdani42/nvim-web-devicons',
                 },
             },
         })
-        use("nvim-telescope/telescope-file-browser.nvim")
+        use('nvim-telescope/telescope-file-browser.nvim')
 
         -- ジャンプ
         use({
-            "phaazon/hop.nvim",
+            'phaazon/hop.nvim',
             config = function()
-                require("plugins.hop")
+                require('plugins.hop')
             end,
         })
 
         -- ブラケット自動補完
         use({
-            "windwp/nvim-autopairs",
+            'windwp/nvim-autopairs',
             config = function()
-                require("plugins.nvim-autopairs")
+                require('plugins.nvim-autopairs')
             end,
         })
 
@@ -165,9 +165,9 @@ packer.startup({
 
         -- LSP
         use({
-            "neovim/nvim-lspconfig",
+            'neovim/nvim-lspconfig',
             config = function()
-                require("plugins.nvim-lspconfig")
+                require('plugins.nvim-lspconfig')
             end,
         })
         -- use {
@@ -175,74 +175,74 @@ packer.startup({
         --     config = function() require('plugins/nvim-lspconfig') end
         -- }
         use({
-            "williamboman/mason.nvim",
+            'williamboman/mason.nvim',
             config = function()
-                require("plugins.mason")
+                require('plugins.mason')
             end,
         })
         use({
-            "williamboman/mason-lspconfig.nvim",
+            'williamboman/mason-lspconfig.nvim',
             config = function()
-                require("plugins.nvim-lspconfig")
+                require('plugins.nvim-lspconfig')
             end,
         })
 
         -- 補完
         use({
-            "hrsh7th/nvim-cmp",
+            'hrsh7th/nvim-cmp',
             config = function()
-                require("plugins.nvim-cmp")
+                require('plugins.nvim-cmp')
             end,
         })
-        use("hrsh7th/cmp-nvim-lsp")
-        use("hrsh7th/cmp-buffer")
-        use("hrsh7th/cmp-path")
-        use("hrsh7th/cmp-cmdline")
-        use("saadparwaiz1/cmp_luasnip")
-        use("petertriho/cmp-git")
+        use('hrsh7th/cmp-nvim-lsp')
+        use('hrsh7th/cmp-buffer')
+        use('hrsh7th/cmp-path')
+        use('hrsh7th/cmp-cmdline')
+        use('saadparwaiz1/cmp_luasnip')
+        use('petertriho/cmp-git')
         -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
         -- 関数の引数を入力しているときにシグネチャヘルプを表示
         use({
-            "ray-x/lsp_signature.nvim",
+            'ray-x/lsp_signature.nvim',
             config = function()
-                require("plugins.lsp_signature")
+                require('plugins.lsp_signature')
             end,
         })
         -- DAP
         use({
-            "mfussenegger/nvim-dap",
+            'mfussenegger/nvim-dap',
             config = function()
-                require("plugins.nvim-dap")
+                require('plugins.nvim-dap')
             end,
         })
         use({
-            "rcarriga/nvim-dap-ui",
+            'rcarriga/nvim-dap-ui',
             config = function()
-                require("plugins.nvim-dap-ui")
+                require('plugins.nvim-dap-ui')
             end,
         })
 
         -- 不足のカラースキームを追加
         use({
-            "folke/lsp-colors.nvim",
+            'folke/lsp-colors.nvim',
             config = function()
-                require("plugins.lsp-colors")
+                require('plugins.lsp-colors')
             end,
         })
         use({
-            "glepnir/lspsaga.nvim",
-            branch = "main",
+            'glepnir/lspsaga.nvim',
+            branch = 'main',
             -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
             -- branch = 'version_2.2',
             config = function()
-                require("plugins.lspsaga")
+                require('plugins.lspsaga')
             end,
         })
         use({
-            "onsails/lspkind.nvim",
+            'onsails/lspkind.nvim',
             config = function()
-                require("plugins.lspkind")
+                require('plugins.lspkind')
             end,
         })
         -- use({
@@ -263,14 +263,14 @@ packer.startup({
         --     config = function() require('plugins.formatter') end
         -- }
         use({
-            "jose-elias-alvarez/null-ls.nvim",
+            'jose-elias-alvarez/null-ls.nvim',
             config = function()
-                require("plugins.null-ls")
+                require('plugins.null-ls')
             end,
         })
 
         use({
-            "windwp/nvim-ts-autotag",
+            'windwp/nvim-ts-autotag',
             -- config = function() require('plugins/nvim-ts-autotag') end
         })
         -- use {
@@ -280,39 +280,39 @@ packer.startup({
 
         -- フローティングターミナル
         use({
-            "akinsho/toggleterm.nvim",
+            'akinsho/toggleterm.nvim',
             config = function()
-                require("plugins.toggleterm")
+                require('plugins.toggleterm')
             end,
         })
 
         -- git
         use({
-            "lewis6991/gitsigns.nvim",
+            'lewis6991/gitsigns.nvim',
             config = function()
-                require("plugins.gitsigns")
+                require('plugins.gitsigns')
             end,
         })
 
         -- markdown
         use({
-            "iamcco/markdown-preview.nvim",
+            'iamcco/markdown-preview.nvim',
             run = function()
-                vim.fn["mkdp#util#install"]()
+                vim.fn['mkdp#util#install']()
             end,
         })
-        use("simeji/winresizer")
+        use('simeji/winresizer')
 
         use({
-            "folke/which-key.nvim",
+            'folke/which-key.nvim',
             config = function()
-                require("plugins.which-key")
+                require('plugins.which-key')
             end,
         })
         use({
-            "j-hui/fidget.nvim",
+            'j-hui/fidget.nvim',
             config = function()
-                require("plugins.fidget")
+                require('plugins.fidget')
             end,
         })
         -- use({
@@ -322,10 +322,10 @@ packer.startup({
         --     end
         -- })
         use({
-            "famiu/bufdelete.nvim",
+            'famiu/bufdelete.nvim',
         })
         -- emmet for HTML
-        use("mattn/emmet-vim")
+        use('mattn/emmet-vim')
 
         if packer_bootstrap then
             packer.sync()
@@ -335,7 +335,7 @@ packer.startup({
         display = {
             -- open_fn = require("packer.util").float,
             open_fn = function()
-                return require("packer.util").float({ border = "single" })
+                return require('packer.util').float({ border = 'single' })
             end,
         },
     },

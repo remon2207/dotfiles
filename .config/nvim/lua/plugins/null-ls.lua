@@ -1,4 +1,4 @@
-local status, null_ls = pcall(require, "null-ls")
+local status, null_ls = pcall(require, 'null-ls')
 if not status then
     return
 end
@@ -7,7 +7,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 -- local lsp_formatting = function(bufnr)
 --     vim.lsp.buf.format({
@@ -23,7 +23,7 @@ local lsp_formatting = function()
     vim.lsp.buf.format({
         async = true,
         filter = function(client)
-            return client.name == "null-ls"
+            return client.name == 'null-ls'
         end,
     })
 end
@@ -31,29 +31,30 @@ end
 null_ls.setup({
     sources = {
         diagnostics.eslint_d.with({
-            diagnostics_format = "[#{c}] #{m} (#{s})",
-            extra_args = { "--cache", "--ignore-pattern", "**/linter-config/.prettierrc.js" },
+            diagnostics_format = '[#{c}] #{m} (#{s})',
+            extra_args = { '--cache', '--ignore-pattern', '**/linter-config/.prettierrc.js' },
         }),
         code_actions.eslint_d.with({
-            extra_args = { "--cache" },
+            extra_args = { '--cache' },
         }),
         formatting.eslint_d.with({
-            extra_args = { "--cache" },
+            extra_args = { '--cache' },
         }),
         formatting.prettierd.with({
             env = {
-                PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/utils/linter-config/.prettierrc.js")
-            }
+                PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.js'),
+            },
         }),
-        formatting.stylua.with({
-            extra_args = { "--indent-type", "Spaces" },
-        }),
+        -- formatting.stylua.with({
+        formatting.stylua,
+        --     extra_args = { '--indent-type', 'Spaces', '--quote-style', 'AutoPreferSingle' },
+        -- }),
         formatting.shfmt.with({
-            extra_args = { "--indent", "4", "--space-redirects" },
+            extra_args = { '--indent', '4', '--space-redirects' },
         }),
     },
     on_attach = function(client)
-        if client.supports_method("textDocument/formatting") then
+        if client.supports_method('textDocument/formatting') then
             -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
             -- vim.api.nvim_create_autocmd("BufWritePre", {
             --     group = augroup,
@@ -62,7 +63,7 @@ null_ls.setup({
             --         lsp_formatting(bufnr)
             --     end,
             -- })
-            vim.keymap.set("n", "<Leader>fa", function()
+            vim.keymap.set('n', '<Leader>fa', function()
                 lsp_formatting()
             end, { noremap = true, silent = true })
         end

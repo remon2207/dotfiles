@@ -1,13 +1,13 @@
 local opt = vim.opt
 
 -- 保存時の文字コード
-opt.fileencoding = "utf-8"
+opt.fileencoding = 'utf-8'
 -- 読み込み時の文字コードの自動判別. 左側が優先される
-opt.fileencodings = { "utf-8", "cp932", "ucs-boms", "euc-jp" }
+opt.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
 -- 改行コードの自動判別. 左側が優先される
-opt.fileformats = { "unix", "dos", "mac" }
+opt.fileformats = { 'unix', 'dos', 'mac' }
 -- レジスタ、クリップボードの共有
-opt.clipboard:append({ "unnamed", "unnamedplus" })
+opt.clipboard:append({ 'unnamed', 'unnamedplus' })
 -- タブ入力を複数の空白入力に置き換える
 opt.expandtab = true
 -- 画面上でタブ文字が占める幅
@@ -36,7 +36,7 @@ opt.relativenumber = true
 opt.cursorline = true
 -- opt.cursorcolumn = true
 -- バックスペースキーの有効化
-opt.backspace = { "indent", "eol", "start" }
+opt.backspace = { 'indent', 'eol', 'start' }
 -- コマンドモードの補完
 -- opt.wildmenu = true
 -- ステータスラインを常に表示
@@ -54,33 +54,33 @@ opt.swapfile = false
 
 opt.hlsearch = false
 
-opt.background = "dark"
+opt.background = 'dark'
 opt.termguicolors = true
 
-opt.completeopt = { "menu", "menuone", "noselect" }
+opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- ヘルプの言語の優先順位
-opt.helplang = { "ja", "en" }
+opt.helplang = { 'ja', 'en' }
 
 -- カーソルを中央にする
 -- opt.scrolloff = 999
 
 -- 背景透過
 opt.winblend = 0
-opt.wildoptions = "pum"
+opt.wildoptions = 'pum'
 opt.pumblend = 10
 
 -- サインカラムを常時表示
-opt.signcolumn = "yes"
+opt.signcolumn = 'yes'
 
 opt.autoread = true
 
 vim.cmd([[set t_Co=256]])
 
 opt.list = true
-opt.listchars = "tab:> "
+opt.listchars = 'tab:> '
 
-opt.wildignore:append({ "*/node_modules/*" })
+opt.wildignore:append({ '*/node_modules/*' })
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -91,6 +91,8 @@ opt.confirm = true
 
 -- cursor style
 opt.guicursor = {
-    i = 'block'
+    i = 'block',
 }
-opt.mouse:remove({ "n", "i", "c", "r", "v"})
+opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
+
+opt.shada:remove({ '!', "'100", '<50', 's10', 'h' })

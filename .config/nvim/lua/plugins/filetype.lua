@@ -1,4 +1,4 @@
-local status, filetype = pcall(require, "filetype")
+local status, filetype = pcall(require, 'filetype')
 if not status then
     return
 end
@@ -18,10 +18,10 @@ filetype.setup({
         },
         complex = {
             -- ["*.json"] = "json",
-            ["/tsconfig.json"] = "jsonc",
-            ["/jsconfig.json"] = "jsonc",
-            ["**/i3/config"] = "i3config",
-            ["/.env*"] = "sh"
+            ['/tsconfig.json'] = 'jsonc',
+            ['/jsconfig.json'] = 'jsonc',
+            ['**/i3/config'] = 'i3config',
+            ['/.env*'] = 'sh',
         },
     },
 })
