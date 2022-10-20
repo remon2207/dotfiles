@@ -68,7 +68,7 @@ alias g="git"
 alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 
-if [[ ${DISPLAY} = ":0" ]]; then
+if [[ -n ${DISPLAY} ]]; then
     # aliases
 
     if type lsd > /dev/null; then
@@ -233,4 +233,8 @@ fi
 
 if type sd > /dev/null; then
     alias sed="sd"
+fi
+
+if type delta > /dev/null; then
+    alias diff="delta --line-numbers"
 fi
