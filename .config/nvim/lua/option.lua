@@ -94,9 +94,9 @@ vim.cmd([[set t_Co=256]])
 opt.confirm = true
 
 -- cursor style
-opt.guicursor = {
-    i = 'block',
-}
+-- opt.guicursor = {
+--     i = 'block',
+-- }
 opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 
 opt.shada:remove({ '!', "'100", '<50', 's10', 'h' })

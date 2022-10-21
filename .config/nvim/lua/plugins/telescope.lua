@@ -4,7 +4,7 @@ if not status then
 end
 
 local a = require("telescope.actions")
-local fb_actions = require("telescope").extensions.file_browser.actions
+-- local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup({
     defaults = {
@@ -30,7 +30,7 @@ telescope.setup({
             n = {
                 ["q"] = a.close,
                 ["o"] = false,
-                ["N"] = fb_actions.create,
+                -- ["N"] = fb_actions.create,
             },
         },
     },
@@ -48,13 +48,13 @@ vim.keymap.set("n", "<Leader>fg", "<Cmd>Telescope live_grep<CR>", { noremap = tr
 vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers <CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>", { noremap = true, silent = true })
 
-require("telescope").load_extension("file_browser")
-
-local ex_fb = require("telescope").extensions.file_browser
-
-vim.keymap.set("n", "<C-n>", ":Telescope file_browser<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-n>", function()
-    ex_fb.file_browser({
-        respect_gitignore = false,
-    })
-end, { noremap = true, silent = true })
+-- require("telescope").load_extension("file_browser")
+--
+-- local ex_fb = require("telescope").extensions.file_browser
+--
+-- vim.keymap.set("n", "<C-n>", ":Telescope file_browser<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-n>", function()
+--     ex_fb.file_browser({
+--         respect_gitignore = false,
+--     })
+-- end, { noremap = true, silent = true })

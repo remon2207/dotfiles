@@ -7,16 +7,16 @@ t.setup({
     highlight = {
         enable = true,
     },
-    autotag = {
-        enable = true,
-    },
-    indent = {
-        enable = true,
-        disable = {
-            "typescript",
-            "graphql"
-        },
-    },
+    -- autotag = {
+    --     enable = true,
+    -- },
+    -- indent = {
+    --     enable = true,
+    --     disable = {
+    --         "typescript",
+    --         "graphql"
+    --     },
+    -- },
     ensure_installed = {
         "javascript",
         "bash",

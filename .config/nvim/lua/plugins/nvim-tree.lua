@@ -7,22 +7,27 @@ tree.setup({
     sort_by = "case_sensitive",
     disable_netrw = true,
     open_on_setup = true,
-    actions = {
-        open_file = {
-            quit_on_open = true,
-        },
-        change_dir = {
-            enable = false,
-        },
-    },
+    -- actions = {
+    --     open_file = {
+    --         quit_on_open = true,
+    --     },
+    -- },
     view = {
-        centralize_selection = true,
+        -- centralize_selection = true,
         hide_root_folder = true,
         mappings = {
             list = {
                 {
-                    key = "u",
-                    action = "dir_up",
+                    key = "<C-e>",
+                    action = ""
+                },
+                {
+                    key = "h",
+                    action = "close_node"
+                },
+                {
+                    key = "l",
+                    action = "edit"
                 },
                 {
                     key = "f",
@@ -59,4 +64,6 @@ tree.setup({
         ignore = false,
     },
 })
+
 vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', "<C-a-n>", "<Cmd>NvimTreeFocus<CR>", { noremap = true, silent = true })

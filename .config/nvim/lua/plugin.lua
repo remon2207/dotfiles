@@ -15,7 +15,7 @@ packer.startup({
     function(use)
         use('wbthomason/packer.nvim')
 
-        -- ステータスラインを強化
+        -- Status line
         use({
             'nvim-lualine/lualine.nvim',
             config = function()
@@ -26,7 +26,7 @@ packer.startup({
             },
         })
 
-        -- バッファステータス
+        -- Buffer status
         use({
             'akinsho/bufferline.nvim',
             branch = 'main',
@@ -38,15 +38,15 @@ packer.startup({
             },
         })
 
-        -- インデントの可視化
-        -- use({
-        --     "lukas-reineke/indent-blankline.nvim",
-        --     config = function()
-        --         require("plugins.indent-blankline")
-        --     end,
-        -- })
+        -- Indent Guide
+        use({
+            'lukas-reineke/indent-blankline.nvim',
+            config = function()
+                require('plugins.indent-blankline')
+            end,
+        })
 
-        -- カラースキーム
+        -- Colorscheme
         -- use("joshdick/onedark.vim")
         -- use({
         --     "lifepillar/vim-solarized8",
@@ -64,22 +64,25 @@ packer.startup({
             },
         })
 
-        -- 'ヘルプの日本語化
+        -- Help to Japanese
         use('vim-jp/vimdoc-ja')
 
-        -- DeepL翻訳
+        -- DeepL translater
         use('vim-denops/denops.vim')
         use('skanehira/denops-translate.vim')
 
-        -- 'ノーマルモードでコメントアウト
+        -- Comment out in normal mode
         use({
             'numToStr/Comment.nvim',
             config = function()
                 require('plugins.Comment')
             end,
         })
+        -- use({
+        --     'preservim/nerdcommenter'
+        -- })
 
-        -- シンタックスハイライト
+        -- Syntax highlight
         use({
             'nvim-treesitter/nvim-treesitter',
             commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
@@ -88,11 +91,8 @@ packer.startup({
                 require('plugins.nvim-treesitter')
             end,
         })
-        -- use({
-        --     "nvim-treesitter/nvim-treesitter-textobjects"
-        -- })
 
-        -- hex codeを視覚的にに表示
+        -- Hex color code
         use({
             'norcalli/nvim-colorizer.lua',
             config = function()
@@ -100,7 +100,7 @@ packer.startup({
             end,
         })
 
-        -- スニペット
+        -- snippet
         -- use {
         --     'SirVer/ultisnips',
         --     config = function() require('plugins.ultisnips') end
@@ -121,7 +121,7 @@ packer.startup({
             end,
         })
 
-        -- ファイル検索
+        -- fuzzy finder
         use({
             'nvim-telescope/telescope.nvim',
             config = function()
@@ -136,9 +136,9 @@ packer.startup({
                 },
             },
         })
-        use('nvim-telescope/telescope-file-browser.nvim')
+        -- use('nvim-telescope/telescope-file-browser.nvim')
 
-        -- ジャンプ
+        -- jump
         use({
             'phaazon/hop.nvim',
             config = function()
@@ -146,7 +146,7 @@ packer.startup({
             end,
         })
 
-        -- ブラケット自動補完
+        -- bracket autocompletion
         use({
             'windwp/nvim-autopairs',
             config = function()
@@ -154,14 +154,16 @@ packer.startup({
             end,
         })
 
-        -- ファイラー
-        -- use {
-        --     'kyazdani42/nvim-tree.lua',
-        --     config = function() require('plugins.nvim-tree') end,
-        --     requires = {
-        --         'kyazdani42/nvim-web-devicons',
-        --     },
-        -- }
+        -- filer
+        use({
+            'kyazdani42/nvim-tree.lua',
+            config = function()
+                require('plugins.nvim-tree')
+            end,
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+            },
+        })
 
         -- LSP
         use({
@@ -187,7 +189,7 @@ packer.startup({
             end,
         })
 
-        -- 補完
+        -- completion
         use({
             'hrsh7th/nvim-cmp',
             config = function()
@@ -202,7 +204,7 @@ packer.startup({
         use('petertriho/cmp-git')
         -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
-        -- 関数の引数を入力しているときにシグネチャヘルプを表示
+        -- Show signature help in insert mode
         use({
             'ray-x/lsp_signature.nvim',
             config = function()
@@ -210,26 +212,28 @@ packer.startup({
             end,
         })
         -- DAP
-        use({
-            'mfussenegger/nvim-dap',
-            config = function()
-                require('plugins.nvim-dap')
-            end,
-        })
-        use({
-            'rcarriga/nvim-dap-ui',
-            config = function()
-                require('plugins.nvim-dap-ui')
-            end,
-        })
+        -- use({
+        --     'mfussenegger/nvim-dap',
+        --     config = function()
+        --         require('plugins.nvim-dap')
+        --     end,
+        -- })
+        -- use({
+        --     'rcarriga/nvim-dap-ui',
+        --     config = function()
+        --         require('plugins.nvim-dap-ui')
+        --     end,
+        -- })
 
-        -- 不足のカラースキームを追加
+        -- Add missing colors
         use({
             'folke/lsp-colors.nvim',
             config = function()
                 require('plugins.lsp-colors')
             end,
         })
+
+        -- Stylish UI
         use({
             'glepnir/lspsaga.nvim',
             branch = 'main',
@@ -239,6 +243,7 @@ packer.startup({
                 require('plugins.lspsaga')
             end,
         })
+
         use({
             'onsails/lspkind.nvim',
             config = function()
@@ -252,7 +257,7 @@ packer.startup({
         --     end
         -- })
 
-        -- フォーマッター
+        -- Formatter
         -- use {
         --     'prettier/vim-prettier',
         --     run = 'npm install --omit=dev',
@@ -271,14 +276,16 @@ packer.startup({
 
         use({
             'windwp/nvim-ts-autotag',
-            -- config = function() require('plugins/nvim-ts-autotag') end
+            config = function()
+                require('plugins/nvim-ts-autotag')
+            end,
         })
         -- use {
         --     'alvan/vim-closetag',
         --     config = function() require('plugins/vim-closetag') end
         -- }
 
-        -- フローティングターミナル
+        -- Floating Terminal
         -- use({
         --     'akinsho/toggleterm.nvim',
         --     config = function()
@@ -286,7 +293,7 @@ packer.startup({
         --     end,
         -- })
 
-        -- git
+        -- Git
         use({
             'lewis6991/gitsigns.nvim',
             config = function()
@@ -294,14 +301,21 @@ packer.startup({
             end,
         })
 
-        -- markdown
+        -- Markdown
         use({
             'iamcco/markdown-preview.nvim',
             run = function()
                 vim.fn['mkdp#util#install']()
             end,
         })
-        use('simeji/winresizer')
+
+        -- Window resize
+        use({
+            'simeji/winresizer',
+            config = function()
+                require('plugins.winresizer')
+            end,
+        })
 
         use({
             'folke/which-key.nvim',
@@ -309,21 +323,18 @@ packer.startup({
                 require('plugins.which-key')
             end,
         })
+        -- Notify ui
         use({
             'j-hui/fidget.nvim',
             config = function()
                 require('plugins.fidget')
             end,
         })
-        -- use({
-        --     "rcarriga/nvim-notify",
-        --     config = function()
-        --         require("plugins.nvim-notify")
-        --     end
-        -- })
+
         use({
             'famiu/bufdelete.nvim',
         })
+
         -- emmet for HTML
         use('mattn/emmet-vim')
 

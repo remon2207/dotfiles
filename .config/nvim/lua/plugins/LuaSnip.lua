@@ -1,4 +1,4 @@
-local status, ls = pcall(require, "luasnip")
+local status, ls = pcall(require, 'luasnip')
 if not status then
     return
 end
@@ -12,44 +12,44 @@ local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
 local r = ls.restore_node
-local events = require("luasnip.util.events")
-local ai = require("luasnip.nodes.absolute_indexer")
-local fmt = require("luasnip.extras.fmt").fmt
-local m = require("luasnip.extras").m
-local lambda = require("luasnip.extras").l
-local postfix = require("luasnip.extras.postfix").postfix
+local events = require('luasnip.util.events')
+local ai = require('luasnip.nodes.absolute_indexer')
+local fmt = require('luasnip.extras.fmt').fmt
+local m = require('luasnip.extras').m
+local lambda = require('luasnip.extras').l
+local postfix = require('luasnip.extras.postfix').postfix
 
 local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
 set(
-    "i",
-    "<Tab>",
+    'i',
+    '<Tab>',
     'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"',
     { silent = true, expr = true, noremap = false }
 )
-set("i", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
-set("i", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
-set("s", "<C-b>", '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
-set("s", "<C-f>", '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
+set('i', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
+set('i', '<C-f>', '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
+set('s', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
+set('s', '<C-f>', '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
 
 set(
-    "i",
-    "<C-E>",
+    'i',
+    '<C-E>',
     'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)" : "<C-E>"',
     { silent = true, expr = true, noremap = false }
 )
 set(
-    "s",
-    "<C-E>",
+    's',
+    '<C-E>',
     'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)": "<C-E>"',
     { silent = true, expr = true, noremap = false }
 )
 
-ls.add_snippets("typescript", {
+ls.add_snippets('typescript', {
     s(
-        "try",
+        'try',
         fmt(
             [[
         try {{
@@ -65,7 +65,7 @@ ls.add_snippets("typescript", {
         )
     ),
     s(
-        "finally",
+        'finally',
         fmt(
             [[
         try {{
@@ -85,20 +85,20 @@ ls.add_snippets("typescript", {
     ),
 })
 
-ls.add_snippets("all", {
-    s("!!!", {
+ls.add_snippets('all', {
+    s('!!!', {
         t({
             '<meta charSet="UTF-8" />',
             '<meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
             '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
-            "<title>{title}</title>",
+            '<title>{title}</title>',
         }),
     }),
     s(
-        "err",
+        'err',
         fmt(
             [[
-            console.error({1});
+            console.error({1})
             ]],
             {
                 i(1),
@@ -106,10 +106,10 @@ ls.add_snippets("all", {
         )
     ),
     s(
-        "log",
+        'log',
         fmt(
             [[
-            console.log({1});
+            console.log({1})
             ]],
             {
                 i(1),
@@ -118,27 +118,27 @@ ls.add_snippets("all", {
     ),
 })
 
-ls.add_snippets("typescriptreact", {
-    s("!", {
+ls.add_snippets('typescriptreact', {
+    s('!', {
         t({
-            "type Props = {",
-            "  title: string;",
-            "}",
-            "",
-            "export const Header: React.FC<Props> = ({ title }) => {",
-            "  return (",
-            "    <>",
+            'type Props = {',
+            '  title: string',
+            '}',
+            '',
+            'export const Header: React.FC<Props> = ({ title }) => {',
+            '  return (',
+            '    <>',
             '      <meta charSet="UTF-8" />',
             '      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />',
             '      <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
-            "      <title>{title}</title>",
-            "    </>",
-            "  );",
-            "};",
+            '      <title>{title}</title>',
+            '    </>',
+            '  )',
+            '}',
         }),
     }),
     s(
-        "reactc",
+        'reactc',
         fmt(
             [[
         export const {1}: React.FC = () => {{
@@ -146,8 +146,8 @@ ls.add_snippets("typescriptreact", {
             <>
               {2}
             </>
-          );
-        }};
+          )
+        }}
     ]],
             {
                 i(1),
@@ -156,45 +156,20 @@ ls.add_snippets("typescriptreact", {
         )
     ),
     s(
-        "nextc",
+        'nextc',
         fmt(
             [[
-        import type {{ NextPage }} from 'next';
+        import type {{ NextPage }} from 'next'
 
         const {1}: NextPage = () => {{
           return (
             <>
               {3}
             </>
-          );
-        }};
+          )
+        }}
 
-        export default {2};
-    ]],
-            {
-                i(1),
-                f(function(args)
-                    return args[1]
-                end, ai[1]),
-                i(2),
-            }
-        )
-    ),
-    s(
-        "nextc",
-        fmt(
-            [[
-        import fdsafdsfasdf afda fdtype {{ NextPage }} from 'next';
-
-        const {1}: NextPage = () => {{
-          return (
-            <>
-              {3}
-            </>
-          );
-        }};
-
-        export default {2};
+        export default {2}
     ]],
             {
                 i(1),
@@ -207,17 +182,17 @@ ls.add_snippets("typescriptreact", {
     ),
 })
 
-ls.add_snippets("javascript", {
-    s("prc", {
+ls.add_snippets('javascript', {
+    s('prc', {
         t({
-            "const config = {",
+            'const config = {',
             "  endOfLine: 'lf',",
             "  trailingComma: 'none',",
-            "  singleQuote: true,",
-            "  semi: false",
-            "};",
-            "",
-            "module.exports = config;"
-        })
-    })
+            '  singleQuote: true,',
+            '  semi: false',
+            '}',
+            '',
+            'module.exports = config',
+        }),
+    }),
 })

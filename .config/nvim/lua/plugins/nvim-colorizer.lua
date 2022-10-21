@@ -7,7 +7,9 @@ colorizer.setup({
     "css",
     "javascriptreact",
     "typescriptreact",
-    html = {
-        mode = "foreground",
-    },
+    "html",
+    "lua"
+    -- html = {
+    --     mode = "foreground",
+    -- },
 })
