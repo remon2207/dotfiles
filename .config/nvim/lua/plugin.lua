@@ -279,12 +279,12 @@ packer.startup({
         -- }
 
         -- フローティングターミナル
-        use({
-            'akinsho/toggleterm.nvim',
-            config = function()
-                require('plugins.toggleterm')
-            end,
-        })
+        -- use({
+        --     'akinsho/toggleterm.nvim',
+        --     config = function()
+        --         require('plugins.toggleterm')
+        --     end,
+        -- })
 
         -- git
         use({
