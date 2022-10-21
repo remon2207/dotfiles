@@ -69,6 +69,10 @@ alias g="git"
 alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 
+mkcd() {
+    mkdir -p ${1} && cd ${1}
+}
+
 if [[ -n ${DISPLAY} ]]; then
     # aliases
 
@@ -88,10 +92,6 @@ if [[ -n ${DISPLAY} ]]; then
 
     alias killstartup="killall Discord slack"
     alias b="bluetoothctl"
-
-    mkcd() {
-        mkdir -p ${1} && cd ${1}
-    }
 
     ### Added by Zinit's installer
     if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -131,10 +131,6 @@ if [[ -n ${DISPLAY} ]]; then
     eval "$(starship init zsh)"
 else
     alias x="startx"
-
-    mkcd() {
-        mkdir -p ${1} && cd ${1}
-    }
 
     ### Added by Zinit's installer
     if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -191,10 +187,6 @@ if type fzf > /dev/null 2>&1; then
     alias fontlist="fc-list | fzf"
 fi
 
-if type tldr > /dev/null 2>&1; then
-    alias man="tldr"
-fi
-
 if type tmux > /dev/null 2>&1; then
     alias t="tmux"
 fi
@@ -227,7 +219,7 @@ if type fzf > /dev/null 2>&1; then
 fi
 
 if type tldr > /dev/null 2>&1; then
-    alias man="tldr"
+    alias rman="tldr"
 fi
 
 if type tmux > /dev/null 2>&1; then
