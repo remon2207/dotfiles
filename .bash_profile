@@ -1,6 +1,8 @@
-if [[ -f ~/.bashrc ]]; then
-    . ~/.zshrc
-fi
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export PATH="${PATH}:${HOME}/go/bin"
 export QT_QPA_PLATFORMTHEME="qt5ct"
@@ -40,3 +42,4 @@ export QT_IM_MODULE="fcitx5"
 export XMODIFIERS="@im=fcitx5"
 export LIBVA_DRIVER_NAME="vdpau"
 export VDPAU_DRIVER="nvidia"
+

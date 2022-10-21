@@ -124,10 +124,6 @@ if [[ -n ${DISPLAY} ]]; then
     # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/nvm/init-nvm.sh
-
     eval "$(starship init zsh)"
 else
     alias x="startx"
@@ -154,10 +150,6 @@ else
 
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
-
-    source /usr/share/fzf/key-bindings.zsh
-    source /usr/share/fzf/completion.zsh
-    source /usr/share/nvm/init-nvm.sh
 
     # git-promptの読み込み
     # source "${HOME}/.zsh/git-prompt.sh"
@@ -233,3 +225,7 @@ fi
 if type delta > /dev/null 2>&1; then
     alias diff="delta -n"
 fi
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/nvm/init-nvm.sh
