@@ -10,6 +10,7 @@ archlinux-keyring
 autoconf
 automake
 base
+bash-completion
 bat
 binutils
 bison
@@ -62,6 +63,7 @@ gzip
 htop
 i3-gaps
 i3lock
+imwheel
 intel-ucode
 inter-font
 jq
