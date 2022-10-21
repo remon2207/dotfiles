@@ -1,10 +1,10 @@
-local status, tree = pcall(require, "nvim-tree")
+local status, tree = pcall(require, 'nvim-tree')
 if not status then
     return
 end
 
 tree.setup({
-    sort_by = "case_sensitive",
+    sort_by = 'case_sensitive',
     disable_netrw = true,
     open_on_setup = true,
     -- actions = {
@@ -18,16 +18,16 @@ tree.setup({
         mappings = {
             list = {
                 {
-                    key = "<C-e>",
-                    action = ""
+                    key = '<C-e>',
+                    action = '',
                 },
                 {
-                    key = "h",
-                    action = "close_node"
+                    key = 'h',
+                    action = 'close_node',
                 },
                 {
-                    key = "l",
-                    action = "edit"
+                    key = 'l',
+                    action = 'edit',
                 },
                 {
                     key = "f",
@@ -65,5 +65,5 @@ tree.setup({
     },
 })
 
-vim.keymap.set("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', "<C-a-n>", "<Cmd>NvimTreeFocus<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-a-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
