@@ -7,8 +7,6 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
-local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
-
 -- local lsp_formatting = function(bufnr)
 --     vim.lsp.buf.format({
 --         async = true,
@@ -34,6 +32,7 @@ null_ls.setup({
             diagnostics_format = '[#{c}] #{m} (#{s})',
             extra_args = { '--cache', '--ignore-pattern', '**/linter-config/.prettierrc.js' },
         }),
+        diagnostics.cspell,
         code_actions.eslint_d.with({
             extra_args = { '--cache' },
         }),
