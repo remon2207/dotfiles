@@ -117,6 +117,7 @@ if [[ -n ${DISPLAY} ]]; then
 
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
+    zinit light zsh-users/zsh-completions
 
     # solarized
     # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
@@ -162,7 +163,8 @@ else
     source /usr/share/nvm/init-nvm.sh
 
     # git-promptの読み込み
-    source "${HOME}/.zsh/git-prompt.sh"
+    # source "${HOME}/.zsh/git-prompt.sh"
+    source "/usr/share/git/completion/git-prompt.sh"
 
     # プロンプト
     # PROMPT='%B%F{blue}%~%f%b'
