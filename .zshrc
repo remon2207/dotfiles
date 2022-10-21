@@ -236,5 +236,5 @@ if type sd > /dev/null; then
 fi
 
 if type delta > /dev/null; then
-    alias diff="delta --line-numbers"
+    alias diff="delta -n"
 fi
