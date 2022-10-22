@@ -5,25 +5,25 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt extendedglob nomatch notify
-# 日本語ファイル名を表示可能にする
+# Japanese language support
 setopt print_eight_bit
-# cd [TAB] で以前移動したディレクトリを表示
+# TAB completion
 setopt auto_pushd
-# cdコマンドなしでディレクトリを移動
+# move directory without cd command
 setopt auto_cd
-# 同時に起動したzshの間でヒストリを共有する
+# share history
 setopt share_history
-# 直前と同じコマンドの場合はヒストリに追加しない
+# If same as last time not add
 setopt hist_ignore_dups
-# 同じコマンドをヒストリに残さない
+# not add duplication
 setopt hist_ignore_all_dups
-# スペースから始まるコマンド行はヒストリに残さない
+# ignore space
 setopt hist_ignore_space
-# ヒストリに保存するときに余分なスペースを削除する
+# extra space is reduce
 setopt hist_reduce_blanks
-# コマンドのスペルを訂正する
+# Correct spelling of commands
 setopt correct
-# pushdしたとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
+# If directory already in stack not add
 setopt pushd_ignore_dups
 
 setopt no_flow_control
@@ -126,13 +126,12 @@ if [[ -n ${DISPLAY} ]]; then
     zinit light rupa/z
 
     # solarized
-    # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
-    if type starship > /dev/null 2>&1; then
-        eval "$(starship init zsh)"
-    else
-        # プロンプトのオプション表示設定
+    # if type starship > /dev/null 2>&1; then
+    #     eval "$(starship init zsh)"
+    # else
+        # configure prompt
         GIT_PS1_SHOWDIRTYSTATE=true
         GIT_PS1_SHOWUNTRACKEDFILES=true
         GIT_PS1_SHOWSTASHSTATE=true
@@ -141,15 +140,13 @@ if [[ -n ${DISPLAY} ]]; then
         zinit light zsh-users/zsh-syntax-highlighting
         zinit light zsh-users/zsh-autosuggestions
 
-        # git-promptの読み込み
-        # source "${HOME}/.zsh/git-prompt.sh"
+        # load git-prompt
         source "/usr/share/git/completion/git-prompt.sh"
 
-        # プロンプト
         setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
-    fi
+    # fi
 else
     alias x="startx"
 
@@ -167,7 +164,7 @@ else
     (( ${+_comps} )) && _comps[zinit]=_zinit
     ### End of Zinit's installer chunk
 
-    # プロンプトのオプション表示設定
+    # configure prompt
     GIT_PS1_SHOWDIRTYSTATE=true
     GIT_PS1_SHOWUNTRACKEDFILES=true
     GIT_PS1_SHOWSTASHSTATE=true
@@ -176,14 +173,9 @@ else
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
 
-    # git-promptの読み込み
-    # source "${HOME}/.zsh/git-prompt.sh"
+    # load git-prompt
     source "/usr/share/git/completion/git-prompt.sh"
 
-    # プロンプト
-    # PROMPT='%B%F{blue}%~%f%b'
-    # setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
-    # \$ '
     setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
