@@ -245,20 +245,8 @@ fi
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source /usr/share/nvm/init-nvm.sh
 
-
-
-load-nvm () {
-  if [[ -s ${HOME}/.nvm/nvm.sh ]]; then
-      source ${HOME}/.nvm/nvm.sh
-  else
-      echo "nvm not found"
-  fi
-}
-
-if [[ ! -e ${HOME}/.nvm ]]; then
-    source /usr/share/nvm/init-nvm.sh
-fi
 # if [[ -n ${DISPLAY} ]]; then
 #     if type fish > /dev/null 2>&1; then
 #         exec fish

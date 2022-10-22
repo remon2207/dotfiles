@@ -2,6 +2,7 @@ local status, null_ls = pcall(require, 'null-ls')
 if not status then
     return
 end
+local dotfiles = 'sa'
 
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
@@ -32,7 +33,6 @@ null_ls.setup({
             diagnostics_format = '[#{c}] #{m} (#{s})',
             extra_args = { '--cache', '--ignore-pattern', '**/linter-config/.prettierrc.js' },
         }),
-        diagnostics.cspell,
         code_actions.eslint_d.with({
             extra_args = { '--cache' },
         }),
@@ -44,12 +44,15 @@ null_ls.setup({
                 PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.js'),
             },
         }),
-        -- formatting.stylua.with({
         formatting.stylua,
-        --     extra_args = { '--indent-type', 'Spaces', '--quote-style', 'AutoPreferSingle' },
-        -- }),
         formatting.shfmt.with({
             extra_args = { '--indent', '4', '--space-redirects' },
+        }),
+        diagnostics.cspell.with({
+            extra_args = { '--config', '~/.config/cspell/cspell.json' },
+        }),
+        code_actions.cspell.with({
+            extra_args = { '--config', '~/.config/cspell/cspell.json' },
         }),
     },
     on_attach = function(client)
