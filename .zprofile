@@ -1,17 +1,11 @@
-if [[ -f ~/.bashrc ]]; then
-    . ~/.zshrc
-fi
-
 export PATH="${PATH}:${HOME}/go/bin"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 if [[ -n ${DISPLAY} ]]; then
-    export LANG=ja_JP.UTF-8
     export EDITOR="nvim"
     export VISUAL="nvim"
     export BROWSER="google-chrome-stable"
 else
-    export LANG=en_US.UTF-8
     export EDITOR="vi"
     export VISUAL="vi"
     export BROWSER="w3m"

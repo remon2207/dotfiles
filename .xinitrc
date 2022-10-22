@@ -61,6 +61,6 @@ imwheel -b 45 &
 discord &
 slack &
 alacritty -e htop &
-LANG=ja_JP.UTF-8 google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-LANG=ja_JP.UTF-8 google-chrome-stable &
+google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+google-chrome-stable &
 exec i3

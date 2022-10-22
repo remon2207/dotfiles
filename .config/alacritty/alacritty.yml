@@ -23,7 +23,6 @@ env:
   # available, otherwise `xterm-256color` is used.
   # TERM: xterm-256color
   TERM: alacritty
-  LANG: ja_JP.UTF-8
   EDITOR: nvim
   VISUAL: nvim
   BROWSER: google-chrome-stable
@@ -112,7 +111,7 @@ window:
 # Font configuration
 font:
   # Normal (roman) font face
-  size: 9
+  size: 12
   normal:
     # Font family
     #

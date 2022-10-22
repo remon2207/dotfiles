@@ -89,12 +89,7 @@ else
     source "/usr/share/git/completion/git-prompt.sh"
 
     # プロンプト
-    # PROMPT='%B%F{blue}%~%f%b'
-    # setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
-    # \$ '
-    setopt PROMPT_SUBST ; PS1='
-%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
-%# '
+    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 
 # common aliases
