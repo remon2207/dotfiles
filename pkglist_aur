@@ -28,6 +28,7 @@ docker-compose
 downgrade
 dunst
 efibootmgr
+exa
 exfat-utils
 fakeroot
 fcitx5

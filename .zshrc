@@ -128,9 +128,9 @@ if [[ -n ${DISPLAY} ]]; then
     # solarized
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
-    # if type starship > /dev/null 2>&1; then
-    #     eval "$(starship init zsh)"
-    # else
+    if type starship > /dev/null 2>&1; then
+        eval "$(starship init zsh)"
+    else
         # configure prompt
         GIT_PS1_SHOWDIRTYSTATE=true
         GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -146,7 +146,7 @@ if [[ -n ${DISPLAY} ]]; then
         setopt PROMPT_SUBST ; PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
-    # fi
+    fi
 else
     alias x="startx"
 

@@ -26,6 +26,7 @@ docker
 docker-compose
 dunst
 efibootmgr
+exa
 exfat-utils
 fakeroot
 fcitx5
