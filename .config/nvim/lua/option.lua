@@ -14,6 +14,7 @@ opt.expandtab = true
 -- 改行時に前の行のインデントを継続する
 opt.autoindent = true
 opt.smartindent = true
+-- opt.breakindent = true
 -- opt.cindent = true
 -- 改行時に前の行の構文をチェックし次の行のインデントを増減する
 opt.smarttab = true

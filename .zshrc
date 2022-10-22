@@ -1,3 +1,5 @@
+# zmodload  zsh/zprof
+
 # Lines configured by zsh-newuser-install
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=10000
@@ -110,7 +112,7 @@ if [[ -n ${DISPLAY} ]]; then
     ### End of Zinit's installer chunk
 
     if [[ -z "$TMUX" ]] ;then
-        ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+        ID="$( tmux ls 2> /dev/null | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
         if [[ -z "$ID" ]] ;then # if not available create a new one
             tmux new-session
         else
@@ -121,12 +123,33 @@ if [[ -n ${DISPLAY} ]]; then
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
     zinit light zsh-users/zsh-completions
+    zinit light rupa/z
 
     # solarized
     # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#555"
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
-    eval "$(starship init zsh)"
+    if type starship > /dev/null 2>&1; then
+        eval "$(starship init zsh)"
+    else
+        # プロンプトのオプション表示設定
+        GIT_PS1_SHOWDIRTYSTATE=true
+        GIT_PS1_SHOWUNTRACKEDFILES=true
+        GIT_PS1_SHOWSTASHSTATE=true
+        GIT_PS1_SHOWUPSTREAM=auto
+
+        zinit light zsh-users/zsh-syntax-highlighting
+        zinit light zsh-users/zsh-autosuggestions
+
+        # git-promptの読み込み
+        # source "${HOME}/.zsh/git-prompt.sh"
+        source "/usr/share/git/completion/git-prompt.sh"
+
+        # プロンプト
+        setopt PROMPT_SUBST ; PS1='
+%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
+%# '
+    fi
 else
     alias x="startx"
 
@@ -230,10 +253,24 @@ fi
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source /usr/share/nvm/init-nvm.sh
 
-if [[ -n ${DISPLAY} ]]; then
-    if type fish > /dev/null 2>&1; then
-        exec fish
-    fi
+
+
+load-nvm () {
+  if [[ -s ${HOME}/.nvm/nvm.sh ]]; then
+      source ${HOME}/.nvm/nvm.sh
+  else
+      echo "nvm not found"
+  fi
+}
+
+if [[ ! -e ${HOME}/.nvm ]]; then
+    source /usr/share/nvm/init-nvm.sh
 fi
+# if [[ -n ${DISPLAY} ]]; then
+#     if type fish > /dev/null 2>&1; then
+#         exec fish
+#     fi
+# fi
+
+# zprof
