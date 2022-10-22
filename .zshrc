@@ -247,10 +247,10 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
 
-# if [[ -n ${DISPLAY} ]]; then
-#     if type fish > /dev/null 2>&1; then
-#         exec fish
-#     fi
-# fi
+if [[ -n ${DISPLAY} ]]; then
+    if type fish > /dev/null 2>&1; then
+        exec fish
+    fi
+fi
 
 # zprof

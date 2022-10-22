@@ -65,5 +65,5 @@ tree.setup({
     },
 })
 
-vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-a-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-a-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })

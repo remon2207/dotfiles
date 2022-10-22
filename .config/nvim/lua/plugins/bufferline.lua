@@ -9,8 +9,8 @@ bufferline.setup({
         -- number_style = nil,
         show_buffer_close_icons = false,
         show_close_icon = false,
-        separator_style = 'thick',
-        -- separator_style = "slant",
+        -- separator_style = 'thick',
+        separator_style = "slant",
         diagnostics = 'nvim_lsp',
     },
     highlights = {

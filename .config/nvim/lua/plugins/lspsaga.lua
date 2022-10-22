@@ -12,6 +12,9 @@ saga.init_lsp_saga({
     code_action_lightbulb = {
         virtual_text = false,
     },
+    server_filetype_map = {
+        typescript = 'typescript'
+    }
 })
 
 local opts = { silent = true }

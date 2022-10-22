@@ -10,13 +10,10 @@ t.setup({
     -- autotag = {
     --     enable = true,
     -- },
-    -- indent = {
-    --     enable = true,
-    --     disable = {
-    --         "typescript",
-    --         "graphql"
-    --     },
-    -- },
+    indent = {
+        enable = true,
+        disable = {}
+    },
     ensure_installed = {
         "javascript",
         "bash",
