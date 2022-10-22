@@ -8,8 +8,8 @@ local opts = { noremap = true, silent = true }
 keymap.set('t', '<Esc>', '<C-|><C-n>', opts)
 keymap.set('n', '<C-t>', '<Cmd>terminal<CR>', opts)
 
-keymap.set('n', 'ss', '<Cmd>split<CR><C-w>w', opts)
-keymap.set('n', 'sv', '<Cmd>vsplit<CR><C-w>w', opts)
+keymap.set('n', 'sp', '<Cmd>split<CR><C-w>w', opts)
+keymap.set('n', 'vs', '<Cmd>vsplit<CR><C-w>w', opts)
 
 keymap.set('n', 'tn', '<Cmd>tabnew<CR>', opts)
 keymap.set('n', 'tl', '<Cmd>tabnext<CR>', opts)

@@ -26,7 +26,7 @@ opt.shiftwidth = 4
 -- 検索パターンに大文字小文字を区別しない
 opt.ignorecase = true
 -- 検索パターンに大文字を含んでいたら大文字小文字を区別する
--- opt.smartcase = true
+opt.smartcase = true
 -- 一番下の単語まで行ったら一番上に戻る
 -- opt.wrapscan = true
 -- 行数表示
