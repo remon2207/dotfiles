@@ -76,7 +76,6 @@ opt.signcolumn = 'yes'
 
 opt.autoread = true
 
-
 opt.list = true
 opt.listchars = 'tab:> '
 

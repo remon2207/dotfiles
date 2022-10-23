@@ -20,6 +20,9 @@ telescope.setup({
             '--smart-case',
             '--hidden',
         },
+        layout_config = {
+            prompt_position = "top"
+        },
         mappings = {
             i = {
                 ['<Esc><Esc>'] = a.close,
@@ -38,7 +41,7 @@ telescope.setup({
     extensions = {
         file_browser = {
             hijack_netrw = true,
-            theme = 'dropdown',
+            -- theme = 'dropdown',
             hidden = true,
         },
     },

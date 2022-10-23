@@ -25,7 +25,7 @@ vim.keymap.set('v', '<leader>ca', '<cmd><C-U>Lspsaga range_code_action<CR>', opt
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
 vim.keymap.set('n', '<Leader>rn', '<cmd>Lspsaga rename<CR>', opts)
 -- vim.keymap.set("n", "gpd", "<cmd>Lspsaga preview_definition<CR>", opts)
-vim.keymap.set('n', 'gpd', '<cmd>Lspsaga peek_definition<CR>', opts)
+-- vim.keymap.set('n', 'gpd', '<cmd>Lspsaga peek_definition<CR>', opts)
 vim.keymap.set('n', '<Leader>e', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 vim.keymap.set('n', '<Leader>ft', '<Cmd>Lspsaga open_floaterm<CR>', opts)
 vim.keymap.set('t', '<Leader>ft', '<Cmd>Lspsaga close_floaterm<CR>', opts)

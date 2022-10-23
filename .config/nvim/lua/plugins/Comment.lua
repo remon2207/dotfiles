@@ -3,8 +3,6 @@ if not status then
     return
 end
 
-comment.setup()
-
-local ft = require('Comment.ft')
-
-ft({ 'javascriptreact', 'typescriptreact' }, '{/*%s*/}')
+comment.setup({
+    pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+})

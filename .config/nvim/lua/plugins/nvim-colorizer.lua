@@ -8,7 +8,8 @@ colorizer.setup({
     "javascriptreact",
     "typescriptreact",
     "html",
-    "lua"
+    "lua",
+    "vim"
     -- html = {
     --     mode = "foreground",
     -- },

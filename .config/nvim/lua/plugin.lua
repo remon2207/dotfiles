@@ -47,21 +47,22 @@ packer.startup({
         })
 
         -- Colorscheme
-        -- use("joshdick/onedark.vim")
         -- use({
-        --     "lifepillar/vim-solarized8",
+        --     'svrana/neosolarized.nvim',
         --     config = function()
-        --         require("plugins.vim-solarized8")
+        --         require('plugins.neosolarized')
         --     end,
+        --     requires = {
+        --         'tjdevries/colorbuddy.nvim',
+        --     },
         -- })
+        -- use('ishan9299/nvim-solarized-lua')
+        -- use('lifepillar/vim-solarized8')
+        -- use('RRethy/nvim-base16')
+
         use({
-            'svrana/neosolarized.nvim',
-            config = function()
-                require('plugins.neosolarized')
-            end,
-            requires = {
-                'tjdevries/colorbuddy.nvim',
-            },
+            'echasnovski/mini.nvim',
+            config = function() require('plugins.mini') end
         })
 
         -- Help to Japanese
@@ -78,9 +79,9 @@ packer.startup({
                 require('plugins.Comment')
             end,
         })
-        -- use({
-        --     'preservim/nerdcommenter'
-        -- })
+        use({
+            'JoosepAlviste/nvim-ts-context-commentstring'
+        })
 
         -- Syntax highlight
         use({
@@ -101,10 +102,6 @@ packer.startup({
         })
 
         -- snippet
-        -- use {
-        --     'SirVer/ultisnips',
-        --     config = function() require('plugins.ultisnips') end
-        -- }
         use({
             'L3MON4D3/LuaSnip',
             config = function()
@@ -113,7 +110,6 @@ packer.startup({
         })
 
         -- 引用符
-        -- use("tpope/vim-surround")
         use({
             'kylechui/nvim-surround',
             config = function()
@@ -164,6 +160,15 @@ packer.startup({
         --         'kyazdani42/nvim-web-devicons',
         --     },
         -- })
+        -- use({
+        --     'nvim-neo-tree/neo-tree.nvim',
+        --     -- branch = 'v2.x',
+        --     requires = {
+        --         'nvim-lua/plenary.nvim',
+        --         'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+        --         'MunifTanjim/nui.nvim',
+        --     },
+        -- })
 
         -- LSP
         use({
@@ -179,7 +184,7 @@ packer.startup({
         use({
             'williamboman/mason.nvim',
             config = function()
-                require('plugins.mason')
+                require('plugins.nvim-lspconfig')
             end,
         })
         use({
@@ -234,15 +239,15 @@ packer.startup({
         })
 
         -- Stylish UI
-        use({
-            'glepnir/lspsaga.nvim',
-            branch = 'main',
-            -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
-            -- branch = 'version_2.2',
-            config = function()
-                require('plugins.lspsaga')
-            end,
-        })
+        -- use({
+        --     'glepnir/lspsaga.nvim',
+        --     branch = 'main',
+        --     -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
+        --     -- branch = 'version_2.2',
+        --     config = function()
+        --         require('plugins.lspsaga')
+        --     end,
+        -- })
 
         use({
             'onsails/lspkind.nvim',
@@ -344,7 +349,6 @@ packer.startup({
     end,
     config = {
         display = {
-            -- open_fn = require("packer.util").float,
             open_fn = function()
                 return require('packer.util').float({ border = 'single' })
             end,

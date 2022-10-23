@@ -12,12 +12,7 @@
 --     command = 'colorscheme solarized8'
 -- })
 
--- vim.cmd([[colorscheme iceberg]])
--- vim.cmd([[colorscheme solarized8]])
--- vim.cmd([[colorscheme NeoSolarized]])
--- vim.cmd([[colorscheme neosolarized]])
+-- vim.g.solarized_italics = false
 -- vim.cmd([[colorscheme solarized]])
--- vim.cmd([[colorscheme nord]])
--- vim.cmd([[colorscheme nightfox]])
--- vim.cmd([[colorscheme nordfox]])
--- vim.cmd([[colorscheme onedark]])
+-- vim.cmd([[colorscheme base16-solarized-dark]])
+-- vim.cmd([[autocmd vimenter * ++nested colorscheme solarized8]])
