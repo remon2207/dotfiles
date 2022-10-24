@@ -1,56 +1,39 @@
 local opt = vim.opt
 
--- 保存時の文字コード
+-- Character code
 opt.fileencoding = 'utf-8'
--- 読み込み時の文字コードの自動判別. 左側が優先される
 opt.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
--- 改行コードの自動判別. 左側が優先される
 opt.fileformats = { 'unix', 'dos', 'mac' }
--- レジスタ、クリップボードの共有
+-- Share of register and clipboard
 opt.clipboard:append({ 'unnamed', 'unnamedplus' })
--- タブ入力を複数の空白入力に置き換える
+-- Indent
 opt.expandtab = true
--- 画面上でタブ文字が占める幅
--- 改行時に前の行のインデントを継続する
 opt.autoindent = true
 opt.smartindent = true
--- opt.breakindent = true
--- opt.cindent = true
--- 改行時に前の行の構文をチェックし次の行のインデントを増減する
 opt.smarttab = true
--- smartindentで増減する幅
 opt.tabstop = 4
 opt.shiftwidth = 4
--- インクリメンタルサーチ. １文字入力毎に検索を行う
--- opt.incsearch = true
--- 検索パターンに大文字小文字を区別しない
+-- Case insensitive
 opt.ignorecase = true
--- 検索パターンに大文字を含んでいたら大文字小文字を区別する
 opt.smartcase = true
--- 一番下の単語まで行ったら一番上に戻る
--- opt.wrapscan = true
--- 行数表示
+-- Show number
 opt.number = true
--- 相対行
+-- Relative line
 opt.relativenumber = true
--- カーソルラインをハイライト
+-- Highlight cursor line
 opt.cursorline = true
 -- opt.cursorcolumn = true
--- バックスペースキーの有効化
+-- Enable backspace key
 opt.backspace = { 'indent', 'eol', 'start' }
--- コマンドモードの補完
--- opt.wildmenu = true
--- ステータスラインを常に表示
+-- Show always status line
 opt.laststatus = 1
--- 現在のモードを表示
+-- Show current mode
 opt.showmode = false
--- 打ったコマンドをステータスラインの下に表示
+-- Show command you hit
 opt.showcmd = true
--- ステータスラインの右側にカーソルの現在位置を表示する
+-- Show current position on status line
 opt.ruler = true
--- タイトルバーにファイルパスを表示
-opt.title = false
--- swap無効
+-- Disable swap file
 opt.swapfile = false
 
 opt.hlsearch = false
@@ -60,18 +43,18 @@ opt.termguicolors = true
 
 opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
--- ヘルプの言語の優先順位
+-- Priority of help language
 opt.helplang = { 'ja', 'en' }
 
--- カーソルを中央にする
+-- Center the cursor line
 -- opt.scrolloff = 999
 
--- 背景透過
+-- Popup window the background opacity
 opt.winblend = 0
 opt.wildoptions = 'pum'
 opt.pumblend = 10
 
--- サインカラムを常時表示
+-- Show always sign column
 opt.signcolumn = 'yes'
 
 opt.autoread = true
@@ -90,10 +73,10 @@ vim.cmd([[let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"]])
 -- 256 color
 vim.cmd([[set t_Co=256]])
 
--- 保存するかの確認ダイアログを表示
+-- Confirm dialog on close
 opt.confirm = true
 
--- cursor style
+-- Cursor style
 -- opt.guicursor = {
 --     i = 'block',
 -- }

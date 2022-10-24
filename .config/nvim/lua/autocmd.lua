@@ -7,7 +7,7 @@ api.nvim_clear_autocmds({
     pattern = '*',
     group = 'file',
 })
--- 改行時の自動コメントアウトを無効化
+
 api.nvim_create_autocmd('FileType', {
     pattern = { '*' },
     group = 'file',
@@ -16,7 +16,6 @@ api.nvim_create_autocmd('FileType', {
     end,
 })
 
--- 'IMEの自動無効化
 api.nvim_create_autocmd('InsertLeave', {
     pattern = '*',
     callback = function()
