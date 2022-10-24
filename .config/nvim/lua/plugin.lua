@@ -56,16 +56,16 @@ packer.startup({
         --         'tjdevries/colorbuddy.nvim',
         --     },
         -- })
-        -- use('ishan9299/nvim-solarized-lua')
+        use('ishan9299/nvim-solarized-lua')
         -- use('lifepillar/vim-solarized8')
         -- use('RRethy/nvim-base16')
 
-        use({
-            'echasnovski/mini.nvim',
-            config = function()
-                require('plugins.mini')
-            end,
-        })
+        -- use({
+        --     'echasnovski/mini.nvim',
+        --     config = function()
+        --         require('plugins.mini')
+        --     end,
+        -- })
 
         -- Help to Japanese
         use('vim-jp/vimdoc-ja')
