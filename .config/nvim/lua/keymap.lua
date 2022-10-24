@@ -2,7 +2,7 @@ local keymap = vim.keymap
 
 local opts = { noremap = true, silent = true }
 
-keymap.set("n", "<Esc><Esc>", "<Cmd>set nohlsearch!<CR>", opts)
+keymap.set('n', '<Esc><Esc>', '<Cmd>set nohlsearch!<CR>', opts)
 
 keymap.set('t', '<Esc>', '<C-|><C-n>', opts)
 keymap.set('n', '<C-t>', '<Cmd>terminal<CR>', opts)

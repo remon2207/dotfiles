@@ -70,7 +70,7 @@ packer.startup({
         -- Help to Japanese
         use('vim-jp/vimdoc-ja')
 
-        -- DeepL translater
+        -- Translater
         use('vim-denops/denops.vim')
         use('skanehira/denops-translate.vim')
 
@@ -136,7 +136,7 @@ packer.startup({
         })
         use('nvim-telescope/telescope-file-browser.nvim')
 
-        -- jump
+        -- Jump
         use({
             'phaazon/hop.nvim',
             config = function()
@@ -144,7 +144,7 @@ packer.startup({
             end,
         })
 
-        -- bracket autocompletion
+        -- Bracket autocompletion
         use({
             'windwp/nvim-autopairs',
             config = function()
@@ -152,7 +152,7 @@ packer.startup({
             end,
         })
 
-        -- filer
+        -- Filer
         -- use({
         --     'kyazdani42/nvim-tree.lua',
         --     config = function()
@@ -196,7 +196,7 @@ packer.startup({
             end,
         })
 
-        -- completion
+        -- Completion
         use({
             'hrsh7th/nvim-cmp',
             config = function()
@@ -345,7 +345,7 @@ packer.startup({
         -- emmet for HTML
         use('mattn/emmet-vim')
 
-        -- background transparent
+        -- Background transparent
         use({
             'xiyaowong/nvim-transparent',
             config = function()
