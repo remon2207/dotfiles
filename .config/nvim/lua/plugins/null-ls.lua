@@ -2,7 +2,6 @@ local status, null_ls = pcall(require, 'null-ls')
 if not status then
     return
 end
-local dotfiles = 'sa'
 
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
@@ -37,15 +36,6 @@ null_ls.setup({
         formatting.stylua,
         formatting.shfmt.with({
             extra_args = { '--indent', '4', '--space-redirects' },
-        }),
-        -- diagnostics.cspell,
-        -- code_actions.cspell,
-        diagnostics.cspell.with({
-            diagnostics_postprocess = function(diagnostic)
-                -- レベルをWARNに変更（デフォルトはERROR）
-                diagnostic.severity = vim.diagnostic.severity['WARN']
-            end,
-            extra_args = { '--config', '~/.config/cspell/cspell.json' },
         }),
     },
     on_attach = function(client)
