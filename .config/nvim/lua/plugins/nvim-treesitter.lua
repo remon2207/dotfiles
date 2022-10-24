@@ -12,6 +12,10 @@ t.setup({
     -- },
     indent = {
         enable = true,
+        disable = {
+            'typescript',
+            'graphql'
+        },
     },
     context_commentstring = {
         enable = true,

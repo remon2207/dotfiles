@@ -39,12 +39,12 @@ packer.startup({
         })
 
         -- Indent Guide
-        use({
-            'lukas-reineke/indent-blankline.nvim',
-            config = function()
-                require('plugins.indent-blankline')
-            end,
-        })
+        -- use({
+        --     'lukas-reineke/indent-blankline.nvim',
+        --     config = function()
+        --         require('plugins.indent-blankline')
+        --     end,
+        -- })
 
         -- Colorscheme
         -- use({
@@ -62,7 +62,9 @@ packer.startup({
 
         use({
             'echasnovski/mini.nvim',
-            config = function() require('plugins.mini') end
+            config = function()
+                require('plugins.mini')
+            end,
         })
 
         -- Help to Japanese
@@ -80,7 +82,7 @@ packer.startup({
             end,
         })
         use({
-            'JoosepAlviste/nvim-ts-context-commentstring'
+            'JoosepAlviste/nvim-ts-context-commentstring',
         })
 
         -- Syntax highlight
@@ -329,12 +331,12 @@ packer.startup({
             end,
         })
         -- Notify ui
-        use({
-            'j-hui/fidget.nvim',
-            config = function()
-                require('plugins.fidget')
-            end,
-        })
+        -- use({
+        --     'j-hui/fidget.nvim',
+        --     config = function()
+        --         require('plugins.fidget')
+        --     end,
+        -- })
 
         use({
             'famiu/bufdelete.nvim',
@@ -342,6 +344,14 @@ packer.startup({
 
         -- emmet for HTML
         use('mattn/emmet-vim')
+
+        -- background transparent
+        use({
+            'xiyaowong/nvim-transparent',
+            config = function()
+                require('plugins.nvim-transparent')
+            end,
+        })
 
         if packer_bootstrap then
             packer.sync()
