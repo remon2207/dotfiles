@@ -64,6 +64,7 @@ imwheel
 intel-ucode
 inter-font
 jq
+kitty
 kvantum
 libtool
 libva-utils
@@ -137,6 +138,7 @@ ttf-fira-sans
 ttf-font-awesome
 ttf-hack
 ttf-hanazono
+ttf-ibm-plex
 ttf-inconsolata
 ttf-junicode
 ttf-linux-libertine
@@ -153,6 +155,7 @@ vi
 vivaldi
 vivaldi-ffmpeg-codecs
 w3m
+wezterm
 wget
 which
 wireplumber

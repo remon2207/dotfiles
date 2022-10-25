@@ -29,10 +29,18 @@ base16.setup({
 })
 
 vim.cmd([[
-" hi Normal guibg=NONE ctermbg=NONE
-" hi NonText guibg=NONE ctermbg=NONE
-" hi LineNr guibg=NONE ctermbg=NONE
-" hi Folded guibg=NONE ctermbg=NONE
-" hi EndOfBuffer guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi Folded guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+hi GitSignsAdd guibg=NONE ctermbg=NONE
+hi GitSignsChange guibg=NONE ctermbg=NONE
+hi GitSignsDelete guibg=NONE ctermbg=NONE
+hi DiagnosticFloatingError guibg=NONE  ctermbg=NONE
+hi DiagnosticFloatingWarn guibg=NONE ctermbg=NONE                                                                                                                                                                                        
+hi DiagnosticFloatingInfo guibg=NONE ctermbg=NONE                                                                                                                                                                                        
+hi DiagnosticFloatingHint guibg=NONE ctermbg=NONE
 hi Floatborder guibg=NONE guifg=#073642
+hi CursorLineNr ctermfg=11 guifg=#b58900
 ]])

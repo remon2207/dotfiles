@@ -52,7 +52,7 @@ xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
 xset r rate 200 50 &
 fcitx5 &
-# picom -b &
+picom -b &
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
 polybar dp &
 polybar dvi &
@@ -60,7 +60,8 @@ polybar hdmi &
 imwheel -b 45 &
 discord &
 slack &
-alacritty -e htop &
+# alacritty -e htop &
+kitty -1 htop &
 google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
 google-chrome-stable &
 exec i3

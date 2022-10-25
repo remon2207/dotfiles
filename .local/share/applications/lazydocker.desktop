@@ -16,7 +16,7 @@ Comment=lazydocker
 Path=/usr/bin
 
 # アプリケーションの実行可能ファイル。引数を付けることができます。
-Exec=alacritty -e lazydocker
+Exec=kitty -1 lazydocker
 
 # エントリを表示するときに使われるアイコンの名前
 # Icon=
