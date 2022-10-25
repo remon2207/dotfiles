@@ -346,12 +346,12 @@ packer.startup({
         use('mattn/emmet-vim')
 
         -- Background transparent
-        use({
-            'xiyaowong/nvim-transparent',
-            config = function()
-                require('plugins.nvim-transparent')
-            end,
-        })
+        -- use({
+        --     'xiyaowong/nvim-transparent',
+        --     config = function()
+        --         require('plugins.nvim-transparent')
+        --     end,
+        -- })
 
         if packer_bootstrap then
             packer.sync()

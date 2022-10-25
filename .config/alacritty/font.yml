@@ -1,14 +1,14 @@
 font:
   size: 12
   normal:
-    family: "monospace"
+    family: "HackGen Console NF"
     style: Regular
   bold:
-    family: "monospace"
+    family: "HackGen Console NF"
     style: Bold
   italic:
-    family: "monospace"
+    family: "HackGen Console NF"
     style: Italic
   bold_italic:
-    family: "monospace"
+    family: "HackGen Console NF"
     style: Bold Italic

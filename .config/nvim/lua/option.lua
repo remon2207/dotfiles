@@ -19,7 +19,7 @@ opt.smartcase = true
 -- Show number
 opt.number = true
 -- Relative line
-opt.relativenumber = true
+-- opt.relativenumber = true
 -- Highlight cursor line
 opt.cursorline = true
 -- opt.cursorcolumn = true
