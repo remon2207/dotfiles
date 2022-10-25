@@ -8,6 +8,11 @@ if not status2 then
     return
 end
 
+local status3, lspconfig = pcall(require, 'lspconfig')
+if not status3 then
+    return
+end
+
 local api = vim.api
 local lsp = vim.lsp
 local handlers = lsp.handlers
@@ -64,6 +69,19 @@ local on_attach = function(client, bufnr)
 
     lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
     lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
+    lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+        update_in_insert = true,
+    })
+    vim.diagnostic.config({
+        virtual_text = false,
+        severity_sort = true,
+        float = {
+            border = 'rounded',
+            source = 'always',
+            header = '',
+            prefix = '',
+        },
+    })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -103,7 +121,7 @@ mason_lspconfig.setup({
 
 mason_lspconfig.setup_handlers({
     function(servers)
-        require('lspconfig')[servers].setup({
+        lspconfig[servers].setup({
             on_attach = on_attach,
             flags = lsp_flags,
             capabilities = capabilities,

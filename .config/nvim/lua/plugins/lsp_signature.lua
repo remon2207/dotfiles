@@ -4,6 +4,7 @@ if not status then
 end
 
 signature.setup({
-    floating_window = false,
+    -- floating_window = false,
     -- zindex = 50
+    bind = true
 })

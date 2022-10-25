@@ -50,7 +50,7 @@ fi
 
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
-xset r rate 200 50 &
+xset r rate 190 80 &
 fcitx5 &
 picom -b &
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &

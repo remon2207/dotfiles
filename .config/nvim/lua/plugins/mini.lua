@@ -3,7 +3,6 @@ if not status then
     return
 end
 
-
 local base16_solarized = {
     base00 = '#002b36',
     base01 = '#073642',
@@ -28,19 +27,20 @@ base16.setup({
     use_cterm = false,
 })
 
-vim.cmd([[
-hi Normal guibg=NONE ctermbg=NONE
-hi NonText guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi Folded guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-hi GitSignsAdd guibg=NONE ctermbg=NONE
-hi GitSignsChange guibg=NONE ctermbg=NONE
-hi GitSignsDelete guibg=NONE ctermbg=NONE
-hi DiagnosticFloatingError guibg=NONE  ctermbg=NONE
-hi DiagnosticFloatingWarn guibg=NONE ctermbg=NONE                                                                                                                                                                                        
-hi DiagnosticFloatingInfo guibg=NONE ctermbg=NONE                                                                                                                                                                                        
-hi DiagnosticFloatingHint guibg=NONE ctermbg=NONE
-hi Floatborder guibg=NONE guifg=#073642
-hi CursorLineNr ctermfg=11 guifg=#b58900
-]])
+local api = vim.api
+
+api.nvim_set_hl(0, 'Normal', { bg = 'none', fg = '#93a1a1', ctermbg = 'none' })
+api.nvim_set_hl(0, 'NonText', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'LineNr', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'Folded', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'GitSignsAdd', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'GitSignsChange', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'GitSignsDelete', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'DiagnosticFloatingError', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'DiagnosticFloatingWarn', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'DiagnosticFloatingInfo', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'DiagnosticFloatingHint', { bg = 'none', ctermbg = 'none' })
+api.nvim_set_hl(0, 'Floatborder', { bg = 'none', fg = '#073642' })
+api.nvim_set_hl(0, 'CursorLineNr', { fg = '#b58900', ctermfg = 11 })
+api.nvim_set_hl(0, 'DiffChange', { bg = 'none', fg = '#2aa198', ctermfg = 5 })

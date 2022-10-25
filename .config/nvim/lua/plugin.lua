@@ -212,12 +212,12 @@ packer.startup({
         -- use 'quangnguyen30192/cmp-nvim-ultisnips'
 
         -- Show signature help in insert mode
-        use({
-            'ray-x/lsp_signature.nvim',
-            config = function()
-                require('plugins.lsp_signature')
-            end,
-        })
+        -- use({
+        --     'ray-x/lsp_signature.nvim',
+        --     config = function()
+        --         require('plugins.lsp_signature')
+        --     end,
+        -- })
         -- DAP
         -- use({
         --     'mfussenegger/nvim-dap',

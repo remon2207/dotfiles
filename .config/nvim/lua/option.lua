@@ -50,7 +50,8 @@ opt.helplang = { 'ja', 'en' }
 -- opt.scrolloff = 999
 
 -- Popup window the background opacity
-opt.winblend = 0
+-- opt.winblend = 100
+-- opt.winblend = 0
 opt.wildoptions = 'pum'
 opt.pumblend = 10
 
