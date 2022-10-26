@@ -216,29 +216,12 @@ if type bat > /dev/null 2>&1; then
     alias cat="bat"
 fi
 
-if type fd > /dev/null 2>&1; then
-    alias find="fd"
-fi
-
 if type ranger > /dev/null 2>&1; then
     alias r="ranger"
 fi
 
-if type lazydocker > /dev/null 2>&1; then
-    alias lzd="lazydocker"
-fi
-
-if type fzf > /dev/null 2>&1; then
-    alias repos="ghq list -p | fzf"
-    alias repo='cd $(repos)'
-fi
-
 if type tldr > /dev/null 2>&1; then
     alias rman="tldr"
-fi
-
-if type tmux > /dev/null 2>&1; then
-    alias t="tmux"
 fi
 
 if type sd > /dev/null 2>&1; then

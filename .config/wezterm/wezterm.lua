@@ -8,7 +8,7 @@ return {
         -- 'FiraCode Nerd Font',
         -- 'Ubuntu Nerd Font Mono',
         'Hack Nerd Font',
-        'BIZ UDGothic',
+        -- 'BIZ UDGothic',
         -- 'Hack Nerd Font',
         -- 'HackGen Console NF',
         -- 'Ricty Nerd Font',
@@ -18,7 +18,7 @@ return {
     }),
     font_size = 12.0,
     color_scheme = 'Builtin Solarized Dark',
-    window_background_opacity = 0.9,
+    -- window_background_opacity = 0.9,
     enable_scroll_bar = true,
     window_padding = {
         left = 0,
