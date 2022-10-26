@@ -16,6 +16,7 @@ opt.shiftwidth = 4
 -- Case insensitive
 opt.ignorecase = true
 opt.smartcase = true
+opt.wrapscan = false
 -- Show number
 opt.number = true
 -- Relative line

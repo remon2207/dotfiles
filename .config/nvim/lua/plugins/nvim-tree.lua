@@ -7,11 +7,11 @@ tree.setup({
     sort_by = 'case_sensitive',
     disable_netrw = true,
     open_on_setup = true,
-    -- actions = {
-    --     open_file = {
-    --         quit_on_open = true,
-    --     },
-    -- },
+    actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
     view = {
         -- centralize_selection = true,
         hide_root_folder = true,
@@ -65,5 +65,5 @@ tree.setup({
     },
 })
 
-vim.keymap.set('n', '<C-a-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeToggle<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<C-n>', '<Cmd>NvimTreeFocus<CR>', { noremap = true, silent = true })
