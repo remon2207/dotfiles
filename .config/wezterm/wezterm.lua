@@ -16,7 +16,8 @@ return {
         -- 'PlemolJP'
         -- 'Migu 1M'
     }),
-    font_size = 12.0,
+    -- font_size = 12.0,
+    font_size = 8.0,
     color_scheme = 'Builtin Solarized Dark',
     -- window_background_opacity = 0.9,
     enable_scroll_bar = true,
