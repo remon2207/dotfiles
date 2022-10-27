@@ -78,6 +78,7 @@ alias dbuild="docker compose build"
 alias g="git"
 alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
+alias commitnow="g commit -m update: $(date '+%Y/%m/%d %H:%M:%S')"
 alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
 
 mkcd() {
