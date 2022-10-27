@@ -138,7 +138,7 @@ packer.startup({
                 },
             },
         })
-        use('nvim-telescope/telescope-file-browser.nvim')
+        -- use('nvim-telescope/telescope-file-browser.nvim')
 
         -- Jump
         use({
@@ -157,15 +157,15 @@ packer.startup({
         })
 
         -- Filer
-        -- use({
-        --     'kyazdani42/nvim-tree.lua',
-        --     config = function()
-        --         require('plugins.nvim-tree')
-        --     end,
-        --     requires = {
-        --         'kyazdani42/nvim-web-devicons',
-        --     },
-        -- })
+        use({
+            'kyazdani42/nvim-tree.lua',
+            config = function()
+                require('plugins.nvim-tree')
+            end,
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+            },
+        })
         -- use({
         --     'nvim-neo-tree/neo-tree.nvim',
         --     -- branch = 'v2.x',
