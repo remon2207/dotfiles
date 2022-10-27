@@ -28,41 +28,48 @@ packer.startup({
 
         -- Buffer status
         use({
-                'akinsho/bufferline.nvim',
-                branch = 'main',
-                config = function()
-                    require('plugins.bufferline')
-                end,
-                requires = {
-                    'kyazdani42/nvim-web-devicons',
-                },
-            })
-            -- Indent Guide
-            -- use({
-            --     'lukas-reineke/indent-blankline.nvim',
-            --     config = function()
-            --         require('plugins.indent-blankline')
-            --     end,
-            -- })
-            -- Colorscheme
-            -- use({
-            --     'svrana/neosolarized.nvim',
-            --     config = function()
-            --         require('plugins.neosolarized')
-            --     end,
-            --     requires = {
-            --         'tjdevries/colorbuddy.nvim',
-            --     },
-            -- })
-            -- use('ishan9299/nvim-solarized-lua')
-            -- use('lifepillar/vim-solarized8')
-            -- use('RRethy/nvim-base16')
-            use({
-                'echasnovski/mini.nvim',
-                config = function()
-                    require('plugins.mini')
-                end,
-            })
+            'akinsho/bufferline.nvim',
+            branch = 'main',
+            config = function()
+                require('plugins.bufferline')
+            end,
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+            },
+        })
+        -- Indent Guide
+        -- use({
+        --     'lukas-reineke/indent-blankline.nvim',
+        --     config = function()
+        --         require('plugins.indent-blankline')
+        --     end,
+        -- })
+        -- Colorscheme
+        -- use({
+        --     'svrana/neosolarized.nvim',
+        --     config = function()
+        --         require('plugins.neosolarized')
+        --     end,
+        --     requires = {
+        --         'tjdevries/colorbuddy.nvim',
+        --     },
+        -- })
+        -- use('ishan9299/nvim-solarized-lua')
+        -- use('lifepillar/vim-solarized8')
+        -- use('RRethy/nvim-base16')
+        -- use('joshdick/onedark.vim')
+        -- use({
+        --     'navarasu/onedark.nvim',
+        --     config = function()
+        --         require('plugins.onedark')
+        --     end,
+        -- })
+        use({
+            'echasnovski/mini.nvim',
+            config = function()
+                require('plugins.mini')
+            end,
+        })
 
         -- Help to Japanese
         use('vim-jp/vimdoc-ja')
