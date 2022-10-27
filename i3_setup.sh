@@ -9,8 +9,45 @@ current_dir=$(
     pwd
 )
 file_name=$(basename $0)
-home_symbolic=(".gtkrc-2.0" ".tmux.conf" ".xinitrc" ".Xresources" ".zprofile" ".zshrc" ".zsh" "commit.template", ".bashrc", ".bash_profile")
-conf_symbolic=("alacritty" "bat" "dunst" "fontconfig" "gtk-3.0" "htop" "i3" "neofetch" "nvim" "picom" "polybar" "ranger" "rofi" "silicon" "starship.toml")
+home_symbolic=(
+    ".gtkrc-2.0"
+    ".tmux.conf"
+    ".xinitrc"
+    ".Xresources"
+    ".zprofile"
+    ".zshrc"
+    ".zsh"
+    "commit.template"
+    ".bashrc"
+    ".bash_profile"
+    ".Xmodmap"
+    ".imwheelrc"
+)
+conf_symbolic=(
+    "alacritty"
+    "bat"
+    "dunst"
+    "fish"
+    "fontconfig"
+    "gtk-3.0"
+    "htop"
+    "i3"
+    "kitty"
+    "Kvantum"
+    "neofetch"
+    "nvim"
+    "picom"
+    "polybar"
+    "qt5ct"
+    "qutebrowser"
+    "ranger"
+    "rofi"
+    "silicon"
+    "starship.toml"
+    "stylua"
+    "terminator"
+    "wezterm"
+)
 
 repeat() {
     rm -rf ${HOME}/.xinitrc ${HOME}/.config/i3

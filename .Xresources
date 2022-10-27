@@ -9,7 +9,17 @@ XTerm*faceName: Hack Nerd Font:antialias=false
 XTerm*faceSize: 12
 
 ! urxvt
-URxvt.font: xft:Hack Nerd Font:size=12
+URxvt.font: xft:Hack:size=11,xft:Hack Nerd Font:size=5
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
 
 ! font rendering
 Xft.autohint: 0
