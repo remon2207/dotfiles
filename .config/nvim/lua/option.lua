@@ -27,10 +27,14 @@ opt.cursorline = true
 -- Enable backspace key
 opt.backspace = { 'indent', 'eol', 'start' }
 -- Show always status line
-opt.laststatus = 1
+opt.laststatus = 2
+-- opt.cmdheight = 1
+opt.cmdheight = 1
 -- Show current mode
-opt.showmode = false
+opt.showmode = true
 -- Show command you hit
+opt.showcmd = true
+opt.display:remove({ 'msgsep', 'lastline'})
 opt.showcmd = true
 -- Show current position on status line
 opt.ruler = true

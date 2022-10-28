@@ -81,6 +81,7 @@ alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git comm
 alias addall="git add ."
 alias commitnow="git commit -m \"update: $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
+alias dockerprune="docker volume prune && docker system prune -a"
 
 mkcd() {
     mkdir -p ${1} && cd ${1}

@@ -48,7 +48,7 @@ null_ls.setup({
             --         lsp_formatting(bufnr)
             --     end,
             -- })
-            vim.keymap.set('n', '<Leader>a', function()
+            vim.keymap.set('n', '<CR>', function()
                 lsp_formatting()
             end, { noremap = true, silent = true })
         end

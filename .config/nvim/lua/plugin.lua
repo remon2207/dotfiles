@@ -38,12 +38,12 @@ packer.startup({
             },
         })
         -- Indent Guide
-        -- use({
-        --     'lukas-reineke/indent-blankline.nvim',
-        --     config = function()
-        --         require('plugins.indent-blankline')
-        --     end,
-        -- })
+        use({
+            'lukas-reineke/indent-blankline.nvim',
+            config = function()
+                require('plugins.indent-blankline')
+            end,
+        })
         -- Colorscheme
         -- use({
         --     'svrana/neosolarized.nvim',
@@ -303,6 +303,17 @@ packer.startup({
         --         require('plugins.toggleterm')
         --     end,
         -- })
+        -- use({
+        --     'VonHeikemen/fine-cmdline.nvim',
+        --     config = function()
+        --         require('plugins.fine-cmdline')
+        --     end,
+        --     requires = {
+        --         {
+        --             'MunifTanjim/nui.nvim',
+        --         },
+        --     },
+        -- })
 
         -- Git
         use({
@@ -341,6 +352,26 @@ packer.startup({
         --         require('plugins.fidget')
         --     end,
         -- })
+        -- use({
+        --     'rcarriga/nvim-notify',
+        --     config = function()
+        --         require('plugins.nvim-notify')
+        --     end,
+        -- })
+        use({
+            'folke/noice.nvim',
+            config = function()
+                require('plugins.noice')
+            end,
+            requires = {
+                -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+                'MunifTanjim/nui.nvim',
+                -- OPTIONAL:
+                --   `nvim-notify` is only needed, if you want to use the notification view.
+                --   If not available, we use `mini` as the fallback
+                'rcarriga/nvim-notify',
+            },
+        })
 
         use({
             'famiu/bufdelete.nvim',
