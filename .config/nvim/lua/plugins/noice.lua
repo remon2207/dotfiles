@@ -10,6 +10,11 @@ if not status2 then
     return
 end
 
+local status3, notify = pcall(require, 'notify')
+if not status3 then
+    return
+end
+
 telescope.load_extension('noice')
 
 vim.keymap.set('n', '<leader>nl', function()

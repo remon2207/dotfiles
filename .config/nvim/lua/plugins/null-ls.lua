@@ -40,14 +40,6 @@ null_ls.setup({
     },
     on_attach = function(client)
         if client.supports_method('textDocument/formatting') then
-            -- vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            -- vim.api.nvim_create_autocmd("BufWritePre", {
-            --     group = augroup,
-            --     buffer = bufnr,
-            --     callback = function()
-            --         lsp_formatting(bufnr)
-            --     end,
-            -- })
             vim.keymap.set('n', '<CR>', function()
                 lsp_formatting()
             end, { noremap = true, silent = true })

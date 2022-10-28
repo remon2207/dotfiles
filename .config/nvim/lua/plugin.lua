@@ -353,10 +353,10 @@ packer.startup({
         --     end,
         -- })
         -- use({
-        --     'rcarriga/nvim-notify',
-        --     config = function()
-        --         require('plugins.nvim-notify')
-        --     end,
+        --    'rcarriga/nvim-notify',
+        --    config = function()
+        --        require('plugins.nvim-notify')
+        --    end,
         -- })
         use({
             'folke/noice.nvim',
