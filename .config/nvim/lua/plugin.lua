@@ -157,24 +157,27 @@ packer.startup({
         })
 
         -- Filer
-        use({
-            'kyazdani42/nvim-tree.lua',
-            config = function()
-                require('plugins.nvim-tree')
-            end,
-            requires = {
-                'kyazdani42/nvim-web-devicons',
-            },
-        })
         -- use({
-        --     'nvim-neo-tree/neo-tree.nvim',
-        --     -- branch = 'v2.x',
+        --     'kyazdani42/nvim-tree.lua',
+        --     config = function()
+        --         require('plugins.nvim-tree')
+        --     end,
         --     requires = {
-        --         'nvim-lua/plenary.nvim',
-        --         'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
-        --         'MunifTanjim/nui.nvim',
+        --         'kyazdani42/nvim-web-devicons',
         --     },
         -- })
+        use({
+            'nvim-neo-tree/neo-tree.nvim',
+            config = function()
+                require('plugins.neo-tree')
+            end,
+            -- branch = 'v2.x',
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+                'MunifTanjim/nui.nvim',
+            },
+        })
 
         -- LSP
         use({
@@ -358,20 +361,20 @@ packer.startup({
         --        require('plugins.nvim-notify')
         --    end,
         -- })
-        use({
-            'folke/noice.nvim',
-            config = function()
-                require('plugins.noice')
-            end,
-            requires = {
-                -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-                'MunifTanjim/nui.nvim',
-                -- OPTIONAL:
-                --   `nvim-notify` is only needed, if you want to use the notification view.
-                --   If not available, we use `mini` as the fallback
-                'rcarriga/nvim-notify',
-            },
-        })
+        -- use({
+        --     'folke/noice.nvim',
+        --     config = function()
+        --         require('plugins.noice')
+        --     end,
+        --     requires = {
+        --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        --         'MunifTanjim/nui.nvim',
+        --         -- OPTIONAL:
+        --         --   `nvim-notify` is only needed, if you want to use the notification view.
+        --         --   If not available, we use `mini` as the fallback
+        --         'rcarriga/nvim-notify',
+        --     },
+        -- })
 
         use({
             'famiu/bufdelete.nvim',
@@ -385,6 +388,13 @@ packer.startup({
         --     'xiyaowong/nvim-transparent',
         --     config = function()
         --         require('plugins.nvim-transparent')
+        --     end,
+        -- })
+        -- dash board
+        -- use({
+        --     'glepnir/dashboard-nvim',
+        --     config = function()
+        --         require('plugins.dashboard-nvim')
         --     end,
         -- })
 

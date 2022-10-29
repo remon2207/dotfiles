@@ -31,3 +31,7 @@ local api = vim.api
 
 api.nvim_set_hl(0, 'Floatborder', { bg = 'none', fg = '#073642' })
 api.nvim_set_hl(0, 'CursorLineNr', { fg = '#b58900', ctermfg = 11 })
+-- NotifyINFOBorderxxx guifg=#6c71c4
+-- api.nvim_set_hl(0, 'NotifyINFOBorder', { fg = '#6c71c4', bg = 'none', ctermbg = 'none'})
+-- NoiceCmdlinePopupBorder
+-- api.nvim_set_hl(0, 'NoiceCmdlinePopupBorder', { bg = 'none', ctermbg = 'none'} )
