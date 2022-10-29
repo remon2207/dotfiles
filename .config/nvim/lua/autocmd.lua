@@ -37,11 +37,11 @@ api.nvim_create_autocmd({ 'FileType' }, {
     command = 'setlocal tabstop=2 shiftwidth=2',
 })
 
--- api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
---     pattern = { "*.graphql", "*.prisma" },
---     group = "file",
---     command = "setlocal nosmartindent",
--- })
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+    pattern = { '*.graphql' },
+    group = 'file',
+    command = 'setlocal nosmartindent',
+})
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
     pattern = { 'tsconfig.json', 'jsconfig.json' },

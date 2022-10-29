@@ -42,8 +42,8 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 
 # keybind
-# bindkey -e
-bindkey -v
+bindkey -e
+# bindkey -v
 
 alias j="jobs"
 alias dc="cd"

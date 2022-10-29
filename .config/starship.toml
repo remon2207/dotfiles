@@ -76,11 +76,11 @@ symbol = " "
 [spack]
 symbol = "🅢 "
 
-[shell]
-fish_indicator = ""
-bash_indicator = ""
-zsh_indicator = " "
-powershell_indicator = "_"
-unknown_indicator = "mystery shell"
-style = "cyan bold"
-disabled = false
+# [shell]
+# fish_indicator = ""
+# bash_indicator = ""
+# zsh_indicator = " "
+# powershell_indicator = "_"
+# unknown_indicator = "mystery shell"
+# style = "cyan bold"
+# disabled = false
