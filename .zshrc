@@ -40,6 +40,17 @@ compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:*:default' menu yes select search
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # keybind
 bindkey -e
@@ -84,6 +95,8 @@ alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
 alias dockerprune="docker volume prune && docker system prune -a"
 alias kittyconf="nvim ${HOME}/.config/kitty/kitty.conf"
 alias ckitty="cd ${HOME}/.config/kitty"
+alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
+alias psa="ps auxf"
 
 mkcd() {
     mkdir -p ${1} && cd ${1}
@@ -134,6 +147,7 @@ if [[ -n ${DISPLAY} ]]; then
         fi
     fi
 
+    zinit light Aloxaf/fzf-tab
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
     zinit light zsh-users/zsh-completions
@@ -184,8 +198,11 @@ else
     GIT_PS1_SHOWSTASHSTATE=true
     GIT_PS1_SHOWUPSTREAM=auto
 
+    zinit light Aloxaf/fzf-tab
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
+    zinit light zsh-users/zsh-completions
+    zinit light rupa/z
 
     # load git-prompt
     source "/usr/share/git/completion/git-prompt.sh"

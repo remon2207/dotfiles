@@ -4,7 +4,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 if [[ -n ${DISPLAY} ]]; then
     export EDITOR="nvim"
     export VISUAL="nvim"
-    export BROWSER="vivaldi-stable"
+    export BROWSER="google-chrome-stable"
 else
     export EDITOR="vi"
     export VISUAL="vi"
@@ -27,8 +27,13 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_IM_MODULE="fcitx5"
 export QT_IM_MODULE="fcitx5"
 export XMODIFIERS="@im=fcitx5"
-export LIBVA_DRIVER_NAME="vdpau"
-export VDPAU_DRIVER="nvidia"
-export PAGER="less"
+export LIBVA_DRIVER_NAME="nouveau"
+export VDPAU_DRIVER="nouveau"
+
+if type bat > /dev/null 2>&1; then
+    export PAGER="bat"
+else
+    export PAGER="less"
+fi
 export GLFW_IM_MODULE="ibus"
 export XDG_CONFIG_HOME="$HOME/.config"

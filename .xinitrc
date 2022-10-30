@@ -64,8 +64,8 @@ discord &
 slack &
 # alacritty -e htop &
 kitty -1 htop &
-# google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-# google-chrome-stable &
-vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
-vivaldi-stable &
+google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+google-chrome-stable &
+# vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
+# vivaldi-stable &
 exec i3
