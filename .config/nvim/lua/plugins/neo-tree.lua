@@ -37,7 +37,8 @@ neo_tree.setup({
             --     '**/node_modules/**'
             -- },
             never_show = {
-                'node_modules'
+                'node_modules',
+                '.git'
             }
         },
     },

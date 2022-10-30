@@ -52,7 +52,7 @@ fi
 
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
-xset r rate 140 150 &
+xset r rate 160 60 &
 fcitx5 &
 picom -b
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
@@ -64,6 +64,8 @@ discord &
 slack &
 # alacritty -e htop &
 kitty -1 htop &
-google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-google-chrome-stable &
+# google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+# google-chrome-stable &
+vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
+vivaldi-stable &
 exec i3
