@@ -56,20 +56,19 @@ packer.startup({
         -- })
         -- use('ishan9299/nvim-solarized-lua')
         -- use('lifepillar/vim-solarized8')
-        -- use('RRethy/nvim-base16')
-        -- use('joshdick/onedark.vim')
+        use('RRethy/nvim-base16')
         -- use({
         --     'navarasu/onedark.nvim',
         --     config = function()
         --         require('plugins.onedark')
         --     end,
         -- })
-        use({
-            'echasnovski/mini.nvim',
-            config = function()
-                require('plugins.mini')
-            end,
-        })
+        -- use({
+        --     'echasnovski/mini.nvim',
+        --     config = function()
+        --         require('plugins.mini')
+        --     end,
+        -- })
 
         -- Help to Japanese
         use('vim-jp/vimdoc-ja')
@@ -92,7 +91,7 @@ packer.startup({
         -- Syntax highlight
         use({
             'nvim-treesitter/nvim-treesitter',
-            commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
+            -- commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
             run = ':TSUpdate',
             config = function()
                 require('plugins.nvim-treesitter')

@@ -58,7 +58,7 @@ local on_attach = function(client, bufnr)
     elseif client.name == 'sumneko_lua' then
         client.server_capabilities.documentFormattingProvider = false
     elseif client.name == 'prismals' then
-        vim.keymap.set('n', '<CR>', function()
+        vim.keymap.set('n', '<Leader>a', function()
             lsp_formatting()
         end, bufopts)
     end

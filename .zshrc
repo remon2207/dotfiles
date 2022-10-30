@@ -97,6 +97,7 @@ alias kittyconf="nvim ${HOME}/.config/kitty/kitty.conf"
 alias ckitty="cd ${HOME}/.config/kitty"
 alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
 alias psa="ps auxf"
+alias kittyfonts="kitty + list-fonts --psname | less"
 
 mkcd() {
     mkdir -p ${1} && cd ${1}

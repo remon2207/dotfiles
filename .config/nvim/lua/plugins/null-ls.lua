@@ -40,7 +40,7 @@ null_ls.setup({
     },
     on_attach = function(client)
         if client.supports_method('textDocument/formatting') then
-            vim.keymap.set('n', '<CR>', function()
+            vim.keymap.set('n', '<Leader>a', function()
                 lsp_formatting()
             end, { noremap = true, silent = true })
         end
