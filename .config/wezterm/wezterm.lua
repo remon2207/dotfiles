@@ -2,22 +2,9 @@ local wezterm = require('wezterm')
 
 return {
     font = wezterm.font_with_fallback({
-        -- 'CaskaydiaCove Nerd Font',
-        -- 'JetBrainsMono Nerd Font',
-        -- 'Ubuntu Nerd Font',
-        -- 'FiraCode Nerd Font',
-        -- 'Ubuntu Nerd Font Mono',
-        -- 'Hack Nerd Font',
-        -- 'BIZ UDGothic',
-        -- 'Hack Nerd Font',
         'HackGen Console NF',
-        -- 'Ricty Nerd Font',
-        -- 'Cica',
-        -- 'PlemolJP'
-        -- 'Migu 1M'
     }),
     font_size = 12.0,
-    -- font_size = 8.0,
     color_scheme = 'Builtin Solarized Dark',
     -- window_background_opacity = 0.9,
     enable_scroll_bar = true,

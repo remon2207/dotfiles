@@ -63,6 +63,7 @@ repeat() {
     sudo ln -s ${HOME}/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
     sudo ln -s ${HOME}/.config/gtk-3.0/settings.ini /etc/gtk-3.0
     ln -s ${current_dir}/.local/share/applications/lazydocker.desktop ~/.local/share/applications/
+    ln -s ${current_dir}/.local/share/applications/bghtop.desktop ~/.local/share/applications/
 }
 
 services() {

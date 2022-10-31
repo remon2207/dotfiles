@@ -1,28 +1,8 @@
 [Desktop Entry]
-
-# 先のセクションでリストアップしたタイプ
 Type=Application
-
-# このファイルが準拠しているデスクトップエントリ仕様のバージョン
 Version=1.0
-
-# アプリケーションの名前
 Name=lazydocker
-
-# ツールチップとして利用できる/されるコメント
 Comment=lazydocker
-
-# 実行ファイルが存在するフォルダへのパス
 Path=/usr/bin
-
-# アプリケーションの実行可能ファイル。引数を付けることができます。
 Exec=kitty -1 lazydocker
-
-# エントリを表示するときに使われるアイコンの名前
-# Icon=
-
-# アプリケーションをターミナルで実行する必要があるかどうかを記述
 Terminal=false
-
-# このエントリをどのカテゴリで表示すべきかを記述
-# Categories=
