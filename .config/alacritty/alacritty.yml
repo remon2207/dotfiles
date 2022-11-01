@@ -4,3 +4,4 @@ import:
   - '~/.config/alacritty/font.yml'
   - '~/.config/alacritty/color.yml'
   - '~/.config/alacritty/keybind.yml'
+  - '~/.config/alacritty/cursor.yml'
