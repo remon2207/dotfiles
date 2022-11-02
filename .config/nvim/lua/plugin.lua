@@ -247,15 +247,13 @@ packer.startup({
         })
 
         -- Stylish UI
-        -- use({
-        --     'glepnir/lspsaga.nvim',
-        --     branch = 'main',
-        --     -- commit = "04e8167740c66193686ea3d14b511c7b160ea755",
-        --     -- branch = 'version_2.2',
-        --     config = function()
-        --         require('plugins.lspsaga')
-        --     end,
-        -- })
+        use({
+            'glepnir/lspsaga.nvim',
+            branch = 'main',
+            config = function()
+                require('plugins.lspsaga')
+            end,
+        })
 
         use({
             'onsails/lspkind.nvim',
