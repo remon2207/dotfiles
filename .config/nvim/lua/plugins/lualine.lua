@@ -1,4 +1,4 @@
-local status, lualine = pcall(require, "lualine")
+local status, lualine = pcall(require, 'lualine')
 if not status then
     return
 end
@@ -8,9 +8,22 @@ if not status2 then
     return
 end
 
+local status3, noice = pcall(require, 'noice')
+if not status3 then
+    return
+end
+
 lualine.setup({
     options = {
-        -- section_separators = { left = "", right = " " },
-        theme = 'solarized_dark'
+        theme = solarized_dark,
+    },
+    sections = {
+        lualine_x = {
+            {
+                noice.api.statusline.mode.get,
+                cond = noice.api.statusline.mode.has,
+                color = { fg = '#ff9e64' },
+            },
+        },
     },
 })

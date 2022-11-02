@@ -70,7 +70,7 @@ local on_attach = function(client, bufnr)
     }
 
     -- lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
-    lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
+    -- lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
     lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
         update_in_insert = true,
     })

@@ -225,6 +225,10 @@ if type lazydocker > /dev/null 2>&1; then
     alias lzd="lazydocker"
 fi
 
+if type lazygit > /dev/null 2>&1; then
+    alias lzg="lazygit"
+fi
+
 if type fzf > /dev/null 2>&1; then
     alias repos="ghq list -p | fzf"
     alias repo='cd $(repos)'

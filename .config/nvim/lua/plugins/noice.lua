@@ -41,20 +41,26 @@ end
 -- })
 
 noice.setup({
-    lsp = {
-        hover = {
-            enabled = false,
-            -- opts = {
-            --     border = {
-            --         padding = {
-            --             top = 0,
-            --             left = 0
-            --         },
-            --         style = 'rounded'
-            --     },
-            --     position = 2
-            -- },
+    routes = {
+        {
+            view = 'notify',
+            filter = { event = 'msg_showmode' },
         },
+    },
+    lsp = {
+        -- hover = {
+        -- enabled = false,
+        -- opts = {
+        --     border = {
+        --         padding = {
+        --             top = 0,
+        --             left = 0
+        --         },
+        --         style = 'rounded'
+        --     },
+        --     position = 2
+        -- },
+        -- },
         signature = {
             auto_open = {
                 enabled = false,
