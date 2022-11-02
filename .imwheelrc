@@ -1,9 +1,11 @@
-"^google-chrome$"
+"^Google-chrome$"
     None, Up, Button4, 4
     None, Down, Button5, 4
-"^code$"
-    None, Up, Button4, 4
-    None, Down, Button5, 4
+
 "^Vivaldi-stable$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+
+"^Brave-browser$"
     None, Up, Button4, 4
     None, Down, Button5, 4
