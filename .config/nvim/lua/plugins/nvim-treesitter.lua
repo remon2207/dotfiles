@@ -7,12 +7,18 @@ t.setup({
   highlight = {
     enable = true,
   },
-  indent = {
+  -- indent = {
+  --   enable = true,
+  --   disable = {
+  --     'typescript',
+  --     'graphql',
+  --   },
+  -- },
+  yati = {
     enable = true,
-    disable = {
-      'typescript',
-      'graphql',
-    },
+  },
+  indent = {
+    enable = false, -- disable builtin indent module
   },
   context_commentstring = {
     enable = true,

@@ -97,6 +97,9 @@ packer.startup({
         require('plugins.nvim-treesitter')
       end,
     })
+    use({
+      'yioneko/nvim-yati',
+    })
 
     -- Hex color code
     use({

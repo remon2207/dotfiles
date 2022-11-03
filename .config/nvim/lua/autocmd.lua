@@ -38,7 +38,7 @@ api.nvim_create_autocmd('InsertLeave', {
 -- })
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { '*.graphql' },
+  pattern = { '*.graphql', '*.prisma' },
   group = 'file',
   command = 'setlocal nosmartindent',
 })

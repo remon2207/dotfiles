@@ -178,8 +178,8 @@ if [[ -n ${DISPLAY} ]]; then
       source "/usr/share/git/completion/git-prompt.sh"
 
       setopt PROMPT_SUBST ; PS1='
-      %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
-      %# '
+%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
+%# '
   fi
 else
   alias x="startx"
@@ -214,8 +214,8 @@ else
   source "/usr/share/git/completion/git-prompt.sh"
 
   setopt PROMPT_SUBST ; PS1='
-  %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
-  %# '
+%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
+%# '
 fi
 
 # common aliases

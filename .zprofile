@@ -4,7 +4,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 if [[ -n ${DISPLAY} ]]; then
     export EDITOR="nvim"
     export VISUAL="nvim"
-    export BROWSER="google-chrome-stable"
+    # export BROWSER="google-chrome-stable"
+    export BROWSER="firefox"
 else
     export EDITOR="vi"
     export VISUAL="vi"
