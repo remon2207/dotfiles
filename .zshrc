@@ -106,36 +106,36 @@ alias sysre="sudo systemctl reboot"
 alias syssp="sudo systemctl suspend"
 
 mkcd() {
-    mkdir -p ${1} && cd ${1}
+  mkdir -p ${1} && cd ${1}
 }
 
 if [[ -n ${DISPLAY} ]]; then
-    # aliases
+  # aliases
 
-    if type lsd > /dev/null 2>&1; then
-        alias ls="lsd --color=auto"
-        alias ll="lsd -alF --color=auto"
-        alias la="lsd -A --color=auto"
-    else
-        alias ls="ls --color=auto"
-        alias ll="ls -alF --color=auto"
-        alias la="ls -A --color=auto"
-    fi
+  if type lsd > /dev/null 2>&1; then
+    alias ls="lsd --color=auto"
+    alias ll="lsd -alF --color=auto"
+    alias la="lsd -A --color=auto"
+  else
+    alias ls="ls --color=auto"
+    alias ll="ls -alF --color=auto"
+    alias la="ls -A --color=auto"
+  fi
 
-    if type nvim > /dev/null 2>&1; then
-        alias vim="nvim"
-    fi
+  if type nvim > /dev/null 2>&1; then
+    alias vim="nvim"
+  fi
 
-    alias killstartup="killall Discord slack"
-    alias b="bluetoothctl"
+  alias killstartup="killall Discord slack"
+  alias b="bluetoothctl"
 
     ### Added by Zinit's installer
     if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-        print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-        command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-        command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-            print -P "%F{33} %F{34}Installation successful.%f%b" || \
-            print -P "%F{160} The clone has failed.%f%b"
+      print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+      command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+      command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
     fi
 
     source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
@@ -144,14 +144,14 @@ if [[ -n ${DISPLAY} ]]; then
     ### End of Zinit's installer chunk
 
     if [[  ${TERM} = "alacritty" ]]; then
-        if [[ -z "$TMUX" ]] ;then
-            ID="$( tmux ls 2> /dev/null | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
-            if [[ -z "$ID" ]] ;then # if not available create a new one
-                tmux new-session
-            else
-                tmux attach-session -t "$ID" # if available attach to it
-            fi
+      if [[ -z "$TMUX" ]] ;then
+        ID="$( tmux ls 2> /dev/null | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
+        if [[ -z "$ID" ]] ;then # if not available create a new one
+          tmux new-session
+        else
+          tmux attach-session -t "$ID" # if available attach to it
         fi
+      fi
     fi
 
     zinit light Aloxaf/fzf-tab
@@ -164,34 +164,34 @@ if [[ -n ${DISPLAY} ]]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
     if type starship > /dev/null 2>&1; then
-        eval "$(starship init zsh)"
+      eval "$(starship init zsh)"
     else
-        # configure prompt
-        GIT_PS1_SHOWDIRTYSTATE=true
-        GIT_PS1_SHOWUNTRACKEDFILES=true
-        GIT_PS1_SHOWSTASHSTATE=true
-        GIT_PS1_SHOWUPSTREAM=auto
+      # configure prompt
+      GIT_PS1_SHOWDIRTYSTATE=true
+      GIT_PS1_SHOWUNTRACKEDFILES=true
+      GIT_PS1_SHOWSTASHSTATE=true
+      GIT_PS1_SHOWUPSTREAM=auto
 
-        zinit light zsh-users/zsh-syntax-highlighting
-        zinit light zsh-users/zsh-autosuggestions
+      zinit light zsh-users/zsh-syntax-highlighting
+      zinit light zsh-users/zsh-autosuggestions
 
         # load git-prompt
         source "/usr/share/git/completion/git-prompt.sh"
 
         setopt PROMPT_SUBST ; PS1='
-%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
-%# '
+        %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
+        %# '
     fi
-else
+  else
     alias x="startx"
 
     ### Added by Zinit's installer
     if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-        print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-        command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-        command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-            print -P "%F{33} %F{34}Installation successful.%f%b" || \
-            print -P "%F{160} The clone has failed.%f%b"
+      print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+      command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+      command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
     fi
 
     source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
@@ -215,57 +215,57 @@ else
     source "/usr/share/git/completion/git-prompt.sh"
 
     setopt PROMPT_SUBST ; PS1='
-%B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
-%# '
+    %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
+    %# '
 fi
 
 # common aliases
 if type fd > /dev/null 2>&1; then
-    alias find="fd"
+  alias find="fd"
 fi
 
 if type lazydocker > /dev/null 2>&1; then
-    alias lzd="lazydocker"
+  alias lzd="lazydocker"
 fi
 
 if type lazygit > /dev/null 2>&1; then
-    alias lzg="lazygit"
+  alias lzg="lazygit"
 fi
 
 if type fzf > /dev/null 2>&1; then
-    alias repos="ghq list -p | fzf"
-    alias repo='cd $(repos)'
-    alias fontlist="fc-list | fzf"
+  alias repos="ghq list -p | fzf"
+  alias repo='cd $(repos)'
+  alias fontlist="fc-list | fzf"
 fi
 
 if type tmux > /dev/null 2>&1; then
-    alias t="tmux"
+  alias t="tmux"
 fi
 
 if type rg > /dev/null 2>&1; then
-    alias grep="rg --color=auto"
+  alias grep="rg --color=auto"
 else
-    alias grep="grep --color=auto"
+  alias grep="grep --color=auto"
 fi
 
 if type bat > /dev/null 2>&1; then
-    alias cat="bat"
+  alias cat="bat"
 fi
 
 if type ranger > /dev/null 2>&1; then
-    alias r="ranger"
+  alias r="ranger"
 fi
 
 if type tldr > /dev/null 2>&1; then
-    alias rman="tldr"
+  alias rman="tldr"
 fi
 
 if type sd > /dev/null 2>&1; then
-    alias sed="sd"
+  alias sed="sd"
 fi
 
 if type delta > /dev/null 2>&1; then
-    alias diff="delta -n"
+  alias diff="delta -n"
 fi
 
 source /usr/share/fzf/key-bindings.zsh

@@ -3,11 +3,11 @@
 sudo apt update
 
 sudo apt install -y \
-    git \
-    curl \
-    zsh \
-    gdebi \
-    gh
+  git \
+  curl \
+  zsh \
+  gdebi \
+  gh
 
 # neovim_dlname=$(curl -L https://github.com/neovim/neovim/releases/latest/ | \
 #    grep nvim-linux64.deb | \
@@ -20,10 +20,10 @@ sudo apt install -y \
 #yes | sudo gdebi nvim-linux64.deb
 
 ghq_dlname=$(curl -L https://github.com/x-motemen/ghq/releases/latest |
-    grep -E "ghq_linux_amd64.zip" |
-    awk -F 'a href="' '{print $2}' |
-    awk -F '"' '{print $1}' |
-    head -n 1)
+  grep -E "ghq_linux_amd64.zip" |
+  awk -F 'a href="' '{print $2}' |
+  awk -F '"' '{print $1}' |
+  head -n 1)
 
 curl -OL https://github.com${ghq_dlname}
 
@@ -39,15 +39,15 @@ sudo gdebi code.deb
 rm -rf *.{deb,zip} ghq_linux_amd64
 
 sudo apt install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+  ca-certificates \
+  curl \
+  gnupg \
+  lsb-release
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt update

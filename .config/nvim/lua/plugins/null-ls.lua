@@ -35,7 +35,7 @@ null_ls.setup({
     }),
     formatting.stylua,
     formatting.shfmt.with({
-      extra_args = { '--indent', '4', '--space-redirects' },
+      extra_args = { '--indent', '2', '--space-redirects' },
     }),
   },
   on_attach = function(client)
