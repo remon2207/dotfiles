@@ -14,8 +14,10 @@ keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 keymap.set('i', '<C-d>', '<Del>', opts)
 
-keymap.set('n', 'fh', '<Cmd>bprev<CR>', opts)
-keymap.set('n', 'fl', '<Cmd>bnext<CR>', opts)
+-- keymap.set('n', 'fh', '<Cmd>bprev<CR>', opts)
+-- keymap.set('n', 'fl', '<Cmd>bnext<CR>', opts)
+keymap.set('n', 'H', '<Cmd>bprev<CR>', opts)
+keymap.set('n', 'L', '<Cmd>bnext<CR>', opts)
 
 keymap.set('n', 'x', '"_x', opts)
 keymap.set('n', 'cit', '"_cit', opts)
