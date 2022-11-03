@@ -1,9 +1,9 @@
-local status, github_theme = pcall(require, "github-theme")
+local status, github_theme = pcall(require, 'github-theme')
 if not status then
-    return
+  return
 end
 
 github_theme.setup({
-    comment_style = "NONE",
-    keyword_style = "NONE",
+  comment_style = 'NONE',
+  keyword_style = 'NONE',
 })

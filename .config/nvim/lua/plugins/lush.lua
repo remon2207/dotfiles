@@ -39,27 +39,27 @@ local hsl = lush.hsl
 --
 -- By working with HSL, it's easy to define relationships between colours.
 
-local sea_foam  = hsl(208, 80, 80)  -- Vim has a mapping, <n>C-a and <n>C-x to
-local sea_crest = hsl(208, 90, 30)  -- increment or decrement integers, or
-local sea_deep  = hsl(208, 90, 10)  -- you can just type them normally.
-local sea_gull  = hsl("#c6c6c6")    -- Or use hex form, preceeded with a #.
+local sea_foam = hsl(208, 80, 80) -- Vim has a mapping, <n>C-a and <n>C-x to
+local sea_crest = hsl(208, 90, 30) -- increment or decrement integers, or
+local sea_deep = hsl(208, 90, 10) -- you can just type them normally.
+local sea_gull = hsl('#c6c6c6') -- Or use hex form, preceeded with a #.
 
-local base03 =  hsl('#002b36')
-local base02 =  hsl('#073642')
-local base01 =  hsl('#586e75')
-local base00 =  hsl('#657b83')
-local base0   = hsl('#839496')
-local base1   = hsl('#93a1a1')
-local base2   = hsl('#eee8d5')
-local base3   = hsl('#fdf6e3')
-local yellow  = hsl('#b58900')
-local orange  = hsl('#cb4b16')
-local red     = hsl('#dc322f')
+local base03 = hsl('#002b36')
+local base02 = hsl('#073642')
+local base01 = hsl('#586e75')
+local base00 = hsl('#657b83')
+local base0 = hsl('#839496')
+local base1 = hsl('#93a1a1')
+local base2 = hsl('#eee8d5')
+local base3 = hsl('#fdf6e3')
+local yellow = hsl('#b58900')
+local orange = hsl('#cb4b16')
+local red = hsl('#dc322f')
 local magenta = hsl('#d33682')
-local violet  = hsl('#6c71c4')
-local blue    = hsl('#268bd2')
-local cyan    = hsl('#2aa198')
-local green   = hsl('#859900')
+local violet = hsl('#6c71c4')
+local blue = hsl('#268bd2')
+local cyan = hsl('#2aa198')
+local green = hsl('#859900')
 
 -- Note: Some CursorLine highlighting will obscure any other highlighing on the
 --       current line until you move your cursor.
@@ -106,7 +106,7 @@ local theme = lush(function()
 
     -- Set a highlight group from the hsl variables we defined at the start
     -- Uncomment "Normal"
-    Normal { bg = base03, fg = base01 }, -- normal text
+    Normal({ bg = base03, fg = base01 }), -- normal text
 
     -- You should be on the water now, Lush.ify has automatically recognized
     -- our Highlight definition and applied it in real time.
@@ -119,12 +119,12 @@ local theme = lush(function()
 
     -- Set a highlight group from another highlight group
     -- CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-    CursorLine { bg = Normal.bg.lighten(5) }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorLine({ bg = Normal.bg.lighten(5) }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 
     -- Or maybe lets style our visual selection to match Cusorlines background,
     -- and render text in Normal's foreground complement.
     -- Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
-    Visual { bg = CursorLine.bg, fg = Normal.fg.rotate(180) },
+    Visual({ bg = CursorLine.bg, fg = Normal.fg.rotate(180) }),
 
     -- We can also link a group to another group. These will inherit all of the
     -- linked group options (See h: hi-link). (`setlocal cursorcolumn`)
@@ -169,4 +169,3 @@ end)
 return theme
 
 -- vi:nowrap:number
-

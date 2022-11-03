@@ -1,51 +1,51 @@
 local status, telescope = pcall(require, 'telescope')
 if not status then
-    return
+  return
 end
 
 local a = require('telescope.actions')
 -- local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup({
-    defaults = {
-        initial_mode = 'normal',
-        file_ignore_patterns = { '/.git/', '/node_modules/' },
-        vimgrep_arguments = {
-            'rg',
-            '--color=auto',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case',
-            '--hidden',
-        },
-        -- layout_config = {
-        --     prompt_position = "top",
-        --     result_position = "bottom"
-        -- },
-        mappings = {
-            i = {
-                ['<Esc><Esc>'] = a.close,
-                ['<C-j>'] = a.move_selection_next,
-                ['<C-k>'] = a.move_selection_previous,
-                ['<C-o>'] = false,
-            },
-            n = {
-                ['q'] = a.close,
-                ['o'] = false,
-                -- ['N'] = fb_actions.create,
-                ['c'] = false,
-            },
-        },
+  defaults = {
+    initial_mode = 'normal',
+    file_ignore_patterns = { '/.git/', '/node_modules/' },
+    vimgrep_arguments = {
+      'rg',
+      '--color=auto',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',
     },
-    -- extensions = {
-    --     file_browser = {
-    --         hijack_netrw = true,
-    --         -- theme = 'dropdown',
-    --         hidden = true,
-    --     },
+    -- layout_config = {
+    --     prompt_position = "top",
+    --     result_position = "bottom"
     -- },
+    mappings = {
+      i = {
+        ['<Esc><Esc>'] = a.close,
+        ['<C-j>'] = a.move_selection_next,
+        ['<C-k>'] = a.move_selection_previous,
+        ['<C-o>'] = false,
+      },
+      n = {
+        ['q'] = a.close,
+        ['o'] = false,
+        -- ['N'] = fb_actions.create,
+        ['c'] = false,
+      },
+    },
+  },
+  -- extensions = {
+  --     file_browser = {
+  --         hijack_netrw = true,
+  --         -- theme = 'dropdown',
+  --         hidden = true,
+  --     },
+  -- },
 })
 
 vim.keymap.set('n', '<Leader>ff', '<Cmd>Telescope find_files hidden=true<CR>', { noremap = true, silent = true })

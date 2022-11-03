@@ -1,11 +1,11 @@
 local status, onedark = pcall(require, 'onedark')
 if not status then
-    return
+  return
 end
 
 -- onedark.load()
 onedark.setup({
-    style = 'darker',
+  style = 'darker',
 })
 
 onedark.load()

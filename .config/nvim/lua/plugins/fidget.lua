@@ -1,10 +1,10 @@
 local status, fidget = pcall(require, 'fidget')
 if not status then
-    return
+  return
 end
 
 fidget.setup({
-    window = {
-        blend = 0,
-    },
+  window = {
+    blend = 0,
+  },
 })

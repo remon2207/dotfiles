@@ -1,8 +1,8 @@
 local status, transparent = pcall(require, 'transparent')
 if not status then
-    return
+  return
 end
 
 transparent.setup({
-    enable = true
+  enable = true,
 })

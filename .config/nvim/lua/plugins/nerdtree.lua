@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<C-n>", "<Cmd>NERDTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<C-n>', '<Cmd>NERDTreeToggle<CR>', { noremap = true, silent = true })
 vim.cmd([[
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1

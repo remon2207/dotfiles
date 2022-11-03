@@ -1,10 +1,10 @@
-local status, toggleterm = pcall(require, "toggleterm")
+local status, toggleterm = pcall(require, 'toggleterm')
 if not status then
-    return
+  return
 end
 
 toggleterm.setup({
-    direction = "float",
+  direction = 'float',
 })
 
-vim.keymap.set("n", "<Leader>ft", "<Cmd>ToggleTerm<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>ft', '<Cmd>ToggleTerm<CR>', { noremap = true, silent = true })

@@ -1,16 +1,16 @@
-local status, colorizer = pcall(require, "colorizer")
+local status, colorizer = pcall(require, 'colorizer')
 if not status then
-    return
+  return
 end
 
 colorizer.setup({
-    "css",
-    "javascriptreact",
-    "typescriptreact",
-    "html",
-    "lua",
-    "vim"
-    -- html = {
-    --     mode = "foreground",
-    -- },
+  'css',
+  'javascriptreact',
+  'typescriptreact',
+  'html',
+  'lua',
+  'vim',
+  -- html = {
+  --     mode = "foreground",
+  -- },
 })

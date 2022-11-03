@@ -1,6 +1,6 @@
 local status, noice = pcall(require, 'noice')
 if not status then
-    return
+  return
 end
 
 -- local Popup = require("nui.popup")
@@ -41,42 +41,42 @@ end
 -- })
 
 noice.setup({
-    routes = {
-        {
-            view = 'notify',
-            filter = { event = 'msg_showmode' },
-        },
+  routes = {
+    {
+      view = 'notify',
+      filter = { event = 'msg_showmode' },
     },
-    lsp = {
-        -- hover = {
-        -- enabled = false,
-        -- opts = {
-        --     border = {
-        --         padding = {
-        --             top = 0,
-        --             left = 0
-        --         },
-        --         style = 'rounded'
-        --     },
-        --     position = 2
-        -- },
-        -- },
-        signature = {
-            auto_open = {
-                enabled = false,
-            },
-            opts = {
-                border = {
-                    padding = {
-                        top = 0,
-                        left = 0,
-                    },
-                    style = 'rounded',
-                },
-                position = 2,
-            },
+  },
+  lsp = {
+    -- hover = {
+    -- enabled = false,
+    -- opts = {
+    --     border = {
+    --         padding = {
+    --             top = 0,
+    --             left = 0
+    --         },
+    --         style = 'rounded'
+    --     },
+    --     position = 2
+    -- },
+    -- },
+    signature = {
+      auto_open = {
+        enabled = false,
+      },
+      opts = {
+        border = {
+          padding = {
+            top = 0,
+            left = 0,
+          },
+          style = 'rounded',
         },
+        position = 2,
+      },
     },
+  },
 })
 
 -- vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
@@ -98,20 +98,20 @@ noice.setup({
 
 local status2, telescope = pcall(require, 'telescope')
 if not status2 then
-    return
+  return
 end
 
 local status3, notify = pcall(require, 'notify')
 if not status3 then
-    return
+  return
 end
 
 telescope.load_extension('noice')
 
 vim.keymap.set('n', '<leader>nl', function()
-    require('noice').cmd('last')
+  require('noice').cmd('last')
 end)
 
 vim.keymap.set('n', '<leader>nh', function()
-    require('noice').cmd('history')
+  require('noice').cmd('history')
 end)

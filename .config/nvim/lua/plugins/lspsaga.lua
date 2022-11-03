@@ -1,22 +1,22 @@
 local status, saga = pcall(require, 'lspsaga')
 
 if not status then
-    return
+  return
 end
 
 -- use default config
 saga.init_lsp_saga({
-    border_style = 'rounded',
-    saga_winblend = 10,
-    symbol_in_winbar = {
-        enable = true,
-    },
-    code_action_lightbulb = {
-        virtual_text = false,
-    },
-    server_filetype_map = {
-        typescript = 'typescript',
-    },
+  border_style = 'rounded',
+  saga_winblend = 10,
+  symbol_in_winbar = {
+    enable = true,
+  },
+  code_action_lightbulb = {
+    virtual_text = false,
+  },
+  server_filetype_map = {
+    typescript = 'typescript',
+  },
 })
 
 local keymap = vim.keymap.set
@@ -52,10 +52,10 @@ keymap('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 
 -- Only jump to error
 keymap('n', '[E', function()
-    require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR })
+  require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end, opts)
 keymap('n', ']E', function()
-    require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR })
+  require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, opts)
 
 -- Outline
