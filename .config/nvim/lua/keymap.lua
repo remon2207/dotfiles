@@ -7,10 +7,10 @@ keymap.set('n', '<Esc><Esc>', '<Cmd>set nohlsearch!<CR>', opts)
 keymap.set('n', 'ss', '<Cmd>split<CR><C-w>w', opts)
 keymap.set('n', 'sv', '<Cmd>vsplit<CR><C-w>w', opts)
 
-keymap.set('n', 'sh', '<C-w>h', opts)
-keymap.set('n', 'sj', '<C-w>j', opts)
-keymap.set('n', 'sk', '<C-w>k', opts)
-keymap.set('n', 'sl', '<C-w>l', opts)
+keymap.set('n', '<C-h>', '<C-w>h', opts)
+keymap.set('n', '<C-j>', '<C-w>j', opts)
+keymap.set('n', '<C-k>', '<C-w>k', opts)
+keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 keymap.set('i', '<C-d>', '<Del>', opts)
 
