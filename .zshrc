@@ -105,6 +105,10 @@ alias sysoff="sudo systemctl poweroff"
 alias sysre="sudo systemctl reboot"
 alias syssp="sudo systemctl suspend"
 
+wmclass() {
+  xprop WM_CLASS | awk -F '"' '{print $4}'
+}
+
 mkcd() {
   mkdir -p ${1} && cd ${1}
 }
