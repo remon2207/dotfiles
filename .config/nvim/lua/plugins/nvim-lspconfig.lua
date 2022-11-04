@@ -123,6 +123,7 @@ local servers = {
   'vimls',
   'prismals',
   'graphql',
+  'taplo'
 }
 
 mason.setup({
