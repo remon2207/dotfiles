@@ -3,3 +3,4 @@ Type=Application
 Name=bghtop
 Path=/usr/bin
 Exec=kitty -1 htop
+Terminal=true
