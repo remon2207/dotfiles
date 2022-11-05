@@ -48,13 +48,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
   unset f
 fi
 
-/usr/local/bin/display_nouveau_setup.sh
+# /usr/local/bin/display_nouveau_setup.sh
 
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
 xset r rate 150 60 &
 fcitx5 &
-picom -b
+# DISPLAY=":0" picom -CGb &
+# DISPLAY=":0" picom -b &
+picom -b &
 feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
 polybar dp &
 polybar dvi &

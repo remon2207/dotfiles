@@ -28,8 +28,8 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export GTK_IM_MODULE="fcitx5"
 export QT_IM_MODULE="fcitx5"
 export XMODIFIERS="@im=fcitx5"
-export LIBVA_DRIVER_NAME="nouveau"
-export VDPAU_DRIVER="nouveau"
+export LIBVA_DRIVER_NAME="vdpau"
+export VDPAU_DRIVER="nvidia"
 
 if type bat > /dev/null 2>&1; then
     export PAGER="bat"
