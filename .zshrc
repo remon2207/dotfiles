@@ -89,7 +89,11 @@ alias dup="docker compose up -d"
 alias dlogs="docker compose logs -f"
 alias dps="docker compose ps -a"
 alias dbuild="docker compose build"
-alias g="git"
+alias gadd="git add"
+alias gcommit="git commit"
+alias gpush="git push"
+alias gswitch="git switch"
+alias greseth="git reset --hard"
 alias glog="git log --oneline --graph"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 alias addall="git add ."
@@ -103,13 +107,25 @@ alias unrequired="pacman -Qtdq"
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa="ps auxf"
 alias psag="ps auxf | grep -i"
-alias kittyfonts="kitty + list-fonts --psname | less"
+alias kf="kitty + list-fonts --psname"
+alias kdf="kitty --debug-font-fallback"
 alias sysoff="sudo systemctl poweroff"
 alias sysre="sudo systemctl reboot"
 alias syssp="sudo systemctl suspend"
 alias bgp="nohup $1 > /dev/null 2>&1"
 alias bashrc="nvim $HOME/.bashrc"
 alias zshrc="nvim $HOME/.zshrc"
+alias sz="source $HOME/.zshrc"
+
+psidkill() {
+  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
+  kill $ps_id
+}
+
+psidc() {
+  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
+  echo $ps_id | xclip
+}
 
 wmclass() {
   xprop WM_CLASS | awk -F '"' '{print $4}'
