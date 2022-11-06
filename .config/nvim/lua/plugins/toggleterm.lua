@@ -19,4 +19,4 @@ end
 
 -- vim.keymap.set('n', '<Leader>ft', '<Cmd>ToggleTerm<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>g', '<Cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Leader>g', '<Cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
