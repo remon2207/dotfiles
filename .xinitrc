@@ -57,11 +57,14 @@ fcitx5 &
 # DISPLAY=":0" picom -CGb &
 # DISPLAY=":0" picom -b &
 picom -b &
-feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
+hsetroot -solid '#000000' &
+# feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
 polybar dp &
 polybar dvi &
 polybar hdmi &
 imwheel -b 45 &
+polychromatic-tray-applet &
+ckb-next -b &
 discord &
 slack &
 # alacritty -e htop &

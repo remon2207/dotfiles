@@ -1,7 +1,7 @@
 # zmodload  zsh/zprof
 
 # Lines configured by zsh-newuser-install
-HISTFILE="${HOME}/.zsh_history"
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt extendedglob nomatch notify
@@ -31,7 +31,7 @@ setopt no_flow_control
 # unsetopt beep
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename "${HOME}/.zshrc"
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -71,16 +71,16 @@ alias ll="ls -alF"
 alias la="ls -A"
 alias sl="ls"
 alias mkdir="mkdir -p"
-alias cfont="cd ${HOME}/.config/fontconfig"
-alias fontconf="cd ${HOME}/.config/fontconfig && /usr/bin/nvim fonts.conf"
-alias cvim="cd ${HOME}/.config/nvim/lua"
-alias vimconf="cd ${HOME}/.config/nvim/lua && /usr/bin/nvim ."
-alias cpolybar="cd ${HOME}/.config/polybar"
-alias polybarconf="cd ${HOME}/.config/polybar && /usr/bin/nvim config.ini"
-alias cpicom="cd ${HOME}/.config/picom"
-alias picomconf="cd ${HOME}/.config/picom && /usr/bin/nvim picom.conf"
-alias i3conf="cd ${HOME}/.config/i3 && /usr/bin/nvim config"
-alias ci3="cd ${HOME}/.config/i3"
+alias cfont="cd $HOME/.config/fontconfig"
+alias fontconf="cd $HOME/.config/fontconfig && /usr/bin/nvim fonts.conf"
+alias cvim="cd $HOME/.config/nvim/lua"
+alias vimconf="cd $HOME/.config/nvim/lua && /usr/bin/nvim ."
+alias cpolybar="cd $HOME/.config/polybar"
+alias polybarconf="cd $HOME/.config/polybar && /usr/bin/nvim config.ini"
+alias cpicom="cd $HOME/.config/picom"
+alias picomconf="cd $HOME/.config/picom && /usr/bin/nvim picom.conf"
+alias i3conf="cd $HOME/.config/i3 && /usr/bin/nvim config"
+alias ci3="cd $HOME/.config/i3"
 alias grep="grep --color=auto"
 alias dexec="docker compose exec"
 alias drun="docker compose run --rm"
@@ -96,24 +96,30 @@ alias addall="git add ."
 alias commitnow="git commit -m \"update: $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
 alias dockerprune="docker volume prune && docker system prune -a"
-alias kittyconf="nvim ${HOME}/.config/kitty/kitty.conf"
-alias ckitty="cd ${HOME}/.config/kitty"
+alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
+alias ckitty="cd $HOME/.config/kitty"
 alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
+alias unrequired="pacman -Qtdq"
+alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa="ps auxf"
+alias psag="ps auxf | grep -i"
 alias kittyfonts="kitty + list-fonts --psname | less"
 alias sysoff="sudo systemctl poweroff"
 alias sysre="sudo systemctl reboot"
 alias syssp="sudo systemctl suspend"
+alias bgp="nohup $1 > /dev/null 2>&1"
+alias bashrc="nvim $HOME/.bashrc"
+alias zshrc="nvim $HOME/.zshrc"
 
 wmclass() {
   xprop WM_CLASS | awk -F '"' '{print $4}'
 }
 
 mkcd() {
-  mkdir -p ${1} && cd ${1}
+  mkdir -p $1 && cd $1
 }
 
-if [[ -n ${DISPLAY} ]]; then
+if [[ -n "$DISPLAY" ]]; then
   # aliases
   if type lsd > /dev/null 2>&1; then
     alias ls="lsd --color=auto"
@@ -133,7 +139,7 @@ if [[ -n ${DISPLAY} ]]; then
   alias b="bluetoothctl"
 
   ### Added by Zinit's installer
-  if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+  if [[ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
     command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
@@ -146,7 +152,7 @@ if [[ -n ${DISPLAY} ]]; then
   (( ${+_comps} )) && _comps[zinit]=_zinit
   ### End of Zinit's installer chunk
 
-  if [[  ${TERM} = "alacritty" ]]; then
+  if [[  "$TERM" = "alacritty" ]]; then
     if [[ -z "$TMUX" ]] ;then
       ID="$( tmux ls 2> /dev/null | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
       if [[ -z "$ID" ]] ;then # if not available create a new one
@@ -189,7 +195,7 @@ else
   alias x="startx"
 
   ### Added by Zinit's installer
-  if [[ ! -f ${HOME}/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+  if [[ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
     command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
@@ -197,7 +203,7 @@ else
       print -P "%F{160} The clone has failed.%f%b"
   fi
 
-  source "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
+  source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
   autoload -Uz _zinit
   (( ${+_comps} )) && _comps[zinit]=_zinit
   ### End of Zinit's installer chunk
@@ -275,7 +281,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
 
-# if [[ -n ${DISPLAY} ]]; then
+# if [[ -n "$DISPLAY" ]]; then
 #     if type fish > /dev/null 2>&1; then
 #         exec fish
 #     fi
