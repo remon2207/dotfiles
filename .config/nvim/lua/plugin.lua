@@ -250,13 +250,13 @@ packer.startup({
     })
 
     -- Stylish UI
-    use({
-      'glepnir/lspsaga.nvim',
-      branch = 'main',
-      config = function()
-        require('plugins.lspsaga')
-      end,
-    })
+    -- use({
+    --   'glepnir/lspsaga.nvim',
+    --   branch = 'main',
+    --   config = function()
+    --     require('plugins.lspsaga')
+    --   end,
+    -- })
 
     use({
       'onsails/lspkind.nvim',
@@ -300,12 +300,12 @@ packer.startup({
     -- }
 
     -- Floating Terminal
-    -- use({
-    --     'akinsho/toggleterm.nvim',
-    --     config = function()
-    --         require('plugins.toggleterm')
-    --     end,
-    -- })
+    use({
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require('plugins.toggleterm')
+        end,
+    })
     -- use({
     --     'VonHeikemen/fine-cmdline.nvim',
     --     config = function()
@@ -396,6 +396,13 @@ packer.startup({
     --     config = function()
     --         require('plugins.dashboard-nvim')
     --     end,
+    -- })
+    -- Show register with popup window
+    -- use({
+    --   'tversteeg/registers.nvim',
+    --   config = function()
+    --     require('plugins.registers')
+    --   end,
     -- })
 
     if packer_bootstrap then

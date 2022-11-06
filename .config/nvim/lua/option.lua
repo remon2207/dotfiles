@@ -85,7 +85,7 @@ opt.confirm = true
 -- }
 opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 
-opt.shada:remove({ '!', "'100", '<50', 's10', 'h' })
+-- opt.shada:remove({ '!', "'100", '<50', 's10', 'h' })
 
 opt.wrap = false
 
