@@ -56,6 +56,7 @@ xset r rate 150 60 &
 fcitx5 &
 picom -b &
 hsetroot -solid '#000000' &
+mpd $HOME/.config/mpd/mpd.conf
 # feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
 polybar dp &
 polybar dvi &
