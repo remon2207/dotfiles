@@ -1,14 +1,14 @@
 font:
   size: 11
   normal:
-    family: "Hack Nerd Font"
+    family: "Source Code Pro"
     style: Regular
   bold:
-    family: "Hack Nerd Font"
+    family: "Source Code Pro"
     style: Bold
   italic:
-    family: "Hack Nerd Font"
+    family: "Source Code Pro"
     style: Italic
   bold_italic:
-    family: "Hack Nerd Font"
+    family: "Source Code Pro"
     style: Bold Italic

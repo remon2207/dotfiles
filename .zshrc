@@ -102,7 +102,7 @@ alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
 alias dockerprune="docker volume prune && docker system prune -a"
 alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
 alias ckitty="cd $HOME/.config/kitty"
-alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy"
 alias unrequired="pacman -Qtdq"
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa="ps auxf"
@@ -116,6 +116,7 @@ alias bgp="nohup $1 > /dev/null 2>&1"
 alias bashrc="nvim $HOME/.bashrc"
 alias zshrc="nvim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
+alias mpdstop="mpd --kill"
 
 psidkill() {
   ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
@@ -124,6 +125,7 @@ psidkill() {
 
 psidc() {
   ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
+  echo $ps_id
   echo $ps_id | xclip
 }
 
