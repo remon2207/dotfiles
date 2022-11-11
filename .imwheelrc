@@ -9,7 +9,3 @@
 "^Brave-browser$"
     None, Up, Button4, 4
     None, Down, Button5, 4
-
-"^Jdim$"
-    None, Up, Button4, 40
-    None, Down, Button5, 40
