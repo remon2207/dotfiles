@@ -102,6 +102,8 @@ alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
 alias dockerprune="docker volume prune && docker system prune -a"
 alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
 alias ckitty="cd $HOME/.config/kitty"
+alias cranger="cd $HOME/.config/ranger"
+alias rangerconf="nvim $HOME/.config/ranger/rc.conf"
 alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy"
 alias unrequired="pacman -Qtdq"
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
@@ -117,10 +119,20 @@ alias bashrc="nvim $HOME/.bashrc"
 alias zshrc="nvim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
 alias mpdstop="mpd --kill"
+alias pkglist="pacman -Qqen > pkglist"
+alias pkglistaur="pacman -Qqe > pkglist_aur"
 
 psidkill() {
   ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
   kill $ps_id
+}
+
+tochrome() {
+  /usr/bin/sed -i 's/export BROWSER="firefox"/export BROWSER="google-chrome-stable"/' $HOME/.zprofile
+}
+
+tofirefox() {
+  /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $HOME/.zprofile
 }
 
 psidc() {

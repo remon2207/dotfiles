@@ -72,12 +72,14 @@ google-chrome
 grep
 groff
 gzip
+hsetroot
 htop
 i3-gaps
 i3lock
 imwheel
 intel-ucode
 inter-font
+jdim-git
 jq
 kitty
 kvantum
@@ -103,6 +105,8 @@ mesa
 mesa-utils
 morisawa-biz-ud-gothic-fonts
 morisawa-biz-ud-mincho-fonts
+mpd
+ncmpcpp
 neofetch
 neovim
 nerd-fonts-complete
@@ -118,6 +122,7 @@ nvm
 opendesktop-fonts
 openrazer-meta
 openssh
+openssl-1.1
 otf-cascadia-code
 otf-cormorant
 otf-crimson
@@ -139,6 +144,7 @@ papirus-icon-theme
 paru-bin
 patch
 pavucontrol
+perl-lwp-protocol-https
 picom
 pipewire
 pipewire-pulse

@@ -66,6 +66,7 @@ go
 grep
 groff
 gzip
+hsetroot
 htop
 i3-gaps
 i3lock
@@ -93,6 +94,8 @@ man-db
 man-pages
 mesa
 mesa-utils
+mpd
+ncmpcpp
 neofetch
 neovim
 noto-fonts
@@ -104,6 +107,7 @@ nvidia-dkms
 nvidia-settings
 opendesktop-fonts
 openssh
+openssl-1.1
 otf-cascadia-code
 otf-cormorant
 otf-crimson
@@ -123,6 +127,7 @@ pacman
 papirus-icon-theme
 patch
 pavucontrol
+perl-lwp-protocol-https
 picom
 pipewire
 pipewire-pulse
