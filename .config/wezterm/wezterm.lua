@@ -5,6 +5,8 @@ return {
     -- 'HackGen Console NF',
     -- 'Hack Nerd Font',
     'Source Code Pro',
+    'SauceCodePro Nerd Font',
+    'Source Han Code JP'
     -- 'SauceCodePro Nerd Font'
   }),
   font_size = 11.0,
