@@ -52,7 +52,7 @@ fi
 
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
-xset r rate 150 60 &
+xset r rate 200 60 &
 fcitx5 &
 picom -b &
 hsetroot -solid '#000000' &
