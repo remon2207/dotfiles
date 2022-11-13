@@ -301,10 +301,10 @@ packer.startup({
 
     -- Floating Terminal
     use({
-        'akinsho/toggleterm.nvim',
-        config = function()
-            require('plugins.toggleterm')
-        end,
+      'akinsho/toggleterm.nvim',
+      config = function()
+        require('plugins.toggleterm')
+      end,
     })
     -- use({
     --     'VonHeikemen/fine-cmdline.nvim',
