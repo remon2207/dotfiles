@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-if [ "${#}" -eq 0 ]; then
+if [ "$#" -eq 0 ]; then
   exit 1
-elif [ "${1}" = "--help" ] || [ "${1}" = "-h" ]; then
+elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
   cat << EOF
 USAGE:
-    ${0} [GIT_EMAIL] [GIT_NAME]
+    $0 [GIT_EMAIL] [GIT_NAME]
 
 OPTIONS:
         --help or -h
@@ -18,16 +18,16 @@ echo "======================="
 echo "start!!!"
 echo "======================="
 
-git_email="${1}"
-git_name="${2}"
+git_email="$1"
+git_name="$2"
 
 paru_install() {
   pkgname="paru-bin"
   git clone https://aur.archlinux.org/${pkgname}.git
-  cd ${pkgname}
+  cd "$pkgname"
   makepkg -si --noconfirm --needed
-  cd ${HOME}
-  rm -rf ${pkgname}
+  cd "$HOME"
+  rm -rf "$pkgname"
 }
 
 aur_install() {
@@ -48,8 +48,8 @@ aur_install() {
 }
 
 git_settings() {
-  git config --global user.email "${git_email}"
-  git config --global user.name "${git_name}"
+  git config --global user.email "$git_email"
+  git config --global user.name "$git_name"
 }
 
 psd_settings() {
@@ -57,7 +57,7 @@ psd_settings() {
   google-chrome-stable
   vivaldi-stable
   psd
-  sed -i "s/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/" ${HOME}/.config/psd/psd.conf
+  sed -i "s/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/" $HOME/.config/psd/psd.conf
   systemctl --user enable --now psd.service
 }
 

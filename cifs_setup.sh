@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
-if [ ${#} -eq 0 ]; then
+if [ "$#" -eq 0 ]; then
   exit 0
-elif [ ${1} = "--help" ] || [ ${1} = "-h" ]; then
+elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
   cat << EOF
 Usage:
-${0} <username> <password>
+$0 <username> <password>
 EOF
   exit 0
 else
   pacman -Q cifs-utils > /dev/null 2>&1
-  if [ ${?} -eq 1 ]; then
+  if [ "$?" -eq 1 ]; then
     sudo pacman -S --noconfirm cifs-utils
   fi
 
   cat << EOF | sudo tee /etc/cifs-utils/.samba > /dev/null
-username=${1}
-password=${2}
+username="$1"
+password="$2"
 EOF
 
   sudo mkdir /mnt/RH
