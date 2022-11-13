@@ -121,6 +121,7 @@ alias sz="source $HOME/.zshrc"
 alias mpdstop="mpd --kill"
 alias pkglist="pacman -Qqen > pkglist"
 alias pkglistaur="pacman -Qqe > pkglist_aur"
+alias repolybar="killall polybar; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!"
 
 psidkill() {
   ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
@@ -318,6 +319,8 @@ fi
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
+
+alias nvmupdate="nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/stylua-bin eslint_d"
 
 # if [[ -n "$DISPLAY" ]]; then
 #     if type fish > /dev/null 2>&1; then
