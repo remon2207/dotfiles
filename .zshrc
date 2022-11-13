@@ -4,179 +4,16 @@
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-setopt extendedglob nomatch notify
-# Japanese language support
-setopt print_eight_bit
-# TAB completion
-setopt auto_pushd
-# move directory without cd command
-setopt auto_cd
-# share history
-setopt share_history
-# If same as last time not add
-setopt hist_ignore_dups
-# not add duplication
-setopt hist_ignore_all_dups
-# ignore space
-setopt hist_ignore_space
-# extra space is reduce
-setopt hist_reduce_blanks
-# Correct spelling of commands
-setopt correct
-# If directory already in stack not add
-setopt pushd_ignore_dups
-
-setopt no_flow_control
-
-# unsetopt beep
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' menu select=2
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*:*:*:default' menu yes select search
-
-# disable sort when completing `git checkout`
-zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
-
-zstyle ':fzf-tab:complete:*' fzf-pad 10
 
 # keybind
 bindkey -e
-# bindkey -v
 
-alias j="jobs"
-alias dc="cd"
-alias e="exit"
-alias :q="exit"
-alias c="clear"
-alias sudo="sudo "
-alias rm="rm -rf"
-alias ls="ls --color=auto"
-alias ll="ls -alF"
-alias la="ls -A"
-alias sl="ls"
-alias mkdir="mkdir -p"
-alias cfont="cd $HOME/.config/fontconfig"
-alias fontconf="cd $HOME/.config/fontconfig && /usr/bin/nvim fonts.conf"
-alias cvim="cd $HOME/.config/nvim/lua"
-alias vimconf="cd $HOME/.config/nvim/lua && /usr/bin/nvim ."
-alias cpolybar="cd $HOME/.config/polybar"
-alias polybarconf="cd $HOME/.config/polybar && /usr/bin/nvim config.ini"
-alias cpicom="cd $HOME/.config/picom"
-alias picomconf="cd $HOME/.config/picom && /usr/bin/nvim picom.conf"
-alias i3conf="cd $HOME/.config/i3 && /usr/bin/nvim config"
-alias ci3="cd $HOME/.config/i3"
-alias grep="grep --color=auto"
-alias dexec="docker compose exec"
-alias drun="docker compose run --rm"
-alias ddown="docker compose down"
-alias dup="docker compose up -d"
-alias dlogs="docker compose logs -f"
-alias dps="docker compose ps -a"
-alias dbuild="docker compose build"
-alias gadd="git add"
-alias gcommit="git commit"
-alias gpush="git push"
-alias gswitch="git switch"
-alias greseth="git reset --hard"
-alias glog="git log --oneline --graph"
-alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-alias addall="git add ."
-alias commitnow="git commit -m \"update: $(date '+%Y/%m/%d %H:%M:%S')\""
-alias bghtop="nohup kitty -1 htop > /dev/null 2>&1 &!"
-alias dockerprune="docker volume prune && docker system prune -a"
-alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
-alias ckitty="cd $HOME/.config/kitty"
-alias cranger="cd $HOME/.config/ranger"
-alias rangerconf="nvim $HOME/.config/ranger/rc.conf"
-alias mirrorsync="sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy"
-alias unrequired="pacman -Qtdq"
-alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
-alias psa="ps auxf"
-alias psag="ps auxf | grep -i"
-alias kf="kitty + list-fonts --psname"
-alias kdf="kitty --debug-font-fallback"
-alias sysoff="sudo systemctl poweroff"
-alias sysre="sudo systemctl reboot"
-alias syssp="sudo systemctl suspend"
-alias bgp="nohup $1 > /dev/null 2>&1"
-alias bashrc="nvim $HOME/.bashrc"
-alias zshrc="nvim $HOME/.zshrc"
-alias sz="source $HOME/.zshrc"
-alias mpdstop="mpd --kill"
-alias pkglist="pacman -Qqen > pkglist"
-alias pkglistaur="pacman -Qqe > pkglist_aur"
-alias repolybar="killall polybar; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!"
-
-psidkill() {
-  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
-  kill $ps_id
-}
-
-tochrome() {
-  /usr/bin/sed -i 's/export BROWSER="firefox"/export BROWSER="google-chrome-stable"/' $HOME/.zprofile
-}
-
-tofirefox() {
-  /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $HOME/.zprofile
-}
-
-nobuildtemp() {
-  sudo /usr/bin/sed -i 's/^BUILDDIR=\/tmp\/makepkg/#BUILDDIR=\/tmp\/makepkg/' /etc/makepkg.conf
-}
-
-buildtemp() {
-  sudo /usr/bin/sed -i 's/^#BUILDDIR=\/tmp\/makepkg/BUILDDIR=\/tmp\/makepkg/' /etc/makepkg.conf
-}
-
-psidc() {
-  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
-  echo $ps_id
-  echo $ps_id | xclip
-}
-
-wmclass() {
-  xprop WM_CLASS | awk -F '"' '{print $4}'
-}
-
-mkcd() {
-  mkdir -p $1 && cd $1
-}
+for conf in "$HOME/.config/zsh/config.d/"*.zsh; do
+  source "$conf"
+done
+unset conf
 
 if [[ -n "$DISPLAY" ]]; then
-  # aliases
-  if type lsd > /dev/null 2>&1; then
-    alias ls="lsd --color=auto"
-    alias ll="lsd -alF --color=auto"
-    alias la="lsd -A --color=auto"
-  else
-    alias ls="ls --color=auto"
-    alias ll="ls -alF --color=auto"
-    alias la="ls -A --color=auto"
-  fi
-
-  if type nvim > /dev/null 2>&1; then
-    alias vim="nvim"
-  fi
-
-  alias killstartup="killall Discord slack"
-  alias b="bluetoothctl"
-
   ### Added by Zinit's installer
   if [[ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -231,8 +68,6 @@ if [[ -n "$DISPLAY" ]]; then
 %# '
   fi
 else
-  alias x="startx"
-
   ### Added by Zinit's installer
   if [[ ! -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -267,60 +102,9 @@ else
 %# '
 fi
 
-# common aliases
-if type fd > /dev/null 2>&1; then
-  alias find="fd"
-fi
-
-if type lazydocker > /dev/null 2>&1; then
-  alias lzd="lazydocker"
-fi
-
-if type lazygit > /dev/null 2>&1; then
-  alias lzg="lazygit"
-fi
-
-if type fzf > /dev/null 2>&1; then
-  alias repos="ghq list -p | fzf"
-  alias repo='cd $(repos)'
-  alias fontlist="fc-list | fzf"
-fi
-
-if type tmux > /dev/null 2>&1; then
-  alias t="tmux"
-fi
-
-if type rg > /dev/null 2>&1; then
-  alias grep="rg --color=auto"
-else
-  alias grep="grep --color=auto"
-fi
-
-if type bat > /dev/null 2>&1; then
-  alias cat="bat"
-fi
-
-if type ranger > /dev/null 2>&1; then
-  alias r="ranger"
-fi
-
-if type tldr > /dev/null 2>&1; then
-  alias rman="tldr"
-fi
-
-if type sd > /dev/null 2>&1; then
-  alias sed="sd"
-fi
-
-if type delta > /dev/null 2>&1; then
-  alias diff="delta -n"
-fi
-
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
-
-alias nvmupdate="nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/stylua-bin eslint_d"
 
 # if [[ -n "$DISPLAY" ]]; then
 #     if type fish > /dev/null 2>&1; then
