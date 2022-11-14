@@ -63,6 +63,7 @@ alias mpdstop="mpd --kill"
 alias pkglist="pacman -Qqen > pkglist"
 alias pkglistaur="pacman -Qqe > pkglist_aur"
 alias repolybar="killall polybar; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!"
+alias slinfon="eslint_d stop && prettierd stop"
 
 
 if [[ -n "$DISPLAY" ]]; then
