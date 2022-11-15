@@ -52,6 +52,12 @@ conf_symbolic=(
   "wezterm"
   "zsh"
 )
+desktop_entry=(
+  "bghtop.desktop"
+  "lazydocker.desktop"
+  "mozc.desktop"
+)
+desktop_entry_dir="$current_dir/.local/share/applications"
 
 setup() {
   rm -rf $HOME/.xinitrc $HOME/.config/i3
@@ -62,13 +68,20 @@ setup() {
   for conf in ${conf_symbolic[@]}; do
     ln -snfv $current_dir/.config/$conf $HOME/.config/
   done
+  for entry in ${desktop_entry[@]}; do
+    ln -snfv $desktop_entry_dir/$entry $HOME/.local/share/applications/
+  done
 
   sudo mkdir /etc/gtk-2.0
+
   sudo ln -s $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
   sudo ln -s $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0
+
   ln -s $current_dir/.local/share/applications/lazydocker.desktop $HOME/.local/share/applications/
   ln -s $current_dir/.local/share/applications/bghtop.desktop $HOME/.local/share/applications/
   ln -s $current_dir/.local/share/applications/mozc.desktop $HOME/.local/share/applications/
+
+  git config --global commit.template $HOME/commit.template
 }
 
 services() {
@@ -82,7 +95,6 @@ services() {
 setup
 services
 
-git config --global commit.template $HOME/commit.template
 chsh -s $(which zsh)
 
 echo "======================="
