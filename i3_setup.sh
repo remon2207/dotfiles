@@ -10,18 +10,17 @@ current_dir=$(
 )
 file_name=$(basename $0)
 home_symbolic=(
+  ".bash_profile"
+  ".bashrc"
   ".gtkrc-2.0"
+  ".imwheelrc"
   ".tmux.conf"
   ".xinitrc"
+  ".Xmodmap"
   ".Xresources"
   ".zprofile"
   ".zshrc"
-  ".zsh"
   "commit.template"
-  ".bashrc"
-  ".bash_profile"
-  ".Xmodmap"
-  ".imwheelrc"
 )
 conf_symbolic=(
   "alacritty"
@@ -34,6 +33,10 @@ conf_symbolic=(
   "i3"
   "kitty"
   "Kvantum"
+  "lazygit"
+  "mpd"
+  "nano"
+  "ncmpcpp"
   "neofetch"
   "nvim"
   "picom"
@@ -47,9 +50,10 @@ conf_symbolic=(
   "stylua"
   "terminator"
   "wezterm"
+  "zsh"
 )
 
-repeat() {
+setup() {
   rm -rf $HOME/.xinitrc $HOME/.config/i3
 
   for home in ${home_symbolic[@]}; do
@@ -62,8 +66,9 @@ repeat() {
   sudo mkdir /etc/gtk-2.0
   sudo ln -s $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
   sudo ln -s $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0
-  ln -s $current_dir/.local/share/applications/lazydocker.desktop ~/.local/share/applications/
-  ln -s $current_dir/.local/share/applications/bghtop.desktop ~/.local/share/applications/
+  ln -s $current_dir/.local/share/applications/lazydocker.desktop $HOME/.local/share/applications/
+  ln -s $current_dir/.local/share/applications/bghtop.desktop $HOME/.local/share/applications/
+  ln -s $current_dir/.local/share/applications/mozc.desktop $HOME/.local/share/applications/
 }
 
 services() {
@@ -74,7 +79,7 @@ services() {
   sudo systemctl enable auto-lock@${USER}.service
 }
 
-repeat
+setup
 services
 
 git config --global commit.template $HOME/commit.template
