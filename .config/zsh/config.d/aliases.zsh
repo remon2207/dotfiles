@@ -81,7 +81,7 @@ if [[ -n "$DISPLAY" ]]; then
     alias vim="nvim"
   fi
 
-  alias killstartup="killall Discord slack"
+  alias killstartup="killall Discord slack polychromatic-tray-applet ckb-next"
   alias b="bluetoothctl"
 else
   alias x="startx"
