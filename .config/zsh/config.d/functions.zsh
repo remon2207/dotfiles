@@ -4,11 +4,11 @@ psidkill() {
 }
 
 tochrome() {
-  /usr/bin/sed -i 's/export BROWSER="firefox"/export BROWSER="google-chrome-stable"/' $HOME/.zprofile
+  /usr/bin/sed -i 's/export BROWSER="firefox"/export BROWSER="google-chrome-stable"/' $HOME/ghq/github.com/remon2207/dotfiles/.zprofile
 }
 
 tofirefox() {
-  /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $HOME/.zprofile
+  /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $HOME/ghq/github.com/remon2207/dotfiles/.zprofile
 }
 
 nobuildtemp() {
