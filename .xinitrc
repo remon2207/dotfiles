@@ -61,7 +61,7 @@ mpd $HOME/.config/mpd/mpd.conf
 polybar dp &
 polybar dvi &
 polybar hdmi &
-imwheel -b 45 &
+# imwheel -b 45 &
 polychromatic-tray-applet &
 ckb-next -b &
 discord &
