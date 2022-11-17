@@ -21,10 +21,13 @@ keymap.set('n', 'L', '<Cmd>bnext<CR>', opts)
 
 keymap.set('n', 'x', '"_x', opts)
 keymap.set('n', 'cit', '"_cit', opts)
+keymap.set('n', "cw", '"_cw', opts)
 keymap.set('n', "ci'", '"_ci\'', opts)
 keymap.set('n', 'ci"', '"_ci"', opts)
 keymap.set('n', 'ci{', '"_ci{', opts)
 keymap.set('n', 'ci}', '"_ci}', opts)
+
+keymap.set('v', 'c', '"_c', opts)
 
 keymap.set('n', '<ScrollWheelUp>', '<Nop>', opts)
 keymap.set('n', '<ScrollWheelDown>', '<Nop>', opts)
