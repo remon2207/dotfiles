@@ -36,6 +36,8 @@ alias gr="git reset"
 alias grh="git reset --hard"
 alias gl="git log --oneline --graph"
 alias gs="git status"
+alias gf="git fetch"
+alias gm="git merge"
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 alias addall="git add ."
 alias commitnow="git commit -m \"update: $(date '+%Y/%m/%d %H:%M:%S')\""
@@ -64,6 +66,7 @@ alias pkglist="pacman -Qqen > pkglist"
 alias pkglistaur="pacman -Qqe > pkglist_aur"
 alias repolybar="killall polybar; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!"
 alias slinfon="eslint_d stop && prettierd stop"
+alias disklist="sudo fdisk -l"
 
 
 if [[ -n "$DISPLAY" ]]; then
@@ -137,3 +140,7 @@ if type delta > /dev/null 2>&1; then
 fi
 
 alias nvmupdate="nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/stylua-bin eslint_d"
+
+if [[ "$TERM" = "xterm-kitty" ]]; then
+  alias ssh="kitty +kitten ssh"
+fi
