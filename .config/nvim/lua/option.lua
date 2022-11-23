@@ -50,6 +50,7 @@ opt.helplang = { 'ja', 'en' }
 
 -- Center the cursor line
 -- opt.scrolloff = 999
+opt.scrolloff = 5
 
 -- Popup window the background opacity
 -- opt.winblend = 100

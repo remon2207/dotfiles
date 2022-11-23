@@ -36,7 +36,7 @@ export VDPAU_DRIVER="nvidia"
 if type bat > /dev/null 2>&1; then
     export PAGER="bat"
 else
-    export PAGER="less"
+    export PAGER="bat"
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
