@@ -1,4 +1,3 @@
-
 psidkill() {
   ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
   kill $ps_id
@@ -19,6 +18,7 @@ tofirefox() {
   /usr/bin/sed -i 's/google-chrome/firefox/' $dotfiles_dir/.config/mimeapps.list
   /usr/bin/sed -i 's/google-chrome-stable/firefox/' $dotfiles_dir/.config/kitty/advanced.conf
 }
+
 tovivaldi() {
   dotfiles_dir="$HOME/ghq/github.com/remon2207/dotfiles"
 
