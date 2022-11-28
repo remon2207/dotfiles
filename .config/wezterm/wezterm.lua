@@ -2,8 +2,7 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback({
-    'Hack Nerd Font',
-    'BIZ UDGothic'
+    'HackGen Console NF',
   }),
   font_size = 11.0,
   color_scheme = 'Builtin Solarized Dark',

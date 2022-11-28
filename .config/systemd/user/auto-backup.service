@@ -1,5 +1,7 @@
 [Unit]
 Description=Pictures and Videos, ~/.ssh/config to samba
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=oneshot
