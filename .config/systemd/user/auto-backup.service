@@ -1,0 +1,6 @@
+[Unit]
+Description=Pictures and Videos, ~/.ssh/config to samba
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/backup.sh

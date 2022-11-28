@@ -1,0 +1,9 @@
+[Unit]
+Description=timer of auto-backup.service
+
+[Timer]
+OnCalendar=Sun 9:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
