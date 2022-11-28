@@ -143,4 +143,6 @@ alias nvmupdate="nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/
 
 if [[ "$TERM" = "xterm-kitty" ]]; then
   alias ssh="kitty +kitten ssh"
+  alias clear="printf '\033[2J\033[3J\033[1;1H'"
+  alias c="clear"
 fi

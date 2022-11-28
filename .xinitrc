@@ -52,26 +52,24 @@ fi
 
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
-xset r rate 200 60 &
+xset r rate 250 60 &
 fcitx5 &
 picom -b &
 hsetroot -solid '#000000' &
 mpd $HOME/.config/mpd/mpd.conf
-# feh --bg-scale ${HOME}/Pictures/wallpaper_linux/Circuit.png &
 polybar dp &
 polybar dvi &
 polybar hdmi &
-# imwheel -b 45 &
 polychromatic-tray-applet &
 ckb-next -b &
 discord &
 slack &
 # alacritty -e htop &
 kitty -1 htop &
-google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-google-chrome-stable &
-# vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
-# vivaldi-stable &
+# google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
+# google-chrome-stable &
+vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
+vivaldi-stable &
 # firefox-esr &
 # firefox &
 exec i3
