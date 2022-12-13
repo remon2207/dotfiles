@@ -49,13 +49,8 @@ api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   command = 'setlocal ft=jsonc',
 })
 
--- api.nvim_create_autocmd({ 'FileType' }, {
---     pattern = { 'help' },
---     group = 'file',
---     command = 'wincmd L',
--- })
-
--- api.nvim_create_autocmd("InsertLeave", {
---     pattern = { "*" },
---     command = "set nopaste",
--- })
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '/var/tmp/fstab.*',
+  group = 'file',
+  command = 'setlocal ft=fstab'
+})
