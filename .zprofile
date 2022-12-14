@@ -1,14 +1,14 @@
 export PATH="$PATH:$HOME/go/bin"
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME='qt5ct'
 
 if [[ -n "$DISPLAY" ]]; then
-    export EDITOR="nvim"
-    export VISUAL="nvim"
-    export BROWSER="google-chrome-stable"
+    export EDITOR='nvim'
+    export VISUAL='nvim'
+    export BROWSER='google-chrome-stable'
 else
-    export EDITOR="vi"
-    export VISUAL="vi"
-    export BROWSER="w3m"
+    export EDITOR='vi'
+    export VISUAL='vi'
+    export BROWSER='w3m'
 fi
 
 export FZF_CTRL_T_COMMAND="fd --hidden -t f -E '.git' -E '.cache'"
@@ -25,18 +25,18 @@ fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-export GTK_IM_MODULE="fcitx5"
-export QT_IM_MODULE="fcitx5"
-export XMODIFIERS="@im=fcitx5"
-export GLFW_IM_MODULE="ibus"
+export GTK_IM_MODULE='fcitx5'
+export QT_IM_MODULE='fcitx5'
+export XMODIFIERS='@im=fcitx5'
+export GLFW_IM_MODULE='ibus'
 
-export LIBVA_DRIVER_NAME="vdpau"
-export VDPAU_DRIVER="nvidia"
+export LIBVA_DRIVER_NAME='vdpau'
+export VDPAU_DRIVER='nvidia'
 
 if type bat > /dev/null 2>&1; then
-    export PAGER="bat"
+    export PAGER='bat'
 else
-    export PAGER="bat"
+    export PAGER='bat'
 fi
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -44,4 +44,4 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-export TMPDIR="/tmp"
+export TMPDIR='/tmp'
