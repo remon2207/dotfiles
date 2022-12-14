@@ -1,5 +1,5 @@
-vim.g.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
+vim.scriptencoding = 'utf-8'
 
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { 'plugin.lua' },

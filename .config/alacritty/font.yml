@@ -1,14 +1,14 @@
 font:
   size: 12
   normal:
-    family: "Ricty Nerd Font"
+    family: "HackGen Console NF"
     style: Regular
   bold:
-    family: "Ricty Nerd Font"
+    family: "HackGen Console NF"
     style: Bold
   italic:
-    family: "Ricty Nerd Font"
+    family: "HackGen Console NF"
     style: Italic
   bold_italic:
-    family: "Ricty Nerd Font"
+    family: "HackGen Console NF"
     style: Bold Italic

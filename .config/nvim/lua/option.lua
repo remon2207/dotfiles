@@ -5,7 +5,7 @@ opt.fileencoding = 'utf-8'
 opt.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
 opt.fileformats = { 'unix', 'dos', 'mac' }
 -- Share of register and clipboard
-opt.clipboard:append({ 'unnamed', 'unnamedplus' })
+opt.clipboard = 'unnamedplus'
 -- Indent
 opt.expandtab = true
 opt.autoindent = true
@@ -38,7 +38,7 @@ opt.ruler = true
 -- Disable swap file
 opt.swapfile = false
 
-opt.hlsearch = false
+opt.hlsearch = true
 
 opt.background = 'dark'
 opt.termguicolors = true
@@ -51,6 +51,7 @@ opt.helplang = { 'ja', 'en' }
 -- Center the cursor line
 -- opt.scrolloff = 999
 opt.scrolloff = 5
+opt.sidescrolloff = 5
 
 -- Popup window the background opacity
 -- opt.winblend = 100
@@ -64,7 +65,7 @@ opt.signcolumn = 'yes'
 opt.autoread = true
 
 opt.list = true
-opt.listchars = 'tab:> '
+--opt.listchars = 'tab:> '
 
 opt.wildignore:append({ '*/node_modules/*' })
 

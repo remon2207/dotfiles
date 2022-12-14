@@ -34,4 +34,4 @@ keymap.set('n', '<ScrollWheelDown>', '<Nop>', opts)
 
 keymap.set('n', '<C-z>', '<Nop>', opts)
 keymap.set('n', 'm', '<Nop>', opts)
--- keymap.set('n', 'q', '<Nop>', opts)
+keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
