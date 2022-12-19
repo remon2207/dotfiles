@@ -54,3 +54,9 @@ api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   group = 'file',
   command = 'setlocal ft=fstab'
 })
+
+api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = '/var/tmp/*.service',
+  group = 'file',
+  command = 'setlocal ft=systemd'
+})

@@ -47,7 +47,7 @@ alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
 alias ckitty="cd $HOME/.config/kitty"
 alias cranger="cd $HOME/.config/ranger"
 alias rangerconf="nvim $HOME/.config/ranger/rc.conf"
-alias mirrorsync='sudo reflector --country Japan --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias mirrorsync='sudo reflector --country Japan --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
 alias unrequired='pacman -Qtdq'
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa='ps auxf'
@@ -71,6 +71,10 @@ alias setxset='xset r rate 250 60'
 alias visudo='sudo EDITOR=nvim visudo'
 alias renetwork='sudo systemctl restart systemd-{networkd,resolved}.service'
 alias ipscan='sudo nmap -sP 192.168.1.0/24'
+alias status='sudo systemctl status'
+alias restart='sudo systemctl restart'
+alias start='sudo systemctl start'
+alias stop='sudo systemctl stop'
 
 if [[ -n "$DISPLAY" ]]; then
   if type lsd > /dev/null 2>&1; then
