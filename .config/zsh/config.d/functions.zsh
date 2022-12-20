@@ -57,8 +57,11 @@ cup() {
     case "$yn" in
       [yY]) paru -Syu ;;
     esac
+
+    return 0
+  else
+    return 1
   fi
-  return 1
 }
 
 unset dotfiles_dir
