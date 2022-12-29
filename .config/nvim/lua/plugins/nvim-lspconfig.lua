@@ -114,8 +114,6 @@ local servers = {
   'sumneko_lua',
   'dockerls',
   'yamlls',
-  'sqlls',
-  'sqls',
   'tailwindcss',
   'cssls',
   'vimls',

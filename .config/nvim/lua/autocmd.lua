@@ -56,7 +56,7 @@ api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 })
 
 api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = '/var/tmp/*.service',
+  pattern = { '/var/tmp/*.{service,network}' },
   group = 'file',
   command = 'setlocal ft=systemd'
 })
