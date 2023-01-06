@@ -9,6 +9,15 @@ XTerm*faceName: Hack Nerd Font:antialias=false
 ! XTerm*faceName: SauceCodePro Nerd Font:antialias=false
 XTerm*faceSize: 11
 
+! uxterm
+UXTerm*termName:              xterm-256color
+UXTerm*locale:                true
+UXTerm*selectToClipboard:     true
+UXTerm*faceName: Hack Nerd Font:antialias=false
+UXTerm*faceNameDoublesize: HackGen
+! XTerm*faceName: SauceCodePro Nerd Font:antialias=false
+UXTerm*faceSize: 11
+
 ! urxvt
 URxvt.font: xft:Hack:size=11,xft:Hack Nerd Font:size=5
 ! URxvt.font: xft:Source Code Pro:size=12,xft:SauceCodePro Nerd Font:size=5

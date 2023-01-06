@@ -5,7 +5,7 @@
 [profiles]
   [[default]]
     background_color = "#002b36"
-    font = Hack Nerd Font 11
+    font = HackGen Console NF 11
     foreground_color = "#839496"
     show_titlebar = False
     scrollbar_position = hidden

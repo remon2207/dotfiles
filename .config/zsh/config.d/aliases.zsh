@@ -75,6 +75,10 @@ alias status='sudo systemctl status'
 alias restart='sudo systemctl restart'
 alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
+alias ipscan='sudo nmap -sP 192.168.1.0/24'
+alias free='free -th'
+alias df='df -Th'
+alias svim='sudoedit'
 
 if [[ -n "$DISPLAY" ]]; then
   if type lsd > /dev/null 2>&1; then
@@ -150,6 +154,7 @@ alias nvmupdate='nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/
 
 if [[ "$TERM" = "xterm-kitty" ]]; then
   alias ssh='kitty +kitten ssh'
+  #alias ssh='echo "Please execute to other Terminal." && return 1 > /dev/null 2>&1'
   alias clear="printf '\033[2J\033[3J\033[1;1H'"
   alias c='clear'
 fi
