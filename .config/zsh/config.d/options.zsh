@@ -1,4 +1,4 @@
-# setopt extendedglob nomatch notify
+#setopt extendedglob nomatch notify
 # Japanese language support
 setopt print_eight_bit
 # TAB completion

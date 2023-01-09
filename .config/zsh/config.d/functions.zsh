@@ -45,6 +45,7 @@ wmclass() {
   xprop WM_CLASS | awk -F '"' '{print $4}'
 }
 
+
 mkcd() {
   mkdir -p $1 && cd $1
 }
@@ -63,5 +64,11 @@ cup() {
     return 1
   fi
 }
+
+if [ "$TERM" = "tmux-256color" ]; then
+  ssh() {
+    exit
+  }
+fi
 
 unset dotfiles_dir
