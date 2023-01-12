@@ -74,8 +74,8 @@ packer.startup({
     use('vim-jp/vimdoc-ja')
 
     -- Translater
-    use('vim-denops/denops.vim')
-    use('skanehira/denops-translate.vim')
+    -- use('vim-denops/denops.vim')
+    -- use('skanehira/denops-translate.vim')
 
     -- Comment out in normal mode
     use({
@@ -258,12 +258,12 @@ packer.startup({
     --   end,
     -- })
 
-    use({
-      'onsails/lspkind.nvim',
-      config = function()
-        require('plugins.lspkind')
-      end,
-    })
+    -- use({
+    --   'onsails/lspkind.nvim',
+    --   config = function()
+    --     require('plugins.lspkind')
+    --   end,
+    -- })
     -- use({
     --     "SmiteshP/nvim-navic",
     --     config = function()

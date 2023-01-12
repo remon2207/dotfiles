@@ -65,10 +65,27 @@ cup() {
   fi
 }
 
-if [ "$TERM" = "tmux-256color" ]; then
-  ssh() {
-    exit
-  }
-fi
+toi3() {
+  sudo systemctl stop gdm.service
+  sudo systemctl disable gdm.service
+  sudo systemctl stop NetworkManager.service
+  sudo systemctl disable NetworkManager.service
+  sudo systemctl start systemd-networkd.service systemd-resolved.service
+  sudo systemctl enable systemd-networkd.service systemd-resolved.service
+}
+
+bootusb() {
+  if [ $# -eq 0 ] || [ $# -eq 1 ]; then
+    echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
+    return 1
+  elif [ $# -eq 2 ]; then
+    echo "sudo dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
+    read "yn?実行しますか？(y/n): "
+    case "$yn" in
+      [yY]) sudo dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress ;;
+      [nN]) return 1 ;;
+    esac
+  fi
+}
 
 unset dotfiles_dir
