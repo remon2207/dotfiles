@@ -31,21 +31,19 @@ paru_install() {
 }
 
 aur_install() {
-  paru -S --noconfirm --needed - < pkglist_aur
-  # paru -S --noconfirm --needed \
-  #   google-chrome \
-  #   ghq-bin \
-  #   spotify \
-  #   slack-desktop \
-  #   xcursor-breeze \
-  #   downgrade \
-  #   ttf-cica \
-  #   ttf-hackgen \
-  #   otf-source-han-code-jp \
-  #   nvm \
-  #   notion-app-enhanced \
-  #   libva-vdpau-driver-chromium \
-  #   lazydocker-bin
+  # paru -S --noconfirm --needed - < pkglist_aur
+  paru -S --noconfirm --needed \
+    google-chrome \
+    ghq-bin \
+    spotify \
+    slack-desktop \
+    downgrade \
+    ttf-hackgen \
+    otf-source-han-code-jp \
+    nvm \
+    notion-app-enhanced \
+    libva-vdpau-driver-chromium \
+    lazydocker-bin
 }
 
 git_settings() {
