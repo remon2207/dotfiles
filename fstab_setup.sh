@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$#" -eq 0 ]; then
+if [ $# -eq 0 ]; then
   exit 0
 elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
   cat << EOF

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$#" -eq 0 ]; then
+if [ $# -eq 0 ]; then
   exit 1
 elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
   cat << EOF
@@ -39,7 +39,6 @@ aur_install() {
     slack-desktop \
     downgrade \
     ttf-hackgen \
-    otf-source-han-code-jp \
     nvm \
     notion-app-enhanced \
     libva-vdpau-driver-chromium \
@@ -47,8 +46,8 @@ aur_install() {
 }
 
 git_settings() {
-  git config --global user.email "$git_email"
-  git config --global user.name "$git_name"
+  git config --global user.email "${git_email}"
+  git config --global user.name "${git_name}"
 }
 
 psd_settings() {
