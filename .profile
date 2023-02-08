@@ -22,7 +22,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 
 if type col > /dev/null 2>&1; type bat > /dev/null 2>&1; then
-    export MANPAGER="sh -c 'col -bx | bat -l man -pn'"
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

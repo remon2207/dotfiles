@@ -88,4 +88,10 @@ bootusb() {
   fi
 }
 
+netreload() {
+  nic_name=$(ip link | grep '2: ' | awk '{print $2}' | cut -d ':' -f 1)
+  sudo nmcli connection down $nic_name
+  sudo nmcli connection up $nic_name
+}
+
 unset dotfiles_dir
