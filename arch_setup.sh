@@ -40,10 +40,8 @@ aur_install() {
     downgrade \
     ttf-hackgen \
     nvm \
-    notion-app-enhanced \
     libva-vdpau-driver-chromium \
     lazydocker-bin \
-    brave-bin \
     profile-sync-daemon-brave
 }
 
@@ -55,9 +53,8 @@ git_settings() {
 psd_settings() {
   firefox
   google-chrome-stable
-  brave
   psd
-  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome brave)/' $HOME/.config/psd/psd.conf
+  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome)/' $HOME/.config/psd/psd.conf
   systemctl --user enable --now psd.service
 }
 
