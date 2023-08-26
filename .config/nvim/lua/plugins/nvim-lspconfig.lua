@@ -111,6 +111,7 @@ local lsp_flags = {
 
 local servers = {
   'tsserver',
+  'lua_ls',
   'dockerls',
   'yamlls',
   'tailwindcss',
