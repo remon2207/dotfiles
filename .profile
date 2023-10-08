@@ -40,6 +40,6 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 export TMPDIR='/tmp'
 
-#export http_proxy='http://proxy.home:8080/'
-#export https_proxy=$http_proxy
-#export ftp_proxy=$http_proxy
+export http_proxy='http://proxy.home:8080/'
+export https_proxy=$http_proxy
+export ftp_proxy=$http_proxy

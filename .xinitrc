@@ -48,6 +48,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
   unset f
 fi
 
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
+
 # /opt/display_nouveau_setup.sh
 
 xautolock -time 60 -locker "systemctl suspend" &
@@ -55,21 +59,15 @@ xset s off -dpms &
 xset r rate 250 60 &
 fcitx5 &
 picom -b &
-hsetroot -solid '#000000' &
-mpd $HOME/.config/mpd/mpd.conf
+feh --bg-max ~/Pictures/wallpaper_linux/75.png &
+#hsetroot -solid '#000000' &
+#mpd $HOME/.config/mpd/mpd.conf
 polybar dp &
+polybar dp2 &
 polybar dvi &
 polybar hdmi &
-polychromatic-tray-applet &
-ckb-next -b &
 discord &
 slack &
 alacritty -e htop &
 #kitty -1 htop &
-google-chrome-stable --profile-directory=Default --app-id=ddiddklncfgbfaaahngklemobghhjkim &
-google-chrome-stable &
-# vivaldi-stable --profile-directory=Default --app-id=hbdpomandigafcibbmofojjchbcdagbl &
-# vivaldi-stable &
-# firefox-esr &
-# firefox &
 exec i3
