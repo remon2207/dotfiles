@@ -35,15 +35,13 @@ aur_install() {
   paru -S --noconfirm --needed \
     google-chrome \
     ghq-bin \
-    spotify \
     slack-desktop \
     downgrade \
     ttf-hackgen \
     ttf-cica \
     nvm \
     libva-vdpau-driver-chromium \
-    lazydocker-bin \
-    profile-sync-daemon-brave
+    lazydocker-bin
 }
 
 git_settings() {
