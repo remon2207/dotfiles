@@ -24,6 +24,7 @@ alias grep='grep --color=auto'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
+alias dstop='docker compose stop'
 alias dup='docker compose up -d'
 alias dlogs='docker compose logs -f'
 alias dps='docker compose ps -a'
@@ -42,7 +43,7 @@ alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git comm
 alias addall='git add .'
 alias cnow="git commit -m \"update: $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop='nohup kitty -1 htop > /dev/null 2>&1 &!'
-alias dockerprune='docker volume prune && docker system prune -a'
+alias dockerprune='docker volume prune && docker system prune -fa'
 alias kittyconf="nvim ~/.config/kitty/kitty.conf"
 alias ckitty="cd ~/.config/kitty"
 alias cranger="cd ~/.config/ranger"

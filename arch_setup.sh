@@ -39,6 +39,7 @@ aur_install() {
     slack-desktop \
     downgrade \
     ttf-hackgen \
+    ttf-cica \
     nvm \
     libva-vdpau-driver-chromium \
     lazydocker-bin \
