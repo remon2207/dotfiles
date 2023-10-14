@@ -2,5 +2,6 @@
 Type=Application
 Name=bghtop
 Path=/usr/bin
-Exec=alacritty -e htop
+# Exec=alacritty -e htop
+Exec=kitty -1 htop
 Terminal=false

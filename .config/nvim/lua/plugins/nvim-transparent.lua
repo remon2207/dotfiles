@@ -3,6 +3,4 @@ if not status then
   return
 end
 
-transparent.setup({
-  enable = true,
-})
+transparent.setup()

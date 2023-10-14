@@ -13,7 +13,6 @@ if not status3 then
   return
 end
 
-local api = vim.api
 local lsp = vim.lsp
 local handlers = lsp.handlers
 
@@ -55,7 +54,7 @@ local on_attach = function(client, bufnr)
 
   if client.name == 'tsserver' then
     client.server_capabilities.documentFormattingProvider = false
-  elseif client.name == 'sumneko_lua' then
+  elseif client.name == 'lua_ls' then
     client.server_capabilities.documentFormattingProvider = false
   elseif client.name == 'prismals' then
     vim.keymap.set('n', '<Leader>a', function()
@@ -69,9 +68,12 @@ local on_attach = function(client, bufnr)
 
   lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
   lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
-  lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-    update_in_insert = true,
-  })
+  -- lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+  --   update_in_insert = true,
+  --   virtual_text = false,
+  --   signs = false
+  -- })
+  lsp.handlers['textDocument/publishDiagnostics'] = function() end
 
   vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
     -- config = config or {}
@@ -91,8 +93,8 @@ local on_attach = function(client, bufnr)
   end
 
   vim.diagnostic.config({
-    virtual_text = false,
-    severity_sort = true,
+    -- virtual_text = true,
+    -- severity_sort = true,
     float = {
       border = 'rounded',
       source = 'always',
@@ -103,11 +105,6 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
 
 local servers = {
   'tsserver',
@@ -137,10 +134,58 @@ mason_lspconfig.setup({
 })
 
 mason_lspconfig.setup_handlers({
-  function(servers)
-    lspconfig[servers].setup({
+  function()
+    lspconfig['tsserver'].setup({
       on_attach = on_attach,
-      flags = lsp_flags,
+      capabilities = capabilities,
+      init_options = {
+        preferences = {
+          importModuleSpecifierPreference = "non-relative"
+        }
+      }
+    })
+    lspconfig['lua_ls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+          },
+        },
+      },
+    })
+    lspconfig['dockerls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['yamlls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['tailwindcss'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['cssls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['vimls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['prismals'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['graphql'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      filetypes = { 'graphql', 'gql', 'typescriptreact', 'javascriptreact' },
+    })
+    lspconfig['taplo'].setup({
+      on_attach = on_attach,
       capabilities = capabilities,
     })
   end,

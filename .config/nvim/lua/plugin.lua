@@ -1,419 +1,243 @@
-local status, packer = pcall(require, 'packer')
-if not status then
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap =
-      fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-  end
-
-  vim.cmd([[packadd packer.nvim]])
-  return
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-packer.startup({
-  function(use)
-    use('wbthomason/packer.nvim')
+require('lazy').setup({
+  -- Status line
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('plugins.lualine')
+    end,
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
 
-    -- Status line
-    use({
-      'nvim-lualine/lualine.nvim',
-      config = function()
-        require('plugins.lualine')
-      end,
-      requires = {
-        'kyazdani42/nvim-web-devicons',
-      },
-    })
+  -- Buffer status
+  {
+    'akinsho/bufferline.nvim',
+    branch = 'main',
+    config = function()
+      require('plugins.bufferline')
+    end,
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  },
 
-    -- Buffer status
-    use({
-      'akinsho/bufferline.nvim',
-      branch = 'main',
-      config = function()
-        require('plugins.bufferline')
-      end,
-      requires = {
-        'kyazdani42/nvim-web-devicons',
-      },
-    })
-    -- Indent Guide
-    use({
-      'lukas-reineke/indent-blankline.nvim',
-      config = function()
-        require('plugins.indent-blankline')
-      end,
-    })
-    -- Colorscheme
-    -- use({
-    --     'svrana/neosolarized.nvim',
-    --     config = function()
-    --         require('plugins.neosolarized')
-    --     end,
-    --     requires = {
-    --         'tjdevries/colorbuddy.nvim',
-    --     },
-    -- })
-    -- use('ishan9299/nvim-solarized-lua')
-    -- use('lifepillar/vim-solarized8')
-    use('RRethy/nvim-base16')
-    -- use({
-    --     'navarasu/onedark.nvim',
-    --     config = function()
-    --         require('plugins.onedark')
-    --     end,
-    -- })
-    -- use({
-    --     'echasnovski/mini.nvim',
-    --     config = function()
-    --         require('plugins.mini')
-    --     end,
-    -- })
+  -- -- Indent Guide
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    config = function()
+      require('plugins.indent-blankline')
+    end,
+  },
 
-    -- Help to Japanese
-    use('vim-jp/vimdoc-ja')
+  -- Color Scheme
+  'RRethy/nvim-base16',
 
-    -- Translater
-    -- use('vim-denops/denops.vim')
-    -- use('skanehira/denops-translate.vim')
+  -- Help to Japanese
+  'vim-jp/vimdoc-ja',
 
-    -- Comment out in normal mode
-    use({
-      'numToStr/Comment.nvim',
-      config = function()
-        require('plugins.Comment')
-      end,
-    })
-    use({
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    })
+  -- Comment out in normal mode
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('plugins.Comment')
+    end,
+  },
+  'JoosepAlviste/nvim-ts-context-commentstring',
 
-    -- Syntax highlight
-    use({
-      'nvim-treesitter/nvim-treesitter',
-      -- commit = '4cccb6f494eb255b32a290d37c35ca12584c74d0',
-      run = ':TSUpdate',
-      config = function()
-        require('plugins.nvim-treesitter')
-      end,
-    })
-    use({
-      'yioneko/nvim-yati',
-    })
+  -- -- Syntax highlight
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      require('plugins.nvim-treesitter')
+    end,
+  },
+  'yioneko/nvim-yati',
 
-    -- Hex color code
-    use({
-      'norcalli/nvim-colorizer.lua',
-      config = function()
-        require('plugins.nvim-colorizer')
-      end,
-    })
+  -- Hex color code
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('plugins.nvim-colorizer')
+    end,
+  },
 
-    -- snippet
-    use({
-      'L3MON4D3/LuaSnip',
-      config = function()
-        require('plugins.LuaSnip')
-      end,
-    })
+  -- snippet
+  {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('plugins.LuaSnip')
+    end,
+  },
 
-    -- 引用符
-    use({
-      'kylechui/nvim-surround',
-      config = function()
-        require('plugins.nvim-surround')
-      end,
-    })
+  -- 引用符
+  {
+    'kylechui/nvim-surround',
+    config = function()
+      require('plugins.nvim-surround')
+    end,
+  },
 
-    -- fuzzy finder
-    use({
-      'nvim-telescope/telescope.nvim',
-      config = function()
-        require('plugins.telescope')
-      end,
-      requires = {
-        {
-          'nvim-lua/plenary.nvim',
-        },
-        {
-          'kyazdani42/nvim-web-devicons',
-        },
-      },
-    })
-    -- use('nvim-telescope/telescope-file-browser.nvim')
-
-    -- Jump
-    use({
-      'phaazon/hop.nvim',
-      config = function()
-        require('plugins.hop')
-      end,
-    })
-
-    -- Bracket autocompletion
-    use({
-      'windwp/nvim-autopairs',
-      config = function()
-        require('plugins.nvim-autopairs')
-      end,
-    })
-
-    -- Filer
-    -- use({
-    --     'kyazdani42/nvim-tree.lua',
-    --     config = function()
-    --         require('plugins.nvim-tree')
-    --     end,
-    --     requires = {
-    --         'kyazdani42/nvim-web-devicons',
-    --     },
-    -- })
-    use({
-      'nvim-neo-tree/neo-tree.nvim',
-      config = function()
-        require('plugins.neo-tree')
-      end,
-      -- branch = 'v2.x',
-      requires = {
-        'nvim-lua/plenary.nvim',
-        'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
-        'MunifTanjim/nui.nvim',
-      },
-    })
-
-    -- LSP
-    use({
-      'neovim/nvim-lspconfig',
-      config = function()
-        require('plugins.nvim-lspconfig')
-      end,
-    })
-    -- use {
-    --     'williamboman/nvim-lsp-installer',
-    --     config = function() require('plugins/nvim-lspconfig') end
-    -- }
-    use({
-      'williamboman/mason.nvim',
-      config = function()
-        require('plugins.nvim-lspconfig')
-      end,
-    })
-    use({
-      'williamboman/mason-lspconfig.nvim',
-      config = function()
-        require('plugins.nvim-lspconfig')
-      end,
-    })
-
-    -- Completion
-    use({
-      'hrsh7th/nvim-cmp',
-      config = function()
-        require('plugins.nvim-cmp')
-      end,
-    })
-    use('hrsh7th/cmp-nvim-lsp')
-    use('hrsh7th/cmp-buffer')
-    use('hrsh7th/cmp-path')
-    use('hrsh7th/cmp-cmdline')
-    use('saadparwaiz1/cmp_luasnip')
-    use('petertriho/cmp-git')
-    -- use 'quangnguyen30192/cmp-nvim-ultisnips'
-
-    -- Show signature help in insert mode
-    -- use({
-    --     'ray-x/lsp_signature.nvim',
-    --     config = function()
-    --         require('plugins.lsp_signature')
-    --     end,
-    -- })
-    -- DAP
-    -- use({
-    --     'mfussenegger/nvim-dap',
-    --     config = function()
-    --         require('plugins.nvim-dap')
-    --     end,
-    -- })
-    -- use({
-    --     'rcarriga/nvim-dap-ui',
-    --     config = function()
-    --         require('plugins.nvim-dap-ui')
-    --     end,
-    -- })
-
-    -- Add missing colors
-    use({
-      'folke/lsp-colors.nvim',
-      config = function()
-        require('plugins.lsp-colors')
-      end,
-    })
-
-    -- Stylish UI
-    -- use({
-    --   'glepnir/lspsaga.nvim',
-    --   branch = 'main',
-    --   config = function()
-    --     require('plugins.lspsaga')
-    --   end,
-    -- })
-
-    -- use({
-    --   'onsails/lspkind.nvim',
-    --   config = function()
-    --     require('plugins.lspkind')
-    --   end,
-    -- })
-    -- use({
-    --     "SmiteshP/nvim-navic",
-    --     config = function()
-    --         require("plugins.nvim-lspconfig")
-    --     end
-    -- })
-
-    -- Formatter
-    -- use {
-    --     'prettier/vim-prettier',
-    --     run = 'npm install --omit=dev',
-    --     config = function() require('plugins.vim-prettier') end
-    -- }
-    -- use {
-    --     'mhartington/formatter.nvim',
-    --     config = function() require('plugins.formatter') end
-    -- }
-    use({
-      'jose-elias-alvarez/null-ls.nvim',
-      config = function()
-        require('plugins.null-ls')
-      end,
-    })
-
-    use({
-      'windwp/nvim-ts-autotag',
-      config = function()
-        require('plugins/nvim-ts-autotag')
-      end,
-    })
-    -- use {
-    --     'alvan/vim-closetag',
-    --     config = function() require('plugins/vim-closetag') end
-    -- }
-
-    -- Floating Terminal
-    use({
-      'akinsho/toggleterm.nvim',
-      config = function()
-        require('plugins.toggleterm')
-      end,
-    })
-    -- use({
-    --     'VonHeikemen/fine-cmdline.nvim',
-    --     config = function()
-    --         require('plugins.fine-cmdline')
-    --     end,
-    --     requires = {
-    --         {
-    --             'MunifTanjim/nui.nvim',
-    --         },
-    --     },
-    -- })
-
-    -- Git
-    use({
-      'lewis6991/gitsigns.nvim',
-      config = function()
-        require('plugins.gitsigns')
-      end,
-    })
-
-    -- Markdown
-    use({
-      'iamcco/markdown-preview.nvim',
-      run = function()
-        vim.fn['mkdp#util#install']()
-      end,
-    })
-
-    -- Window resize
-    use({
-      'simeji/winresizer',
-      config = function()
-        require('plugins.winresizer')
-      end,
-    })
-
-    use({
-      'folke/which-key.nvim',
-      config = function()
-        require('plugins.which-key')
-      end,
-    })
-    -- Notify ui
-    -- use({
-    --     'j-hui/fidget.nvim',
-    --     config = function()
-    --         require('plugins.fidget')
-    --     end,
-    -- })
-    -- use({
-    --    'rcarriga/nvim-notify',
-    --    config = function()
-    --        require('plugins.nvim-notify')
-    --    end,
-    -- })
-    -- use({
-    --     'folke/noice.nvim',
-    --     config = function()
-    --         require('plugins.noice')
-    --     end,
-    --     requires = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         'MunifTanjim/nui.nvim',
-    --         -- OPTIONAL:
-    --         --   `nvim-notify` is only needed, if you want to use the notification view.
-    --         --   If not available, we use `mini` as the fallback
-    --         'rcarriga/nvim-notify',
-    --     },
-    -- })
-
-    use({
-      'famiu/bufdelete.nvim',
-    })
-
-    -- emmet for HTML
-    use('mattn/emmet-vim')
-
-    -- Background transparent
-    -- use({
-    --     'xiyaowong/nvim-transparent',
-    --     config = function()
-    --         require('plugins.nvim-transparent')
-    --     end,
-    -- })
-    -- dash board
-    -- use({
-    --     'glepnir/dashboard-nvim',
-    --     config = function()
-    --         require('plugins.dashboard-nvim')
-    --     end,
-    -- })
-    -- Show register with popup window
-    -- use({
-    --   'tversteeg/registers.nvim',
-    --   config = function()
-    --     require('plugins.registers')
-    --   end,
-    -- })
-
-    if packer_bootstrap then
-      packer.sync()
-    end
-  end,
-  config = {
-    display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'single' })
-      end,
+  -- fuzzy finder
+  {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('plugins.telescope')
+    end,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons',
     },
   },
+
+  -- Jump
+  {
+    'phaazon/hop.nvim',
+    config = function()
+      require('plugins.hop')
+    end,
+  },
+
+  -- Bracket autocompletion
+  {
+    'windwp/nvim-autopairs',
+    config = function()
+      require('plugins.nvim-autopairs')
+    end,
+  },
+
+  -- Filer
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    config = function()
+      require('plugins.neo-tree')
+    end,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+    },
+  },
+
+  -- LSP
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('plugins.nvim-lspconfig')
+    end,
+  },
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+
+  -- Completion
+  {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('plugins.nvim-cmp')
+    end,
+  },
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'saadparwaiz1/cmp_luasnip',
+  'petertriho/cmp-git',
+
+  {
+    'folke/lsp-colors.nvim',
+    config = function()
+      require('plugins.lsp-colors')
+    end,
+  },
+
+  -- Formatter & Linter
+  -- {
+  --   'jose-elias-alvarez/null-ls.nvim',
+  --   config = function()
+  --     require('plugins.null-ls')
+  --   end
+  -- },
+
+  -- autotag for typescript react
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('plugins/nvim-ts-autotag')
+    end,
+  },
+
+  -- Floating Terminal
+  {
+    'akinsho/toggleterm.nvim',
+    config = function()
+      require('plugins.toggleterm')
+    end,
+  },
+
+  -- Git
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('plugins.gitsigns')
+    end,
+  },
+
+  -- Markdown
+  {
+    'iamcco/markdown-preview.nvim',
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+
+  -- Window resize
+  {
+    'simeji/winresizer',
+    config = function()
+      require('plugins.winresizer')
+    end,
+  },
+
+  {
+    'folke/which-key.nvim',
+    config = function()
+      require('plugins.which-key')
+    end,
+  },
+
+  'famiu/bufdelete.nvim',
+
+  -- emmet for HTML
+  'mattn/emmet-vim',
+
+  {
+    'mhartington/formatter.nvim',
+    config = function()
+      require('plugins.formatter')
+    end,
+  },
+  {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require('plugins.lint')
+    end,
+  },
+
+  -- {
+  --   'xiyaowong/nvim-transparent',
+  --   config = function()
+  --     require('plugins.nvim-transparent')
+  --   end,
+  -- },
 })

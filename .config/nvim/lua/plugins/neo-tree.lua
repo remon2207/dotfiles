@@ -46,4 +46,5 @@ neo_tree.setup({
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set('n', '<C-n>', '<Cmd>NeoTreeFloat<CR>', opts)
+-- vim.keymap.set('n', '<C-n>', '<Cmd>NeoTreeFloat<CR>', opts)
+vim.keymap.set('n', '<C-n>', '<Cmd>Neotree position=float<CR>', opts)

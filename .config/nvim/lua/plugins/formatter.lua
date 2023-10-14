@@ -1,35 +1,39 @@
-local api = vim.api
-local status, util = pcall(require, 'formatter.util')
+local status, formatter = pcall(require, 'formatter')
 if not status then
   return
 end
 
-util.setup({
+formatter.setup({
   filetype = {
     typescriptreact = {
-      require('formatter.filetypes.typescriptreact').prettier,
+      require('formatter.filetypes.typescriptreact').prettierd,
     },
     typescript = {
-      require('formatter.filetypes.typescript').prettier,
+      require('formatter.filetypes.typescript').prettierd,
+    },
+    lua = {
+      require('formatter.filetypes.lua').stylua,
     },
   },
 })
 
-api.nvim_create_autocmd('BufWritePre', {
+local api = vim.api
+
+api.nvim_create_autocmd('BufWritePost', {
   pattern = {
-    '*.js',
-    '*.jsx',
-    '*.ts',
-    '*.tsx',
-    '*.css',
-    '*.scss',
-    '*.sass',
-    '*.json',
-    '*.graphql',
-    '*.md',
-    '*.yaml',
-    '*.html',
+    -- '*.js',
+    -- '*.jsx',
+    -- '*.ts',
+    -- '*.tsx',
+    -- '*.css',
+    -- '*.scss',
+    -- '*.sass',
+    -- '*.json',
+    -- '*.graphql',
+    -- '*.md',
+    -- '*.yaml',
+    -- '*.html',
+    '*',
   },
-  group = 'file',
   command = 'FormatWrite',
 })

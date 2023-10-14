@@ -80,6 +80,7 @@ alias ipscan='sudo nmap -sP 192.168.1.0/24'
 alias free='free -th'
 alias df='df -Th'
 alias svim='sudoedit'
+alias pn='pnpm'
 
 if [[ -n "$DISPLAY" ]]; then
   if type lsd > /dev/null 2>&1; then
@@ -103,16 +104,16 @@ else
 fi
 
 # # common aliases
-if type fd > /dev/null 2>&1; then
-  alias find='fd'
-fi
+# if type fd > /dev/null 2>&1; then
+#   alias find='fd'
+# fi
 
 if type lazydocker > /dev/null 2>&1; then
   alias lzd='lazydocker'
 fi
 
 if type lazygit > /dev/null 2>&1; then
-  alias lzg='lazygit'
+  alias lzg='~/.config/lazygit/symlink_workaround.sh'
 fi
 
 if type fzf > /dev/null 2>&1; then
@@ -126,14 +127,14 @@ if type tmux > /dev/null 2>&1; then
 fi
 
 if type rg > /dev/null 2>&1; then
-  alias grep='rg --color=auto'
+  alias rg='rg --color=auto'
 else
   alias grep='grep --color=auto'
 fi
 
-if type bat > /dev/null 2>&1; then
-  alias cat='bat'
-fi
+# if type bat > /dev/null 2>&1; then
+#   alias cat='bat'
+# fi
 
 if type ranger > /dev/null 2>&1; then
   alias r='ranger'
@@ -143,15 +144,15 @@ if type tldr > /dev/null 2>&1; then
   alias rman='tldr'
 fi
 
-if type sd > /dev/null 2>&1; then
-  alias sed='sd'
-fi
+# if type sd > /dev/null 2>&1; then
+#   alias sed='sd'
+# fi
 
 if type delta > /dev/null 2>&1; then
   alias diff='delta -n'
 fi
 
-alias nvmupdate='nvm install --lts && npm i -g @fsouza/prettierd @johnnymorganz/stylua-bin eslint_d'
+alias nvmupdate='nvm install --lts && npm i -g @fsouza/prettierd eslint_d'
 
 if [[ "$TERM" = "xterm-kitty" ]]; then
   #alias ssh='kitty +kitten ssh'

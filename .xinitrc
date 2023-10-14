@@ -57,17 +57,17 @@ fi
 xautolock -time 60 -locker "systemctl suspend" &
 xset s off -dpms &
 xset r rate 250 60 &
-fcitx5 &
-picom -b &
-feh --bg-max ~/Pictures/wallpaper_linux/75.png &
-#hsetroot -solid '#000000' &
-#mpd $HOME/.config/mpd/mpd.conf
 polybar dp &
 polybar dp2 &
 polybar dvi &
 polybar hdmi &
+picom -b &
+fcitx5 &
+feh --bg-max ~/Pictures/wallpaper_linux/75.png &
+#hsetroot -solid '#000000' &
+#mpd $HOME/.config/mpd/mpd.conf
 discord &
 slack &
-alacritty -e htop &
-#kitty -1 htop &
+#alacritty -e htop &
+kitty -1 htop &
 exec i3
