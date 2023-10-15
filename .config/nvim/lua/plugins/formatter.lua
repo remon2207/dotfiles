@@ -5,11 +5,17 @@ end
 
 formatter.setup({
   filetype = {
+    typescript = {
+      require('formatter.filetypes.typescript').prettierd,
+    },
+    javascript = {
+      require('formatter.filetypes.javascript').prettierd,
+    },
     typescriptreact = {
       require('formatter.filetypes.typescriptreact').prettierd,
     },
-    typescript = {
-      require('formatter.filetypes.typescript').prettierd,
+    javascript = {
+      require('formatter.filetypes.javascriptreact').prettierd,
     },
     lua = {
       require('formatter.filetypes.lua').stylua,

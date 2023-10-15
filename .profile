@@ -38,8 +38,10 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+export GLFW_IM_MODULE='ibus'
+
 export TMPDIR='/tmp'
 
-export http_proxy='http://proxy.home:8080/'
+export http_proxy='http://proxy.home:8080'
 export https_proxy=$http_proxy
 export ftp_proxy=$http_proxy

@@ -81,6 +81,11 @@ alias free='free -th'
 alias df='df -Th'
 alias svim='sudoedit'
 alias pn='pnpm'
+alias tovim='cd ~/.config/nvim/lua'
+alias toi3='cd ~/.config/i3/config.d'
+alias toalacritty='cd ~/.config/alacritty'
+alias tokitty='cd ~/.config/kitty'
+alias tozsh='cd ~/.config/zsh/config.d'
 
 if [[ -n "$DISPLAY" ]]; then
   if type lsd > /dev/null 2>&1; then

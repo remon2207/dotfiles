@@ -68,14 +68,14 @@ cup() {
   fi
 }
 
-toi3() {
-  sudo systemctl stop gdm.service
-  sudo systemctl disable gdm.service
-  sudo systemctl stop NetworkManager.service
-  sudo systemctl disable NetworkManager.service
-  sudo systemctl start systemd-networkd.service systemd-resolved.service
-  sudo systemctl enable systemd-networkd.service systemd-resolved.service
-}
+# toi3() {
+#   sudo systemctl stop gdm.service
+#   sudo systemctl disable gdm.service
+#   sudo systemctl stop NetworkManager.service
+#   sudo systemctl disable NetworkManager.service
+#   sudo systemctl start systemd-networkd.service systemd-resolved.service
+#   sudo systemctl enable systemd-networkd.service systemd-resolved.service
+# }
 
 bootusb() {
   if [ $# -eq 0 ] || [ $# -eq 1 ]; then

@@ -27,30 +27,37 @@ local lsp_formatting = function()
   })
 end
 
+local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, opts)
+
+-- keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
+-- keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+-- keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+-- keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, opts)
+keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', opts)
 
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  vim.keymap.set('i', '<C-x><C-o>', '<Cmd>lua require("cmp").complete()<CR>', bufopts)
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<Leader>wl', function()
+  keymap.set('i', '<C-x><C-o>', '<Cmd>lua require("cmp").complete()<CR>', bufopts)
+  keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  -- keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  -- keymap.set('n', 'gd', '<Cmd>Telescope lsp_definitions<CR>', bufopts)
+  -- keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  -- keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  keymap.set('n', 'gi', '<Cmd>Telescope lsp_implementations<CR>', bufopts)
+  -- keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  keymap.set('n', '<Leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  -- keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
+  keymap.set('n', '<Leader>D', '<Cmd>Telescope lsp_type_definitions<CR>', bufopts)
+  -- keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+  -- keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
+  -- keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', bufopts)
 
   if client.name == 'tsserver' then
     client.server_capabilities.documentFormattingProvider = false
@@ -68,12 +75,12 @@ local on_attach = function(client, bufnr)
 
   lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
   lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
-  -- lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-  --   update_in_insert = true,
-  --   virtual_text = false,
-  --   signs = false
-  -- })
-  lsp.handlers['textDocument/publishDiagnostics'] = function() end
+  lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+    update_in_insert = true,
+    virtual_text = true,
+    signs = true,
+  })
+  -- lsp.handlers['textDocument/publishDiagnostics'] = function() end
 
   vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
     -- config = config or {}
@@ -93,8 +100,8 @@ local on_attach = function(client, bufnr)
   end
 
   vim.diagnostic.config({
-    -- virtual_text = true,
-    -- severity_sort = true,
+    virtual_text = true,
+    severity_sort = true,
     float = {
       border = 'rounded',
       source = 'always',
@@ -117,6 +124,7 @@ local servers = {
   'prismals',
   'graphql',
   'taplo',
+  'efm',
 }
 
 mason.setup({
@@ -133,6 +141,15 @@ mason_lspconfig.setup({
   ensure_installed = servers,
 })
 
+local eslint = {
+  lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
+  lintIgnoreExitCode = true,
+  lintStdin = true,
+  lintFormats = { '%f:%l:%c: %m' },
+  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}',
+  formatStdin = true,
+}
+
 mason_lspconfig.setup_handlers({
   function()
     lspconfig['tsserver'].setup({
@@ -140,9 +157,9 @@ mason_lspconfig.setup_handlers({
       capabilities = capabilities,
       init_options = {
         preferences = {
-          importModuleSpecifierPreference = "non-relative"
-        }
-      }
+          importModuleSpecifierPreference = 'non-relative',
+        },
+      },
     })
     lspconfig['lua_ls'].setup({
       on_attach = on_attach,
@@ -187,6 +204,16 @@ mason_lspconfig.setup_handlers({
     lspconfig['taplo'].setup({
       on_attach = on_attach,
       capabilities = capabilities,
+    })
+    lspconfig['efm'].setup({
+      settings = {
+        languages = {
+          typescript = { eslint },
+          javascript = { eslint },
+          typescriptreact = { eslint },
+          javascriptreact = { eslint },
+        },
+      },
     })
   end,
 })

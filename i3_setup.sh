@@ -9,19 +9,60 @@ current_dir=$(
   pwd
 )
 file_name=$(basename $0)
+# home_symbolic=(
+#   ".bash_profile"
+#   ".bashrc"
+#   ".gtkrc-2.0"
+#   ".imwheelrc"
+#   ".tmux.conf"
+#   ".xinitrc"
+#   ".Xmodmap"
+#   ".Xresources"
+#   ".zprofile"
+#   ".zshrc"
+#   "commit.template"
+# )
 home_symbolic=(
   ".bash_profile"
   ".bashrc"
   ".gtkrc-2.0"
-  ".imwheelrc"
+  ".profile"
   ".tmux.conf"
   ".xinitrc"
-  ".Xmodmap"
   ".Xresources"
-  ".zprofile"
   ".zshrc"
   "commit.template"
 )
+# conf_symbolic=(
+#   "alacritty"
+#   "bat"
+#   "dunst"
+#   "fish"
+#   "fontconfig"
+#   "gtk-3.0"
+#   "htop"
+#   "i3"
+#   "kitty"
+#   "Kvantum"
+#   "lazygit"
+#   "mpd"
+#   "nano"
+#   "ncmpcpp"
+#   "neofetch"
+#   "nvim"
+#   "picom"
+#   "polybar"
+#   "qt5ct"
+#   "qutebrowser"
+#   "ranger"
+#   "rofi"
+#   "silicon"
+#   "starship.toml"
+#   "stylua"
+#   "terminator"
+#   "wezterm"
+#   "zsh"
+# )
 conf_symbolic=(
   "alacritty"
   "bat"
@@ -47,14 +88,17 @@ conf_symbolic=(
   "rofi"
   "silicon"
   "starship.toml"
-  "stylua"
   "terminator"
   "wezterm"
   "zsh"
 )
+# desktop_entry=(
+#   "bghtop.desktop"
+#   "lazydocker.desktop"
+#   "mozc.desktop"
+# )
 desktop_entry=(
   "bghtop.desktop"
-  "lazydocker.desktop"
   "mozc.desktop"
 )
 desktop_entry_dir="$current_dir/.local/share/applications"

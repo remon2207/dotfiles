@@ -57,7 +57,7 @@ opt.sidescrolloff = 5
 -- opt.winblend = 100
 -- opt.winblend = 0
 opt.wildoptions = 'pum'
-opt.pumblend = 10
+opt.pumblend = 25
 
 -- Show always sign column
 opt.signcolumn = 'yes'

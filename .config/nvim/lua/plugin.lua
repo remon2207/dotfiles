@@ -11,6 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local opts = {
+  install = {
+    colorscheme = { 'base16-solarized-dark' }
+  },
+  ui = {
+    border = 'rounded'
+  }
+}
+
 require('lazy').setup({
   -- Status line
   {
@@ -41,10 +50,17 @@ require('lazy').setup({
   },
 
   -- Color Scheme
-  'RRethy/nvim-base16',
+  {
+    'RRethy/nvim-base16',
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      vim.cmd([[colorscheme base16-solarized-dark]])
+    end
+  },
 
   -- Help to Japanese
-  'vim-jp/vimdoc-ja',
+  -- 'vim-jp/vimdoc-ja',
 
   -- Comment out in normal mode
   {
@@ -55,10 +71,12 @@ require('lazy').setup({
   },
   'JoosepAlviste/nvim-ts-context-commentstring',
 
-  -- -- Syntax highlight
+  -- Syntax highlight
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    lazy = false,
+    priority = 1000,
     config = function()
       require('plugins.nvim-treesitter')
     end,
@@ -161,13 +179,12 @@ require('lazy').setup({
     end,
   },
 
-  -- Formatter & Linter
-  -- {
-  --   'jose-elias-alvarez/null-ls.nvim',
-  --   config = function()
-  --     require('plugins.null-ls')
-  --   end
-  -- },
+  {
+    'kkharji/lspsaga.nvim',
+    config = function()
+      require('plugins.lspsaga')
+    end,
+  },
 
   -- autotag for typescript react
   {
@@ -227,12 +244,12 @@ require('lazy').setup({
       require('plugins.formatter')
     end,
   },
-  {
-    'mfussenegger/nvim-lint',
-    config = function()
-      require('plugins.lint')
-    end,
-  },
+  -- {
+  --   'mfussenegger/nvim-lint',
+  --   config = function()
+  --     require('plugins.lint')
+  --   end,
+  -- },
 
   -- {
   --   'xiyaowong/nvim-transparent',
@@ -240,4 +257,4 @@ require('lazy').setup({
   --     require('plugins.nvim-transparent')
   --   end,
   -- },
-})
+}, opts)

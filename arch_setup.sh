@@ -52,8 +52,9 @@ git_settings() {
 psd_settings() {
   firefox
   google-chrome-stable
+  vivaldi-stable
   psd
-  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome)/' $HOME/.config/psd/psd.conf
+  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/' $HOME/.config/psd/psd.conf
   systemctl --user enable --now psd.service
 }
 
