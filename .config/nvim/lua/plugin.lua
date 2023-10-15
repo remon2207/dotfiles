@@ -11,13 +11,16 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local install = {
+  colorscheme = { 'solarized-flat' }
+}
+local ui = {
+  border = 'rounded'
+}
+
 local opts = {
-  install = {
-    colorscheme = { 'base16-solarized-dark' }
-  },
-  ui = {
-    border = 'rounded'
-  }
+  install = install,
+  ui = ui,
 }
 
 require('lazy').setup({
@@ -50,17 +53,25 @@ require('lazy').setup({
   },
 
   -- Color Scheme
+  -- {
+  --   'RRethy/nvim-base16',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function ()
+  --     vim.cmd([[colorscheme base16-solarized-dark]])
+  --   end
+  -- },
   {
-    'RRethy/nvim-base16',
+    'ishan9299/nvim-solarized-lua',
     lazy = false,
     priority = 1000,
-    config = function ()
-      vim.cmd([[colorscheme base16-solarized-dark]])
-    end
+    config = function()
+      require('plugins.nvim-solarized-lua')
+    end,
   },
 
   -- Help to Japanese
-  -- 'vim-jp/vimdoc-ja',
+  'vim-jp/vimdoc-ja',
 
   -- Comment out in normal mode
   {
@@ -68,20 +79,28 @@ require('lazy').setup({
     config = function()
       require('plugins.Comment')
     end,
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
   },
-  'JoosepAlviste/nvim-ts-context-commentstring',
 
   -- Syntax highlight
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    lazy = false,
-    priority = 1000,
     config = function()
       require('plugins.nvim-treesitter')
     end,
+    dependencies = {
+      -- autotag for typescript react
+      {
+        'windwp/nvim-ts-autotag',
+        config = function()
+          require('plugins/nvim-ts-autotag')
+        end,
+      },
+    },
   },
-  'yioneko/nvim-yati',
 
   -- Hex color code
   {
@@ -183,14 +202,6 @@ require('lazy').setup({
     'kkharji/lspsaga.nvim',
     config = function()
       require('plugins.lspsaga')
-    end,
-  },
-
-  -- autotag for typescript react
-  {
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require('plugins/nvim-ts-autotag')
     end,
   },
 

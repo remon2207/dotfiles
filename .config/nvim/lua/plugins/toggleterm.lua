@@ -3,15 +3,18 @@ if not status then
   return
 end
 
+local float_opts = {
+  border = 'rounded'
+}
+
 toggleterm.setup({
   direction = 'float',
-  float_opts = {
-    border = 'rounded',
-  },
+  float_opts = float_opts,
 })
 
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
+-- local lazygit = Terminal:new({ cmd = 'lazygit', hidden = true })
+local lazygit = Terminal:new({ cmd = '~/.config/lazygit/symlink_workaround.sh', hidden = true })
 
 function _lazygit_toggle()
   lazygit:toggle()

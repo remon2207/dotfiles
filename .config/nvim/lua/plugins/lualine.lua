@@ -8,13 +8,10 @@ if not status2 then
   return
 end
 
--- local status3, noice = pcall(require, 'noice')
--- if not status3 then
---     return
--- end
+local options = {
+  theme = solarized_dark
+}
 
 lualine.setup({
-  options = {
-    theme = solarized_dark,
-  },
+  options = options,
 })

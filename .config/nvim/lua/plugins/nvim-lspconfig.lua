@@ -59,6 +59,8 @@ local on_attach = function(client, bufnr)
   -- keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', bufopts)
 
+  client.server_capabilities.semanticTokensProvider = nil
+
   if client.name == 'tsserver' then
     client.server_capabilities.documentFormattingProvider = false
   elseif client.name == 'lua_ls' then
@@ -79,6 +81,7 @@ local on_attach = function(client, bufnr)
     update_in_insert = true,
     virtual_text = true,
     signs = true,
+    severity_sort = true,
   })
   -- lsp.handlers['textDocument/publishDiagnostics'] = function() end
 
@@ -102,6 +105,7 @@ local on_attach = function(client, bufnr)
   vim.diagnostic.config({
     virtual_text = true,
     severity_sort = true,
+    sign = true,
     float = {
       border = 'rounded',
       source = 'always',
