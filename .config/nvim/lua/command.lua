@@ -1,5 +1,5 @@
-local api = vim.api
+local nvim_create_user_command = vim.api.nvim_create_user_command
 
-api.nvim_create_user_command('Pi', 'PackerInstall', {})
-api.nvim_create_user_command('Pc', 'PackerClean', {})
-api.nvim_create_user_command('Ps', 'PackerSync', {})
+nvim_create_user_command('Pi', 'PackerInstall', {})
+nvim_create_user_command('Pc', 'PackerClean', {})
+nvim_create_user_command('Ps', 'PackerSync', {})

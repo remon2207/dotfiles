@@ -9,11 +9,15 @@ local nvim_set_hl = vim.api.nvim_set_hl
 local opts = { noremap = true, silent = true }
 
 saga.setup({
-  error_sign = '>>',
-  warn_sign = '>>',
-  hint_sign = '>>',
-  infor_sign = '>>',
+  error_sign = 'E',
+  warn_sign = 'W',
+  hint_sign = 'H',
+  infor_sign = 'I',
   border_style = 'round',
+  code_action_icon = ' ',
+  code_action_prompt = {
+    virtual_text = false
+  }
 })
 
 -- Rename

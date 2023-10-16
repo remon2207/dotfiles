@@ -20,7 +20,7 @@ nvim_create_autocmd('FileType', {
 nvim_create_autocmd('InsertLeave', {
   pattern = '*',
   callback = function()
-    if os.execute('fcitx5 > /dev/null 2>&1') then
+    if os.execute('fcitx5 &> /dev/null') then
       api.nvim_exec('call system("fcitx5-remote -c")', true)
     end
   end,
@@ -53,11 +53,11 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '/var/tmp/fstab.*',
   group = 'file',
-  command = 'setlocal ft=fstab'
+  command = 'setlocal ft=fstab',
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = { '/var/tmp/*.{service,network}' },
   group = 'file',
-  command = 'setlocal ft=systemd'
+  command = 'setlocal ft=systemd',
 })

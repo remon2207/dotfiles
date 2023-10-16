@@ -29,9 +29,11 @@ keymap.set('n', 'ci}', '"_ci}', opts)
 
 keymap.set('v', 'c', '"_c', opts)
 
-keymap.set('n', '<ScrollWheelUp>', '<Nop>', opts)
-keymap.set('n', '<ScrollWheelDown>', '<Nop>', opts)
+-- keymap.set('n', '<ScrollWheelUp>', '<Nop>', opts)
+-- keymap.set('n', '<ScrollWheelDown>', '<Nop>', opts)
 
 keymap.set('n', '<C-z>', '<Nop>', opts)
 keymap.set('n', 'm', '<Nop>', opts)
 keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
+
+keymap.set('i', 'jj', '<Esc>', opts)

@@ -14,8 +14,11 @@ formatter.setup({
     typescriptreact = {
       require('formatter.filetypes.typescriptreact').prettierd,
     },
-    javascript = {
+    javascriptreact = {
       require('formatter.filetypes.javascriptreact').prettierd,
+    },
+    css = {
+      require('formatter.filetypes.css').prettierd,
     },
     lua = {
       require('formatter.filetypes.lua').stylua,

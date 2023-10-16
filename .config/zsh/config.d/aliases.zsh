@@ -12,6 +12,7 @@ alias sl='ls'
 alias mkdir='mkdir -p'
 alias cfont="cd ~/.config/fontconfig"
 alias fontconf="cd ~/.config/fontconfig && /usr/bin/nvim fonts.conf"
+alias vimfont='nvim ~/.config/fontconfig/fonts.conf'
 alias cvim="cd ~/.config/nvim/lua"
 alias vimconf="cd ~/.config/nvim/lua && /usr/bin/nvim ."
 alias cpolybar="cd ~/.config/polybar"
@@ -65,7 +66,8 @@ alias sz="source ~/.zshrc"
 alias mpdstop='mpd --kill'
 alias pkglist='pacman -Qqen > pkglist'
 alias pkglistaur='pacman -Qqe > pkglist_aur'
-alias repolybar='killall polybar; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!'
+# alias repolybar='killall polybar &> /dev/null; nohup polybar dp > /dev/null 2>&1 &! nohup polybar dvi > /dev/null 2>&1 &! nohup polybar hdmi > /dev/null 2>&1 &!'
+alias repolybar='killall polybar &> /dev/null; nohup polybar dp &> /dev/null &! nohup polybar dp2 &> /dev/null &! nohup polybar dvi &> /dev/null &! nohup polybar hdmi &> /dev/null &!'
 alias slinfon='eslint_d stop && prettierd stop'
 alias dls='sudo fdisk -l'
 alias setxset='xset r rate 250 60'
@@ -86,6 +88,7 @@ alias toi3='cd ~/.config/i3/config.d'
 alias toalacritty='cd ~/.config/alacritty'
 alias tokitty='cd ~/.config/kitty'
 alias tozsh='cd ~/.config/zsh/config.d'
+alias silicondate="silicon -o ~/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 
 if [[ -n "$DISPLAY" ]]; then
   if type lsd > /dev/null 2>&1; then

@@ -28,13 +28,8 @@ local lsp_formatting = function()
 end
 
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
 
--- keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
--- keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
--- keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
--- keymap.set('n', '<Leader>q', vim.diagnostic.setloclist, opts)
-keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', opts)
+keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -85,23 +80,6 @@ local on_attach = function(client, bufnr)
   })
   -- lsp.handlers['textDocument/publishDiagnostics'] = function() end
 
-  vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
-    -- config = config or {}
-    config = popup_opts
-    config.focus_id = ctx.method
-    if not (result and result.contents) then
-      -- vim.notify('No information available')
-      return
-    end
-    local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-    markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
-    if vim.tbl_isempty(markdown_lines) then
-      -- vim.notify('No information available')
-      return
-    end
-    return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
-  end
-
   vim.diagnostic.config({
     virtual_text = true,
     severity_sort = true,
@@ -129,6 +107,10 @@ local servers = {
   'graphql',
   'taplo',
   'efm',
+  'bashls',
+  'jsonls',
+  'stylelint_lsp',
+  'docker_compose_language_service',
 }
 
 mason.setup({
@@ -191,6 +173,11 @@ mason_lspconfig.setup_handlers({
     lspconfig['cssls'].setup({
       on_attach = on_attach,
       capabilities = capabilities,
+      settings = {
+        css = {
+          validate = false,
+        },
+      },
     })
     lspconfig['vimls'].setup({
       on_attach = on_attach,
@@ -206,6 +193,18 @@ mason_lspconfig.setup_handlers({
       filetypes = { 'graphql', 'gql', 'typescriptreact', 'javascriptreact' },
     })
     lspconfig['taplo'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['bashls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['jsonls'].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['stylelint_lsp'].setup({
       on_attach = on_attach,
       capabilities = capabilities,
     })

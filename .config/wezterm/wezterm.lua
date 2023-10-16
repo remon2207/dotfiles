@@ -2,13 +2,10 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback({
-    'Hack Nerd Font',
-    'Noto Sans CJK JP',
+    'PlemolJP Console NF',
   }),
-  font_size = 10.0,
+  font_size = 12.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
-  -- color_scheme = 'Solarized Dark (Gogh)',
-  -- window_background_opacity = 1.0,
   enable_scroll_bar = true,
   window_padding = {
     left = 0,
@@ -58,5 +55,4 @@ return {
     { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
     { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
   },
-  -- warn_about_missing_glyphs = false,
 }

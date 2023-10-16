@@ -68,6 +68,6 @@ feh --bg-max ~/Pictures/wallpaper_linux/75.png &
 #mpd $HOME/.config/mpd/mpd.conf
 discord &
 slack &
-#alacritty -e htop &
-kitty -1 htop &
+alacritty -e htop &
+# kitty -1 htop &
 exec i3

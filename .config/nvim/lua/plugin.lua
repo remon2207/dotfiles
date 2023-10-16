@@ -261,11 +261,4 @@ require('lazy').setup({
   --     require('plugins.lint')
   --   end,
   -- },
-
-  -- {
-  --   'xiyaowong/nvim-transparent',
-  --   config = function()
-  --     require('plugins.nvim-transparent')
-  --   end,
-  -- },
 }, opts)
