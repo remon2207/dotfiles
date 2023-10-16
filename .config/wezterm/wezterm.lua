@@ -2,9 +2,9 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback({
-    'PlemolJP Console NF',
+    'monospace',
   }),
-  font_size = 12.0,
+  font_size = 10.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
   enable_scroll_bar = true,
   window_padding = {

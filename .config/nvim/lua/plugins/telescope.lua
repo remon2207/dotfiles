@@ -10,7 +10,7 @@ local nvim_set_hl = vim.api.nvim_set_hl
 
 local defaults = {
   initial_mode = 'normal',
-  file_ignore_patterns = { '/.git/', '/node_modules/' },
+  file_ignore_patterns = { '.git', 'node_modules' },
   vimgrep_arguments = {
     'rg',
     '--color=auto',
@@ -43,9 +43,9 @@ local defaults = {
 
 local extensions = {
   file_browser = {
-      hijack_netrw = true,
-      -- theme = 'dropdown',
-      hidden = true,
+    hijack_netrw = true,
+    -- theme = 'dropdown',
+    hidden = true,
   },
 }
 

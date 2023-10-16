@@ -11,16 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local install = {
-  colorscheme = { 'solarized-flat' }
-}
-local ui = {
-  border = 'rounded'
-}
-
 local opts = {
-  install = install,
-  ui = ui,
+  install = {
+    colorscheme = { 'solarized-flat' },
+  },
+  ui = {
+    border = 'rounded',
+  },
 }
 
 require('lazy').setup({
@@ -190,6 +187,7 @@ require('lazy').setup({
   'hrsh7th/cmp-cmdline',
   'saadparwaiz1/cmp_luasnip',
   'petertriho/cmp-git',
+  'onsails/lspkind.nvim',
 
   {
     'folke/lsp-colors.nvim',

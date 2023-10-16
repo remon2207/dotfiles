@@ -3,10 +3,10 @@ if not status then
   return
 end
 
--- local ok, lspkind = pcall(require, 'lspkind')
--- if not ok then
---   return
--- end
+local ok, lspkind = pcall(require, 'lspkind')
+if not ok then
+  return
+end
 
 cmp.setup({
   snippet = {
@@ -42,16 +42,13 @@ cmp.setup({
       },
     },
   }),
-  -- formatting = {
-  --   format = lspkind.cmp_format({
-  --     mode = 'symbol_text',
-  --     maxwidth = 50,
-  --     ellipsis_char = '...',
-  --   }),
-  -- },
-  -- experimental = {
-  --     ghost_text = true
-  -- }
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      maxwidth = 50,
+      ellipsis_char = '...',
+    }),
+  },
 })
 
 -- Set configuration for specific filetype.

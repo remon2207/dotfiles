@@ -72,3 +72,5 @@ vim.cmd([[set t_Co=256]])
 -- Confirm dialog on close
 opt.confirm = true
 opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
+-- shell of :terminal
+opt.shell = 'zsh'
