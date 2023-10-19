@@ -6,6 +6,7 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     loader = {
       systemd-boot = {
         enable = true;
@@ -33,6 +34,14 @@
       open = true;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+  };
+
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
   };
 
@@ -128,6 +137,23 @@
       remon = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
+        shell = pkgs.zsh;
+        programs = {
+          git = {
+            enable = true;
+          };
+          neovim = {
+            enable = true;
+            defaultEditor = true;
+            vimAlias = true;
+          };
+          starship = {
+            enable = true;
+          };
+          zsh = {
+            enable = true;
+          };
+        };
         packages = with pkgs; [
           xorg.xorgserver
           xorg.xf86inputevdev
@@ -138,7 +164,6 @@
           curl
           firefox
           neovim
-          zsh
           vivaldi
           google-chrome
           kitty
