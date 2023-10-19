@@ -111,7 +111,7 @@
       noto-fonts-cjk
       noto-fonts-extra
       noto-fonts-emoji
-      Hack
+      hack-font
     ];
     fontconfig = {
       enable = true;
