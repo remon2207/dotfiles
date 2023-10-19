@@ -53,6 +53,9 @@
   systemd = {
     network = {
       enable = true;
+      wait-online = {
+        enable = false;
+      };
       networks."enp6s0" = {
         matchConfig = {
           Name = "enp6s0";
@@ -128,7 +131,7 @@
       defaultFonts = {
         serif = [ "Noto Serif CJK JP" ];
         sansSerif = [ "Noto Sans CJK JP" ];
-        monospace = [ "Hack" "Noto Sans CJK JP" ];
+        monospace = [ "Hack Nerd Font" "Noto Sans CJK JP" ];
       };
     };
   };
@@ -136,6 +139,8 @@
   programs = {
     git = {
       enable = true;
+      userName = "remon2207";
+      userEmail = "remon2207.develop@gmail.com";
     };
     neovim = {
       enable = true;
@@ -162,6 +167,10 @@
           xorg.xf86inputsynaptics
           xorg.xf86inputlibinput
           xorg.xf86videonouveau
+          git
+          neovim
+          starship
+          zsh
           wget
           curl
           firefox

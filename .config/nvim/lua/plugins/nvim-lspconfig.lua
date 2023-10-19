@@ -105,6 +105,7 @@ local servers = {
   'jsonls',
   'stylelint_lsp',
   'docker_compose_language_service',
+  'nil_ls'
 }
 
 mason.setup({
@@ -190,6 +191,9 @@ mason_lspconfig.setup_handlers({
       capabilities = capabilities,
     })
     lspconfig['stylelint_lsp'].setup({
+      capabilities = capabilities,
+    })
+    lspconfig['nil_ls'].setup({
       capabilities = capabilities,
     })
     lspconfig['efm'].setup({
