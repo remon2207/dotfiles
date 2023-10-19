@@ -121,6 +121,7 @@
       noto-fonts-extra
       noto-fonts-emoji
       hack-font
+      nerdfonts
     ];
     fontconfig = {
       enable = true;
