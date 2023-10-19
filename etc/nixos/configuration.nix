@@ -113,14 +113,13 @@
       noto-fonts-emoji
       Hack
     ];
-  };
-
-  fontconfig = {
-    enable = true;
-    defaultFonts = {
-      serif = [ "Noto Serif CJK JP" ];
-      sansSerif = [ "Noto Sans CJK JP" ];
-      monospace = [ "Hack" "Noto Sans CJK JP" ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Noto Serif CJK JP" ];
+        sansSerif = [ "Noto Sans CJK JP" ];
+        monospace = [ "Hack" "Noto Sans CJK JP" ];
+      };
     };
   };
 
@@ -129,6 +128,34 @@
       remon = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
+        packages = with pkgs; [
+          xorg.xorgserver
+          xorg.xf86inputevdev
+          xorg.xf86inputsynaptics
+          xorg.xf86inputlibinput
+          xorg.xf86videonouveau
+          wget
+          curl
+          firefox
+          neovim
+          zsh
+          vivaldi
+          google-chrome
+          kitty
+          alacritty
+          wezterm
+          tmux
+          git
+          gh
+          ghq
+          rofi
+          polybar
+          i3lock
+          bat
+          docker
+          feh
+          lsd
+        ];
       };
     };
   };
@@ -137,38 +164,6 @@
     config = {
       allowUnfree = true;
     };
-  };
-
-  # $ nix search wget
-  environment = {
-    systemPackages = with pkgs; [
-      xorg.xorgserver
-      xorg.xf86inputevdev
-      xorg.xf86inputsynaptics
-      xorg.xf86inputlibinput
-      xorg.xf86videonouveau
-      wget
-      curl
-      firefox
-      neovim
-      zsh
-      vivaldi
-      google-chrome
-      kitty
-      alacritty
-      wezterm
-      tmux
-      git
-      gh
-      ghq
-      rofi
-      polybar
-      i3lock
-      bat
-      docker
-      feh
-      lsd
-    ];
   };
 
   system.stateVersion = "23.05";
