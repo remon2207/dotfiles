@@ -132,28 +132,29 @@
     };
   };
 
+  programs = {
+    git = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+    };
+    starship = {
+      enable = true;
+    };
+    zsh = {
+      enable = true;
+    };
+  };
+
   users = {
     users = {
       remon = {
         isNormalUser = true;
         extraGroups = [ "wheel" ];
         shell = pkgs.zsh;
-        programs = {
-          git = {
-            enable = true;
-          };
-          neovim = {
-            enable = true;
-            defaultEditor = true;
-            vimAlias = true;
-          };
-          starship = {
-            enable = true;
-          };
-          zsh = {
-            enable = true;
-          };
-        };
         packages = with pkgs; [
           xorg.xorgserver
           xorg.xf86inputevdev
@@ -163,14 +164,12 @@
           wget
           curl
           firefox
-          neovim
           vivaldi
           google-chrome
           kitty
           alacritty
           wezterm
           tmux
-          git
           gh
           ghq
           rofi
