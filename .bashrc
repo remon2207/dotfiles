@@ -57,40 +57,40 @@ if [[ -n ${DISPLAY} ]]; then
   alias killstartup="killall Discord slack"
   alias b="bluetoothctl"
 
-  if [[ -z "$TMUX" ]] ;then
-    ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
-    if [[ -z "$ID" ]] ;then # if not available create a new one
+  if [[ -z "$TMUX" ]]; then
+    ID="$(tmux ls | grep -vm1 attached | cut -d: -f1)" # get the id of a deattached session
+    if [[ -z "$ID" ]]; then                            # if not available create a new one
       tmux new-session
     else
       tmux attach-session -t "$ID" # if available attach to it
-      fi
     fi
+  fi
 
-    source /usr/share/fzf/key-bindings.bash
-    source /usr/share/fzf/completion.bash
-    source /usr/share/nvm/init-nvm.sh
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
+  source /usr/share/nvm/init-nvm.sh
 
-    eval "$(starship init bash)"
-  else
-    alias x="startx"
+  eval "$(starship init bash)"
+else
+  alias x="startx"
 
-    # プロンプトのオプション表示設定
-    GIT_PS1_SHOWDIRTYSTATE=true
-    GIT_PS1_SHOWUNTRACKEDFILES=true
-    GIT_PS1_SHOWSTASHSTATE=true
-    GIT_PS1_SHOWUPSTREAM=auto
+  # プロンプトのオプション表示設定
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUPSTREAM=auto
 
-    source /usr/share/fzf/key-bindings.bash
-    source /usr/share/fzf/completion.bash
-    source /usr/share/nvm/init-nvm.sh
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
+  source /usr/share/nvm/init-nvm.sh
 
-    # git-promptの読み込み
-    # source "${HOME}/.zsh/git-prompt.sh"
-    source "/usr/share/git/completion/git-prompt.sh"
+  # git-promptの読み込み
+  # source "${HOME}/.zsh/git-prompt.sh"
+  source "/usr/share/git/completion/git-prompt.sh"
 
-    # プロンプト
-    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-    fi
+  # プロンプト
+  PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+fi
 
 # common aliases
 if type fd > /dev/null 2>&1; then
@@ -155,5 +155,5 @@ if type delta > /dev/null 2>&1; then
 fi
 
 # Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] &&
   . /usr/share/bash-completion/bash_completion

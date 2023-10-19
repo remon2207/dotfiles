@@ -8,5 +8,4 @@ api.nvim_create_autocmd('FileType', {
   pattern = { 'fern', 'nerdtree', 'startify' },
   group = 'my-glyph-palette',
   command = 'call glyph_palette#apply()',
-  command = 'call glyph_palette#apply()',
 })

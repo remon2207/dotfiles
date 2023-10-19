@@ -132,12 +132,13 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
       'kyazdani42/nvim-web-devicons',
+      'nvim-telescope/telescope-file-browser.nvim',
     },
   },
 
-  -- Jump
+  -- EasyMotion
   {
-    'phaazon/hop.nvim',
+    'smoka7/hop.nvim',
     config = function()
       require('plugins.hop')
     end,
@@ -152,17 +153,17 @@ require('lazy').setup({
   },
 
   -- Filer
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    config = function()
-      require('plugins.neo-tree')
-    end,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'kyazdani42/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-  },
+  -- {
+  --   'nvim-neo-tree/neo-tree.nvim',
+  --   config = function()
+  --     require('plugins.neo-tree')
+  --   end,
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'kyazdani42/nvim-web-devicons',
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  -- },
 
   -- LSP
   {
@@ -189,6 +190,7 @@ require('lazy').setup({
   'petertriho/cmp-git',
   'onsails/lspkind.nvim',
 
+  -- LSPの不足のカラーを追加
   {
     'folke/lsp-colors.nvim',
     config = function()
@@ -253,6 +255,7 @@ require('lazy').setup({
       require('plugins.formatter')
     end,
   },
+
   -- {
   --   'mfussenegger/nvim-lint',
   --   config = function()

@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
+  ps_id=$(ps auxf | grep -i $1 | awk '{print $2}' | head -n 1)
   kill $ps_id
 }
 
@@ -39,7 +39,7 @@ buildtemp() {
 }
 
 psidc() {
-  ps_id=$(ps auxf | grep -i $1  | awk '{print $2}' | head -n 1)
+  ps_id=$(ps auxf | grep -i $1 | awk '{print $2}' | head -n 1)
   echo $ps_id
   echo $ps_id | xclip
 }
@@ -47,7 +47,6 @@ psidc() {
 wmclass() {
   xprop WM_CLASS | awk -F '"' '{print $4}'
 }
-
 
 mkcd() {
   mkdir -p $1 && cd $1
@@ -59,7 +58,7 @@ cup() {
     echo
     read "yn?Do you want to update?(y/n): "
     case "$yn" in
-      [yY]) paru -Syu ;;
+    [yY]) paru -Syu ;;
     esac
 
     return 0
@@ -85,10 +84,14 @@ bootusb() {
     echo "sudo dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress"
     read "yn?実行しますか？(y/n): "
     case "$yn" in
-      [yY]) sudo dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress ;;
-      [nN]) return 1 ;;
+    [yY]) sudo dd bs=4M if=$1 of=$2 conv=fsync oflag=direct status=progress ;;
+    [nN]) return 1 ;;
     esac
   fi
+}
+
+raspi-backup() {
+  sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > $1
 }
 
 netreload() {

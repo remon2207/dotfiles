@@ -16,12 +16,12 @@ saga.setup({
   border_style = 'round',
   code_action_icon = ' ',
   code_action_prompt = {
-    virtual_text = false
-  }
+    virtual_text = false,
+  },
 })
 
 -- Rename
-keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+keymap('n', '<Leader>rn', '<Cmd>Lspsaga rename<CR>', opts)
 -- Code action
 keymap({ 'n', 'v' }, '<leader>ca', '<Cmd>Lspsaga code_action<CR>', opts)
 -- Hover Doc

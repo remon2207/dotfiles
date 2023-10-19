@@ -21,7 +21,7 @@ keymap.set('n', 'L', '<Cmd>bnext<CR>', opts)
 
 keymap.set('n', 'x', '"_x', opts)
 keymap.set('n', 'cit', '"_cit', opts)
-keymap.set('n', "cw", '"_cw', opts)
+keymap.set('n', 'cw', '"_cw', opts)
 keymap.set('n', "ci'", '"_ci\'', opts)
 keymap.set('n', 'ci"', '"_ci"', opts)
 keymap.set('n', 'ci{', '"_ci{', opts)
@@ -39,11 +39,11 @@ keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
 keymap.set('i', 'jj', '<Esc>', opts)
 
 -- インクリメント解除
-keymap.set('n', '<C-a>', '<Nop>', opts)
-keymap.set('n', '<C-x>', '<Nop>', opts)
+-- keymap.set('n', '<C-a>', '<Nop>', opts)
+-- keymap.set('n', '<C-x>', '<Nop>', opts)
 -- インクリメント
-keymap.set('n', '+', '<C-a>', opts)
-keymap.set('n', '-', '<C-x>', opts)
+-- keymap.set('n', '+', '<C-a>', opts)
+-- keymap.set('n', '-', '<C-x>', opts)
 
 -- Lazy.nvim
 keymap.set('n', '<Leader>L', '<Cmd>Lazy<CR>', opts)

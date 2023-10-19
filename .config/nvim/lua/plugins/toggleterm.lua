@@ -4,7 +4,7 @@ if not status then
 end
 
 local float_opts = {
-  border = 'rounded'
+  border = 'rounded',
 }
 
 toggleterm.setup({

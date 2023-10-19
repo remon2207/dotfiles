@@ -9,7 +9,7 @@ if not status2 then
 end
 
 local options = {
-  theme = solarized_dark
+  theme = solarized_dark,
 }
 
 lualine.setup({

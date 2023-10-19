@@ -14,7 +14,7 @@ UXTerm*termName:              xterm-256color
 UXTerm*locale:                true
 UXTerm*selectToClipboard:     true
 UXTerm*faceName: Hack Nerd Font:antialias=false
-UXTerm*faceNameDoublesize: HackGen
+UXTerm*faceNameDoublesize: Noto Sans CJK JP
 ! XTerm*faceName: SauceCodePro Nerd Font:antialias=false
 UXTerm*faceSize: 11
 

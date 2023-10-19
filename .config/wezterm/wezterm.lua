@@ -2,7 +2,8 @@ local wezterm = require('wezterm')
 
 return {
   font = wezterm.font_with_fallback({
-    'monospace',
+    'Hack Nerd Font',
+    'Noto Sans CJK JP',
   }),
   font_size = 10.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
@@ -14,7 +15,6 @@ return {
     bottom = 0,
   },
   use_fancy_tab_bar = false,
-  -- solarized dark
   colors = {
     tab_bar = {
       background = '#002b36',

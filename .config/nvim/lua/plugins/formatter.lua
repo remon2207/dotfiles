@@ -3,46 +3,54 @@ if not status then
   return
 end
 
+local api = vim.api
+local ft = require('formatter.filetypes')
+
+local function shfmt()
+  return {
+    exe = 'shfmt',
+    args = {
+      '-sr',
+      '-i',
+      '2',
+    },
+    stdin = true,
+  }
+end
+
+local function stylua()
+  return {
+    exe = 'stylua',
+    args = {
+      '--column-width',
+      '120',
+      '--line-endings',
+      'Unix',
+      '--indent-type',
+      'Spaces',
+      '--indent-width',
+      '2',
+      '--quote-style',
+      'AutoPreferSingle',
+    },
+  }
+end
+
 formatter.setup({
   filetype = {
-    typescript = {
-      require('formatter.filetypes.typescript').prettierd,
-    },
-    javascript = {
-      require('formatter.filetypes.javascript').prettierd,
-    },
-    typescriptreact = {
-      require('formatter.filetypes.typescriptreact').prettierd,
-    },
-    javascriptreact = {
-      require('formatter.filetypes.javascriptreact').prettierd,
-    },
-    css = {
-      require('formatter.filetypes.css').prettierd,
-    },
-    lua = {
-      require('formatter.filetypes.lua').stylua,
-    },
+    typescript = ft.typescript.prettierd,
+    javascript = ft.javascript.prettierd,
+    typescriptreact = ft.typescriptreact.prettierd,
+    javascriptreact = ft.javascriptreact.prettierd,
+    css = ft.css.prettierd,
+    yaml = ft.yaml.yamlfmt,
+    lua = stylua,
+    sh = shfmt,
+    zsh = shfmt,
   },
 })
 
-local api = vim.api
-
 api.nvim_create_autocmd('BufWritePost', {
-  pattern = {
-    -- '*.js',
-    -- '*.jsx',
-    -- '*.ts',
-    -- '*.tsx',
-    -- '*.css',
-    -- '*.scss',
-    -- '*.sass',
-    -- '*.json',
-    -- '*.graphql',
-    -- '*.md',
-    -- '*.yaml',
-    -- '*.html',
-    '*',
-  },
+  pattern = { '*' },
   command = 'FormatWrite',
 })

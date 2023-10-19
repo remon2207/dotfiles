@@ -119,18 +119,22 @@ papirus-icon-theme
 paru-bin
 pavucontrol
 picom
+pigz
 pipewire
 pipewire-pulse
 polkit
 polybar
 postman-bin
 profile-sync-daemon
+pv
 qt5ct
 ranger
 reflector
 ripgrep
 rofi
+rustup
 scrot
+shfmt
 siji-ng
 silicon
 slack-desktop
@@ -144,6 +148,7 @@ texlive-fontsextra
 tig
 tldr
 tmux
+tree-sitter-cli
 ttc-iosevka
 ttf-3270-nerd
 ttf-agave-nerd
@@ -230,7 +235,6 @@ ttf-proggyclean-nerd
 ttf-roboto-mono
 ttf-roboto-mono-nerd
 ttf-sarasa-gothic
-ttf-sazanami
 ttf-scheherazade-new
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
@@ -246,6 +250,10 @@ unzip
 upower
 vdpauinfo
 vi
+virtualbox
+virtualbox-ext-oracle
+virtualbox-guest-iso
+virtualbox-host-dkms
 visual-studio-code-bin
 vivaldi
 vivaldi-ffmpeg-codecs
@@ -316,4 +324,5 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+yamlfmt
 zsh

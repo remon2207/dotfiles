@@ -28,10 +28,11 @@ if [[ -n "$DISPLAY" ]]; then
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
 
-      # load git-prompt
-      source "/usr/share/git/completion/git-prompt.sh"
+    # load git-prompt
+    source "/usr/share/git/completion/git-prompt.sh"
 
-      setopt PROMPT_SUBST ; PS1='
+    setopt PROMPT_SUBST
+    PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
   fi
@@ -51,7 +52,8 @@ else
   # load git-prompt
   source "/usr/share/git/completion/git-prompt.sh"
 
-  setopt PROMPT_SUBST ; PS1='
+  setopt PROMPT_SUBST
+  PS1='
 %B%F{blue}%~%f%b %F{red}$(__git_ps1 "[%s]")%f
 %# '
 fi

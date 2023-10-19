@@ -55,7 +55,7 @@ opt.pumblend = 25
 opt.signcolumn = 'yes'
 opt.autoread = true
 opt.list = true
---opt.listchars = 'tab:> '
+opt.listchars = 'tab:> ,space: '
 -- leader
 vim.g.mapleader = ' '
 opt.wildignore:append({ '*/node_modules/*' })

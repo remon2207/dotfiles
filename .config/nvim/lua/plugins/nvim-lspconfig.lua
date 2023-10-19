@@ -14,84 +14,78 @@ if not status3 then
 end
 
 local lsp = vim.lsp
-local handlers = lsp.handlers
-
-local lsp_formatting = function()
-  vim.lsp.buf.format({
-    async = true,
-    filter = function(client)
-      if client.name == 'prismals' then
-        return client.name
-      end
-    end,
-  })
-end
-
+local handlers = vim.lsp.handlers
 local keymap = vim.keymap
 
 keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 
-local on_attach = function(client, bufnr)
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-
-  keymap.set('i', '<C-x><C-o>', '<Cmd>lua require("cmp").complete()<CR>', bufopts)
-  keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  -- keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  -- keymap.set('n', 'gd', '<Cmd>Telescope lsp_definitions<CR>', bufopts)
-  -- keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  -- keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  keymap.set('n', 'gi', '<Cmd>Telescope lsp_implementations<CR>', bufopts)
-  -- keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  keymap.set('n', '<Leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  -- keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
-  keymap.set('n', '<Leader>D', '<Cmd>Telescope lsp_type_definitions<CR>', bufopts)
-  -- keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-  -- keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
-  -- keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', bufopts)
-
-  client.server_capabilities.semanticTokensProvider = nil
-
-  if client.name == 'tsserver' then
-    client.server_capabilities.documentFormattingProvider = false
-  elseif client.name == 'lua_ls' then
-    client.server_capabilities.documentFormattingProvider = false
-  elseif client.name == 'prismals' then
-    vim.keymap.set('n', '<Leader>a', function()
-      lsp_formatting()
-    end, bufopts)
-  end
-
-  local popup_opts = {
-    border = 'rounded',
-  }
-
-  lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
-  lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
-  lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-    update_in_insert = true,
-    virtual_text = true,
-    signs = true,
-    severity_sort = true,
-  })
-  -- lsp.handlers['textDocument/publishDiagnostics'] = function() end
-
-  vim.diagnostic.config({
-    virtual_text = true,
-    severity_sort = true,
-    sign = true,
-    float = {
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local popup_opts = {
       border = 'rounded',
-      source = 'always',
-      header = '',
-      prefix = '',
-    },
-  })
-end
+    }
+
+    keymap.set('i', '<C-x><C-o>', '<Cmd>lua require("cmp").complete()<CR>', opts)
+    keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    keymap.set('n', 'gi', '<Cmd>Telescope lsp_implementations<CR>', opts)
+    keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    keymap.set('n', '<Leader>D', '<Cmd>Telescope lsp_type_definitions<CR>', opts)
+    keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', opts)
+    keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format({ async = true })
+    end, opts)
+
+    local lsp_formatting = function()
+      vim.lsp.buf.format({
+        async = true,
+        filter = function()
+          if client.name == 'prismals' then
+            return client.name
+          end
+        end,
+      })
+    end
+
+    client.server_capabilities.semanticTokensProvider = nil
+
+    if client.name == 'tsserver' then
+      client.server_capabilities.documentFormattingProvider = false
+    elseif client.name == 'lua_ls' then
+      client.server_capabilities.documentFormattingProvider = false
+    elseif client.name == 'prismals' then
+      vim.keymap.set('n', '<Leader>a', function()
+        lsp_formatting()
+      end, opts)
+    end
+
+    lsp.handlers['textDocument/hover'] = lsp.with(handlers.hover, popup_opts)
+    lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
+    lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+      update_in_insert = true,
+      virtual_text = true,
+      signs = true,
+      severity_sort = true,
+    })
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      severity_sort = true,
+      sign = true,
+      float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+      },
+    })
+  end,
+})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -139,7 +133,6 @@ local eslint = {
 mason_lspconfig.setup_handlers({
   function()
     lspconfig['tsserver'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
       init_options = {
         preferences = {
@@ -148,7 +141,6 @@ mason_lspconfig.setup_handlers({
       },
     })
     lspconfig['lua_ls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
       settings = {
         Lua = {
@@ -159,19 +151,18 @@ mason_lspconfig.setup_handlers({
       },
     })
     lspconfig['dockerls'].setup({
-      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    lspconfig['docker_compose_language_service'].setup({
       capabilities = capabilities,
     })
     lspconfig['yamlls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['tailwindcss'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['cssls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
       settings = {
         css = {
@@ -180,32 +171,25 @@ mason_lspconfig.setup_handlers({
       },
     })
     lspconfig['vimls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['prismals'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['graphql'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
       filetypes = { 'graphql', 'gql', 'typescriptreact', 'javascriptreact' },
     })
     lspconfig['taplo'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['bashls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['jsonls'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['stylelint_lsp'].setup({
-      on_attach = on_attach,
       capabilities = capabilities,
     })
     lspconfig['efm'].setup({

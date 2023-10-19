@@ -46,10 +46,10 @@ t.setup({
     enable = true,
   },
   indent = {
-    enable = false, -- disable builtin indent module
+    enable = false,
   },
   context_commentstring = {
     enable = true,
   },
-  ensure_installed = ensure_installed
+  ensure_installed = ensure_installed,
 })

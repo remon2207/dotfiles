@@ -1,4 +1,4 @@
 key_bindings:
-- { key: Equals,         mods: Control,                         action: None }
-- { key: Plus,           mods: Control,                         action: None }
-- { key: Minus,          mods: Control,                         action: None }
+  - {key: Equals, mods: Control, action: None}
+  - {key: Plus, mods: Control, action: None}
+  - {key: Minus, mods: Control, action: None}

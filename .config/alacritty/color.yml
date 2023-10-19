@@ -4,12 +4,10 @@ colors:
   primary:
     background: "#002b36" # base03
     foreground: "#839496" # base0
-
   # Cursor colors
   cursor:
     text: "#002b36" # base03
     cursor: "#839496" # base0
-
   # Normal colors
   normal:
     black: "#073642" # base02
@@ -20,7 +18,6 @@ colors:
     magenta: "#d33682" # magenta
     cyan: "#2aa198" # cyan
     white: "#eee8d5" # base2
-
   # Bright colors
   bright:
     black: "#002b36" # base03

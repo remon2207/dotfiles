@@ -3,8 +3,6 @@
 pictures_directory="$HOME/Pictures"
 videos_directory="$HOME/Videos"
 
-cp -r $HOME/.ssh/config /mnt/share01/rh/ssh
-
 if [ -n "$(ls $pictures_directory)" ]; then
   cp -r $HOME/Pictures/* /mnt/share01/rh/pictures/
 fi

@@ -83,8 +83,7 @@ local highlights = {
   },
 }
 
-
 bufferline.setup({
   options = options,
-  highlights = highlights
+  highlights = highlights,
 })
