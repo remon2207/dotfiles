@@ -9,6 +9,7 @@ exec_term() {
           tmux attach-session -t "$ID" # if available attach to it
         fi
       fi
+      exit
     fi
   fi
 }

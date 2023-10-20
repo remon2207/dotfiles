@@ -33,4 +33,4 @@ set $ws10 "10"
 
 gaps inner 15
 
-include ${HOME}/.config/i3/config.d/*.conf
+include ${HOME}/.config/i3/conf.d/*.conf

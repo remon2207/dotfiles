@@ -153,6 +153,9 @@
     zsh = {
       enable = true;
     };
+    fish = {
+      enable = true;
+    };
   };
 
   users = {
@@ -171,6 +174,7 @@
           neovim
           starship
           zsh
+          fish
           wget
           curl
           firefox

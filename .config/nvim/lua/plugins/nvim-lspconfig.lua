@@ -71,12 +71,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       virtual_text = true,
       signs = true,
       severity_sort = true,
-    })
-
-    vim.diagnostic.config({
-      virtual_text = true,
-      severity_sort = true,
-      sign = true,
       float = {
         border = 'rounded',
         source = 'always',
@@ -84,6 +78,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
         prefix = '',
       },
     })
+
+    -- vim.diagnostic.config({
+    --   virtual_text = true,
+    --   severity_sort = true,
+    --   sign = true,
+    --   float = {
+    --     border = 'rounded',
+    --     source = 'always',
+    --     header = '',
+    --     prefix = '',
+    --   },
+    -- })
   end,
 })
 
@@ -105,7 +111,7 @@ local servers = {
   'jsonls',
   'stylelint_lsp',
   'docker_compose_language_service',
-  'nil_ls'
+  'nil_ls',
 }
 
 mason.setup({
@@ -186,6 +192,7 @@ mason_lspconfig.setup_handlers({
     })
     lspconfig['bashls'].setup({
       capabilities = capabilities,
+      filetypes = { 'sh', 'zsh' },
     })
     lspconfig['jsonls'].setup({
       capabilities = capabilities,
