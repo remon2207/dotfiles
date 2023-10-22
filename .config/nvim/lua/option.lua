@@ -73,4 +73,4 @@ vim.cmd([[set t_Co=256]])
 opt.confirm = true
 opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 -- shell of :terminal
-opt.shell = 'zsh'
+opt.shell = 'fish'
