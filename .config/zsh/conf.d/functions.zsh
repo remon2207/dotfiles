@@ -6,28 +6,28 @@ psidkill() {
 tochrome() {
   dotfiles_dir="$HOME/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/export BROWSER="\(firefox\|vivaldi-stable\)"/export BROWSER="google-chrome-stable"/' $dotfiles_dir/.profile
+  # /usr/bin/sed -i 's/export BROWSER="\(firefox\|vivaldi-stable\)"/export BROWSER="google-chrome-stable"/' $dotfiles_dir/.profile
   /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome/' $dotfiles_dir/.config/mimeapps.list
-  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' $dotfiles_dir/.config/kitty/advanced.conf
-  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' $dotfiles_dir/.config/alacritty/env.yml
+  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' $dotfiles_dir/.config/kitty/conf.d/advanced.conf
+  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' $dotfiles_dir/.config/alacritty/conf.d/env.yml
 }
 
 tofirefox() {
   dotfiles_dir="$HOME/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $dotfiles_dir/.profile
+  # /usr/bin/sed -i 's/export BROWSER="google-chrome-stable"/export BROWSER="firefox"/' $dotfiles_dir/.profile
   /usr/bin/sed -i 's/google-chrome/firefox/' $dotfiles_dir/.config/mimeapps.list
-  /usr/bin/sed -i 's/google-chrome-stable/firefox/' $dotfiles_dir/.config/kitty/advanced.conf
-  /usr/bin/sed -i 's/\(google-chrome-stable\|vivaldi-stable\)/firefox/' $dotfiles_dir/.config/alacritty/env.yml
+  /usr/bin/sed -i 's/google-chrome-stable/firefox/' $dotfiles_dir/.config/kitty/conf.d/advanced.conf
+  /usr/bin/sed -i 's/\(google-chrome-stable\|vivaldi-stable\)/firefox/' $dotfiles_dir/.config/alacritty/conf.d/env.yml
 }
 
 tovivaldi() {
   dotfiles_dir="$HOME/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/export BROWSER="\(google-chrome-stable\|firefox\)"/export BROWSER="vivaldi-stable"/' $dotfiles_dir/.profile
+  # /usr/bin/sed -i 's/export BROWSER="\(google-chrome-stable\|firefox\)"/export BROWSER="vivaldi-stable"/' $dotfiles_dir/.profile
   /usr/bin/sed -i 's/\(google-chrome\|firefox\)/vivaldi-stable/' $dotfiles_dir/.config/mimeapps.list
-  /usr/bin/sed -i 's/\(google-chrome-stable\|firefox\)/vivaldi-stable/' $dotfiles_dir/.config/kitty/advanced.conf
-  /usr/bin/sed -i 's/\(firefox\|google-chrome-stable\)/vivaldi-stable/' $dotfiles_dir/.config/alacritty/env.yml
+  /usr/bin/sed -i 's/\(google-chrome-stable\|firefox\)/vivaldi-stable/' $dotfiles_dir/.config/kitty/conf.d/advanced.conf
+  /usr/bin/sed -i 's/\(firefox\|google-chrome-stable\)/vivaldi-stable/' $dotfiles_dir/.config/alacritty/conf.d/env.yml
 }
 
 nobuildtemp() {

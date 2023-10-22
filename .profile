@@ -5,7 +5,7 @@ if [[ -n "$DISPLAY" ]]; then
     export EDITOR='nvim'
     export VISUAL='nvim'
     export SUDO_EDITOR='nvim'
-    export BROWSER='vivaldi-stable'
+    # export BROWSER='vivaldi-stable'
 else
     export SUDO_EDITOR='vi'
     export EDITOR='vi'
