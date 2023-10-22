@@ -3,7 +3,7 @@ function cup
 
   if test $status -eq 0
     echo
-    read -l -P 'Do you want to update?(y/n): ' yn
+    read -lP 'Do you want to update?(y/n): ' yn
 
     switch $yn
       case Y y

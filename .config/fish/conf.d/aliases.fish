@@ -11,7 +11,12 @@ alias la='ls -A'
 alias sl='ls'
 alias mkdir='mkdir -p'
 alias vimfont="nvim $HOME/.config/fontconfig/fonts.conf"
-alias vimi3="nvim $HOME/.config/i3"
+alias vimi3="cd $HOME/.config/i3/conf.d && nvim ."
+alias vimkitty="cd $HOME/.config/kitty && nvim ."
+alias vimconf="cd $HOME/.config/nvim/lua && nvim ."
+alias vimala="cd $HOME/.config/alacritty && nvim ."
+alias vimzsh="cd $HOME/.config/zsh/conf.d && nvim ."
+alias vimwez="nvim $HOME/.config/wezterm/wezterm.lua"
 alias grep='grep --color=auto'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
@@ -36,7 +41,6 @@ alias addall='git add .'
 alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop='nohup alacritty -e htop &> /dev/null'
 alias dockerprune='docker volume prune && docker system prune -fa'
-alias kittyconf="nvim $HOME/.config/kitty/kitty.conf"
 alias mirrorsync='sudo reflector --country Japan --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
 alias unrequired='pacman -Qtdq'
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
@@ -63,12 +67,6 @@ alias free='free -th'
 alias df='df -Th'
 alias svim='sudoedit'
 alias pn='pnpm'
-alias tovim="cd $HOME/.config/nvim/lua"
-alias toi3="cd $HOME/.config/i3/config.d"
-alias toalacritty="cd $HOME/.config/alacritty"
-alias tokitty="cd $HOME/.config/kitty"
-alias tozsh="cd $HOME/.config/zsh/config.d"
-alias wezvim="nvim $HOME/.config/wezterm/wezterm.lua"
 alias silicondate="silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 alias bootusb="sudo dd bs=4M if=$argv[1] of=$argv[2] conv=fsync oflag=direct status=progress"
 alias raspi-backup="sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > $argv[1]"
