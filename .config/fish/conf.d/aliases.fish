@@ -17,6 +17,7 @@ alias vimconf="cd $HOME/.config/nvim/lua && nvim ."
 alias vimala="cd $HOME/.config/alacritty && nvim ."
 alias vimzsh="cd $HOME/.config/zsh/conf.d && nvim ."
 alias vimwez="nvim $HOME/.config/wezterm/wezterm.lua"
+alias vimfish="cd $HOME/.config/fish/conf.d && nvim ."
 alias grep='grep --color=auto'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
