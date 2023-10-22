@@ -68,7 +68,6 @@ alias df='df -Th'
 alias svim='sudoedit'
 alias pn='pnpm'
 alias silicondate="silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
-alias bootusb="sudo dd bs=4M if=$argv[1] of=$argv[2] conv=fsync oflag=direct status=progress"
 alias raspi-backup="sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > $argv[1]"
 alias wmclass='xprop WM_CLASS'
 

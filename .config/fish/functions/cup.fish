@@ -7,7 +7,7 @@ function cup
 
     switch $yn
       case Y y
-        paru -Syu
+        paru -Syu $argv
       case N n
         return 0
     end
