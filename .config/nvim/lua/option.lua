@@ -1,65 +1,65 @@
-local opt = vim.opt
+local o = vim.opt
 
 -- 文字コード
 vim.scriptencoding = 'utf-8'
-opt.encoding = 'utf-8'
-opt.fileencoding = 'utf-8'
-opt.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
-opt.fileformats = { 'unix', 'dos', 'mac' }
+o.encoding = 'utf-8'
+o.fileencoding = 'utf-8'
+o.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
+o.fileformats = { 'unix', 'dos', 'mac' }
 -- Share of register and clipboard
-opt.clipboard = 'unnamedplus'
+o.clipboard = 'unnamedplus'
 -- Indent
-opt.expandtab = true
-opt.autoindent = true
-opt.smartindent = true
-opt.smarttab = true
-opt.tabstop = 2
-opt.shiftwidth = 2
+o.expandtab = true
+o.autoindent = true
+o.smartindent = true
+o.smarttab = true
+o.tabstop = 2
+o.shiftwidth = 2
 -- Case insensitive
-opt.ignorecase = true
-opt.smartcase = true
-opt.wrapscan = false
+o.ignorecase = true
+o.smartcase = true
+o.wrapscan = false
 -- Show number
-opt.number = true
+o.number = true
 -- Relative line
-opt.relativenumber = true
+o.relativenumber = true
 -- Highlight cursor line
-opt.cursorline = true
+o.cursorline = true
 -- Enable backspace key
-opt.backspace = { 'indent', 'eol', 'start' }
+o.backspace = { 'indent', 'eol', 'start' }
 -- Show always status line
-opt.laststatus = 2
-opt.cmdheight = 1
+o.laststatus = 2
+o.cmdheight = 1
 -- Show current mode
-opt.showmode = false
+o.showmode = false
 -- Show command you hit
-opt.showcmd = true
+o.showcmd = true
 -- Show current position on status line
-opt.ruler = true
+o.ruler = true
 -- swapファイルを無効化
-opt.swapfile = false
+o.swapfile = false
 -- 検索結果をハイライトする
-opt.hlsearch = true
-opt.background = 'dark'
-opt.termguicolors = true
-opt.completeopt = { 'menu', 'menuone', 'noselect' }
+o.hlsearch = true
+o.background = 'dark'
+o.termguicolors = true
+o.completeopt = { 'menu', 'menuone', 'noselect' }
 -- Priority of help language
-opt.helplang = { 'ja', 'en' }
+o.helplang = { 'ja', 'en' }
 -- Center the cursor line
-opt.scrolloff = 5
-opt.sidescrolloff = 5
+o.scrolloff = 5
+o.sidescrolloff = 5
 -- Popup window the background opacity
-opt.wildoptions = 'pum'
-opt.pumblend = 25
+o.wildoptions = 'pum'
+o.pumblend = 25
 -- Show always sign column
-opt.signcolumn = 'yes'
-opt.autoread = true
-opt.list = true
-opt.listchars = 'tab:> ,space: '
+o.signcolumn = 'yes'
+o.autoread = true
+o.list = true
+o.listchars = 'tab:> ,space: '
 -- leader
 vim.g.mapleader = ' '
-opt.wildignore:append({ '*/node_modules/*' })
-opt.wrap = false
+o.wildignore:append({ '*/node_modules/*' })
+o.wrap = false
 -- Undercurl
 vim.cmd([[
 let &t_Cs = "\e[4:3m"
@@ -70,7 +70,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 -- 256 color
 vim.cmd([[set t_Co=256]])
 -- Confirm dialog on close
-opt.confirm = true
-opt.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
+o.confirm = true
+o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 -- shell of :terminal
-opt.shell = 'fish'
+o.shell = 'fish'

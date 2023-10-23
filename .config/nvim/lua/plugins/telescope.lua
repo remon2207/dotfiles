@@ -10,6 +10,7 @@ local fb_actions = telescope.extensions.file_browser.actions
 
 local defaults = {
   initial_mode = 'normal',
+  winblend = 25,
   file_ignore_patterns = { '/.git/', '/node_modules/' },
   vimgrep_arguments = {
     'rg',

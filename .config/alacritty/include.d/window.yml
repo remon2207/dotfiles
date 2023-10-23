@@ -1,0 +1,4 @@
+window:
+  opacity: 1.0
+  decorations: full
+  startup_mode: Windowed

@@ -21,14 +21,14 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 
-if type col > /dev/null 2>&1; type bat > /dev/null 2>&1; then
+if type col &> /dev/null; type bat &> /dev/null; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     export MANROFFOPT='-c'
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-if type bat > /dev/null 2>&1; then
+if type bat &> /dev/null; then
     export PAGER='bat'
 else
     export PAGER='bat'
@@ -45,7 +45,6 @@ export TMPDIR='/tmp'
 
 export http_proxy='http://proxy.home:8080'
 export https_proxy=$http_proxy
-export ftp_proxy=$http_proxy
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"

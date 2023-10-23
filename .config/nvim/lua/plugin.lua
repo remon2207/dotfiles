@@ -110,6 +110,7 @@ require('lazy').setup({
   -- snippet
   {
     'L3MON4D3/LuaSnip',
+    build = 'make install_jsregexp',
     config = function()
       require('plugins.LuaSnip')
     end,
@@ -262,4 +263,12 @@ require('lazy').setup({
   --     require('plugins.lint')
   --   end,
   -- },
+
+  {
+    'j-hui/fidget.nvim',
+    tag = 'legacy',
+    config = function ()
+      require('plugins.fidget')
+    end
+  },
 }, opts)

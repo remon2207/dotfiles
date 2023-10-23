@@ -40,7 +40,7 @@ mkcd() {
 if [[ -n ${DISPLAY} ]]; then
   # aliases
 
-  if type lsd > /dev/null 2>&1; then
+  if type lsd &> /dev/null; then
     alias ls="lsd --color=auto"
     alias ll="lsd -alF --color=auto"
     alias la="lsd -A --color=auto"
@@ -50,7 +50,7 @@ if [[ -n ${DISPLAY} ]]; then
     alias la="ls -A --color=auto"
   fi
 
-  if type nvim > /dev/null 2>&1; then
+  if type nvim &> /dev/null; then
     alias vim="nvim"
   fi
 
@@ -93,64 +93,64 @@ else
 fi
 
 # common aliases
-if type fd > /dev/null 2>&1; then
+if type fd &> /dev/null; then
   alias find="fd"
 fi
 
-if type lazydocker > /dev/null 2>&1; then
+if type lazydocker &> /dev/null; then
   alias lzd="lazydocker"
 fi
 
-if type fzf > /dev/null 2>&1; then
+if type fzf &> /dev/null; then
   alias repos="ghq list -p | fzf"
   alias repo='cd $(repos)'
   alias fontlist="fc-list | fzf"
 fi
 
-if type tmux > /dev/null 2>&1; then
+if type tmux &> /dev/null; then
   alias t="tmux"
 fi
 
-if type rg > /dev/null 2>&1; then
+if type rg &> /dev/null; then
   alias grep="rg --color=auto"
 else
   alias grep="grep --color=auto"
 fi
 
-if type bat > /dev/null 2>&1; then
+if type bat &> /dev/null; then
   alias cat="bat"
 fi
 
-if type fd > /dev/null 2>&1; then
+if type fd &> /dev/null; then
   alias find="fd"
 fi
 
-if type ranger > /dev/null 2>&1; then
+if type ranger &> /dev/null; then
   alias r="ranger"
 fi
 
-if type lazydocker > /dev/null 2>&1; then
+if type lazydocker &> /dev/null; then
   alias lzd="lazydocker"
 fi
 
-if type fzf > /dev/null 2>&1; then
+if type fzf &> /dev/null; then
   alias repos="ghq list -p | fzf"
   alias repo='cd $(repos)'
 fi
 
-if type tldr > /dev/null 2>&1; then
+if type tldr &> /dev/null; then
   alias rman="tldr"
 fi
 
-if type tmux > /dev/null 2>&1; then
+if type tmux &> /dev/null; then
   alias t="tmux"
 fi
 
-if type sd > /dev/null 2>&1; then
+if type sd &> /dev/null; then
   alias sed="sd"
 fi
 
-if type delta > /dev/null 2>&1; then
+if type delta &> /dev/null; then
   alias diff="delta -n"
 fi
 

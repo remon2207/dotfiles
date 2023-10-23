@@ -14,38 +14,39 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 local events = require('luasnip.util.events')
 local ai = require('luasnip.nodes.absolute_indexer')
+local extras = require('luasnip.extras')
+local l = extras.lambda
+local rep = extras.rep
+local p = extras.partial
+local m = extras.match
+local n = extras.nonempty
+local dl = extras.dynamic_lambda
 local fmt = require('luasnip.extras.fmt').fmt
-local m = require('luasnip.extras').m
-local lambda = require('luasnip.extras').l
+local fmta = require('luasnip.extras.fmt').fmta
+local conds = require('luasnip.extras.expand_conditions')
 local postfix = require('luasnip.extras.postfix').postfix
+local types = require('luasnip.util.types')
+local parse = require('luasnip.util.parser').parse_snippet
+local ms = ls.multi_snippet
+local k = require('luasnip.nodes.key_indexer').new_key
 
-local set = vim.keymap.set
-local opts = { noremap = true, silent = true }
+local keymap = vim.keymap
 
--- set('i', '<Tab>', 'luasnip#expand_or_jumpable() ? "<Plug>luasnip-expand-or-jump" : "<Tab>"', { silent = true, expr = true, noremap = false })
-set(
-  'i',
-  '<Tab>',
-  'luasnip#expandable() ? "<Plug>luasnip-expand-snippet" : "<Tab>"',
-  { silent = true, expr = true, noremap = false }
-)
-set('i', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
-set('i', '<C-f>', '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
-set('s', '<C-b>', '<Cmd>lua require("luasnip").jump(-1)<CR>', opts)
-set('s', '<C-f>', '<Cmd>lua require("luasnip").jump(1)<CR>', opts)
+keymap.set({ 'i' }, '<C-K>', function()
+  ls.expand()
+end, { silent = true })
+keymap.set({ 'i', 's' }, '<C-L>', function()
+  ls.jump(1)
+end, { silent = true })
+keymap.set({ 'i', 's' }, '<C-J>', function()
+  ls.jump(-1)
+end, { silent = true })
 
-set(
-  'i',
-  '<C-E>',
-  'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)" : "<C-E>"',
-  { silent = true, expr = true, noremap = false }
-)
-set(
-  's',
-  '<C-E>',
-  'luasnip#choice_active() ? "<Plug>(luasnip-next-choice)": "<C-E>"',
-  { silent = true, expr = true, noremap = false }
-)
+keymap.set({ 'i', 's' }, '<C-E>', function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end, { silent = true })
 
 ls.add_snippets('typescript', {
   s(
@@ -54,7 +55,7 @@ ls.add_snippets('typescript', {
       [[
         try {{
           {1}
-        }} catch(e) {{
+        }} catch(error) {{
           {2}
         }}
     ]],
@@ -70,7 +71,7 @@ ls.add_snippets('typescript', {
       [[
         try {{
           {1}
-        }} catch(e) {{
+        }} catch(error) {{
           {2}
         }} finally {{
           {3}
@@ -182,17 +183,16 @@ ls.add_snippets('typescriptreact', {
   ),
 })
 
-ls.add_snippets('javascript', {
+ls.add_snippets('json', {
   s('prc', {
     t({
-      'const config = {',
-      "  endOfLine: 'lf',",
-      "  trailingComma: 'none',",
-      '  singleQuote: true,',
-      '  semi: false',
+      '{',
+      '  "endOfLine": "lf",',
+      '  "printWidth": 120,',
+      '  "semi": false,',
+      '  "singleQuote": true,',
+      '  "trailingComma": "es5"',
       '}',
-      '',
-      'module.exports = config',
     }),
   }),
 })

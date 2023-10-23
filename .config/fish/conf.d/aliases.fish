@@ -18,6 +18,7 @@ alias vimala="cd $HOME/.config/alacritty && nvim ."
 alias vimzsh="cd $HOME/.config/zsh/conf.d && nvim ."
 alias vimwez="nvim $HOME/.config/wezterm/wezterm.lua"
 alias vimfish="cd $HOME/.config/fish/conf.d && nvim ."
+alias vimmime="nvim $HOME/.config/mimeapps.list"
 alias grep='grep --color=auto'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
@@ -27,10 +28,11 @@ alias dup='docker compose up -d'
 alias dlogs='docker compose logs -f'
 alias dps='docker compose ps -a'
 alias dbuild='docker compose build'
+alias g='git'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
-alias gsw='git switch'
+alias gb='git branch'
 alias gr='git reset'
 alias grh='git reset --hard'
 alias gl='git log --oneline --graph'
@@ -53,7 +55,7 @@ alias bgp="nohup $1 &> /dev/null"
 alias bashrc="nvim $HOME/.bashrc"
 alias zshrc="nvim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
-alias sf="source $HOME/.config/fish/config.fish"
+alias sf="source $HOME/.config/fish/config.fish; source $HOME/.config/fish/conf.d/*.fish"
 alias mpdstop='mpd --kill'
 alias pkglist='pacman -Qqen > pkglist'
 alias pkglistaur='pacman -Qqe > pkglist_aur'
@@ -71,6 +73,18 @@ alias pn='pnpm'
 alias silicondate="silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 alias raspi-backup="sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > $argv[1]"
 alias wmclass='xprop WM_CLASS'
+alias sstatus='sudo systemctl status'
+alias sstart='sudo systemctl start'
+alias srestart='sudo systemctl restart'
+alias sstop='sudo systemctl stop'
+alias senable='sudo systemctl enable'
+alias sdisable='sudo systemctl disable'
+alias senablenow='sudo systemctl enable --now'
+alias sdisablenow='sudo systemctl disable --now'
+alias dot="cd $HOME/ghq/github.com/remon2207/dotfiles"
+alias tovi='fish_vi_key_bindings'
+alias toemacs='fish_default_key_bindings'
+alias plugin_install='fisher install jorgebucaran/nvm.fish jethrokuan/fzf jethrokuan/z'
 
 # # common aliases
 if type lazydocker &> /dev/null

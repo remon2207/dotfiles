@@ -16,33 +16,34 @@ end
 local lsp = vim.lsp
 local handlers = vim.lsp.handlers
 local keymap = vim.keymap
+local api = vim.api
 
 keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_create_autocmd('LspAttach', {
+api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local opts = { buffer = ev.buf }
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local client = lsp.get_client_by_id(ev.data.client_id)
     local popup_opts = {
       border = 'rounded',
     }
 
     keymap.set('i', '<C-x><C-o>', '<Cmd>lua require("cmp").complete()<CR>', opts)
-    keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    keymap.set('n', 'gD', lsp.buf.declaration, opts)
     keymap.set('n', 'gi', '<Cmd>Telescope lsp_implementations<CR>', opts)
-    keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-    keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    keymap.set('n', '<space>wa', lsp.buf.add_workspace_folder, opts)
+    keymap.set('n', '<space>wr', lsp.buf.remove_workspace_folder, opts)
     keymap.set('n', '<space>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
     keymap.set('n', '<Leader>D', '<Cmd>Telescope lsp_type_definitions<CR>', opts)
     keymap.set('n', 'gr', '<Cmd>Telescope lsp_references<CR>', opts)
     keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format({ async = true })
+      lsp.buf.format({ async = true })
     end, opts)
 
     local lsp_formatting = function()
-      vim.lsp.buf.format({
+      lsp.buf.format({
         async = true,
         filter = function()
           if client.name == 'prismals' then
@@ -114,26 +115,18 @@ local servers = {
   'nil_ls',
 }
 
-mason.setup({
-  ui = {
-    icons = {
-      package_installed = '✓',
-      package_pending = '➜',
-      package_uninstalled = '✗',
-    },
-  },
-})
+mason.setup()
 
 mason_lspconfig.setup({
   ensure_installed = servers,
 })
 
 local eslint = {
-  lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
+  lintCommand = 'eslint_d --cache -f unix --stdin --stdin-filename ${INPUT}',
   lintIgnoreExitCode = true,
   lintStdin = true,
   lintFormats = { '%f:%l:%c: %m' },
-  formatCommand = 'eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}',
+  formatCommand = 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename ${INPUT}',
   formatStdin = true,
 }
 
