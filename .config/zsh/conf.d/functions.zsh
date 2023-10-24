@@ -100,4 +100,16 @@ netreload() {
   sudo nmcli connection up $nic_name
 }
 
-unset dotfiles_dir
+tofish() {
+  dotfiles="$HOME/ghq/github.com/remon2207/dotfiles"
+  startline=$(($(cat $HOME/.zshrc | rg -n 'load fish' | cut -d ':' -f 1) + 1))
+  endline=$(cat $HOME/.zshrc | wc -l)
+
+  sed -i "$startline,"$endline"s/^# //" $dotfiles/.zshrc
+  sed -i '2s/^/# /' $dotfiles/.tmux.conf
+  sed -i '3s/^# //' $dotfiles/.tmux.conf
+
+  if [[ $? -eq 0 ]]; then
+    exit
+  fi
+}

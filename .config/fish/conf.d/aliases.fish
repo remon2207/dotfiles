@@ -1,7 +1,6 @@
 abbr -a j jobs
 abbr -a dc cd
 abbr -a e exit
-abbr -a e exit
 abbr -a :q exit
 abbr -a c clear
 abbr -a rm rm -rf
@@ -13,7 +12,8 @@ abbr -a mkdir mkdir -p
 abbr -a vimfont nvim $HOME/.config/fontconfig/fonts.conf
 abbr -a vimwez nvim $HOME/.config/wezterm/wezterm.lua
 abbr -a vimmime nvim $HOME/.config/mimeapps.list
-abbr -a grep grep --color=auto
+abbr -a vimnorc nvim -u NORC
+abbr -a grep grep --color=auto -in
 abbr -a dexec docker compose exec
 abbr -a drun docker compose run --rm
 abbr -a ddown docker compose down
@@ -67,28 +67,16 @@ abbr -a disablenow sudo systemctl disable --now
 abbr -a dot cd $HOME/ghq/github.com/remon2207/dotfiles
 abbr -a tovi fish_vi_key_bindings
 abbr -a toemacs fish_default_key_bindings
-abbr -a plugin_install fisher install jorgebucaran/nvm.fish jethrokuan/fzf jethrokuan/z
 abbr -a lzd lazydocker
 abbr -a lzg $HOME/.config/lazygit/symlink_workaround.sh
 abbr -a t tmux
-abbr -a rg rg --color auto
+abbr -a rg rg --color auto -in
 abbr -a r ranger
-abbr -a rman tldr
+abbr -a manex tldr
 
-# # common aliases
-# if type lazydocker &> /dev/null
-#   alias lzd='lazydocker'
-# end
-#
-# if type lazygit &> /dev/null
-#   alias lzg="$HOME/.config/lazygit/symlink_workaround.sh"
-# end
-
-# if type fzf &> /dev/null
-#   alias repos='ghq list -p | fzf'
-#   alias repo='cd $(repos)'
-#   alias fontlist='fc-list | fzf'
-# end
+if type bd &> /dev/null
+  abbr -a bd bd -i
+end
 
 if test "$DISPLAY" = ':0'
   if type lsd &> /dev/null
@@ -103,6 +91,7 @@ if test "$DISPLAY" = ':0'
 
   if type nvim &> /dev/null
     abbr -a vim nvim
+    abbr -a vim. nvim .
   end
 
   abbr -a killstartup killall Discord slack

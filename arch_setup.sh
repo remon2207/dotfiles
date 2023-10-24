@@ -44,6 +44,10 @@ aur_install() {
     lazydocker-bin
 }
 
+fish_plugin() {
+  fisher install < $(dirname $0)/.config/fish/fish_plugins
+}
+
 git_settings() {
   git config --global user.email "${git_email}"
   git config --global user.name "${git_name}"
@@ -59,12 +63,9 @@ psd_settings() {
 }
 
 paru_install
-# get_de=$(neofetch | grep "DE" | cut -d ":" -f 2 | awk '{print $2}')
-# if [ ${get_de} = "Xfce" ]; then
-#     paru -S --noconfirm --needed gamin
-# fi
 aur_install
 git_settings
+fish_plugin
 psd_settings
 
 echo "======================="

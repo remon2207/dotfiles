@@ -41,6 +41,8 @@ feh
 firefox
 firefox-i18n-en-us
 firefox-i18n-ja
+fish
+fisher
 fzf
 gentium-plus-font
 git
@@ -126,6 +128,7 @@ ripgrep
 rofi
 rustup
 scrot
+sd
 shfmt
 silicon
 starship
@@ -189,7 +192,6 @@ ttf-inconsolata-lgc-nerd
 ttf-inconsolata-nerd
 ttf-indic-otf
 ttf-input
-ttf-ionicons
 ttf-iosevka-nerd
 ttf-iosevkaterm-nerd
 ttf-jetbrains-mono-nerd

@@ -1,7 +1,9 @@
 function repolybar
+  set -l monitors dp dp2 dvi hdmi
+
   killall polybar &> /dev/null
-  bash -c 'nohup polybar dp &> /dev/null &'
-  bash -c 'nohup polybar dp2 &> /dev/null &'
-  bash -c 'nohup polybar dvi &> /dev/null &'
-  bash -c 'nohup polybar hdmi &> /dev/null &'
+  for monitor in $monitors
+    polybar $monitor &> /dev/null &
+    disown
+  end
 end

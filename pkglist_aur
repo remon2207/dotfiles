@@ -43,6 +43,8 @@ feh
 firefox
 firefox-i18n-en-us
 firefox-i18n-ja
+fish
+fisher
 fzf
 gentium-plus-font
 ghq-bin
@@ -135,6 +137,7 @@ ripgrep
 rofi
 rustup
 scrot
+sd
 shfmt
 siji-ng
 silicon

@@ -1,6 +1,3 @@
-# zmodload  zsh/zprof
-
-# Lines configured by zsh-newuser-install
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
@@ -62,12 +59,11 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
 
-if [[ -n "$DISPLAY" ]]; then
-  if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]; then
+# load fish
+if [[ -n $DISPLAY ]]; then
+  if [[ $(ps --no-header -o comm) != 'fish' ]]; then
     if type fish &> /dev/null; then
       exec fish
     fi
   fi
 fi
-
-# zprof

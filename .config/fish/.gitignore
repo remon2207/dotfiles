@@ -1,6 +1,6 @@
 /functions/_*.fish
+/functions/bd.fish
 /completions/
-/fish_plugins
 /fish_variables
 /themes/
 /conf.d/*.fish

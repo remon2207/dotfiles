@@ -11,7 +11,7 @@ o.clipboard = 'unnamedplus'
 -- Indent
 o.expandtab = true
 o.autoindent = true
-o.smartindent = true
+-- o.smartindent = true
 o.smarttab = true
 o.tabstop = 2
 o.shiftwidth = 2
@@ -60,17 +60,11 @@ o.listchars = 'tab:> ,space: '
 vim.g.mapleader = ' '
 o.wildignore:append({ '*/node_modules/*' })
 o.wrap = false
--- Undercurl
-vim.cmd([[
-let &t_Cs = "\e[4:3m"
-let &t_Ce = "\e[4:0m"
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-]])
--- 256 color
-vim.cmd([[set t_Co=256]])
 -- Confirm dialog on close
 o.confirm = true
 o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 -- shell of :terminal
 o.shell = 'fish'
+-- スペルチェック
+-- o.spell = true
+-- o.spelllang = 'en,cjk'

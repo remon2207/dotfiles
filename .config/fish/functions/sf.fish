@@ -1,5 +1,8 @@
 function sf
-  source $HOME/.config/fish/config.fish
-  source $HOME/.config/fish/conf.d/*.fish
-  source $HOME/.config/fish/functions/*.fish
+  set -l fish $HOME/.config/fish
+  set -l path $fish/config.fish $fish/conf.d/*.fish $fish/functions/*.fish
+
+  for file in $path
+    source $file
+  end
 end

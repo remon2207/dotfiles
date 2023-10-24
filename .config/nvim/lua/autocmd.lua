@@ -41,7 +41,7 @@ nvim_create_autocmd('InsertLeave', {
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = { '*.graphql', '*.prisma' },
   group = 'file',
-  command = 'setlocal nosmartindent',
+  command = 'setlocal smartindent',
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
