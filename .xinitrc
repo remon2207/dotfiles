@@ -25,8 +25,8 @@ fi
 
 # start some nice programs
 
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
     [ -x "$f" ] && . "$f"
   done
   unset f
@@ -52,6 +52,7 @@ feh --bg-max $HOME/Pictures/wallpaper_linux/75.png &
 #mpd $HOME/.config/mpd/mpd.conf
 discord &
 slack &
-alacritty -e htop &
-# kitty -1 htop &
+# alacritty -e htop &
+kitty -1 htop &
+# wezterm -e htop &
 exec i3
