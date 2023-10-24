@@ -36,8 +36,6 @@ keymap.set('n', '<C-z>', '<Nop>', opts)
 keymap.set('n', 'm', '<Nop>', opts)
 keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
 
-keymap.set('i', 'jj', '<Esc>', opts)
-
 -- インクリメント解除
 -- keymap.set('n', '<C-a>', '<Nop>', opts)
 -- keymap.set('n', '<C-x>', '<Nop>', opts)

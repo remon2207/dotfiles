@@ -1,141 +1,112 @@
-alias j='jobs'
-alias dc='cd'
-alias e='exit'
-alias :q='exit'
-alias c='clear'
-alias sudo='sudo '
-alias rm='rm -rf'
-alias ls='ls --color=auto'
-alias ll='ls -laF'
-alias la='ls -A'
-alias sl='ls'
-alias mkdir='mkdir -p'
-alias vimfont="nvim $HOME/.config/fontconfig/fonts.conf"
-alias vimi3="cd $HOME/.config/i3/conf.d && nvim ."
-alias vimkitty="cd $HOME/.config/kitty && nvim ."
-alias vimconf="cd $HOME/.config/nvim/lua && nvim ."
-alias vimala="cd $HOME/.config/alacritty && nvim ."
-alias vimzsh="cd $HOME/.config/zsh/conf.d && nvim ."
-alias vimwez="nvim $HOME/.config/wezterm/wezterm.lua"
-alias vimfish="cd $HOME/.config/fish/conf.d && nvim ."
-alias vimmime="nvim $HOME/.config/mimeapps.list"
-alias grep='grep --color=auto'
-alias dexec='docker compose exec'
-alias drun='docker compose run --rm'
-alias ddown='docker compose down'
-alias dstop='docker compose stop'
-alias dup='docker compose up -d'
-alias dlogs='docker compose logs -f'
-alias dps='docker compose ps -a'
-alias dbuild='docker compose build'
-alias g='git'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gb='git branch'
-alias gr='git reset'
-alias grh='git reset --hard'
-alias gl='git log --oneline --graph'
-alias gs='git status'
-alias gf='git fetch'
-alias gm='git merge'
-alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
-alias addall='git add .'
-alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
-alias bghtop='nohup alacritty -e htop &> /dev/null'
-alias dockerprune='docker volume prune && docker system prune -fa'
-alias mirrorsync='sudo reflector --country Japan --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
-alias unrequired='pacman -Qtdq'
-alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
-alias psa='ps auxf'
-alias psag='ps auxf | grep -i'
-alias kf='kitty + list-fonts --psname'
-alias kdf='kitty --debug-font-fallback'
-alias bgp="nohup $1 &> /dev/null"
-alias bashrc="nvim $HOME/.bashrc"
-alias zshrc="nvim $HOME/.zshrc"
-alias sz="source $HOME/.zshrc"
-alias sf="source $HOME/.config/fish/config.fish; source $HOME/.config/fish/conf.d/*.fish"
-alias mpdstop='mpd --kill'
-alias pkglist='pacman -Qqen > pkglist'
-alias pkglistaur='pacman -Qqe > pkglist_aur'
-alias repolybar='killall polybar &> /dev/null; nohup polybar dp &> /dev/null &! nohup polybar dp2 &> /dev/null &! nohup polybar dvi &> /dev/null &! nohup polybar hdmi &> /dev/null &!'
-alias slinfon='eslint_d stop && prettierd stop'
-alias dls='sudo fdisk -l'
-alias setxset='xset r rate 250 60'
-alias visudo='sudo EDITOR=nvim visudo'
-alias renetwork='sudo systemctl restart systemd-{networkd,resolved}.service'
-alias ipscan='sudo nmap -sP 192.168.1.0/24'
-alias free='free -th'
-alias df='df -Th'
-alias svim='sudoedit'
-alias pn='pnpm'
-alias silicondate="silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
-alias raspi-backup="sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > $argv[1]"
-alias wmclass='xprop WM_CLASS'
-alias sstatus='sudo systemctl status'
-alias sstart='sudo systemctl start'
-alias srestart='sudo systemctl restart'
-alias sstop='sudo systemctl stop'
-alias senable='sudo systemctl enable'
-alias sdisable='sudo systemctl disable'
-alias senablenow='sudo systemctl enable --now'
-alias sdisablenow='sudo systemctl disable --now'
-alias dot="cd $HOME/ghq/github.com/remon2207/dotfiles"
-alias tovi='fish_vi_key_bindings'
-alias toemacs='fish_default_key_bindings'
-alias plugin_install='fisher install jorgebucaran/nvm.fish jethrokuan/fzf jethrokuan/z'
+abbr -a j jobs
+abbr -a dc cd
+abbr -a e exit
+abbr -a e exit
+abbr -a :q exit
+abbr -a c clear
+abbr -a rm rm -rf
+abbr -a ls ls --color=auto
+abbr -a ll ls -laF
+abbr -a la ls -A
+abbr -a sl ls
+abbr -a mkdir mkdir -p
+abbr -a vimfont nvim $HOME/.config/fontconfig/fonts.conf
+abbr -a vimwez nvim $HOME/.config/wezterm/wezterm.lua
+abbr -a vimmime nvim $HOME/.config/mimeapps.list
+abbr -a grep grep --color=auto
+abbr -a dexec docker compose exec
+abbr -a drun docker compose run --rm
+abbr -a ddown docker compose down
+abbr -a dstop docker compose stop
+abbr -a dup docker compose up -d
+abbr -a dlog docker compose logs -f
+abbr -a dps docker compose ps -a
+abbr -a dbuild docker compose build
+abbr -a g git
+abbr -a ga git add
+abbr -a gc git commit
+abbr -a gp git push
+abbr -a gb git branch
+abbr -a gr git reset
+abbr -a grh git reset --hard
+abbr -a gl git log --oneline --graph
+abbr -a gs git status
+abbr -a gf git fetch
+abbr -a gm git merge
+abbr -a addall git add .
+abbr -a cnow git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\"
+abbr -a unrequired pacman -Qtdq
+abbr -a pacclean sudo pacman -Rns $(pacman -Qtdq)
+abbr -a psa ps auxf
+abbr -a kf kitty + list-fonts --psname
+abbr -a kdf kitty --debug-font-fallback
+abbr -a bashrc nvim $HOME/.bashrc
+abbr -a sb source $HOME/.bashrc
+abbr -a sz source $HOME/.zshrc
+abbr -a mpdstop mpd --kill
+abbr -a dls sudo fdisk -l
+abbr -a setxset xset r rate 250 60
+abbr -a visudo sudo EDITOR=nvim visudo
+abbr -a renetwork sudo systemctl restart systemd-{networkd,resolved}.service
+abbr -a ipscan sudo nmap -sP 192.168.1.0/24
+abbr -a free free -th
+abbr -a df df -Th
+abbr -a svim sudoedit
+abbr -a pn pnpm
+abbr -a silicondate silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png
+abbr -a wmclass xprop WM_CLASS
+abbr -a wmname xprop WM_NAME
+abbr -a status sudo systemctl status
+abbr -a start sudo systemctl start
+abbr -a restart sudo systemctl restart
+abbr -a stop sudo systemctl stop
+abbr -a enable sudo systemctl enable
+abbr -a disable sudo systemctl disable
+abbr -a enablenow sudo systemctl enable --now
+abbr -a disablenow sudo systemctl disable --now
+abbr -a dot cd $HOME/ghq/github.com/remon2207/dotfiles
+abbr -a tovi fish_vi_key_bindings
+abbr -a toemacs fish_default_key_bindings
+abbr -a plugin_install fisher install jorgebucaran/nvm.fish jethrokuan/fzf jethrokuan/z
+abbr -a lzd lazydocker
+abbr -a lzg $HOME/.config/lazygit/symlink_workaround.sh
+abbr -a t tmux
+abbr -a rg rg --color auto
+abbr -a r ranger
+abbr -a rman tldr
 
 # # common aliases
-if type lazydocker &> /dev/null
-  alias lzd='lazydocker'
-end
+# if type lazydocker &> /dev/null
+#   alias lzd='lazydocker'
+# end
+#
+# if type lazygit &> /dev/null
+#   alias lzg="$HOME/.config/lazygit/symlink_workaround.sh"
+# end
 
-if type lazygit &> /dev/null
-  alias lzg="$HOME/.config/lazygit/symlink_workaround.sh"
-end
-
-if type fzf &> /dev/null
-  alias repos='ghq list -p | fzf'
-  alias repo='cd $(repos)'
-  alias fontlist='fc-list | fzf'
-end
-
-if type tmux &> /dev/null
-  alias t='tmux'
-end
-
-if type rg &> /dev/null
-  alias rg='rg --color=auto'
-else
-  alias grep='grep --color=auto'
-end
-
-if type ranger &> /dev/null
-  alias r='ranger'
-end
-
-if type tldr &> /dev/null
-  alias rman='tldr'
-end
+# if type fzf &> /dev/null
+#   alias repos='ghq list -p | fzf'
+#   alias repo='cd $(repos)'
+#   alias fontlist='fc-list | fzf'
+# end
 
 if test "$DISPLAY" = ':0'
   if type lsd &> /dev/null
-    alias ls='lsd --color=auto'
-    alias ll='lsd -alF --color=auto'
-    alias la='lsd -A --color=auto'
+    abbr -a ls lsd --color auto
+    abbr -a ll lsd -alF --color auto
+    abbr -a la lsd -A --color auto
   else
-    alias ls='ls --color=auto'
-    alias ll='ls -alF --color=auto'
-    alias la='ls -A --color=auto'
+    abbr -a ls ls --color=auto
+    abbr -a ll -alF --color=auto
+    abbr -a la ls -A --color=auto
   end
 
   if type nvim &> /dev/null
-    alias vim='nvim'
+    abbr -a vim nvim
   end
 
-  alias killstartup='killall Discord slack polychromatic-tray-applet ckb-next'
-  alias b='bluetoothctl'
+  abbr -a killstartup killall Discord slack
+  abbr -a b bluetoothctl
 else
-  alias x='startx'
+  abbr -a x startx
 end
