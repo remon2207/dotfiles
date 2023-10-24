@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
   exit 1
-elif [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+elif [[ $1 = '--help' ]] || [[ $1 = '-h' ]]; then
   cat << EOF
 USAGE:
     $0 [GIT_EMAIL] [GIT_NAME]
@@ -14,15 +14,15 @@ EOF
   exit 0
 fi
 
-echo "======================="
-echo "start!!!"
-echo "======================="
+echo '======================='
+echo 'start!!!'
+echo '======================='
 
-git_email="$1"
-git_name="$2"
+git_email=$1
+git_name=$2
 
 paru_install() {
-  pkgname="paru-bin"
+  pkgname='paru-bin'
   git clone https://aur.archlinux.org/${pkgname}.git
   cd $pkgname
   makepkg -si --noconfirm --needed
@@ -49,8 +49,8 @@ fish_plugin() {
 }
 
 git_settings() {
-  git config --global user.email "${git_email}"
-  git config --global user.name "${git_name}"
+  git config --global user.email $git_email
+  git config --global user.name $git_name
 }
 
 psd_settings() {
@@ -68,6 +68,6 @@ git_settings
 fish_plugin
 psd_settings
 
-echo "======================="
-echo "done!!!"
-echo "======================="
+echo '======================='
+echo 'done!!!'
+echo '======================='

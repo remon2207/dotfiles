@@ -21,7 +21,7 @@ alias cpicom="cd $HOME/.config/picom"
 alias picomconf="cd $HOME/.config/picom && /usr/bin/nvim picom.conf"
 alias i3conf="cd $HOME/.config/i3 && /usr/bin/nvim config"
 alias ci3="cd $HOME/.config/i3"
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -in'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -53,7 +53,7 @@ alias mirrorsync='sudo reflector --country Japan --sort rate --save /etc/pacman.
 alias unrequired='pacman -Qtdq'
 alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa='ps auxf'
-alias psag='ps auxf | grep -i'
+alias psag='ps auxf | rg -in'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
 alias sysoff='sudo systemctl poweroff'

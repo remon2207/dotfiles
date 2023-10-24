@@ -47,11 +47,11 @@ polybar dvi &
 polybar hdmi &
 picom -b &
 fcitx5 &
-feh --bg-max ~/Pictures/wallpaper_linux/75.png &
+feh --bg-max $HOME/Pictures/wallpaper_linux/75.png &
 #hsetroot -solid '#000000' &
 #mpd $HOME/.config/mpd/mpd.conf
 discord &
 slack &
-# alacritty -e htop &
-kitty -1 htop &
+alacritty -e htop &
+# kitty -1 htop &
 exec i3

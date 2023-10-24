@@ -6,7 +6,6 @@ XTerm*termName:              xterm-256color
 XTerm*locale:                true
 XTerm*selectToClipboard:     true
 XTerm*faceName: Hack Nerd Font:antialias=false
-! XTerm*faceName: SauceCodePro Nerd Font:antialias=false
 XTerm*faceSize: 11
 
 ! uxterm
@@ -14,25 +13,18 @@ UXTerm*termName:              xterm-256color
 UXTerm*locale:                true
 UXTerm*selectToClipboard:     true
 UXTerm*faceName: Hack Nerd Font:antialias=false
-UXTerm*faceNameDoublesize: Noto Sans CJK JP
-! XTerm*faceName: SauceCodePro Nerd Font:antialias=false
 UXTerm*faceSize: 11
 
 ! urxvt
-URxvt.font: xft:Hack:size=11,xft:Hack Nerd Font:size=5
-! URxvt.font: xft:Source Code Pro:size=12,xft:SauceCodePro Nerd Font:size=5
-! do not scroll with output
+URxvt.font: xft:Hack Nerd Font:size=11
 URxvt*scrollTtyOutput: false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
 URxvt*scrollWithBuffer: true
-! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 
-! font rendering
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight

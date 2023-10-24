@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-echo "======================="
-echo "start!!!"
-echo "======================="
+echo '======================='
+echo 'start!!!'
+echo '======================='
 
 current_dir=$(
   cd $(dirname $0)
@@ -10,34 +10,34 @@ current_dir=$(
 )
 file_name=$(basename $0)
 home_symbolic=(
-  ".bash_profile"
-  ".bashrc"
-  ".gtkrc-2.0"
-  ".Xmodmap"
-  ".Xresources"
-  ".profile"
-  ".zshrc"
-  "commit.template"
+  '.bash_profile'
+  '.bashrc'
+  '.gtkrc-2.0'
+  '.Xmodmap'
+  '.Xresources'
+  '.profile'
+  '.zshrc'
+  'commit.template'
 )
 conf_symbolic=(
-  "bat"
-  "fontconfig"
-  "gtk-3.0"
-  "htop"
-  "Kvantum"
-  "lazygit"
-  "neofetch"
-  "nvim"
-  "qt5ct"
-  "silicon"
-  "starship.toml"
-  "stylua"
-  "zsh"
+  'bat'
+  'fontconfig'
+  'gtk-3.0'
+  'htop'
+  'Kvantum'
+  'lazygit'
+  'neofetch'
+  'nvim'
+  'qt5ct'
+  'silicon'
+  'starship.toml'
+  'stylua'
+  'zsh'
 )
 desktop_entry=(
-  "bghtop.desktop"
-  "lazydocker.desktop"
-  "mozc.desktop"
+  'bghtop.desktop'
+  'lazydocker.desktop'
+  'mozc.desktop'
 )
 desktop_entry_dir="$current_dir/.local/share/applications"
 
@@ -82,6 +82,6 @@ services
 
 chsh -s $(which zsh)
 
-echo "======================="
-echo "done!!!"
-echo "======================="
+echo '======================='
+echo 'done!!!'
+echo '======================='
