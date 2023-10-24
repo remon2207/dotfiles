@@ -6,7 +6,7 @@ SAVEHIST=100000
 bindkey -v
 
 for conf in "$HOME/.config/zsh/conf.d/"*.zsh; do
-  source "$conf"
+  source $conf
 done
 unset conf
 

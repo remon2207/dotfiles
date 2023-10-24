@@ -1,7 +1,7 @@
 export PATH="$PATH:/opt:$HOME/go/bin"
 export QT_QPA_PLATFORMTHEME='qt5ct'
 
-if [[ -n "$DISPLAY" ]]; then
+if [[ -n $DISPLAY ]]; then
   export EDITOR='nvim'
   export VISUAL='nvim'
   export SUDO_EDITOR='nvim'
