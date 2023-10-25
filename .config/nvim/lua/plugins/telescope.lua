@@ -35,6 +35,8 @@ local defaults = {
       ['N'] = fb_actions.create,
       ['c'] = false,
       ['h'] = fb_actions.goto_parent_dir,
+      ['d'] = false,
+      ['D'] = fb_actions.remove
     },
   },
 }
