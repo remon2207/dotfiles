@@ -36,7 +36,7 @@ abbr -a gm git merge
 abbr -a addall git add .
 abbr -a cnow git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\"
 abbr -a unrequired pacman -Qtdq
-abbr -a pacclean sudo pacman -Rns $(pacman -Qtdq)
+abbr -a pacclean sudo pacman -Rns (pacman -Qtdq)
 abbr -a psa ps auxf
 abbr -a kf kitty + list-fonts --psname
 abbr -a kdf kitty --debug-font-fallback
@@ -53,7 +53,7 @@ abbr -a free free -th
 abbr -a df df -Th
 abbr -a svim sudoedit
 abbr -a pn pnpm
-abbr -a silicondate silicon -o $HOME/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png
+abbr -a silicondate silicon -o $HOME/Pictures/screenshots/(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png
 abbr -a wmclass xprop WM_CLASS
 abbr -a wmname xprop WM_NAME
 abbr -a status sudo systemctl status
@@ -73,12 +73,25 @@ abbr -a t tmux
 abbr -a rg rg --color auto -in
 abbr -a r ranger
 abbr -a manex tldr
+abbr -a vimzsh "cd $HOME/.config/zsh/conf.d && nvim ."
+abbr -a vimkitty "cd $HOME/.config/kitty/conf.d && nvim ."
+abbr -a vimfish "cd $HOME/.config/fish && nvim ."
+abbr -a vimconf "cd $HOME/.config/nvim/lua && nvim ."
+abbr -a vimala "cd $HOME/.config/alacritty/conf.d && nvim ."
+abbr -a psag 'ps -auxf | rg --color auto -in'
+abbr -a pkglist "pacman -Qqen > $HOME/ghq/github.com/remon2207/dotfiles/pkglist"
+abbr -a pkglistaur "pacman -Qqe > $HOME/ghq/github.com/remon2207/dotfiles/pkglist_aur"
+abbr -a homesize 'du -sm ./{*,.*} | sort -n'
+abbr -a fontlist 'fc-list | fzf'
+abbr -a dockerprune 'docker volume prune -fa && docker system prune -fa'
+abbr -a tmp cd /tmp
+abbr -a repo 'cd (ghq list -p | fzf)'
+abbr -a raspi-backup 'sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz >'
+abbr -a buildtemp "sudo sed -i 's/^#BUILDDIR=\/tmp\/makepkg/BUILDDIR=\/tmp\/makepkg/' /etc/makepkg.conf"
+abbr -a nobuildtemp "sudo sed -i 's/^BUILDDIR=\/tmp\/makepkg/#BUILDDIR=\/tmp\/makepkg/' /etc/makepkg.conf"
+abbr -a bd bd -i
 
-if type bd &> /dev/null
-  abbr -a bd bd -i
-end
-
-if test "$DISPLAY" = ':0'
+if test $DISPLAY = ':0'
   if type lsd &> /dev/null
     abbr -a ls lsd --color auto
     abbr -a ll lsd -alF --color auto
@@ -91,10 +104,10 @@ if test "$DISPLAY" = ':0'
 
   if type nvim &> /dev/null
     abbr -a vim nvim
-    abbr -a vim. nvim .
+    abbr -a vimnow nvim .
   end
 
-  abbr -a killstartup killall Discord slack
+  abbr -a killstartup 'killall Discord slack &> /dev/null'
   abbr -a b bluetoothctl
 else
   abbr -a x startx
