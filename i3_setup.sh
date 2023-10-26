@@ -102,25 +102,25 @@ setup() {
   rm -rf $HOME/.xinitrc $HOME/.config/i3
 
   for home in ${home_symbolic[@]}; do
-    ln -snfv $current_dir/$home $HOME/
+    ln -sfv $current_dir/$home $HOME/
   done
   for conf in ${conf_symbolic[@]}; do
-    ln -snfv $current_dir/.config/$conf $HOME/.config/
+    ln -sfv $current_dir/.config/$conf $HOME/.config/
   done
   for entry in ${desktop_entry[@]}; do
-    ln -snfv $desktop_entry_dir/$entry $HOME/.local/share/applications/
+    ln -sfv $desktop_entry_dir/$entry $HOME/.local/share/applications/
   done
 
   sudo mkdir /etc/gtk-2.0
 
-  sudo ln -s $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
-  sudo ln -s $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0
-  sudo ln -snfv $current_dir/opt/display_nouveau_setup.sh /opt/
-  sudo ln -snfv $current_dir/opt/backup.sh /opt/
+  sudo ln -sfv $HOME/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+  sudo ln -sfv $HOME/.config/gtk-3.0/settings.ini /etc/gtk-3.0
+  sudo ln -sfv $current_dir/opt/display_nouveau_setup.sh /opt/
+  sudo ln -sfv $current_dir/opt/backup.sh /opt/
 
-  ln -s $current_dir/.local/share/applications/lazydocker.desktop $HOME/.local/share/applications/
-  ln -s $current_dir/.local/share/applications/bghtop.desktop $HOME/.local/share/applications/
-  ln -s $current_dir/.local/share/applications/mozc.desktop $HOME/.local/share/applications/
+  ln -sfv $current_dir/.local/share/applications/lazydocker.desktop $HOME/.local/share/applications/
+  ln -sfv $current_dir/.local/share/applications/bghtop.desktop $HOME/.local/share/applications/
+  ln -sfv $current_dir/.local/share/applications/mozc.desktop $HOME/.local/share/applications/
 
   git config --global commit.template $HOME/commit.template
 }

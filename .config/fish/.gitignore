@@ -6,4 +6,4 @@
 /themes/
 /conf.d/*.fish
 
-!/conf.d/aliases.fish
+!/conf.d/abbrs.fish

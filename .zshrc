@@ -3,7 +3,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 
 # keybind
-bindkey -v
+bindkey -e
 
 for conf in "$HOME/.config/zsh/conf.d/"*.zsh; do
   source $conf

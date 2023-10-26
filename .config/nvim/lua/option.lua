@@ -65,6 +65,6 @@ o.confirm = true
 o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 -- shell of :terminal
 o.shell = 'fish'
--- スペルチェック
--- o.spell = true
--- o.spelllang = 'en,cjk'
+--スペルチェック
+o.spell = true
+o.spelllang = 'en,cjk'
