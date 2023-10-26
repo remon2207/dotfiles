@@ -95,6 +95,7 @@ abbr -a vim nvim
 abbr -a vim. nvim .
 abbr -a killstartup 'killall Discord slack &> /dev/null'
 abbr -a b bluetoothctl
+abbr -a fpluginremove 'fisher remove (fisher list | fzf) 2> /dev/null'
 
 if type lsd &> /dev/null
   abbr -a ls lsd
