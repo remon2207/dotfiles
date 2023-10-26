@@ -219,3 +219,17 @@ proc
 gentoo
 rbind
 sys
+libinput
+enp6s0
+DHCP
+lsmod
+LINGUAS
+ja
+L10N
+networkmanager
+syslog
+wifi
+xscreensaver
+maildir
+pulseaudio
+mbox

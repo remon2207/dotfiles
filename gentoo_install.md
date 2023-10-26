@@ -8,6 +8,7 @@ mkfs.ext4 /dev/sdc2 # /home
 
 # マウント
 mount /dev/sdc1 /mnt/gentoo
+mount -m /dev/sdc2 /mnt/gentoo/home
 mount -m /dev/sdd1 /mnt/gentoo/boot
 
 # stage tarball をダウンロード
@@ -20,6 +21,8 @@ tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 # コンパイルオプションを設定
 # COMMON_FLAGS="-march=native -02 -pipe"
 # MAKEOPTS="-j13"
+# LINGUAS="ja en"
+# L10N="ja en"
 nano /mnt/gentoo/etc/portage/make.conf
 
 # ミラーサーバーを選択する
@@ -98,9 +101,10 @@ eselect locale set 4
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
 # ファームウェアとマイクロコードのインストール
-emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
+emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode sys-boot/efibootmgr
 
 # カーネルのコンフィギュレーションとコンパイル
+echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
 emerge -av sys-kernel/installkernel-systemd-boot
 
 # ディストリビューションカーネルをインストールする
@@ -156,14 +160,31 @@ rm /stage3-*.tar.*
 rm /etc/resolv.conf
 ln -s /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
+# ネットワーク設定
+# [Match]
+# Name=enp6s0
+#
+# [Network]
+# DHCP=yes
+# DNS=192.168.1.202
+nvim /etc/systemd/network/20-wired.network
+systemctl restart systemd-networkd.service
+
+# sudoのインストール
+echo 'app-admin/sudo -sendmail' > /etc/portage/package.use/sudo
+emerge -av sudo
+
 # xorg と GPUのインストール
 # VIDEO_CARDS="nvidia"
+# INPUT_DEVICES="libinput"
 nvim /etc/portage/make.conf
+emerge -aUD @world
+emerge -av x11-base/xorg-server
 emerge -av x11-drivers/nvidia-drivers
 
 # カーネルモジュールをロード
 modprobe nvidia
-lsmod | grep 'nvidia'
+# lsmod | grep 'nvidia'
 # rmmod nvidia
 # modprobe nvidia
 
@@ -173,4 +194,10 @@ nvim /etc/portage/make.conf
 
 # 再ビルド
 emerge -uDN @world
+
+# i3 window manager インストール
+emerge -av x11-wm/i3
+emerge -av x11-misc/i3lock
+emerge -av x11-misc/polybar
+emerge -av x11-terms/kitty
 ```
