@@ -27,6 +27,7 @@ deno
 discord
 docker
 docker-compose
+dosfstools
 dunst
 efibootmgr
 emacs-nox
@@ -130,6 +131,7 @@ rofi
 rustup
 scrot
 sd
+shellcheck
 shfmt
 silicon
 starship

@@ -28,6 +28,7 @@ deno
 discord
 docker
 docker-compose
+dosfstools
 downgrade
 dunst
 efibootmgr
@@ -139,6 +140,7 @@ rofi
 rustup
 scrot
 sd
+shellcheck
 shfmt
 siji-ng
 silicon
