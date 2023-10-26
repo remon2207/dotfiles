@@ -29,6 +29,7 @@ docker
 docker-compose
 dunst
 efibootmgr
+emacs-nox
 exfat-utils
 eza
 fcitx5

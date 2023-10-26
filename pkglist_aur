@@ -31,6 +31,7 @@ docker-compose
 downgrade
 dunst
 efibootmgr
+emacs-nox
 exfat-utils
 eza
 fcitx5
