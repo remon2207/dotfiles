@@ -1,4 +1,4 @@
-```bash
+```sh
 # パーティショニング
 gdisk /dev/sdc
 
