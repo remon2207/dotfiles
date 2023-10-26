@@ -4,7 +4,7 @@ set -eu
 
 if [[ $# -eq 0 ]]; then
   exit 1
-elif [[ $1 = '--help' ]] || [[ $1 = '-h' ]]; then
+elif [[ "${1}" == '--help' ]] || [[ "${1}" == '-h' ]]; then
   cat << EOF
 USAGE:
     $0 [GIT_EMAIL] [GIT_NAME]
@@ -20,13 +20,13 @@ echo '======================='
 echo 'start!!!'
 echo '======================='
 
-git_email=$1
-git_name=$2
+git_email="${1}"
+git_name="${2}"
 base_dir=$(dirname "${0}")
 
 paru_install() {
   pkgname='paru-bin'
-  git clone https://aur.archlinux.org/${pkgname}.git
+  git clone "https://aur.archlinux.org/${pkgname}.git"
   cd "${pkgname}"
   makepkg -si --noconfirm --needed
   cd "${HOME}"
@@ -34,21 +34,21 @@ paru_install() {
 }
 
 aur_install() {
-  # paru -S --noconfirm --needed - < pkglist_aur
-  paru -S --noconfirm --needed \
-    google-chrome \
-    ghq-bin \
-    slack-desktop \
-    downgrade \
-    ttf-hackgen \
-    ttf-cica \
-    nvm \
-    libva-vdpau-driver-chromium \
-    lazydocker-bin
+  paru -S --noconfirm --needed - < pkglist_aur
+  # paru -S --noconfirm --needed \
+  #   google-chrome \
+  #   ghq-bin \
+  #   slack-desktop \
+  #   downgrade \
+  #   ttf-hackgen \
+  #   ttf-cica \
+  #   nvm \
+  #   libva-vdpau-driver-chromium \
+  #   lazydocker-bin
 }
 
 fish_plugin() {
-  fisher install < "${base_dir}"/.config/fish/fish_plugins
+  fisher install < "${base_dir}/.config/fish/fish_plugins"
 }
 
 git_settings() {
@@ -65,11 +65,15 @@ psd_settings() {
   systemctl --user enable --now psd.service
 }
 
-paru_install
-aur_install
-git_settings
-fish_plugin
-psd_settings
+main() {
+  paru_install
+  aur_install
+  git_settings
+  fish_plugin
+  psd_settings
+}
+
+main "$@"
 
 echo '======================='
 echo 'done!!!'

@@ -46,7 +46,7 @@ mount --make-slave /mnt/gentoo/run
 # 新しい環境に入る
 chroot /mnt/gentoo /bin/bash
 source /etc/profile
-export PS1="(chroot) ${PS1}"
+export PS1='(chroot) "${PS1}"'
 
 # Portage を設定する
 emerge-webrsync
@@ -96,7 +96,7 @@ eselect locale list
 eselect locale set 4
 
 # 環境をリロード
-env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
+env-update && source /etc/profile && export PS1='(chroot) "${PS1}"'
 
 # ファームウェアとマイクロコードのインストール
 emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode

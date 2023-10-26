@@ -1,12 +1,12 @@
-HISTFILE="$HOME/.zsh_history"
+HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
 # keybind
 bindkey -e
 
-for conf in "$HOME/.config/zsh/conf.d/"*.zsh; do
-  source $conf
+for conf in "${HOME}/.config/zsh/conf.d/"*.zsh; do
+  source "${conf}"
 done
 unset conf
 

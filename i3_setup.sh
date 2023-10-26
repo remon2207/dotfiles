@@ -98,7 +98,7 @@ desktop_entry=(
   'bghtop.desktop'
   'mozc.desktop'
 )
-desktop_entry_dir="$current_dir/.local/share/applications"
+desktop_entry_dir="${current_dir}/.local/share/applications"
 
 setup() {
   rm -rf "${HOME}/.xinitrc" "${HOME}/.config/i3"
@@ -137,8 +137,12 @@ services() {
   sudo systemctl enable "auto-lock@${USER}.service"
 }
 
-setup
-services
+main() {
+  setup
+  services
+}
+
+main "$@"
 
 chsh -s "$(which zsh)"
 

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-pictures_directory="$HOME/Pictures"
-videos_directory="$HOME/Videos"
+set -eu
 
-if [[ -n $(ls $pictures_directory) ]]; then
-  cp -r $HOME/Pictures/* /mnt/share01/rh/pictures/
+pictures_directory="${HOME}/Pictures"
+videos_directory="${HOME}/Videos"
+
+if [[ -n $(ls "${pictures_directory}") ]]; then
+  cp -r "${HOME}/Pictures/*" /mnt/share01/rh/pictures/
 fi
 
-if [[ -n $(ls $videos_directory) ]]; then
-  cp -r $HOME/Videos/* /mnt/share01/rh/videos/
+if [[ -n $(ls "${videos_directory}") ]]; then
+  cp -r "${HOME}/Videos/*" /mnt/share01/rh/videos/
 fi

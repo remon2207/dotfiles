@@ -1,39 +1,39 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
+userresources="${HOME}/.Xresources"
+usermodmap="${HOME}/.Xmodmap"
+sysresources='/etc/X11/xinit/.Xresources'
+sysmodmap='/etc/X11/xinit/.Xmodmap'
 
 # merge in defaults and keymaps
 
-if [ -f $sysresources ]; then
-  xrdb -merge $sysresources
+if [ -f "${sysresources}" ]; then
+  xrdb -merge "${sysresources}"
 fi
 
-if [ -f $sysmodmap ]; then
-  xmodmap $sysmodmap
+if [ -f "${sysmodmap}" ]; then
+  xmodmap "${sysmodmap}"
 fi
 
-if [ -f "$userresources" ]; then
-  xrdb -merge "$userresources"
+if [ -f "${userresources}" ]; then
+  xrdb -merge "${userresources}"
 fi
 
-if [ -f "$usermodmap" ]; then
-  xmodmap "$usermodmap"
+if [ -f "${usermodmap}" ]; then
+  xmodmap "${usermodmap}"
 fi
 
 # start some nice programs
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
-    [ -x "$f" ] && . "$f"
+    [ -x "${f}" ] && . "${f}"
   done
   unset f
 fi
 
-if [ -f $HOME/.profile ]; then
-  source $HOME/.profile
+if [ -f "${HOME}/.profile" ]; then
+  . "${HOME}/.profile"
 fi
 
 # /opt/display_nouveau_setup.sh
@@ -47,7 +47,7 @@ polybar dvi &
 polybar hdmi &
 picom -b &
 fcitx5 &
-feh --bg-max $HOME/Pictures/wallpaper_linux/75.png &
+feh --bg-max "${HOME}/Pictures/wallpaper_linux/75.png" &
 #hsetroot -solid '#000000' &
 #mpd $HOME/.config/mpd/mpd.conf
 discord &
