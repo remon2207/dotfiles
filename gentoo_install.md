@@ -8,8 +8,7 @@ mkfs.ext4 /dev/sdc2 # /home
 
 # マウント
 mount /dev/sdc1 /mnt/gentoo
-mkdir -p /mnt/gentoo/boot
-mount /dev/sdd1 /mnt/gentoo/boot
+mount -m /dev/sdd1 /mnt/gentoo/boot
 
 # stage tarball をダウンロード
 cd /mnt/gentoo
@@ -35,12 +34,14 @@ cat /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
 cp -L /etc/resolv.conf /mnt/gentoo/etc/
 
 # 必要なファイルシステムをマウント
-mount --types proc /proc /mnt/gentoo/proc
-mount --rbind /sys /mnt/gentoo/sys
+# mount --types proc /proc /mnt/gentoo/proc
+mount -t proc /proc /mnt/gentoo/proc
+# mount --rbind /sys /mnt/gentoo/sys
+mount -R /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
-mount --rbind /dev /mnt/gentoo/dev
+mount -R /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
-mount --bind /run /mnt/gentoo/run
+mount -B /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 
 # 新しい環境に入る
@@ -52,7 +53,7 @@ export PS1='(chroot) "${PS1}"'
 emerge-webrsync
 
 # Gentoo ebuild リポジトリを更新
-emerge --sync --quiet
+emerge --sync -q
 
 # ニュースを読む
 eselect news read
