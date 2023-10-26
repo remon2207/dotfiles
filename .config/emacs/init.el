@@ -1,7 +1,15 @@
 (package-initialize)
 (require 'package)
 (add-to-list 'package-archives
-	'("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(use-package treesit-auto
+  :config
+  (global-treesit-auto-mode))
+
+(use-package treesit
+  :config
+  (setq treesit-font-lock-level 4))
 
 (set-language-environment 'Japanese)
 (prefer-coding-system 'utf-8)
@@ -14,6 +22,7 @@
 (menu-bar-mode 0)
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key "\C-c\C-h" 'help-command)
+(global-unset-key "\C-z")
 (electric-pair-mode 1)
 (column-number-mode t)
 (global-linum-mode 1)
@@ -27,3 +36,4 @@
 (setq case-fold-search t)
 (setq vc-follow-symlinks t)
 (setq whitespace-style '(tab-mark))
+(setq scroll-conservatively 1)
