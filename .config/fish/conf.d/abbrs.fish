@@ -38,8 +38,6 @@ abbr -a gf git fetch
 abbr -a gm git merge
 abbr -a addall git add .
 abbr -a cnow git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\"
-abbr -a unrequired pacman -Qtdq
-abbr -a pacclean sudo pacman -Rns (pacman -Qtdq)
 abbr -a psa ps auxf
 abbr -a kf kitty + list-fonts --psname
 abbr -a kdf kitty --debug-font-fallback
@@ -78,16 +76,12 @@ abbr -a rg rg -in
 abbr -a r ranger
 abbr -a manex tldr
 abbr -a psag 'ps -auxf | rg -in'
-abbr -a pkglist "pacman -Qqen > $HOME/ghq/github.com/remon2207/dotfiles/pkglist"
-abbr -a pkglistaur "pacman -Qqe > $HOME/ghq/github.com/remon2207/dotfiles/pkglist_aur"
 abbr -a homesize 'du -sm ./{*,.*} | sort -n'
 abbr -a fontlist 'fc-list | fzf'
 abbr -a dockerprune 'docker volume prune -fa && docker system prune -fa'
 abbr -a tmp cd /tmp
 abbr -a repo 'cd (ghq list -p | fzf)'
 abbr -a raspi-backup 'sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz >'
-abbr -a buildtemp "sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
-abbr -a nobuildtemp "sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 abbr -a bd 'bd -i &> /dev/null'
 abbr -a less less -MiN
 abbr -a cat cat -n
@@ -96,6 +90,16 @@ abbr -a vim. nvim .
 abbr -a killstartup 'killall Discord slack &> /dev/null'
 abbr -a b bluetoothctl
 abbr -a fpluginremove 'fisher remove (fisher list | fzf) 2> /dev/null'
+
+# If Arch Linux
+if test (cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') = 'Arch Linux'
+  abbr -a unrequired pacman -Qtdq
+  abbr -a pacclean sudo pacman -Rns (pacman -Qtdq)
+  abbr -a pkglist "pacman -Qqen > $HOME/ghq/github.com/remon2207/dotfiles/pkglist"
+  abbr -a pkglistaur "pacman -Qqe > $HOME/ghq/github.com/remon2207/dotfiles/pkglist_aur"
+  abbr -a buildtemp "sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
+  abbr -a nobuildtemp "sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
+end
 
 if type lsd &> /dev/null
   abbr -a ls lsd

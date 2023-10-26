@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 if [[ $# -eq 0 ]]; then
   exit 1
 elif [[ $1 = '--help' ]] || [[ $1 = '-h' ]]; then
@@ -20,14 +22,15 @@ echo '======================='
 
 git_email=$1
 git_name=$2
+base_dir=$(dirname "${0}")
 
 paru_install() {
   pkgname='paru-bin'
   git clone https://aur.archlinux.org/${pkgname}.git
-  cd $pkgname
+  cd "${pkgname}"
   makepkg -si --noconfirm --needed
-  cd $HOME
-  rm -rf $pkgname
+  cd "${HOME}"
+  rm -rf "${pkgname}"
 }
 
 aur_install() {
@@ -45,12 +48,12 @@ aur_install() {
 }
 
 fish_plugin() {
-  fisher install < $(dirname $0)/.config/fish/fish_plugins
+  fisher install < "${base_dir}"/.config/fish/fish_plugins
 }
 
 git_settings() {
-  git config --global user.email $git_email
-  git config --global user.name $git_name
+  git config --global user.email "${git_email}"
+  git config --global user.name "${git_name}"
 }
 
 psd_settings() {
@@ -58,7 +61,7 @@ psd_settings() {
   google-chrome-stable
   vivaldi-stable
   psd
-  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/' $HOME/.config/psd/psd.conf
+  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
 }
 

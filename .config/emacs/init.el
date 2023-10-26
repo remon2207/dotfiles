@@ -22,7 +22,7 @@
 (menu-bar-mode 0)
 (global-set-key "\C-h" 'delete-backward-char)
 (global-set-key "\C-c\C-h" 'help-command)
-(global-unset-key "\C-z")
+;(global-unset-key "\C-z")
 (electric-pair-mode 1)
 (column-number-mode t)
 (global-linum-mode 1)

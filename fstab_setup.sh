@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-if [ $# -eq 0 ]; then
+set -eu
+
+if [[ $# -eq 0 ]]; then
   exit 0
-elif [ $1 = '--help' ] || [ $1 = '-h' ]; then
+elif [ "${1}" = '--help' ] || [ "${1}" = '-h' ]; then
   cat << EOF
 Usage:
 $0 <username> <password>
