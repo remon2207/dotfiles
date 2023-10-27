@@ -26,7 +26,7 @@ tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 nano /mnt/gentoo/etc/portage/make.conf
 
 # ミラーサーバーを選択する
-mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+mirrorselect -io >> /mnt/gentoo/etc/portage/make.conf
 
 # Gentoo ebuild リポジトリ
 mkdir -p /mnt/gentoo/etc/portage/repos.conf
@@ -62,6 +62,7 @@ eselect news read
 # USE 変数を設定
 # USE="X gtk -qt5 -qt6 -gnome -kde -plasma -wayland"
 nano /etc/portage/make.conf
+echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
 
 # 使用可能なUSEフラグ
 less /var/db/repos/gentoo/profiles/use.desc
@@ -101,16 +102,31 @@ eselect locale set 4
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
 # ファームウェアとマイクロコードのインストール
-emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode sys-boot/efibootmgr
+emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
 
 # カーネルのコンフィギュレーションとコンパイル
-echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
-emerge -av sys-kernel/installkernel-systemd-boot
+# echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
+# emerge -av sys-kernel/installkernel-systemd-boot
 
 # ディストリビューションカーネルをインストールする
-emerge -av sys-kernel/gentoo-kernel-bin
+# emerge -av sys-kernel/gentoo-kernel-bin
+
+
+# カーネルのマニュアルインストール
+emerge -av sys-kernel/gentoo-sources
+emerge -av sys-apps/pciutils
+cd /usr/src/linux
+make menuconfig
+make -j17 && make -j17 modules_install
+make install
+
+# initramfsのビルド
+emerge -av sys-kernel/dracut
+dracut --kver 6.1.57-gentoo
+ls /boot/initramfs*
 
 # アップグレードと後処理
+emerge -avuDN @world
 emerge -c
 
 # fstabを編集
@@ -130,17 +146,33 @@ passwd
 
 # init と boot 設定
 systemd-firstboot --prompt
-systemctl preset-all --preset-mode=enable-only
+systemctl preset-all
 
 # ファイルシステムツール
-emerge -av sys-fs/dosfstools
+emerge -av sys-fs/dosfstools sys-boot/efibootmgr
 
 # ブートローダーの設定
 bootctl install
 
+cd /boot/loader
+# timeout 10
+# console-mode max
+# editor no
+nvim loader.conf
+cd entries
+# title Gentoo
+# linux /vmlinuz
+# initrd /initramfs
+# machine-id <machine-id>
+# options root=PARTUUID=<PARTUUID> rw loglevel=3 panic=180
+nvim gentoo.conf
+cat /etc/machine-id >> gentoo.conf
+blkid -s PARTUUID -o value /dev/sdd1 >> gentoo.conf
+nvim gentoo.conf
+
 # インストール/アップグレード後タスク
-emerge -a @module-rebuild
-emerge --config sys-kernel/gentoo-kernel-bin
+# emerge -a @module-rebuild
+# emerge --config sys-kernel/gentoo-kernel-bin
 
 # システムのリブート
 exit

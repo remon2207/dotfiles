@@ -233,3 +233,9 @@ xscreensaver
 maildir
 pulseaudio
 mbox
+gnuefi
+installkernel
+initramfs
+initrd
+vmlinuz
+loglevel

@@ -56,8 +56,7 @@ abbr -a df df -Th
 abbr -a svim sudoedit
 abbr -a pn pnpm
 abbr -a silicondate silicon -o $HOME/Pictures/screenshots/(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png
-abbr -a wmclass xprop WM_CLASS
-abbr -a wmname xprop WM_NAME
+abbr -a wmclassname xprop WM_CLASS WM_NAME
 abbr -a status sudo systemctl status
 abbr -a start sudo systemctl start
 abbr -a restart sudo systemctl restart
