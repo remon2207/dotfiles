@@ -9,7 +9,6 @@ else
   export SUDO_EDITOR='vi'
   export EDITOR='vi'
   export VISUAL='vi'
-  export BROWSER='w3m'
 fi
 
 export FZF_CTRL_T_COMMAND="fd --hidden -t f -E '.git' -E '.cache'"
