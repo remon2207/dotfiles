@@ -37,6 +37,7 @@ export TMPDIR='/tmp'
 
 export http_proxy='http://proxy.home:8080'
 export https_proxy="${http_proxy}"
+export ftp_proxy="${http_proxy}"
 
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":${PATH}:" in

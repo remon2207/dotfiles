@@ -64,7 +64,7 @@ o.wrap = false
 o.confirm = true
 o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
 -- shell of :terminal
-o.shell = 'fish'
+o.shell = 'zsh'
 --スペルチェック
-o.spell = true
-o.spelllang = 'en,cjk'
+-- o.spell = true
+-- o.spelllang = 'en,cjk'

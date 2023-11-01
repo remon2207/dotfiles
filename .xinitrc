@@ -36,9 +36,7 @@ if [ -f "${HOME}/.profile" ]; then
   . "${HOME}/.profile"
 fi
 
-# /opt/display_nouveau_setup.sh
-
-xautolock -time 60 -locker "systemctl suspend" &
+xautolock -time 60 -locker 'systemctl suspend' &
 xset s off -dpms &
 xset r rate 250 60 &
 polybar dp &
@@ -48,7 +46,6 @@ polybar hdmi &
 picom -b &
 fcitx5 &
 feh --bg-max "${HOME}/Pictures/wallpaper_linux/75.png" &
-#hsetroot -solid '#000000' &
 #mpd $HOME/.config/mpd/mpd.conf
 discord &
 slack &

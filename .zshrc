@@ -17,8 +17,8 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/nvm/init-nvm.sh
 
 # load fish
-if [[ $(ps --no-header -o comm) != 'fish' ]]; then
-  if type fish &> /dev/null; then
-    exec fish
-  fi
-fi
+# if [[ $(ps --no-header -o comm) != 'fish' ]]; then
+#   if type fish &> /dev/null; then
+#     exec fish
+#   fi
+# fi

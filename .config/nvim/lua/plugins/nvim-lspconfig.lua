@@ -112,7 +112,6 @@ local servers = {
   'jsonls',
   'stylelint_lsp',
   'docker_compose_language_service',
-  'nil_ls',
 }
 
 mason.setup()
