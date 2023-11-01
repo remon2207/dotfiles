@@ -1,15 +1,16 @@
 ```bash
 # パーティショニング
-gdisk /dev/sdc
+gdisk /dev/sdd
 
 # フォーマット
-mkfs.ext4 /dev/sdc1 # /
-mkfs.ext4 /dev/sdc2 # /home
+mkfs.vfat -F 32 /dev/sdd1
+mkfs.ext4 /dev/sdc2 # /
+mkfs.ext4 /dev/sdc3 # /home
 
 # マウント
-mount /dev/sdc1 /mnt/gentoo
-mount -m /dev/sdc2 /mnt/gentoo/home
-mount -m /dev/sdd1 /mnt/gentoo/boot
+mount /dev/sdd2 /mnt/gentoo
+mount -m -o fmask=0077,dmask=0077 /dev/sdd1 /mnt/gentoo/boot
+mount -m /dev/sdd3 /mnt/gentoo/home
 
 # stage tarball をダウンロード
 cd /mnt/gentoo
@@ -19,14 +20,14 @@ links https://www.gentoo.org/downloads/mirrors/
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 
 # コンパイルオプションを設定
-# COMMON_FLAGS="-march=native -02 -pipe"
+# COMMON_FLAGS="-march=skylake -02 -pipe"
 # MAKEOPTS="-j13"
 # LINGUAS="ja en"
 # L10N="ja en"
 nano /mnt/gentoo/etc/portage/make.conf
 
 # ミラーサーバーを選択する
-mirrorselect -io >> /mnt/gentoo/etc/portage/make.conf
+mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
 
 # Gentoo ebuild リポジトリ
 mkdir -p /mnt/gentoo/etc/portage/repos.conf
@@ -37,12 +38,12 @@ cat /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
 cp -L /etc/resolv.conf /mnt/gentoo/etc/
 
 # 必要なファイルシステムをマウント
-mount -t proc /proc /mnt/gentoo/proc
-mount -R /sys /mnt/gentoo/sys
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
-mount -R /dev /mnt/gentoo/dev
+mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
-mount -B /run /mnt/gentoo/run
+mount --bind /run /mnt/gentoo/run
 mount --make-slave /mnt/gentoo/run
 
 # 新しい環境に入る
@@ -54,15 +55,15 @@ export PS1="(chroot) ${PS1}"
 emerge-webrsync
 
 # Gentoo ebuild リポジトリを更新
-emerge --sync -q
+emerge --sync --quiet
 
 # ニュースを読む
 eselect news read
 
 # USE 変数を設定
-# USE="X gtk -qt5 -qt6 -gnome -kde -plasma -wayland"
+# USE="cjk systemd -X -gtk -elogind -syslog -qt5 -qt6 -gnome -kde -plasma -wayland"
 nano /etc/portage/make.conf
-echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
+echo 'sys-apps/systemd boot' > /etc/portage/package.use/systemd
 
 # 使用可能なUSEフラグ
 less /var/db/repos/gentoo/profiles/use.desc
@@ -78,12 +79,10 @@ emerge -avuDN @world
 
 # neovimインストール
 emerge -av neovim
-
-# nanoアンインストール
 emerge -c
 
 # パッケージ毎にライセンスを許諾
-mkdir -p /etc/portage/package.license
+mkdir /etc/portage/package.license
 echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' > /etc/portage/package.license/linux-firmware
 echo 'sys-firmware/intel-microcode intel-ucode' > /etc/portage/package.license/intel-microcode
 
@@ -104,25 +103,16 @@ env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 # ファームウェアとマイクロコードのインストール
 emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
 
-# カーネルのコンフィギュレーションとコンパイル
-# echo 'sys-apps/systemd gnuefi' > /etc/portage/package.use/systemd
-# emerge -av sys-kernel/installkernel-systemd-boot
-
-# ディストリビューションカーネルをインストールする
-# emerge -av sys-kernel/gentoo-kernel-bin
-
-
 # カーネルのマニュアルインストール
 emerge -av sys-kernel/gentoo-sources
-emerge -av sys-apps/pciutils
 cd /usr/src/linux
 make menuconfig
-make -j17 && make -j17 modules_install
+make -j13 && make -j13 modules_install
 make install
 
 # initramfsのビルド
 emerge -av sys-kernel/dracut
-dracut --kver 6.1.57-gentoo
+dracut --kver <kernel-version>-gentoo
 ls /boot/initramfs*
 
 # アップグレードと後処理
@@ -130,8 +120,8 @@ emerge -avuDN @world
 emerge -c
 
 # fstabを編集
-# PARTUUID=<PARTUUID> /boot vfat defaults,noatime 0 2
-# PARTUUID=<PARTUUID> / ext4 defaults,noatime 0 1
+# PARTUUID=<PARTUUID> /boot vfat defaults,noatime,fmask=0077,dmask=0077 0 2
+# PARTUUID=<PARTUUID> /     ext4 defaults,noatime 0 1
 # PARTUUID=<PARTUUID> /home ext4 defaults,noatime 0 2
 blkid -s PARTUUID -o value /dev/sdd1 >> /etc/fstab
 blkid -s PARTUUID -o value /dev/sdc1 >> /etc/fstab
@@ -145,34 +135,29 @@ echo 'gentoo' > /etc/hostname
 passwd
 
 # init と boot 設定
+systemd-machine-id-setup
 systemd-firstboot --prompt
 systemctl preset-all
-
-# ファイルシステムツール
-emerge -av sys-fs/dosfstools sys-boot/efibootmgr
 
 # ブートローダーの設定
 bootctl install
 
 cd /boot/loader
-# timeout 10
+# default      gentoo.conf
+# timeout      10
 # console-mode max
-# editor no
+# editor       no
 nvim loader.conf
 cd entries
-# title Gentoo
-# linux /vmlinuz
-# initrd /initramfs
+# title      Gentoo
+# linux      /vmlinuz
+# initrd     /initramfs
 # machine-id <machine-id>
-# options root=PARTUUID=<PARTUUID> rw loglevel=3 panic=180
+# options    root=PARTUUID=<PARTUUID> rw loglevel=3 panic=180
 nvim gentoo.conf
 cat /etc/machine-id >> gentoo.conf
-blkid -s PARTUUID -o value /dev/sdd1 >> gentoo.conf
+blkid -s PARTUUID -o value /dev/sdd2 >> gentoo.conf
 nvim gentoo.conf
-
-# インストール/アップグレード後タスク
-# emerge -a @module-rebuild
-# emerge --config sys-kernel/gentoo-kernel-bin
 
 # システムのリブート
 exit
@@ -207,12 +192,16 @@ echo 'app-admin/sudo -sendmail' > /etc/portage/package.use/sudo
 emerge -av sudo
 
 # xorg と GPUのインストール
+# USE="cjk nvidia systemd X gtk -elogind -syslog -qt5 -qt6 -gnome -kde -plasma -wayland"
 # VIDEO_CARDS="nvidia"
 # INPUT_DEVICES="libinput"
 nvim /etc/portage/make.conf
-emerge -aUD @world
+emerge -avuDN @world
 emerge -av x11-base/xorg-server
-emerge -av x11-drivers/nvidia-drivers
+
+# 再ビルド
+emerge -avuDN @world
+gpasswd -a remon video
 
 # カーネルモジュールをロード
 modprobe nvidia
@@ -220,16 +209,10 @@ modprobe nvidia
 # rmmod nvidia
 # modprobe nvidia
 
-# USEにnvidiaを追加
-# USE="X gtk nvidia -qt5 -qt6 -gnome -kde -plasma -wayland"
-nvim /etc/portage/make.conf
-
-# 再ビルド
-emerge -uDN @world
-
 # i3 window manager インストール
 emerge -av x11-wm/i3
 emerge -av x11-misc/i3lock
 emerge -av x11-misc/polybar
 emerge -av x11-terms/kitty
 ```
+

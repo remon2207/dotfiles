@@ -54,7 +54,7 @@ bootusb() {
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read "yn?実行しますか？(y/n): "
     case "${yn}" in
-    [yY]) sudo dd bs=4M if="${1}" of="${2}" conv=fsync oflag=direct status=progress ;;
+    [yY]) sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress ;;
     [nN]) return 1 ;;
     esac
   fi
