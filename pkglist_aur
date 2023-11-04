@@ -25,7 +25,6 @@ git
 github-cli
 gnome-keyring
 go
-gptfdisk
 htop
 i3-wm
 i3lock
@@ -33,6 +32,7 @@ intel-ucode
 kitty
 kvantum
 lazygit
+lbzip2
 libva-vdpau-driver
 linux-firmware
 linux-zen
@@ -87,6 +87,7 @@ shfmt
 silicon
 slack-desktop
 starship
+stylua
 sudo
 tldr
 tmux

@@ -61,3 +61,9 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   group = 'file',
   command = 'setlocal ft=systemd',
 })
+
+nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = { '/var/tmp/*.conf' },
+  group = 'file',
+  command = 'setlocal ft=conf',
+})

@@ -34,17 +34,17 @@ paru_install() {
 }
 
 aur_install() {
-  paru -S --noconfirm --needed - < pkglist_aur
+  paru -S --needed - < pkglist_aur
   # paru -S --noconfirm --needed \
-  #   google-chrome \
   #   ghq-bin \
   #   slack-desktop \
   #   downgrade \
-  #   ttf-hackgen \
-  #   ttf-cica \
   #   nvm \
-  #   libva-vdpau-driver-chromium \
-  #   lazydocker-bin
+  #   efm-langserver \
+  #   man-pages-ja \
+  #   upd72020x-fw \
+  #   virtualbox-ext-oracle \
+  #   xcursor-breeze
 }
 
 fish_plugin() {
@@ -57,9 +57,16 @@ git_settings() {
 }
 
 psd_settings() {
+  vivaldi-stable
   psd p
-  sed -i 's/^#BROWSERS=\(\)/BROWSERS=\(vivaldi\)/' "${HOME}/.config/psd/psd.conf"
+  sed -i 's/^#BROWSERS=()/BROWSERS=(vivaldi)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
+}
+
+pnpm_install() {
+  nvm install --lts
+  corepack enable
+  corepack prepare pnpm@latest --activate
 }
 
 main() {
@@ -68,6 +75,7 @@ main() {
   git_settings
   # fish_plugin
   psd_settings
+  pnpm_install
 }
 
 main "$@"
