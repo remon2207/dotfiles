@@ -6,9 +6,9 @@ if [[ -n "${DISPLAY}" ]]; then
   export VISUAL='nvim'
   export SUDO_EDITOR='nvim'
 else
-  export SUDO_EDITOR='vi'
   export EDITOR='vi'
   export VISUAL='vi'
+  export SUDO_EDITOR='vi'
 fi
 
 export FZF_CTRL_T_COMMAND="fd --hidden -t f -E '.git' -E '.cache'"
@@ -19,12 +19,11 @@ export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
 --color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 
+export PAGER='bat'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
 
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
-
-export PAGER='bat'
 
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"

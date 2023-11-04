@@ -52,16 +52,13 @@ fish_plugin() {
 }
 
 git_settings() {
-  git config --global user.email "${git_email}"
   git config --global user.name "${git_name}"
+  git config --global user.email "${git_email}"
 }
 
 psd_settings() {
-  firefox
-  google-chrome-stable
-  vivaldi-stable
-  psd
-  sed -i 's/^#BROWSERS=()/BROWSERS=(firefox google-chrome vivaldi)/' "${HOME}/.config/psd/psd.conf"
+  psd p
+  sed -i 's/^#BROWSERS=\(\)/BROWSERS=\(vivaldi\)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
 }
 
@@ -69,7 +66,7 @@ main() {
   paru_install
   aur_install
   git_settings
-  fish_plugin
+  # fish_plugin
   psd_settings
 }
 

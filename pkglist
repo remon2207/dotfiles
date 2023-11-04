@@ -21,6 +21,7 @@ git
 github-cli
 gnome-keyring
 go
+gptfdisk
 htop
 i3-wm
 i3lock
@@ -130,6 +131,9 @@ ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 unzip
 vi
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-dkms
 vivaldi
 vivaldi-ffmpeg-codecs
 wezterm

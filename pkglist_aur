@@ -25,6 +25,7 @@ git
 github-cli
 gnome-keyring
 go
+gptfdisk
 htop
 i3-wm
 i3lock
@@ -40,6 +41,7 @@ lsd
 lxappearance-gtk3
 man-db
 man-pages
+man-pages-ja
 neofetch
 neovim
 nfs-utils
@@ -138,6 +140,10 @@ ttf-victor-mono-nerd
 unzip
 upd72020x-fw
 vi
+virtualbox
+virtualbox-ext-oracle
+virtualbox-guest-iso
+virtualbox-host-dkms
 vivaldi
 vivaldi-ffmpeg-codecs
 wezterm

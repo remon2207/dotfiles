@@ -27,6 +27,7 @@ alias dup='docker compose up -d'
 alias dlog='docker compose logs -f'
 alias dps='docker compose ps -a'
 alias dbuild='docker compose build'
+alias g='git'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
@@ -41,9 +42,6 @@ alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git comm
 alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
-alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
-alias unrequired='pacman -Qtdq'
-alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 alias psa='ps auxf'
 alias psag='ps auxf | rg -in'
 alias kf='kitty + list-fonts --psname'
@@ -56,8 +54,6 @@ alias bashrc="nvim ${HOME}/.bashrc"
 alias zshrc="nvim ${HOME}/.zshrc"
 alias sz="source ${HOME}/.zshrc"
 alias mpdstop='mpd --kill'
-alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
-alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
 alias repolybar='killall polybar &> /dev/null; nohup polybar dp &> /dev/null &! nohup polybar dp2 &> /dev/null &! nohup polybar dvi &> /dev/null &! nohup polybar hdmi &> /dev/null &!'
 alias dls='sudo fdisk -l'
 alias setxset='xset r rate 250 60'
@@ -94,6 +90,15 @@ alias tmp='cd /tmp'
 alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
 alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 alias wmclassname='xprop WM_CLASS WM_NAME'
+alias nft='sudo nft'
+
+if [[ $(/usr/bin/cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
+  alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
+  alias unrequired='pacman -Qtdq'
+  alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
+  alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
+  alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
+fi
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
