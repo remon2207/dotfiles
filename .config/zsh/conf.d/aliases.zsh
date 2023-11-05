@@ -38,6 +38,7 @@ alias gl='git log --oneline --graph'
 alias gs='git status'
 alias gf='git fetch'
 alias gm='git merge'
+alias gd='git diff'
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
@@ -91,7 +92,17 @@ alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
 alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
-alias iptables='sudo iptables'
+alias ipt='sudo iptables'
+alias ip6t='sudo ip6tables'
+alias initrm='/usr/bin/rm'
+alias initmkdir='/usr/bin/mkdir'
+alias initgrep='/usr/bin/grep'
+alias initfree='/usr/bin/free'
+alias initdf='/usr/bin/df'
+alias initrg='/usr/bin/rg'
+alias initless='/usr/bin/less'
+alias initcat='/usr/bin/cat'
+alias initls='/usr/bin/ls'
 
 if [[ $(/usr/bin/cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'

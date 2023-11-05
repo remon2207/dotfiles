@@ -12,26 +12,21 @@ zinit_install() {
   (( ${+_comps} )) && _comps[zinit]=_zinit
 }
 
+zinit_install
+
+#zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+#zinit light zsh-users/zsh-completions
+zinit light marlonrichert/zsh-autocomplete
+zinit light rupa/z
+
+# keymap
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+
+
 if [[ -n "${DISPLAY}" ]]; then
-  zinit_install
-
-  zinit light Aloxaf/fzf-tab
-  zinit light zsh-users/zsh-syntax-highlighting
-  zinit light zsh-users/zsh-autosuggestions
-  zinit light zsh-users/zsh-completions
-  zinit light rupa/z
-
-  # solarized
+  # solarized theme customize
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
-
-else
-  zinit_install
-
-  zinit light Aloxaf/fzf-tab
-  zinit light zsh-users/zsh-syntax-highlighting
-  zinit light zsh-users/zsh-autosuggestions
-  zinit light zsh-users/zsh-completions
-  zinit light rupa/z
 fi
-
-unfunction zinit_install
