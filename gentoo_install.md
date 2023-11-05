@@ -78,6 +78,7 @@ eselect profile set 12
 emerge -avuDN @world
 
 # neovimインストール
+echo 'app-editors/neovim -nvimpager' > /etc/portage/package.use/neovim
 emerge -av neovim
 emerge -c
 
@@ -101,6 +102,7 @@ eselect locale set 4
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
 # ファームウェアとマイクロコードのインストール
+echo 'sys-firmware/intel-microcode initramfs' > /etc/portage/package.use/intel-microcode
 emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
 
 # カーネルのマニュアルインストール
