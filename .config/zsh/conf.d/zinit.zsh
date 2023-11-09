@@ -14,17 +14,23 @@ zinit_install() {
 
 zinit_install
 
-#zinit light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
-#zinit light zsh-users/zsh-completions
-zinit light marlonrichert/zsh-autocomplete
+zinit light zsh-users/zsh-completions
+#zinit light marlonrichert/zsh-autocomplete
 zinit light rupa/z
 
 # keymap
-bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
-bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+#bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+#bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
+# Ctrl-P
+#bindkey -r '^p'
+# Up arrow
+#bindkey -r '^[[A'
+# Scroll Wheel Up
+#bindkey -r '^[[A^[[A^[[A'
 
 if [[ -n "${DISPLAY}" ]]; then
   # solarized theme customize

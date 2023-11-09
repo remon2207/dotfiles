@@ -8,8 +8,8 @@ set -ga terminal-overrides ",${TERM}:Tc"
 set -g focus-events on
 
 # prefix変更
-set -g prefix C-q
 unbind C-b
+set -g prefix C-q
 
 # vimのキーバインドでペイン間を移動
 bind h select-pane -L
@@ -26,9 +26,17 @@ bind -r L resize-pane -R 5
 # vi mode
 setw -g mode-keys vi
 bind -T copy-mode-vi v send -X begin-selection
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
+
+unbind [
+bind-key -T prefix Space copy-mode
 
 bind P paste-buffer
+
+bind-key -T root WheelUpPane send-keys ""
+bind-key -T root WheelDownPane send-keys ""
+
+bind-key -T copy-mode-vi WheelUpPane   send-keys ""
+bind-key -T copy-mode-vi WheelDownPane send-keys ""
 
 # バックスクロール行数を増加
 set -g history-limit 100000
@@ -37,7 +45,7 @@ set -g escape-time 0
 
 set -g status-style "fg=#b7b7b7 bg=#3d3d3d"
 
-# set -g mouse on
+set -g mouse on
 
 # Automatic tpm installation
 if "test ! -d ~/.tmux/plugins/tpm" \
