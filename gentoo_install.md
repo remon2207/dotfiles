@@ -3,7 +3,7 @@
 gdisk /dev/sdd
 
 # フォーマット
-mkfs.vfat -F 32 /dev/sdd1
+mkfs.fat -F 32 /dev/sdd1
 mkfs.ext4 /dev/sdc2 # /
 mkfs.ext4 /dev/sdc3 # /home
 
@@ -60,6 +60,11 @@ emerge --sync --quiet
 # ニュースを読む
 eselect news read
 
+# neovimインストール
+echo 'app-editors/neovim -nvimpager' > /etc/portage/package.use/neovim
+emerge -av neovim
+emerge -c
+
 # USE 変数を設定
 # USE="cjk systemd -X -gtk -elogind -syslog -qt5 -qt6 -gnome -kde -plasma -wayland"
 nano /etc/portage/make.conf
@@ -77,16 +82,6 @@ eselect profile set 12
 # @worldの更新
 emerge -avuDN @world
 
-# neovimインストール
-echo 'app-editors/neovim -nvimpager' > /etc/portage/package.use/neovim
-emerge -av neovim
-emerge -c
-
-# パッケージ毎にライセンスを許諾
-mkdir /etc/portage/package.license
-echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' > /etc/portage/package.license/linux-firmware
-echo 'sys-firmware/intel-microcode intel-ucode' > /etc/portage/package.license/intel-microcode
-
 # タイムゾーン
 ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
@@ -101,6 +96,11 @@ eselect locale set 4
 # 環境をリロード
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
+# パッケージ毎にライセンスを許諾
+mkdir /etc/portage/package.license
+echo 'sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE' > /etc/portage/package.license/linux-firmware
+echo 'sys-firmware/intel-microcode intel-ucode' > /etc/portage/package.license/intel-microcode
+
 # ファームウェアとマイクロコードのインストール
 echo 'sys-firmware/intel-microcode initramfs' > /etc/portage/package.use/intel-microcode
 emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
@@ -109,8 +109,7 @@ emerge -av sys-kernel/linux-firmware sys-firmware/intel-microcode
 emerge -av sys-kernel/gentoo-sources
 cd /usr/src/linux
 make menuconfig
-make -j13 && make -j13 modules_install
-make install
+make -j13 && make -j13 modules_install && make install
 
 # initramfsのビルド
 emerge -av sys-kernel/dracut

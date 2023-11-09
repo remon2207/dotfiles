@@ -1,4 +1,4 @@
-export PATH="${PATH}:/opt:${HOME}/go/bin"
+export PATH="${PATH}:/opt:${HOME}/go/bin:${HOME}/.cargo/bin"
 export QT_QPA_PLATFORMTHEME='qt5ct'
 
 if [[ -n "${DISPLAY}" ]]; then
@@ -37,6 +37,10 @@ export TMPDIR='/tmp'
 export http_proxy='http://proxy.home:8080'
 export https_proxy="${http_proxy}"
 export ftp_proxy="${http_proxy}"
+
+export NVM_DIR="${HOME}/.config/nvm"
+[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"                   # This loads nvm
+[ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion" # This loads nvm bash_completion
 
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 case ":${PATH}:" in

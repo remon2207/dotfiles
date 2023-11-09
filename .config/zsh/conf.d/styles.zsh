@@ -2,14 +2,17 @@
 # The following lines were added by compinstall
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-autoload -Uz compinit
+autoload -Uz compinit promptinit
 compinit
+promptinit; prompt gentoo
 # End of lines added by compinstall
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:*:default' menu yes select search
+
+zstyle ':completion::complete:*' use-cache 1
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -36,3 +39,5 @@ zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
 zstyle ':autocomplete:history-search-backward:*' list-lines 256
 
 zstyle ':autocomplete:*' ignored-input '..##'
+
+bindkey -r '^p'

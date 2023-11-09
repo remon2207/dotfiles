@@ -2,35 +2,35 @@ Xcursor.theme: Breeze
 Xcursor.size: 16
 
 ! xterm
-XTerm*termName:              xterm-256color
-XTerm*locale:                true
-XTerm*selectToClipboard:     true
-XTerm*faceName: Hack Nerd Font:antialias=false
-XTerm*faceSize: 11
+XTerm*termName:          xterm-256color
+XTerm*locale:            true
+XTerm*selectToClipboard: true
+XTerm*faceName:          Hack Nerd Font:antialias=false
+XTerm*faceSize:          11
 
 ! uxterm
-UXTerm*termName:              xterm-256color
-UXTerm*locale:                true
-UXTerm*selectToClipboard:     true
-UXTerm*faceName: Hack Nerd Font:antialias=false
-UXTerm*faceSize: 11
+UXTerm*termName:          xterm-256color
+UXTerm*locale:            true
+UXTerm*selectToClipboard: true
+UXTerm*faceName:          Hack Nerd Font:antialias=false
+UXTerm*faceSize:          11
 
 ! urxvt
-URxvt.font: xft:Hack Nerd Font:size=11
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
+URxvt.font:              xft:Hack Nerd Font:size=11
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-URxvt.letterSpace: -1
-URxvt.scrollBar: false
+URxvt.secondaryScreen:   1
+URxvt.secondaryScroll:   0
+URxvt.letterSpace:       -1
+URxvt.scrollBar:         false
 
-Xft.autohint: 0
+Xft.autohint:  0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
-Xft.hinting: 1
+Xft.hinting:   1
 Xft.antialias: 1
-Xft.rgba: rgb
+Xft.rgba:      rgb
 
 
 ! Solarized color scheme for the X Window System

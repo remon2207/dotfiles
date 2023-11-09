@@ -18,7 +18,7 @@ alias vimi3="cd ${HOME}/.config/i3/conf.d && nvim ."
 alias vimnorc='nvim -u NORC'
 alias vimpolybar="nvim ${HOME}/.config/polybar/config.ini"
 alias vimpicom="nvim ${HOME}/.config/picom/picom.conf"
-alias grep='grep --color=auto -in'
+alias grep='grep --color=auto -i'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -44,7 +44,7 @@ alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
 alias psa='ps auxf'
-alias psag='ps auxf | rg -in'
+alias psag='ps auxf | rg -iN'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
 alias sysoff='sudo systemctl poweroff'
@@ -69,7 +69,6 @@ alias sysenable='sudo systemctl enable'
 alias sysenablenow='sudo systemctl enable --now'
 alias sysdisable='sudo systemctl disable'
 alias sysdisablenow='sudo systemctl disable --now'
-alias ipscan='sudo nmap -sP 192.168.1.0/24'
 alias free='free -th'
 alias df='df -Th'
 alias svim='sudoedit'
@@ -82,34 +81,32 @@ alias repos='ghq list -p | fzf'
 alias repo='cd $(repos)'
 alias fontlist='fc-list | fzf'
 alias t='tmux'
-alias rg='rg -in'
+alias rg='rg -iN'
 alias r='ranger'
 alias less='less -MiN'
-alias cat='cat -n'
 alias homesize='du -sm ./{*,.*} | sort -n'
 alias tmp='cd /tmp'
-alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
-alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias initrm='/usr/bin/rm'
-alias initmkdir='/usr/bin/mkdir'
-alias initgrep='/usr/bin/grep'
+alias initrm='/bin/rm'
+alias initmkdir='/bin/mkdir'
+alias initgrep='/bin/grep'
+alias initdf='/bin/df'
+alias initls='/bin/ls'
 alias initfree='/usr/bin/free'
-alias initdf='/usr/bin/df'
 alias initrg='/usr/bin/rg'
 alias initless='/usr/bin/less'
-alias initcat='/usr/bin/cat'
-alias initls='/usr/bin/ls'
 
-if [[ $(/usr/bin/cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
+if [[ $(cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
   alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
+  alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
+  alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 fi
 
 if type lsd &> /dev/null; then

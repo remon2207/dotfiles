@@ -8,6 +8,9 @@ return {
   font_size = 10.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
   enable_scroll_bar = true,
+  warn_about_missing_glyphs = false,
+  audible_bell = 'Disabled',
+  front_end = 'OpenGL',
   window_background_opacity = 1.0,
   window_padding = {
     left = 0,
