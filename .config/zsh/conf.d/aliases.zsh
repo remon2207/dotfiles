@@ -1,5 +1,3 @@
-isArch=$(grep '^NAME' /etc/os-release | awk -F '"' '{print $2}')
-
 alias j='jobs'
 alias dc='cd'
 alias e='exit'
@@ -110,7 +108,6 @@ if [[ "${isArch}" == 'Arch Linux' ]]; then
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
   alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 fi
-unset isArch
 
 if type lsd &> /dev/null; then
   alias ls='lsd'

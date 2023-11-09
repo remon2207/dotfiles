@@ -26,8 +26,10 @@ eval "$(starship init zsh)"
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 
 [[ "${isArch}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
+unset isArch
 
 [[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
+
 
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then
