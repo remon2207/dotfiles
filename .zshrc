@@ -1,6 +1,7 @@
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
+isArch=$(grep '^NAME' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e
@@ -14,15 +15,15 @@ eval "$(starship init zsh)"
 
 source /usr/share/fzf/key-bindings.zsh
 
-if [[ $(cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
+if [[ "${isArch}" == 'Arch Linux' ]]; then
   source /usr/share/fzf/completion.zsh
   source /usr/share/nvm/init-nvm.sh
 fi
+unset isArch
 
 if [ -f "${HOME}/.profile" ]; then
   source "${HOME}/.profile"
 fi
-
 
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then

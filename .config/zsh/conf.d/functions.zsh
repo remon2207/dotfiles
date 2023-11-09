@@ -6,25 +6,25 @@ psidkill() {
 tochrome() {
   dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome/' "${dotfiles_dir}/.config/mimeapps.list"
-  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  /usr/bin/sed -i 's/\(firefox\|vivaldi-stable\)/google-chrome-stable/' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+  sd '(firefox|vivaldi-stable)' 'google-chrome' "${dotfiles_dir}/.config/mimeapps.list"
+  sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
+  sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 }
 
 tofirefox() {
   dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/google-chrome/firefox/' "${dotfiles_dir}/.config/mimeapps.list"
-  /usr/bin/sed -i 's/google-chrome-stable/firefox/' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  /usr/bin/sed -i 's/\(google-chrome-stable\|vivaldi-stable\)/firefox/' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+  sd '(google-chrome|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/mimeapps.list"
+  sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
+  sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 }
 
 tovivaldi() {
   dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  /usr/bin/sed -i 's/\(google-chrome\|firefox\)/vivaldi-stable/' "${dotfiles_dir}/.config/mimeapps.list"
-  /usr/bin/sed -i 's/\(google-chrome-stable\|firefox\)/vivaldi-stable/' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  /usr/bin/sed -i 's/\(firefox\|google-chrome-stable\)/vivaldi-stable/' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+  sd '(firefox|google-chrome)' 'vivaldi-stable' "${dotfiles_dir}/.config/mimeapps.list"
+  sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
+  sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 }
 
 mkcd() {

@@ -1,3 +1,5 @@
+isArch=$(grep '^NAME' /etc/os-release | awk -F '"' '{print $2}')
+
 alias j='jobs'
 alias dc='cd'
 alias e='exit'
@@ -99,7 +101,7 @@ alias initfree='/usr/bin/free'
 alias initrg='/usr/bin/rg'
 alias initless='/usr/bin/less'
 
-if [[ $(cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]]; then
+if [[ "${isArch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
@@ -108,6 +110,7 @@ if [[ $(cat /etc/os-release | awk -F '"' 'NR==1 {print $2}') == 'Arch Linux' ]];
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
   alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
 fi
+unset isArch
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
