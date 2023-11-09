@@ -1,4 +1,4 @@
-export PATH="${PATH}:/opt:${HOME}/go/bin:${HOME}/.cargo/bin"
+export PATH="${PATH}:/opt:${HOME}/go/bin:${HOME}/.cargo/bin:${HOME}/.local/share/pnpm"
 export QT_QPA_PLATFORMTHEME='qt5ct'
 
 if [[ -n "${DISPLAY}" ]]; then
@@ -42,9 +42,3 @@ export RSYNC_PROXY="${http_proxy}"
 
 export NVM_DIR="${HOME}/.config/nvm"
 [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh" # This loads nvm
-
-export PNPM_HOME="${HOME}/.local/share/pnpm"
-case ":${PATH}:" in
-*":${PNPM_HOME}:"*) ;;
-*) export PATH="${PNPM_HOME}:${PATH}" ;;
-esac

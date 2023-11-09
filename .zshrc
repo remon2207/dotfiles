@@ -1,29 +1,33 @@
+zstyle :compinstall filename "${HOME}/.zshrc"
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+prompt gentoo
+
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
+
 isArch=$(grep '^NAME' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e
 
-for conf in "${HOME}/.config/zsh/conf.d/"*.zsh; do
-  source "${conf}"
-done
-unset conf
+source "${HOME}/.config/zsh/conf.d/term.zsh"
+source "${HOME}/.config/zsh/conf.d/zinit.zsh"
+source "${HOME}/.config/zsh/conf.d/options.zsh"
+source "${HOME}/.config/zsh/conf.d/styles.zsh"
+source "${HOME}/.config/zsh/conf.d/functions.zsh"
+source "${HOME}/.config/zsh/conf.d/aliases.zsh"
 
 eval "$(starship init zsh)"
 
-source /usr/share/fzf/key-bindings.zsh
+[[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 
-if [[ "${isArch}" == 'Arch Linux' ]]; then
-  source /usr/share/fzf/completion.zsh
-  source /usr/share/nvm/init-nvm.sh
-fi
-unset isArch
+[[ "${isArch}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
 
-if [ -f "${HOME}/.profile" ]; then
-  source "${HOME}/.profile"
-fi
+[[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
 
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then

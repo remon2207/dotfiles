@@ -1,12 +1,3 @@
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename "${HOME}/.zshrc"
-
-autoload -Uz compinit promptinit
-compinit
-promptinit; prompt gentoo
-# End of lines added by compinstall
-
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
