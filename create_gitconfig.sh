@@ -8,22 +8,21 @@ OPTIONS:
   -n, --name     Username
   -e, --email    Email of user"
 
-if [[ $# -eq 0 ]] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+if [[ $# -eq 0 ]] || [ $# -ne 4 ] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
   echo "${HELP}"
   exit 1
 fi
 
-while getopts 'neh-:' opt; do
-  optarg="${!OPTIND}"
-  [[ "${opt}" == '-' ]] && opt="-${OPTARG}"
-  case "-${opt}" in
-  -n | --name)
-    NAME="${optarg}"
-    shift
+while getopts 'n:m:' opt; do
+  case "${opt}" in
+  n)
+    readonly NAME="${OPTARG}"
     ;;
-  -e | --email)
-    EMAIL="${optarg}"
-    shift
+  m)
+    readonly EMAIL="${OPTARG}"
+    ;;
+  *)
+    echo 'bat option'
     ;;
   esac
 done
