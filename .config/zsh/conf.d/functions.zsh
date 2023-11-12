@@ -86,5 +86,5 @@ tofish() {
 }
 
 authycheck() {
-  curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq | rg '"download_url"' | awk -F '[ "]' '{print $13}'
+  curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq | rg '"download_url"' | sed 's/ //g' | awk -F '"' '{print $4}'
 }
