@@ -17,16 +17,3 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
 zstyle ':fzf-tab:complete:*' fzf-pad 10
-
-zstyle ':autocomplete:*' insert-unambiguous yes
-
-# Autocompletion
-zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 3 )) )'
-
-# Override history search.
-zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
-
-# History menu.
-zstyle ':autocomplete:history-search-backward:*' list-lines 256
-
-zstyle ':autocomplete:*' ignored-input '..##'

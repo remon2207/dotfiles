@@ -90,15 +90,15 @@ alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias initrm='/bin/rm'
-alias initmkdir='/bin/mkdir'
-alias initgrep='/bin/grep'
-alias initdf='/bin/df'
-alias initls='/bin/ls'
-alias initfree='/usr/bin/free'
-alias initrg='/usr/bin/rg'
-alias initless='/usr/bin/less'
+alias initrm=$(type -p ls | awk '{print $3}')
+alias initmkdir=$(type -p mkdir | awk '{print $3}')
+alias initgrep=$(type -p grep | awk '{print $3}')
+alias initdf=$(type -p df | awk '{print $3}')
+alias initls=$(type -p ls | awk '{print $3}')
+alias initfree=$(type -p free | awk '{print $3}')
+alias initless=$(type -p less | awk '{print $3}')
 
-if [[ "${isArch}" == 'Arch Linux' ]]; then
+if [[ "${IS_ARCH}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
@@ -106,6 +106,10 @@ if [[ "${isArch}" == 'Arch Linux' ]]; then
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
   alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
+fi
+
+if type rg &> /dev/null; then
+  alias initrg=$(type -p rg | awk '{print $3}')
 fi
 
 if type lsd &> /dev/null; then

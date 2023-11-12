@@ -9,7 +9,7 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-isArch=$(grep '^NAME' /etc/os-release | awk -F '"' '{print $2}')
+IS_ARCH=$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e
@@ -24,12 +24,10 @@ source "${HOME}/.config/zsh/conf.d/aliases.zsh"
 eval "$(starship init zsh)"
 
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
-
-[[ "${isArch}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
-unset isArch
+[[ "${IS_ARCH}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
+unset IS_ARCH
 
 [[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
-
 
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then
