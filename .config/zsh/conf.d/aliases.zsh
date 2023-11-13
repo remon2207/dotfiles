@@ -98,7 +98,7 @@ alias initls=$(type -p ls | awk '{print $3}')
 alias initfree=$(type -p free | awk '{print $3}')
 alias initless=$(type -p less | awk '{print $3}')
 
-if [[ "${IS_ARCH}" == 'Arch Linux' ]]; then
+if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"

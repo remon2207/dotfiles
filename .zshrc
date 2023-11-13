@@ -9,7 +9,7 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-IS_ARCH=$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
+is_arch=$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e
@@ -24,8 +24,8 @@ source "${HOME}/.config/zsh/conf.d/aliases.zsh"
 eval "$(starship init zsh)"
 
 [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
-[[ "${IS_ARCH}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
-unset IS_ARCH
+[[ "${is_arch}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
+unset is_arch
 
 [[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
 

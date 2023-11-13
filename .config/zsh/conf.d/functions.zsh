@@ -1,40 +1,39 @@
 psidkill() {
-  PS_ID=$(ps auxf | grep -i $1 | awk '{print $2}' | head -n 1)
-  readonly PS_ID
+  ps_id=$(ps auxf | grep -i $1 | awk '{print $2}' | head -n 1)
 
   kill ${ps_id}
 
-  unset PS_ID
+  unset ps_id
 }
 
 tochrome() {
-  readonly DOTFILES_DIR="${HOME}/ghq/github.com/remon2207/dotfiles"
+  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   sd '(firefox|vivaldi-stable)' 'google-chrome' "${dotfiles_dir}/.config/mimeapps.list"
   sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
   sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 
-  unset DOTFILES_DIR
+  unset dotfiles_dir
 }
 
 tofirefox() {
-  readonly DOTFILES_DIR="${HOME}/ghq/github.com/remon2207/dotfiles"
+  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   sd '(google-chrome|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/mimeapps.list"
   sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
   sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 
-  unset DOTFILES_DIR
+  unset dotfiles_dir
 }
 
 tovivaldi() {
-  readonly DOTFILES_DIR="${HOME}/ghq/github.com/remon2207/dotfiles"
+  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   sd '(firefox|google-chrome)' 'vivaldi-stable' "${dotfiles_dir}/.config/mimeapps.list"
   sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
   sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
 
-  unset DOTFILES_DIR
+  unset dotfiles_dir
 }
 
 mkcd() {
@@ -78,29 +77,26 @@ raspi-backup() {
 }
 
 netreload() {
-  NIC_NAME=$(ip link | grep '2: ' | awk '{print $2}' | cut -d ':' -f 1)
-  readonly NIC_NAME
+  nic_name=$(ip link | grep '2: ' | awk '{print $2}' | cut -d ':' -f 1)
 
-  sudo nmcli connection down "${NIC_NAME}"
-  sudo nmcli connection up "${NIC_NAME}"
+  sudo nmcli connection down "${nic_name}"
+  sudo nmcli connection up "${nic_name}"
 
-  unset NIC_NAME
+  unset nic_name
 }
 
 tofish() {
-  readonly DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
+  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  STARTLINE=$(($(cat "${HOME}/.zshrc" | rg -n 'load fish' | cut -d ':' -f 1) + 1))
-  readonly STARTLINE
+  startline=$(($(cat "${HOME}/.zshrc" | rg -n 'load fish' | cut -d ':' -f 1) + 1))
 
-  ENDLINE=$(cat "${HOME}/.zshrc" | wc -l)
-  readonly ENDLINE
+  endline=$(cat "${HOME}/.zshrc" | wc -l)
 
-  sed -i "${STARTLINE},"${ENDLINE}"s/^# //" "${DOTFILES}/.zshrc"
-  sed -i '2s/^/# /' "${DOTFILES}/.tmux.conf"
-  sed -i '3s/^# //' "${DOTFILES}/.tmux.conf"
+  sed -i "${startline},"${endline}"s/^# //" "${dotfiles}/.zshrc"
+  sed -i '2s/^/# /' "${dotfiles}/.tmux.conf"
+  sed -i '3s/^# //' "${dotfiles}/.tmux.conf"
 
-  unset DOTFILES STARTLINE ENDLINE
+  unset dotfiles startline endline
 
   if [[ $? -eq 0 ]]; then
     exit
@@ -108,10 +104,9 @@ tofish() {
 }
 
 authycheck() {
-  VERSION_NUMBER=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
-  readonly VERSION_NUMBER
+  version_number=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
 
-  echo "revision: ${VERSION_NUMBER}"
+  echo "revision: ${version_number}"
 
   unset version_number
 }
