@@ -97,7 +97,7 @@ main() {
   services
 }
 
-main "$@"
+main "${@}"
 
 chsh -s "$(which zsh)"
 

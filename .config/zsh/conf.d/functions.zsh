@@ -110,3 +110,7 @@ authycheck() {
 
   unset version_number
 }
+
+chpwd() {
+  [[ $(pwd) != "${OLDPWD}" ]] && lsd -A
+}

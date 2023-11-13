@@ -29,6 +29,12 @@ unset is_arch
 
 [[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
 
+shellstart() {
+  la
+}
+
+shellstart
+
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then
 #   if type fish &> /dev/null; then

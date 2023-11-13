@@ -41,6 +41,7 @@ alias gm='git merge'
 alias gd='git diff'
 alias repoinit='echo "# $(basename $(pwd))" > README.md && git add . && git commit -m "Initial commit" && git push -u origin main'
 alias cnow="git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\""
+alias gacp="git add . && git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\" && git push"
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
 alias psa='ps auxf'
@@ -89,14 +90,6 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias initrm='/bin/rm'
-alias initrm=$(type -p ls | awk '{print $3}')
-alias initmkdir=$(type -p mkdir | awk '{print $3}')
-alias initgrep=$(type -p grep | awk '{print $3}')
-alias initdf=$(type -p df | awk '{print $3}')
-alias initls=$(type -p ls | awk '{print $3}')
-alias initfree=$(type -p free | awk '{print $3}')
-alias initless=$(type -p less | awk '{print $3}')
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
@@ -106,10 +99,6 @@ if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
   alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
-fi
-
-if type rg &> /dev/null; then
-  alias initrg=$(type -p rg | awk '{print $3}')
 fi
 
 if type lsd &> /dev/null; then

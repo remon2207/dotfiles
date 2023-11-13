@@ -2,27 +2,31 @@
 
 set -eu
 
-readonly HELP="USAGE:
-  ${0} [OPTIONS]
+usage() {
+  cat << EOF
+  ${0} <OPTIONS>
 OPTIONS:
-  -n, --name     Username
-  -e, --email    Email of user"
+  -n    Username
+  -e    Email of User
+EOF
+}
 
 if [[ $# -eq 0 ]] || [ $# -ne 4 ] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
-  echo "${HELP}"
+  usage
   exit 1
 fi
 
 while getopts 'n:m:' opt; do
   case "${opt}" in
-  n)
+  'n')
     readonly NAME="${OPTARG}"
     ;;
-  m)
+  'm')
     readonly EMAIL="${OPTARG}"
     ;;
-  *)
-    echo 'bat option'
+  '*')
+    echo 'Not a valid option'
+    exit 1
     ;;
   esac
 done
