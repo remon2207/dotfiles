@@ -103,13 +103,13 @@ fi
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd -alF'
-  alias la='lsd -A'
+  alias ll='lsd -AlF'
+  alias la='lsd -AF'
   alias sl='lsd'
 else
   alias ls='ls --color=auto'
-  alias ll='ls -alF --color=auto'
-  alias la='ls -A --color=auto'
+  alias ll='ls -AlF --color=auto'
+  alias la='ls -AF --color=auto'
   alias sl='ls --color=auto'
 fi
 

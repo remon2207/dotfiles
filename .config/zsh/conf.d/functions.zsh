@@ -6,34 +6,124 @@ psidkill() {
   unset ps_id
 }
 
-tochrome() {
-  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
+changebrowser() {
+  usage() {
+    cat << EOF
+USAGE:
+  changebrowser <OPTIONS>
+OPTIONS:
+  -c    Current browser
+  -n    New browser
+EOF
+  }
 
-  sd '(firefox|vivaldi-stable)' 'google-chrome' "${dotfiles_dir}/.config/mimeapps.list"
-  sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  sd '(firefox|vivaldi-stable)' 'google-chrome-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+  if [[ ${#} -ne 4 ]] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+    usage
+    return 1
+  fi
 
-  unset dotfiles_dir
+  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+  mimeapps="${dotfiles}/.config/mimeapps.list"
+  kitty_conf="${dotfiles}/.config/kitty/conf.d/advanced.conf"
+  alacritty_conf="${dotfiles}/.config/alacritty/conf.d/env.yml"
+
+  replacements() {
+    sd -s "${1}" "${3}" "${mimeapps}"
+    sd -s "${2}" "${4}" "${kitty_conf}"
+    sd -s "${2}" "${4}" "${alacritty_conf}"
+  }
+
+  while getopts 'c:n:' OPT; do
+    case "${OPT}" in
+    'c')
+      current="${OPTARG}"
+      ;;
+    'n')
+      new="${OPTARG}"
+      ;;
+    esac
+  done
+
+  if [[ "${current}" == 'vivaldi' ]] && [[ "${new}" == 'chrome' ]]; then
+    replacements vivaldi-stable vivaldi-stable google-chrome google-chrome-stable
+  elif [[ "${current}" == 'vivaldi' ]] && [[ "${new}" == 'firefox' ]]; then
+    replacements vivaldi-stable vivaldi-stable firefox firefox
+  elif [[ "${current}" == 'chrome' ]] && [[ "${new}" == 'vivaldi' ]]; then
+    replacements google-chrome google-chrome-stable vivaldi-stable vivaldi-stable
+  elif [[ "${current}" == 'chrome' ]] && [[ "${new}" == 'firefox' ]]; then
+    replacements google-chrome google-chrome-stable firefox firefox
+  elif [[ "${current}" == 'firefox' ]] && [[ "${new}" == 'vivaldi' ]]; then
+    replacements firefox firefox vivaldi-stable vivaldi-stable
+  elif [[ "${current}" == 'firefox' ]] && [[ "${new}" == 'chrome' ]]; then
+    replacements firefox firefox google-chrome google-chrome-stable
+  fi
+
+  unset dotfiles mimeapps kitty_conf alacritty_conf OPT OPTARG current new
 }
 
-tofirefox() {
-  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
+changeterm() {
+  usage() {
+    cat << EOF
+USAGE:
+  changeterm <OPTIONS>
+OPTIONS:
+  -c    Current terminal
+  -n    new terminal
+EOF
+  }
 
-  sd '(google-chrome|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/mimeapps.list"
-  sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  sd '(google-chrome-stable|vivaldi-stable)' 'firefox' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+  if [[ ${#} -ne 4 ]] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+    usage
+    return 1
+  fi
 
-  unset dotfiles_dir
-}
+  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+  i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
+  bghtop="${dotfiles}/.local/share/applications/bghtop.desktop"
+  alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
+  alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty -e ranger'
+  kitty='bindsym $mod+Return exec --no-startup-id kitty'
+  kitty_ranger='bindsym $mod+e exec --no-startup-id kitty -1 ranger'
+  wezterm='bindsym $mod+Return exec --no-startup-id wezterm'
+  wezterm_ranger='bindsym $mod+e exec --no-startup-id wezterm -e ranger'
 
-tovivaldi() {
-  dotfiles_dir="${HOME}/ghq/github.com/remon2207/dotfiles"
+  replacements() {
+    sd "^${1}" "# ${1}" "${i3_conf}"
+    sd "^${2}" "# ${2}" "${i3_conf}"
 
-  sd '(firefox|google-chrome)' 'vivaldi-stable' "${dotfiles_dir}/.config/mimeapps.list"
-  sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/kitty/conf.d/advanced.conf"
-  sd '(firefox|google-chrome-stable)' 'vivaldi-stable' "${dotfiles_dir}/.config/alacritty/conf.d/env.yml"
+    sd "^# ${3}" "${3}" "${i3_conf}"
+    sd "^# ${4}" "${4}" "${i3_conf}"
 
-  unset dotfiles_dir
+    sd "^Exec=${5}" "# Exec=${5}" "${bghtop}"
+    sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
+  }
+
+  while getopts 'c:n:' OPT; do
+    case "${OPT}" in
+    'c')
+      current="${OPTARG}"
+      ;;
+    'n')
+      new="${OPTARG}"
+      ;;
+    esac
+  done
+
+  if [[ "${current}" == 'alacritty' ]] && [[ "${new}" == 'kitty' ]]; then
+    replacements ${alacritty} ${alacritty_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
+  elif [[ "${current}" == 'alacritty' ]] && [[ "${new}" == 'wezterm' ]]; then
+    replacements ${alacritty} ${alacritty_ranger} ${wezterm} ${wezterm_ranger} ${current} ${new}
+  elif [[ "${current}" == 'kitty' ]] && [[ "${new}" == 'alacritty' ]]; then
+    replacements ${kitty} ${kitty_ranger} ${alacritty} ${alacritty_ranger} ${current} ${new}
+  elif [[ "${current}" == 'kitty' ]] && [[ "${new}" == 'wezterm' ]]; then
+    replacements ${kitty} ${kitty_ranger} ${wezterm} ${wezterm_ranger} ${current} ${new}
+  elif [[ "${current}" == 'wezterm' ]] && [[ "${new}" == 'alacritty' ]]; then
+    replacements ${wezterm} ${wezterm_ranger} ${alacritty} ${alacritty_ranger} ${current} ${new}
+  elif [[ "${current}" == 'wezterm' ]] && [[ "${new}" == 'kitty' ]]; then
+    replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
+  fi
+
+  unset dotfiles i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
 }
 
 mkcd() {
@@ -41,22 +131,24 @@ mkcd() {
   cd "${1}"
 }
 
-cup() {
-  checkupdates
-  if [[ $? -eq 0 ]]; then
-    echo
-    read "yn?Do you want to update?(y/n): "
-    case "${yn}" in
-    [yY])
-      paru -Syu
-      ;;
-    esac
+if [[ $(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Arch Linux' ]]; then
+  cup() {
+    checkupdates
+    if [[ $? -eq 0 ]]; then
+      echo
+      read "yn?Do you want to update?(y/n): "
+      case "${yn}" in
+      [yY])
+        paru -Syu
+        ;;
+      esac
 
-    return 0
-  else
-    return 1
-  fi
-}
+      return 0
+    else
+      return 1
+    fi
+  }
+fi
 
 bootusb() {
   if [[ $# -eq 0 ]] || [[ $# -eq 1 ]]; then
@@ -66,23 +158,18 @@ bootusb() {
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read "yn?実行しますか？(y/n): "
     case "${yn}" in
-    [yY]) sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress ;;
-    [nN]) return 1 ;;
+    [yY])
+      sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
+      ;;
+    [nN])
+      return 1
+      ;;
     esac
   fi
 }
 
 raspi-backup() {
   sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"
-}
-
-netreload() {
-  nic_name=$(ip link | grep '2: ' | awk '{print $2}' | cut -d ':' -f 1)
-
-  sudo nmcli connection down "${nic_name}"
-  sudo nmcli connection up "${nic_name}"
-
-  unset nic_name
 }
 
 tofish() {
@@ -112,5 +199,5 @@ authycheck() {
 }
 
 chpwd() {
-  [[ $(pwd) != "${OLDPWD}" ]] && lsd -A
+  [[ $(pwd) != "${OLDPWD}" ]] && lsd -AF
 }
