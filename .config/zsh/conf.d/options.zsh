@@ -19,6 +19,5 @@ setopt hist_reduce_blanks
 setopt correct
 # If directory already in stack not add
 setopt pushd_ignore_dups
-
 # Disable terminal lock
 setopt no_flow_control

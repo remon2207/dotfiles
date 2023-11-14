@@ -191,13 +191,20 @@ tofish() {
 }
 
 authycheck() {
-  version_number=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
+  result=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq)
+  revision_number=$(echo "${result}" | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
+  version_number=$(echo "${result}" | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')
 
-  echo "revision: ${version_number}"
+  echo "revision: ${revision_number}"
+  echo "version: ${version_number}"
 
-  unset version_number
+  unset result revision_number version_number
 }
 
 chpwd() {
-  [[ $(pwd) != "${OLDPWD}" ]] && lsd -AF
+  [[ $(pwd) != "${OLDPWD}" ]] && lsd -AF -I .git
+}
+
+psag() {
+  ps auxf | rg "${1}"
 }

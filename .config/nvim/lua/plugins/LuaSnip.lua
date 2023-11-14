@@ -240,3 +240,13 @@ ls.add_snippets('json', {
     t({ '', '}' }),
   }),
 })
+
+ls.add_snippets('sh', {
+  s('init', {
+    t({ '#!/usr/bin/env bash' }),
+    t({ '', '' }),
+    t({ '', 'set -eu' }),
+    t({ '', '' }),
+    t({ '', '' }),
+  }),
+})

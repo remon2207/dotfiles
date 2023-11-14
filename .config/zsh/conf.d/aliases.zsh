@@ -45,7 +45,6 @@ alias gacp="git add . && git commit -m \"update $(date '+%Y/%m/%d %H:%M:%S')\" &
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
 alias psa='ps auxf'
-alias psag='ps auxf | rg -iN'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
 alias sysoff='sudo systemctl poweroff'
@@ -103,13 +102,13 @@ fi
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd -AlF'
-  alias la='lsd -AF'
+  alias ll='lsd -AlF -I .git'
+  alias la='lsd -AF -I .git'
   alias sl='lsd'
 else
   alias ls='ls --color=auto'
-  alias ll='ls -AlF --color=auto'
-  alias la='ls -AF --color=auto'
+  alias ll='ls -AlF --color=auto -I .git'
+  alias la='ls -AF --color=auto -I .git'
   alias sl='ls --color=auto'
 fi
 
