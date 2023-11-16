@@ -88,14 +88,16 @@ EOF
   wezterm_ranger='bindsym $mod+e exec --no-startup-id wezterm -e ranger'
 
   replacements() {
-    sd "^${1}" "# ${1}" "${i3_conf}"
-    sd "^${2}" "# ${2}" "${i3_conf}"
+    sd -s "${1}" "# ${1}" "${i3_conf}"
+    sd -s "${2}" "# ${2}" "${i3_conf}"
 
-    sd "^# ${3}" "${3}" "${i3_conf}"
-    sd "^# ${4}" "${4}" "${i3_conf}"
+    sd -s "# ${3}" "${3}" "${i3_conf}"
+    sd -s "# ${4}" "${4}" "${i3_conf}"
 
     sd "^Exec=${5}" "# Exec=${5}" "${bghtop}"
     sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
+
+    exit
   }
 
   while getopts 'c:n:' OPT; do
