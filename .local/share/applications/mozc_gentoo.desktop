@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Mozc config
+Path=/usr/libexec/mozc/
+Exec=./mozc_tool --mode config_dialog
+Terminal=false
