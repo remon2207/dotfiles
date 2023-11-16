@@ -9,7 +9,7 @@ HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 
-is_arch="$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+is_arch=$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e

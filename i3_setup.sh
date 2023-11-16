@@ -6,10 +6,10 @@ echo '======================='
 echo 'start!!!'
 echo '======================='
 
-current_dir="$(
+current_dir=$(
   cd "$(dirname "${0}")"
   pwd
-)"
+)
 home_symbolic=(
   '.bash_profile'
   '.bashrc'
