@@ -3,6 +3,7 @@ alias dc='cd'
 alias e='exit'
 alias :q='exit'
 alias c='clear'
+alias sudo='sudo '
 alias rm='rm -rf'
 alias mkdir='mkdir -p'
 alias dot="cd ${HOME}/ghq/github.com/remon2207/dotfiles"
@@ -89,6 +90,7 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
+alias emergeclean='sudo emerge --ask --depclean'
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
@@ -118,7 +120,7 @@ if type nvim &> /dev/null; then
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
-  alias killstartup='killall Discord slack'
+  alias killstartup='killall Discord slack &> /dev/null'
   alias b='bluetoothctl'
 else
   alias x='startx'
