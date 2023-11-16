@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id=$(ps auxf | grep -i $1 | awk '{print $2}' | head -n 1)
+  ps_id="$(ps auxf | rg ${1} | awk '{print $2}' | head -n 1)"
 
   kill ${ps_id}
 
@@ -131,7 +131,7 @@ mkcd() {
   cd "${1}"
 }
 
-if [[ $(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Arch Linux' ]]; then
+if [[ "${isArch}" == 'Arch Linux' ]]; then
   cup() {
     checkupdates
     if [[ $? -eq 0 ]]; then
@@ -151,10 +151,10 @@ if [[ $(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Arch Linux
 fi
 
 bootusb() {
-  if [[ $# -eq 0 ]] || [[ $# -eq 1 ]]; then
+  if [[ ${#} -eq 0 ]] || [[ ${#} -eq 1 ]]; then
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
     return 1
-  elif [[ $# -eq 2 ]]; then
+  elif [[ ${#} -eq 2 ]]; then
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read "yn?実行しますか？(y/n): "
     case "${yn}" in
@@ -175,25 +175,25 @@ raspi-backup() {
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  startline=$(($(cat "${HOME}/.zshrc" | rg -n 'load fish' | cut -d ':' -f 1) + 1))
+  startline="$(($(cat ${HOME}/.zshrc | rg -n 'load fish' | cut -d ':' -f 1) + 1))"
 
-  endline=$(cat "${HOME}/.zshrc" | wc -l)
+  endline="$(cat ${HOME}/.zshrc | wc -l)"
 
-  sed -i "${startline},"${endline}"s/^# //" "${dotfiles}/.zshrc"
+  sed -i "${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
   sed -i '2s/^/# /' "${dotfiles}/.tmux.conf"
   sed -i '3s/^# //' "${dotfiles}/.tmux.conf"
 
   unset dotfiles startline endline
 
-  if [[ $? -eq 0 ]]; then
+  if [[ ${?} -eq 0 ]]; then
     exit
   fi
 }
 
 authycheck() {
-  result=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq)
-  revision_number=$(echo "${result}" | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
-  version_number=$(echo "${result}" | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')
+  result="$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq)"
+  revision_number="$(echo ${result} | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')"
+  version_number="$(echo ${result} | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')"
 
   echo "revision: ${revision_number}"
   echo "version: ${version_number}"
@@ -202,7 +202,7 @@ authycheck() {
 }
 
 chpwd() {
-  [[ $(pwd) != "${OLDPWD}" ]] && lsd -AF -I .git
+  [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I .git
 }
 
 psag() {

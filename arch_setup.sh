@@ -7,7 +7,7 @@ echo 'start!!!'
 echo '======================='
 
 paru_install() {
-  pkgname='paru-bin'
+  local pkgname='paru-bin'
   git clone "https://aur.archlinux.org/${pkgname}.git"
   cd "${pkgname}"
   makepkg -si --noconfirm --needed
@@ -34,7 +34,7 @@ aur_install() {
 psd_settings() {
   vivaldi-stable
   psd
-  sed -i 's/^#BROWSERS=()/BROWSERS=(vivaldi)/' "${HOME}/.config/psd/psd.conf"
+  sed -i 's/^#\(BROWSERS=(\).*/\1vivaldi)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
 }
 
