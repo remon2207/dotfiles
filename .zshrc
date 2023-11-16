@@ -1,9 +1,14 @@
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-autoload -Uz compinit promptinit
-compinit
-promptinit
-prompt gentoo
+if [[ $(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Gentoo Linux' ]]; then
+  autoload -Uz compinit promptinit
+  compinit
+  promptinit
+  prompt gentoo
+else
+  autoload -Uz compinit
+  compinit
+fi
 
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
