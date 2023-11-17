@@ -210,3 +210,8 @@ chpwd() {
 psag() {
   ps auxf | rg "${1}"
 }
+
+shtouch() {
+  touch "${1}".sh
+  chmod +x "${_}"
+}
