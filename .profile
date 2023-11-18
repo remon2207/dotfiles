@@ -14,7 +14,7 @@ fi
 export FZF_CTRL_T_COMMAND="fd --hidden -t f -E '.git' -E '.cache'"
 export FZF_ALT_C_COMMAND="fd --hidden -t d -E '.git' -E '.cache'"
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
---height 40% --layout reverse --border --no-mouse \
+--height 40% --layout reverse --no-mouse \
 --color bg+:#073642,spinner:#2aa198,hl:#268bd2 \
 --color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"

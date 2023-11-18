@@ -104,7 +104,7 @@ if [[ "${is_arch}" == 'Arch Linux' ]]; then
 fi
 
 if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
-  alias emergeclean='sudo emerge --ask --depclean'
+  alias pkgclean='sudo emerge --ask --depclean'
   alias pkgupgrade='sudo bash -c "emerge-webrsync && emaint sync -a && emerge -avuDN @world"'
 fi
 
