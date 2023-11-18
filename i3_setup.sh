@@ -11,8 +11,6 @@ current_dir=$(
   pwd
 )
 home_symbolic=(
-  '.bash_profile'
-  '.bashrc'
   '.gtkrc-2.0'
   '.profile'
   '.tmux.conf'
@@ -43,11 +41,6 @@ conf_symbolic=(
   'wezterm'
   'zsh'
 )
-# desktop_entry=(
-#   'bghtop.desktop'
-#   'lazydocker.desktop'
-#   'mozc.desktop'
-# )
 desktop_entry=(
   'bghtop.desktop'
   'mozc.desktop'
