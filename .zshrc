@@ -1,6 +1,6 @@
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-if [[ $(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Gentoo Linux' ]]; then
+if [[ $(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Gentoo Linux' ]]; then
   autoload -Uz compinit promptinit
   compinit
   promptinit
@@ -12,9 +12,10 @@ fi
 
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
+# shellcheck disable=SC2034
 SAVEHIST=100000
 
-is_arch=$(grep '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
+is_arch=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
 
 # keybind
 bindkey -e
