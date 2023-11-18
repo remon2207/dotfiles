@@ -1,6 +1,9 @@
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-if [[ $(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}') == 'Gentoo Linux' ]]; then
+is_arch=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
+is_gentoo=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
+
+if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
   autoload -Uz compinit promptinit
   compinit
   promptinit
@@ -15,8 +18,6 @@ HISTSIZE=100000
 # shellcheck disable=SC2034
 SAVEHIST=100000
 
-is_arch=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
-
 # keybind
 bindkey -e
 
@@ -26,6 +27,7 @@ source "${HOME}/.config/zsh/conf.d/options.zsh"
 source "${HOME}/.config/zsh/conf.d/styles.zsh"
 source "${HOME}/.config/zsh/conf.d/functions.zsh"
 source "${HOME}/.config/zsh/conf.d/aliases.zsh"
+unset is_gentoo
 
 eval "$(starship init zsh)"
 

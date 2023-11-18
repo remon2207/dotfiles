@@ -57,7 +57,8 @@ alias sz="source ${HOME}/.zshrc"
 alias mpdstop='mpd --kill'
 alias repolybar='killall polybar &> /dev/null; nohup polybar dp &> /dev/null &! nohup polybar dp2 &> /dev/null &! nohup polybar dvi &> /dev/null &! nohup polybar hdmi &> /dev/null &!'
 alias dls='sudo fdisk -l'
-alias setxset='xset r rate 250 60'
+alias setkeyrepeat='xset r rate 250 60'
+alias resetkeyrepeat='xset r rate'
 alias renetwork='sudo systemctl restart systemd-{networkd,resolved}.service'
 alias ipscan='sudo nmap -sP 192.168.1.0/24'
 alias status='sudo systemctl status'
@@ -89,18 +90,22 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias emergeclean='sudo emerge --ask --depclean'
-alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &!'
+alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall xautolock'
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
-  alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
+  alias pacclean='sudo pacman -Rns $(pacman -Qtdq)'
   alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"
   alias buildtemp="sudo sd '^BUILDDIR' '#BUILDDIR' /etc/makepkg.conf"
+fi
+
+if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
+  alias emergeclean='sudo emerge --ask --depclean'
+  alias pkgupgrade='sudo bash -c "emaint sync -a && emerge -avuDN @world"'
 fi
 
 if type lsd &> /dev/null; then
@@ -121,7 +126,7 @@ if type nvim &> /dev/null; then
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
-  alias killstartup='killall Discord slack &> /dev/null'
+  alias killstartup='killall Discord slack'
   alias b='bluetoothctl'
 else
   alias x='startx'
