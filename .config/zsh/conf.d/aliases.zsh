@@ -105,7 +105,7 @@ fi
 
 if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
   alias emergeclean='sudo emerge --ask --depclean'
-  alias pkgupgrade='sudo bash -c "emaint sync -a && emerge -avuDN @world"'
+  alias pkgupgrade='sudo bash -c "emerge-webrsync && emaint sync -a && emerge -avuDN @world"'
 fi
 
 if type lsd &> /dev/null; then
