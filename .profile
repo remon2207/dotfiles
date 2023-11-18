@@ -33,6 +33,8 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 
 export GLFW_IM_MODULE='ibus'
 
+export LESSHISTFILE='/dev/null'
+
 export TMPDIR='/tmp'
 
 export http_proxy='http://proxy.home:8080'
