@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=lazydocker
-Path=/usr/bin
-Exec=kitty -1 lazydocker
-Terminal=false

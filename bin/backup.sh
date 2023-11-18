@@ -12,3 +12,5 @@ fi
 if [[ -n $(ls "${videos_directory}") ]]; then
   cp -r "${HOME}/Videos/*" /mnt/share01/rh/videos/
 fi
+
+unset pictures_directory videos_directory
