@@ -17,6 +17,7 @@ home_symbolic=(
   '.xinitrc_gentoo'
   '.Xresources_gentoo'
   '.zshrc'
+  '.wgetrc'
   'commit.template'
 )
 conf_symbolic=(

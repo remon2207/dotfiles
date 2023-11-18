@@ -17,6 +17,7 @@ home_symbolic=(
   '.xinitrc_arch'
   '.Xresources_arch'
   '.zshrc'
+  '.wgetrc'
   'commit.template'
 )
 conf_symbolic=(
