@@ -51,7 +51,6 @@ alias kdf='kitty --debug-font-fallback'
 alias sysoff='sudo systemctl poweroff'
 alias sysre='sudo systemctl reboot'
 alias syssp='sudo systemctl suspend'
-alias bgp="nohup ${1} &> /dev/null"
 alias bashrc="nvim ${HOME}/.bashrc"
 alias zshrc="nvim ${HOME}/.zshrc"
 alias sz="source ${HOME}/.zshrc"
@@ -91,6 +90,8 @@ alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias emergeclean='sudo emerge --ask --depclean'
+alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &!'
+alias autosuspendoff='killall xautolock'
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
