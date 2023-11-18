@@ -181,9 +181,9 @@ tofish() {
 
   endline=$(cat ${HOME}/.zshrc | wc -l)
 
-  sed -i "${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
-  sed -i '2s/^/# /' "${dotfiles}/.tmux.conf"
-  sed -i '3s/^# //' "${dotfiles}/.tmux.conf"
+  sed -i -e "${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
+  sed -i -e '2s/^/# /' "${dotfiles}/.tmux.conf"
+  sed -i -e '3s/^# //' "${dotfiles}/.tmux.conf"
 
   unset dotfiles startline endline
 
