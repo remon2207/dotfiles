@@ -18,7 +18,6 @@ o.shiftwidth = 2
 -- Case insensitive
 o.ignorecase = true
 o.smartcase = true
-o.wrapscan = false
 -- Show number
 o.number = true
 -- Relative line
