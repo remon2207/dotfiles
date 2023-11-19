@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id="$(ps auxf | rg ${1} | awk '{print $2}' | head -n 1)"
+  ps_id="$(ps auxf | rg "${1}" | awk '{print $2}' | head -n 1)"
 
   kill ${ps_id}
 
@@ -177,9 +177,9 @@ raspi-backup() {
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  startline="$(("$(cat ${HOME}/.zshrc | rg -n 'load fish' | cut -d ':' -f 1)" + 1))"
+  startline="$(("$(cat "${HOME}/.zshrc" | rg -n 'load fish' | cut -d ':' -f 1)" + 1))"
 
-  endline="$(cat ${HOME}/.zshrc | wc -l)"
+  endline="$(cat "${HOME}/.zshrc" | wc -l)"
 
   sed -i -e "${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
   sed -i -e '2s/^/# /' "${dotfiles}/.tmux.conf"
@@ -204,7 +204,7 @@ authycheck() {
 }
 
 chpwd() {
-  [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I .git
+  [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I '.git'
 }
 
 psgrep() {

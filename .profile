@@ -21,7 +21,7 @@ export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
 
 export PAGER='bat'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export BAT_PAGER="less -RFI"
+export BAT_PAGER='less -RFI'
 export MANROFFOPT='-c'
 
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
