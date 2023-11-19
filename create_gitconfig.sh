@@ -4,6 +4,7 @@ set -eu
 
 usage() {
   cat << EOF
+USAGE:
   ${0} <OPTIONS>
 OPTIONS:
   -n    Username
