@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id="$(ps auxf | rg "${1}" | awk '{print $2}' | head -n 1)"
+  ps_id="$(ps aux | rg "${1}" | awk '{print $2}' | head -n 1)"
 
   kill ${ps_id}
 
@@ -208,7 +208,7 @@ chpwd() {
 }
 
 psgrep() {
-  ps aux | rg "${1}"
+  ps aux | rg -iN "${1}"
 }
 
 shtouch() {
