@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id=$(ps auxf | rg ${1} | awk '{print $2}' | head -n 1)
+  ps_id="$(ps auxf | rg ${1} | awk '{print $2}' | head -n 1)"
 
   kill ${ps_id}
 
@@ -177,9 +177,9 @@ raspi-backup() {
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  startline=$(($(cat ${HOME}/.zshrc | rg -n 'load fish' | cut -d ':' -f 1) + 1))
+  startline="$(("$(cat ${HOME}/.zshrc | rg -n 'load fish' | cut -d ':' -f 1)" + 1))"
 
-  endline=$(cat ${HOME}/.zshrc | wc -l)
+  endline="$(cat ${HOME}/.zshrc | wc -l)"
 
   sed -i -e "${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
   sed -i -e '2s/^/# /' "${dotfiles}/.tmux.conf"
@@ -193,9 +193,9 @@ tofish() {
 }
 
 authycheck() {
-  result=$(curl -sL https://api.snapcraft.io/api/v1/snaps/search\?q=authy | jq)
-  revision_number=$(echo "${result}" | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')
-  version_number=$(echo "${result}" | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')
+  result="$(curl -sL https://api.snapcraft.io/api/v1/snaps/search?q=authy | jq)"
+  revision_number="$(echo "${result}" | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')"
+  version_number="$(echo "${result}" | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')"
 
   echo "revision: ${revision_number}"
   echo "version: ${version_number}"
@@ -204,7 +204,7 @@ authycheck() {
 }
 
 chpwd() {
-  [[ $(pwd) != "${OLDPWD}" ]] && lsd -AF -I .git
+  [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I .git
 }
 
 psag() {

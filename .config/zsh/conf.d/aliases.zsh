@@ -78,7 +78,7 @@ alias manex='tldr'
 alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
 alias repos='ghq list -p | fzf'
-alias repo='cd $(repos)'
+alias repo='cd "$(repos)"'
 alias fontlist='fc-list | fzf'
 alias t='tmux'
 alias rg='rg -iN'
@@ -96,7 +96,7 @@ alias autosuspendoff='killall xautolock'
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
-  alias pacclean='sudo pacman -Rns $(pacman -Qtdq)'
+  alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
   alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
   alias nobuildtemp="sudo sd '^#BUILDDIR' 'BUILDDIR' /etc/makepkg.conf"

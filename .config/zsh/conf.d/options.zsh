@@ -1,23 +1,32 @@
-#setopt extendedglob nomatch notify
-# Japanese language support
+# 8bit文字を有効にする
 setopt print_eight_bit
-# TAB completion
+# cdした際のディレクトリをディレクトリスタックへ自動追加
 setopt auto_pushd
-# move directory without cd command
+# ディレクトリ名のみで移動する
 setopt auto_cd
-# share history
+# 履歴を複数の端末で共有
 setopt share_history
-# If same as last time not add
+# 直前と同じコマンドラインはヒストリに追加しない
 setopt hist_ignore_dups
-# not add duplication
+# 重複したコマンドをヒストリに追加しない
 setopt hist_ignore_all_dups
-# ignore space
+# コマンドラインの先頭に空白があれば履歴に残さない
 setopt hist_ignore_space
-# extra space is reduce
+# 余分な空白は詰めて履歴に残る
 setopt hist_reduce_blanks
-# Correct spelling of commands
+# コマンドのスペルチェックする
 setopt correct
-# If directory already in stack not add
+# コマンドラインのすべてのスペルチェックする
+setopt correct_all
+# ディレクトリスタックへの追加の際に重複させない
 setopt pushd_ignore_dups
-# Disable terminal lock
+# フローコントロールを無効にする
 setopt no_flow_control
+# bgプロセスの状態変化を即時に知らせる
+setopt notify
+# ワイルドカード展開を使用する
+setopt extendedglob
+# ワイルドカードをコマンドとして使用する
+setopt nomatch
+# '?' '&' などをエスケープ無しで使用する
+setopt nonomatch

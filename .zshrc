@@ -1,7 +1,7 @@
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-is_arch=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
-is_gentoo=$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')
+is_arch="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+is_gentoo="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
 
 if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
   autoload -Uz compinit promptinit
