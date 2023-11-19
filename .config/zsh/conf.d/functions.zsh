@@ -207,8 +207,8 @@ chpwd() {
   [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I .git
 }
 
-psag() {
-  ps auxf | rg "${1}"
+psgrep() {
+  ps aux | rg "${1}"
 }
 
 shtouch() {
