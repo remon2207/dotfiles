@@ -92,6 +92,7 @@ alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias autosuspend="nohup xautolock -time 60 -locker 'systemctl suspend' &> /dev/null &!"
 alias autosuspendoff='killall xautolock'
+alias fd="fd -E '/mnt'"
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; sudo pacman -Syy'
