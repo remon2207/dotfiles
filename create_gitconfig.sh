@@ -17,13 +17,17 @@ if [[ ${#} -eq 0 ]] || [ ${#} -ne 4 ] || [[ "${1}" == '-h' ]] || [[ "${1}" == '-
   exit 1
 fi
 
-while getopts 'n:m:' opt; do
+while getopts 'n:m:h' opt; do
   case "${opt}" in
   'n')
     readonly NAME="${OPTARG}"
     ;;
   'm')
     readonly EMAIL="${OPTARG}"
+    ;;
+  'h')
+    usage
+    exit 1
     ;;
   '*')
     echo 'Not a valid option'
