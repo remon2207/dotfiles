@@ -12,12 +12,13 @@ changebrowser() {
 USAGE:
   changebrowser <OPTIONS>
 OPTIONS:
-  -c    Current browser
-  -n    New browser
+  -c        Current browser
+  -n        New browser
+  -h        See Help
 EOF
   }
 
-  if [[ ${#} -ne 4 ]] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+  if [[ ${#} -ne 4 ]]; then
     usage
     return 1
   fi
@@ -33,13 +34,17 @@ EOF
     sd -s "${2}" "${4}" "${alacritty_conf}"
   }
 
-  while getopts 'c:n:' OPT; do
-    case "${OPT}" in
+  while getopts 'c:n:h' opt; do
+    case "${opt}" in
     'c')
       current="${OPTARG}"
       ;;
     'n')
       new="${OPTARG}"
+      ;;
+    'h')
+      usage
+      exit 0
       ;;
     esac
   done
@@ -67,12 +72,13 @@ changeterm() {
 USAGE:
   changeterm <OPTIONS>
 OPTIONS:
-  -c    Current terminal
-  -n    new terminal
+  -c        Current terminal
+  -n        new terminal
+  -h        See Help
 EOF
   }
 
-  if [[ ${#} -ne 4 ]] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+  if [[ ${#} -ne 4 ]]; then
     usage
     return 1
   fi
@@ -100,13 +106,17 @@ EOF
     exit
   }
 
-  while getopts 'c:n:' OPT; do
-    case "${OPT}" in
+  while getopts 'c:n:h' opt; do
+    case "${opt}" in
     'c')
       current="${OPTARG}"
       ;;
     'n')
       new="${OPTARG}"
+      ;;
+    'h')
+      usage
+      exit 0
       ;;
     esac
   done
