@@ -7,12 +7,13 @@ usage() {
 USAGE:
   ${0} <OPTIONS>
 OPTIONS:
-  -n    Username
-  -e    Email of User
+  -n        Username
+  -e        Email of User
+  -h        See Help
 EOF
 }
 
-if [[ ${#} -eq 0 ]] || [ ${#} -ne 4 ] || [[ "${1}" == '-h' ]] || [[ "${1}" == '--help' ]]; then
+if [[ ${#} -ne 4 ]]; then
   usage
   exit 1
 fi
@@ -27,10 +28,10 @@ while getopts 'n:m:h' opt; do
     ;;
   'h')
     usage
-    exit 1
+    exit 0
     ;;
   '*')
-    echo 'Not a valid option'
+    usage
     exit 1
     ;;
   esac
