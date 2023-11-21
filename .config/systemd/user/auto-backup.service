@@ -1,8 +1,8 @@
 [Unit]
-Description=Pictures and Videos, ~/.ssh/config to samba
+Description=Pictures and Videos, .ssh to nfs
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/backup.sh
+ExecStart=/home/remon/bin/backup.sh
