@@ -30,7 +30,7 @@ aur_install() {
 psd_settings() {
   vivaldi-stable
   psd
-  sed -i 's/^#\(BROWSERS=(\).*/\1vivaldi)/' "${HOME}/.config/psd/psd.conf"
+  sed -i -e 's/^#\(BROWSERS=(\).*/\1vivaldi)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
 }
 
