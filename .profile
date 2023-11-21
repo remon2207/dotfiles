@@ -5,10 +5,12 @@ if [[ -n "${DISPLAY}" ]]; then
   export EDITOR='nvim'
   export VISUAL='nvim'
   export SUDO_EDITOR='nvim'
+  export SYSTEMD_EDITOR='nvim'
 else
   export EDITOR='vi'
   export VISUAL='vi'
   export SUDO_EDITOR='vi'
+  export SYSTEMD_EDITOR='vi'
 fi
 
 export FZF_CTRL_T_COMMAND="fd --hidden -t f -E '.git' -E '.cache'"
