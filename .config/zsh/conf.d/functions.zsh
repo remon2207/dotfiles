@@ -214,4 +214,5 @@ psgrep() {
 shtouch() {
   touch "${1}".sh
   chmod +x "${_}"
+  nvim "${_}"
 }
