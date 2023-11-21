@@ -596,3 +596,5 @@
 #
 #active_window_border = red
 #
+
+# vim: set ft=conf :

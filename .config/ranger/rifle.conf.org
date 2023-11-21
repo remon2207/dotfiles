@@ -1,5 +1,3 @@
-# vim: ft=cfg
-#
 # This is the configuration file of "rifle", ranger's file executor/opener.
 # Each line consists of conditions and a command.  For each line the conditions
 # are checked and if they are met, the respective command is run.
@@ -282,3 +280,5 @@ mime application/x-executable = "$1"
 # Move the file to trash using trash-cli.
 label trash, has trash-put = trash-put -- "$@"
 label trash = mkdir -p -- ${XDG_DATA_DIR:-$HOME/.ranger}/ranger-trash; mv -- "$@" ${XDG_DATA_DIR:-$HOME/.ranger}/ranger-trash
+
+# vim: set ft=cfg :

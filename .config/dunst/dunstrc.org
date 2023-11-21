@@ -451,4 +451,4 @@
 #    appname = "some_volume_notifiers"
 #    set_stack_tag = "volume"
 #
-# vim: ft=cfg
+# vim: set ft=cfg :

@@ -909,3 +909,5 @@
 
   # Highlight window damage information.
   #highlight_damage: false
+
+# vim: set ft=conf :

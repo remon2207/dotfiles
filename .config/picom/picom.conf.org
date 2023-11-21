@@ -426,3 +426,5 @@ wintypes:
   popup_menu = { opacity = 0.8; }
   dropdown_menu = { opacity = 0.8; }
 };
+
+# vim: set ft=conf :
