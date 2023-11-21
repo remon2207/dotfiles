@@ -1,0 +1,94 @@
+// vim: set ts=2:sw=2:et :
+{
+  "border": "pixel",
+  "current_border_width": 2,
+  "floating": "auto_off",
+  "geometry": {
+    "height": 1026,
+    "width": 934,
+    "x": 1937,
+    "y": 17
+  },
+  "marks": [],
+  "name": "random - vim-jp - Slack",
+  "percent": 0.5,
+  "swallows": [
+    {
+      "class": "^Slack$",
+      "instance": "^slack$",
+      "machine": "^gentoo$",
+      "title": "^random\\ \\-\\ vim\\-jp\\ \\-\\ Slack$",
+      "window_role": "^browser\\-window$"
+    }
+  ],
+  "type": "con"
+}
+
+{
+  "border": "normal",
+  "floating": "auto_off",
+  "layout": "splitv",
+  "marks": [],
+  "percent": 0.5,
+  "type": "con",
+  "nodes": [
+    {
+      "border": "normal",
+      "floating": "auto_off",
+      "layout": "splith",
+      "marks": [],
+      "percent": 0.5,
+      "type": "con",
+      "nodes": [
+        {
+          "border": "pixel",
+          "current_border_width": 2,
+          "floating": "auto_off",
+          "geometry": {
+            "height": 1026,
+            "width": 1886,
+            "x": 1937,
+            "y": 17
+          },
+          "marks": [],
+          "name": "#雑談💬 | Lespedeza - Discord",
+          "percent": 1,
+          "swallows": [
+            {
+              "class": "^discord$",
+              "instance": "^discord$",
+              "machine": "^gentoo$",
+              "title": "^\\#雑談💬\\ \\|\\ Lespedeza\\ \\-\\ Discord$",
+              "window_role": "^browser\\-window$"
+            }
+          ],
+          "type": "con"
+        }
+      ]
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1026,
+        "width": 1886,
+        "x": 0,
+        "y": 0
+      },
+      "marks": [],
+      "name": "htop",
+      "percent": 0.5,
+      "swallows": [
+        {
+          "class": "^kitty$",
+          "instance": "^kitty$",
+          "machine": "^gentoo$",
+          "title": "^htop$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}
+
