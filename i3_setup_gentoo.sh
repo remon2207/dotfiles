@@ -2,10 +2,6 @@
 
 set -eu
 
-echo '======================='
-echo 'start!!!'
-echo '======================='
-
 current_dir=$(
   cd "$(dirname "${0}")"
   pwd
@@ -89,7 +85,3 @@ main() {
 main "${@}"
 
 chsh -s "$(which zsh)"
-
-echo '======================='
-echo 'done!!!'
-echo '======================='

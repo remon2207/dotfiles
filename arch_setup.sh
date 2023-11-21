@@ -2,15 +2,11 @@
 
 set -eu
 
-echo '======================='
-echo 'start!!!'
-echo '======================='
-
 paru_install() {
   local pkgname='paru-bin'
   git clone "https://aur.archlinux.org/${pkgname}.git"
   cd "${pkgname}"
-  makepkg -si --noconfirm --needed
+  makepkg -si --needed
   cd "${HOME}"
   rm -rf "${pkgname}"
 
@@ -45,7 +41,3 @@ main() {
 }
 
 main "${@}"
-
-echo '======================='
-echo 'done!!!'
-echo '======================='
