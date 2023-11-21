@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cd $(readlink -f .)
-$(which lazygit) "$@"
+cd "$(readlink -f .)" || return 1
+$(which lazygit) "${@}"
