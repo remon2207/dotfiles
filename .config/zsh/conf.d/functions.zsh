@@ -138,9 +138,9 @@ if [[ "${isArch}" == 'Arch Linux' ]]; then
     checkupdates
     if [[ ${?} -eq 0 ]]; then
       echo
-      read "yn?Do you want to update?(y/n): "
+      read 'yn?Do you want to update?(y/n): '
       case "${yn}" in
-      [yY])
+      '[yY]')
         paru -Syu
         ;;
       esac
@@ -158,12 +158,12 @@ bootusb() {
     return 1
   elif [[ ${#} -eq 2 ]]; then
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
-    read "yn?実行しますか？(y/n): "
+    read 'yn?実行しますか？(y/n): '
     case "${yn}" in
-    [yY])
+    '[yY]')
       sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
       ;;
-    [nN])
+    '[nN]')
       return 1
       ;;
     esac
@@ -187,9 +187,7 @@ tofish() {
 
   unset dotfiles startline endline
 
-  if [[ ${?} -eq 0 ]]; then
-    exit
-  fi
+  [[ ${?} -eq 0 ]] && exit
 }
 
 authycheck() {
@@ -212,13 +210,13 @@ psgrep() {
 }
 
 shtouch() {
-  touch "${1}".sh
+  touch "${1}.sh"
   chmod +x "${_}"
   nvim "${_}"
 }
 
 nfind() {
-  find "${@}" -not -path "./.cache/*"
+  find "${@}" -not -path './.cache/*'
 }
 
 sfind() {

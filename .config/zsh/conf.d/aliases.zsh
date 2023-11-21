@@ -77,7 +77,7 @@ alias manex='tldr'
 alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
 alias repo='cd "$(ghq list -p | fzf)"'
-alias fontlist="fc-list | fzf | awk -F '[:,]' '{print \$2}' | cut -d ' ' -f 2-"
+alias fontlist='fc-list | fzf | awk -F "[:,]" "{print \$2}" | cut -d " " -f 2-'
 alias t='tmux'
 alias rg='rg -iN'
 alias r='ranger'
@@ -88,18 +88,18 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias autosuspend="nohup xautolock -time 60 -locker 'systemctl suspend' &> /dev/null &!"
-alias autosuspendoff='killall xautolock'
+alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &!'
+alias autosuspendoff='killall "xautolock"'
 alias fd='fd -HE "/mnt" -E "${HOME}/.cache"'
 
 if [[ "${is_arch}" == 'Arch Linux' ]]; then
-  alias mirrorsync="sudo reflector --country 'Japan' --age 24 --protocol 'https' --sort 'rate' --save '/etc/pacman.d/mirrorlist; sudo pacman -Syy'"
+  alias mirrorsync='sudo reflector --country "Japan" --age 24 --protocol "https" --sort "rate" --save "/etc/pacman.d/mirrorlist; sudo pacman -Syy"'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
   alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
-  alias nobuildtemp="sudo sd '^#(BUILDDIR)' '\$1' /etc/makepkg.conf"
-  alias buildtemp="sudo sd '^(BUILDDIR)' '#\$1' /etc/makepkg.conf"
+  alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
+  alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
 fi
 
 if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
@@ -109,13 +109,13 @@ fi
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll="lsd -AlF -I '.git'"
-  alias la="lsd -AF -I '.git'"
+  alias ll='lsd -AlF -I ".git"'
+  alias la='lsd -AF -I ".git"'
   alias sl='lsd'
 else
   alias ls='ls --color=auto'
-  alias ll="ls -AlF --color=auto -I '.git'"
-  alias la="ls -AF --color=auto -I '.git'"
+  alias ll='ls -AlF --color=auto -I ".git"'
+  alias la='ls -AF --color=auto -I ".git"'
   alias sl='ls --color=auto'
 fi
 
