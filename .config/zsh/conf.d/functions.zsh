@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id="$(ps aux | rg "${1}" | awk '{print $2}' | head -n 1)"
+  ps_id="$(ps aux | rg -iN "${1}" | awk '{print $2}' | head -n 1)"
 
   kill ${ps_id}
 
@@ -130,7 +130,7 @@ EOF
 
 mkcd() {
   mkdir -p "${1}"
-  cd "${1}"
+  cd "${_}"
 }
 
 if [[ "${isArch}" == 'Arch Linux' ]]; then
@@ -215,4 +215,12 @@ shtouch() {
   touch "${1}".sh
   chmod +x "${_}"
   nvim "${_}"
+}
+
+nfind() {
+  find "${@}" -not -path "./.cache/*"
+}
+
+sfind() {
+  sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \)
 }
