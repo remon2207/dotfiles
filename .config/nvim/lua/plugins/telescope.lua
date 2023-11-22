@@ -4,9 +4,9 @@ if not status then
 end
 
 local a = require('telescope.actions')
-
 local nvim_set_hl = vim.api.nvim_set_hl
 local fb_actions = telescope.extensions.file_browser.actions
+local opts = { noremap = true, silent = true }
 
 local defaults = {
   initial_mode = 'normal',
@@ -36,7 +36,7 @@ local defaults = {
       ['c'] = false,
       ['h'] = fb_actions.goto_parent_dir,
       ['d'] = false,
-      ['D'] = fb_actions.remove
+      ['D'] = fb_actions.remove,
     },
   },
 }
@@ -45,6 +45,7 @@ local extensions = {
   file_browser = {
     hijack_netrw = true,
     hidden = true,
+    follow_symlinks = true,
   },
 }
 
@@ -53,12 +54,9 @@ telescope.setup({
   extensions = extensions,
 })
 
-local opts = { noremap = true, silent = true }
-
 telescope.load_extension('file_browser')
 
 vim.keymap.set('n', '<C-n>', '<Cmd>Telescope file_browser<CR>', opts)
-
 vim.keymap.set('n', '<Leader>fg', '<Cmd>Telescope live_grep<CR>', opts)
 vim.keymap.set('n', '<Leader>fb', '<Cmd>Telescope buffers <CR>', opts)
 vim.keymap.set('n', '<Leader>fh', '<Cmd>Telescope help_tags<CR>', opts)
