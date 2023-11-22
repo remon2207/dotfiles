@@ -190,9 +190,7 @@ bootusb() {
   esac
 }
 
-raspi-backup() {
-  sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"
-}
+raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
@@ -221,24 +219,8 @@ authycheck() {
   unset result revision_number version_number
 }
 
-chpwd() {
-  [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I '.git'
-}
-
-psgrep() {
-  ps aux | rg -iN "${1}"
-}
-
-shtouch() {
-  touch "${1}.sh"
-  chmod +x "${_}"
-  nvim "${_}"
-}
-
-nfind() {
-  find "${@}" -not -path './.cache/*'
-}
-
-sfind() {
-  sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \)
-}
+chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I '.git'; }
+psgrep() { ps aux | rg -iN "${1}"; }
+shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
+nfind() { find "${@}" -not -path './.cache/*'; }
+sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }

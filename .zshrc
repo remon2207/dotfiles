@@ -37,9 +37,7 @@ unset distribution_name
 
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 
-shellstart() {
-  la
-}
+shellstart() { la; }
 
 shellstart
 
