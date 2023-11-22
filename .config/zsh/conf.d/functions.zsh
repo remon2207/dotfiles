@@ -130,10 +130,6 @@ EOF
   unset dotfiles i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
 }
 
-mkcd() {
-  mkdir -p "${1}" && cd "${_}"
-}
-
 if [[ "${distribution_name}" == 'Arch Linux' ]]; then
   cup() {
     checkupdates
@@ -152,22 +148,6 @@ if [[ "${distribution_name}" == 'Arch Linux' ]]; then
 fi
 
 bootusb() {
-  if [[ ${#} -eq 0 ]] || [[ ${#} -eq 1 ]]; then
-    echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
-    return 1
-  elif [[ ${#} -eq 2 ]]; then
-    echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
-    read 'yn?実行しますか？(y/n): '
-    case "${yn}" in
-    ['yY'])
-      sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
-      ;;
-    ['nN'])
-      return 1
-      ;;
-    esac
-  fi
-
   case "${#}" in
   0 | 1)
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
@@ -187,8 +167,6 @@ bootusb() {
     ;;
   esac
 }
-
-raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
@@ -217,6 +195,8 @@ authycheck() {
   unset result revision version
 }
 
+raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
+mkcd() { mkdir -p "${1}" && cd "${_}"; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }
 psgrep() { ps aux | rg -iN "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
