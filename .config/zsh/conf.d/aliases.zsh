@@ -41,7 +41,6 @@ alias gs='git status'
 alias gf='git fetch'
 alias gm='git merge'
 alias gd='git diff'
-alias nowpush="git add . && git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
 alias psa='ps aux'
