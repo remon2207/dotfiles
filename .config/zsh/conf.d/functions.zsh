@@ -195,6 +195,31 @@ authycheck() {
   unset result revision version
 }
 
+pkgupgrade() {
+  sudo emerge-webrsync
+  sudo emaint sync -a
+
+  while [[ ${?} -eq 1 ]]; do
+    i=1
+
+    sudo emaint sync -a
+    [[ ${?} -eq 0 ]] && break
+
+    while [[ ${i} -le 3 ]]; do
+      i="$((${i} + 1))"
+
+      sudo emaint sync -a
+      [[ ${?} -eq 0 ]] && break
+    done
+
+    sudo rm -rf /var/db/repos/gentoo/metadata/timestamp.x
+    sudo emaint sync -a
+  done
+
+  sudo emerge -avuDN @world
+  sudo emerge -a --depclean
+}
+
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 mkcd() { mkdir -p "${1}" && cd "${_}"; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }

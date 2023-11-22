@@ -113,7 +113,6 @@ case "${distribution_name}" in
   ;;
 'Gentoo Linux')
   alias pkgclean='sudo emerge --ask --depclean'
-  alias pkgupgrade='sudo bash -c "emerge-webrsync && emaint sync -a && emerge -avuDN @world && emerge --ask --depclean"'
   ;;
 esac
 
