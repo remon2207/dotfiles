@@ -20,22 +20,22 @@ SAVEHIST=100000
 # keybind
 bindkey -e
 
-source "${HOME}/.config/zsh/conf.d/term.zsh"
-source "${HOME}/.config/zsh/conf.d/zinit.zsh"
-source "${HOME}/.config/zsh/conf.d/options.zsh"
-source "${HOME}/.config/zsh/conf.d/styles.zsh"
-source "${HOME}/.config/zsh/conf.d/functions.zsh"
-source "${HOME}/.config/zsh/conf.d/aliases.zsh"
+. "${HOME}/.config/zsh/conf.d/term.zsh"
+. "${HOME}/.config/zsh/conf.d/zinit.zsh"
+. "${HOME}/.config/zsh/conf.d/options.zsh"
+. "${HOME}/.config/zsh/conf.d/styles.zsh"
+. "${HOME}/.config/zsh/conf.d/functions.zsh"
+. "${HOME}/.config/zsh/conf.d/aliases.zsh"
 
 eval "$(starship init zsh)"
 
 # shellcheck disable=SC1094
-[[ -f '/usr/share/fzf/key-bindings.zsh' ]] && source /usr/share/fzf/key-bindings.zsh
+[[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
-[[ "${distribution_name}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
+[[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
 unset distribution_name
 
-[[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
+# [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 
 shellstart() {
   la
