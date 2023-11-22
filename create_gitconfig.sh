@@ -27,7 +27,7 @@ while getopts 'n:m:h' opt; do
     readonly EMAIL="${OPTARG}"
     ;;
   'h')
-    usage
+    usage && exit 0
     ;;
   '*')
     usage && exit 1
