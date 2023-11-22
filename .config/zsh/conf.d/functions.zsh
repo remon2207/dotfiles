@@ -40,7 +40,7 @@ EOF
       new="${OPTARG}"
       ;;
     'h')
-      usage
+      usage && exit 0
       ;;
     esac
   done
@@ -108,7 +108,7 @@ EOF
       new="${OPTARG}"
       ;;
     'h')
-      usage
+      usage && exit 0
       ;;
     esac
   done
