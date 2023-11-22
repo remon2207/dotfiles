@@ -142,7 +142,6 @@ else
 fi
 
 if [[ "${TERM}" == "xterm-kitty" ]]; then
-  #alias ssh='kitty +kitten ssh'
-  alias ssh='echo "Please execute to other Terminal." && return 1 &> /dev/null'
-  alias c="printf '\033[2J\033[3J\033[1;1H'"
+  alias kittyssh='kitty +kitten ssh'
+  alias c='printf "\e[H\e[3J"'
 fi

@@ -16,8 +16,6 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 # コマンドのスペルチェックする
 setopt correct
-# コマンドラインのすべてのスペルチェックする
-setopt correct_all
 # ディレクトリスタックへの追加の際に重複させない
 setopt pushd_ignore_dups
 # フローコントロールを無効にする

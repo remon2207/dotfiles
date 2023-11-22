@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id="$(ps aux | rg -iN "${1}" | awk '{print $2}' | head -n 1)"
+  ps_id="$(ps aux | rg -iN "${1}" | awk 'NR==1 {print $2}')"
 
   kill ${ps_id}
 
@@ -142,11 +142,9 @@ if [[ "${distribution_name}" == 'Arch Linux' ]]; then
       read 'yn?Do you want to update?(y/n): '
       case "${yn}" in
       ['yY'])
-        paru -Syu
+        paru -Syu "${@}"
         ;;
       esac
-
-      return 0
     else
       return 1
     fi
@@ -209,17 +207,17 @@ tofish() {
 }
 
 authycheck() {
-  result="$(curl -sL https://api.snapcraft.io/api/v1/snaps/search?q=authy | jq)"
-  revision_number="$(echo "${result}" | rg 'revision' | sed 's/ //g' | awk -F '[":,]' '{print $4}')"
-  version_number="$(echo "${result}" | rg 'version' | sed 's/ //g' | awk -F '[":,]' '{print $5}')"
+  result="$(curl -sSLH 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
+  revision="$(echo "${result}" | rg 'revision' | awk -F '[ ":,]*' '{print $3}')"
+  version="$(echo "${result}" | rg 'version' | awk -F '[ ":]*' '{print $3}')"
 
-  echo "revision: ${revision_number}"
-  echo "version: ${version_number}"
+  echo "revision: ${revision}"
+  echo "version: ${version}"
 
-  unset result revision_number version_number
+  unset result revision version
 }
 
-chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AF -I '.git'; }
+chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }
 psgrep() { ps aux | rg -iN "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not -path './.cache/*'; }
