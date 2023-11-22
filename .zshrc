@@ -20,12 +20,12 @@ SAVEHIST=100000
 # keybind
 bindkey -e
 
-. "${HOME}/.config/zsh/conf.d/term.zsh"
-. "${HOME}/.config/zsh/conf.d/zinit.zsh"
-. "${HOME}/.config/zsh/conf.d/options.zsh"
-. "${HOME}/.config/zsh/conf.d/styles.zsh"
-. "${HOME}/.config/zsh/conf.d/functions.zsh"
-. "${HOME}/.config/zsh/conf.d/aliases.zsh"
+files=('term' 'zinit' 'options' 'styles' 'functions' 'aliases')
+for file in "${files[@]}"; do
+  # shellcheck disable=SC1090
+  . "${HOME}/.config/zsh/conf.d/${file}.zsh"
+done
+unset files file
 
 eval "$(starship init zsh)"
 
@@ -38,7 +38,6 @@ unset distribution_name
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 
 shellstart() { la; }
-
 shellstart
 
 # load fish
