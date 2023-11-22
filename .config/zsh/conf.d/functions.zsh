@@ -224,5 +224,3 @@ psgrep() { ps aux | rg -iN "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
-commitnow() { git commit -m "$(date '+%Y/%m/%d %H:%M:%S')"; }
-nowpush() { git add . && git commit -m "$(date '+%Y/%m/%d %H:%M:%S')" && git push; }

@@ -41,6 +41,8 @@ alias gs='git status'
 alias gf='git fetch'
 alias gm='git merge'
 alias gd='git diff'
+alias commitnow="git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\""
+alias nowpush="git add . && git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
 alias bghtop='nohup kitty -1 htop &> /dev/null &!'
 alias dockerprune='docker volume prune -fa && docker system prune -fa'
 alias psa='ps aux'
@@ -117,13 +119,13 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd -AlF -I ".git"'
-  alias la='lsd -AF -I ".git"'
+  alias ll='lsd -lAFI ".git"'
+  alias la='lsd -AFI ".git"'
   alias sl='lsd'
 else
   alias ls='ls --color=auto'
-  alias ll='ls -AlF --color=auto -I ".git"'
-  alias la='ls -AF --color=auto -I ".git"'
+  alias ll='ls -lAFI ".git" --color=auto'
+  alias la='ls -AFI ".git" --color=auto'
   alias sl='ls --color=auto'
 fi
 
@@ -133,7 +135,7 @@ if type nvim &> /dev/null; then
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
-  alias killstartup='killall Discord slack'
+  alias killstartup='killall Discord slack &> /dev/null'
   alias b='bluetoothctl'
 else
   alias x='startx'
