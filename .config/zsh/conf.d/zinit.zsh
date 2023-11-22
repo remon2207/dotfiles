@@ -20,7 +20,5 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light rupa/z
 
-if [[ -n "${DISPLAY}" ]]; then
-  # solarized theme customize
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
-fi
+# solarized theme customize
+[[ -n "${DISPLAY}" ]] && ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
