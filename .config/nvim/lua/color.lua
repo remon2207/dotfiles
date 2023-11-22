@@ -1,3 +1,4 @@
-local nvim_set_hl = vim.api.nvim_set_hl
+local api = vim.api
+local nvim_set_hl = api.nvim_set_hl
 
-nvim_set_hl(0, 'Pmenu', { fg = '#93a1a1', bg = '#073849' })
+nvim_set_hl(0, 'Search', { bg = '#b8b814', fg = '#000000' })

@@ -150,7 +150,7 @@ if [[ "${isArch}" == 'Arch Linux' ]]; then
       echo
       read 'yn?Do you want to update?(y/n): '
       case "${yn}" in
-      '[yY]')
+      ['yY'])
         paru -Syu
         ;;
       esac
@@ -170,10 +170,10 @@ bootusb() {
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read 'yn?実行しますか？(y/n): '
     case "${yn}" in
-    '[yY]')
+    ['yY'])
       sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
       ;;
-    '[nN]')
+    ['nN'])
       return 1
       ;;
     esac

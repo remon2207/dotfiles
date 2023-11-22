@@ -1,9 +1,8 @@
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-is_arch="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
-is_gentoo="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+distribution_name="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
 
-if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
+if [[ "${distribution_name}" == 'Gentoo Linux' ]]; then
   autoload -Uz compinit promptinit
   compinit
   promptinit
@@ -27,15 +26,14 @@ source "${HOME}/.config/zsh/conf.d/options.zsh"
 source "${HOME}/.config/zsh/conf.d/styles.zsh"
 source "${HOME}/.config/zsh/conf.d/functions.zsh"
 source "${HOME}/.config/zsh/conf.d/aliases.zsh"
-unset is_gentoo
 
 eval "$(starship init zsh)"
 
 # shellcheck disable=SC1094
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && source /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
-[[ "${is_arch}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
-unset is_arch
+[[ "${distribution_name}" == 'Arch Linux' ]] && source /usr/share/fzf/completion.zsh
+unset distribution_name
 
 [[ -f "${HOME}/.profile" ]] && source "${HOME}/.profile"
 

@@ -92,7 +92,8 @@ alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd -HE "/mnt" -E "${HOME}/.cache"'
 
-if [[ "${is_arch}" == 'Arch Linux' ]]; then
+case "${distribution_name}" in
+'Arch Linux')
   alias mirrorsync='sudo reflector --country "Japan" --age 24 --protocol "https" --sort "rate" --save "/etc/pacman.d/mirrorlist; sudo pacman -Syy"'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
@@ -100,12 +101,12 @@ if [[ "${is_arch}" == 'Arch Linux' ]]; then
   alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
   alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
-fi
-
-if [[ "${is_gentoo}" == 'Gentoo Linux' ]]; then
+  ;;
+'Gentoo Linux')
   alias pkgclean='sudo emerge --ask --depclean'
   alias pkgupgrade='sudo bash -c "emerge-webrsync && emaint sync -a && emerge -avuDN @world && emerge --ask --depclean"'
-fi
+  ;;
+esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'

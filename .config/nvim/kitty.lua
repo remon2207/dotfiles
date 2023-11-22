@@ -3,6 +3,7 @@ local o = vim.opt
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local api = vim.api
+local nvim_set_hl = api.nvim_set_hl
 local nvim_create_autocmd = api.nvim_create_autocmd
 
 g.did_install_default_menus = 0
@@ -120,4 +121,4 @@ nvim_create_autocmd('TermOpen', {
   command = 'normal G',
 })
 
-api.nvim_set_hl(0, 'Search', { bg = '#b8b814', fg = '#000000' })
+nvim_set_hl(0, 'Search', { bg = '#000000', bold = true })
