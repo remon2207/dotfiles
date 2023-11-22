@@ -18,10 +18,7 @@ OPTIONS:
 EOF
   }
 
-  if [[ ${#} -ne 4 ]]; then
-    usage
-    return 1
-  fi
+  [[ ${#} -ne 4 ]] && usage && return 1
 
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
   mimeapps="${dotfiles}/.config/mimeapps.list"
@@ -44,7 +41,6 @@ EOF
       ;;
     'h')
       usage
-      exit 0
       ;;
     esac
   done
@@ -78,10 +74,7 @@ OPTIONS:
 EOF
   }
 
-  if [[ ${#} -ne 4 ]]; then
-    usage
-    return 1
-  fi
+  [[ ${#} -ne 4 ]] && usage && return 1
 
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
   i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
@@ -116,7 +109,6 @@ EOF
       ;;
     'h')
       usage
-      exit 0
       ;;
     esac
   done
@@ -139,8 +131,7 @@ EOF
 }
 
 mkcd() {
-  mkdir -p "${1}"
-  cd "${_}"
+  mkdir -p "${1}" && cd "${_}"
 }
 
 if [[ "${distribution_name}" == 'Arch Linux' ]]; then
