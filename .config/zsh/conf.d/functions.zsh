@@ -143,7 +143,7 @@ mkcd() {
   cd "${_}"
 }
 
-if [[ "${isArch}" == 'Arch Linux' ]]; then
+if [[ "${distribution_name}" == 'Arch Linux' ]]; then
   cup() {
     checkupdates
     if [[ ${?} -eq 0 ]]; then
@@ -178,6 +178,25 @@ bootusb() {
       ;;
     esac
   fi
+
+  case "${#}" in
+  0 | 1)
+    echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
+    return 1
+    ;;
+  2)
+    echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
+    read 'yn?実行しますか？(y/n): '
+    case "${yn}" in
+    ['yY'])
+      sudo dd bs=4M "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
+      ;;
+    ['nN'])
+      return 1
+      ;;
+    esac
+    ;;
+  esac
 }
 
 raspi-backup() {
