@@ -28,11 +28,9 @@ while getopts 'n:m:h' opt; do
     ;;
   'h')
     usage
-    exit 0
     ;;
   '*')
-    usage
-    exit 1
+    usage && exit 1
     ;;
   esac
 done

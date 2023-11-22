@@ -35,7 +35,7 @@ eval "$(starship init zsh)"
 [[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
 unset distribution_name
 
-# [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
+[[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 
 shellstart() {
   la
