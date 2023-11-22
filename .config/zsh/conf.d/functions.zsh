@@ -130,23 +130,6 @@ EOF
   unset dotfiles i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
 }
 
-if [[ "${distribution_name}" == 'Arch Linux' ]]; then
-  cup() {
-    checkupdates
-    if [[ ${?} -eq 0 ]]; then
-      echo
-      read 'yn?Do you want to update?(y/n): '
-      case "${yn}" in
-      ['yY'])
-        paru -Syu "${@}"
-        ;;
-      esac
-    else
-      return 1
-    fi
-  }
-fi
-
 bootusb() {
   case "${#}" in
   0 | 1)
@@ -196,28 +179,48 @@ authycheck() {
 }
 
 pkgupgrade() {
-  sudo emerge-webrsync
-  sudo emaint sync -a
-
-  while [[ ${?} -eq 1 ]]; do
-    i=1
-
+  case "${distribution_name}" in
+  'Gentoo Linux')
+    sudo emerge-webrsync
     sudo emaint sync -a
-    [[ ${?} -eq 0 ]] && break
 
-    while [[ ${i} -le 3 ]]; do
-      i="$((${i} + 1))"
+    while [[ ${?} -eq 1 ]]; do
+      i=1
 
       sudo emaint sync -a
       [[ ${?} -eq 0 ]] && break
+
+      while [[ ${i} -le 3 ]]; do
+        i="$((${i} + 1))"
+
+        sudo emaint sync -a
+        [[ ${?} -eq 0 ]] && break
+      done
+
+      sudo rm -rf /var/db/repos/gentoo/metadata/timestamp.x
+      sudo emaint sync -a
     done
 
-    sudo rm -rf /var/db/repos/gentoo/metadata/timestamp.x
-    sudo emaint sync -a
-  done
+    sudo emerge -avuDN @world
+    sudo emerge -a --depclean
+    ;;
+  'Arch Linux')
+    checkupdates
 
-  sudo emerge -avuDN @world
-  sudo emerge -a --depclean
+    if [[ ${?} -eq 0 ]]; then
+      echo
+      read 'yn?Do you want to update?(y/n): '
+      case "${yn}" in
+      ['yY'])
+        paru -Syu "${@}"
+        ;;
+      ['nN'])
+        return 1
+        ;;
+      esac
+    fi
+    ;;
+  esac
 }
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
