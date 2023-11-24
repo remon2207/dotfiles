@@ -179,6 +179,8 @@ authycheck() {
 }
 
 pkgupgrade() {
+  distribution_name="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+
   case "${distribution_name}" in
   'Gentoo Linux')
     sudo emerge-webrsync
@@ -221,6 +223,8 @@ pkgupgrade() {
     fi
     ;;
   esac
+
+  unset distribution_name
 }
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
