@@ -39,10 +39,10 @@ export LESSHISTFILE='/dev/null'
 
 export TMPDIR='/tmp'
 
-export http_proxy='http://proxy.home:8080'
-export https_proxy="${http_proxy}"
-export ftp_proxy="${http_proxy}"
-export RSYNC_PROXY="${http_proxy}"
+# export http_proxy='http://proxy.home:8080'
+# export https_proxy="${http_proxy}"
+# export ftp_proxy="${http_proxy}"
+# export RSYNC_PROXY="${http_proxy}"
 
 export NVM_DIR="${HOME}/.config/nvm"
 # shellcheck disable=SC1091

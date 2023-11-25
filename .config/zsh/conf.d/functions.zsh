@@ -227,6 +227,40 @@ pkgupgrade() {
   unset distribution_name
 }
 
+proxy() {
+  flag="${1}"
+  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+
+  usage() {
+    cat << EOF
+USAGE:
+  proxy <OPTIONS>
+OPTIONS:
+  --on          Enable Proxy
+  --off         Disable Proxy
+  --help        See Help
+EOF
+  }
+
+  case "${flag}" in
+  '--on')
+    sd '^# (export .*_proxy)' '$1' "${dotfiles}/.profile"
+    ;;
+  '--off')
+    sd '^(export .*_proxy)' '# $1' "${dotfiles}/.profile"
+    ;;
+  '--help')
+    usage
+    ;;
+  *)
+    echo 'Not a valid option'
+    return 1
+    ;;
+  esac
+
+  unset flag dotfiles
+}
+
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 mkcd() { mkdir -p "${1}" && cd "${_}"; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }
