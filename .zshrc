@@ -20,7 +20,7 @@ SAVEHIST=100000
 # keybind
 bindkey -e
 
-files=('term' 'zinit' 'options' 'styles' 'functions' 'aliases')
+files=('term' 'plugins' 'options' 'styles' 'functions' 'aliases')
 for file in "${files[@]}"; do
   # shellcheck disable=SC1090
   . "${HOME}/.config/zsh/conf.d/${file}.zsh"
