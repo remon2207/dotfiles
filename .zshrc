@@ -25,7 +25,6 @@ for file in "${files[@]}"; do
   # shellcheck disable=SC1090
   . "${HOME}/.config/zsh/conf.d/${file}.zsh"
 done
-unset files file
 
 eval "$(starship init zsh)"
 
@@ -33,7 +32,7 @@ eval "$(starship init zsh)"
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
 [[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
-unset distribution_name
+unset distribution_name files file
 
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 
