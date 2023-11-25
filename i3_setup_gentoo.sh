@@ -2,10 +2,7 @@
 
 set -eu
 
-current_dir=$(
-  cd "$(dirname "${0}")"
-  pwd
-)
+current_dir=$(cd "$(dirname "${0}")" && pwd)
 home_symbolic=(
   '.gtkrc-2.0_gentoo'
   '.profile'
