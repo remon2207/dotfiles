@@ -16,7 +16,6 @@
     {
       "class": "^Slack$",
       "instance": "^slack$",
-      "machine": "^gentoo$",
       "title": "^random\\ \\-\\ vim\\-jp\\ \\-\\ Slack$",
       "window_role": "^browser\\-window$"
     }
@@ -57,7 +56,6 @@
             {
               "class": "^discord$",
               "instance": "^discord$",
-              "machine": "^gentoo$",
               "title": "^\\#雑談💬\\ \\|\\ Lespedeza\\ \\-\\ Discord$",
               "window_role": "^browser\\-window$"
             }
@@ -83,7 +81,6 @@
         {
           "class": "^kitty$",
           "instance": "^kitty$",
-          "machine": "^gentoo$",
           "title": "^htop$"
         }
       ],

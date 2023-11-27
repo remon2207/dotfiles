@@ -10,7 +10,7 @@ api.nvim_clear_autocmds({
 })
 
 nvim_create_autocmd('FileType', {
-  pattern = { '*' },
+  pattern = '*',
   group = 'file',
   callback = function()
     opt.formatoptions:remove({ 'r', 'o' })
@@ -45,7 +45,7 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { 'tsconfig.json', 'jsconfig.json' },
+  pattern = { 'tsconfig.json', 'jsconfig.json', 'workspace_[1-9].json' },
   group = 'file',
   command = 'setlocal ft=jsonc',
 })

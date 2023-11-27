@@ -39,10 +39,12 @@ export LESSHISTFILE='/dev/null'
 
 export TMPDIR='/tmp'
 
-export http_proxy='http://proxy.home:8080'
-export https_proxy="${http_proxy}"
-export ftp_proxy="${http_proxy}"
-export RSYNC_PROXY="${http_proxy}"
+if [[ "$(rg '^DNS' /etc/systemd/network/20-wired.network)" == 'DNS=192.168.1.202' ]]; then
+  export http_proxy='http://proxy.home:8080'
+  export https_proxy="${http_proxy}"
+  export ftp_proxy="${http_proxy}"
+  export RSYNC_PROXY="${http_proxy}"
+fi
 
 export NVM_DIR="${HOME}/.config/nvm"
 # shellcheck disable=SC1091
