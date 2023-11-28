@@ -1,4 +1,4 @@
-// vim: set ts=2:sw=2:et :
+// vim: set ts=2 sw=2 et ft=jsonc :
 {
   "border": "pixel",
   "current_border_width": 2,

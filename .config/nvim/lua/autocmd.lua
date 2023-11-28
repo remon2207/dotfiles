@@ -45,7 +45,7 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { 'tsconfig.json', 'jsconfig.json', 'workspace_[1-9].json' },
+  pattern = { 'tsconfig.json', 'jsconfig.json' },
   group = 'file',
   command = 'setlocal ft=jsonc',
 })
