@@ -2,28 +2,28 @@ export PATH="${HOME}/go/bin:${HOME}/.cargo/bin:${HOME}/.local/share/pnpm:/opt:${
 export QT_QPA_PLATFORMTHEME='qt5ct'
 
 if [[ -n "${DISPLAY}" ]]; then
-  export EDITOR='nvim'
-  export VISUAL='nvim'
-  export SUDO_EDITOR='nvim'
-  export SYSTEMD_EDITOR='nvim'
+  export EDITOR='/usr/bin/nvim'
+  export VISUAL='/usr/bin/nvim'
+  export SUDO_EDITOR='/usr/bin/nvim'
+  export SYSTEMD_EDITOR='/usr/bin/nvim'
 else
-  export EDITOR='vi'
-  export VISUAL='vi'
-  export SUDO_EDITOR='vi'
-  export SYSTEMD_EDITOR='vi'
+  export EDITOR='/usr/bin/vi'
+  export VISUAL='/usr/bin/vi'
+  export SUDO_EDITOR='/usr/bin/vi'
+  export SYSTEMD_EDITOR='/usr/bin/vi'
 fi
 
-export FZF_CTRL_T_COMMAND='fd -H -t f -E ".git" -E ".cache"'
-export FZF_ALT_C_COMMAND='fd -H -t d -E ".git" -E ".cache"'
+export FZF_CTRL_T_COMMAND='/usr/bin/fd -H -t f -E ".git" -E ".cache"'
+export FZF_ALT_C_COMMAND='/usr/bin/fd -H -t d -E ".git" -E ".cache"'
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
 --height 40% --layout reverse --no-mouse \
 --color bg+:#073642,spinner:#2aa198,hl:#268bd2 \
 --color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 
-export PAGER='bat'
-export MANPAGER='sh -c "col -bx | bat -l man -p"'
-export BAT_PAGER='less -RFI'
+export PAGER='/usr/bin/bat'
+export MANPAGER='/bin/sh -c "col -bx | /usr/bin/bat -l man -p"'
+export BAT_PAGER='/usr/bin/less -RFI'
 export MANROFFOPT='-c'
 
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
