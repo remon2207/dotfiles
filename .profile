@@ -22,7 +22,7 @@ export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
 --color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
 
 export PAGER='/usr/bin/bat'
-export MANPAGER='/bin/sh -c "col -bx | /usr/bin/bat -l man -p"'
+export MANPAGER='/bin/sh -c "/usr/bin/col -bx | /usr/bin/bat -l /usr/bin/man -p"'
 export BAT_PAGER='/usr/bin/less -RFI'
 export MANROFFOPT='-c'
 
