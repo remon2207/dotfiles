@@ -27,4 +27,4 @@ setopt extendedglob
 # ワイルドカードをコマンドとして使用する
 setopt nomatch
 # '?' '&' などをエスケープ無しで使用する
-setopt nonomatch
+setopt no_nomatch
