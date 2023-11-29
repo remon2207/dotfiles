@@ -1,5 +1,5 @@
 psidkill() {
-  ps_id="$(ps aux | rg --ignore-case --no-line-number "${1}" | awk 'NR==1 {print $2}')"
+  ps_id="$(ps aux | rg "${1}" | awk 'NR==1 {print $2}')"
 
   kill ${ps_id}
 
@@ -171,7 +171,7 @@ tofish() {
 }
 
 authycheck() {
-  result="$(curl --fail --silent --show-error --location --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
+  result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
   revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
   version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
 
@@ -247,10 +247,10 @@ EOF
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
-psgrep() { ps aux | rg --ignore-case --no-line-number "${1}"; }
+psgrep() { ps aux | rg "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
-chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd --almost-all --classify --ignore-glob '.git'; }
-shellstart() { lsd --almost-all --classify --ignore-glob '.git'; }
+chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && la; }
+shellstart() { la; }
 shellstart

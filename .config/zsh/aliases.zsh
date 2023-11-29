@@ -88,6 +88,7 @@ alias manex='tldr'
 alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
 alias repo='cd "$(ghq list --full-path | fzf)"'
+alias reporm='rm "$(ghq list --full-path | fzf)"'
 alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields=2-'
 alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
