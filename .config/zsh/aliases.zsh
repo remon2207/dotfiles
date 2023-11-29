@@ -6,19 +6,19 @@ alias c='clear'
 alias sudo='sudo '
 alias rm='rm --recursive --force'
 alias mkdir='mkdir --parents'
-alias dot="cd ${HOME}/ghq/github.com/remon2207/dotfiles"
-alias vimfont="nvim ${HOME}/.config/fontconfig/fonts.conf"
-alias vimwez="nvim ${HOME}/.config/wezterm/wezterm.lua"
-alias vimmime="nvim ${HOME}/.config/mimeapps.list"
-alias vimzsh="cd ${HOME}/.config/zsh/conf.d && nvim ."
-alias vimkitty="cd ${HOME}/.config/kitty/conf.d && nvim ."
-alias vimfish="cd ${HOME}/.config/fish && nvim ."
-alias vimconf="cd ${HOME}/.config/nvim/lua && nvim ."
-alias vimala="cd ${HOME}/.config/alacritty/conf.d && nvim ."
-alias vimi3="cd ${HOME}/.config/i3/conf.d && nvim ."
+alias dot="cd ${dotfiles}"
+alias vimfont="nvim ${XDG_CONFIG_HOME}/fontconfig/fonts.conf"
+alias vimwez="nvim ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
+alias vimmime="nvim ${XDG_CONFIG_HOME}/mimeapps.list"
+alias vimzsh="cd ${XDG_CONFIG_HOME}/zsh/conf.d && nvim ."
+alias vimkitty="cd ${XDG_CONFIG_HOME}/kitty/conf.d && nvim ."
+alias vimfish="cd ${XDG_CONFIG_HOME}/fish && nvim ."
+alias vimconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
+alias vimala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
+alias vimi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
 alias vimnorc='nvim -u NORC'
-alias vimpolybar="nvim ${HOME}/.config/polybar/config.ini"
-alias vimpicom="nvim ${HOME}/.config/picom/picom.conf"
+alias vimpolybar="nvim ${XDG_CONFIG_HOME}/polybar/config.ini"
+alias vimpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
 alias grep='grep --color=auto --ignore-case'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
@@ -94,7 +94,7 @@ alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
 alias less='less --LONG-PROMPT --LINE-NUMBERS --ignore-case --tabs=4'
-alias homesize='du --summarize --block-size=1M "./"{*,.*} | sort --numeric-sort'
+alias homesize='du --summarize --block-size="1M" "./"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
@@ -109,8 +109,8 @@ case "${distribution_name}" in
   alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
-  alias pkglist="pacman -Qqen > ${DOTFILES}/pkglist"
-  alias pkglistaur="pacman -Qqe > ${DOTFILES}/pkglist_aur"
+  alias pkglist="pacman -Qqen > ${dotfiles}/pkglist"
+  alias pkglistaur="pacman -Qqe > ${dotfiles}/pkglist_aur"
   alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
   ;;

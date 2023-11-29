@@ -1,4 +1,6 @@
 distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
+# shellcheck disable=SC2034
+dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 
@@ -19,17 +21,15 @@ SAVEHIST=100000
 
 bindkey -e
 
-files=('term' 'plugins' 'options' 'styles' 'variables' 'aliases' 'functions' 'completions')
-for file in "${files[@]}"; do
-  # shellcheck disable=SC1090
-  . "${HOME}/.config/zsh/${file}.zsh"
-done
+files=('term' 'plugins' 'options' 'styles' 'aliases' 'functions' 'completions')
+# shellcheck disable=SC1090
+for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
 
 # shellcheck disable=SC1094
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
 [[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
-unset distribution_name files file
+unset distribution_name files file distribution_name
 
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 # shellcheck disable=SC1091

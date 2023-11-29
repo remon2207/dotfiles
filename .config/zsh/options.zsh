@@ -24,7 +24,13 @@ setopt no_flow_control
 setopt notify
 # ワイルドカード展開を使用する
 setopt extendedglob
+# 展開しないで候補から補完する
+setopt glob_complete
 # ワイルドカードをコマンドとして使用する
 setopt nomatch
 # '?' '&' などをエスケープ無しで使用する
 setopt no_nomatch
+# コマンドライン引数の'='以降でも補完
+setopt magic_equal_subst
+# ビープ音を無効化
+setopt no_beep

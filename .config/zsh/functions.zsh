@@ -1,9 +1,7 @@
 psidkill() {
-  ps_id="$(ps aux | rg "${1}" | awk 'NR==1 {print $2}')"
+  local ps_id="$(ps aux | rg "${1}" | awk 'NR==1 {print $2}')"
 
   kill ${ps_id}
-
-  unset ps_id
 }
 
 changebrowser() {
@@ -20,9 +18,9 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  mimeapps="${DOTFILES}/.config/mimeapps.list"
-  kitty_conf="${DOTFILES}/.config/kitty/conf.d/advanced.conf"
-  alacritty_conf="${DOTFILES}/.config/alacritty/conf.d/env.yml"
+  local mimeapps="${dotfiles}/.config/mimeapps.list"
+  local kitty_conf="${dotfiles}/.config/kitty/conf.d/advanced.conf"
+  local alacritty_conf="${dotfiles}/.config/alacritty/conf.d/env.yml"
 
   replacements() {
     sd --string-mode "${1}" "${3}" "${mimeapps}"
@@ -57,8 +55,6 @@ EOF
   elif [[ "${current}" == 'firefox' ]] && [[ "${new}" == 'chrome' ]]; then
     replacements firefox firefox google-chrome google-chrome-stable
   fi
-
-  unset mimeapps kitty_conf alacritty_conf OPT OPTARG current new
 }
 
 changeterm() {
@@ -75,14 +71,14 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  i3_conf="${DOTFILES}/.config/i3/conf.d/appstart_keybind.conf"
-  bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
-  alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
-  alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
-  kitty='bindsym $mod+Return exec --no-startup-id kitty'
-  kitty_ranger='bindsym $mod+e exec --no-startup-id kitty --single-instance ranger'
-  wezterm='bindsym $mod+Return exec --no-startup-id wezterm'
-  wezterm_ranger='bindsym $mod+e exec --no-startup-id wezterm start ranger'
+  local i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
+  local bghtop="${dotfiles}/.local/share/applications/bghtop.desktop"
+  local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
+  local alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
+  local kitty='bindsym $mod+Return exec --no-startup-id kitty'
+  local kitty_ranger='bindsym $mod+e exec --no-startup-id kitty --single-instance ranger'
+  local wezterm='bindsym $mod+Return exec --no-startup-id wezterm'
+  local wezterm_ranger='bindsym $mod+e exec --no-startup-id wezterm start ranger'
 
   replacements() {
     sd --string-mode "${1}" "# ${1}" "${i3_conf}"
@@ -124,8 +120,6 @@ EOF
   elif [[ "${current}" == 'wezterm' ]] && [[ "${new}" == 'kitty' ]]; then
     replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
   fi
-
-  unset i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
 }
 
 bootusb() {
@@ -150,39 +144,35 @@ bootusb() {
 }
 
 tofish() {
-  startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
-  endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
+  local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
   case "${distribution_name}" in
   'Gentoo Linux')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_gentoo.conf"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_gentoo.conf"
     ;;
   'Arch Linux')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_arch.conf"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_arch.conf"
     ;;
   esac
-  sed --in-place --expression="${startline},${endline}s/^# //" "${DOTFILES}/.zshrc"
-
-  unset startline endline
+  sed --in-place --expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
 
   [[ ${?} -eq 0 ]] && exit
 }
 
 authycheck() {
-  result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
-  revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
-  version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
+  local result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
+  local revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
+  local version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
 
   echo "revision: ${revision}"
   echo "version: ${version}"
-
-  unset result revision version
 }
 
 pkgupgrade() {
-  distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
+  local distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 
   case "${distribution_name}" in
   'Gentoo Linux')
@@ -208,12 +198,10 @@ pkgupgrade() {
     fi
     ;;
   esac
-
-  unset distribution_name
 }
 
 proxy() {
-  flag="${1}"
+  local flag="${1}"
 
   usage() {
     bat --plain << EOF
@@ -228,10 +216,10 @@ EOF
 
   case "${flag}" in
   '--on')
-    sd '^(.*)# (export .*_proxy)' '$1$2' "${DOTFILES}/.profile"
+    sd '^(.*)# (export .*_proxy)' '$1$2' "${dotfiles}/.profile"
     ;;
   '--off')
-    sd '^(.*)(export .*_proxy)' '$1# $2' "${DOTFILES}/.profile"
+    sd '^(.*)(export .*_proxy)' '$1# $2' "${dotfiles}/.profile"
     ;;
   '--help')
     usage
@@ -241,8 +229,13 @@ EOF
     return 1
     ;;
   esac
+}
 
-  unset flag
+gentoocopy() {
+  local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
+
+  cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use}} "${gentoo_setup}"
+  cp --archive /usr/src/linux/.config "${gentoo_setup}/kernel_conf"
 }
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }

@@ -67,3 +67,9 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
   group = 'file',
   command = 'setlocal ft=conf',
 })
+
+nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = { '*.ebuild' },
+  group = 'file',
+  command = 'setlocal tabstop=4 shiftwidth=4 noexpandtab',
+})
