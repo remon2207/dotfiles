@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Polybar Restart
+Path=/home/remon/bin
+Exec=polybar_restart.sh
+Terminal=false

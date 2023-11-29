@@ -38,29 +38,21 @@ conf_symbolic=(
 desktop_entry=(
   'bghtop.desktop'
   'mozc.desktop'
+  'polybar_restart.desktop'
 )
 desktop_entry_dir="${current_dir}/.local/share/applications"
 
 setup() {
   rm -rf "${HOME}/.xinitrc" "${HOME}/.config/i3"
 
-  for home in "${home_symbolic[@]}"; do
-    ln -sfv "${current_dir}/${home}" "${HOME}"
-  done
-  for conf in "${conf_symbolic[@]}"; do
-    ln -sfv "${current_dir}/.config/${conf}" "${HOME}/.config"
-  done
-  for entry in "${desktop_entry[@]}"; do
-    ln -sfv "${desktop_entry_dir}/${entry}" "${HOME}/.local/share/applications"
-  done
+  for home in "${home_symbolic[@]}"; do ln -sfv "${current_dir}/${home}" "${HOME}"; done
+  for conf in "${conf_symbolic[@]}"; do ln -sfv "${current_dir}/.config/${conf}" "${HOME}/.config"; done
+  for entry in "${desktop_entry[@]}"; do ln -sfv "${desktop_entry_dir}/${entry}" "${HOME}/.local/share/applications"; done
 
   sudo mkdir /etc/gtk-2.0
 
   sudo ln -sfv "${HOME}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
   sudo ln -sfv "${HOME}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
-
-  ln -sfv "${current_dir}/.local/share/applications/bghtop.desktop" "${HOME}/.local/share/applications"
-  ln -sfv "${current_dir}/.local/share/applications/mozc.desktop" "${HOME}/.local/share/applications"
 
   git config --global commit.template "${HOME}/commit.template"
 }
