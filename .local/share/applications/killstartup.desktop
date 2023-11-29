@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=killstartup
+Path=/home/remon/bin
+Exec=killstartup.sh
+Terminal=false
