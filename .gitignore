@@ -1,0 +1,36 @@
+# Emacs
+/.config/emacs/elpa/
+/.config/emacs/auto-save-list/
+/.config/emacs/tree-sitter/
+
+# fcitx5
+/.config/fcitx5/conf/cached_layouts
+
+# fish
+/.config/fish/functions/_*.fish
+/.config/fish/functions/bd.fish
+/.config/fish/functions/nvm.fish
+/.config/fish/completions/
+/.config/fish/fish_variables
+/.config/fish/themes/
+/.config/fish/conf.d/*.fish
+!/.config/fish/conf.d/abbrs.fish
+
+# gh
+/.config/gh/hosts.yml
+
+# lazygit
+/.config/lazygit/state.yml
+
+# mpd
+/.config/mpd/log
+/.config/mpd/state
+/.config/mpd/database
+/.config/mpd/sticker.sql
+/.config/mpd/pid
+
+# ncmpcpp
+/.config/ncmpcpp/error.log
+
+# nvim
+/.config/nvim/lazy-lock.json

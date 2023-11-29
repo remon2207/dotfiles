@@ -1,9 +1,0 @@
-/functions/_*.fish
-/functions/bd.fish
-/functions/nvm.fish
-/completions/
-/fish_variables
-/themes/
-/conf.d/*.fish
-
-!/conf.d/abbrs.fish
