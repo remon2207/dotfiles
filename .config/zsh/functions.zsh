@@ -20,10 +20,9 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
-  mimeapps="${dotfiles}/.config/mimeapps.list"
-  kitty_conf="${dotfiles}/.config/kitty/conf.d/advanced.conf"
-  alacritty_conf="${dotfiles}/.config/alacritty/conf.d/env.yml"
+  mimeapps="${DOTFILES}/.config/mimeapps.list"
+  kitty_conf="${DOTFILES}/.config/kitty/conf.d/advanced.conf"
+  alacritty_conf="${DOTFILES}/.config/alacritty/conf.d/env.yml"
 
   replacements() {
     sd --string-mode "${1}" "${3}" "${mimeapps}"
@@ -59,7 +58,7 @@ EOF
     replacements firefox firefox google-chrome google-chrome-stable
   fi
 
-  unset dotfiles mimeapps kitty_conf alacritty_conf OPT OPTARG current new
+  unset mimeapps kitty_conf alacritty_conf OPT OPTARG current new
 }
 
 changeterm() {
@@ -76,9 +75,8 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
-  i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
-  bghtop="${dotfiles}/.local/share/applications/bghtop.desktop"
+  i3_conf="${DOTFILES}/.config/i3/conf.d/appstart_keybind.conf"
+  bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
   alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
   alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
   kitty='bindsym $mod+Return exec --no-startup-id kitty'
@@ -127,7 +125,7 @@ EOF
     replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
   fi
 
-  unset dotfiles i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
+  unset i3_conf bghtop alacritty alacritty_ranger kitty kitty_ranger wezterm wezterm_ranger OPT OPTARG current new
 }
 
 bootusb() {
@@ -152,17 +150,22 @@ bootusb() {
 }
 
 tofish() {
-  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+  startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
-  startline="$(("$(cat "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  case "${distribution_name}" in
+  'Gentoo Linux')
+    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
+    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
+    ;;
+  'Arch Linux')
+    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
+    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
+    ;;
+  esac
+  sed --in-place --expression="${startline},${endline}s/^# //" "${DOTFILES}/.zshrc"
 
-  endline="$(cat "${HOME}/.zshrc" | wc --lines)"
-
-  sed --in-place --expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
-  sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf"
-  sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf"
-
-  unset dotfiles startline endline
+  unset startline endline
 
   [[ ${?} -eq 0 ]] && exit
 }
@@ -211,7 +214,6 @@ pkgupgrade() {
 
 proxy() {
   flag="${1}"
-  dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   usage() {
     bat --plain << EOF
@@ -226,10 +228,10 @@ EOF
 
   case "${flag}" in
   '--on')
-    sd '^# (export .*_proxy)' '$1' "${dotfiles}/.profile"
+    sd '^(.*)# (export .*_proxy)' '$1$2' "${DOTFILES}/.profile"
     ;;
   '--off')
-    sd '^(export .*_proxy)' '# $1' "${dotfiles}/.profile"
+    sd '^(.*)(export .*_proxy)' '$1# $2' "${DOTFILES}/.profile"
     ;;
   '--help')
     usage
@@ -240,7 +242,7 @@ EOF
     ;;
   esac
 
-  unset flag dotfiles
+  unset flag
 }
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
