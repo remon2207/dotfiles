@@ -113,6 +113,7 @@ case "${distribution_name}" in
   ;;
 'Gentoo Linux')
   alias pkgclean='sudo emerge --ask --depclean'
+  alias authyjson='curl -fsSLH "Snap-Device-Series: 16" https://api.snapcraft.io/v2/snaps/info/authy | jq'
   ;;
 esac
 

@@ -9,5 +9,6 @@ if not status2 then
 end
 
 comment.setup({
+  ignore = '^$',
   pre_hook = ts.create_pre_hook(),
 })

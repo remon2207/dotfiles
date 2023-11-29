@@ -76,10 +76,8 @@ require('lazy').setup({
     config = function()
       require('plugins.Comment')
     end,
-    dependencies = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
   },
+  'JoosepAlviste/nvim-ts-context-commentstring',
 
   -- Syntax highlight
   {
@@ -267,8 +265,8 @@ require('lazy').setup({
   {
     'j-hui/fidget.nvim',
     tag = 'legacy',
-    config = function ()
+    config = function()
       require('plugins.fidget')
-    end
+    end,
   },
 }, opts)

@@ -48,8 +48,5 @@ t.setup({
   indent = {
     enable = false,
   },
-  context_commentstring = {
-    enable = true,
-  },
   ensure_installed = ensure_installed,
 })
