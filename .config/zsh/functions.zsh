@@ -168,7 +168,7 @@ tofish() {
 }
 
 authycheck() {
-  result="$(curl -sSLH --silent --show-error --location --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
+  result="$(curl --fail --silent --show-error --location --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
   revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
   version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
 
