@@ -49,3 +49,5 @@ fi
 export NVM_DIR="${HOME}/.config/nvm"
 # shellcheck disable=SC1091
 [[ -s "${NVM_DIR}/nvm.sh" ]] && \. "${NVM_DIR}/nvm.sh"
+
+export PNPM_HOME="${HOME}/.local/share/pnpm"

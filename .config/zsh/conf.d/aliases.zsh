@@ -100,6 +100,7 @@ alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd -HE "/mnt" -E "${HOME}/.cache"'
+alias pnupdate='pn i -g @fsouza/prettierd eslint_d'
 
 case "${distribution_name}" in
 'Arch Linux')
@@ -113,7 +114,6 @@ case "${distribution_name}" in
   ;;
 'Gentoo Linux')
   alias pkgclean='sudo emerge --ask --depclean'
-  alias authyjson='curl -fsSLH "Snap-Device-Series: 16" https://api.snapcraft.io/v2/snaps/info/authy | jq'
   ;;
 esac
 
