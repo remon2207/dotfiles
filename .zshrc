@@ -19,7 +19,7 @@ SAVEHIST=100000
 
 bindkey -e
 
-files=('term' 'plugins' 'options' 'styles' 'functions' 'aliases' 'completions')
+files=('term' 'plugins' 'options' 'styles' 'functions' 'aliases' 'completions' 'variables')
 for file in "${files[@]}"; do
   # shellcheck disable=SC1090
   . "${HOME}/.config/zsh/conf.d/${file}.zsh"
