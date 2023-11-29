@@ -3,7 +3,7 @@
 set -eu
 
 usage() {
-  cat << EOF
+  bat --plain << EOF
 USAGE:
   ${0} <OPTIONS>
 OPTIONS:
@@ -35,7 +35,7 @@ while getopts 'n:m:h' opt; do
   esac
 done
 
-cat << EOF > "${HOME}/.gitconfig"
+bat --plain << EOF > "${HOME}/.gitconfig"
 [user]
   name = ${NAME}
   email = ${EMAIL}

@@ -2,7 +2,7 @@
 Type=Application
 Name=bghtop
 Path=/usr/bin
-# Exec=alacritty -e htop
-Exec=kitty -1 htop
-# Exec=wezterm -e htop
+# Exec=alacritty --command htop
+Exec=kitty --single-instance htop
+# Exec=wezterm start htop
 Terminal=false

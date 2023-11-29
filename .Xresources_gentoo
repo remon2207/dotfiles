@@ -1,9 +1,9 @@
 Xcursor.theme: BreezeX-Black
-Xcursor.size:  16
+Xcursor.size: 16
 
-Xft.autohint:  0
+Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
-Xft.hinting:   1
+Xft.hinting: 1
 Xft.antialias: 1
-Xft.rgba:      rgb
+Xft.rgba: rgb

@@ -1,4 +1,4 @@
-distribution_name="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 
