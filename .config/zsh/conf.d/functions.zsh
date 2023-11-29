@@ -245,8 +245,10 @@ EOF
 
 raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
 mkcd() { mkdir -p "${1}" && cd "${_}"; }
-chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }
 psgrep() { ps aux | rg -iN "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
+chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && lsd -AFI '.git'; }
+shellstart() { lsd -AFI '.git'; }
+shellstart

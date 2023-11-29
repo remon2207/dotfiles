@@ -39,6 +39,7 @@ desktop_entry=(
   'bghtop.desktop'
   'mozc.desktop'
   'polybar_restart.desktop'
+  'killstartup.desktop'
 )
 desktop_entry_dir="${current_dir}/.local/share/applications"
 

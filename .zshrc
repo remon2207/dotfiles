@@ -1,6 +1,6 @@
-zstyle :compinstall filename "${HOME}/.zshrc"
-
 distribution_name="$(rg '^PRETTY' /etc/os-release | awk -F '"' '{print $2}')"
+
+zstyle :compinstall filename "${HOME}/.zshrc"
 
 if [[ "${distribution_name}" == 'Gentoo Linux' ]]; then
   autoload -Uz compinit promptinit
@@ -17,7 +17,6 @@ HISTSIZE=100000
 # shellcheck disable=SC2034
 SAVEHIST=100000
 
-# keybind
 bindkey -e
 
 files=('term' 'plugins' 'options' 'styles' 'functions' 'aliases' 'completions')
@@ -26,8 +25,6 @@ for file in "${files[@]}"; do
   . "${HOME}/.config/zsh/conf.d/${file}.zsh"
 done
 
-eval "$(starship init zsh)"
-
 # shellcheck disable=SC1094
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
@@ -35,9 +32,10 @@ eval "$(starship init zsh)"
 unset distribution_name files file
 
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
+# shellcheck disable=SC1091
+[[ -s "${NVM_DIR}/nvm.sh" ]] && . "${NVM_DIR}/nvm.sh"
 
-shellstart() { la; }
-shellstart
+eval "$(starship init zsh)"
 
 # load fish
 # if [[ $(ps --no-header -o comm) != 'fish' ]]; then
