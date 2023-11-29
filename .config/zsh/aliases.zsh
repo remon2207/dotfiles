@@ -4,8 +4,8 @@ alias e='exit'
 alias :q='exit'
 alias c='clear'
 alias sudo='sudo '
-alias rm='rm -rf'
-alias mkdir='mkdir -p'
+alias rm='rm --recursive --force'
+alias mkdir='mkdir --parents'
 alias dot="cd ${HOME}/ghq/github.com/remon2207/dotfiles"
 alias vimfont="nvim ${HOME}/.config/fontconfig/fonts.conf"
 alias vimwez="nvim ${HOME}/.config/wezterm/wezterm.lua"
@@ -19,14 +19,14 @@ alias vimi3="cd ${HOME}/.config/i3/conf.d && nvim ."
 alias vimnorc='nvim -u NORC'
 alias vimpolybar="nvim ${HOME}/.config/polybar/config.ini"
 alias vimpicom="nvim ${HOME}/.config/picom/picom.conf"
-alias grep='grep --color=auto -i'
+alias grep='grep --color=auto --ignore-case'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
 alias dstop='docker compose stop'
-alias dup='docker compose up -d'
-alias dlog='docker compose logs -f'
-alias dps='docker compose ps -a'
+alias dup='docker compose up --detach'
+alias dlog='docker compose logs --follow'
+alias dps='docker compose ps --all'
 alias dbuild='docker compose build'
 alias g='git'
 alias ga='git add'
@@ -41,10 +41,10 @@ alias gs='git status'
 alias gf='git fetch'
 alias gm='git merge'
 alias gd='git diff'
-alias commitnow="git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\""
-alias nowpush="git add . && git commit -m \"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
-alias bghtop='nohup kitty -1 htop &> /dev/null &!'
-alias dockerprune='docker volume prune -fa && docker system prune -fa'
+alias commitnow="git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\""
+alias nowpush="git add . && git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
+alias bghtop='nohup kitty --single-instance htop &> /dev/null &!'
+alias dockerprune='docker volume prune --force --all && docker system prune --force --all'
 alias psa='ps aux'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
@@ -72,26 +72,28 @@ alias zshrc="nvim ${HOME}/.zshrc"
 alias sz=". ${HOME}/.zshrc"
 alias mpdstop='mpd --kill'
 alias repolybar='killall polybar &> /dev/null; nohup polybar dp &> /dev/null &! nohup polybar dp2 &> /dev/null &! nohup polybar dvi &> /dev/null &! nohup polybar hdmi &> /dev/null &!'
-alias disklist='sudo fdisk -l'
+alias disklist='sudo fdisk --list'
 alias setkeyrepeat='xset r rate 250 60'
 alias resetkeyrepeat='xset r rate'
 alias renetwork='sudo systemctl restart systemd-{networkd,resolved}.service'
 alias ipscan='sudo nmap -sP 192.168.1.0/24'
-alias free='free -th'
-alias df='df -Th'
+alias free='free --total --human'
+alias df='df --print-type --human-readable'
 alias svim='sudoedit'
 alias pn='pnpm'
-alias silicondate="silicon -o ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
+alias pnupdate='corepack prepare pnpm@latest --activate'
+alias pnpkgupdate='pnpm add --global --save-prod @fsouza/prettierd eslint_d'
+alias silicondate="silicon --output ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 alias manex='tldr'
 alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
-alias repo='cd "$(ghq list -p | fzf)"'
-alias fontlist='fc-list | fzf | awk -F "[:,]" "{print \$2}" | cut -d " " -f 2-'
+alias repo='cd "$(ghq list --full-path | fzf)"'
+alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields=2-'
 alias t='tmux'
-alias rg='rg -iN'
+alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
-alias less='less -MiN'
-alias homesize='du -sm "./"{*,.*} | sort -n'
+alias less='less --LONG-PROMPT --LINE-NUMBERS --ignore-case'
+alias homesize='du --summarize --block-size=1M "./"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
@@ -99,8 +101,7 @@ alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd -HE "/mnt" -E "${HOME}/.cache"'
-alias pnupdate='pn i -g @fsouza/prettierd eslint_d'
+alias fd='fd --hidden --exclude "/mnt/" --exclude "${HOME}/.cache" --exclude "/.git/"'
 
 case "${distribution_name}" in
 'Arch Linux')
@@ -119,13 +120,13 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd -lAFI ".git"'
-  alias la='lsd -AFI ".git"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob ".git"'
+  alias la='lsd --almost-all --classify --ignore-glob ".git"'
   alias sl='lsd'
 else
   alias ls='ls --color=auto'
-  alias ll='ls -lAFI ".git" --color=auto'
-  alias la='ls -AFI ".git" --color=auto'
+  alias ll='ls -l --almost-all --classify --ignore=".git" --color=auto'
+  alias la='ls --almost-all --classify --ignore=".git" --color=auto'
   alias sl='ls --color=auto'
 fi
 

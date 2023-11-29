@@ -1,8 +1,8 @@
 export PATH="${HOME}/bin:${HOME}/go/bin:${HOME}/.cargo/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export PAGER='/usr/bin/bat'
-export MANPAGER='/bin/sh -c "/usr/bin/col -bx | /usr/bin/bat -l man -p"'
-export BAT_PAGER='/usr/bin/less -RFI'
+export MANPAGER='/bin/sh -c "/usr/bin/col --no-backspaces --spaces | /usr/bin/bat --language man --plain"'
+export BAT_PAGER='/usr/bin/less --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export MANROFFOPT='-c'
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -14,8 +14,8 @@ export LESSHISTFILE='/dev/null'
 export TMPDIR='/tmp'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NVM_DIR="${HOME}/.config/nvm"
-export FZF_CTRL_T_COMMAND='/usr/bin/fd -H -t f -E ".git" -E ".cache"'
-export FZF_ALT_C_COMMAND='/usr/bin/fd -H -t d -E ".git" -E ".cache"'
+export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type file --exclude ".git" --exclude ".cache"'
+export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type directory --exclude ".git" --exclude ".cache"'
 export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} \
 --height 40% --layout reverse --no-mouse \
 --color bg+:#073642,spinner:#2aa198,hl:#268bd2 \
