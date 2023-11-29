@@ -8,7 +8,7 @@ psidkill() {
 
 changebrowser() {
   usage() {
-    cat << EOF
+    bat --plain << EOF
 USAGE:
   changebrowser <OPTIONS>
 OPTIONS:
@@ -64,7 +64,7 @@ EOF
 
 changeterm() {
   usage() {
-    cat << EOF
+    bat --plain << EOF
 USAGE:
   changeterm <OPTIONS>
 OPTIONS:
@@ -154,13 +154,13 @@ bootusb() {
 tofish() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
-  startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  startline="$(("$(cat "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
 
-  endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
+  endline="$(cat "${HOME}/.zshrc" | wc --lines)"
 
-  sed --in-place -expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
-  sed --in-place -expression='2s/^/# /' "${dotfiles}/.tmux.conf"
-  sed --in-place -expression='3s/^# //' "${dotfiles}/.tmux.conf"
+  sed --in-place --expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
+  sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf"
+  sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf"
 
   unset dotfiles startline endline
 
@@ -214,7 +214,7 @@ proxy() {
   dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   usage() {
-    cat << EOF
+    bat --plain << EOF
 USAGE:
   proxy <OPTIONS>
 OPTIONS:
