@@ -133,7 +133,7 @@ bootusb() {
     read 'yn?実行しますか？(y/n): '
     case "${yn}" in
     ['yY'])
-      sudo dd bs='4M' "if=${1}" "of=${2}" conv=fsync oflag=direct status=progress
+      sudo dd bs='4M' "if=${1}" "of=${2}" conv='fsync' oflag='direct' status='progress'
       ;;
     ['nN'])
       return 1
@@ -238,7 +238,7 @@ gentoocopy() {
   cp --archive /usr/src/linux/.config "${gentoo_setup}/kernel_conf"
 }
 
-raspi-backup() { sudo dd if=/dev/sde conv=sync,noerror iflag=nocache oflag=nocache,dsync | pv | pigz > "${1}"; }
+raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
 psgrep() { ps aux | rg "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
