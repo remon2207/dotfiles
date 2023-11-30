@@ -16,10 +16,10 @@ alias vimfish="cd ${XDG_CONFIG_HOME}/fish && nvim ."
 alias vimconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
 alias vimala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
 alias vimi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
-alias vimnorc='nvim -u NORC'
+alias vimnorc='nvim -u "NORC"'
 alias vimpolybar="nvim ${XDG_CONFIG_HOME}/polybar/config.ini"
 alias vimpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
-alias grep='grep --color=auto --ignore-case'
+alias grep='grep --color="auto" --ignore-case'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -42,7 +42,7 @@ alias gf='git fetch'
 alias gm='git merge'
 alias gd='git diff'
 alias undoadd='git restore --staged'
-alias undocommit='git reset --soft HEAD^'
+alias undocommit='git reset --soft "HEAD^"'
 alias commitnow="git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\""
 alias nowpush="git add . && git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
 alias bghtop='nohup kitty --single-instance htop &> /dev/null &!'
@@ -90,7 +90,7 @@ alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
 alias repo='cd "$(ghq list --full-path | fzf)"'
 alias reporm='rm "$(ghq list --full-path | fzf)"'
-alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields=2-'
+alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields="2-"'
 alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
@@ -107,7 +107,7 @@ alias fd='fd --hidden --exclude "/mnt/" --exclude "${HOME}/.cache" --exclude "/.
 
 case "${distribution_name}" in
 'Arch Linux')
-  alias mirrorsync='sudo reflector --country Japan --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+  alias mirrorsync='sudo reflector --country "Japan" --age 24 --protocol "https" --sort "rate" --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
   alias pkglist="pacman -Qqen > ${DOTFILES}/pkglist"
@@ -126,10 +126,10 @@ if type lsd &> /dev/null; then
   alias la='lsd --almost-all --classify --ignore-glob ".git"'
   alias sl='lsd'
 else
-  alias ls='ls --color=auto'
-  alias ll='ls -l --almost-all --classify --ignore=".git" --color=auto'
-  alias la='ls --almost-all --classify --ignore=".git" --color=auto'
-  alias sl='ls --color=auto'
+  alias ls='ls --color="auto"'
+  alias ll='ls -l --almost-all --classify --ignore=".git" --color="auto"'
+  alias la='ls --almost-all --classify --ignore=".git" --color="auto"'
+  alias sl='ls --color="auto"'
 fi
 
 if type nvim &> /dev/null; then
