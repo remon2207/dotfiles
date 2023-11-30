@@ -6,7 +6,7 @@ paru_install() {
   local pkgname='paru-bin'
   git clone "https://aur.archlinux.org/${pkgname}.git"
   cd "${pkgname}"
-  makepkg -si --needed
+  makepkg --rmdeps --syncdeps --install --needed
   cd "${HOME}"
   rm --recursive --force "${pkgname}"
 
