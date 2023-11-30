@@ -3,6 +3,7 @@
 set -eu
 
 current_dir=$(cd "$(dirname "${0}")" && pwd)
+desktop_entry_dir="${current_dir}/.local/share/applications"
 home_symbolic=(
   '.curlrc'
   '.gitconfig'
@@ -21,6 +22,7 @@ conf_symbolic=(
   'dunst'
   'fcitx5'
   'fontconfig'
+  'gh'
   'gtk-3.0_gentoo'
   'htop'
   'i3'
@@ -45,21 +47,18 @@ desktop_entry=(
   'polybar_restart.desktop'
   'killstartup.desktop'
 )
-desktop_entry_dir="${current_dir}/.local/share/applications"
 
 setup() {
   rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/i3"
+  mkdir --parents "${HOME}/.local/share/applications"
+  sudo mkdir /etc/gtk-2.0
 
   for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${current_dir}/${home}" "${HOME}"; done
   for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${current_dir}/.config/${conf}" "${HOME}/.config"; done
   for entry in "${desktop_entry[@]}"; do ln --symbolic --force --verbose "${desktop_entry_dir}/${entry}" "${HOME}/.local/share/applications"; done
 
-  sudo mkdir /etc/gtk-2.0
-
   sudo ln --symbolic --force --verbose "${HOME}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
   sudo ln --symbolic --force --verbose "${HOME}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
-
-  git config --global commit.template "${HOME}/commit.template"
 }
 
 services() {
