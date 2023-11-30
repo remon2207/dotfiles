@@ -38,8 +38,6 @@ unset distribution_name files file distribution_name
 eval "$(starship init zsh)"
 
 # load fish
-# if [[ $(ps --no-header -o comm) != 'fish' ]]; then
-#   if type fish &> /dev/null; then
-#     exec fish
-#   fi
+# if [[ "$(ps --no-header -o comm)" != 'fish' ]]; then
+#   type fish &> /dev/null && exec fish
 # fi

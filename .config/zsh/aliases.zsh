@@ -71,7 +71,6 @@ alias bashrc="nvim ${HOME}/.bashrc"
 alias zshrc="nvim ${HOME}/.zshrc"
 alias sz=". ${HOME}/.zshrc"
 alias mpdstop='mpd --kill'
-alias repolybar='killall polybar &> /dev/null; for display in dp dp2 dvi hdmi; do nohup polybar "${display}" &> /dev/null &! done; unset display'
 alias disklist='sudo fdisk --list'
 alias setkeyrepeat='xset r rate 250 60'
 alias resetkeyrepeat='xset r rate'
