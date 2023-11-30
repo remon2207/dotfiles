@@ -6,9 +6,9 @@
 [core]
   editor = /usr/bin/nvim
   quotepath = false
-  pager = delta --syntax-theme 'Solarized (dark)'
+  pager = /usr/bin/delta --syntax-theme 'Solarized (dark)'
 [interactive]
-  diffFilter = delta --color-only --syntax-theme 'Solarized (dark)'
+  diffFilter = /usr/bin/delta --color-only --syntax-theme 'Solarized (dark)'
 [init]
   defaultBranch = main
 [pull]
