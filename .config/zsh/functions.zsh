@@ -244,6 +244,8 @@ psgrep() { ps aux | rg "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
+ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
+ebuildclean() { sudo ebuild "${1}" manifest clean; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && la; }
 shellstart() { la; }
 shellstart
