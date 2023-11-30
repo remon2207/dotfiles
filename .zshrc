@@ -1,6 +1,6 @@
 distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 # shellcheck disable=SC2034
-dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+readonly DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 

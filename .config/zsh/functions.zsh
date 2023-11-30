@@ -18,9 +18,9 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  local mimeapps="${dotfiles}/.config/mimeapps.list"
-  local kitty_conf="${dotfiles}/.config/kitty/conf.d/advanced.conf"
-  local alacritty_conf="${dotfiles}/.config/alacritty/conf.d/env.yml"
+  local mimeapps="${DOTFILES}/.config/mimeapps.list"
+  local kitty_conf="${DOTFILES}/.config/kitty/conf.d/advanced.conf"
+  local alacritty_conf="${DOTFILES}/.config/alacritty/conf.d/env.yml"
 
   replacements() {
     sd --string-mode "${1}" "${3}" "${mimeapps}"
@@ -71,8 +71,8 @@ EOF
 
   [[ ${#} -ne 4 ]] && usage && return 1
 
-  local i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
-  local bghtop="${dotfiles}/.local/share/applications/bghtop.desktop"
+  local i3_conf="${DOTFILES}/.config/i3/conf.d/appstart_keybind.conf"
+  local bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
   local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
   local alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
   local kitty='bindsym $mod+Return exec --no-startup-id kitty'
@@ -149,15 +149,15 @@ tofish() {
 
   case "${distribution_name}" in
   'Gentoo Linux')
-    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_gentoo.conf"
-    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_gentoo.conf"
+    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
+    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
     ;;
   'Arch Linux')
-    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_arch.conf"
-    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_arch.conf"
+    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
+    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
     ;;
   esac
-  sed --in-place --expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
+  sed --in-place --expression="${startline},${endline}s/^# //" "${DOTFILES}/.zshrc"
 
   [[ ${?} -eq 0 ]] && exit
 }
@@ -216,10 +216,10 @@ EOF
 
   case "${flag}" in
   '--on')
-    sd '^(.*)# (export .*_proxy)' '$1$2' "${dotfiles}/.profile"
+    sd '^(.*)# (export .*_proxy)' '$1$2' "${DOTFILES}/.profile"
     ;;
   '--off')
-    sd '^(.*)(export .*_proxy)' '$1# $2' "${dotfiles}/.profile"
+    sd '^(.*)(export .*_proxy)' '$1# $2' "${DOTFILES}/.profile"
     ;;
   '--help')
     usage

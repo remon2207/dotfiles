@@ -1,0 +1,18 @@
+[user]
+  name = remon2207
+  email = remon2207.develop@gmail.com
+[commit]
+  template = /home/remon/commit.template
+[core]
+  editor = /usr/bin/nvim
+  quotepath = false
+  pager = delta --syntax-theme 'Solarized (dark)'
+[interactive]
+  diffFilter = delta --color-only --syntax-theme 'Solarized (dark)'
+[init]
+  defaultBranch = main
+[pull]
+  ff = only
+  rebase = false
+[color]
+  ui = true

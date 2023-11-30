@@ -4,14 +4,15 @@ set -eu
 
 current_dir=$(cd "$(dirname "${0}")" && pwd)
 home_symbolic=(
+  '.curlrc'
+  '.gitconfig'
   '.gtkrc-2.0_gentoo'
   '.profile'
   '.tmux.conf_gentoo'
+  '.wgetrc'
   '.xinitrc_gentoo'
   '.Xresources_gentoo'
   '.zshrc'
-  '.wgetrc'
-  '.curlrc'
   'commit.template'
 )
 conf_symbolic=(
