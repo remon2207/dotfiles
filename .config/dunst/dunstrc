@@ -1,7 +1,7 @@
 # See dunst(5) for all configuration options
 
 [global]
-  include dunstrc.d/*.conf
+    include ./dunstrc.d/*.conf
 
 [experimental]
     # Calculate the dpi to use on a per-monitor basis.
