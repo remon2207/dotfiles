@@ -3,7 +3,7 @@ export QT_QPA_PLATFORMTHEME='qt5ct'
 export PAGER='/usr/bin/bat'
 export MANPAGER='/bin/sh -c "/usr/bin/col --no-backspaces --spaces | /usr/bin/bat --language="man" --plain"'
 export MANROFFOPT='-c'
-export BAT_PAGER='/usr/bin/less --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
+export BAT_PAGER='/usr/bin/less --LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
