@@ -6,6 +6,7 @@ local api = vim.api
 local nvim_set_hl = api.nvim_set_hl
 local nvim_create_autocmd = api.nvim_create_autocmd
 
+-- グローバルオプション
 g.did_install_default_menus = 0
 g.did_install_syntax_menu = 0
 g.did_indent_on = 0
@@ -42,35 +43,35 @@ g.loaded_zipPlugin = 0
 g.skip_loading_mswin = 0
 g.vimsyn_embed = 0
 
+-- オプション
 -- 文字コード
 vim.scriptencoding = 'utf-8'
 o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 o.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
 o.fileformats = { 'unix', 'dos', 'mac' }
--- Share of register and clipboard
+-- レジスタとクリップボードの共有
 o.clipboard = 'unnamedplus'
--- Indent
+-- インデント
 o.expandtab = true
 o.autoindent = true
 -- o.smartindent = true
 o.smarttab = true
 o.tabstop = 2
 o.shiftwidth = 2
--- Case insensitive
+-- 大文字小文字の区別をしない
 o.ignorecase = true
 o.smartcase = true
--- Show number
+-- 行数を表示
 o.number = false
--- Highlight cursor line
+-- カーソル行をハイライト
 -- o.cursorline = true
 o.cursorline = false
--- Enable backspace key
 o.backspace = { 'indent', 'eol', 'start' }
--- Show always status line
+-- ステータスラインとを表示
 o.laststatus = 1
 o.cmdheight = 1
--- Show current mode
+-- 現在のモードを非表示にする
 o.showmode = false
 -- Show command you hit
 o.showcmd = true
@@ -96,16 +97,17 @@ o.signcolumn = 'no'
 o.autoread = true
 o.list = true
 o.listchars = 'tab:> ,space: '
--- leader
-vim.g.mapleader = ' '
+-- リーダー
+o.mapleader = ' '
 o.wildignore:append({ '*/node_modules/*' })
 o.wrap = false
 -- Confirm dialog on close
 o.confirm = true
 o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
--- shell of :terminal
+-- ターミナルモードのシェル
 o.shell = 'zsh'
 
+-- キーバインド
 keymap.set('n', '<Esc><Esc>', '<Cmd>set nohlsearch!<CR>', opts)
 keymap.set('n', 'm', '<Nop>', opts)
 keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
@@ -116,9 +118,12 @@ keymap.set('n', 'a', '<Nop>', opts)
 keymap.set('n', '<S-a>', '<Nop>', opts)
 keymap.set('n', 'q', '<Cmd>q<CR>', opts)
 
+-- 自動コマンド
 nvim_create_autocmd('TermOpen', {
   pattern = '*',
   command = 'normal G',
 })
 
+-- ハイライト
 nvim_set_hl(0, 'Search', { bg = '#000000', bold = true })
+nvim_set_hl(0, 'Visual', { fg = '#586e75', bg = '#002b36', reverse = true })
