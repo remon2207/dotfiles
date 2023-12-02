@@ -27,7 +27,7 @@ for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
 [[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
-unset distribution_name files file distribution_name
+unset distribution_name files file
 
 [[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 # shellcheck disable=SC1091
