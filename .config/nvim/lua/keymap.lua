@@ -13,14 +13,11 @@ keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 keymap.set('i', '<C-d>', '<Del>', opts)
 
--- keymap.set('n', 'fh', '<Cmd>bprev<CR>', opts)
--- keymap.set('n', 'fl', '<Cmd>bnext<CR>', opts)
 keymap.set('n', '<S-h>', '<Cmd>bprev<CR>', opts)
 keymap.set('n', '<S-l>', '<Cmd>bnext<CR>', opts)
 
 keymap.set('n', 'x', '"_x', opts)
 
--- keymap.set('n', '<C-z>', '<Nop>', opts)
 keymap.set('n', 'm', '<Nop>', opts)
 keymap.set({ 'n', 'v' }, 'q', '<Nop>', opts)
 -- Lazy.nvim

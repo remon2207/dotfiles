@@ -1,6 +1,6 @@
 local api = vim.api
-local nvim_create_autocmd = vim.api.nvim_create_autocmd
 local opt = vim.opt
+local nvim_create_autocmd = api.nvim_create_autocmd
 
 api.nvim_create_augroup('file', {})
 
@@ -19,6 +19,7 @@ nvim_create_autocmd('FileType', {
 
 nvim_create_autocmd('InsertLeave', {
   pattern = '*',
+  group = 'file',
   callback = function()
     if os.execute('fcitx5 &> /dev/null') then
       api.nvim_exec('call system("fcitx5-remote -c")', true)
@@ -26,26 +27,14 @@ nvim_create_autocmd('InsertLeave', {
   end,
 })
 
--- nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
---   pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.json', '*.yml', '*.vim', '*.prisma', '*.graphql', '*.css' },
---   group = 'file',
---   command = 'setlocal tabstop=2 shiftwidth=2',
--- })
-
--- nvim_create_autocmd({ 'FileType' }, {
---   pattern = { 'xml' },
---   group = 'file',
---   command = 'setlocal tabstop=2 shiftwidth=2',
--- })
-
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { '*.graphql', '*.prisma' },
+  pattern = '*.{graphql,prisma}',
   group = 'file',
   command = 'setlocal smartindent',
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { 'tsconfig.json', 'jsconfig.json' },
+  pattern = '{ts,js}config.json',
   group = 'file',
   command = 'setlocal ft=jsonc',
 })
@@ -57,19 +46,19 @@ nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { '/var/tmp/*.{service,network}' },
+  pattern = '/var/tmp/*.{service,network}',
   group = 'file',
   command = 'setlocal ft=systemd',
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { '/var/tmp/*.conf' },
+  pattern = '/var/tmp/*.conf',
   group = 'file',
   command = 'setlocal ft=conf',
 })
 
 nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = { '*.ebuild' },
+  pattern = '*.ebuild',
   group = 'file',
   command = 'setlocal tabstop=4 shiftwidth=4 noexpandtab',
 })

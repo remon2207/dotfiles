@@ -6,30 +6,30 @@ o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 o.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
 o.fileformats = { 'unix', 'dos', 'mac' }
--- Share of register and clipboard
+-- レジスタとクリップボードを共有
 o.clipboard = 'unnamedplus'
--- Indent
+-- インデント
 o.expandtab = true
 o.autoindent = true
 -- o.smartindent = true
 o.smarttab = true
 o.tabstop = 2
 o.shiftwidth = 2
--- Case insensitive
+-- 大文字小文字を区別しない
 o.ignorecase = true
 o.smartcase = true
--- Show number
+-- 行数を表示
 o.number = true
--- Relative line
+-- 相対行にする
 o.relativenumber = true
--- Highlight cursor line
+-- カーソル行をハイライトする
 o.cursorline = true
 -- Enable backspace key
 o.backspace = { 'indent', 'eol', 'start' }
--- Show always status line
+-- ステータスを表示
 o.laststatus = 2
 o.cmdheight = 1
--- Show current mode
+-- 現在のモードを非表示
 o.showmode = false
 -- Show command you hit
 o.showcmd = true
@@ -50,7 +50,7 @@ o.sidescrolloff = 5
 -- Popup window the background opacity
 o.wildoptions = 'pum'
 o.pumblend = 25
--- Show always sign column
+-- 常にサインカラムを表示
 o.signcolumn = 'yes'
 o.autoread = true
 o.list = true
