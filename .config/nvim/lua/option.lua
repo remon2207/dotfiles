@@ -55,15 +55,12 @@ o.signcolumn = 'yes'
 o.autoread = true
 o.list = true
 o.listchars = 'tab:> ,space: '
--- leader
+-- リーダー
 vim.g.mapleader = ' '
 o.wildignore:append({ '*/node_modules/*' })
 o.wrap = false
 -- Confirm dialog on close
 o.confirm = true
-o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
--- shell of :terminal
+o.mouse:remove({ 'n', 'v', 'i' })
+-- ターミナルモードのシェル
 o.shell = 'zsh'
---スペルチェック
--- o.spell = true
--- o.spelllang = 'en,cjk'

@@ -98,12 +98,11 @@ o.autoread = true
 o.list = true
 o.listchars = 'tab:> ,space: '
 -- リーダー
-o.mapleader = ' '
-o.wildignore:append({ '*/node_modules/*' })
+g.mapleader = ' '
 o.wrap = false
 -- Confirm dialog on close
 o.confirm = true
-o.mouse:remove({ 'n', 'i', 'c', 'r', 'v' })
+o.mouse:remove({ 'n', 'v', 'i' })
 -- ターミナルモードのシェル
 o.shell = 'zsh'
 

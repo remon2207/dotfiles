@@ -16,11 +16,10 @@ OPTIONS:
 EOF
   }
 
-  [[ ${#} -ne 4 ]] && usage && return 1
-
-  local mimeapps="${DOTFILES}/.config/mimeapps.list"
-  local kitty_conf="${DOTFILES}/.config/kitty/conf.d/advanced.conf"
-  local alacritty_conf="${DOTFILES}/.config/alacritty/conf.d/env.yml"
+  local dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+  local mimeapps="${dotfiles}/.config/mimeapps.list"
+  local kitty_conf="${dotfiles}/.config/kitty/conf.d/advanced.conf"
+  local alacritty_conf="${dotfiles}/.config/alacritty/conf.d/env.yml"
 
   replacements() {
     sd --string-mode "${1}" "${3}" "${mimeapps}"
@@ -37,7 +36,10 @@ EOF
       new="${OPTARG}"
       ;;
     'h')
-      usage && exit 0
+      usage && return 0
+      ;;
+    *)
+      usage && return 1
       ;;
     esac
   done
@@ -69,10 +71,9 @@ OPTIONS:
 EOF
   }
 
-  [[ ${#} -ne 4 ]] && usage && return 1
-
-  local i3_conf="${DOTFILES}/.config/i3/conf.d/appstart_keybind.conf"
-  local bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
+  local dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
+  local i3_conf="${dotfiles}/.config/i3/conf.d/appstart_keybind.conf"
+  local bghtop="${dotfiles}/.local/share/applications/bghtop.desktop"
   local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
   local alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
   local kitty='bindsym $mod+Return exec --no-startup-id kitty'
@@ -102,7 +103,10 @@ EOF
       new="${OPTARG}"
       ;;
     'h')
-      usage && exit 0
+      usage && return 0
+      ;;
+    *)
+      usage && return 1
       ;;
     esac
   done
@@ -133,7 +137,7 @@ bootusb() {
     read 'yn?実行しますか？(y/n): '
     case "${yn}" in
     ['yY'])
-      sudo dd bs='4M' "if=${1}" "of=${2}" conv='fsync' oflag='direct' status='progress'
+      sudo dd bs='4M' if="${1}" of="${2}" conv='fsync' oflag='direct' status='progress'
       ;;
     ['nN'])
       return 1
@@ -144,20 +148,23 @@ bootusb() {
 }
 
 tofish() {
+  local dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
   local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
   local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
+  local distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 
   case "${distribution_name}" in
   'Gentoo Linux')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf_gentoo"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf_gentoo"
     ;;
   'Arch Linux')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf_arch"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf_arch"
     ;;
   esac
-  sed --in-place --expression="${startline},${endline}s/^# //" "${DOTFILES}/.zshrc"
+
+  sed --in-place --expression="${startline},${endline}s/^# //" "${dotfiles}/.zshrc"
 
   [[ ${?} -eq 0 ]] && exit
 }
@@ -202,6 +209,7 @@ pkgupgrade() {
 
 proxy() {
   local flag="${1}"
+  local dotfiles="${HOME}/ghq/github.com/remon2207/dotfiles"
 
   usage() {
     bat --plain << EOF
@@ -216,17 +224,16 @@ EOF
 
   case "${flag}" in
   '--on')
-    sd '^(.*)# (export .*_proxy)' '$1$2' "${DOTFILES}/.profile"
+    sd '^(.*)# (export .*_proxy)' '$1$2' "${dotfiles}/.profile"
     ;;
   '--off')
-    sd '^(.*)(export .*_proxy)' '$1# $2' "${DOTFILES}/.profile"
+    sd '^(.*)(export .*_proxy)' '$1# $2' "${dotfiles}/.profile"
     ;;
   '--help')
-    usage
+    usage && return 0
     ;;
   *)
-    echo 'Not a valid option'
-    return 1
+    usage && return 1
     ;;
   esac
 }
@@ -234,7 +241,7 @@ EOF
 gentoocopy() {
   local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
 
-  cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use}} "${gentoo_setup}"
+  cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   cp --archive /usr/src/linux/.config "${gentoo_setup}/kernel_conf"
 }
 
