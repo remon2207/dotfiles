@@ -238,11 +238,11 @@ EOF
   esac
 }
 
-gentoocopy() {
+gentoocp() {
   local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
 
   cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
-  cp --archive /usr/src/linux/.config "${gentoo_setup}/kernel_conf"
+  zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
 }
 
 raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
@@ -253,6 +253,7 @@ nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
+silicondate() { silicon --output "${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && la; }
 shellstart() { la; }
 shellstart

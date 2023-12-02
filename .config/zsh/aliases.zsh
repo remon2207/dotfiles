@@ -85,7 +85,6 @@ alias svim='sudoedit'
 alias pn='pnpm'
 alias pnupdate='corepack prepare pnpm@latest --activate'
 alias pnpkgupdate='pnpm add --global --save-prod @fsouza/prettierd eslint_d'
-alias silicondate="silicon --output ${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 alias lzd='lazydocker'
 alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
 alias repo='cd "$(ghq list --full-path | fzf)"'
