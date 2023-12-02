@@ -117,7 +117,7 @@ keymap.set('n', '<S-a>', '<Nop>', opts)
 keymap.set('n', 'q', '<Cmd>q<CR>', opts)
 
 nvim_create_autocmd('TermOpen', {
-  pattern = { '*' },
+  pattern = '*',
   command = 'normal G',
 })
 
