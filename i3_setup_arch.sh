@@ -43,7 +43,7 @@ conf_symbolic=(
 )
 desktop_entry=(
   'bghtop.desktop'
-  'mozc.desktop'
+  'mozc_arch.desktop'
   'polybar_restart.desktop'
   'killstartup.desktop'
 )
