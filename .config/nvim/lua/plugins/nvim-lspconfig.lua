@@ -21,6 +21,7 @@ local api = vim.api
 keymap.set('n', '<Leader>q', '<Cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 
 api.nvim_create_autocmd('LspAttach', {
+  group = api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local opts = { buffer = ev.buf }
     local client = lsp.get_client_by_id(ev.data.client_id)
