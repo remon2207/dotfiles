@@ -253,7 +253,7 @@ nfind() { find "${@}" -not -path './.cache/*'; }
 sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
-silicondate() { silicon --output "${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
+silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
 chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && la; }
 shellstart() { la; }
 shellstart

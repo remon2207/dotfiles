@@ -100,13 +100,13 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &!'
+alias autosuspend='nohup xautolock -time=60 -locker="systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd --hidden --exclude "/mnt/" --exclude "${HOME}/.cache" --exclude "/.git/"'
+alias fd='fd --hidden --exclude="/mnt/" --exclude="${HOME}/.cache" --exclude="/.git/"'
 
 case "${distribution_name}" in
 'Arch Linux')
-  alias mirrorsync='sudo reflector --country "Japan" --age 24 --protocol "https" --sort "rate" --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+  alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
   alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
@@ -121,8 +121,8 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify --ignore-glob ".git"'
-  alias la='lsd --almost-all --classify --ignore-glob ".git"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob=".git"'
+  alias la='lsd --almost-all --classify --ignore-glob=".git"'
   alias sl='lsd'
 else
   alias ls='ls --color="auto"'
