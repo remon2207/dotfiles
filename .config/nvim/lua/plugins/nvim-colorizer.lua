@@ -10,6 +10,7 @@ colorizer.setup({
   'html',
   'lua',
   'vim',
+  'dosini',
   -- html = {
   --     mode = "foreground",
   -- },
