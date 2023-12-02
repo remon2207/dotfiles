@@ -8,7 +8,11 @@ if not status2 then
   return
 end
 
+local ft = require('Comment.ft')
+
+ft.set('ini', ';%s')
 comment.setup({
   ignore = '^$',
   pre_hook = ts.create_pre_hook(),
 })
+
