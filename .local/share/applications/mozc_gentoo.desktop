@@ -2,5 +2,5 @@
 Type=Application
 Name=Mozc config
 Path=/usr/libexec/mozc
-Exec=./mozc_tool --mode 'config_dialog'
+Exec=./mozc_tool --mode='config_dialog'
 Terminal=false
