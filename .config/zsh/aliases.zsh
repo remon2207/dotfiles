@@ -44,8 +44,6 @@ alias gm='git merge'
 alias gd='git diff'
 alias undoadd='git restore --staged'
 alias undocommit='git reset --soft "HEAD^"'
-alias commitnow="git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\""
-alias nowpush="git add . && git commit --message=\"$(date '+%Y/%m/%d %H:%M:%S')\" && git push"
 alias bghtop='nohup kitty --single-instance htop &> /dev/null &!'
 alias dockerprune='docker volume prune --force --all && docker system prune --force --all'
 alias psa='ps aux'

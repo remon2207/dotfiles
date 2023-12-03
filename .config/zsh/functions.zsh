@@ -251,6 +251,8 @@ stee() {
   sudo tee "${1}" &> /dev/null
 }
 
+nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; }
+commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; }
 gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
 addchange() { git add "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
 adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; }
