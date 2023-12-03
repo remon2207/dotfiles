@@ -120,13 +120,13 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify --ignore-glob=".git"'
-  alias la='lsd --almost-all --classify --ignore-glob=".git"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}"'
+  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}"'
   alias sl='lsd'
 else
   alias ls='ls --color="auto"'
-  alias ll='ls -l --almost-all --classify --ignore=".git" --color="auto"'
-  alias la='ls --almost-all --classify --ignore=".git" --color="auto"'
+  alias ll='ls -l --almost-all --classify --ignore=".{cache,git}" --color="auto"'
+  alias la='ls --almost-all --classify --ignore=".{cache,git}" --color="auto"'
   alias sl='ls --color="auto"'
 fi
 
