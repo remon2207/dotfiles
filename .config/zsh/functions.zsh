@@ -245,6 +245,10 @@ gentoocp() {
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
 }
 
+stee() {
+  sudo tee "${1}" &> /dev/null
+}
+
 raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
 psgrep() { ps aux | rg "${1}"; }
