@@ -91,6 +91,8 @@ EOF
     sd "^Exec=${5}" "# Exec=${5}" "${bghtop}"
     sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
 
+    sd "^export TERMINAL='/usr/bin/${5}'" "export TERMINAL='/usr/bin/${6}'" "${dotfiles}/.profile"
+
     exit
   }
 
