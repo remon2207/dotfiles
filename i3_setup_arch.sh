@@ -9,7 +9,7 @@ home_symbolic=(
   '.gitconfig'
   '.gtkrc-2.0_arch'
   '.profile'
-  '.tmux.conf_arch'
+  '.tmux_arch.conf'
   '.wgetrc'
   '.xinitrc_arch'
   '.Xresources_arch'

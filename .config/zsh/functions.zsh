@@ -157,12 +157,12 @@ tofish() {
 
   case "${distribution_name}" in
   'Gentoo Linux')
-    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf_gentoo"
-    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf_gentoo"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_gentoo.conf"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_gentoo.conf"
     ;;
   'Arch Linux')
-    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux.conf_arch"
-    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux.conf_arch"
+    sed --in-place --expression='2s/^/# /' "${dotfiles}/.tmux_arch.conf"
+    sed --in-place --expression='3s/^# //' "${dotfiles}/.tmux_arch.conf"
     ;;
   esac
 
@@ -251,6 +251,9 @@ stee() {
   sudo tee "${1}" &> /dev/null
 }
 
+gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
+addchange() { git add "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
+adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; }
 raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
 psgrep() { ps aux | rg "${1}"; }
