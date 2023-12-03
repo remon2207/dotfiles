@@ -98,9 +98,9 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/null &!'
+alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/null &! ps --no-header --format="command" -C "xautolock"'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd --hidden --exclude="/mnt/" --exclude="${HOME}/.cache" --exclude="/.git/"'
+alias fd='fd --hidden --exclude="/mnt/" --exclude="/.cache/" --exclude="/.git/"'
 alias su-='sudo su -'
 
 case "${distribution_name}" in
@@ -136,7 +136,6 @@ if type nvim &> /dev/null; then
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
-  alias killstartup='killall Discord slack &> /dev/null'
   alias b='bluetoothctl'
 else
   alias x='startx'

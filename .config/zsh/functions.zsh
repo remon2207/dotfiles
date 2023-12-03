@@ -1,5 +1,5 @@
 psidkill() {
-  local ps_id="$(ps aux | rg "${1}" | awk 'NR==1 {print $2}')"
+  local ps_id="$(ps -aux | rg "${1}" | awk 'NR==1 {print $2}')"
 
   kill ${ps_id}
 }
@@ -260,8 +260,8 @@ raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
 psgrep() { ps aux | rg "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
-nfind() { find "${@}" -not -path './.cache/*'; }
-sfind() { sudo find "${@}" -not \( -path "${HOME}/.cache/*" -o -path '/mnt/*' \); }
+nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); }
+sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '/mnt/*' \); }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
