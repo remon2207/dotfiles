@@ -103,6 +103,7 @@ alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --exclude="/mnt/" --exclude="${HOME}/.cache" --exclude="/.git/"'
+alias su-='sudo su -'
 
 case "${distribution_name}" in
 'Arch Linux')
