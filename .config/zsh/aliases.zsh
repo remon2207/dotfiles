@@ -102,6 +102,7 @@ alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --exclude="/mnt/" --exclude="/.cache/" --exclude="/.git/"'
 alias su-='sudo su -'
+alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modules_install; make install"'
 
 case "${distribution_name}" in
 'Arch Linux')
