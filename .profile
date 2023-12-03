@@ -19,9 +19,9 @@ export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".git" -
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".git" --exclude=".cache"'
 export FZF_DEFAULT_OPTS="\
 --height='40%' --layout='reverse' --no-mouse \
---color bg+:#073642,spinner:#2aa198,hl:#268bd2 \
---color fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198 \
---color marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2"
+--color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
+--color='fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198' \
+--color='marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2'"
 
 if [[ "$(rg '^DNS' /etc/systemd/network/20-wired.network)" == 'DNS=192.168.1.202' ]]; then
   export http_proxy='http://proxy.home:8080'

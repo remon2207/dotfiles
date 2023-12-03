@@ -25,13 +25,15 @@
             "y": 17
           },
           "marks": [],
-          "name": "random - vim-jp - Slack",
+          // "name": "random - vim-jp - Slack",
+          "name": ".* Slack",
           "percent": 0.5,
           "swallows": [
             {
               "class": "^Slack$",
               "instance": "^slack$",
-              "title": "^random\\ \\-\\ vim\\-jp\\ \\-\\ Slack$",
+              // "title": "^random\\ \\-\\ vim\\-jp\\ \\-\\ Slack$",
+              "title": "^.*\\ Slack$",
               "window_role": "^browser\\-window$"
             }
           ],
@@ -80,13 +82,15 @@
             "y": 17
           },
           "marks": [],
-          "name": "#雑談💬 | Lespedeza - Discord",
+          // "name": "#雑談💬 | Lespedeza - Discord",
+          "name": ".* Discord",
           "percent": 0.5,
           "swallows": [
             {
               "class": "^discord$",
               "instance": "^discord$",
-              "title": "^\\#雑談💬\\ \\|\\ Lespedeza\\ \\-\\ Discord$",
+              // "title": "^\\#雑談💬\\ \\|\\ Lespedeza\\ \\-\\ Discord$",
+              "title": "^.*\\ Discord$",
               "window_role": "^browser\\-window$"
             }
           ],

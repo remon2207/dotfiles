@@ -100,7 +100,7 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias autosuspend='nohup xautolock -time=60 -locker="systemctl suspend" &> /dev/null &!'
+alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/null &!'
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --exclude="/mnt/" --exclude="${HOME}/.cache" --exclude="/.git/"'
 
