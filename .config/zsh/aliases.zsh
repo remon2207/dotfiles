@@ -120,6 +120,7 @@ case "${distribution_name}" in
   ;;
 'Gentoo Linux')
   alias pkgclean='sudo emerge --ask --depclean'
+  alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
   ;;
 esac
 
