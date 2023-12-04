@@ -52,12 +52,14 @@ require('lazy').setup({
   -- Color Scheme
   -- {
   --   'RRethy/nvim-base16',
+    -- priority = 1000,
   --   config = function ()
   --     vim.cmd([[colorscheme base16-solarized-dark]])
   --   end
   -- },
   {
     'ishan9299/nvim-solarized-lua',
+    priority = 1000,
     config = function()
       require('plugins.nvim-solarized-lua')
     end,
