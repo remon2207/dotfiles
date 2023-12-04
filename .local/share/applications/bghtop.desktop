@@ -5,4 +5,5 @@ Path=/usr/bin
 # Exec=alacritty --command htop
 Exec=kitty --single-instance htop
 # Exec=wezterm start htop
+Icon=htop
 Terminal=false

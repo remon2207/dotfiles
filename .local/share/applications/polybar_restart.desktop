@@ -3,4 +3,5 @@ Type=Application
 Name=Polybar Restart
 Path=/home/remon/bin
 Exec=polybar_restart.sh
+Icon=utilities-terminal
 Terminal=false
