@@ -52,16 +52,12 @@ require('lazy').setup({
   -- Color Scheme
   -- {
   --   'RRethy/nvim-base16',
-  --   lazy = false,
-  --   priority = 1000,
   --   config = function ()
   --     vim.cmd([[colorscheme base16-solarized-dark]])
   --   end
   -- },
   {
     'ishan9299/nvim-solarized-lua',
-    lazy = false,
-    priority = 1000,
     config = function()
       require('plugins.nvim-solarized-lua')
     end,
@@ -150,19 +146,6 @@ require('lazy').setup({
       require('plugins.nvim-autopairs')
     end,
   },
-
-  -- Filer
-  -- {
-  --   'nvim-neo-tree/neo-tree.nvim',
-  --   config = function()
-  --     require('plugins.neo-tree')
-  --   end,
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --     'kyazdani42/nvim-web-devicons',
-  --     'MunifTanjim/nui.nvim',
-  --   },
-  -- },
 
   -- LSP
   {
