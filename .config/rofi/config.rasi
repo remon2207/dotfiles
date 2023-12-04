@@ -1,6 +1,21 @@
 configuration {
   font: "Noto Sans CJK JP 12";
   show-icons: true;
+  display-drun: " ";
+  display-window: " ";
 }
 
 @theme "solarized"
+
+* {
+    alternate-normal-background: rgba ( 0, 43, 55, 0 % );
+    alternate-urgent-background: rgba ( 0, 43, 55, 75 % );
+    alternate-active-background: rgba ( 0, 43, 55, 75 % );
+    background:                  rgba ( 0, 43, 55, 75 % );
+    normal-background:           rgba ( 0, 0, 0, 0 % );
+    selected-normal-background:  rgba ( 0, 54, 66, 75 % );
+    urgent-background:           rgba ( 0, 43, 55, 75 % );
+    selected-urgent-background:  rgba ( 0, 54, 66, 75 % );
+    active-background:           rgba ( 0, 43, 55, 75 % );
+    selected-active-background:  rgba ( 0, 54, 66, 75 % );
+}
