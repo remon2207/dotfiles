@@ -269,4 +269,12 @@ require('lazy').setup({
       require('plugins.fidget')
     end,
   },
+
+  -- {
+  --   'krivahtoo/silicon.nvim',
+  --   build = './install.sh',
+  --   config = function()
+  --     require('plugins.silicon')
+  --   end
+  -- }
 }, opts)

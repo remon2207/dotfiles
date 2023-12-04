@@ -103,6 +103,8 @@ alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --exclude="/mnt/" --exclude="/.cache/" --exclude="/.git/"'
 alias su-='sudo su -'
 alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modules_install; make install"'
+alias vim='nvim'
+alias vim.='nvim .'
 
 case "${distribution_name}" in
 'Arch Linux')
@@ -121,19 +123,14 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}"'
-  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
+  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
   alias sl='lsd'
 else
   alias ls='ls --color="auto"'
-  alias ll='ls -l --almost-all --classify --ignore=".{cache,git}" --color="auto"'
-  alias la='ls --almost-all --classify --ignore=".{cache,git}" --color="auto"'
+  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
+  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
   alias sl='ls --color="auto"'
-fi
-
-if type nvim &> /dev/null; then
-  alias vim='nvim'
-  alias vim.='nvim .'
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
