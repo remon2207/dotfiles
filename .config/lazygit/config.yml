@@ -2,3 +2,4 @@ gui:
   showIcons: true
   language: 'ja'
 notARepository: 'quit'
+promptToReturnFromSubprocess: true
