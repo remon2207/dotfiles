@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=exit i3
+Exec=killall vivaldi-bin Discord slack kitty
+Terminal=false
