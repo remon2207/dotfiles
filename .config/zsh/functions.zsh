@@ -1,9 +1,3 @@
-psidkill() {
-  local ps_id="$(ps -aux | rg "${1}" | awk 'NR==1 {print $2}')"
-
-  kill ${ps_id}
-}
-
 changebrowser() {
   usage() {
     bat --plain << EOF
@@ -261,7 +255,7 @@ addchange() { git add "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
 adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; }
 raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; }
-psgrep() { ps aux | rg "${1}"; }
+psgrep() { procs "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '/mnt/*' \); }

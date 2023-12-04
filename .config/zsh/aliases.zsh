@@ -84,7 +84,7 @@ alias pn='pnpm'
 alias pnupdate='corepack prepare pnpm@latest --activate'
 alias pnpkgupdate='pnpm add --global --save-prod @fsouza/prettierd eslint_d'
 alias lzd='lazydocker'
-alias lzg="${HOME}/.config/lazygit/symlink_workaround.sh"
+alias lzg="${XDG_CONFIG_HOME}/lazygit/symlink_workaround.sh"
 alias repo='cd "$(ghq list --full-path | fzf)"'
 alias reporm='rm "$(ghq list --full-path | fzf)"'
 alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields="2-"'
@@ -106,7 +106,8 @@ alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modu
 alias vim='nvim'
 alias vim.='nvim .'
 alias wget='wget --no-hsts'
-alias procs="procs --load-config='${HOME}/.config/procs/config.toml'"
+alias procs="procs --load-config='${XDG_CONFIG_HOME}/procs/config.toml'"
+alias http='http --body --style="solarized" --format-options="json.indent:2"'
 
 case "${distribution_name}" in
 'Arch Linux')
