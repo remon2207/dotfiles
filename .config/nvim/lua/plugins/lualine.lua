@@ -8,6 +8,9 @@ if not status2 then
   return
 end
 
+solarized_dark.normal.b.fg = '#93a1a1'
+solarized_dark.normal.b.bg = '#073642'
+
 local options = {
   theme = solarized_dark,
 }
