@@ -188,6 +188,7 @@ require('lazy').setup({
   'saadparwaiz1/cmp_luasnip',
   'petertriho/cmp-git',
   'onsails/lspkind.nvim',
+  'hrsh7th/cmp-omni',
 
   -- LSPの不足のカラーを追加
   {

@@ -22,3 +22,6 @@ keymap('n', 'm', '<Nop>', opts)
 keymap({ 'n', 'v' }, 'q', '<Nop>', opts)
 -- Lazy.nvim
 keymap('n', '<Leader>L', '<Cmd>Lazy<CR>', opts)
+
+-- パスのチルダを${HOME}へ変更
+keymap('n', '<Leader>d~', '<Cmd>s/\\~/${HOME}/<CR>', opts)
