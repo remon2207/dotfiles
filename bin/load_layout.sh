@@ -7,8 +7,8 @@ i3-msg "workspace 3; append_layout ${HOME}/.config/i3/workspace_3.json"
 i3-msg "workspace 1; append_layout ${HOME}/.config/i3/workspace_1.json"
 
 # And finally we fill the containers with the programs they had
-(kitty --single-instance htop &)
-(kitty --single-instance nvtop &)
+(discord &)
 (slack &)
 (vivaldi-stable &)
-(discord &)
+(kitty --single-instance htop &)
+(kitty --single-instance nvtop &)
