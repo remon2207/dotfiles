@@ -34,6 +34,7 @@ conf_symbolic=(
   'nvim'
   'picom'
   'polybar_arch'
+  'procs'
   'qt5ct'
   'ranger'
   'rofi'

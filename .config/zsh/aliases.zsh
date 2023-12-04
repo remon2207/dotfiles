@@ -91,7 +91,7 @@ alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut
 alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
-alias less='less --LONG-PROMPT --LINE-NUMBERS --ignore-case --tabs=4'
+alias less='less --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 alias homesize='du --summarize --block-size="1M" "./"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
@@ -105,6 +105,8 @@ alias su-='sudo su -'
 alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modules_install; make install"'
 alias vim='nvim'
 alias vim.='nvim .'
+alias wget='wget --no-hsts'
+alias procs="procs --load-config='${HOME}/.config/procs/config.toml'"
 
 case "${distribution_name}" in
 'Arch Linux')

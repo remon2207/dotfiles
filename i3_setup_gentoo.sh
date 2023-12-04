@@ -34,6 +34,7 @@ conf_symbolic=(
   'nvim'
   'picom'
   'polybar_gentoo'
+  'procs'
   'qt5ct'
   'ranger'
   'rofi'

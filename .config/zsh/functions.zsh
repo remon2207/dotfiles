@@ -247,10 +247,13 @@ gentoocp() {
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
 }
 
-stee() {
-  sudo tee "${1}" &> /dev/null
+pkgsshowuse() {
+  pkgs="$(emerge --pretend $(equery list '*' | awk '{print $1}' | sed --expression='s/^/=/' | tr '\n' ' '))"
+
+  echo "${pkgs}" | cut --delimiter=']' --fields=2- | rg --case-sensitive 'USE=".*"'
 }
 
+stee() { sudo tee "${1}" &> /dev/null; }
 nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; }
 commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; }
 gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
