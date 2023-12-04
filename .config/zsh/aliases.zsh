@@ -92,7 +92,7 @@ alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
 alias less='less --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
-alias homesize='du --summarize --block-size="1M" "./"{*,.*} | sort --numeric-sort'
+alias homesize='du --summarize --block-size="1M" "${HOME}/"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
