@@ -2,4 +2,4 @@
 
 set -eu
 
-killall Discord slack &> /dev/null
+killall vivaldi-bin Discord slack htop nvtop &> /dev/null
