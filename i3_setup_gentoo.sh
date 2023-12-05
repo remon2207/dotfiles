@@ -15,6 +15,7 @@ home_symbolic=(
   '.Xresources_gentoo'
   '.zshrc'
   'commit.template'
+  'bin'
 )
 conf_symbolic=(
   'alacritty'
