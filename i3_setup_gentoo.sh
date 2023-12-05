@@ -42,12 +42,7 @@ conf_symbolic=(
   'wezterm'
   'zsh'
 )
-desktop_entry=(
-  'bghtop.desktop'
-  'mozc_gentoo.desktop'
-  'polybar_restart.desktop'
-  'killstartup.desktop'
-)
+desktop_entry=('mozc_gentoo.desktop')
 
 setup() {
   rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/i3"
