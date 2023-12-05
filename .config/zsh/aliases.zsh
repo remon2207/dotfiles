@@ -108,6 +108,9 @@ alias vim.='nvim .'
 alias wget='wget --no-hsts'
 alias procs="procs --load-config='${XDG_CONFIG_HOME}/procs/config.toml'"
 alias http='http --body --style="solarized" --format-options="json.indent:2"'
+alias dunst-close='dunstctl close'
+alias exit-i3='i3-msg exit'
+alias killstartup='killall vivaldi-bin Discord slack htop nvtop &> /dev/null'
 
 case "${distribution_name}" in
 'Arch Linux')
