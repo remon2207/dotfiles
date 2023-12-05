@@ -15,8 +15,8 @@ export LESSHISTFILE='/dev/null'
 export TMPDIR='/tmp'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NVM_DIR="${HOME}/.config/nvm"
-export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude="/.git/" --exclude="/.cache/"'
-export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude="/.git/" --exclude="/.cache/"'
+export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".git" --exclude=".cache"'
+export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".git" --exclude=".cache"'
 export FZF_DEFAULT_OPTS="\
 --height='40%' --layout='reverse' --no-mouse \
 --color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
