@@ -34,10 +34,6 @@ psd_settings() {
   systemctl --user enable --now psd.service
 }
 
-other() {
-  sudo systemctl set-ntp true
-}
-
 main() {
   paru_install
   aur_install
@@ -45,4 +41,5 @@ main() {
   other
 }
 
+sudo systemctl set-ntp true
 main "${@}"
