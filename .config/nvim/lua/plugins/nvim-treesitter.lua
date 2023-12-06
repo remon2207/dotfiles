@@ -36,6 +36,7 @@ local ensure_installed = {
   'vim',
   'vimdoc',
   'yaml',
+  'rasi'
 }
 
 t.setup({

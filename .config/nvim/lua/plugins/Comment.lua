@@ -11,6 +11,7 @@ end
 local ft = require('Comment.ft')
 
 ft.set('ini', ';%s')
+ft.set('rasi', { '/*%s*/', '/*%s*/' })
 comment.setup({
   ignore = '^$',
   pre_hook = ts.create_pre_hook(),
