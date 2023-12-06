@@ -239,12 +239,20 @@ gentoocp() {
 
   cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
+  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak > /dev/null
 }
 
 pkgsshowuse() {
   pkgs="$(emerge --pretend $(equery list '*' | awk '{print $1}' | sed --expression='s/^/=/' | tr '\n' ' '))"
 
   echo "${pkgs}" | cut --delimiter=']' --fields=2- | rg --case-sensitive 'USE=".*"'
+}
+
+nvmupgrade() {
+  cd "${NVM_DIR}"
+  git fetch --tags origin
+  git checkout "${@}"
+  [[ $? -eq 0 ]] && exit
 }
 
 stee() { sudo tee "${1}" &> /dev/null; }
