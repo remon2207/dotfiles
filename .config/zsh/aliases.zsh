@@ -128,13 +128,13 @@ esac
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
-  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}"'
+  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}"'
   alias sl='lsd'
 else
   alias ls='ls --color="auto"'
-  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
-  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git,nv,dbus,pki,zcompdump,zcompcache,z,tmux,Xauthority,bash_history,zsh_history,bash_logout,bash_profile}"'
+  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git}"'
+  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git}"'
   alias sl='ls --color="auto"'
 fi
 
