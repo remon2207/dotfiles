@@ -126,3 +126,5 @@ autocmd('TermOpen', {
 -- ハイライト
 hl(0, 'Search', { bg = '#000000', bold = true })
 hl(0, 'Visual', { fg = '#586e75', bg = '#002b36', reverse = true })
+hl(0, 'Error', { fg = '#dc322f', bg = '#002b36' })
+hl(0, 'ErrorMsg', { fg = '#dc322f', bg= '#002b36' })
