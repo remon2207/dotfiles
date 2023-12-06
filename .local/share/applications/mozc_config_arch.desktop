@@ -3,4 +3,5 @@ Type=Application
 Name=Mozc config
 Path=/usr/lib/mozc
 Exec=./mozc_tool --mode='config_dialog'
+Icon=org.fcitx.Fcitx5.fcitx-mozc-tool
 Terminal=false

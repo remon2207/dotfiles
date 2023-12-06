@@ -43,7 +43,6 @@ conf_symbolic=(
   'wezterm'
   'zsh'
 )
-desktop_entry=('mozc_gentoo.desktop')
 
 setup() {
   rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/i3"
@@ -52,7 +51,9 @@ setup() {
 
   for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${current_dir}/${home}" "${HOME}"; done
   for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${current_dir}/.config/${conf}" "${HOME}/.config"; done
-  for entry in "${desktop_entry[@]}"; do ln --symbolic --force --verbose "${desktop_entry_dir}/${entry}" "${HOME}/.local/share/applications"; done
+
+  ln --symbolic --force --verbose "${desktop_entry_dir}/mozc_config_gentoo.desktop" "${HOME}/.local/share/applications/mozc_config.desktop"
+  ln --symbolic --force --verbose "${desktop_entry_dir}/mozc_dictionary_gentoo.desktop" "${HOME}/.local/share/applications/mozc_dictionary.desktop"
 
   sudo ln --symbolic --force --verbose "${HOME}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
   sudo ln --symbolic --force --verbose "${HOME}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
