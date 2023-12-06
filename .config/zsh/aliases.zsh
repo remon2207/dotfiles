@@ -6,7 +6,7 @@ alias c='clear'
 alias sudo='sudo '
 alias rm='rm --recursive --force'
 alias mkdir='mkdir --parents'
-alias dot="cd ${HOME}/ghq/github.com/remon2207/dotfiles"
+alias dot="cd ${DOTFILES}"
 alias vimfont="nvim ${XDG_CONFIG_HOME}/fontconfig/fonts.conf"
 alias vimwez="nvim ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
 alias vimmime="nvim ${XDG_CONFIG_HOME}/mimeapps.list"
@@ -98,7 +98,7 @@ alias wmclassname='xprop WM_CLASS WM_NAME'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
-alias autosuspend='nohup xautolock -time 90 -locker "systemctl suspend" &> /dev/null &! ps --no-header --format="command" -C "xautolock"'
+alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &! ps --no-header --format="command" -C "xautolock"'
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --exclude="mnt" --exclude=".cache" --exclude=".git" --exclude="ccache"'
 alias su-='sudo su -'
@@ -114,8 +114,8 @@ case "${distribution_name}" in
   alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
-  alias pkglist="pacman -Qqen > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist"
-  alias pkglistaur="pacman -Qqe > ${HOME}/ghq/github.com/remon2207/dotfiles/pkglist_aur"
+  alias pkglist="pacman -Qqen > ${DOTFILES}/pkglist"
+  alias pkglistaur="pacman -Qqe > ${DOTFILES}/pkglist_aur"
   alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
   ;;
