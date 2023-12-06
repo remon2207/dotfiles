@@ -46,8 +46,5 @@ t.setup({
   autotag = {
     enable = true,
   },
-  indent = {
-    enable = false,
-  },
   ensure_installed = ensure_installed,
 })
