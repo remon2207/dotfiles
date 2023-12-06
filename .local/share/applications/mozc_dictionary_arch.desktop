@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Mozc dictionary
+Name=Mozc 辞書
 Path=/usr/libexec/mozc
 Exec=./mozc_tool --mode='dictionary_tool'
 Icon=org.fcitx.Fcitx5.fcitx-mozc-dictionary
