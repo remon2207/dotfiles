@@ -1,12 +1,14 @@
 configuration {
-  modes: "combi";
-  combi-modes: "window,drun,run";
+/*  modes: "combi";
+  combi-modes: "window,drun,run"; */
+  modes: "window,drun,run";
   font: "Noto Sans CJK JP 12";
   display-window: " ";
   display-drun: " ";
   display-run: " ";
-  display-ssh: "󰑔 ";
+/*  display-ssh: "󰑔 "; */
   show-icons: true;
+  sidebar-mode: true;
 }
 
 @theme "solarized"
