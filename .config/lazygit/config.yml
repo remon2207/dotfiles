@@ -2,5 +2,6 @@ gui:
   showIcons: true
   language: 'ja'
   mouseEvents: false
+  showRandomTip: false
 notARepository: 'quit'
 promptToReturnFromSubprocess: false
