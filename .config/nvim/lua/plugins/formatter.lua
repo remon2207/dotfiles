@@ -51,6 +51,7 @@ formatter.setup({
 })
 
 api.nvim_create_autocmd('BufWritePost', {
-  pattern = { '*.sh', '*.zsh', '.profile', '.bash*' },
+  -- pattern = { '*.sh', '*.zsh', '.profile', '.bash*', '.zshrc' },
+  pattern = { '*.sh' },
   command = 'FormatWrite',
 })

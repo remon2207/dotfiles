@@ -261,6 +261,5 @@ sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '/mnt/*' \); }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
-chpwd() { [[ "$(pwd)" != "${OLDPWD}" ]] && la; }
-shellstart() { la; }
-shellstart
+chpwd() { la; }
+() { la; }
