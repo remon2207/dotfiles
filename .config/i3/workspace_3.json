@@ -20,20 +20,18 @@
           "floating": "auto_off",
           "geometry": {
             "height": 1026,
-            "width": 934,
+            "width": 1886,
             "x": 1937,
             "y": 17
           },
           "marks": [],
-          // "name": "random - vim-jp - Slack",
-          "name": ".* Slack",
+          "name": ".* Discord",
           "percent": 0.5,
           "swallows": [
             {
-              "class": "^Slack$",
-              "instance": "^slack$",
-              // "title": "^random\\ \\-\\ vim\\-jp\\ \\-\\ Slack$",
-              "title": "^.*\\ Slack$",
+              "class": "^discord$",
+              "instance": "^discord$",
+              "title": "^.*\\ Discord$",
               "window_role": "^browser\\-window$"
             }
           ],
@@ -44,8 +42,8 @@
           "current_border_width": 2,
           "floating": "auto_off",
           "geometry": {
-            "height": 1026,
-            "width": 1886,
+            "height": 504,
+            "width": 934,
             "x": 0,
             "y": 0
           },
@@ -77,20 +75,18 @@
           "floating": "auto_off",
           "geometry": {
             "height": 1026,
-            "width": 1886,
+            "width": 934,
             "x": 1937,
             "y": 17
           },
           "marks": [],
-          // "name": "#雑談💬 | Lespedeza - Discord",
-          "name": ".* Discord",
-          "percent": 0.5,
+          "name": ".* Slack",
+          "percent": 0.75,
           "swallows": [
             {
-              "class": "^discord$",
-              "instance": "^discord$",
-              // "title": "^\\#雑談💬\\ \\|\\ Lespedeza\\ \\-\\ Discord$",
-              "title": "^.*\\ Discord$",
+              "class": "^Slack$",
+              "instance": "^slack$",
+              "title": "^.*\\ Slack$",
               "window_role": "^browser\\-window$"
             }
           ],
@@ -101,14 +97,14 @@
           "current_border_width": 2,
           "floating": "auto_off",
           "geometry": {
-            "height": 1080,
-            "width": 1920,
+            "height": 1026,
+            "width": 1886,
             "x": 0,
             "y": 0
           },
           "marks": [],
           "name": "nvtop",
-          "percent": 0.5,
+          "percent": 0.25,
           "swallows": [
             {
               "class": "^kitty$",
