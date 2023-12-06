@@ -40,12 +40,12 @@ numeric_search = false
 nonnumeric_search = false
 align = "Right"
 
-[[columns]]
-kind = "CpuTime"
-style = "BrightCyan|Cyan"
-numeric_search = false
-nonnumeric_search = false
-align = "Left"
+# [[columns]]
+# kind = "CpuTime"
+# style = "BrightCyan|Cyan"
+# numeric_search = false
+# nonnumeric_search = false
+# align = "Left"
 
 [[columns]]
 kind = "MultiSlot"
