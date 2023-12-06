@@ -233,7 +233,7 @@ EOF
 gentoocp() {
   local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
 
-  cp --archive /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
+  rsync --archive --update --delete --verbose /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
   zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak > /dev/null
 }
