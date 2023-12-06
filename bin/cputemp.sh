@@ -11,10 +11,10 @@ core4="$(bat --plain "${temp_dir}/temp6_input" | awk '{print substr($0,1,3)}' | 
 core5="$(bat --plain "${temp_dir}/temp7_input" | awk '{print substr($0,1,3)}' | sd '(..)' '$1.')"
 
 average="$(echo -e "${core0}\n${core1}\n${core2}\n${core3}\n${core4}\n${core5}" | awk '{x++;sum+=$1} END {print sum/x}' | awk '{print substr($0,1,4)}')"
-average_digit="$(echo -n "${average}" | wc -c)"
+average_digit="$(echo -n "${average}" | wc --bytes)"
 
 if [[ ${average_digit} -eq 2 ]]; then
-  echo "$(echo "${average}" | sed -e 's/$/.0/')℃ "
+  echo "${average}" | sd '$' '.0℃'
 else
-  echo "${average}℃ "
+  echo "${average}℃"
 fi
