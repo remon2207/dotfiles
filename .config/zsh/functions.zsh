@@ -251,7 +251,7 @@ pkgsshowuse() {
 nvmupgrade() {
   cd "${NVM_DIR}"
   git fetch --tags origin
-  git checkout "${@}"
+  git switch --detach "${@}"
   [[ $? -eq 0 ]] && exit
 }
 
