@@ -91,7 +91,7 @@ alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut
 alias t='tmux'
 alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
-# alias less='less --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
+alias less='less --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 alias homesize='du --summarize --block-size="1M" "${HOME}/"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
@@ -108,8 +108,6 @@ alias v.='nvim .'
 alias wget='wget --no-hsts'
 alias procs="procs --load-config='${XDG_CONFIG_HOME}/procs/config.toml'"
 alias http='http --body --style="solarized" --format-options="json.indent:2"'
-alias cat='bat --plain'
-alias less='bat --plain --number'
 
 case "${distribution_name}" in
 'Arch Linux')
