@@ -46,7 +46,6 @@ alias undoadd='git restore --staged'
 alias undocommit='git reset --soft "HEAD^"'
 alias bghtop='nohup kitty --single-instance htop &> /dev/null &!'
 alias dockerprune='docker volume prune --force --all && docker system prune --force --all'
-alias psa='ps -A --format="user,pid,%cpu,%mem,command"'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
 alias sysoff='sudo systemctl poweroff'
@@ -87,9 +86,7 @@ alias repo='cd "$(ghq list --full-path | fzf)"'
 alias reporm='rm "$(ghq list --full-path | fzf)"'
 alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields="2-"'
 alias t='tmux'
-alias rg='rg --ignore-case --no-line-number'
 alias r='ranger'
-alias less='less --LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 alias homesize='du --summarize --block-size="1M" "${HOME}/"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
 alias wmclassname='xprop WM_CLASS WM_NAME'
@@ -117,9 +114,9 @@ case "${distribution_name}" in
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
   ;;
 'Gentoo Linux')
-  alias pkgclean='sudo emerge --ask --depclean'
-  alias portageupgrade='sudo emerge --ask --verbose --oneshot sys-apps/portage'
-  alias showpkgsuse='emerge --pretend --verbose --emptytree @world'
+  alias pkgclean='sudo emerge --ask --verbose="n" --depclean'
+  alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
+  alias showpkgsuse='emerge --pretend --emptytree @world'
   ;;
 esac
 

@@ -57,9 +57,3 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
   group = 'file',
   command = 'setlocal tabstop=4 shiftwidth=4 noexpandtab',
 })
-
-autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = '*.rasi',
-  group = 'file',
-  command = 'setlocal filetype=rasi',
-})

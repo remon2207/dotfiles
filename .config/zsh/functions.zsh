@@ -178,8 +178,8 @@ pkgupgrade() {
   'Gentoo Linux')
     sudo emerge-webrsync
     sudo emaint sync --auto
-    sudo emerge --ask --verbose --update --deep --newuse @world
-    sudo emerge --ask --depclean
+    sudo emerge --ask --update --deep --newuse @world
+    sudo emerge --ask --verbose='n' --depclean
     ;;
   'Arch Linux')
     checkupdates

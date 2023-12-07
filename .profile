@@ -4,7 +4,6 @@ export TERMINAL='/usr/bin/kitty'
 export PAGER='/usr/bin/bat'
 export MANPAGER='/bin/sh -c "/usr/bin/col --no-backspaces --spaces | /usr/bin/bat --language="man" --plain"'
 export MANROFFOPT='-c'
-export BAT_PAGER='/usr/bin/less --LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
@@ -12,7 +11,10 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 export GLFW_IM_MODULE='ibus'
 export LESSHISTFILE='/dev/null'
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
+export LESS='--LONG-PROMPT --LINE-NUMBERS --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
+export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NVM_DIR="${HOME}/.config/nvm"
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".git" --exclude=".cache"'
