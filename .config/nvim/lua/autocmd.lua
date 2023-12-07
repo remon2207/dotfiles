@@ -16,8 +16,8 @@ autocmd('InsertLeave', {
   pattern = '*',
   group = 'file',
   callback = function()
-    if os.execute('fcitx5 &> /dev/null') then
-      api.nvim_exec('call system("fcitx5-remote -c")', true)
+    if os.execute('fcitx5-remote &> /dev/null') then
+      vim.cmd([[call system('fcitx5-remote -c')]])
     end
   end,
 })
@@ -31,25 +31,25 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '{ts,js}config.json',
   group = 'file',
-  command = 'setlocal ft=jsonc',
+  command = 'setlocal filetype=jsonc',
 })
 
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '/var/tmp/fstab.*',
   group = 'file',
-  command = 'setlocal ft=fstab',
+  command = 'setlocal filetype=fstab',
 })
 
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '/var/tmp/*.{service,network}',
   group = 'file',
-  command = 'setlocal ft=systemd',
+  command = 'setlocal filetype=systemd',
 })
 
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '/var/tmp/*.conf',
   group = 'file',
-  command = 'setlocal ft=conf',
+  command = 'setlocal filetype=conf',
 })
 
 autocmd({ 'BufNewFile', 'BufRead' }, {
@@ -61,5 +61,5 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '*.rasi',
   group = 'file',
-  command = 'setlocal ft=rasi',
+  command = 'setlocal filetype=rasi',
 })
