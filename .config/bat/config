@@ -1,4 +1,4 @@
 --theme='Solarized (dark)'
---pager='/usr/bin/less'
+--pager='/usr/bin/less --line-numbers'
 
 # vim: set ft=conf :

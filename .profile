@@ -9,11 +9,10 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
-export GLFW_IM_MODULE='ibus'
 export LESSHISTFILE='/dev/null'
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
-export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
+export LESS='--LINE-NUMBERS --LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NVM_DIR="${HOME}/.config/nvm"
@@ -32,14 +31,16 @@ if [[ "$(rg '^DNS' /etc/systemd/network/20-wired.network)" == 'DNS=192.168.1.202
   export RSYNC_PROXY="${http_proxy}"
 fi
 
-if [[ -n "${DISPLAY}" ]]; then
-  export EDITOR='/usr/bin/nvim'
-  export VISUAL='/usr/bin/nvim'
-  export SUDO_EDITOR='/usr/bin/nvim'
-  export SYSTEMD_EDITOR='/usr/bin/nvim'
-else
-  export EDITOR='/usr/bin/vi'
-  export VISUAL='/usr/bin/vi'
-  export SUDO_EDITOR='/usr/bin/vi'
-  export SYSTEMD_EDITOR='/usr/bin/vi'
+if [[ "$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')" != 'Gentoo Linux' ]]; then
+  if [[ -n "${DISPLAY}" ]]; then
+    export EDITOR='/usr/bin/nvim'
+    export VISUAL='/usr/bin/nvim'
+    export SUDO_EDITOR='/usr/bin/nvim'
+    export SYSTEMD_EDITOR='/usr/bin/nvim'
+  else
+    export EDITOR='/usr/bin/vi'
+    export VISUAL='/usr/bin/vi'
+    export SUDO_EDITOR='/usr/bin/vi'
+    export SYSTEMD_EDITOR='/usr/bin/vi'
+  fi
 fi
