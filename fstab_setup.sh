@@ -9,6 +9,5 @@ nfs_fstab="# nfs
 
 sudo mkdir --parents /mnt/share01/{rh,server}
 echo "${nfs_fstab}" | sudo tee --append /etc/fstab &> /dev/null
-unset nfs_opts nfs_fstab
 
 sudo systemctl daemon-reload

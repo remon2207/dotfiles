@@ -6,8 +6,11 @@ core="$(bat --plain /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp[2-7]_inpu
 average="$(echo "${core}" | awk '{x++;sum+=$1} END {print sum/x}' | awk '{print substr($0,1,4)}')"
 average_digit="$(echo -n "${average}" | wc --bytes)"
 
-if [[ ${average_digit} -eq 2 ]]; then
+case ${average_digit} in
+2)
   echo "${average}" | sd '$' '.0℃'
-else
+  ;;
+*)
   echo "${average}℃"
-fi
+  ;;
+esac
