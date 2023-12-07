@@ -83,8 +83,6 @@ alias sv='sudoedit'
 alias pn='pnpm'
 alias pnupdate='corepack prepare pnpm@latest --activate'
 alias pnpkgupdate='pnpm add --global --save-prod @fsouza/prettierd eslint_d'
-alias lzd='lazydocker'
-alias lzg="${HOME}/bin/symlink_workaround.sh"
 alias repo='cd "$(ghq list --full-path | fzf)"'
 alias reporm='rm "$(ghq list --full-path | fzf)"'
 alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields="2-"'

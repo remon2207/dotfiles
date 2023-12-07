@@ -235,7 +235,7 @@ gentoocp() {
 
   rsync --archive --update --delete --verbose /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
-  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak > /dev/null
+  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak &> /dev/null
 }
 
 nvmupgrade() {
@@ -246,6 +246,7 @@ nvmupgrade() {
   [[ $? -eq 0 ]] && exit
 }
 
+lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; }
 stee() { sudo tee "${1}" &> /dev/null; }
 nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; }
 commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; }
