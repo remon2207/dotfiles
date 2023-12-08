@@ -55,15 +55,15 @@ setup() {
   sudo mkdir /etc/gtk-2.0
 
   for home in "${home_symbolic[@]}"; do
-    home_replaced="$(echo "${home}" | sed --expression='s/^\(.*\)_arch\(.*\)$/\1\2/')"
+    home_replaced="$(echo "${home}" | sd '^(.*)_arch(.*)$' "\$1\$2")"
     ln --symbolic --force --verbose "${current_dir}/${home}" "${HOME}/${home_replaced}"
   done
   for conf in "${conf_symbolic[@]}"; do
-    conf_replaced="$(echo "${conf}" | sed --expression='s/^\(.*\)_arch\(.*\)$/\1\2/')"
+    conf_replaced="$(echo "${conf}" | sd '^(.*)_arch(.*)$' "\$1\$2")"
     ln --symbolic --force --verbose "${current_dir}/.config/${conf}" "${HOME}/${conf_replaced}"
   done
   for entry in "${entry_symbolic[@]}"; do
-    entry_replaced="$(echo "${entry}" | sed --expression='s/^\(.*\)_arch\(.*\)$/\1\2/')"
+    entry_replaced="$(echo "${entry}" | sd '^(.*)_arch(.*)$' "\$1\$2")"
     ln --symbolic --force --verbose "${current_dir}/.local/share/applications/${entry}" "${HOME}/.local/share/applications/${entry_replaced}"
   done
 

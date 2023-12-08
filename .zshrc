@@ -29,7 +29,7 @@ for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
 [[ "${DISTRIBUTION_NAME}" == 'archlinux' ]] && . /usr/share/fzf/completion.zsh
-unset distribution_name files file
+unset files file
 
 # shellcheck disable=SC1091
 [[ -s "${NVM_DIR}/nvm.sh" ]] && . "${NVM_DIR}/nvm.sh"
