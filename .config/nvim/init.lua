@@ -1,5 +1,4 @@
 require('option')
 require('plugin')
-require('setting')
 require('autocmd')
 require('keymap')

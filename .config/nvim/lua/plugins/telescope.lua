@@ -9,7 +9,6 @@ local fb_actions = telescope.extensions.file_browser.actions
 local opts = { noremap = true, silent = true }
 
 local defaults = {
-  initial_mode = 'normal',
   winblend = 25,
   file_ignore_patterns = { '/.git/', '/node_modules/' },
   vimgrep_arguments = {
@@ -24,7 +23,6 @@ local defaults = {
   },
   mappings = {
     i = {
-      ['<Esc><Esc>'] = a.close,
       ['<C-j>'] = a.move_selection_next,
       ['<C-k>'] = a.move_selection_previous,
       ['<C-o>'] = false,
