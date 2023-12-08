@@ -16,12 +16,15 @@ keymap('i', '<C-d>', '<Del>', opts)
 keymap('n', '<S-h>', '<Cmd>bprev<CR>', opts)
 keymap('n', '<S-l>', '<Cmd>bnext<CR>', opts)
 
+keymap('n', '<C-w>;', '<C-w><', opts)
+keymap('n', '<C-w>\'', '<C-w>>', opts)
+keymap('n', '<C-w>p', '<C-w>+', opts)
+keymap('n', '<C-w>n', '<C-w>-', opts)
+
 keymap('n', 'x', '"_x', opts)
 
 keymap('n', 'm', '<Nop>', opts)
 keymap({ 'n', 'v' }, 'q', '<Nop>', opts)
--- Lazy.nvim
-keymap('n', '<Leader>L', '<Cmd>Lazy<CR>', opts)
 
 -- パスのチルダを${HOME}へ変更
 keymap('n', '<Leader>d~', '<Cmd>s/\\~/${HOME}/<CR>', opts)

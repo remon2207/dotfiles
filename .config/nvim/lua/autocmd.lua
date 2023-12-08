@@ -1,5 +1,5 @@
 local api = vim.api
-local opt = vim.opt
+local o = vim.opt
 local autocmd = api.nvim_create_autocmd
 
 api.nvim_create_augroup('file', {})
@@ -8,7 +8,7 @@ autocmd('FileType', {
   pattern = '*',
   group = 'file',
   callback = function()
-    opt.formatoptions:remove({ 'r', 'o' })
+    o.formatoptions:remove({ 'r', 'o' })
   end,
 })
 
@@ -22,11 +22,11 @@ autocmd('InsertLeave', {
   end,
 })
 
-autocmd({ 'BufNewFile', 'BufRead' }, {
-  pattern = '*.{graphql,prisma}',
-  group = 'file',
-  command = 'setlocal smartindent',
-})
+-- autocmd({ 'BufNewFile', 'BufRead' }, {
+--   pattern = '*.{graphql,prisma}',
+--   group = 'file',
+--   command = 'setlocal smartindent',
+-- })
 
 autocmd({ 'BufNewFile', 'BufRead' }, {
   pattern = '{ts,js}config.json',
