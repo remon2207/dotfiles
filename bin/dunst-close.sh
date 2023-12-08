@@ -2,4 +2,8 @@
 
 set -eu
 
-dunstctl close
+if [[ ${#} -eq 0 ]]; then
+  dunstctl close
+elif [[ "${1}" == '-a' ]]; then
+  dunstctl close-all
+fi
