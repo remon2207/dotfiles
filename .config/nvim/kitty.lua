@@ -46,63 +46,38 @@ g.vimsyn_embed = 0
 -- オプション
 -- 文字コード
 vim.scriptencoding = 'utf-8'
-o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 o.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
-o.fileformats = { 'unix', 'dos', 'mac' }
+o.fileformats:append({ 'mac' })
 -- レジスタとクリップボードの共有
-o.clipboard = 'unnamedplus'
+o.clipboard:append({'unnamedplus'})
 -- インデント
 o.expandtab = true
-o.autoindent = true
--- o.smartindent = true
-o.smarttab = true
+o.smartindent = true
 o.tabstop = 2
 o.shiftwidth = 2
 -- 大文字小文字の区別をしない
 o.ignorecase = true
 o.smartcase = true
--- 行数を表示
-o.number = false
--- カーソル行をハイライト
--- o.cursorline = true
-o.cursorline = false
-o.backspace = { 'indent', 'eol', 'start' }
 -- ステータスラインとを表示
 o.laststatus = 1
-o.cmdheight = 1
 -- 現在のモードを非表示にする
 o.showmode = false
--- Show command you hit
-o.showcmd = true
--- Show current position on status line
-o.ruler = true
--- swapファイルを無効化
-o.swapfile = false
--- 検索結果をハイライトする
-o.hlsearch = true
-o.background = 'dark'
 o.termguicolors = true
 o.completeopt = { 'menu', 'menuone', 'noselect' }
 -- Priority of help language
-o.helplang = { 'ja', 'en' }
+o.helplang:append({ 'en' })
 -- Center the cursor line
 o.scrolloff = 5
 o.sidescrolloff = 5
 -- Popup window the background opacity
-o.wildoptions = 'pum'
+o.wildoptions:remove({ 'tagfile' })
 o.pumblend = 25
 -- Show always sign column
 o.signcolumn = 'no'
-o.autoread = true
 o.list = true
 o.listchars = 'tab:> ,space: '
-o.wrap = false
--- Confirm dialog on close
-o.confirm = true
 o.mouse:remove({ 'n', 'v', 'i' })
--- ターミナルモードのシェル
-o.shell = 'zsh'
 -- リーダー
 g.mapleader = ' '
 
