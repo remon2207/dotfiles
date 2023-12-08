@@ -56,7 +56,7 @@
       wait-online = {
         enable = false;
       };
-      networks."enp6s0" = {
+      networks."20-wired" = {
         matchConfig = {
           Name = "enp6s0";
         };
@@ -136,28 +136,6 @@
     };
   };
 
-  programs = {
-    git = {
-      enable = true;
-      userName = "remon2207";
-      userEmail = "remon2207.develop@gmail.com";
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-    };
-    starship = {
-      enable = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    fish = {
-      enable = true;
-    };
-  };
-
   users = {
     users = {
       remon = {
@@ -167,14 +145,11 @@
         packages = with pkgs; [
           xorg.xorgserver
           xorg.xf86inputevdev
-          xorg.xf86inputsynaptics
           xorg.xf86inputlibinput
-          xorg.xf86videonouveau
           git
           neovim
           starship
           zsh
-          fish
           wget
           curl
           firefox
