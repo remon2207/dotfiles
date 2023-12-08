@@ -76,7 +76,7 @@ services() {
   cp --archive "${current_dir}/.config/systemd/user/"auto-backup.{service,timer} "${HOME}/.config/systemd/user"
   sudo cp --archive "${current_dir}/etc/systemd/system/auto-lock@.service" /etc/systemd/system
 
-  systemctl --user enable --now ssh-agent.service
+  systemctl --user enable --now ssh-agent.service auto-backup.timer
   sudo systemctl enable "auto-lock@${USER}.service"
 }
 
