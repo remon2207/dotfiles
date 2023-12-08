@@ -8,7 +8,7 @@
   pager = /usr/bin/delta --pager='/usr/bin/bat --plain'
   quotepath = false
 [interactive]
-  diffFilter = /usr/bin/delta
+  diffFilter = /usr/bin/delta --color-only
 [delta]
   syntax-theme = Solarized (dark)
   navigate = true

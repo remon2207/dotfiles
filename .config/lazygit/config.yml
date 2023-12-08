@@ -3,5 +3,10 @@ gui:
   language: 'ja'
   mouseEvents: false
   showRandomTip: false
+  border: 'rounded'
+  sidePanelWidth: 0.2
+git:
+  paging:
+    pager: '/usr/bin/delta --no-gitconfig --paging="never" --syntax-theme="Solarized (dark)" --line-numbers'
 notARepository: 'quit'
 promptToReturnFromSubprocess: false
