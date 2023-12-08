@@ -83,9 +83,9 @@ EOF
     sd "^Exec=${5}" "# Exec=${5}" "${bghtop}"
     sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
 
-    sd "^export TERMINAL='/usr/bin/${5}'" "export TERMINAL='/usr/bin/${6}'" "${DOTFILES}/.profile"
+    sd "^(export TERMINAL='/usr/bin)/${5}'" "\$1/${6}'" "${DOTFILES}/.profile"
 
-    exit
+    [[ $? -eq 0 ]] && exit
   }
 
   while getopts 'c:n:h' opt; do
@@ -283,9 +283,26 @@ ebuildclean() { sudo ebuild "${1}" manifest clean; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
 chpwd() { la; }
 () {
+  # プラグインマネージャーの自動インストール
+  # =========================================
+  if [[ ! -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir --parents "${HOME}/.local/share/zinit" && command chmod g-rwX "${HOME}/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "${HOME}/.local/share/zinit/zinit.git" && \
+      print -P "%F{33} %F{34}Installation successful.%f%b" || \
+      print -P "%F{160} The clone has failed.%f%b"
+  fi
+
+  . "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
+  # =========================================
+
+  # ターミナルがAlacrittyなら自動でtmuxを起動
+  # =========================================
   if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]] && [[ "${TERM_PROG}" == 'alacritty' ]]; then
     if [[ -z "${TMUX}" ]]; then
-      ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk -F ':' '{print $1}')"
+      ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk --field-separator=':' '{print $1}')"
       if [[ -z ${ID} ]]; then
         tmux new-session
       else
@@ -294,6 +311,7 @@ chpwd() { la; }
     fi
     exit
   fi
+  # =========================================
 
   la
 }
