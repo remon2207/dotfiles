@@ -54,8 +54,6 @@ api.nvim_create_autocmd('LspAttach', {
       })
     end
 
-    client.server_capabilities.semanticTokensProvider = nil
-
     if client.name == 'tsserver' then
       client.server_capabilities.documentFormattingProvider = false
     elseif client.name == 'lua_ls' then
@@ -191,9 +189,6 @@ mason_lspconfig.setup_handlers({
       capabilities = capabilities,
     })
     lspconfig['stylelint_lsp'].setup({
-      capabilities = capabilities,
-    })
-    lspconfig['nil_ls'].setup({
       capabilities = capabilities,
     })
     lspconfig['efm'].setup({
