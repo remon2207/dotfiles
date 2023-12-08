@@ -19,7 +19,7 @@ alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
 alias vnorc='nvim -u "NORC"'
 alias vpolybar="nvim ${XDG_CONFIG_HOME}/polybar/config.ini"
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
-alias grep='grep --color="auto" --ignore-case'
+alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude=.{bash,zsh}_history --exclude={,.}*cache* --exclude=.git --exclude=.z --exclude=node_modules --exclude=.zcompdump'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -72,8 +72,6 @@ alias ndisablenow='systemctl --user disable --now'
 alias sz=". ${HOME}/.zshrc"
 alias mpdstop='mpd --kill'
 alias disklist='sudo fdisk --list'
-alias setkeyrepeat='xset r rate 250 60'
-alias resetkeyrepeat='xset r rate'
 alias renetwork='sudo systemctl restart systemd-{networkd,resolved}.service'
 alias ipscan='sudo nmap -sP 192.168.1.0/24'
 alias free='free --total --human'
@@ -102,8 +100,8 @@ alias v='nvim'
 alias v.='nvim .'
 alias procs='procs --tree'
 
-case "${distribution_name}" in
-'Arch Linux')
+case "${DISTRIBUTION_NAME}" in
+'archlinux')
   alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman -Syy'
   alias unrequired='pacman -Qtdq'
   alias pacclean='sudo pacman -Rns "$(pacman -Qtdq)"'
@@ -112,7 +110,7 @@ case "${distribution_name}" in
   alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
   ;;
-'Gentoo Linux')
+'gentoo')
   alias pkgclean='sudo emerge --ask --verbose="n" --depclean'
   alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
   alias showpkgsuse='emerge --pretend --emptytree @world'

@@ -144,14 +144,13 @@ bootusb() {
 tofish() {
   local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
   local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
-  local distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 
-  case "${distribution_name}" in
-  'Gentoo Linux')
+  case "${DISTRIBUTION_NAME}" in
+  'gentoo')
     sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
     sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
     ;;
-  'Arch Linux')
+  'archlinux')
     sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
     sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
     ;;
@@ -172,16 +171,15 @@ authycheck() {
 }
 
 pkgupgrade() {
-  local distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
 
-  case "${distribution_name}" in
-  'Gentoo Linux')
+  case "${DISTRIBUTION_NAME}" in
+  'gentoo')
     sudo emerge-webrsync
     sudo emaint sync --auto
     sudo emerge --ask --update --deep --newuse @world
     sudo emerge --ask --verbose='n' --depclean
     ;;
-  'Arch Linux')
+  'archlinux')
     checkupdates
 
     if [[ ${?} -eq 0 ]]; then
@@ -246,6 +244,27 @@ nvmupgrade() {
   [[ $? -eq 0 ]] && exit
 }
 
+keyrepeat() {
+  [[ $# -eq 0 ]] && xset r rate 250 60 && return
+
+  cmd="$(getopt --options='' --longoptions='reset' -- "${@}")"
+  eval set -- "${cmd}"
+  unset cmd
+
+  while true; do
+    case "${1}" in
+      '--reset')
+        xset r rate
+        shift
+        ;;
+      '--')
+        shift
+        break
+        ;;
+    esac
+  done
+}
+
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; }
 stee() { sudo tee "${1}" &> /dev/null; }
 nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; }
@@ -263,4 +282,18 @@ ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
 chpwd() { la; }
-() { la; }
+() {
+  if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]] && [[ "${TERM_PROG}" == 'alacritty' ]]; then
+    if [[ -z "${TMUX}" ]]; then
+      ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk -F ':' '{print $1}')"
+      if [[ -z ${ID} ]]; then
+        tmux new-session
+      else
+        tmux attach-session -t ${ID}
+      fi
+    fi
+    exit
+  fi
+
+  la
+}

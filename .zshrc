@@ -1,10 +1,10 @@
-distribution_name="$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')"
+DISTRIBUTION_NAME="$(uname -a | awk '{print $2}')" && readonly DISTRIBUTION_NAME
 # shellcheck disable=SC2034
 readonly DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-if [[ "${distribution_name}" == 'Gentoo Linux' ]]; then
+if [[ "${DISTRIBUTION_NAME}" == 'gentoo' ]]; then
   autoload -Uz compinit promptinit
   compinit
   promptinit
@@ -21,14 +21,14 @@ SAVEHIST=100000
 
 bindkey -e
 
-files=('term' 'plugins' 'options' 'styles' 'aliases' 'functions' 'completions')
+files=('plugins' 'options' 'styles' 'aliases' 'functions' 'completions')
 # shellcheck disable=SC1090
 for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
 
 # shellcheck disable=SC1094
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 # shellcheck disable=SC1091
-[[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
+[[ "${DISTRIBUTION_NAME}" == 'archlinux' ]] && . /usr/share/fzf/completion.zsh
 unset distribution_name files file
 
 # shellcheck disable=SC1091

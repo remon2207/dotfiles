@@ -33,7 +33,7 @@ if [[ "$(rg '^DNS' /etc/systemd/network/20-wired.network)" == 'DNS=192.168.1.202
   export RSYNC_PROXY="${http_proxy}"
 fi
 
-if [[ "$(rg '^PRETTY' /etc/os-release | awk --field-separator='"' '{print $2}')" != 'Gentoo Linux' ]]; then
+if [[ "$(uname -a | awk '{print $2}')" != 'gentoo' ]]; then
   if [[ -n "${DISPLAY}" ]]; then
     export EDITOR='/usr/bin/nvim'
     export VISUAL='/usr/bin/nvim'

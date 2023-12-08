@@ -1,4 +1,14 @@
 --ignore-case
 --no-line-number
+--hidden
+--follow
+--sort=path
+--no-messages
+--glob=!.{bash,zsh}_history
+--glob=!{,.}*cache*
+--glob=!node_modules
+--glob=!.z
+--glob=!.zcompdump
+--glob=!.git
 
 # vim: set ft=conf :
