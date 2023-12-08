@@ -31,7 +31,6 @@ for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
 [[ "${distribution_name}" == 'Arch Linux' ]] && . /usr/share/fzf/completion.zsh
 unset distribution_name files file
 
-[[ -f "${HOME}/.profile" ]] && . "${HOME}/.profile"
 # shellcheck disable=SC1091
 [[ -s "${NVM_DIR}/nvm.sh" ]] && . "${NVM_DIR}/nvm.sh"
 

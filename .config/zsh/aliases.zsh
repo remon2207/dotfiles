@@ -101,6 +101,7 @@ alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modu
 alias v='nvim'
 alias v.='nvim .'
 alias procs='procs --tree'
+# alias delta='delta --pager="/usr/bin/bat --plain"'
 
 case "${distribution_name}" in
 'Arch Linux')
