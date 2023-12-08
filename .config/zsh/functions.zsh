@@ -258,7 +258,7 @@ mkcd() { mkdir --parents "${1}" && cd "${_}"; }
 psgrep() { procs "${1}"; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); }
-sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '/mnt/*' \); }
+sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
