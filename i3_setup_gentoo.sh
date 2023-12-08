@@ -26,6 +26,7 @@ conf_symbolic=(
   'gh'
   'gtk-3.0_gentoo'
   'htop'
+  'httpie'
   'i3'
   'kitty'
   'Kvantum'

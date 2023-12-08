@@ -101,7 +101,6 @@ alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modu
 alias v='nvim'
 alias v.='nvim .'
 alias procs="procs --load-config='${XDG_CONFIG_HOME}/procs/config.toml'"
-alias http='http --follow --body --style="solarized" --format-options="json.indent:2"'
 
 case "${distribution_name}" in
 'Arch Linux')
