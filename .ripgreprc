@@ -4,9 +4,10 @@
 --follow
 --sort=path
 --no-messages
---glob=!.{bash,zsh}_history
---glob=!{,.}*cache*
+--glob=!*cache*
 --glob=!node_modules
+--glob=!.{bash,zsh}_history
+--glob=!.*cache*
 --glob=!.z
 --glob=!.zcompdump
 --glob=!.git

@@ -93,12 +93,13 @@ alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &! procs xautolock'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd --hidden --exclude="mnt" --exclude=".cache" --exclude=".git" --exclude="ccache"'
+alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude="mnt" --exclude=".cache" --exclude=".git" --exclude="ccache"'
 alias su-='sudo su -'
-alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modules_install; make install"'
+alias kernelbuild='sudo bash -c "make --jobs=$(($(nproc)+1)) --load-average=$((($(nproc)+1)*2)).0 && make modules_install; make install"'
 alias v='nvim'
 alias v.='nvim .'
 alias procs='procs --tree'
+alias rg='rg --threads="$(("$(nproc)"+1))"'
 
 case "${DISTRIBUTION_NAME}" in
 'archlinux')
