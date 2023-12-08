@@ -3,7 +3,6 @@ if not status then
   return
 end
 
-local a = require('telescope.actions')
 local nvim_set_hl = vim.api.nvim_set_hl
 local fb_actions = telescope.extensions.file_browser.actions
 local opts = { noremap = true, silent = true }
@@ -23,12 +22,10 @@ local defaults = {
   },
   mappings = {
     i = {
-      ['<C-j>'] = a.move_selection_next,
-      ['<C-k>'] = a.move_selection_previous,
       ['<C-o>'] = false,
     },
     n = {
-      ['q'] = a.close,
+      ['<Esc>'] = false,
       ['o'] = false,
       ['N'] = fb_actions.create,
       ['c'] = false,
