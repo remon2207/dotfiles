@@ -9,8 +9,6 @@ paru_install() {
   makepkg --rmdeps --syncdeps --install --needed
   cd "${HOME}"
   rm --recursive --force "${pkgname}"
-
-  unset pkgname
 }
 
 aur_install() {
