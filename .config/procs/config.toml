@@ -72,7 +72,8 @@ align = "Left"
 [style]
 header = "BrightWhite|Black"
 unit = "BrightWhite|Black"
-tree = "BrightWhite|Black"
+# tree = "BrightWhite|Black"
+tree = "BrightCyan|Cyan"
 
 [style.by_percentage]
 color_000 = "BrightBlue|Blue"

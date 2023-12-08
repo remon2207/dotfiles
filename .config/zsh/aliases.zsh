@@ -100,7 +100,7 @@ alias su-='sudo su -'
 alias kernelbuild='sudo bash -c "make --jobs=13 --load-average=26.0 && make modules_install; make install"'
 alias v='nvim'
 alias v.='nvim .'
-alias procs="procs --load-config='${XDG_CONFIG_HOME}/procs/config.toml'"
+alias procs='procs --tree'
 
 case "${distribution_name}" in
 'Arch Linux')
