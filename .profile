@@ -20,8 +20,8 @@ export NVM_DIR="${HOME}/.config/nvm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".git" --exclude=".cache"'
-export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".git" --exclude=".cache"'
+export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
+export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_DEFAULT_OPTS="\
 --height='40%' --layout='reverse' --no-mouse \
 --color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
