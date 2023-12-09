@@ -4,12 +4,6 @@
 --follow
 --sort=path
 --no-messages
---glob=!*cache*
---glob=!node_modules
---glob=!.{bash,zsh}_history
---glob=!.*cache*
---glob=!.z
---glob=!.zcompdump
---glob=!.git
+--glob=!{.bash_history,.zsh_history,.*cache*,*cache*,.z,.zcompdump,.git,node_modules}
 
 # vim: set ft=conf :

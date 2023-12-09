@@ -1,14 +1,14 @@
 font:
   size: 10
   normal:
-    family: monospace
-    style: Regular
+    family: 'monospace'
+    style: 'Regular'
   bold:
-    family: monospace
-    style: Bold
+    family: 'monospace'
+    style: 'Bold'
   italic:
-    family: monospace
-    style: Italic
+    family: 'monospace'
+    style: 'Italic'
   bold_italic:
-    family: monospace
-    style: Bold Italic
+    family: 'monospace'
+    style: 'Bold Italic'

@@ -1,4 +1,5 @@
 cursor:
   style:
-    shape: Block
-    blinking: Always
+    shape: 'Block'
+    blinking: 'Always'
+  blink_timeout: 0

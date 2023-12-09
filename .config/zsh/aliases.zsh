@@ -19,7 +19,7 @@ alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
 alias vnorc='nvim -u "NORC"'
 alias vpolybar="nvim ${XDG_CONFIG_HOME}/polybar/config.ini"
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
-alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude=.{bash,zsh}_history --exclude={,.}*cache* --exclude=.git --exclude=.z --exclude=node_modules --exclude=.zcompdump'
+alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
@@ -93,7 +93,7 @@ alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 60 -locker "systemctl suspend" &> /dev/null &! procs xautolock'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude="mnt" --exclude=".cache" --exclude=".git" --exclude="ccache"'
+alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude={mnt,.cache,.git,ccache}'
 alias su-='sudo su -'
 alias kernelbuild='sudo bash -c "make --jobs=$(($(nproc)+1)) --load-average=$((($(nproc)+1)*2)).0 && make modules_install; make install"'
 alias v='nvim'
