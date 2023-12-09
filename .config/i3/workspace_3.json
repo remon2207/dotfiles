@@ -1,122 +1,113 @@
 {
   "border": "normal",
   "floating": "auto_off",
-  "layout": "splith",
+  "layout": "splitv",
   "marks": [],
-  "percent": 1,
+  "percent": 0.5,
   "type": "con",
   "nodes": [
     {
-      "border": "normal",
+      "border": "pixel",
+      "current_border_width": 2,
       "floating": "auto_off",
-      "layout": "splitv",
+      "geometry": {
+        "height": 1026,
+        "width": 940,
+        "x": 1937,
+        "y": 17
+      },
       "marks": [],
+      "name": ".* Discord",
       "percent": 0.5,
-      "type": "con",
-      "nodes": [
+      "swallows": [
         {
-          "border": "pixel",
-          "current_border_width": 2,
-          "floating": "auto_off",
-          "geometry": {
-            "height": 1026,
-            "width": 1886,
-            "x": 1937,
-            "y": 17
-          },
-          "marks": [],
-          "name": ".* Discord",
-          "percent": 0.5,
-          "swallows": [
-            {
-              "class": "^discord$",
-              "instance": "^discord$",
-              "title": "^.*\\ Discord$",
-              "window_role": "^browser\\-window$"
-            }
-          ],
-          "type": "con"
-        },
-        {
-          "border": "pixel",
-          "current_border_width": 2,
-          "floating": "auto_off",
-          "geometry": {
-            "height": 504,
-            "width": 934,
-            "x": 0,
-            "y": 0
-          },
-          "marks": [],
-          "name": "htop",
-          "percent": 0.5,
-          "swallows": [
-            {
-              "class": "^kitty$",
-              "instance": "^kitty$",
-              "title": "^htop$"
-            }
-          ],
-          "type": "con"
+          "class": "^discord$",
+          "instance": "^discord$",
+          "title": "^.* Discord$",
+          "window_role": "^browser\\-window$"
         }
-      ]
+      ],
+      "type": "con"
     },
     {
-      "border": "normal",
+      "border": "pixel",
+      "current_border_width": 2,
       "floating": "auto_off",
-      "layout": "splitv",
+      "geometry": {
+        "height": 1056,
+        "width": 1916,
+        "x": 0,
+        "y": 0
+      },
       "marks": [],
+      "name": "htop",
       "percent": 0.5,
-      "type": "con",
-      "nodes": [
+      "swallows": [
         {
-          "border": "pixel",
-          "current_border_width": 2,
-          "floating": "auto_off",
-          "geometry": {
-            "height": 1026,
-            "width": 934,
-            "x": 1937,
-            "y": 17
-          },
-          "marks": [],
-          "name": ".* Slack",
-          "percent": 0.75,
-          "swallows": [
-            {
-              "class": "^Slack$",
-              "instance": "^slack$",
-              "title": "^.*\\ Slack$",
-              "window_role": "^browser\\-window$"
-            }
-          ],
-          "type": "con"
-        },
-        {
-          "border": "pixel",
-          "current_border_width": 2,
-          "floating": "auto_off",
-          "geometry": {
-            "height": 1026,
-            "width": 1886,
-            "x": 0,
-            "y": 0
-          },
-          "marks": [],
-          "name": "nvtop",
-          "percent": 0.25,
-          "swallows": [
-            {
-              "class": "^kitty$",
-              "instance": "^kitty$",
-              "title": "^nvtop$"
-            }
-          ],
-          "type": "con"
+          "class": "^kitty$",
+          "instance": "^kitty$",
+          "title": "^htop$"
         }
-      ]
+      ],
+      "type": "con"
     }
   ]
 }
 
-// vim: set ft=jsonc :
+{
+  "border": "normal",
+  "floating": "auto_off",
+  "layout": "splitv",
+  "marks": [],
+  "percent": 0.5,
+  "type": "con",
+  "nodes": [
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1026,
+        "width": 934,
+        "x": 2887,
+        "y": 15
+      },
+      "marks": [],
+      "name": ".* Slack",
+      "percent": 0.764150943396226,
+      "swallows": [
+        {
+          "class": "^Slack$",
+          "instance": "^slack$",
+          "title": "^.* Slack$",
+          "window_role": "^browser\\-window$"
+        }
+      ],
+      "type": "con"
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 2,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1056,
+        "width": 1916,
+        "x": 0,
+        "y": 0
+      },
+      "marks": [],
+      "name": "nvtop",
+      "percent": 0.235849056603774,
+      "swallows": [
+        {
+          "class": "^kitty$",
+          "instance": "^kitty$",
+          "title": "^nvtop$"
+        }
+      ],
+      "type": "con"
+    }
+  ]
+}
+
+// vim:set ft=jsonc :
