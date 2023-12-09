@@ -3,11 +3,10 @@
 set -eu
 
 # First we append the saved layout of worspace N to workspace M
-for num in 3 1; do i3-msg "workspace --no-auto-back-and-forth ${num}; append_layout ${HOME}/.config/i3/workspace_${num}.json"; done
+i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
 
 # And finally we fill the containers with the programs they had
 (discord &)
 (slack &)
-(vivaldi-stable &)
 (kitty --single-instance htop &)
 (kitty --single-instance nvtop &)
