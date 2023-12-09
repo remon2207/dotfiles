@@ -13,6 +13,7 @@ export LESSHISTFILE='/dev/null'
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
 export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
+export HIGHLIGHT_STYLE='solarized-dark'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NVM_DIR="${HOME}/.config/nvm"
