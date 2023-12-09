@@ -184,7 +184,7 @@ pkgupgrade() {
 
     if [[ ${?} -eq 0 ]]; then
       echo
-      read 'yn?Do you want to update?(y/n): '
+      read 'yn?アップグレードしますか?(y/n): '
       case "${yn}" in
       ['yY'])
         paru -Syu "${@}"
