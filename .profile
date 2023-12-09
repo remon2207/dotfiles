@@ -23,7 +23,7 @@ export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--preview="/usr/bin/bat --plain --color=always {}" --bind="ctrl-/:change-preview-window(down|hidden|)"'
-export FZF_ALT_C_OPTS='--preview "lsd --tree {}"'
+export FZF_ALT_C_OPTS='--preview="/usr/bin/lsd --tree {}"'
 export FZF_DEFAULT_OPTS="\
 --height='40%' --layout='reverse' --no-mouse \
 --color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
