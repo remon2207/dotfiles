@@ -2,7 +2,7 @@ alias j='jobs'
 alias dc='cd'
 alias e='exit'
 alias :q='exit'
-alias c='clear'
+alias c='clear; la'
 alias sudo='sudo '
 alias rm='rm --recursive --force'
 alias mkdir='mkdir --parents'
@@ -138,5 +138,5 @@ fi
 
 if [[ "${TERM}" == "xterm-kitty" ]]; then
   alias kittyssh='kitty +kitten ssh'
-  alias c='printf "\e[H\e[3J"'
+  alias c='printf "\e[H\e[3J"; la'
 fi
