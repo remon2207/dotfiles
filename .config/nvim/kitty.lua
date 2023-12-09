@@ -85,6 +85,8 @@ g.mapleader = ' '
 keymap('n', '<Esc><Esc>', '<Cmd>set nohlsearch!<CR>', opts)
 keymap('n', 'm', '<Nop>', opts)
 keymap({ 'n', 'v' }, 'q', '<Nop>', opts)
+keymap({ 'n', 'v' }, '<D-q>q', '<Nop>', opts)
+keymap({ 'n', 'v' }, '<D-q><D-q>', '<Nop>', opts)
 keymap('n', '<C-z>', '<Nop>', opts)
 keymap('n', 'i', '<Nop>', opts)
 keymap('n', '<S-i>', '<Nop>', opts)

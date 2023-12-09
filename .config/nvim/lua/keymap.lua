@@ -25,6 +25,8 @@ keymap('n', 'x', '"_x', opts)
 
 keymap('n', 'm', '<Nop>', opts)
 keymap({ 'n', 'v' }, 'q', '<Nop>', opts)
+keymap({ 'n', 'v' }, '<D-q>q', '<Nop>', opts)
+keymap({ 'n', 'v' }, '<D-q><D-q>', '<Nop>', opts)
 
 -- パスのチルダを${HOME}へ変更
 keymap('n', '<Leader>d~', '<Cmd>s/\\~/${HOME}/<CR>', opts)
