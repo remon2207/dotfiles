@@ -32,5 +32,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 gaps inner 15
+smart_gaps on
 
-include $XDG_CONFIG_HOME/i3/conf.d/*.conf
+focus_wrapping no
+
+include ./conf.d/*.conf
