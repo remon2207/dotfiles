@@ -175,7 +175,7 @@ pkgupgrade() {
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
     sudo emerge-webrsync
-    sudo emaint sync --auto
+    sudo emaint --auto sync
     sudo emerge --ask --update --deep --newuse @world
     sudo emerge --ask --verbose='n' --depclean
     ;;
