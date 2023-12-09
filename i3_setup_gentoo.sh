@@ -48,6 +48,7 @@ conf_symbolic=(
 entry_symbolic=(
   'mozc_config_gentoo.desktop'
   'mozc_dictionary_gentoo.desktop'
+  'mozc_word_register_gentoo.desktop'
 )
 
 setup() {
