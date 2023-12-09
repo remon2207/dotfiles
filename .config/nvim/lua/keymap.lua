@@ -24,7 +24,7 @@ keymap('n', '<C-w>n', '<C-w>-', opts)
 keymap('n', 'x', '"_x', opts)
 
 keymap('n', 'm', '<Nop>', opts)
-keymap({ 'n', 'v' }, 'q', '<Nop>', opts)
+keymap('v', 'q', '<Nop>', opts)
 keymap({ 'n', 'v' }, '<D-q>q', '<Nop>', opts)
 keymap({ 'n', 'v' }, '<D-q><D-q>', '<Nop>', opts)
 
