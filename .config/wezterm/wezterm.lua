@@ -11,6 +11,9 @@ return {
   warn_about_missing_glyphs = false,
   audible_bell = 'Disabled',
   enable_wayland = false,
+  max_fps = 165,
+  animation_fps = 165,
+  front_end = 'WebGpu',
   window_background_opacity = 1.0,
   window_padding = {
     left = 0,

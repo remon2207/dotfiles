@@ -22,11 +22,12 @@ export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
-export FZF_CTRL_T_OPTS='--preview="/usr/bin/bat --plain --color=always {}" --bind="ctrl-/:change-preview-window(down|hidden|)"'
-export FZF_CTRL_R_OPTS='--preview "echo {}" --preview-window="down:3"'
-export FZF_ALT_C_OPTS='--preview="/usr/bin/lsd --tree {}"'
+export FZF_CTRL_T_OPTS='--preview="/usr/bin/bat --plain --color=always {}"'
+export FZF_CTRL_R_OPTS='--preview="echo {}" --preview-window="down:3:wrap"'
+export FZF_ALT_C_OPTS='--preview="/usr/bin/lsd --tree --color=always {}"'
 export FZF_DEFAULT_OPTS="\
---height='60%' --layout='reverse' --no-mouse \
+--height='60%' --layout='reverse' --no-mouse --exit-0 \
+--bind='ctrl-/:change-preview-window(down|),ctrl-d:preview-down,ctrl-u:preview-up' \
 --color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
 --color='fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198' \
 --color='marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2'"
