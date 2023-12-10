@@ -170,7 +170,7 @@ authycheck() {
   echo "version: ${version}"
 }
 
-pkgupgrade() {
+upgrade() {
 
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
