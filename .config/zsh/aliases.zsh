@@ -100,6 +100,7 @@ alias v='nvim'
 alias v.='nvim .'
 alias procs='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
+alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*' 'KERNEL_VERSION=\"\$1\"'"
 
 case "${DISTRIBUTION_NAME}" in
 'archlinux')

@@ -1,6 +1,6 @@
-DISTRIBUTION_NAME="$(uname -a | awk '{print $2}')" && readonly DISTRIBUTION_NAME
+DISTRIBUTION_NAME="$(uname -a | awk '{print $2}')"
 # shellcheck disable=SC2034
-readonly DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
+DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 
