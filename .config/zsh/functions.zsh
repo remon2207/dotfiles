@@ -316,7 +316,7 @@ sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -pa
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
-# chpwd() { la; return; }
+chpwd() { la; return; }
 () {
   # プラグインマネージャーの自動インストール
   # =========================================
@@ -347,6 +347,8 @@ silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d
     exit
   fi
   # =========================================
+
+  la
 
   return
 }
