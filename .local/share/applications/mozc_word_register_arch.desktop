@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Mozc 辞書
+Name=Mozc 単語登録
 Path=/usr/lib/mozc
-Exec=./mozc_tool --mode='dictionary_tool'
+Exec=./mozc_tool --mode='word_register_dialog'
 Icon=org.fcitx.Fcitx5.fcitx-mozc-dictionary
 Terminal=false
