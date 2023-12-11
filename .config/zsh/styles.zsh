@@ -1,3 +1,4 @@
+zstyle ':compinstall' filename "${HOME}/.zshrc"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' list-colors ''
