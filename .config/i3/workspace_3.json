@@ -44,8 +44,10 @@
       "percent": 0.5,
       "swallows": [
         {
-          "class": "^kitty$",
-          "instance": "^kitty$",
+          // "class": "^kitty$",
+          // "instance": "^kitty$",
+          "class": "^org.wezfurlong.wezterm$",
+          "instance": "^org.wezfurlong.wezterm$",
           "title": "^htop$"
         }
       ],
@@ -100,8 +102,10 @@
       "percent": 0.235849056603774,
       "swallows": [
         {
-          "class": "^kitty$",
-          "instance": "^kitty$",
+          // "class": "^kitty$",
+          // "instance": "^kitty$",
+          "class": "^org.wezfurlong.wezterm$",
+          "instance": "^org.wezfurlong.wezterm$",
           "title": "^nvtop$"
         }
       ],

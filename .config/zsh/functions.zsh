@@ -85,7 +85,7 @@ OPTIONS:
 EOF
   }
 
-  local i3_conf="${DOTFILES}/.config/i3/conf.d/appstart_keybind.conf"
+  local i3_conf="${DOTFILES}/.config/i3/conf.d/keybind.conf"
   local bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
   local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
   local alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
@@ -316,7 +316,7 @@ sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -pa
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
-chpwd() { la; return; }
+# chpwd() { la; return; }
 () {
   # プラグインマネージャーの自動インストール
   # =========================================
@@ -347,8 +347,6 @@ chpwd() { la; return; }
     exit
   fi
   # =========================================
-
-  la
 
   return
 }

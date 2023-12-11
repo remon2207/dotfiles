@@ -8,5 +8,7 @@ i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i
 # And finally we fill the containers with the programs they had
 (discord &)
 (slack &)
-(kitty --single-instance htop &)
-(kitty --single-instance nvtop &)
+# (kitty --single-instance htop &)
+# (kitty --single-instance nvtop &)
+(wezterm start htop &)
+(wezterm start nvtop &)
