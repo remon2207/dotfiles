@@ -1,3 +1,22 @@
+terminal_speed() {
+  for i in {1..400000}; do
+    echo -e '\r'
+    echo -e '\033[0K\033[1mBold\033[0m \033[7mInvert\033[0m \033[4mUnderline\033[0m'
+    echo -e '\033[0K\033[1m\033[7m\033[4mBold & Invert & Underline\033[0m'
+    echo
+    echo -e '\033[0K\033[31m Red \033[32m Green \033[33m Yellow \033[34m Blue \033[35m Magenta \033[36m Cyan \033[0m'
+    echo -e '\033[0K\033[1m\033[4m\033[31m Red \033[32m Green \033[33m Yellow \033[34m Blue \033[35m Magenta \033[36m Cyan \033[0m'
+    echo
+    echo -e '\033[0K\033[41m Red \033[42m Green \033[43m Yellow \033[44m Blue \033[45m Magenta \033[46m Cyan \033[0m'
+    echo -e '\033[0K\033[1m\033[4m\033[41m Red \033[42m Green \033[43m Yellow \033[44m Blue \033[45m Magenta \033[46m Cyan \033[0m'
+    echo
+    echo -e '\033[0K\033[30m\033[41m Red \033[42m Green \033[43m Yellow \033[44m Blue \033[45m Magenta \033[46m Cyan \033[0m'
+    echo -e '\033[0K\033[30m\033[1m\033[4m\033[41m Red \033[42m Green \033[43m Yellow \033[44m Blue \033[45m Magenta \033[46m Cyan \033[0m'
+  done
+
+  return
+}
+
 changebrowser() {
   usage() {
     bat --plain << EOF
@@ -50,6 +69,8 @@ EOF
   elif [[ "${current}" == 'firefox' ]] && [[ "${new}" == 'chrome' ]]; then
     replacements firefox firefox google-chrome google-chrome-stable
   fi
+
+  return
 }
 
 changeterm() {
@@ -118,6 +139,8 @@ EOF
   elif [[ "${current}" == 'wezterm' ]] && [[ "${new}" == 'kitty' ]]; then
     replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
   fi
+
+  return
 }
 
 bootusb() {
@@ -139,6 +162,8 @@ bootusb() {
     esac
     ;;
   esac
+
+  return
 }
 
 tofish() {
@@ -168,6 +193,8 @@ authycheck() {
 
   echo "revision: ${revision}"
   echo "version: ${version}"
+
+  return
 }
 
 upgrade() {
@@ -196,6 +223,8 @@ upgrade() {
     fi
     ;;
   esac
+
+  return
 }
 
 proxy() {
@@ -226,6 +255,8 @@ EOF
     usage && return 1
     ;;
   esac
+
+  return
 }
 
 gentoocp() {
@@ -234,6 +265,8 @@ gentoocp() {
   rsync --archive --update --delete --verbose /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
   zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak &> /dev/null
+
+  return
 }
 
 nvmupgrade() {
@@ -263,25 +296,27 @@ keyrepeat() {
         ;;
     esac
   done
+
+  return
 }
 
-lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; }
-stee() { sudo tee "${1}" &> /dev/null; }
-nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; }
-commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; }
-gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
-addchange() { git add "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; }
-adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; }
-raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; }
-mkcd() { mkdir --parents "${1}" && cd "${_}"; }
-psgrep() { procs "${1}"; }
-shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; }
-nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); }
-sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); }
-ebuildinstall() { sudo ebuild "${1}" manifest clean test install; }
-ebuildclean() { sudo ebuild "${1}" manifest clean; }
-silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; }
-chpwd() { la; }
+lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
+stee() { sudo tee "${1}" &> /dev/null; return; }
+nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
+commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
+gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; return; }
+addchange() { git add "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; return; }
+adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; return; }
+raspi-backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
+mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
+psgrep() { procs "${1}"; return; }
+shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; return; }
+nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
+sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
+ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
+ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
+silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
+chpwd() { la; return; }
 () {
   # プラグインマネージャーの自動インストール
   # =========================================
@@ -314,4 +349,6 @@ chpwd() { la; }
   # =========================================
 
   la
+
+  return
 }
