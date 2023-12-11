@@ -1,4 +1,5 @@
 local wezterm = require('wezterm')
+local gpus = wezterm.gui.enumerate_gpus()
 
 return {
   font = wezterm.font_with_fallback({
@@ -7,13 +8,17 @@ return {
   }),
   font_size = 10.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
-  enable_scroll_bar = true,
   warn_about_missing_glyphs = false,
   audible_bell = 'Disabled',
   enable_wayland = false,
+  scrollback_lines = 99999999,
   max_fps = 165,
   animation_fps = 165,
   front_end = 'WebGpu',
+  prefer_egl = false,
+  webgpu_force_fallback_adapter = false,
+  webgpu_power_preference = "HighPerformance",
+  webgpu_preferred_adapter = gpus[1],
   window_background_opacity = 1.0,
   window_padding = {
     left = 0,
