@@ -8,6 +8,8 @@
   )
 
   for plugin in "${plugins[@]}"; do zinit light "${plugin}"; done
+
+  return
 }
 
 # solarized theme customize
