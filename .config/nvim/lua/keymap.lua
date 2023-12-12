@@ -28,5 +28,6 @@ keymap('v', 'q', '<Nop>', opts)
 keymap({ 'n', 'v' }, '<D-q>q', '<Nop>', opts)
 keymap({ 'n', 'v' }, '<D-q><D-q>', '<Nop>', opts)
 
--- パスのチルダを${HOME}へ変更
+-- パスのチルダを環境変数に変更
 keymap('n', '<Leader>d~', '<Cmd>s/\\~/${HOME}/<CR>', opts)
+keymap('n', '<Leader>dc', '<Cmd>s/\\~/${XDG_CONFIG_HOME}/<CR>', opts)
