@@ -2,10 +2,10 @@
 
 set -eu
 
-# First we append the saved layout of worspace N to workspace M
+# ワークスペース3に移動し、レイアウトを展開する
 i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
 
-# And finally we fill the containers with the programs they had
+# 展開に必要なプログラムを起動する
 (discord &)
 (slack &)
 (kitty --single-instance htop &)
