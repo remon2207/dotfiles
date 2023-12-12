@@ -305,7 +305,7 @@ stee() { sudo tee "${1}" &> /dev/null; return; }
 nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
 commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; return; }
-addchange() { git add "$(git status | awk '/^\smodified:/,0 {print $2}' | rg -ve 'not' -e 'git' | tac | sed --expression='1d' | fzf)"; return; }
+addchange() { git add "$(git status | awk '/^\smodified:/,0 {print $2}' | rg --invert-match --regexp '^not' --regexp '^"git' --regexp '^changes' | tac | sed --expression='1d' | fzf)"; return; }
 adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; return; }
 raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
