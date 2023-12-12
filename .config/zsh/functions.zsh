@@ -1,4 +1,4 @@
-terminal_speed() {
+terminalspeed() {
   for i in {1..400000}; do
     echo -e '\r'
     echo -e '\033[0K\033[1mBold\033[0m \033[7mInvert\033[0m \033[4mUnderline\033[0m'
@@ -17,7 +17,7 @@ terminal_speed() {
   return
 }
 
-change_browser() {
+changebrowser() {
   usage() {
     bat --plain << EOF
 USAGE:
@@ -73,7 +73,7 @@ EOF
   return
 }
 
-change_term() {
+changeterm() {
   usage() {
     bat --plain << EOF
 USAGE:
@@ -143,7 +143,7 @@ EOF
   return
 }
 
-boot_usb() {
+bootusb() {
   case "${#}" in
   0 | 1)
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
@@ -166,7 +166,7 @@ boot_usb() {
   return
 }
 
-to_fish() {
+tofish() {
   local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
   local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
@@ -186,7 +186,7 @@ to_fish() {
   [[ ${?} -eq 0 ]] && exit
 }
 
-authy_check() {
+authycheck() {
   local result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
   local revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
   local version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
@@ -259,7 +259,7 @@ EOF
   return
 }
 
-gentoo_cp() {
+gentoocp() {
   local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
 
   rsync --archive --update --delete --verbose /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
@@ -269,7 +269,7 @@ gentoo_cp() {
   return
 }
 
-nvm_upgrade() {
+nvmupgrade() {
   cd "${NVM_DIR}"
   git fetch --tags origin
   git switch --detach "${@}"
@@ -277,7 +277,7 @@ nvm_upgrade() {
   [[ $? -eq 0 ]] && exit
 }
 
-key_repeat() {
+keyrepeat() {
   [[ $# -eq 0 ]] && xset r rate 250 60 && return
 
   cmd="$(getopt --options='' --longoptions='reset' -- "${@}")"
@@ -302,20 +302,20 @@ key_repeat() {
 
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
 stee() { sudo tee "${1}" &> /dev/null; return; }
-now_push() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
-commit_now() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
+nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
+commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; return; }
-add_change() { git add "$(git status | awk '/^\smodified:/,0 {print $2}' | rg -ve 'not' -e 'git' | tac | sed --expression='1d' | fzf)"; return; }
-add_untrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; return; }
-raspi_backup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
+addchange() { git add "$(git status | awk '/^\smodified:/,0 {print $2}' | rg -ve 'not' -e 'git' | tac | sed --expression='1d' | fzf)"; return; }
+adduntrack() { git add "$(git status | awk '/git add <file>/,0' | sed --expression='1d' --expression='s/^\s//g' | fzf)"; return; }
+raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
 psgrep() { procs "${1}"; return; }
 shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; return; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
-ebuild_install() { sudo ebuild "${1}" manifest clean test install; return; }
-ebuild_clean() { sudo ebuild "${1}" manifest clean; return; }
-silicon_date() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
+ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
+ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
+silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
 chpwd() { la; return; }
 () {
   # プラグインマネージャーの自動インストール
