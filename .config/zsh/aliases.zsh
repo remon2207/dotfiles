@@ -120,15 +120,15 @@ case "${DISTRIBUTION_NAME}" in
 esac
 
 if type lsd &> /dev/null; then
-  alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}"'
-  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}"'
-  alias sl='lsd'
+  alias ls='lsd --ignore-glob="lost+found"'
+  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}" --ignore-glob="lost+found"'
+  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}" --ignore-glob="lost+found"'
+  alias sl='lsd --ignore-glob="lost+found"'
 else
-  alias ls='ls --color="auto"'
-  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git}"'
-  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git}"'
-  alias sl='ls --color="auto"'
+  alias ls='ls --color="auto" --ignore="lost+found"'
+  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git}" --ignore="lost+found"'
+  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git}" --ignore="lost+found"'
+  alias sl='ls --color="auto" --ignore="lost+found"'
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
