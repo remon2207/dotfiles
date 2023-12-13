@@ -163,7 +163,6 @@ EOF
 }
 
 bootusb() {
-
   case "${#}" in
   0 | 1)
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
@@ -330,6 +329,30 @@ gaddf() {
     tr '\n' ' ' <<< "${selected}" \
       |  xargs git add \
       && echo -e "Completed:\n${selected}"
+  fi
+
+  return
+}
+
+repo() {
+  usage() {
+    bat --plain << EOF
+USAGE:
+  repo <options>
+OPTIONS:
+  --rm          選択したリポジトリを削除
+  --help        ヘルプを表示
+EOF
+  }
+
+  local flag="${1}"
+  [[ "${flag}" == '--help' ]] && usage; return
+
+  local selected="$(ghq list --full-path | awk '!/dotfiles/ {print}' | fzf)"
+  if [[ "${flag}" == '--rm' ]] && [[ -n "${selected}" ]]; then
+    rm "${selected}"
+  elif [[ -n "${selected}" ]]; then
+    cd "${selected}"
   fi
 
   return
