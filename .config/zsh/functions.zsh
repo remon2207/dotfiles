@@ -163,7 +163,6 @@ EOF
 }
 
 bootusb() {
-  local yn
 
   case "${#}" in
   0 | 1)
@@ -171,6 +170,8 @@ bootusb() {
     return 1
     ;;
   2)
+    local yn
+
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read 'yn?実行しますか？(y/n): '
     case "${yn}" in
@@ -221,7 +222,6 @@ authycheck() {
 }
 
 upgrade() {
-
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
     [[ "${1}" == '-s' ]] && sudo emerge-webrsync
@@ -233,6 +233,7 @@ upgrade() {
     checkupdates
 
     if [[ ${?} -eq 0 ]]; then
+      local yn
       echo
       read 'yn?アップグレードしますか?(y/n): '
       case "${yn}" in
