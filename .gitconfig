@@ -12,7 +12,6 @@
 [delta]
   syntax-theme = Solarized (dark)
   navigate = true
-  side-by-side = true
 [init]
   defaultBranch = main
 [pull]
