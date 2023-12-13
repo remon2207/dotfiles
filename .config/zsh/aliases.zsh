@@ -98,7 +98,7 @@ alias su-='sudo su -'
 alias kernelbuild='sudo bash -c "make --jobs=$(($(nproc)+1)) --load-average=$((($(nproc)+1)*2)).0 && make modules_install; make install"'
 alias v='nvim'
 alias v.='nvim .'
-alias procs='procs --tree'
+alias procstree='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
 alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
 
