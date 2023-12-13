@@ -1,5 +1,5 @@
 [global]
-  timeout = 10
+  override_dbus_timeout = 10
 
 [experimental]
   # Calculate the dpi to use on a per-monitor basis.
