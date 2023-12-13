@@ -42,6 +42,10 @@ o.wrap = false
 o.confirm = true
 o.wildignore:append({'*/node_modules/*'})
 o.mouse:remove({ 'n', 'v', 'i' })
+-- カレントウィンドウの右に開く
+o.splitright = true
+-- カレントウィンドウの下に開く
+o.splitbelow = true
 -- リーダー
 g.mapleader = ' '
 
