@@ -1,3 +1,20 @@
+kerneldelete() {
+  local version version_dot_replace type
+  version="$(eselect --brief kernel list | fzf | awk --field-separator='-' '{print $2}')"
+  version_dot_replace="$(sd --string-mode '.' '-' <<< "${version}")"
+  fd_loop() {
+    for type in file directory; do
+      fd --glob "*${version}*" / --type "${type}"
+    done
+  }
+
+  fd_loop
+  sudo rm "/usr/src/linux-${version}-gentoo" "/lib/modules/${version}-gentoo" "/boot/{vmlinuz,System.map,config,initramfs}-${version}-gentoo{,.old}" "/boot/loader/entries/gentoo{,-old}_${version_dot_replace}.conf"
+  fd_loop
+
+  return
+}
+
 terminalspeed() {
   for i in {1..400000}; do
     echo -e '\r'
@@ -105,8 +122,6 @@ EOF
     sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
 
     sd "^(export TERMINAL='/usr/bin)/${5}'" "\$1/${6}'" "${DOTFILES}/.profile"
-
-    [[ $? -eq 0 ]] && exit
   }
 
   while getopts 'c:n:h' opt; do
@@ -140,7 +155,7 @@ EOF
     replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
   fi
 
-  return
+  [[ $? -eq 0 ]] && exit
 }
 
 bootusb() {
