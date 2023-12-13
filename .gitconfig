@@ -12,6 +12,7 @@
 [delta]
   syntax-theme = Solarized (dark)
   navigate = true
+  line-numbers = true
 [init]
   defaultBranch = main
 [pull]

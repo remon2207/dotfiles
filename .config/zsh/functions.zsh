@@ -6,6 +6,8 @@ kerneldelete() {
     for type in file directory; do
       fd --glob "*${version}*" / --type="${type}"
     done
+
+    return
   }
 
   fd_loop
@@ -46,6 +48,8 @@ OPTIONS:
   -n        New browser
   -h        See Help
 EOF
+
+    return
   }
 
   local opt
@@ -57,6 +61,8 @@ EOF
     sd --string-mode "${1}" "${3}" "${mimeapps}"
     sd --string-mode "${2}" "${4}" "${kitty_conf}"
     sd --string-mode "${2}" "${4}" "${alacritty_conf}"
+
+    return
   }
 
   while getopts 'c:n:h' opt; do
@@ -103,6 +109,8 @@ OPTIONS:
   -n        new terminal
   -h        See Help
 EOF
+
+    return
   }
 
   local opt
@@ -126,6 +134,8 @@ EOF
     sd "^# Exec=${6}" "Exec=${6}" "${bghtop}"
 
     sd "^(export TERMINAL='/usr/bin)/${5}'" "\$1/${6}'" "${DOTFILES}/.profile"
+
+    return
   }
 
   while getopts 'c:n:h' opt; do
@@ -261,6 +271,8 @@ OPTIONS:
   --off         Disable Proxy
   --help        See Help
 EOF
+
+    return
   }
 
   case "${flag}" in
@@ -354,6 +366,8 @@ OPTIONS:
   --rm          選択したリポジトリを削除
   --help        ヘルプを表示
 EOF
+
+    return
   }
 
   local flag="${1}"
