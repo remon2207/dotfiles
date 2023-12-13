@@ -3,8 +3,8 @@ local opts = { noremap = true, silent = true }
 
 keymap('n', '<Esc><Esc>', '<Cmd>set nohlsearch!<CR>', opts)
 
-keymap('n', 'ss', '<Cmd>split<CR><C-w>w', opts)
-keymap('n', 'sv', '<Cmd>vsplit<CR><C-w>w', opts)
+keymap('n', 'ss', '<Cmd>split<CR>', opts)
+keymap('n', 'sv', '<Cmd>vsplit<CR>', opts)
 
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
