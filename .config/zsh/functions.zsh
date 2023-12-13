@@ -4,7 +4,7 @@ kerneldelete() {
   version_dot_replace="$(sd --string-mode '.' '-' <<< "${version}")"
   fd_loop() {
     for type in file directory; do
-      fd --glob "*${version}*" / --type "${type}"
+      fd --glob "*${version}*" / --type="${type}"
     done
   }
 
