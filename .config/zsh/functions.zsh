@@ -163,7 +163,7 @@ EOF
 }
 
 bootusb() {
-  case "${#}" in
+  case ${#} in
   0 | 1)
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
     return 1
@@ -188,9 +188,8 @@ bootusb() {
 }
 
 tofish() {
-  local startline endline
-  startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
-  endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
+  local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
