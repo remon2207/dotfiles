@@ -12,8 +12,8 @@ paru_install() {
 }
 
 aur_install() {
-  paru -S --needed - < pkglist_aur
-  # paru -S --noconfirm --needed \
+  paru --sync --needed - < pkglist_aur
+  # paru --sync --needed \
   #   ghq-bin \
   #   slack-desktop \
   #   downgrade \

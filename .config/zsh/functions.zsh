@@ -201,7 +201,7 @@ upgrade() {
 
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
-    sudo emerge-webrsync
+    [[ "${1}" == '-s' ]] && sudo emerge-webrsync
     sudo emaint --auto sync
     sudo emerge --ask --update --deep --newuse @world
     sudo emerge --ask --verbose='n' --depclean
@@ -214,7 +214,7 @@ upgrade() {
       read 'yn?アップグレードしますか?(y/n): '
       case "${yn}" in
       ['yY'])
-        paru -Syu "${@}"
+        paru --sync --refresh --sysupgrade "${@}"
         ;;
       ['nN'])
         return 1
