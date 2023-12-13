@@ -9,6 +9,8 @@ EnumerateForwardKeys=
 EnumerateBackwardKeys=
 # 切り替え時は第1入力メソッドをスキップする
 EnumerateSkipFirst=False
+# プリエディットの埋め込みを切り替える
+TogglePreedit=
 
 [Hotkey/TriggerKeys]
 0=Control+space
@@ -36,9 +38,6 @@ EnumerateSkipFirst=False
 
 [Hotkey/NextCandidate]
 0=Tab
-
-[Hotkey/TogglePreedit]
-0=Control+Alt+P
 
 [Behavior]
 # デフォルトで有効にする
