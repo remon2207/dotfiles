@@ -321,6 +321,7 @@ keyrepeat() {
 
   return
 }
+
 gaddf() {
   local selected
   selected="$(git status --short | fzf --multi --preview="echo {} | awk '{print \$2}' | xargs git diff --color" | awk '{print $2}')"
@@ -331,6 +332,17 @@ gaddf() {
   fi
 
   return
+}
+
+gnowpush() {
+  [[ "${1}" == '-a' ]] && git add .
+  if [[ -n "$(git diff --name-only --staged)" ]]; then
+    git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
+  else
+    echo 'ステージングエリアに追加してください'
+  fi
+
+  return;
 }
 
 repo() {
@@ -357,20 +369,9 @@ EOF
   return
 }
 
-gnowpush() {
-  [[ "${1}" == '-a' ]] && git add .
-  if [[ -n "$(git diff --name-only --staged)" ]]; then
-    git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
-  else
-    echo 'ステージングエリアに追加してください'
-  fi
-
-  return;
-}
-
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
 stee() { sudo tee "${1}" &> /dev/null; return; }
-commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
+gcommitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { local selected; selected="$(git status --short | fzf --multi | awk '{print $2}')"; [[ -n "${selected}" ]] && tr '\n' ' ' <<< "${selected}" | xargs git diff; return; }
 raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
