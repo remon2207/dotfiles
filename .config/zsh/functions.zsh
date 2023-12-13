@@ -16,6 +16,8 @@ kerneldelete() {
 }
 
 terminalspeed() {
+  local i
+
   for i in {1..400000}; do
     echo -e '\r'
     echo -e '\033[0K\033[1mBold\033[0m \033[7mInvert\033[0m \033[4mUnderline\033[0m'
@@ -46,6 +48,7 @@ OPTIONS:
 EOF
   }
 
+  local opt
   local mimeapps="${DOTFILES}/.config/mimeapps.list"
   local kitty_conf="${DOTFILES}/.config/kitty/conf.d/advanced.conf"
   local alacritty_conf="${DOTFILES}/.config/alacritty/conf.d/env.yml"
@@ -102,6 +105,7 @@ OPTIONS:
 EOF
   }
 
+  local opt
   local i3_conf="${DOTFILES}/.config/i3/conf.d/keybind.conf"
   local bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
   local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
@@ -159,6 +163,8 @@ EOF
 }
 
 bootusb() {
+  local yn
+
   case "${#}" in
   0 | 1)
     echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
@@ -182,8 +188,9 @@ bootusb() {
 }
 
 tofish() {
-  local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
-  local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
+  local startline endline
+  startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
@@ -202,9 +209,10 @@ tofish() {
 }
 
 authycheck() {
-  local result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
-  local revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
-  local version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
+  local result revision version
+  result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
+  revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
+  version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
 
   echo "revision: ${revision}"
   echo "version: ${version}"
