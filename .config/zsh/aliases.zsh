@@ -10,14 +10,14 @@ alias dot="cd ${DOTFILES}"
 alias vfont="nvim ${XDG_CONFIG_HOME}/fontconfig/fonts.conf"
 alias vwez="nvim ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
 alias vmime="nvim ${XDG_CONFIG_HOME}/mimeapps.list"
-alias vzsh="cd ${XDG_CONFIG_HOME}/zsh/conf.d && nvim ."
+alias vzsh="cd ${XDG_CONFIG_HOME}/zsh && nvim ."
 alias vkitty="cd ${XDG_CONFIG_HOME}/kitty/conf.d && nvim ."
 alias vfish="cd ${XDG_CONFIG_HOME}/fish && nvim ."
 alias vconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
 alias vala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
 alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
 alias vnorc='nvim -u "NORC"'
-alias vpolybar="nvim ${XDG_CONFIG_HOME}/polybar/config.ini"
+alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d && nvim ."
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
 alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'

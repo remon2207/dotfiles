@@ -316,6 +316,8 @@ sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -pa
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
 ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
+
+# ターミナル起動時に実行
 chpwd() { la; return; }
 () {
   # プラグインマネージャーの自動インストール
