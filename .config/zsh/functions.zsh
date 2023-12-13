@@ -342,7 +342,7 @@ gnowpush() {
     echo 'ステージングエリアに追加してください'
   fi
 
-  return;
+  return
 }
 
 repo() {
@@ -357,13 +357,13 @@ EOF
   }
 
   local flag="${1}"
-  [[ "${flag}" == '--help' ]] && usage; return
+  [[ "${flag}" == '--help' ]] && usage && return
 
   local selected="$(ghq list --full-path | awk '!/dotfiles/ {print}' | fzf)"
-  if [[ "${flag}" == '--rm' ]] && [[ -n "${selected}" ]]; then
-    rm "${selected}"
-  elif [[ -n "${selected}" ]]; then
+  if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
+  elif [[ -n "${selected}" ]] && [[ "${flag}" == '--rm' ]]; then
+    rm "${selected}"
   fi
 
   return
