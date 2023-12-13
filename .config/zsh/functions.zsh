@@ -373,7 +373,7 @@ EOF
   local flag="${1}"
   [[ "${flag}" == '--help' ]] && usage && return
 
-  local selected="$(ghq list --full-path | awk '!/dotfiles/ {print}' | fzf)"
+  local selected="$(ghq list --full-path | rg --invert-match '^.*/dotfiles$' | sort | fzf)"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
   elif [[ -n "${selected}" ]] && [[ "${flag}" == '--rm' ]]; then
