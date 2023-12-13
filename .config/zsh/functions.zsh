@@ -302,7 +302,7 @@ keyrepeat() {
 
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
 stee() { sudo tee "${1}" &> /dev/null; return; }
-nowpush() { git add . && git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
+nowpush() { [[ "${1}" == '-a' ]] && git add .; git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push; return; }
 commitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { git diff "$(git status | awk '/^\smodified:/{print $2}' | fzf)"; return; }
 addchange() { git add "$(git status | awk '/^\smodified:/,0 {print $2}' | rg --invert-match --regexp '^not' --regexp '^"git' --regexp '^changes' | tac | sed --expression='1d' | fzf)"; return; }
