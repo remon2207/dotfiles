@@ -390,7 +390,7 @@ gdf() { local selected; selected="$(git status --short | fzf --multi | awk '{pri
 raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
 psgrep() { procs "${1}"; return; }
-shtouch() { touch "${1}.sh" && chmod +x "${_}" && nvim "${_}"; return; }
+vsh() { nvim "${1}.sh" && chmod +x "${_}"; return; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
 ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }

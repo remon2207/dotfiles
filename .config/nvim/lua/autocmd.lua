@@ -57,3 +57,9 @@ autocmd({ 'BufNewFile', 'BufRead' }, {
   group = 'file',
   command = 'setlocal tabstop=4 shiftwidth=4 noexpandtab',
 })
+
+autocmd({ 'BufNewFile' }, {
+  pattern = '*.sh',
+  group = 'file',
+  command = '0r ${XDG_CONFIG_HOME}/nvim/templates/sh.txt | :normal G'
+})
