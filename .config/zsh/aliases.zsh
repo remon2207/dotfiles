@@ -99,19 +99,20 @@ alias v.='nvim .'
 alias procstree='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
 alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
+alias sbat='sudo bat --theme="Solarized (dark)"'
 
 case "${DISTRIBUTION_NAME}" in
 'archlinux')
   alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
   alias unrequired='pacman --query --unrequired --deps --quiet'
-  alias pacclean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
+  alias clean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
   alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist"
   alias pkglistaur="pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur"
   alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
   alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
   ;;
 'gentoo')
-  alias pkgclean='sudo emerge --ask --verbose="n" --depclean'
+  alias clean='sudo emerge --ask --verbose="n" --depclean'
   alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
   alias showpkgsuse='emerge --pretend --emptytree @world'
   ;;

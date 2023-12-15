@@ -3,7 +3,7 @@
 set -eu
 
 # ワークスペース3に移動し、レイアウトを展開する
-i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
+for num in 3 1; do i3-msg "workspace --no-auto-back-and-forth ${num}; append_layout ${XDG_CONFIG_HOME}/i3/workspace_${num}.json"; done
 
 # 展開に必要なプログラムを起動する
 (discord &)
@@ -12,3 +12,4 @@ i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i
 (kitty --single-instance nvtop &)
 # (wezterm start htop &)
 # (wezterm start nvtop &)
+(vivaldi-stable &)

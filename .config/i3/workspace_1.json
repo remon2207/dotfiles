@@ -1,0 +1,25 @@
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1056,
+       "width": 1916,
+       "x": 2,
+       "y": 1082
+    },
+    "marks": [],
+    "name": ".* Vivaldi",
+    "percent": 1,
+    "swallows": [
+       {
+       "class": "^Vivaldi\\-stable$",
+       "instance": "^vivaldi\\-stable$",
+       "title": "^.* Vivaldi$",
+       "window_role": "^browser$"
+       }
+    ],
+    "type": "con"
+}
+
+// vim:set ft=jsonc :
