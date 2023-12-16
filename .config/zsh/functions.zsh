@@ -242,6 +242,7 @@ upgrade() {
 
     if [[ ${?} -eq 0 ]]; then
       local yn
+
       echo
       read 'yn?アップグレードしますか?(y/n): '
       case "${yn}" in
