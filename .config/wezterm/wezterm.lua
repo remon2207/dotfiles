@@ -12,6 +12,7 @@ return {
   audible_bell = 'Disabled',
   enable_wayland = false,
   scrollback_lines = 99999999,
+  default_cursor_style = 'SteadyBar',
   max_fps = 165,
   animation_fps = 165,
   front_end = 'WebGpu',

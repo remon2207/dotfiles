@@ -1,5 +1,5 @@
 cursor:
   style:
-    shape: 'Block'
+    shape: 'Beam'
     blinking: 'Always'
   blink_timeout: 0
