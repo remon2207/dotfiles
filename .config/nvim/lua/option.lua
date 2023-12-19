@@ -46,6 +46,9 @@ o.mouse:remove({ 'n', 'v', 'i' })
 o.splitright = true
 -- カレントウィンドウの下に開く
 o.splitbelow = true
+-- カーソルスタイル
+o.guicursor:remove({ 'n-v-c-sm:block', 'i-ci-ve:ver25' })
+o.guicursor:append({ 'n-c-sm-i-ci-ve:ver25', 'v:block' })
 -- リーダー
 g.mapleader = ' '
 
