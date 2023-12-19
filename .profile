@@ -26,7 +26,7 @@ export FZF_CTRL_T_OPTS='--preview="/usr/bin/bat --style=header-filename --color=
 export FZF_CTRL_R_OPTS='--preview="echo {}" --preview-window="down:3:wrap"'
 export FZF_ALT_C_OPTS='--preview="/usr/bin/tree {}"'
 export FZF_DEFAULT_OPTS="\
---height='60%' --layout='reverse' --no-mouse --exit-0 \
+--height='60%' --layout='reverse' --no-mouse --exit-0 --cycle \
 --bind='ctrl-/:change-preview-window(down|),ctrl-d:preview-down,ctrl-u:preview-up' \
 --color='bg+:#073642,spinner:#2aa198,hl:#268bd2' \
 --color='fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198' \
