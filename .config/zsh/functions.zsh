@@ -232,10 +232,17 @@ authycheck() {
 upgrade() {
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
-    [[ "${1}" == '-s' ]] && sudo emerge-webrsync
-    sudo emaint --auto sync
-    sudo emerge --ask --update --deep --newuse @world
-    sudo emerge --ask --verbose='n' --depclean
+    if [[ "${1}" == '-s' ]]; then
+      sudo sh -c 'emerge-webrsync \
+        ; emaint --auto sync \
+        ; emerge --ask --update --deep --newuse @world \
+        ; emerge --ask --verbose="n" --depclean'
+
+      return
+    fi
+    sudo sh -c 'emaint --auto sync \
+      ; emerge --ask --update --deep --newuse @world \
+      ; emerge --ask --verbose="n" --depclean'
     ;;
   'archlinux')
     checkupdates
@@ -250,7 +257,7 @@ upgrade() {
         paru --sync --refresh --sysupgrade "${@}"
         ;;
       ['nN'])
-        return 1
+        return
         ;;
       esac
     fi

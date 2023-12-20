@@ -47,8 +47,8 @@ o.splitright = true
 -- カレントウィンドウの下に開く
 o.splitbelow = true
 -- カーソルスタイル
-o.guicursor:remove({ 'n-v-c-sm:block', 'i-ci-ve:ver25' })
-o.guicursor:append({ 'n-c-sm-i-ci-ve:ver25', 'v:block' })
+o.guicursor:remove({ 'n-v-c-sm:block' })
+o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
 -- リーダー
 g.mapleader = ' '
 
