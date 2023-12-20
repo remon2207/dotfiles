@@ -306,7 +306,7 @@ gentoocp() {
 
   rsync --archive --update --delete --verbose /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
   zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
-  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak &> /dev/null
+  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak > /dev/null
 
   return
 }
@@ -392,7 +392,7 @@ EOF
 }
 
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
-stee() { sudo tee "${1}" &> /dev/null; return; }
+stee() { sudo tee "${1}" > /dev/null; return; }
 gcommitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { local selected; selected="$(git status --short | fzf --multi | awk '{print $2}')"; [[ -n "${selected}" ]] && tr '\n' ' ' <<< "${selected}" | xargs git diff; return; }
 raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }

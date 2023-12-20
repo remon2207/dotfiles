@@ -1,4 +1,5 @@
 () {
+  local plugin
   local plugins=(
     'Aloxaf/fzf-tab'
     'zsh-users/zsh-syntax-highlighting'
