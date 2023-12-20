@@ -59,25 +59,28 @@ o.shiftwidth = 2
 -- 大文字小文字の区別をしない
 o.ignorecase = true
 o.smartcase = true
--- ステータスラインとを表示
+-- ステータスラインを表示
 o.laststatus = 1
 -- 現在のモードを非表示にする
 o.showmode = false
 o.termguicolors = true
 o.completeopt = { 'menu', 'menuone', 'noselect' }
--- Priority of help language
+-- ヘルプ言語の優先度
 o.helplang:append({ 'en' })
--- Center the cursor line
+-- カーソル行周囲に余裕を持たせる
 o.scrolloff = 5
 o.sidescrolloff = 5
--- Popup window the background opacity
-o.wildoptions:remove({ 'tagfile' })
+-- o.wildoptions:remove({ 'tagfile' })
+-- ポップアップウィンドウの背景の不透明度
 o.pumblend = 25
--- Show always sign column
+-- 常にサインカラムを表示
 o.signcolumn = 'no'
 o.list = true
 o.listchars = 'tab:> ,space: '
 o.mouse:remove({ 'n', 'v', 'i' })
+-- カーソルスタイル
+o.guicursor:remove({ 'n-v-c-sm:block' })
+o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
 -- リーダー
 g.mapleader = ' '
 

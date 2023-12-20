@@ -25,20 +25,20 @@ o.showmode = false
 o.swapfile = false
 o.termguicolors = true
 o.completeopt = { 'menu', 'menuone', 'noselect' }
--- Priity of help language
+-- ヘルプ言語の優先度
 o.helplang:append({ 'en' })
--- Center the cursor line
+-- カーソル行周囲に余裕を持たせる
 o.scrolloff = 5
 o.sidescrolloff = 5
--- Pup window the background opacity
-o.wildoptions:remove({ 'tagfile' })
+-- o.wildoptions:remove({ 'tagfile' })
+-- ポップアップウィンドウの背景の不透明度
 o.pumblend = 25
 -- 常にサインカラムを表示
 o.signcolumn = 'yes'
 o.list = true
 o.listchars = 'tab:> ,space: '
 o.wrap = false
--- Confirm dialog on close
+-- 終了時に確認ダイアログを表示
 o.confirm = true
 o.wildignore:append({'*/node_modules/*'})
 o.mouse:remove({ 'n', 'v', 'i' })
@@ -52,7 +52,7 @@ o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
 -- リーダー
 g.mapleader = ' '
 
--- build in plugins
+-- ビルトインプラグインを無効化
 g.loaded_node_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
