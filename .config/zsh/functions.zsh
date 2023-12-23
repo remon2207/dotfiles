@@ -239,7 +239,7 @@ upgrade() {
           ; emerge --ask --update --deep --newuse @world \
           ; emerge --ask --verbose="n" --depclean'
         ;;
-      '--only')
+      '-o')
         sudo sh -c 'emerge --ask --update --newuse @world'
         ;;
     esac
