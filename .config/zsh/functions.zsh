@@ -232,14 +232,18 @@ authycheck() {
 upgrade() {
   case "${DISTRIBUTION_NAME}" in
   'gentoo')
-    if [[ "${1}" == '-s' ]]; then
-      sudo sh -c 'emerge-webrsync \
-        ; emaint --auto sync \
-        ; emerge --ask --update --deep --newuse @world \
-        ; emerge --ask --verbose="n" --depclean'
+    case "${1}" in
+      '-s')
+        sudo sh -c 'emerge-webrsync \
+          ; emaint --auto sync \
+          ; emerge --ask --update --deep --newuse @world \
+          ; emerge --ask --verbose="n" --depclean'
+        ;;
+      '--only')
+        sudo sh -c 'emerge --ask --update --newuse @world'
+        ;;
+    esac
 
-      return
-    fi
     sudo sh -c 'emaint --auto sync \
       ; emerge --ask --update --deep --newuse @world \
       ; emerge --ask --verbose="n" --depclean'
