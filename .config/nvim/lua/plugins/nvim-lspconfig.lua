@@ -106,7 +106,6 @@ local servers = {
   'prismals',
   'graphql',
   'taplo',
-  'efm',
   'bashls',
   'jsonls',
   'stylelint_lsp',
@@ -118,15 +117,6 @@ mason.setup()
 mason_lspconfig.setup({
   ensure_installed = servers,
 })
-
-local eslint = {
-  lintCommand = 'eslint_d --cache -f unix --stdin --stdin-filename ${INPUT}',
-  lintIgnoreExitCode = true,
-  lintStdin = true,
-  lintFormats = { '%f:%l:%c: %m' },
-  formatCommand = 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename ${INPUT}',
-  formatStdin = true,
-}
 
 mason_lspconfig.setup_handlers({
   function()
@@ -190,16 +180,6 @@ mason_lspconfig.setup_handlers({
     })
     lspconfig['stylelint_lsp'].setup({
       capabilities = capabilities,
-    })
-    lspconfig['efm'].setup({
-      settings = {
-        languages = {
-          typescript = { eslint },
-          javascript = { eslint },
-          typescriptreact = { eslint },
-          javascriptreact = { eslint },
-        },
-      },
     })
   end,
 })

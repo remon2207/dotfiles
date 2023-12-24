@@ -7,10 +7,10 @@ average="$(echo "${core}" | awk '{x++;sum+=$1} END {print sum/x}' | awk '{print 
 average_digit="$(echo -n "${average}" | wc --bytes)"
 
 case ${average_digit} in
-2)
-  echo "${average}" | sd '$' '.0℃'
-  ;;
-*)
-  echo "${average}℃"
-  ;;
+  2)
+    echo "${average}" | sd '$' '.0℃'
+    ;;
+  *)
+    echo "${average}℃"
+    ;;
 esac

@@ -159,6 +159,13 @@ require('lazy').setup({
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
 
+  {
+    'nvimtools/none-ls.nvim',
+    config = function ()
+      require('plugins.none-ls')
+    end
+  },
+
   -- Completion
   {
     'hrsh7th/nvim-cmp',
@@ -234,12 +241,12 @@ require('lazy').setup({
   -- emmet for HTML
   'mattn/emmet-vim',
 
-  {
-    'mhartington/formatter.nvim',
-    config = function()
-      require('plugins.formatter')
-    end,
-  },
+  -- {
+  --   'mhartington/formatter.nvim',
+  --   config = function()
+  --     require('plugins.formatter')
+  --   end,
+  -- },
 
   -- {
   --   'mfussenegger/nvim-lint',
