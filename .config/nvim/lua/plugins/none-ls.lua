@@ -52,7 +52,7 @@ null_ls.setup({
       },
     }),
     formatting.shfmt.with({
-      extra_args = { '--indent', 2, '--space-redirects', '--case-indent' },
+      extra_args = { '--indent', 2, '--space-redirects', '--case-indent', '--binary-next-line' },
       filetypes = { 'sh', 'zsh' },
     }),
   },
