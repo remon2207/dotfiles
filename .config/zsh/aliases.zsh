@@ -85,7 +85,7 @@ alias t='tmux'
 alias r='ranger'
 alias homesize='du --summarize --block-size="1M" "${HOME}/"{*,.*} | sort --numeric-sort'
 alias tmp="cd ${HOME}/tmp"
-alias wmclassname='xprop WM_{CLASS,NAME}'
+alias wmcn='xprop WM_{CLASS,NAME}'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
@@ -100,7 +100,7 @@ alias procstree='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
 alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
 alias sbat='sudo bat --theme="Solarized (dark)"'
-alias delta='delta --pager="/usr/bin/bat --plain"'
+alias delta='delta --pager="/usr/bin/less"'
 
 case "${DISTRIBUTION_NAME}" in
 'archlinux')
