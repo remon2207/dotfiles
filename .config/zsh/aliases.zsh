@@ -100,6 +100,7 @@ alias rg='rg --threads="$(("$(nproc)"+1))"'
 alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
 alias sbat='sudo bat --theme="Solarized (dark)"'
 alias delta='delta --pager="/usr/bin/less"'
+alias so='source'
 
 case "${DISTRIBUTION_NAME}" in
 'archlinux')
