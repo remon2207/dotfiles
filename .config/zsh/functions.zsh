@@ -201,7 +201,10 @@ bootusb() {
 }
 
 tofish() {
-  local startline="$(("$(bat --plain "${HOME}/.zshrc" | rg --line-number 'load fish' | cut --delimiter=':' --fields=1)" + 1))"
+  local startline="$(("$(bat --plain "${HOME}/.zshrc" \
+    | rg --line-number 'load fish' \
+    | cut --delimiter=':' --fields=1)" \
+    + 1))"
   local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
 
   case "${DISTRIBUTION_NAME}" in
@@ -223,8 +226,12 @@ tofish() {
 authycheck() {
   local result revision version
   result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
-  revision="$(echo "${result}" | rg 'revision' | awk --field-separator='[ ":,]*' '{print $3}')"
-  version="$(echo "${result}" | rg 'version' | awk --field-separator='[ ":]*' '{print $3}')"
+  revision="$(echo "${result}" \
+    | rg 'revision' \
+    | awk --field-separator='[ ":,]*' '{print $3}')"
+  version="$(echo "${result}" \
+    | rg 'version' \
+    | awk --field-separator='[ ":]*' '{print $3}')"
 
   echo "revision: ${revision}"
   echo "version: ${version}"
@@ -388,7 +395,7 @@ gedit() {
     | awk '{print $2}' \
     | fzf --preview='bat {} --color=always --style=changes,header-filename,numbers')"
 
-  [[ -n "${selected}" ]] && nvim "${selected}" && echo "nvim ${selected}"
+  [[ -n "${selected}" ]] && nvim -- "${selected}" && echo "nvim -- ${selected}"
 
   return
 }
@@ -468,16 +475,18 @@ chpwd() { la; return; }
 
   # ターミナルがAlacrittyなら自動でtmuxを起動
   # =========================================
-  if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]] && [[ "${TERM_PROG}" == 'alacritty' ]]; then
-    if [[ -z "${TMUX}" ]]; then
-      ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk --field-separator=':' '{print $1}')"
-      if [[ -z ${ID} ]]; then
-        tmux new-session
-      else
-        tmux attach-session -t ${ID}
+  if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]]; then
+    if [[ "${TERM_PROG}" == 'alacritty' ]]; then
+      if [[ -z "${TMUX}" ]]; then
+        ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk --field-separator=':' '{print $1}')"
+        if [[ -z ${ID} ]]; then
+          tmux new-session
+        else
+          tmux attach-session -t ${ID}
+        fi
       fi
+      exit
     fi
-    exit
   fi
   # =========================================
 
