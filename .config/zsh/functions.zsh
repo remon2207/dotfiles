@@ -229,46 +229,62 @@ authycheck() {
   return
 }
 
-upgrade() {
+pkg() {
+  usage() {
+    bat --plain << EOF
+USAGE:
+  pkg <subcommand>
+SUBCOMMAND:
+  snapshot        スナップショットをダウンロードしてアップグレードする。Gentooで使用
+  up              アップグレードする
+  clean           不要なパッケージを削除する
+  help            helpを表示
+EOF
+  }
+
+  [[ ${#} -eq 0 ]] && return 1
+
+  local subcommand="${1}"
+
+  [[ "${subcommand}" == 'help' ]] && usage && return
+
   case "${DISTRIBUTION_NAME}" in
-  'gentoo')
-    case "${1}" in
-      '-s')
-        sudo sh -c 'emerge-webrsync \
-          ; emaint --auto sync \
-          ; emerge --ask --update --deep --newuse @world \
-          ; emerge --ask --verbose="n" --depclean'
-
-        return
-        ;;
-      '-o')
-        sudo sh -c 'emerge --ask --update --newuse @world'
-        return
-        ;;
-    esac
-
-    sudo sh -c 'emaint --auto sync \
-      ; emerge --ask --update --deep --newuse @world \
-      ; emerge --ask --verbose="n" --depclean'
-    ;;
-  'archlinux')
-    checkupdates
-
-    if [[ ${?} -eq 0 ]]; then
-      local yn
-
-      echo
-      read 'yn?アップグレードしますか?(y/n): '
-      case "${yn}" in
-      ['yY'])
-        paru --sync --refresh --sysupgrade "${@}"
-        ;;
-      ['nN'])
-        return
-        ;;
+    'gentoo')
+      case "${subcommand}" in
+        'snapshot')
+          sudo sh -c 'emerge-webrsync \
+            ; emaint --auto sync \
+            ; emerge --ask --update --deep --newuse @world \
+            ; emerge --ask --verbose="n" --depclean'
+          ;;
+        'up')
+          sudo sh -c 'emaint --auto sync \
+            ; emerge --ask --update --deep --newuse @world \
+            ; emerge --ask --verbose="n" --depclean'
+          ;;
+        'clean')
+          sudo sh -c 'emerge --ask --verbose="n" --depclean'
+          ;;
       esac
-    fi
-    ;;
+      ;;
+    'archlinux')
+      case "${subcommand}" in
+        'up')
+          checkupdates
+
+          if [[ ${?} -eq 0 ]]; then
+            local yn
+
+            echo
+            read 'yn?アップグレードしますか?(y/n): '
+            [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
+          fi
+          ;;
+        'clean')
+          paru --remove --nosave --recursive "${@}"
+          ;;
+      esac
+      ;;
   esac
 
   return
