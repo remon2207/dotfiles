@@ -200,29 +200,6 @@ bootusb() {
   return
 }
 
-tofish() {
-  local startline="$(("$(bat --plain "${HOME}/.zshrc" \
-    | rg --line-number 'load fish' \
-    | cut --delimiter=':' --fields=1)" \
-    + 1))"
-  local endline="$(bat --plain "${HOME}/.zshrc" | wc --lines)"
-
-  case "${DISTRIBUTION_NAME}" in
-  'gentoo')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_gentoo.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_gentoo.conf"
-    ;;
-  'archlinux')
-    sed --in-place --expression='2s/^/# /' "${DOTFILES}/.tmux_arch.conf"
-    sed --in-place --expression='3s/^# //' "${DOTFILES}/.tmux_arch.conf"
-    ;;
-  esac
-
-  sed --in-place --expression="${startline},${endline}s/^# //" "${DOTFILES}/.zshrc"
-
-  [[ ${?} -eq 0 ]] && exit
-}
-
 authycheck() {
   local result revision version
   result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
