@@ -254,6 +254,9 @@ EOF
         'clean')
           sudo emerge --ask --verbose='n' --depclean
           ;;
+        *)
+          return
+          ;;
       esac
       ;;
     'archlinux')
@@ -271,6 +274,9 @@ EOF
           ;;
         'clean')
           paru --remove --nosave --recursive "${@}"
+          ;;
+        *)
+          return
           ;;
       esac
       ;;
