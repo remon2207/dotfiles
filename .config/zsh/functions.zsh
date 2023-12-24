@@ -1,6 +1,8 @@
 kerneldelete() {
   local version version_dot_replace type
-  version="$(eselect --brief kernel list | fzf | awk --field-separator='-' '{print $2}')"
+  version="$(eselect --brief kernel list |
+    fzf |
+    awk --field-separator='-' '{print $2}')"
   version_dot_replace="$(sd --string-mode '.' '-' <<< "${version}")"
   fd_loop() {
     for type in file directory; do
@@ -203,12 +205,12 @@ bootusb() {
 authycheck() {
   local result revision version
   result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
-  revision="$(echo "${result}" \
-    | rg 'revision' \
-    | awk --field-separator='[ ":,]*' '{print $3}')"
-  version="$(echo "${result}" \
-    | rg 'version' \
-    | awk --field-separator='[ ":]*' '{print $3}')"
+  revision="$(echo "${result}" |
+    rg 'revision' |
+    awk --field-separator='[ ":,]*' '{print $3}')"
+  version="$(echo "${result}" |
+    rg 'version' |
+    awk --field-separator='[ ":]*' '{print $3}')"
 
   echo "revision: ${revision}"
   echo "version: ${version}"
@@ -239,15 +241,15 @@ EOF
     'gentoo')
       case "${subcommand}" in
         'snap')
-          sudo sh -c "emerge-webrsync \
-            ; emaint --auto sync \
-            ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose='n' --depclean"
+          sudo sh -c "emerge-webrsync;
+            emaint --auto sync;
+            emerge --ask --update --deep --newuse @world;
+            emerge --ask --verbose='n' --depclean"
           ;;
         'up')
-          sudo sh -c "emaint --auto sync \
-            ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose='n' --depclean"
+          sudo sh -c "emaint --auto sync;
+            emerge --ask --update --deep --newuse @world;
+            emerge --ask --verbose='n' --depclean"
           ;;
         'clean')
           sudo emerge --ask --verbose='n' --depclean
@@ -354,13 +356,13 @@ keyrepeat() {
 
 gaddf() {
   local selected
-  selected="$(git status --short \
-    | fzf --multi --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
-    | awk '{print $2}')"
+  selected="$(git status --short |
+    fzf --multi --preview="echo {} | awk '{print \$2}' | xargs git diff --color" |
+    awk '{print $2}')"
   if [[ -n "${selected}" ]]; then
-    tr '\n' ' ' <<< "${selected}" \
-      |  xargs git add \
-      && echo -e "Completed:\n${selected}"
+    tr '\n' ' ' <<< "${selected}" |
+      xargs git add &&
+      echo -e "Completed:\n${selected}"
   fi
 
   return
@@ -368,9 +370,9 @@ gaddf() {
 
 gedit() {
   local selected
-  selected="$(git status --short \
-    | awk '{print $2}' \
-    | fzf --preview='bat {} --color=always --style=changes,header-filename,numbers')"
+  selected="$(git status --short |
+    awk '{print $2}' |
+    fzf --preview='bat {} --color=always --style=changes,header-filename,numbers')"
 
   [[ -n "${selected}" ]] && nvim -- "${selected}" && echo "nvim -- ${selected}"
 
@@ -405,10 +407,10 @@ EOF
   local flag="${1}"
   [[ "${flag}" == '--help' ]] && usage && return
 
-  local selected="$(ghq list --full-path \
-    | rg --invert-match '^.*/dotfiles$' \
-    | sort \
-    | fzf --preview-window='50%' --preview='/usr/bin/tree {}')"
+  local selected="$(ghq list --full-path |
+    rg --invert-match '^.*/dotfiles$' |
+    sort |
+    fzf --preview-window='50%' --preview='/usr/bin/tree {}')"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
   elif [[ -n "${selected}" ]] && [[ "${flag}" == '--rm' ]]; then
@@ -455,7 +457,9 @@ chpwd() { la; return; }
   if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]]; then
     if [[ "${TERM_PROG}" == 'alacritty' ]]; then
       if [[ -z "${TMUX}" ]]; then
-        ID="$(tmux ls 2> /dev/null | rg --invert-match --max-count=1 'attached' | awk --field-separator=':' '{print $1}')"
+        ID="$(tmux ls 2> /dev/null |
+          rg --invert-match --max-count=1 'attached' |
+          awk --field-separator=':' '{print $1}')"
         if [[ -z ${ID} ]]; then
           tmux new-session
         else

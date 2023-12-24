@@ -103,20 +103,20 @@ alias delta='delta --pager="/usr/bin/less"'
 alias so='source'
 
 case "${DISTRIBUTION_NAME}" in
-'archlinux')
-  alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
-  alias unrequired='pacman --query --unrequired --deps --quiet'
-  alias clean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
-  alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist"
-  alias pkglistaur="pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur"
-  alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
-  alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
-  ;;
-'gentoo')
-  alias clean='sudo emerge --ask --verbose="n" --depclean'
-  alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
-  alias showpkgsuse='emerge --pretend --emptytree @world'
-  ;;
+  'archlinux')
+    alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
+    alias unrequired='pacman --query --unrequired --deps --quiet'
+    alias clean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
+    alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist"
+    alias pkglistaur="pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur"
+    alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
+    alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
+    ;;
+  'gentoo')
+    alias clean='sudo emerge --ask --verbose="n" --depclean'
+    alias portageupgrade='sudo emerge --ask --oneshot sys-apps/portage'
+    alias showpkgsuse='emerge --pretend --emptytree @world'
+    ;;
 esac
 
 if type lsd &> /dev/null; then

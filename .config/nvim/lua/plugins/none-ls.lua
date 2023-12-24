@@ -27,6 +27,7 @@ null_ls.setup({
     code_actions.eslint_d.with({
       extra_args = { '--cache' },
     }),
+    code_actions.shellcheck,
     formatting.eslint_d.with({
       extra_args = { '--cache' },
     }),
@@ -52,6 +53,7 @@ null_ls.setup({
     }),
     formatting.shfmt.with({
       extra_args = { '--indent', 2, '--space-redirects', '--case-indent' },
+      filetypes = { 'sh', 'zsh' },
     }),
   },
   on_attach = function(client, bufnr)

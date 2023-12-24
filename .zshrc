@@ -14,7 +14,6 @@ else
   compinit
 fi
 
-# shellcheck disable=SC1073,1072
 () {
   local file
   local files=('options' 'aliases' 'functions' 'plugins' 'styles' 'completions')

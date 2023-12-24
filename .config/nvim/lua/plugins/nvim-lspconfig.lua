@@ -79,6 +79,8 @@ api.nvim_create_autocmd('LspAttach', {
       },
     })
 
+    client.server_capabilities.semanticTokensProvider = nil
+
     -- vim.diagnostic.config({
     --   virtual_text = true,
     --   severity_sort = true,
@@ -173,7 +175,6 @@ mason_lspconfig.setup_handlers({
     })
     lspconfig['bashls'].setup({
       capabilities = capabilities,
-      filetypes = { 'sh', 'zsh' },
     })
     lspconfig['jsonls'].setup({
       capabilities = capabilities,
