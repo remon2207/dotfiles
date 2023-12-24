@@ -11,7 +11,10 @@ kerneldelete() {
   }
 
   fd_loop
-  sudo rm "/usr/src/linux-${version}-gentoo" "/lib/modules/${version}-gentoo" "/boot/{vmlinuz,System.map,config,initramfs}-${version}-gentoo{,.old}" "/boot/loader/entries/gentoo{,-old}_${version_dot_replace}.conf"
+  sudo rm "/usr/src/linux-${version}-gentoo" \
+    "/lib/modules/${version}-gentoo" \
+    "/boot/{vmlinuz,System.map,config,initramfs}-${version}-gentoo{,.old}" \
+    "/boot/loader/entries/gentoo{,-old}_${version_dot_replace}.conf"
   fd_loop
 
   return
@@ -252,18 +255,18 @@ EOF
     'gentoo')
       case "${subcommand}" in
         'snap')
-          sudo sh -c 'emerge-webrsync \
+          sudo sh -c "emerge-webrsync \
             ; emaint --auto sync \
             ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose="n" --depclean'
+            ; emerge --ask --verbose='n' --depclean"
           ;;
         'up')
-          sudo sh -c 'emaint --auto sync \
+          sudo sh -c "emaint --auto sync \
             ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose="n" --depclean'
+            ; emerge --ask --verbose='n' --depclean"
           ;;
         'clean')
-          sudo sh -c 'emerge --ask --verbose="n" --depclean'
+          sudo emerge --ask --verbose='n' --depclean
           ;;
       esac
       ;;
@@ -367,12 +370,25 @@ keyrepeat() {
 
 gaddf() {
   local selected
-  selected="$(git status --short | fzf --multi --preview="echo {} | awk '{print \$2}' | xargs git diff --color" | awk '{print $2}')"
+  selected="$(git status --short \
+    | fzf --multi --preview="echo {} | awk '{print \$2}' | xargs git diff --color" \
+    | awk '{print $2}')"
   if [[ -n "${selected}" ]]; then
     tr '\n' ' ' <<< "${selected}" \
       |  xargs git add \
       && echo -e "Completed:\n${selected}"
   fi
+
+  return
+}
+
+gedit() {
+  local selected
+  selected="$(git status --short \
+    | awk '{print $2}' \
+    | fzf --preview='bat {} --color=always --style=changes,header-filename,numbers')"
+
+  [[ -n "${selected}" ]] && nvim "${selected}" && echo "nvim ${selected}"
 
   return
 }
@@ -404,7 +420,10 @@ EOF
   local flag="${1}"
   [[ "${flag}" == '--help' ]] && usage && return
 
-  local selected="$(ghq list --full-path | rg --invert-match '^.*/dotfiles$' | sort | fzf --preview='/usr/bin/tree {}')"
+  local selected="$(ghq list --full-path \
+    | rg --invert-match '^.*/dotfiles$' \
+    | sort \
+    | fzf --preview='/usr/bin/tree {}')"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
   elif [[ -n "${selected}" ]] && [[ "${flag}" == '--rm' ]]; then

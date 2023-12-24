@@ -44,7 +44,6 @@ alias gm='git merge'
 alias gd='git diff'
 alias gundoadd='git restore --staged'
 alias gundocommit='git reset --soft "HEAD^"'
-alias gedit="git status --short | fzf | awk '{print \$2}' | xargs nvim"
 alias dockerprune='docker volume prune --force --all && docker system prune --force --all'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
