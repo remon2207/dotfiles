@@ -1,0 +1,7 @@
+#compdef delta
+
+_delta() {
+  _files -W "${PWD}"
+
+  return
+}

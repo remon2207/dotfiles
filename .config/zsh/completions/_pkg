@@ -1,0 +1,7 @@
+#compdef pkg
+
+_pkg() {
+  _values 'clean' 'snap[snapshot download]' 'up[packages install without snapshot]' 'clean[packages uninstall]'
+
+  return
+}
