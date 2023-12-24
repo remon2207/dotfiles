@@ -251,7 +251,7 @@ EOF
   case "${DISTRIBUTION_NAME}" in
     'gentoo')
       case "${subcommand}" in
-        'snapshot')
+        'snap')
           sudo sh -c 'emerge-webrsync \
             ; emaint --auto sync \
             ; emerge --ask --update --deep --newuse @world \
