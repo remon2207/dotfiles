@@ -399,6 +399,7 @@ gnowpush() {
     git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
   else
     echo 'ステージングエリアに追加してください'
+    return 1
   fi
 
   return
