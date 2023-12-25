@@ -10,5 +10,5 @@ zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*:default' menu yes select search
 
 zstyle ':fzf-tab:*' switch-group ',' '.'
-zstyle ':fzf-tab:*' fzf-flags '--layout="default"'
+zstyle ':fzf-tab:*' fzf-flags '--layout=default'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'lsd --oneline --color="always" "${realpath}"'
