@@ -40,8 +40,8 @@
         "y": 0
       },
       "marks": [],
-      // "name": "htop",
-      "name": "btop",
+      "name": "htop",
+      // "name": "btop",
       "percent": 0.5,
       "swallows": [
         {
@@ -49,8 +49,8 @@
           "instance": "^kitty$",
           // "class": "^org.wezfurlong.wezterm$",
           // "instance": "^org.wezfurlong.wezterm$",
-          // "title": "^htop$"
-          "title": "^btop$"
+          "title": "^htop$"
+          // "title": "^btop$"
         }
       ],
       "type": "con"
