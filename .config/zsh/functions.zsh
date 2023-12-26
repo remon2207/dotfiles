@@ -1,13 +1,3 @@
-fdalltype() {
-  local type
-
-  for type in file directory symlink executable empty socket pipe; do
-    fd "${@}" --type="${type}" --hidden --threads="$(("$(nproc)"+1))" --exclude={mnt,.cache,.git,ccache,/run/user}
-  done
-
-  return
-}
-
 kerneldelete() {
   local version version_dot_replace type
   version="$(eselect --brief kernel list \
@@ -437,6 +427,7 @@ EOF
   return
 }
 
+fdalltype() { local type; for type in file directory symlink executable empty socket pipe; do fd "${@}" --type="${type}"; done; return; }
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
 stee() { sudo tee "${1}" > /dev/null; return; }
 gcommitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
