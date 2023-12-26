@@ -42,6 +42,7 @@ conf_symbolic=(
   'ranger'
   'rofi'
   'silicon'
+  'starship.toml'
   'wezterm'
   'zsh'
 )
