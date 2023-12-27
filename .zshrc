@@ -18,7 +18,7 @@ fi
 () {
   local file
   local files=('options' 'aliases' 'functions' 'plugins' 'styles')
-  for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
+  for file in "${files[@]}"; do . "${XDG_CONFIG_HOME}/zsh/${file}.zsh"; done
 }
 
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
@@ -28,8 +28,3 @@ fi
 bindkey -e
 
 eval "$(starship init zsh)"
-
-# load fish
-# if [[ "$(ps --no-header -o comm)" != 'fish' ]]; then
-#   type fish &> /dev/null && exec fish
-# fi
