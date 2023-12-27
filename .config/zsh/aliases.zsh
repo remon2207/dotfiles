@@ -92,7 +92,7 @@ alias autosuspend='nohup xautolock -time 60 -locker "sleep 31m" -killtime 30 -ki
 alias autosuspendoff='killall "xautolock"'
 alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude={mnt,.cache,.git,ccache,/run/user}'
 alias su-='sudo su -'
-alias kernelbuild='sudo make --jobs="$(("$(nproc)"+1))" --load-average="$((("$(nproc)"+1)*2)).0" && sudo make modules_install; sudo make install'
+alias kernelbuild='sudo sh -c "make --jobs="$(("$(nproc)"+1))" --load-average="$((("$(nproc)"+1)*2)).0" && make modules_install; make install"'
 alias v='nvim'
 alias v.='nvim .'
 alias procstree='procs --tree'
