@@ -31,7 +31,7 @@ fi
 [ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
 
 if [ -n "${failsafe}" ]; then
-  exec dbus-launch --exit-with-session i3
+  exec /usr/bin/dbus-launch --exit-with-session /usr/bin/i3
 else
   exec "${command}"
 fi

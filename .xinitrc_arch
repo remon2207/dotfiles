@@ -24,4 +24,4 @@ fi
 
 [ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
 
-exec dbus-launch --exit-with-session i3
+exec /usr/bin/dbus-launch --exit-with-session /usr/bin/i3
