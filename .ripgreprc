@@ -1,10 +1,8 @@
 --ignore-case
 --hidden
---follow
 --sort=path
 --no-line-number
 --no-messages
---no-heading
---glob=!{.bash_history,.zsh_history,.*cache*,*cache*,.z,.zcompdump,.git,node_modules}
+--glob=!{.bash_history,.zsh_history,.*cache*,*cache*,.z,.zcompdump,.git,node_modules,.local}
 
 # vim: set ft=conf :

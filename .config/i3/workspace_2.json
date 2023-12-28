@@ -4,19 +4,18 @@
   "floating": "auto_off",
   "geometry": {
     "height": 1056,
-    "width": 956,
-    "x": 1922,
-    "y": 2
+    "width": 1916,
+    "x": 0,
+    "y": 0
   },
   "marks": [],
-  "name": ".*Slack",
-  "percent": 0.5,
+  "name": "nvtop",
+  "percent": 0.25,
   "swallows": [
     {
-      "class": "^Slack$",
-      "instance": "^slack$",
-      "title": "^.*Slack$",
-      "window_role": "^browser\\-window$"
+      "class": "^kitty$",
+      "instance": "^kitty$",
+      "title": "^nvtop$"
     }
   ],
   "type": "con"
@@ -29,18 +28,17 @@
   "geometry": {
     "height": 1056,
     "width": 1916,
-    "x": 1922,
-    "y": 2
+    "x": 0,
+    "y": 0
   },
   "marks": [],
-  "name": ".*Discord",
-  "percent": 0.5,
+  "name": "btop",
+  "percent": 0.75,
   "swallows": [
     {
-      "class": "^discord$",
-      "instance": "^discord$",
-      "title": "^.*Discord$",
-      "window_role": "^browser\\-window$"
+      "class": "^kitty$",
+      "instance": "^kitty$",
+      "title": "^btop$"
     }
   ],
   "type": "con"
