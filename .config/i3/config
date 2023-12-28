@@ -32,7 +32,6 @@ set $ws9 "9"
 set $ws10 "10"
 
 gaps inner 15
-workspace 3 gaps inner 0
 smart_gaps on
 
 default_border pixel 2
