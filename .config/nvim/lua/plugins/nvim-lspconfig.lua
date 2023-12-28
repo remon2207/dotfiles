@@ -68,7 +68,7 @@ api.nvim_create_autocmd('LspAttach', {
     lsp.handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, popup_opts)
     lsp.handlers['textDocument/publishDiagnostics'] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
       update_in_insert = true,
-      virtual_text = true,
+      virtual_text = false,
       signs = true,
       severity_sort = true,
       float = {
