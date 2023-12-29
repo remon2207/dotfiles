@@ -157,12 +157,12 @@ EOF
   local opt
   local i3_conf="${DOTFILES}/.config/i3/conf.d/keybind.conf"
   local bghtop="${DOTFILES}/.local/share/applications/bghtop.desktop"
-  local alacritty='bindsym $mod+Return exec --no-startup-id alacritty'
-  local alacritty_ranger='bindsym $mod+e exec --no-startup-id alacritty --command ranger'
-  local kitty='bindsym $mod+Return exec --no-startup-id kitty'
-  local kitty_ranger='bindsym $mod+e exec --no-startup-id kitty --single-instance ranger'
-  local wezterm='bindsym $mod+Return exec --no-startup-id wezterm'
-  local wezterm_ranger='bindsym $mod+e exec --no-startup-id wezterm start ranger'
+  local alacritty='bindsym $mod+Return exec --no-startup-id /usr/bin/alacritty'
+  local alacritty_ranger='bindsym $mod+e exec --no-startup-id /usr/bin/alacritty --command /usr/bin/ranger'
+  local kitty='bindsym $mod+Return exec --no-startup-id /usr/bin/kitty'
+  local kitty_ranger='bindsym $mod+e exec --no-startup-id /usr/bin/kitty --single-instance /usr/bin/ranger'
+  local wezterm='bindsym $mod+Return exec --no-startup-id /usr/bin/wezterm'
+  local wezterm_ranger='bindsym $mod+e exec --no-startup-id /usr/bin/wezterm start /usr/bin/ranger'
 
   replacements() {
     sd --string-mode "${1}" "# ${1}" "${i3_conf}"
