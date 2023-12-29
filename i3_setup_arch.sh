@@ -32,7 +32,7 @@ conf_symbolic=(
   'Kvantum'
   'lazygit'
   'mimeapps.list'
-  'neofetch'
+  'neofetch_arch'
   'nvim'
   'nvtop'
   'picom'
