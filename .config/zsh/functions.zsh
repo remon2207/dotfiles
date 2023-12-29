@@ -265,6 +265,8 @@ SUBCOMMAND:
   clean           不要なパッケージを削除する
   help            helpを表示
 EOF
+
+    return
   }
 
   [[ ${#} -eq 0 ]] && return 1
@@ -286,6 +288,15 @@ EOF
           sudo sh -c "emaint --auto sync \
             ; emerge --ask --update --deep --newuse @world \
             ; emerge --ask --verbose='n' --depclean"
+          ;;
+        'portage')
+          sudo emerge --ask --oneshot sys-apps/portage
+          ;;
+        'showuse')
+          emerge --pretend --emptytree @world
+          ;;
+        'kernel')
+          sudo emerge --ask --update --deep --with-bdeps='y' --newuse sys-kernel/gentoo-sources
           ;;
         'clean')
           sudo emerge --ask --verbose='n' --depclean
