@@ -1,3 +1,39 @@
+mgmtrepo() {
+  usage () {
+    bat --plain << EOF
+USAGE:
+  mgmtrepo <OPTIONS>
+OPTIONS:
+  -d        削除
+  -v        ブラウザで開く
+  -h        ヘルプを見る
+EOF
+
+    return
+  }
+
+  if [[ ${#} -eq 0 ]]; then
+    return 1
+  elif [[ "${1}" == '-h' ]]; then
+    usage
+    return
+  fi
+
+  local selected
+  selected="$(gh repo list | awk '{print $1}' | fzf)"
+
+  case "${1}" in
+    '-d')
+      gh repo delete "${selected}"
+      ;;
+    '-v')
+      gh repo view --web "${selected}"
+      ;;
+  esac
+
+  return
+}
+
 kerneldelete() {
   local version version_dot_replace type
   version="$(eselect --brief kernel list \
