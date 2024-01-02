@@ -21,10 +21,10 @@
           "current_border_width": 2,
           "floating": "auto_off",
           "geometry": {
-            "height": 1056,
-            "width": 1916,
-            "x": 1922,
-            "y": 2
+            "height": 1026,
+            "width": 934,
+            "x": 1937,
+            "y": 1097
           },
           "marks": [],
           "name": ".*Slack",
@@ -40,27 +40,60 @@
           "type": "con"
         },
         {
+          // splitv split container with 2 children
           "border": "pixel",
-          "current_border_width": 2,
           "floating": "auto_off",
-          "geometry": {
-            "height": 1026,
-            "width": 940,
-            "x": 2889,
-            "y": 17
-          },
+          "layout": "splitv",
           "marks": [],
-          "name": ".*Discord",
           "percent": 0.5,
-          "swallows": [
+          "type": "con",
+          "nodes": [
             {
-              "class": "^discord$",
-              "instance": "^discord$",
-              "title": "^.*Discord$",
-              "window_role": "^browser\\-window$"
+              "border": "pixel",
+              "current_border_width": 2,
+              "floating": "auto_off",
+              "geometry": {
+                "height": 504,
+                "width": 1886,
+                "x": 1937,
+                "y": 1097
+              },
+              "marks": [],
+              "name": ".*Discord",
+              "percent": 0.5,
+              "swallows": [
+                {
+                  "class": "^discord$",
+                  "instance": "^discord$",
+                  "title": "^.*Discord$",
+                  "window_role": "^browser\\-window$"
+                }
+              ],
+              "type": "con"
+            },
+            {
+              "border": "pixel",
+              "current_border_width": 2,
+              "floating": "auto_off",
+              "geometry": {
+                "height": 496,
+                "width": 928,
+                "x": 2887,
+                "y": 1599
+              },
+              "marks": [],
+              "name": "JQuake",
+              "percent": 0.5,
+              "swallows": [
+                {
+                  "class": "^net\\-jquake\\-app\\-Main$",
+                  "instance": "^net\\-jquake\\-app\\-Main$",
+                  "title": "^JQuake$"
+                }
+              ],
+              "type": "con"
             }
-          ],
-          "type": "con"
+          ]
         }
       ]
     }
