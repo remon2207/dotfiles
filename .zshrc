@@ -11,11 +11,14 @@ compinit
 () {
   local file
   local files=('options' 'aliases' 'functions' 'plugins' 'styles')
-  for file in "${files[@]}"; do . "${HOME}/.config/zsh/${file}.zsh"; done
+  for file in "${files[@]}"; do source "${HOME}/.config/zsh/${file}.zsh"; done
 }
 
-[[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
-[[ "${DISTRIBUTION_NAME}" == 'archlinux' ]] && . /usr/share/fzf/completion.zsh
+if [[ "${DISTRIBUTION_NAME}" == 'archlinux' ]]; then
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
+  source /usr/share/nvm/init-nvm.sh
+fi
 
 bindkey -e
 
