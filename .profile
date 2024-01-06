@@ -15,11 +15,10 @@ export TMPDIR='/tmp'
 export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export HIGHLIGHT_STYLE='solarized-dark'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
-# export PNPM_HOME="${HOME}/.local/share/pnpm"
-# export NVM_DIR="${HOME}/.config/nvm"
+export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 # export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
-# export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+#export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
