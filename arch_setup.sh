@@ -18,8 +18,6 @@ aur_install() {
   #   slack-desktop \
   #   downgrade \
   #   nvm \
-  #   efm-langserver \
-  #   man-pages-ja \
   #   upd72020x-fw \
   #   virtualbox-ext-oracle \
   #   xcursor-breeze
