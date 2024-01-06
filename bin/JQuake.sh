@@ -1,1 +1,0 @@
-/home/remon/src/jquake_1.8.5/JQuake.sh

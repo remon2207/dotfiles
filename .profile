@@ -15,12 +15,12 @@ export TMPDIR='/tmp'
 export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
 export HIGHLIGHT_STYLE='solarized-dark'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
-export PNPM_HOME="${HOME}/.local/share/pnpm"
-export NVM_DIR="${HOME}/.config/nvm"
+# export PNPM_HOME="${HOME}/.local/share/pnpm"
+# export NVM_DIR="${HOME}/.config/nvm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
-export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
-export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
+# export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--layout="default" --preview="/usr/bin/bat --style=header-filename --color=always {}"'
@@ -33,7 +33,7 @@ export FZF_DEFAULT_OPTS="\
 --color='fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198' \
 --color='marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2'"
 
-if [[ "$(rg '^DNS' /etc/systemd/network/20-wired.network)" == 'DNS=192.168.1.202' ]]; then
+if [[ "$(rg '^DNS' /etc/systemd/resolved.conf.d/dns_servers.conf)" == 'DNS=192.168.1.202' ]]; then
   export http_proxy='http://proxy.home:8080'
   export https_proxy="${http_proxy}"
   export ftp_proxy="${http_proxy}"
