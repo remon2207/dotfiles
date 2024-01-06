@@ -5,15 +5,8 @@ HISTSIZE=100000
 SAVEHIST=100000
 [[ -d "${XDG_CONFIG_HOME}/zsh/completions" ]] && fpath=("${XDG_CONFIG_HOME}/zsh/completions" "${fpath[@]}")
 
-if [[ "${DISTRIBUTION_NAME}" == 'gentoo' ]]; then
-  autoload -Uz compinit promptinit
-  compinit
-  promptinit
-  prompt gentoo
-else
-  autoload -Uz compinit
-  compinit
-fi
+autoload -Uz compinit
+compinit
 
 () {
   local file
@@ -23,7 +16,6 @@ fi
 
 [[ -f '/usr/share/fzf/key-bindings.zsh' ]] && . /usr/share/fzf/key-bindings.zsh
 [[ "${DISTRIBUTION_NAME}" == 'archlinux' ]] && . /usr/share/fzf/completion.zsh
-[[ -s "${NVM_DIR}/nvm.sh" ]] && . "${NVM_DIR}/nvm.sh"
 
 bindkey -e
 
