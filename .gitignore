@@ -12,3 +12,5 @@
 
 # httpie
 /.config/httpie/version_info.json
+
+/bin/JQuake.sh
