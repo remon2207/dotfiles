@@ -1,4 +1,3 @@
-DISTRIBUTION_NAME="$(uname -a | awk '{print $2}')"
 DOTFILES="${HOME}/ghq/github.com/remon2207/dotfiles"
 HISTFILE="${HOME}/.zsh_history"
 HISTSIZE=100000
@@ -14,11 +13,9 @@ compinit
   for file in "${files[@]}"; do source "${HOME}/.config/zsh/${file}.zsh"; done
 }
 
-if [[ "${DISTRIBUTION_NAME}" == 'archlinux' ]]; then
-  source /usr/share/fzf/key-bindings.zsh
-  source /usr/share/fzf/completion.zsh
-  source /usr/share/nvm/init-nvm.sh
-fi
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/nvm/init-nvm.sh
 
 bindkey -e
 

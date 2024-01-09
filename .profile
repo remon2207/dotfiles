@@ -13,13 +13,12 @@ export LESSHISTFILE='/dev/null'
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
 export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --quit-if-one-screen --tabs=4'
-export HIGHLIGHT_STYLE='solarized-dark'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
-# export CUDA_CACHE_PATH="${XDG_CACHE_HOME}/nv/ComputeCache"
-#export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+# export PYGMENTIZE_STYLE='solarized-dark'
 export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--layout="default" --preview="/usr/bin/bat --style=header-filename --color=always {}"'
@@ -36,19 +35,18 @@ if [[ "$(rg '^DNS' /etc/systemd/resolved.conf.d/dns_servers.conf)" == 'DNS=192.1
   export http_proxy='http://proxy.home:8080'
   export https_proxy="${http_proxy}"
   export ftp_proxy="${http_proxy}"
-  export RSYNC_PROXY="${http_proxy}"
+  export rsync_proxy="${http_proxy}"
+  export no_proxy='localhost,127.0.0.1'
 fi
 
-if [[ "$(uname -a | awk '{print $2}')" != 'gentoo' ]]; then
-  if [[ -n "${DISPLAY}" ]]; then
-    export EDITOR='/usr/bin/nvim'
-    export VISUAL='/usr/bin/nvim'
-    export SUDO_EDITOR='/usr/bin/nvim'
-    export SYSTEMD_EDITOR='/usr/bin/nvim'
-  else
-    export EDITOR='/usr/bin/vi'
-    export VISUAL='/usr/bin/vi'
-    export SUDO_EDITOR='/usr/bin/vi'
-    export SYSTEMD_EDITOR='/usr/bin/vi'
-  fi
+if [[ -n "${DISPLAY}" ]]; then
+  export EDITOR='/usr/bin/nvim'
+  export VISUAL='/usr/bin/nvim'
+  export SUDO_EDITOR='/usr/bin/nvim'
+  export SYSTEMD_EDITOR='/usr/bin/nvim'
+else
+  export EDITOR='/usr/bin/vi'
+  export VISUAL='/usr/bin/vi'
+  export SUDO_EDITOR='/usr/bin/vi'
+  export SYSTEMD_EDITOR='/usr/bin/vi'
 fi

@@ -1,6 +1,6 @@
 [Groups/0]
 # Group Name
-Name=Default
+Name=デフォルト
 # Layout
 Default Layout=us
 # Default Input Method
@@ -19,5 +19,5 @@ Name=mozc
 Layout=
 
 [GroupOrder]
-0=Default
+0=デフォルト
 

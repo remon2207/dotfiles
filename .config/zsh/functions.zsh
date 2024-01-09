@@ -275,57 +275,26 @@ EOF
 
   [[ "${subcommand}" == 'help' ]] && usage && return
 
-  case "${DISTRIBUTION_NAME}" in
-    'gentoo')
-      case "${subcommand}" in
-        'snap')
-          sudo sh -c "emerge-webrsync \
-            ; emaint --auto sync \
-            ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose='n' --depclean"
-          ;;
-        'up')
-          sudo sh -c "emaint --auto sync \
-            ; emerge --ask --update --deep --newuse @world \
-            ; emerge --ask --verbose='n' --depclean"
-          ;;
-        'portage')
-          sudo emerge --ask --oneshot sys-apps/portage
-          ;;
-        'showuse')
-          emerge --pretend --emptytree @world
-          ;;
-        'kernel')
-          sudo emerge --ask --update --deep --with-bdeps='y' --newuse sys-kernel/gentoo-sources
-          ;;
-        'clean')
-          sudo emerge --ask --verbose='n' --depclean
-          ;;
-        *)
-          return
-          ;;
-      esac
+  case "${subcommand}" in
+    'up')
+      checkupdates
+
+      if [[ ${?} -eq 0 ]]; then
+        unset subcommand
+        local yn
+
+        echo
+        read 'yn?アップグレードしますか?(y/n): '
+        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
+      fi
       ;;
-    'archlinux')
-      case "${subcommand}" in
-        'up')
-          checkupdates
+    'clean')
+      unset subcommand
 
-          if [[ ${?} -eq 0 ]]; then
-            local yn
-
-            echo
-            read 'yn?アップグレードしますか?(y/n): '
-            [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
-          fi
-          ;;
-        'clean')
-          paru --remove --nosave --recursive "${@}"
-          ;;
-        *)
-          return
-          ;;
-      esac
+      paru --remove --nosave --recursive "${@}"
+      ;;
+    *)
+      return
       ;;
   esac
 
