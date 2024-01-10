@@ -12,7 +12,7 @@ paru_install() {
 }
 
 aur_install() {
-  paru --sync --needed - < pkglist_aur
+  paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
   # paru --sync --needed \
   #   ghq-bin \
   #   slack-desktop \

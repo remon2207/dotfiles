@@ -104,8 +104,7 @@ alias so='source'
 alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
 alias unrequired='pacman --query --unrequired --deps --quiet'
 alias clean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
-alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist"
-alias pkglistaur="pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur"
+alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.txt && pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur.txt"
 alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
 alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
 
