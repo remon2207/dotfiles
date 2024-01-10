@@ -280,18 +280,15 @@ EOF
       checkupdates
 
       if [[ ${?} -eq 0 ]]; then
-        unset subcommand
         local yn
 
         echo
         read 'yn?アップグレードしますか?(y/n): '
-        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
+        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade
       fi
       ;;
     'clean')
-      unset subcommand
-
-      paru --remove --nosave --recursive "${@}"
+      paru --remove --nosave --recursive
       ;;
     *)
       return

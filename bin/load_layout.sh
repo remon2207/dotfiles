@@ -9,7 +9,8 @@ if [[ "${1}" == 'dvi' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dp' ]]; then
   # 展開に必要なプログラムを起動する
   (/usr/bin/discord &)
   (/usr/bin/slack &)
-  (/home/remon/bin/JQuake.sh &)
+  ("${HOME}/bin/JQuake.sh" &)
+  (cd "${HOME}/src/KyoshinEewViewer" && "${HOME}/src/KyoshinEewViewer/KyoshinEewViewer" &)
   (/usr/bin/kitty --single-instance /usr/bin/btop &)
   (/usr/bin/kitty --single-instance /usr/bin/nvtop &)
   (/usr/bin/vivaldi-stable &)
@@ -20,7 +21,8 @@ elif [[ "${1}" == 'dp2' ]]; then
   # 展開に必要なプログラムを起動する
   (/usr/bin/discord &)
   (/usr/bin/slack &)
-  (/home/remon/bin/JQuake.sh &)
+  ("${HOME}/bin/JQuake.sh" &)
+  (cd "${HOME}/src/KyoshinEewViewer" && "${HOME}/src/KyoshinEewViewer/KyoshinEewViewer" &)
 elif [[ "${1}" == 'dvi' ]]; then
   # ワークスペース2に移動し、レイアウトを展開する
   /usr/bin/i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
