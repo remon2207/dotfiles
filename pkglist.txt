@@ -63,6 +63,8 @@ otf-opendyslexic-nerd
 otf-overpass-nerd
 papirus-icon-theme
 pavucontrol
+perl-anyevent-i3
+perl-json-xs
 picom
 pigz
 pipewire
@@ -142,6 +144,7 @@ ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 unzip
+up
 vi
 virtualbox
 virtualbox-guest-iso

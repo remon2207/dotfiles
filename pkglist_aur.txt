@@ -68,6 +68,8 @@ otf-overpass-nerd
 papirus-icon-theme
 paru-bin
 pavucontrol
+perl-anyevent-i3
+perl-json-xs
 picom
 pigz
 pipewire
@@ -114,6 +116,7 @@ ttf-font-awesome
 ttf-go-nerd
 ttf-hack
 ttf-hack-nerd
+ttf-hackgen
 ttf-heavydata-nerd
 ttf-iawriter-nerd
 ttf-ibmplex-mono-nerd
@@ -148,6 +151,7 @@ ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
 unzip
+up
 upd72020x-fw
 vi
 virtualbox
