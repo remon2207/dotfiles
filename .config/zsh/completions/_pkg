@@ -1,7 +1,7 @@
 #compdef pkg
 
 _pkg() {
-  _values 'clean' 'up[packages install without snapshot]' 'clean[packages uninstall]'
+  _values '' 'check[アップグレードできるパッケージをチェック]' 'up[インストール]' 'clean[アンインストール]'
 
   return
 }

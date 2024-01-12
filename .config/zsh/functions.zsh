@@ -263,6 +263,9 @@ EOF
         [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
       fi
       ;;
+    'check')
+      checkupdates
+      ;;
     'clean')
       paru --remove --nosave --recursive "${@}"
       ;;
