@@ -236,9 +236,9 @@ pkg() {
 USAGE:
   pkg <subcommand>
 SUBCOMMAND:
-  up              アップグレードする
-  clean           不要なパッケージを削除する
-  help            helpを表示
+  up          アップグレードする
+  clean       不要なパッケージを削除する
+  help        helpを表示
 EOF
 
     return
