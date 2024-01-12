@@ -3,5 +3,4 @@ Type=Application
 Name=Mozc 単語登録
 Path=/usr/lib/mozc
 Exec=./mozc_tool --mode='word_register_dialog'
-Icon=org.fcitx.Fcitx5.fcitx-mozc-dictionary
 Terminal=false

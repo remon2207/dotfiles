@@ -3,7 +3,7 @@
 set -eu
 
 paru_install() {
-  local pkgname='paru-bin'
+  local -r pkgname='paru-bin'
   git clone "https://aur.archlinux.org/${pkgname}.git"
   cd "${pkgname}"
   makepkg --rmdeps --syncdeps --install --needed
@@ -12,15 +12,16 @@ paru_install() {
 }
 
 aur_install() {
-  paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
-  # paru --sync --needed \
-  #   ghq-bin \
-  #   slack-desktop \
-  #   downgrade \
-  #   nvm \
-  #   upd72020x-fw \
-  #   virtualbox-ext-oracle \
-  #   xcursor-breeze
+  # paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
+  paru --sync --needed \
+    ghq-bin \
+    slack-desktop \
+    downgrade \
+    nvm \
+    upd72020x-fw \
+    virtualbox-ext-oracle \
+    ttf-hackgen \
+    xcursor-breeze
 }
 
 psd_settings() {
@@ -31,11 +32,11 @@ psd_settings() {
 }
 
 main() {
+  sudo timedatectl set-ntp true
+
   paru_install
   aur_install
   psd_settings
-  other
 }
 
-sudo systemctl set-ntp true
 main "${@}"

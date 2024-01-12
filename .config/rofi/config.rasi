@@ -6,7 +6,6 @@ configuration {
   display-window: " ";
   display-drun: " ";
   display-run: " ";
-  show-icons: true;
   /* sidebar-mode: true; */
 }
 

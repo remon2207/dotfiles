@@ -3,5 +3,4 @@ Type=Application
 Name=Mozc 辞書
 Path=/usr/lib/mozc
 Exec=./mozc_tool --mode='dictionary_tool'
-Icon=org.fcitx.Fcitx5.fcitx-mozc-dictionary
 Terminal=false

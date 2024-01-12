@@ -3,5 +3,4 @@ Type=Application
 Name=JQuake
 Path=/home/remon/bin
 Exec=JQuake.sh
-Icon=/home/remon/src/JQuake_1.8.5/jquake.png
 Terminal=false
