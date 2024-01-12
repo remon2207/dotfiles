@@ -11,7 +11,13 @@ paru_install() {
   rm --recursive --force "${pkgname}"
 }
 
-aur_install() {
+pkg_install() {
+  local -r siki_url="$(curl --fail --silent --show-error --location 'https://sikiapp.net' | rg 'AppImage' | awk --field-separator='"' '{print $4}')"
+  local -r siki_filename="$(awk --field-separator='/' '{print $4}' <<< "${siki_url}")"
+
+  curl --fail --silent --show-error --location --remote-name "https://sikiapp.net/${siki_url}" | rg 'AppImage' | awk --field-separator='"' '{print $4}'
+  chmod +x "${siki_filename}"
+
   # paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
   paru --sync --needed \
     ghq-bin \
@@ -35,7 +41,7 @@ main() {
   sudo timedatectl set-ntp true
 
   paru_install
-  aur_install
+  pkg_install
   psd_settings
 }
 
