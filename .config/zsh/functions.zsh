@@ -34,30 +34,6 @@ EOF
   return
 }
 
-kerneldelete() {
-  local version version_dot_replace type
-  version="$(eselect --brief kernel list \
-    | fzf \
-    | awk --field-separator='-' '{print $2}')"
-  version_dot_replace="$(sd --string-mode '.' '-' <<< "${version}")"
-  fd_loop() {
-    for type in file directory; do
-      fd --glob "*${version}*" / --type="${type}"
-    done
-
-    return
-  }
-
-  fd_loop
-  sudo rm "/usr/src/linux-${version}-gentoo" \
-    "/lib/modules/${version}-gentoo" \
-    "/boot/{vmlinuz,System.map,config,initramfs}-${version}-gentoo{,.old}" \
-    "/boot/loader/entries/gentoo{,-old}_${version_dot_replace}.conf"
-  fd_loop
-
-  return
-}
-
 terminalspeed() {
   local i
 
@@ -260,7 +236,6 @@ pkg() {
 USAGE:
   pkg <subcommand>
 SUBCOMMAND:
-  snapshot        スナップショットをダウンロードしてアップグレードする。Gentooで使用
   up              アップグレードする
   clean           不要なパッケージを削除する
   help            helpを表示
@@ -329,16 +304,6 @@ EOF
     usage && return 1
     ;;
   esac
-
-  return
-}
-
-gentoocp() {
-  local gentoo_setup="${HOME}/ghq/github.com/remon2207/gentoo-setup"
-
-  rsync --archive --update --delete --verbose --human-readable /etc/portage/{make.conf,package.{accept_keywords,license,use,mask}} "${gentoo_setup}"
-  zcat /proc/config.gz > "${gentoo_setup}/kernel_conf"
-  zcat /proc/config.gz | sudo tee /usr/src/kernel_conf_bak > /dev/null
 
   return
 }
