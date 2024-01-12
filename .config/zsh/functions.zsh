@@ -272,6 +272,7 @@ EOF
   [[ ${#} -eq 0 ]] && return 1
 
   local subcommand="${1}"
+  shift
 
   [[ "${subcommand}" == 'help' ]] && usage && return
 
@@ -284,11 +285,11 @@ EOF
 
         echo
         read 'yn?アップグレードしますか?(y/n): '
-        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade
+        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
       fi
       ;;
     'clean')
-      paru --remove --nosave --recursive
+      paru --remove --nosave --recursive "${@}"
       ;;
     *)
       return
