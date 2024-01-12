@@ -18,6 +18,7 @@ fcitx5-mozc
 fcitx5-qt
 fd
 feh
+fuse2
 fzf
 ghq-bin
 git
@@ -33,6 +34,8 @@ kitty
 kvantum
 lazygit
 lbzip2
+libreoffice-fresh
+libreoffice-fresh-ja
 libva-vdpau-driver
 linux-firmware
 linux-zen
