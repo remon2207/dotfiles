@@ -311,14 +311,6 @@ EOF
   return
 }
 
-nvmupgrade() {
-  cd "${NVM_DIR}"
-  git fetch --tags origin
-  git switch --detach "${@}"
-
-  [[ $? -eq 0 ]] && exit
-}
-
 keyrepeat() {
   [[ $# -eq 0 ]] && xset r rate 250 60 && return
 
@@ -420,8 +412,6 @@ psgrep() { procs "${1}"; return; }
 vsh() { nvim "${1}.sh" && chmod +x "${_}"; return; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
-ebuildinstall() { sudo ebuild "${1}" manifest clean test install; return; }
-ebuildclean() { sudo ebuild "${1}" manifest clean; return; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
 
 # ターミナル起動時に実行
@@ -444,21 +434,21 @@ chpwd() { la; return; }
 
   # ターミナルがAlacrittyなら自動でtmuxを起動
   # =========================================
-  if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]]; then
-    if [[ "${TERM_PROG}" == 'alacritty' ]]; then
-      if [[ -z "${TMUX}" ]]; then
-        ID="$(tmux ls 2> /dev/null \
-          | rg --invert-match --max-count=1 'attached' \
-          | awk --field-separator=':' '{print $1}')"
-        if [[ -z ${ID} ]]; then
-          tmux new-session
-        else
-          tmux attach-session -t ${ID}
-        fi
-      fi
-      exit
-    fi
-  fi
+  # if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]]; then
+  #   if [[ "${TERM_PROG}" == 'alacritty' ]]; then
+  #     if [[ -z "${TMUX}" ]]; then
+  #       ID="$(tmux ls 2> /dev/null \
+  #         | rg --invert-match --max-count=1 'attached' \
+  #         | awk --field-separator=':' '{print $1}')"
+  #       if [[ -z ${ID} ]]; then
+  #         tmux new-session
+  #       else
+  #         tmux attach-session -t ${ID}
+  #       fi
+  #     fi
+  #     exit
+  #   fi
+  # fi
   # =========================================
 
   la
