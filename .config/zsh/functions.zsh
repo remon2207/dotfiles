@@ -17,6 +17,8 @@ EOF
   elif [[ "${1}" == '-h' ]]; then
     usage
     return
+  else
+    return 1
   fi
 
   local selected
@@ -224,8 +226,8 @@ authycheck() {
     | rg 'version' \
     | awk --field-separator='[ ":]*' '{print $3}')"
 
-  echo "revision: ${revision}"
-  echo "version: ${version}"
+  echo "revision: ${revision}
+version: ${version}"
 
   return
 }
@@ -246,7 +248,7 @@ EOF
 
   [[ ${#} -eq 0 ]] && return 1
 
-  local subcommand="${1}"
+  local -r subcommand="${1}"
   shift
 
   [[ "${subcommand}" == 'help' ]] && usage && return
@@ -278,7 +280,7 @@ EOF
 }
 
 proxy() {
-  local flag="${1}"
+  local -r flag="${1}"
 
   usage() {
     bat --plain << EOF
@@ -360,7 +362,11 @@ gedit() {
 }
 
 gnowpush() {
-  [[ "${1}" == '-a' ]] && git add .
+  if [[ "${1}" == '-a' ]]; then
+    git add .
+  else
+    return 1
+  fi
 
   if [[ -n "$(git diff --name-only --staged)" ]]; then
     git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
