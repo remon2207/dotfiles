@@ -1,12 +1,9 @@
 configuration {
-  /* modes: "window,drun"; */
   modes: "combi";
   combi-modes: "window,drun";
-  font: "Noto Sans CJK JP 12";
-  display-window: " ";
-  display-drun: " ";
-  display-run: " ";
-  /* sidebar-mode: true; */
+  font: "Noto Sans CJK JP 10";
+  display-window: "  : ";
+  display-drun: "   : ";
 }
 
 @theme "solarized"
