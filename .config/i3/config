@@ -37,8 +37,6 @@ smart_gaps on
 default_border pixel 2
 default_floating_border pixel 2
 
-hide_edge_borders smart
-
 focus_wrapping no
 focus_follows_mouse no
 
