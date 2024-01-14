@@ -17,21 +17,25 @@ EOF
   elif [[ "${1}" == '-h' ]]; then
     usage
     return
-  else
+  elif [[ "${1}" != '-d' ]] && [[ "${1}" != '-v' ]]; then
     return 1
   fi
 
   local selected
-  selected="$(gh repo list | awk '{print $1}' | fzf)"
+  selected="$(gh repo list | awk '{print $1}' | sort | fzf)"
 
-  case "${1}" in
-    '-d')
-      gh repo delete "${selected}"
-      ;;
-    '-v')
-      gh repo view --web "${selected}"
-      ;;
-  esac
+  if [[ ${?} -eq 0 ]]; then
+    case "${1}" in
+      '-d')
+        gh repo delete "${selected}"
+        ;;
+      '-v')
+        gh repo view --web "${selected}"
+        ;;
+    esac
+  else
+    return 1
+  fi
 
   return
 }
@@ -188,7 +192,7 @@ EOF
     replacements ${wezterm} ${wezterm_ranger} ${kitty} ${kitty_ranger} ${current} ${new}
   fi
 
-  [[ $? -eq 0 ]] && exit
+  [[ ${?} -eq 0 ]] && exit
 }
 
 bootusb() {
@@ -261,7 +265,7 @@ EOF
         local yn
 
         echo
-        read 'yn?アップグレードしますか?(y/n): '
+        read 'yn?アップグレードしますか？(y/n): '
         [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
       fi
       ;;
@@ -314,7 +318,7 @@ EOF
 }
 
 keyrepeat() {
-  [[ $# -eq 0 ]] && xset r rate 250 60 && return
+  [[ ${#} -eq 0 ]] && xset r rate 250 60 && return
 
   cmd="$(getopt --options='' --longoptions='reset' -- "${@}")"
   eval set -- "${cmd}"
@@ -362,11 +366,7 @@ gedit() {
 }
 
 gnowpush() {
-  if [[ "${1}" == '-a' ]]; then
-    git add .
-  else
-    return 1
-  fi
+  [[ "${1}" == '-a' ]] && git add .
 
   if [[ -n "$(git diff --name-only --staged)" ]]; then
     git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
@@ -384,15 +384,15 @@ repo() {
 USAGE:
   repo <options>
 OPTIONS:
-  --rm          選択したリポジトリを削除
-  --help        ヘルプを表示
+  -r        選択したリポジトリを削除
+  -h        ヘルプを表示
 EOF
 
     return
   }
 
   local flag="${1}"
-  [[ "${flag}" == '--help' ]] && usage && return
+  [[ "${flag}" == '-h' ]] && usage && return
 
   local selected="$(ghq list --full-path \
     | rg --invert-match '^.*/dotfiles$' \
@@ -400,7 +400,7 @@ EOF
     | fzf --preview-window='50%' --preview='/usr/bin/tree {}')"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
-  elif [[ -n "${selected}" ]] && [[ "${flag}" == '--rm' ]]; then
+  elif [[ -n "${selected}" ]] && [[ "${flag}" == '-r' ]]; then
     rm "${selected}"
   fi
 
