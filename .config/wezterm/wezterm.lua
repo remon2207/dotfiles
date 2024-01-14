@@ -3,9 +3,9 @@ local gpus = wezterm.gui.enumerate_gpus()
 
 return {
   font = wezterm.font_with_fallback({
-    'monospace',
+    'HackGen Console NF',
   }),
-  font_size = 12.0,
+  font_size = 11.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
   warn_about_missing_glyphs = false,
   audible_bell = 'Disabled',
