@@ -1,12 +1,18 @@
 local o = vim.opt
 local g = vim.g
 
+-- ビルトインプラグインを無効化
+g.loaded_node_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
+g.loaded_python3_provider = 0
+
 -- 文字コード
 vim.scriptencoding = 'utf-8'
 o.fileencodings = { 'utf-8', 'cp932', 'ucs-boms', 'euc-jp' }
 o.fileformats:append({ 'mac' })
 -- レジスタとクリップボードを共有
-o.clipboard:append({'unnamedplus'})
+o.clipboard:append({ 'unnamedplus' })
 -- インデント
 o.expandtab = true
 o.smartindent = true
@@ -40,7 +46,7 @@ o.listchars = 'tab:> ,space: '
 o.wrap = false
 -- 終了時に確認ダイアログを表示
 o.confirm = true
-o.wildignore:append({'*/node_modules/*'})
+o.wildignore:append({ '*/node_modules/*' })
 o.mouse:remove({ 'n', 'v', 'i' })
 -- カレントウィンドウの右に開く
 o.splitright = true
@@ -51,9 +57,3 @@ o.guicursor:remove({ 'n-v-c-sm:block' })
 o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
 -- リーダー
 g.mapleader = ' '
-
--- ビルトインプラグインを無効化
-g.loaded_node_provider = 0
-g.loaded_perl_provider = 0
-g.loaded_ruby_provider = 0
-g.loaded_python3_provider = 0
