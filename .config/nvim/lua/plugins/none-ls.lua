@@ -1,4 +1,5 @@
 local status, null_ls = pcall(require, 'null-ls')
+
 if not status then
   return
 end
@@ -31,12 +32,14 @@ null_ls.setup({
     formatting.eslint_d.with({
       extra_args = { '--cache' },
     }),
-    -- formatting.prettierd.with({
-    --   env = {
-    --     PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('${HOME}/.config/nvim/utils/linter-config/.prettierrc.js'),
-    --   },
-    -- }),
-    formatting.prettierd,
+    formatting.prettierd.with({
+      extra_args = {
+        '--end-of-line=lf',
+        '--print-width=120',
+        '--single-quote',
+        '--cache',
+      },
+    }),
     formatting.stylua.with({
       extra_args = {
         '--column-width',

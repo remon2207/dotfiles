@@ -3,10 +3,9 @@ local gpus = wezterm.gui.enumerate_gpus()
 
 return {
   font = wezterm.font_with_fallback({
-    'Hack Nerd Font',
-    'Noto Sans CJK JP',
+    'HackGen Console NF',
   }),
-  font_size = 10.0,
+  font_size = 12.0,
   color_scheme = 'Solarized (dark) (terminal.sexy)',
   warn_about_missing_glyphs = false,
   audible_bell = 'Disabled',
@@ -18,7 +17,7 @@ return {
   front_end = 'WebGpu',
   prefer_egl = false,
   webgpu_force_fallback_adapter = false,
-  webgpu_power_preference = "HighPerformance",
+  webgpu_power_preference = 'HighPerformance',
   webgpu_preferred_adapter = gpus[1],
   window_background_opacity = 1.0,
   window_padding = {
