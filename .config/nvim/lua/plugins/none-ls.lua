@@ -23,7 +23,7 @@ null_ls.setup({
   sources = {
     diagnostics.eslint_d.with({
       diagnostics_format = '[#{c}] #{m} (#{s})',
-      -- extra_args = { '--cache', '--ignore-pattern', '${HOME}/.config/nvim/utils/linter-config/.prettierrc.js' },
+      extra_args = { '--cache' },
     }),
     code_actions.eslint_d.with({
       extra_args = { '--cache' },
@@ -42,21 +42,24 @@ null_ls.setup({
     }),
     formatting.stylua.with({
       extra_args = {
-        '--column-width',
-        120,
-        '--line-endings',
-        'Unix',
-        '--indent-type',
-        'Spaces',
-        '--indent-width',
-        2,
-        '--quote-style',
-        'AutoPreferSingle',
+        '--column-width=120',
+        '--line-endings=Unix',
+        '--indent-type=Spaces',
+        '--indent-width=2',
+        '--quote-style=AutoPreferSingle',
       },
     }),
     formatting.shfmt.with({
-      extra_args = { '--indent', 2, '--space-redirects', '--case-indent', '--binary-next-line' },
-      filetypes = { 'sh', 'zsh' },
+      extra_args = {
+        '--indent=2',
+        '--space-redirects',
+        '--case-indent',
+        '--binary-next-line',
+      },
+      filetypes = {
+        'sh',
+        'zsh',
+      },
     }),
   },
   on_attach = function(client, bufnr)
