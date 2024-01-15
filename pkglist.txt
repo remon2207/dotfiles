@@ -1,3 +1,4 @@
+alacritty
 arc-gtk-theme
 base
 base-devel
@@ -148,6 +149,7 @@ ttf-tinos-nerd
 ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
+ueberzug
 unzip
 up
 vi
