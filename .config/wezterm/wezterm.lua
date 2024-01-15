@@ -16,9 +16,6 @@ return {
   animation_fps = 165,
   front_end = 'WebGpu',
   prefer_egl = false,
-  webgpu_force_fallback_adapter = false,
-  webgpu_power_preference = 'HighPerformance',
-  webgpu_preferred_adapter = gpus[1],
   window_background_opacity = 1.0,
   window_padding = {
     left = 0,
