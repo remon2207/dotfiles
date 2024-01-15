@@ -14,4 +14,4 @@
 /.config/httpie/version_info.json
 
 /bin/JQuake.sh
-/bin/Siki-*.AppImage
+/bin/*.AppImage

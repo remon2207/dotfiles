@@ -8,12 +8,12 @@ end
 config.font = wezterm.font('HackGen Console NF')
 config.font_size = 11.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
--- config.warn_about_missing_glyphs = false
 config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
 config.default_cursor_style = 'SteadyBar'
 config.front_end = 'WebGpu'
 config.warn_about_missing_glyphs = false
+config.use_fancy_tab_bar = false
 config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 1.0
 config.window_padding = {
@@ -22,7 +22,6 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
-config.use_fancy_tab_bar = false
 config.colors = {
   tab_bar = {
     background = '#002b36',
@@ -55,13 +54,13 @@ config.colors = {
   },
 }
 config.keys = {
-  { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
-  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
-  { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
-  { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
-  { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
-  { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
-  { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
+  -- { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
+  -- { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
+  -- { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
+  -- { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
+  -- { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
+  -- { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
+  -- { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
   { key = '+', mods = 'CTRL', action = wezterm.action.ResetFontSize },
   { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
   { key = '-', mods = 'CTRL', action = wezterm.action.ResetFontSize },
