@@ -8,7 +8,7 @@ end
 config.font = wezterm.font('HackGen Console NF')
 config.font_size = 11.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
-config.warn_about_missing_glyphs = false
+-- config.warn_about_missing_glyphs = false
 config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
 config.default_cursor_style = 'SteadyBar'
