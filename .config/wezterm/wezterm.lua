@@ -1,77 +1,75 @@
 local wezterm = require('wezterm')
-local gpus = wezterm.gui.enumerate_gpus()
+local config = {}
 
-return {
-  font = wezterm.font_with_fallback({
-    'HackGen Console NF',
-  }),
-  font_size = 11.0,
-  color_scheme = 'Solarized (dark) (terminal.sexy)',
-  warn_about_missing_glyphs = false,
-  audible_bell = 'Disabled',
-  enable_wayland = false,
-  scrollback_lines = 99999999,
-  default_cursor_style = 'SteadyBar',
-  max_fps = 165,
-  animation_fps = 165,
-  front_end = 'WebGpu',
-  prefer_egl = false,
-  window_background_opacity = 1.0,
-  window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
-  },
-  use_fancy_tab_bar = false,
-  colors = {
-    tab_bar = {
-      background = '#002b36',
-      active_tab = {
-        bg_color = '#073642',
-        fg_color = '#93a1a1',
-        intensity = 'Normal',
-        underline = 'None',
-        italic = false,
-        strikethrough = false,
-      },
-      inactive_tab = {
-        bg_color = '#002b36',
-        fg_color = '#657b83',
-      },
-      inactive_tab_hover = {
-        bg_color = '#586e75',
-        fg_color = '#eee8d5',
-        italic = false,
-      },
-      new_tab = {
-        bg_color = '#073642',
-        fg_color = '#93a1a1',
-      },
-      new_tab_hover = {
-        bg_color = '#586e75',
-        fg_color = '#eee8d5',
-        italic = false,
-      },
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
+
+config.font = wezterm.font('HackGen Console NF')
+config.font_size = 11.0
+config.color_scheme = 'Solarized (dark) (terminal.sexy)'
+config.warn_about_missing_glyphs = false
+config.audible_bell = 'Disabled'
+config.scrollback_lines = 99999999
+config.default_cursor_style = 'SteadyBar'
+config.front_end = 'WebGpu'
+config.window_background_opacity = 1.0
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
+config.use_fancy_tab_bar = false
+config.colors = {
+  tab_bar = {
+    background = '#002b36',
+    active_tab = {
+      bg_color = '#073642',
+      fg_color = '#93a1a1',
+      intensity = 'Normal',
+      underline = 'None',
+      italic = false,
+      strikethrough = false,
+    },
+    inactive_tab = {
+      bg_color = '#002b36',
+      fg_color = '#657b83',
+    },
+    inactive_tab_hover = {
+      bg_color = '#586e75',
+      fg_color = '#eee8d5',
+      italic = false,
+    },
+    new_tab = {
+      bg_color = '#073642',
+      fg_color = '#93a1a1',
+    },
+    new_tab_hover = {
+      bg_color = '#586e75',
+      fg_color = '#eee8d5',
+      italic = false,
     },
   },
-  keys = {
-    { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
-    { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
-    { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
-    { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
-    { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
-    { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
-    { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
-    { key = '+', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-    { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-    { key = '-', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-    { key = '-', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-    { key = '-', mods = 'SUPER', action = wezterm.action.ResetFontSize },
-    { key = '=', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-    { key = '=', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-    { key = '=', mods = 'SUPER', action = wezterm.action.ResetFontSize },
-    { key = '_', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-    { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-  },
 }
+config.keys = {
+  { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
+  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
+  { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
+  { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
+  { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
+  { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
+  { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
+  { key = '+', mods = 'CTRL', action = wezterm.action.ResetFontSize },
+  { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
+  { key = '-', mods = 'CTRL', action = wezterm.action.ResetFontSize },
+  { key = '-', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
+  { key = '-', mods = 'SUPER', action = wezterm.action.ResetFontSize },
+  { key = '=', mods = 'CTRL', action = wezterm.action.ResetFontSize },
+  { key = '=', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
+  { key = '=', mods = 'SUPER', action = wezterm.action.ResetFontSize },
+  { key = '_', mods = 'CTRL', action = wezterm.action.ResetFontSize },
+  { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
+}
+
+return config
