@@ -13,6 +13,7 @@ config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
 config.default_cursor_style = 'SteadyBar'
 config.front_end = 'WebGpu'
+config.warn_about_missing_glyphs = false
 config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 1.0
 config.window_padding = {
