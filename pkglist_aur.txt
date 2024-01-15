@@ -26,6 +26,7 @@ git-delta
 github-cli
 gnome-keyring
 go
+gtk2
 httpie
 i3-wm
 intel-ucode
