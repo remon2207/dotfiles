@@ -1,0 +1,14 @@
+[[keyboard.bindings]]
+action = 'None'
+key = 'Equals'
+mods = 'Control'
+
+[[keyboard.bindings]]
+action = 'None'
+key = 'Plus'
+mods = 'Control'
+
+[[keyboard.bindings]]
+action = 'None'
+key = 'Minus'
+mods = 'Control'

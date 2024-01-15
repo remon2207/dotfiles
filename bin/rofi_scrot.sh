@@ -18,6 +18,7 @@ main() {
 
   case "${selected}" in
     "${select_text}")
+      sleep 0.2
       scrot_base '--select'
       ;;
     "${window_text}")

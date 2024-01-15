@@ -61,6 +61,16 @@ null_ls.setup({
         'zsh',
       },
     }),
+    formatting.taplo.with({
+      extra_args = {
+        '--option',
+        'array_trailing_comma=false',
+        '--option',
+        'compact_arrays=false',
+        '--option',
+        'column_width=120',
+      },
+    }),
   },
   on_attach = function(client, bufnr)
     if client.supports_method('textDocument/formatting') then

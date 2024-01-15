@@ -16,6 +16,7 @@ alias vfish="cd ${XDG_CONFIG_HOME}/fish && nvim ."
 alias vconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
 alias vala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
 alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
+alias vrofi="nvim ${XDG_CONFIG_HOME}/rofi/config.rasi"
 alias vnorc='nvim -u "NORC"'
 alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d && nvim ."
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"

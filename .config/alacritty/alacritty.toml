@@ -1,0 +1,8 @@
+import = [
+  '~/.config/alacritty/conf.d/env.toml',
+  '~/.config/alacritty/conf.d/window.toml',
+  '~/.config/alacritty/conf.d/font.toml',
+  '~/.config/alacritty/conf.d/color.toml',
+  '~/.config/alacritty/conf.d/keybind.toml',
+  '~/.config/alacritty/conf.d/cursor.toml'
+]
