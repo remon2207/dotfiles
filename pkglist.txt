@@ -88,6 +88,7 @@ sd
 shellcheck
 shfmt
 silicon
+spotify-launcher
 starship
 stylua
 sudo
@@ -155,6 +156,7 @@ virtualbox-host-dkms
 vivaldi
 vivaldi-ffmpeg-codecs
 w3m
+wezterm
 wireplumber
 xautolock
 xdg-user-dirs

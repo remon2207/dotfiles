@@ -94,6 +94,7 @@ shellcheck
 shfmt
 silicon
 slack-desktop
+spotify-launcher
 starship
 stylua
 sudo
@@ -164,6 +165,7 @@ virtualbox-host-dkms
 vivaldi
 vivaldi-ffmpeg-codecs
 w3m
+wezterm
 wireplumber
 xautolock
 xcursor-breeze
