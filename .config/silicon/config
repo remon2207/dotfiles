@@ -1,4 +1,4 @@
 --theme='Solarized (dark)'
---font='monospace'
+--font='HackGen'
 
 # vim: set ft=conf :
