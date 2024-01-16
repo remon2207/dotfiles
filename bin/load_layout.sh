@@ -13,8 +13,8 @@ if [[ "${1}" == 'dvi' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dp' ]]; then
   (cd "${HOME}/src/KyoshinEewViewer" && ./KyoshinEewViewer &)
   # (/usr/bin/kitty --single-instance /usr/bin/btop &)
   # (/usr/bin/kitty --single-instance /usr/bin/nvtop &)
-  (/usr/bin/alacritty --title btop --command /usr/bin/btop &)
-  (/usr/bin/alacritty --title nvtop --command /usr/bin/nvtop &)
+  (/usr/bin/alacritty --title='btop' --command='/usr/bin/btop' &)
+  (/usr/bin/alacritty --title='nvtop' --command='/usr/bin/nvtop' &)
   (/usr/bin/vivaldi-stable &)
 elif [[ "${1}" == 'dp2' ]]; then
   # ワークスペース3に移動し、レイアウトを展開する
@@ -32,6 +32,6 @@ elif [[ "${1}" == 'dvi' ]]; then
   # 展開に必要なプログラムを起動する
   # (/usr/bin/kitty --single-instance /usr/bin/btop &)
   # (/usr/bin/kitty --single-instance /usr/bin/nvtop &)
-  (/usr/bin/alacritty --title btop --command /usr/bin/btop &)
-  (/usr/bin/alacritty --title nvtop --command /usr/bin/nvtop &)
+  (/usr/bin/alacritty --title='btop' --command='/usr/bin/btop' &)
+  (/usr/bin/alacritty --title='nvtop' --command='/usr/bin/nvtop' &)
 fi
