@@ -220,22 +220,6 @@ bootusb() {
   return
 }
 
-authycheck() {
-  local result revision version
-  result="$(curl --header 'Snap-Device-Series: 16' https://api.snapcraft.io/v2/snaps/info/authy | jq)"
-  revision="$(echo "${result}" \
-    | rg 'revision' \
-    | awk --field-separator='[ ":,]*' '{print $3}')"
-  version="$(echo "${result}" \
-    | rg 'version' \
-    | awk --field-separator='[ ":]*' '{print $3}')"
-
-  echo "revision: ${revision}
-version: ${version}"
-
-  return
-}
-
 pkg() {
   usage() {
     bat --plain << EOF
