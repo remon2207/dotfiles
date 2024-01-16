@@ -54,13 +54,11 @@ config.colors = {
   },
 }
 config.keys = {
-  -- { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
-  -- { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
-  -- { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
-  -- { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
-  -- { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
-  -- { key = 'PageUp', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = -1 }) },
-  -- { key = 'PageDown', mods = 'CTRL|SHIFT', action = wezterm.action({ MoveTabRelative = 1 }) },
+  { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
+  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
+  { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
+  { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
+  { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
   { key = '+', mods = 'CTRL', action = wezterm.action.ResetFontSize },
   { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
   { key = '-', mods = 'CTRL', action = wezterm.action.ResetFontSize },
