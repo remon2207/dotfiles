@@ -64,6 +64,7 @@ otf-firamono-nerd
 otf-geist-mono-nerd
 otf-hasklig-nerd
 otf-hermit-nerd
+otf-ipafont
 otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
