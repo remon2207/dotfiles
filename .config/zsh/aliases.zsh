@@ -20,6 +20,7 @@ alias vrofi="nvim ${XDG_CONFIG_HOME}/rofi/config.rasi"
 alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d && nvim ."
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
 alias vranger="cd ${XDG_CONFIG_HOME}/ranger && nvim ."
+alias vdunst="cd ${XDG_CONFIG_HOME}/dunst/dunstrc.d && nvim ."
 alias vnorc='nvim -u "NORC"'
 alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'
