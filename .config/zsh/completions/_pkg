@@ -1,7 +1,7 @@
 #compdef pkg
 
 _pkg() {
-  _values '' 'check[アップグレードできるパッケージをチェック]' 'up[インストール]' 'clean[アンインストール]'
+  _values '' 'check[アップグレードできるパッケージを表示]' 'up[アップグレード]' 'clean[アンインストール]' 'unrequired[不要なパッケージを表示]' 'help[helpを表示]' 'unrequired-clean[不要なパッケージをアンインストール]'
 
   return
 }

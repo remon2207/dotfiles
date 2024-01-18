@@ -92,9 +92,12 @@ pkg() {
 USAGE:
   pkg <subcommand>
 SUBCOMMAND:
-  up          アップグレードする
-  clean       不要なパッケージを削除する
-  help        helpを表示
+  up                      アップグレード
+  clean                   アンインストール
+  check                   アップグレードできるパッケージを表示
+  unrequired              不要なパッケージを表示
+  unrequired-clean        不要なパッケージをアンインストール
+  help                    helpを表示
 EOF
 
     return
@@ -124,6 +127,12 @@ EOF
       ;;
     'clean')
       paru --remove --nosave --recursive "${@}"
+      ;;
+    'unrequired')
+      pacman --query --unrequired --deps --quiet
+      ;;
+    'unrequired-clean')
+      sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"
       ;;
     *)
       return
