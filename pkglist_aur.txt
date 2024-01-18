@@ -126,6 +126,7 @@ ttf-hack-nerd
 ttf-hackgen
 ttf-heavydata-nerd
 ttf-iawriter-nerd
+ttf-ibm-plex
 ttf-ibmplex-mono-nerd
 ttf-inconsolata-go-nerd
 ttf-inconsolata-lgc-nerd
