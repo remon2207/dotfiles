@@ -6,7 +6,8 @@ if wezterm.config_builder then
 end
 config.font = wezterm.font_with_fallback({
   'Hack Nerd Font',
-  { family = 'IPAGothic', scale = 1.05 },
+  'IPAGothic',
+  -- { family = 'IPAGothic', scale = 1.05 },
 })
 config.font_size = 10.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
