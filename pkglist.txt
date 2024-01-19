@@ -28,7 +28,6 @@ gtk2
 httpie
 i3-wm
 intel-ucode
-inter-font
 jre-openjdk
 kitty
 kvantum
@@ -116,7 +115,6 @@ ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-font-awesome
 ttf-go-nerd
-ttf-hack
 ttf-hack-nerd
 ttf-heavydata-nerd
 ttf-iawriter-nerd
