@@ -18,8 +18,7 @@ main() {
 
   case "${selected}" in
     "${select_text}")
-      sleep 0.2
-      scrot_base '--select'
+      scrot_base '--select' '--delay=1'
       ;;
     "${window_text}")
       scrot_base '--focused'
