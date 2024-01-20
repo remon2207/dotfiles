@@ -31,7 +31,6 @@ gtk2
 httpie
 i3-wm
 intel-ucode
-inter-font
 jre-openjdk
 kitty
 kvantum
@@ -151,6 +150,7 @@ ttf-noto-nerd
 ttf-profont-nerd
 ttf-proggyclean-nerd
 ttf-roboto-mono-nerd
+ttf-roboto-slab
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
 ttf-space-mono-nerd
