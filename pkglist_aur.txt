@@ -68,7 +68,6 @@ otf-firamono-nerd
 otf-geist-mono-nerd
 otf-hasklig-nerd
 otf-hermit-nerd
-otf-ipafont
 otf-monaspace-nerd
 otf-opendyslexic-nerd
 otf-overpass-nerd
@@ -136,6 +135,7 @@ ttf-iosevka-nerd
 ttf-iosevkaterm-nerd
 ttf-jetbrains-mono-nerd
 ttf-lekton-nerd
+ttf-liberation
 ttf-liberation-mono-nerd
 ttf-lilex-nerd
 ttf-martian-mono-nerd
