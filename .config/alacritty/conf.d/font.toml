@@ -1,18 +1,18 @@
 [font]
-size = 10
+size = 11
 
 [font.bold]
-family = 'monospace'
+family = 'HackGen Console NF'
 style = 'Bold'
 
 [font.bold_italic]
-family = 'monospace'
+family = 'HackGen Console NF'
 style = 'Bold Italic'
 
 [font.italic]
-family = 'monospace'
+family = 'HackGen Console NF'
 style = 'Italic'
 
 [font.normal]
-family = 'monospace'
+family = 'HackGen Console NF'
 style = 'Regular'

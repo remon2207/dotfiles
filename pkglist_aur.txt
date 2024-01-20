@@ -123,6 +123,7 @@ ttf-font-awesome
 ttf-go-nerd
 ttf-hack
 ttf-hack-nerd
+ttf-hackgen
 ttf-heavydata-nerd
 ttf-iawriter-nerd
 ttf-ibm-plex
@@ -135,7 +136,6 @@ ttf-iosevka-nerd
 ttf-iosevkaterm-nerd
 ttf-jetbrains-mono-nerd
 ttf-lekton-nerd
-ttf-liberation
 ttf-liberation-mono-nerd
 ttf-lilex-nerd
 ttf-martian-mono-nerd
@@ -150,6 +150,7 @@ ttf-noto-nerd
 ttf-profont-nerd
 ttf-proggyclean-nerd
 ttf-roboto-mono-nerd
+ttf-roboto-slab
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
 ttf-space-mono-nerd
