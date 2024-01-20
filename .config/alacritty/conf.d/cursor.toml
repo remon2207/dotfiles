@@ -3,4 +3,4 @@ blink_timeout = 0
 
 [cursor.style]
 blinking = 'Always'
-shape = 'Beam'
+shape = 'Block'
