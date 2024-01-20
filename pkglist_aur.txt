@@ -120,7 +120,6 @@ ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-font-awesome
 ttf-go-nerd
-ttf-hack
 ttf-hack-nerd
 ttf-hackgen
 ttf-heavydata-nerd
@@ -149,6 +148,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-noto-nerd
 ttf-profont-nerd
 ttf-proggyclean-nerd
+ttf-roboto-mono
 ttf-roboto-mono-nerd
 ttf-roboto-serif
 ttf-sharetech-mono-nerd
