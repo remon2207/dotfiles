@@ -129,6 +129,7 @@ ttf-iosevka-nerd
 ttf-iosevkaterm-nerd
 ttf-jetbrains-mono-nerd
 ttf-lekton-nerd
+ttf-liberation
 ttf-liberation-mono-nerd
 ttf-lilex-nerd
 ttf-martian-mono-nerd
