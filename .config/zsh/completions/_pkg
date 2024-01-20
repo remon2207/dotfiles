@@ -9,6 +9,7 @@ _pkg() {
     'unrequired[不要なパッケージを表示]' \
     'unrequired-clean[不要なパッケージをアンインストール]' \
     'list-export[インストール済みのパッケージリストをdotfilesに保存]' \
+    'search[パッケージを検索]' \
     'help[helpを表示]'
 
   return

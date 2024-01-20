@@ -99,6 +99,7 @@ SUBCOMMAND:
   unrequired              不要なパッケージを表示
   unrequired-clean        不要なパッケージをアンインストール
   list-export             インストール済みのパッケージリストをdotfilesに保存
+  search                  パッケージを検索
   help                    helpを表示
 EOF
 
@@ -141,6 +142,9 @@ EOF
       ;;
     'list-export')
       pacman --query --quiet --explicit --native > "${DOTFILES}/pkglist.txt" && pacman --query --quiet --explicit > "${DOTFILES}/pkglist_aur.txt"
+      ;;
+    'search')
+      paru --sync --search "${@}"
       ;;
     *)
       return
