@@ -93,10 +93,12 @@ USAGE:
   pkg <subcommand>
 SUBCOMMAND:
   up                      アップグレード
-  clean                   アンインストール
+  in                      インストール
+  un                      アンインストール
   check                   アップグレードできるパッケージを表示
   unrequired              不要なパッケージを表示
   unrequired-clean        不要なパッケージをアンインストール
+  list-export             インストール済みのパッケージリストをdotfilesに保存
   help                    helpを表示
 EOF
 
@@ -125,7 +127,10 @@ EOF
     'check')
       checkupdates
       ;;
-    'clean')
+    'in')
+      paru --sync "${@}"
+      ;;
+    'un')
       paru --remove --nosave --recursive "${@}"
       ;;
     'unrequired')
