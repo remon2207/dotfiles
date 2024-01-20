@@ -150,7 +150,7 @@ ttf-noto-nerd
 ttf-profont-nerd
 ttf-proggyclean-nerd
 ttf-roboto-mono-nerd
-ttf-roboto-slab
+ttf-roboto-serif
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
 ttf-space-mono-nerd
