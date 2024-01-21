@@ -4,12 +4,9 @@ _pkg() {
   _values '' \
     'check[アップグレードできるパッケージを表示]' \
     'up[アップグレード]' \
-    'in[インストール]' \
-    'un[アンインストール]' \
     'unrequired[不要なパッケージを表示]' \
     'unrequired-clean[不要なパッケージをアンインストール]' \
     'list-export[インストール済みのパッケージリストをdotfilesに保存]' \
-    'search[パッケージを検索]' \
     'help[helpを表示]'
 
   return

@@ -93,13 +93,10 @@ USAGE:
   pkg <subcommand>
 SUBCOMMAND:
   up                      アップグレード
-  in                      インストール
-  un                      アンインストール
   check                   アップグレードできるパッケージを表示
   unrequired              不要なパッケージを表示
   unrequired-clean        不要なパッケージをアンインストール
   list-export             インストール済みのパッケージリストをdotfilesに保存
-  search                  パッケージを検索
   help                    helpを表示
 EOF
 
@@ -128,12 +125,6 @@ EOF
     'check')
       checkupdates
       ;;
-    'in')
-      paru --sync "${@}"
-      ;;
-    'un')
-      paru --remove --nosave --recursive "${@}"
-      ;;
     'unrequired')
       pacman --query --unrequired --deps --quiet
       ;;
@@ -142,9 +133,6 @@ EOF
       ;;
     'list-export')
       pacman --query --quiet --explicit --native > "${DOTFILES}/pkglist.txt" && pacman --query --quiet --explicit > "${DOTFILES}/pkglist_aur.txt"
-      ;;
-    'search')
-      paru --sync --search "${@}"
       ;;
     *)
       return
