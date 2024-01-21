@@ -35,7 +35,7 @@ if [[ "$(rg '^DNS' /etc/systemd/resolved.conf.d/dns_servers.conf)" == 'DNS=192.1
   export https_proxy="${http_proxy}"
   export ftp_proxy="${http_proxy}"
   export rsync_proxy="${http_proxy}"
-  export no_proxy='localhost,127.0.0.1'
+  export no_proxy='localhost,127.0.0.1,::1'
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
