@@ -114,6 +114,7 @@ ttf-fantasque-nerd
 ttf-firacode-nerd
 ttf-font-awesome
 ttf-go-nerd
+ttf-hack
 ttf-hack-nerd
 ttf-heavydata-nerd
 ttf-iawriter-nerd
