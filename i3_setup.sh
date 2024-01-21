@@ -71,6 +71,7 @@ services() {
 main() {
   setup
   services
+
   chsh --shell "$(which zsh)"
 }
 

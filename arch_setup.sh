@@ -27,7 +27,6 @@ pkg_install() {
     nvm \
     upd72020x-fw \
     virtualbox-ext-oracle \
-    ttf-hackgen \
     xcursor-breeze
 }
 
