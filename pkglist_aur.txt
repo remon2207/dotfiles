@@ -1,5 +1,6 @@
 alacritty
 arc-gtk-theme
+archlinux-wallpaper
 authy
 base
 base-devel
