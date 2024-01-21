@@ -18,7 +18,9 @@ setup() {
     'commit.template'
   )
   local -r conf_symbolic=(
+    'alacritty'
     'bat'
+    'btop'
     'dunst'
     'fcitx5'
     'fontconfig'
@@ -33,6 +35,7 @@ setup() {
     'neofetch'
     'nvim'
     'nvtop'
+    'pavucontrol.ini'
     'picom'
     'polybar'
     'procs'
@@ -41,6 +44,7 @@ setup() {
     'rofi'
     'silicon'
     'starship.toml'
+    'wezterm'
     'zsh'
   )
   local -r entry_symbolic=(

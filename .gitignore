@@ -13,5 +13,10 @@
 # httpie
 /.config/httpie/version_info.json
 
+# ~/bin
 /bin/JQuake.sh
 /bin/*.AppImage
+
+# Desktop Entry
+/.local/share/applications/mimeinfo.cache
+/.local/share/applications/vivaldi-*.desktop
