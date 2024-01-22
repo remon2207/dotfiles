@@ -30,19 +30,19 @@
               "current_border_width": 2,
               "floating": "auto_off",
               "geometry": {
-                "height": 350,
+                "height": 526,
                 "width": 956,
                 "x": 1922,
                 "y": 1082
               },
               "marks": [],
-              "name": ".*Slack.*",
+              "name": "Slack.*",
               "percent": 0.5,
               "swallows": [
                 {
                   "class": "^Slack$",
                   "instance": "^slack$",
-                  "title": "^.*Slack.*$",
+                  "title": "^Slack.*$",
                   "window_role": "^browser\\-window$"
                 }
               ],
@@ -53,10 +53,10 @@
               "current_border_width": 2,
               "floating": "auto_off",
               "geometry": {
-                "height": 346,
+                "height": 518,
                 "width": 950,
                 "x": 1920,
-                "y": 1416
+                "y": 1592
               },
               "marks": [],
               "name": "JQuake",
@@ -86,19 +86,19 @@
               "current_border_width": 2,
               "floating": "auto_off",
               "geometry": {
-                "height": 500,
-                "width": 1916,
-                "x": 1922,
-                "y": 1789
+                "height": 526,
+                "width": 956,
+                "x": 2882,
+                "y": 1082
               },
               "marks": [],
-              "name": ".*Discord.*",
+              "name": ".*Discord",
               "percent": 0.5,
               "swallows": [
                 {
                   "class": "^discord$",
                   "instance": "^discord$",
-                  "title": "^.*Discord.*$",
+                  "title": "^.*Discord$",
                   "window_role": "^browser\\-window$"
                 }
               ],
@@ -111,8 +111,8 @@
               "geometry": {
                 "height": 540,
                 "width": 960,
-                "x": 2880,
-                "y": 1620
+                "x": 2882,
+                "y": 1082
               },
               "marks": [],
               "name": "KyoshinEewViewer for ingen",
