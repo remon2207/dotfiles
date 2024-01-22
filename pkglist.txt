@@ -29,6 +29,7 @@ gtk2
 httpie
 i3-wm
 intel-ucode
+inter-font
 jre-openjdk
 kitty
 kvantum
