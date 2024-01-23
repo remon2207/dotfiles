@@ -21,7 +21,7 @@ alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d && nvim ."
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
 alias vranger="cd ${XDG_CONFIG_HOME}/ranger && nvim ."
 alias vdunst="cd ${XDG_CONFIG_HOME}/dunst/dunstrc.d && nvim ."
-alias vnorc='nvim -u "NORC"'
+alias vnorc='nvim -u NORC'
 alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
@@ -46,7 +46,7 @@ alias gf='git fetch'
 alias gm='git merge'
 alias gd='git diff'
 alias gundoadd='git restore --staged'
-alias gundocommit='git reset --soft "HEAD^"'
+alias gundocommit='git reset --soft HEAD^'
 alias dockerprune='docker volume prune --force --all && docker system prune --force --all'
 alias kf='kitty + list-fonts --psname'
 alias kdf='kitty --debug-font-fallback'
@@ -107,6 +107,8 @@ alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" -
 alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
 alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
 alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.txt && pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur.txt"
+alias unrequired='pacman --query --unrequired --deps --quiet'
+alias unrequiredclean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
 
 if type lsd &> /dev/null; then
   alias ls='lsd --ignore-glob="lost+found"'

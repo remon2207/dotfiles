@@ -72,6 +72,7 @@ bootusb() {
 
     echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
     read 'yn?実行しますか？(y/n): '
+    echo
     case "${yn}" in
     ['yY'])
       sudo dd bs='4M' if="${1}" of="${2}" conv='fsync' oflag='direct' status='progress'
@@ -86,54 +87,17 @@ bootusb() {
   return
 }
 
-pkg() {
-  usage() {
-    bat --plain << EOF
-USAGE:
-  pkg <subcommand>
-SUBCOMMAND:
-  up                      アップグレード
-  check                   アップグレードできるパッケージを表示
-  unrequired              不要なパッケージを表示
-  unrequired-clean        不要なパッケージをアンインストール
-  help                    helpを表示
-EOF
+pkgup() {
+  checkupdates
 
-    return
-  }
+  if [[ ${?} -eq 0 ]]; then
+    local yn
 
-  [[ ${#} -eq 0 ]] && return 1
+    read 'yn?アップグレードしますか?(y/n): '
+    echo
 
-  local -r subcommand="${1}"
-  shift
-
-  [[ "${subcommand}" == 'help' ]] && usage && return
-
-  case "${subcommand}" in
-    'up')
-      checkupdates
-
-      if [[ ${?} -eq 0 ]]; then
-        local yn
-
-        echo
-        read 'yn?アップグレードしますか？(y/n): '
-        [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
-      fi
-      ;;
-    'check')
-      checkupdates
-      ;;
-    'unrequired')
-      pacman --query --unrequired --deps --quiet
-      ;;
-    'unrequired-clean')
-      sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"
-      ;;
-    *)
-      return
-      ;;
-  esac
+    [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
+  fi
 
   return
 }
@@ -273,8 +237,6 @@ gcommitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
 gdf() { local selected; selected="$(git status --short | fzf --multi | awk '{print $2}')"; [[ -n "${selected}" ]] && tr '\n' ' ' <<< "${selected}" | xargs git diff; return; }
 raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
-psgrep() { procs "${1}"; return; }
-vsh() { nvim "${1}.sh" && chmod +x "${_}"; return; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
 silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
