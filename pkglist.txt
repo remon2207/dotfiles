@@ -28,8 +28,10 @@ go
 gtk2
 httpie
 i3-wm
+imagemagick
 intel-ucode
 inter-font
+jq
 jre-openjdk
 kitty
 kvantum

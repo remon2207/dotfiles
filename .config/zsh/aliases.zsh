@@ -109,6 +109,7 @@ alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
 alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.txt && pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur.txt"
 alias unrequired='pacman --query --unrequired --deps --quiet'
 alias unrequiredclean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
+alias cup='checkupdates'
 
 if type lsd &> /dev/null; then
   alias ls='lsd --ignore-glob="lost+found"'
