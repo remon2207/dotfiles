@@ -96,7 +96,6 @@ SUBCOMMAND:
   check                   アップグレードできるパッケージを表示
   unrequired              不要なパッケージを表示
   unrequired-clean        不要なパッケージをアンインストール
-  list-export             インストール済みのパッケージリストをdotfilesに保存
   help                    helpを表示
 EOF
 
@@ -130,9 +129,6 @@ EOF
       ;;
     'unrequired-clean')
       sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"
-      ;;
-    'list-export')
-      pacman --query --quiet --explicit --native > "${DOTFILES}/pkglist.txt" && pacman --query --quiet --explicit > "${DOTFILES}/pkglist_aur.txt"
       ;;
     *)
       return

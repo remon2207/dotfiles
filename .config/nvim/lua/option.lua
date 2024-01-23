@@ -53,7 +53,15 @@ o.splitright = true
 -- カレントウィンドウの下に開く
 o.splitbelow = true
 -- カーソルスタイル
-o.guicursor:remove({ 'n-v-c-sm:block' })
-o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
+-- o.guicursor:remove({ 'n-v-c-sm:block' })
+-- o.guicursor:append({ 'n-v-sm:block', 'c:ver25' })
+o.guicursor:remove({ 'n-v-c-sm:block', 'i-ci-ve:ver25', 'r-cr-o:hor20' })
+o.guicursor:append({
+  'n-v-sm:block-iCursor-blinkwait300-blinkon200-blinkoff150',
+  'i-ci-ve:ver25-iCursor-blinkwait300-blinkon200-blinkoff150',
+  'r-cr-o:hor20-iCursor-blinkwait300-blinkon200-blinkoff150',
+  'c:ver25-iCursor-blinkwait300-blinkon200-blinkoff150',
+})
+
 -- リーダー
 g.mapleader = ' '

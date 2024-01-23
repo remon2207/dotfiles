@@ -1,4 +1,5 @@
 local wezterm = require('wezterm')
+local act = wezterm.action
 local config = {}
 
 if wezterm.config_builder then
@@ -16,6 +17,11 @@ config.scrollback_lines = 99999999
 config.front_end = 'WebGpu'
 config.warn_about_missing_glyphs = false
 config.use_fancy_tab_bar = false
+config.animation_fps = 165
+config.max_fps = 165
+config.default_cursor_style = 'BlinkingBlock'
+config.disable_default_mouse_bindings = true
+config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 1.0
 config.window_padding = {
@@ -23,6 +29,9 @@ config.window_padding = {
   right = 0,
   top = 0,
   bottom = 0,
+}
+config.set_environment_variables = {
+  BROWSER = '/usr/bin/vivaldi-stable',
 }
 config.colors = {
   tab_bar = {
@@ -56,21 +65,26 @@ config.colors = {
   },
 }
 config.keys = {
-  { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = -1 }) },
-  { key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByLine = 1 }) },
-  { key = 'b', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = -1 }) },
-  { key = 'f', mods = 'CTRL|SHIFT', action = wezterm.action({ ScrollByPage = 1 }) },
-  { key = '?', mods = 'CTRL|SHIFT', action = wezterm.action({ Search = { CaseSensitiveString = '' } }) },
-  { key = '+', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-  { key = '+', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-  { key = '-', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-  { key = '-', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-  { key = '-', mods = 'SUPER', action = wezterm.action.ResetFontSize },
-  { key = '=', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-  { key = '=', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
-  { key = '=', mods = 'SUPER', action = wezterm.action.ResetFontSize },
-  { key = '_', mods = 'CTRL', action = wezterm.action.ResetFontSize },
-  { key = '_', mods = 'CTRL|SHIFT', action = wezterm.action.ResetFontSize },
+  { key = 'p', mods = 'SHIFT|CTRL', action = act({ ScrollByLine = -1 }) },
+  { key = 'n', mods = 'SHIFT|CTRL', action = act({ ScrollByLine = 1 }) },
+  { key = 'b', mods = 'SHIFT|CTRL', action = act({ ScrollByPage = -1 }) },
+  { key = 'f', mods = 'SHIFT|CTRL', action = act({ ScrollByPage = 1 }) },
+  { key = '?', mods = 'SHIFT|CTRL', action = act({ Search = { CaseSensitiveString = '' } }) },
+  { key = ')', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = ')', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
+  { key = '+', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = '+', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
+  { key = '-', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = '-', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
+  { key = '-', mods = 'SUPER', action = act.DisableDefaultAssignment },
+  { key = '0', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = '0', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
+  { key = '0', mods = 'SUPER', action = act.DisableDefaultAssignment },
+  { key = '=', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = '=', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
+  { key = '=', mods = 'SUPER', action = act.DisableDefaultAssignment },
+  { key = '_', mods = 'CTRL', action = act.DisableDefaultAssignment },
+  { key = '_', mods = 'SHIFT|CTRL', action = act.DisableDefaultAssignment },
 }
 
 return config

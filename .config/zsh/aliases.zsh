@@ -106,6 +106,7 @@ alias so='source'
 alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
 alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
 alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
+alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.txt && pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur.txt"
 
 if type lsd &> /dev/null; then
   alias ls='lsd --ignore-glob="lost+found"'
