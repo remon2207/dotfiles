@@ -101,7 +101,7 @@ alias procstree='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
 alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
 alias sbat='sudo bat --theme="Solarized (dark)"'
-alias delta='delta --pager="/usr/bin/less"'
+alias delta='delta --pager="less"'
 alias so='source'
 alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
 alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'

@@ -5,7 +5,7 @@
   template = /home/remon/commit.template
 [core]
   editor = /usr/bin/nvim
-  pager = /usr/bin/delta --pager='/usr/bin/less'
+  pager = /usr/bin/delta
   quotepath = false
 [interactive]
   diffFilter = /usr/bin/delta --color-only
