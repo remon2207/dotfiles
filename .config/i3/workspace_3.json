@@ -21,8 +21,8 @@
           "current_border_width": 2,
           "floating": "auto_off",
           "geometry": {
-            "height": 600,
-            "width": 800,
+            "height": 1056,
+            "width": 1916,
             "x": 0,
             "y": 0
           },
@@ -31,8 +31,8 @@
           "percent": 0.3,
           "swallows": [
             {
-              "class": "^Alacritty$",
-              "instance": "^Alacritty$",
+              "class": "^kitty$",
+              "instance": "^kitty$",
               "title": "^nvtop$"
             }
           ],
@@ -43,8 +43,8 @@
           "current_border_width": 2,
           "floating": "auto_off",
           "geometry": {
-            "height": 600,
-            "width": 800,
+            "height": 1056,
+            "width": 1916,
             "x": 0,
             "y": 0
           },
@@ -53,8 +53,8 @@
           "percent": 0.7,
           "swallows": [
             {
-              "class": "^Alacritty$",
-              "instance": "^Alacritty$",
+              "class": "^kitty$",
+              "instance": "^kitty$",
               "title": "^btop$"
             }
           ],
