@@ -158,6 +158,7 @@ ttf-tinos-nerd
 ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
+ueberzug
 unzip
 up
 upd72020x-fw
