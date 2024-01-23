@@ -4,7 +4,7 @@
   "floating": "auto_off",
   "layout": "tabbed",
   "marks": [],
-  "percent": 1,
+  "percent": null,
   "type": "con",
   "nodes": [
     {
@@ -30,10 +30,10 @@
               "current_border_width": 2,
               "floating": "auto_off",
               "geometry": {
-                "height": 526,
-                "width": 956,
-                "x": 1922,
-                "y": 1082
+                "height": 1026,
+                "width": 934,
+                "x": 969,
+                "y": 1097
               },
               "marks": [],
               "name": "Slack.*",
@@ -108,12 +108,6 @@
               "border": "pixel",
               "current_border_width": 2,
               "floating": "auto_off",
-              "geometry": {
-                "height": 540,
-                "width": 960,
-                "x": 2882,
-                "y": 1082
-              },
               "marks": [],
               "name": "KyoshinEewViewer for ingen",
               "percent": 0.5,

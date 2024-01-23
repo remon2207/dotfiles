@@ -18,7 +18,7 @@ elif [[ "${1}" == 'dvi' ]]; then
   # 展開に必要なプログラムを起動する
   (/usr/bin/kitty --single-instance /usr/bin/btop &)
   (/usr/bin/kitty --single-instance /usr/bin/nvtop &)
-elif [[ "${1}" == 'dvi' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dp' ]]; then
+elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; then
   # ワークスペース1,2,3に移動し、レイアウトを展開する
   for num in 3 2 1; do /usr/bin/i3-msg "workspace --no-auto-back-and-forth ${num}; append_layout ${XDG_CONFIG_HOME}/i3/workspace_${num}.json"; done
 
