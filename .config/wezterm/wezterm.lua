@@ -20,7 +20,6 @@ config.use_fancy_tab_bar = false
 config.animation_fps = 165
 config.max_fps = 165
 config.default_cursor_style = 'BlinkingBlock'
-config.disable_default_mouse_bindings = true
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 1.0
