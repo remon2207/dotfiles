@@ -24,4 +24,4 @@ fi
 
 [ -f "${HOME}/.profile" ] && . "${HOME}/.profile"
 
-exec /usr/bin/i3
+exec i3

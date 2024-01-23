@@ -7,6 +7,6 @@ gui:
   sidePanelWidth: 0.2
 git:
   paging:
-    pager: '/usr/bin/delta --no-gitconfig --paging="never" --syntax-theme="Solarized (dark)" --line-numbers'
+    pager: 'delta --no-gitconfig --paging="never" --syntax-theme="Solarized (dark)" --line-numbers'
 notARepository: 'quit'
 promptToReturnFromSubprocess: false
