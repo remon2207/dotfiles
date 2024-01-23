@@ -30,7 +30,7 @@ config.window_padding = {
   bottom = 0,
 }
 config.set_environment_variables = {
-  BROWSER = '/usr/bin/vivaldi-stable',
+  BROWSER = 'vivaldi-stable',
 }
 config.colors = {
   tab_bar = {

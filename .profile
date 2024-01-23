@@ -1,8 +1,8 @@
-export PATH="${HOME}/bin:${HOME}/go/bin:${HOME}/.cargo/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
 export QT_QPA_PLATFORMTHEME='qt5ct'
-export TERMINAL='/usr/bin/wezterm'
-export PAGER='/usr/bin/bat'
-export MANPAGER='/bin/sh -c "/usr/bin/col --no-backspaces --spaces | /usr/bin/bat --language="man" --plain"'
+export TERMINAL='wezterm'
+export PAGER='bat'
+export MANPAGER='sh -c "col --no-backspaces --spaces | bat --language="man" --plain"'
 export MANROFFOPT='-c'
 export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -18,11 +18,11 @@ export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-export FZF_CTRL_T_COMMAND='/usr/bin/fd --hidden --type="file" --exclude=".{git,cache}"'
-export FZF_ALT_C_COMMAND='/usr/bin/fd --hidden --type="directory" --exclude=".{git,cache}"'
-export FZF_CTRL_T_OPTS='--layout="default" --preview="/usr/bin/bat --style=header-filename --color=always {}"'
+export FZF_CTRL_T_COMMAND='fd --hidden --type="file" --exclude=".{git,cache}"'
+export FZF_ALT_C_COMMAND='fd --hidden --type="directory" --exclude=".{git,cache}"'
+export FZF_CTRL_T_OPTS='--layout="default" --preview="bat --style=header-filename --color=always {}"'
 export FZF_CTRL_R_OPTS='--preview="echo {}" --preview-window="down:3"'
-export FZF_ALT_C_OPTS='--layout="default" --preview="/usr/bin/tree {}"'
+export FZF_ALT_C_OPTS='--layout="default" --preview="tree {}"'
 export FZF_DEFAULT_OPTS="\
 --scroll-off=5 --preview-window='80%:wrap' --no-mouse --exit-0 --cycle \
 --bind='ctrl-/:change-preview-window(down|),ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up' \
@@ -39,13 +39,13 @@ if [[ "$(rg '^DNS' /etc/systemd/resolved.conf.d/dns_servers.conf)" == 'DNS=192.1
 fi
 
 if [[ -n "${DISPLAY}" ]]; then
-  export EDITOR='/usr/bin/nvim'
-  export VISUAL='/usr/bin/nvim'
-  export SUDO_EDITOR='/usr/bin/nvim'
-  export SYSTEMD_EDITOR='/usr/bin/nvim'
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+  export SUDO_EDITOR='nvim'
+  export SYSTEMD_EDITOR='nvim'
 else
-  export EDITOR='/usr/bin/vi'
-  export VISUAL='/usr/bin/vi'
-  export SUDO_EDITOR='/usr/bin/vi'
-  export SYSTEMD_EDITOR='/usr/bin/vi'
+  export EDITOR='vi'
+  export VISUAL='vi'
+  export SUDO_EDITOR='vi'
+  export SYSTEMD_EDITOR='vi'
 fi
