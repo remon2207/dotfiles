@@ -221,7 +221,11 @@ gedit() {
 }
 
 gnowpush() {
-  [[ "${1}" == '-a' ]] && git add .
+  if [[ "${1}" == '-a' ]]; then
+    git add .
+  elif [[ ${#} -ge 1 ]]; then
+    return 1
+  fi
 
   if [[ -n "$(git diff --name-only --staged)" ]]; then
     git commit --message="$(date '+%Y/%m/%d %H:%M:%S')" && git push
