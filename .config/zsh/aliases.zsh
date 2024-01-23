@@ -12,7 +12,6 @@ alias vwez="nvim ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
 alias vmime="nvim ${XDG_CONFIG_HOME}/mimeapps.list"
 alias vzsh="cd ${XDG_CONFIG_HOME}/zsh && nvim ."
 alias vkitty="cd ${XDG_CONFIG_HOME}/kitty/conf.d && nvim ."
-alias vfish="cd ${XDG_CONFIG_HOME}/fish && nvim ."
 alias vconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
 alias vala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
 alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
@@ -93,7 +92,7 @@ alias ipt='sudo iptables'
 alias ip6t='sudo ip6tables'
 alias autosuspend='nohup xautolock -time 60 -locker "sleep 31m" -killtime 30 -killer "systemctl suspend" &> /dev/null &! procs xautolock'
 alias autosuspendoff='killall "xautolock"'
-alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude={mnt,.cache,.git,ccache,/run/user}'
+alias fd='fd --hidden --threads="$(("$(nproc)"+1))" --exclude={mnt,.cache,.git,/run/user}'
 alias su-='sudo su -'
 alias v='nvim'
 alias v.='nvim .'
