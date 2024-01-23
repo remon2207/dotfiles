@@ -93,8 +93,8 @@ pkgup() {
   if [[ ${?} -eq 0 ]]; then
     local yn
 
-    read 'yn?アップグレードしますか?(y/n): '
     echo
+    read 'yn?アップグレードしますか？(y/n): '
 
     [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
   fi
