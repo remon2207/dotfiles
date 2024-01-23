@@ -30,7 +30,6 @@ httpie
 i3-wm
 imagemagick
 intel-ucode
-inter-font
 jq
 jre-openjdk
 kitty
