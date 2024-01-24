@@ -81,11 +81,11 @@ alias sv='sudoedit'
 alias pn='pnpm'
 alias pnupdate='corepack prepare pnpm@latest --activate'
 alias pnpkgupdate='pnpm add --global --save-prod @fsouza/prettierd eslint_d'
-alias fontlist='fc-list | fzf | awk --field-separator="[:,]" "{print \$2}" | cut --delimiter=" " --fields="2-"'
+alias fontlist='fc-list | fzf'
 alias t='tmux'
 alias r='ranger'
 alias homesize='du --summarize --block-size="1M" "${HOME}/"{*,.*} | sort --numeric-sort'
-alias tmp="cd ${HOME}/tmp"
+alias tmp="cd /tmp"
 alias wmcn='xprop WM_{CLASS,NAME}'
 alias nft='sudo nft'
 alias ipt='sudo iptables'
