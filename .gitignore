@@ -20,3 +20,7 @@
 # Desktop Entry
 /.local/share/applications/mimeinfo.cache
 /.local/share/applications/vivaldi-*.desktop
+/.local/share/applications/chrome-*.desktop
+
+# btop
+/.config/btop/btop.log

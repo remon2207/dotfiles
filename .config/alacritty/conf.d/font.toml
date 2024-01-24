@@ -1,18 +1,18 @@
 [font]
-size = 10
+size = 11
 
 [font.bold]
-family = 'Hack Nerd Font'
+family = 'HackGen Console NF'
 style = 'Bold'
 
 [font.bold_italic]
-family = 'Hack Nerd Font'
+family = 'HackGen Console NF'
 style = 'Bold Italic'
 
 [font.italic]
-family = 'Hack Nerd Font'
+family = 'HackGen Console NF'
 style = 'Italic'
 
 [font.normal]
-family = 'Hack Nerd Font'
+family = 'HackGen Console NF'
 style = 'Regular'

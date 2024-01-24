@@ -29,5 +29,5 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
   (cd "${HOME}/src/KyoshinEewViewer" && ./KyoshinEewViewer &)
   (kitty --single-instance btop &)
   (kitty --single-instance nvtop &)
-  (vivaldi-stable &)
+  (google-chrome-stable &)
 fi

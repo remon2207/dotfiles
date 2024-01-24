@@ -9,13 +9,13 @@
     "y": 1082
   },
   "marks": [],
-  "name": ".*Vivaldi",
+  "name": ".*Google Chrome",
   "percent": 1,
   "swallows": [
     {
-      "class": "^Vivaldi\\-stable$",
-      "instance": "^vivaldi\\-stable$",
-      "title": "^.*Vivaldi$",
+      "class": "^Google\\-chrome$",
+      "instance": "^google\\-chrome$",
+      "title": "^.*Google\\ Chrome$",
       "window_role": "^browser$"
     }
   ],
