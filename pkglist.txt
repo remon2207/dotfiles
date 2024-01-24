@@ -166,7 +166,6 @@ ttf-crimson-pro-variable
 ttf-croscore
 ttf-d2coding-nerd
 ttf-daddytime-mono-nerd
-ttf-dejavu
 ttf-dejavu-nerd
 ttf-droid
 ttf-envycoder-nerd
@@ -267,6 +266,7 @@ xorg-font-util
 xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
+xorg-fonts-type1
 xorg-iceauth
 xorg-mkfontscale
 xorg-server
