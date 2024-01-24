@@ -33,6 +33,7 @@ fcitx5-mozc
 fcitx5-qt
 fd
 feh
+firefox
 fuse2
 fzf
 gentium-plus-font
@@ -43,11 +44,11 @@ github-cli
 gnome-keyring
 gnu-free-fonts
 go
+google-chrome
 gsfonts
 gtk2
 httpie
 i3-wm
-imagemagick
 intel-ucode
 inter-font
 jq
@@ -188,6 +189,7 @@ ttf-font-awesome
 ttf-go-nerd
 ttf-hack
 ttf-hack-nerd
+ttf-hackgen
 ttf-hanazono
 ttf-hannom
 ttf-heavydata-nerd
@@ -238,7 +240,6 @@ ttf-roboto-mono
 ttf-roboto-mono-nerd
 ttf-roboto-slab
 ttf-sarasa-gothic
-ttf-sazanami
 ttf-scheherazade-new
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
@@ -251,7 +252,6 @@ ttf-ubuntu-font-family
 ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
-ueberzug
 unzip
 up
 upd72020x-fw

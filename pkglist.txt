@@ -31,6 +31,7 @@ fcitx5-mozc
 fcitx5-qt
 fd
 feh
+firefox
 fuse2
 fzf
 gentium-plus-font
@@ -44,7 +45,6 @@ gsfonts
 gtk2
 httpie
 i3-wm
-imagemagick
 intel-ucode
 inter-font
 jq
@@ -229,7 +229,6 @@ ttf-proggyclean-nerd
 ttf-roboto-mono
 ttf-roboto-mono-nerd
 ttf-sarasa-gothic
-ttf-sazanami
 ttf-scheherazade-new
 ttf-sharetech-mono-nerd
 ttf-sourcecodepro-nerd
@@ -241,7 +240,6 @@ ttf-ubuntu-font-family
 ttf-ubuntu-mono-nerd
 ttf-ubuntu-nerd
 ttf-victor-mono-nerd
-ueberzug
 unzip
 up
 vi

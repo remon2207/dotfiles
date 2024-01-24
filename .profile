@@ -1,6 +1,6 @@
 export PATH="${HOME}/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
 export QT_QPA_PLATFORMTHEME='qt5ct'
-export TERMINAL='wezterm'
+export TERMINAL='kitty'
 export PAGER='bat'
 export MANPAGER='sh -c "col --no-backspaces --spaces | bat --language="man" --plain"'
 export MANROFFOPT='-c'
