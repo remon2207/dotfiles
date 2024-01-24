@@ -1,7 +1,7 @@
 configuration {
   modes: "combi";
   combi-modes: "window,drun";
-  font: "NotoSans Nerd Font 10";
+  font: "sans-serif 10";
   display-window: "  : ";
   display-drun: "   : ";
 }
