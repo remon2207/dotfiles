@@ -21,6 +21,7 @@ pkg_install() {
     upd72020x-fw \
     virtualbox-ext-oracle \
     google-chrome \
+    authy \
     xcursor-breeze
 }
 
