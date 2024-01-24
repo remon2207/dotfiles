@@ -18,7 +18,6 @@ setup() {
     'commit.template'
   )
   local -r conf_symbolic=(
-    'alacritty'
     'bat'
     'btop'
     'dunst'
@@ -44,7 +43,6 @@ setup() {
     'rofi'
     'silicon'
     'starship.toml'
-    'wezterm'
     'zsh'
   )
   local -r entry_symbolic=(
