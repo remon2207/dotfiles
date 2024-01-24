@@ -2,8 +2,6 @@ configuration {
   modes: "combi";
   combi-modes: "window,drun";
   font: "sans-serif 10";
-  display-window: "  : ";
-  display-drun: "   : ";
 }
 
 @theme "solarized"
