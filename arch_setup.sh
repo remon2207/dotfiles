@@ -22,6 +22,7 @@ pkg_install() {
     virtualbox-ext-oracle \
     google-chrome \
     authy \
+    ttf-hackgen \
     xcursor-breeze
 }
 
