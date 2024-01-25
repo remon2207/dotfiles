@@ -37,7 +37,4 @@ smart_gaps on
 default_border pixel 2
 default_floating_border pixel 2
 
-focus_wrapping no
-focus_follows_mouse no
-
 include ./conf.d/*.conf
