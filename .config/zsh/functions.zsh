@@ -102,40 +102,6 @@ pkgup() {
   return
 }
 
-proxy() {
-  local -r flag="${1}"
-
-  usage() {
-    bat --plain << EOF
-USAGE:
-  proxy <OPTIONS>
-OPTIONS:
-  --on          Enable Proxy
-  --off         Disable Proxy
-  --help        See Help
-EOF
-
-    return
-  }
-
-  case "${flag}" in
-  '--on')
-    sd '^(.*)# (export .*_proxy)' '$1$2' "${DOTFILES}/.profile"
-    ;;
-  '--off')
-    sd '^(.*)(export .*_proxy)' '$1# $2' "${DOTFILES}/.profile"
-    ;;
-  '--help')
-    usage && return 0
-    ;;
-  *)
-    usage && return 1
-    ;;
-  esac
-
-  return
-}
-
 keyrepeat() {
   [[ ${#} -eq 0 ]] && xset r rate 250 60 && return
 
