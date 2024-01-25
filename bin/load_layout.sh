@@ -9,8 +9,7 @@ if [[ "${1}" == 'dp2' ]]; then
   # 展開に必要なプログラムを起動する
   (discord &)
   (slack &)
-  ("${HOME}/bin/JQuake.sh" &)
-  (cd "${HOME}/src/KyoshinEewViewer" && ./KyoshinEewViewer &)
+  (JQuake.sh &)
 elif [[ "${1}" == 'dvi' ]]; then
   # ワークスペース3に移動し、レイアウトを展開する
   i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
@@ -25,8 +24,7 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
   # 展開に必要なプログラムを起動する
   (discord &)
   (slack &)
-  ("${HOME}/bin/JQuake.sh" &)
-  (cd "${HOME}/src/KyoshinEewViewer" && ./KyoshinEewViewer &)
+  (JQuake.sh &)
   (kitty --single-instance btop &)
   (kitty --single-instance nvtop &)
   (google-chrome-stable &)

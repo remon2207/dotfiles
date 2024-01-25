@@ -55,7 +55,7 @@ CompactInputMethodInformation=True
 # 第1入力メソッドの情報を表示する
 ShowFirstInputMethodInformation=True
 # デフォルトのページサイズ
-DefaultPageSize=10
+DefaultPageSize=5
 # XKB オプションより優先する
 OverrideXkbOption=False
 # カスタム XKB オプション
