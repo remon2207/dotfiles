@@ -4,6 +4,8 @@ set -eu
 
 scrot_base() {
   local -r current_datetime="$(date '+%Y-%m-%d_%H-%M-%S')"
+
+  [[ ! -d "${HOME}/Pictures" ]] && mkdir --parents "${HOME}/Pictures/screenshots"
   scrot "${@}" --quality=100 "${HOME}/Pictures/screenshots/${current_datetime}_screenshot.png"
 
   return
