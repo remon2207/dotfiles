@@ -10,7 +10,6 @@ discord
 docker
 docker-compose
 downgrade
-duf
 dunst
 fcitx5
 fcitx5-configtool
@@ -25,9 +24,7 @@ git
 git-delta
 github-cli
 gnome-keyring
-go
 google-chrome
-httpie
 i3-wm
 intel-ucode
 jre-openjdk
@@ -45,7 +42,6 @@ man-pages
 neofetch
 neovim
 nfs-utils
-nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -67,7 +63,6 @@ pipewire-alsa
 pipewire-pulse
 polkit
 polybar
-procs
 profile-sync-daemon
 qt5ct
 ranger
@@ -75,7 +70,6 @@ reflector
 ripgrep
 rofi
 scrot
-sd
 shellcheck
 shfmt
 silicon
@@ -83,15 +77,10 @@ slack-desktop
 starship
 stylua
 sudo
-tldr
 tree
 ttf-font-awesome
-ttf-hack
-ttf-hack-nerd
 ttf-hackgen
-ttf-liberation
-ttf-roboto
-ttf-roboto-mono-nerd
+ttf-noto-nerd
 unzip
 upd72020x-fw
 vi
