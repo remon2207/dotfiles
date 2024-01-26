@@ -12,24 +12,24 @@ paru_install() {
 }
 
 pkg_install() {
-  # paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
-  paru --sync --needed \
-    ghq-bin \
-    slack-desktop \
-    downgrade \
-    nvm \
-    upd72020x-fw \
-    virtualbox-ext-oracle \
-    google-chrome \
-    authy \
-    ttf-hackgen \
-    xcursor-breeze
+  paru --sync --needed - < "${HOME}/dotfiles/pkglist_aur.txt"
+  # paru --sync --needed \
+  #   ghq-bin \
+  #   slack-desktop \
+  #   downgrade \
+  #   nvm \
+  #   upd72020x-fw \
+  #   virtualbox-ext-oracle \
+  #   google-chrome \
+  #   authy \
+  #   ttf-hackgen \
+  #   xcursor-breeze
 }
 
 psd_settings() {
   google-chrome-stable
   psd
-  sd '^(BROWSERS=").*(")$' "\$1google-chrome\$2" "${HOME}/.config/psd/psd.conf"
+  sed --in-place --expression='s/^#\(BROWSERS=\).*$/\1(google-chrome)/' "${HOME}/.config/psd/psd.conf"
   systemctl --user enable --now psd.service
 }
 

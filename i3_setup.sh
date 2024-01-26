@@ -2,7 +2,8 @@
 
 set -eu
 
-readonly CURRENT_DIR && CURRENT_DIR=$(cd "$(dirname "${0}")" && pwd)
+CURRENT_DIR=$(cd "$(dirname "${0}")" && pwd)
+readonly CURRENT_DIR
 
 setup() {
   local -r home_symbolic=(
@@ -25,7 +26,6 @@ setup() {
     'fontconfig'
     'gh'
     'gtk-3.0'
-    'httpie'
     'i3'
     'kitty'
     'Kvantum'
@@ -34,10 +34,8 @@ setup() {
     'neofetch'
     'nvim'
     'nvtop'
-    'pavucontrol.ini'
     'picom'
     'polybar'
-    'procs'
     'qt5ct'
     'ranger'
     'rofi'
@@ -45,28 +43,20 @@ setup() {
     'starship.toml'
     'zsh'
   )
-  local -r entry_symbolic=(
-    'jquake.desktop'
-    'mozc_config.desktop'
-    'mozc_dictionary.desktop'
-    'mozc_word_register.desktop'
-  )
 
-  mkdir --parents "${HOME}/.local/share/applications"
+  rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/"{i3,kitty}
   sudo mkdir /etc/gtk-2.0
 
   for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/${home}" "${HOME}"; done
   for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/.config/${conf}" "${HOME}/.config"; done
-  for entry in "${entry_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/.local/share/applications/${entry}" "${HOME}/.local/share/applications"; done
+  ln --symbolic --force --verbose "${CURRENT_DIR}/.local/share/applications" "${HOME}/.local/share"
 
   sudo ln --symbolic --force --verbose "${CURRENT_DIR}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
   sudo ln --symbolic --force --verbose "${CURRENT_DIR}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
 }
 
 services() {
-  cp --archive "${CURRENT_DIR}/.config/systemd/user/ssh-agent.service" "${HOME}/.config/systemd/user"
-  cp --archive "${CURRENT_DIR}/.config/systemd/user/"auto-backup.{service,timer} "${HOME}/.config/systemd/user"
-
+  cp --archive "${CURRENT_DIR}/.config/systemd/user/"* "${HOME}/.config/systemd/user"
   systemctl --user enable --now ssh-agent.service auto-backup.timer
 }
 
