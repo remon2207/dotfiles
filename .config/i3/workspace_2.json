@@ -20,19 +20,19 @@
                     "floating": "auto_off",
                     "geometry": {
                        "height": 1056,
-                       "width": 956,
+                       "width": 1916,
                        "x": 1922,
                        "y": 1082
                     },
                     "marks": [],
-                    "name": "Slack - rss - 自分用",
+                    "name": "Slack",
                     "percent": 0.5,
                     "swallows": [
                        {
                        "class": "^Slack$",
                        "instance": "^slack$",
                        "machine": "^archlinux$",
-                       "title": "^Slack\\ \\-\\ rss\\ \\-\\ 自分用$",
+                       "title": "^Slack.*$",
                        "window_role": "^browser\\-window$"
                        }
                     ],
@@ -51,34 +51,10 @@
                             "current_border_width": 2,
                             "floating": "auto_off",
                             "geometry": {
-                               "height": 1056,
-                               "width": 1916,
-                               "x": 1922,
-                               "y": 1082
-                            },
-                            "marks": [],
-                            "name": "#なんでも雑談1 | ボカロなう - Discord",
-                            "percent": 0.5,
-                            "swallows": [
-                               {
-                               "class": "^discord$",
-                               "instance": "^discord$",
-                               "machine": "^archlinux$",
-                               "title": "^\\#なんでも雑談1\\ \\|\\ ボカロなう\\ \\-\\ Discord$",
-                               "window_role": "^browser\\-window$"
-                               }
-                            ],
-                            "type": "con"
-                        },
-                        {
-                            "border": "pixel",
-                            "current_border_width": 2,
-                            "floating": "auto_off",
-                            "geometry": {
-                               "height": 522,
+                               "height": 346,
                                "width": 950,
                                "x": 2880,
-                               "y": 1588
+                               "y": 1412
                             },
                             "marks": [],
                             "name": "JQuake",
@@ -89,6 +65,30 @@
                                "instance": "^net\\-jquake\\-app\\-Main$",
                                "machine": "^archlinux$",
                                "title": "^JQuake$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "pixel",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 1026,
+                               "width": 940,
+                               "x": 2569,
+                               "y": 1097
+                            },
+                            "marks": [],
+                            "name": "Discord",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               "class": "^discord$",
+                               "instance": "^discord$",
+                               "machine": "^archlinux$",
+                               "title": "^.*Discord$",
+                               "window_role": "^browser\\-window$"
                                }
                             ],
                             "type": "con"
