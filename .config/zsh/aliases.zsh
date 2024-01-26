@@ -98,28 +98,25 @@ alias v='nvim'
 alias v.='nvim .'
 alias procstree='procs --tree'
 alias rg='rg --threads="$(("$(nproc)"+1))"'
-# alias versioncheck="bat --plain /etc/os-release | awk --field-separator='\"' 'END {print}'; uname --kernel-release | sd '^([0-9].*)-.*$' 'KERNEL_VERSION=\"\$1\"'"
 alias sbat='sudo bat --theme="Solarized (dark)"'
 alias delta='delta --pager="less"'
 alias so='source'
 alias mirrorsync='sudo reflector --country="Japan" --age=24 --protocol="https" --sort="rate" --save="/etc/pacman.d/mirrorlist" && sudo pacman --sync --refresh --refresh'
-# alias nobuildtemp='sudo sd "^#(BUILDDIR)" "\$1" /etc/makepkg.conf'
-# alias buildtemp='sudo sd "^(BUILDDIR)" "#\$1" /etc/makepkg.conf'
 alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.txt && pacman --query --quiet --explicit > ${DOTFILES}/pkglist_aur.txt"
 alias unrequired='pacman --query --unrequired --deps --quiet'
 alias unrequiredclean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
 alias cup='checkupdates'
 
 if type lsd &> /dev/null; then
-  alias ls='lsd --ignore-glob="lost+found"'
-  alias ll='lsd --long --almost-all --classify --ignore-glob=".{cache,git}" --ignore-glob="lost+found"'
-  alias la='lsd --almost-all --classify --ignore-glob=".{cache,git}" --ignore-glob="lost+found"'
-  alias sl='lsd --ignore-glob="lost+found"'
+  alias ls='lsd'
+  alias ll='lsd --long --almost-all --classify'
+  alias la='lsd --almost-all --classify'
+  alias sl='lsd'
 else
-  alias ls='ls --color="auto" --ignore="lost+found"'
-  alias ll='ls -l --almost-all --classify --color="auto" --ignore=".{cache,git}" --ignore="lost+found"'
-  alias la='ls --almost-all --classify --color="auto" --ignore=".{cache,git}" --ignore="lost+found"'
-  alias sl='ls --color="auto" --ignore="lost+found"'
+  alias ls='ls --color="auto"'
+  alias ll='ls -l --almost-all --classify --color="auto"'
+  alias la='ls --almost-all --classify --color="auto"'
+  alias sl='ls --color="auto"'
 fi
 
 if [[ -n "${DISPLAY}" ]]; then

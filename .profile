@@ -16,7 +16,7 @@ export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd'
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
 export FZF_CTRL_T_COMMAND='fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--layout="default" --preview="bat --style=header-filename --color=always {}"'

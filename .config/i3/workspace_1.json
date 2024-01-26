@@ -1,5 +1,4 @@
 {
-  // tabbed split container with 1 children
   "border": "pixel",
   "floating": "auto_off",
   "layout": "tabbed",
@@ -25,7 +24,6 @@
           "class": "^Google\\-chrome$",
           "instance": "^google\\-chrome$",
           "machine": "^archlinux$",
-          "title": "^.*Google\\ Chrome$",
           "window_role": "^browser$"
         }
       ],
@@ -33,4 +31,3 @@
     }
   ]
 }
-// vim: set ft=jsonc :

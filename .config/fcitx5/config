@@ -14,6 +14,8 @@ TogglePreedit=
 
 [Hotkey/TriggerKeys]
 0=Control+space
+1=Zenkaku_Hankaku
+2=Hangul
 
 [Hotkey/EnumerateGroupForwardKeys]
 0=Super+space

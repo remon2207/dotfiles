@@ -1,3 +1,10 @@
+savelayout() {
+  i3-save-tree --workspace "${1}" > "${HOME}/.config/i3/workspace_${1}.json"
+  sed --in-place --expression='s|^\(\s*\)// "|\1"|g; /^\s*\/\//d' "${HOME}/.config/i3/workspace_${1}.json"
+
+  return
+}
+
 mgmtrepo() {
   usage () {
     bat --plain << EOF
