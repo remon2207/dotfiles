@@ -45,7 +45,8 @@ setup() {
   )
 
   rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/"{i3,kitty}
-  sudo mkdir --parents /etc/gtk-2.0 "${HOME}/.config/systemd/user"
+  sudo mkdir /etc/gtk-2.0
+  mkdir --parents "${HOME}/.config/systemd/user"
 
   for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/${home}" "${HOME}"; done
   for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/.config/${conf}" "${HOME}/.config"; done
