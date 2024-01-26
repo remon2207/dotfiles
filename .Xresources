@@ -1,7 +1,6 @@
 Xcursor.theme: Breeze
 Xcursor.size: 16
 
-Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
