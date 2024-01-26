@@ -23,6 +23,7 @@ github-cli
 gnome-keyring
 i3-wm
 intel-ucode
+inter-font
 jre-openjdk
 kitty
 kvantum
@@ -72,6 +73,7 @@ stylua
 sudo
 tree
 ttf-font-awesome
+ttf-hack
 ttf-noto-nerd
 unzip
 vi

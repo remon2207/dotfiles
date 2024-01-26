@@ -27,6 +27,7 @@ gnome-keyring
 google-chrome
 i3-wm
 intel-ucode
+inter-font
 jre-openjdk
 kitty
 kvantum
@@ -79,6 +80,7 @@ stylua
 sudo
 tree
 ttf-font-awesome
+ttf-hack
 ttf-hackgen
 ttf-noto-nerd
 unzip
