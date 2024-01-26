@@ -20,7 +20,7 @@ alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
 alias vranger="cd ${XDG_CONFIG_HOME}/ranger && nvim ."
 alias vdunst="cd ${XDG_CONFIG_HOME}/dunst/dunstrc.d && nvim ."
 alias vnorc='nvim -u NORC'
-alias grep='grep --ignore-case --no-messages --color="auto" --recursive --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
+alias grep='grep --ignore-case --no-messages --color="auto" --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'
 alias drun='docker compose run --rm'
 alias ddown='docker compose down'
