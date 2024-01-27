@@ -84,6 +84,8 @@ ttf-font-awesome
 ttf-hack
 ttf-hackgen
 ttf-noto-nerd
+ttf-roboto
+ttf-roboto-mono-nerd
 unzip
 upd72020x-fw
 vi

@@ -76,6 +76,8 @@ tree
 ttf-font-awesome
 ttf-hack
 ttf-noto-nerd
+ttf-roboto
+ttf-roboto-mono-nerd
 unzip
 vi
 virtualbox
