@@ -68,6 +68,7 @@ scrot
 shellcheck
 shfmt
 silicon
+spotify-launcher
 starship
 stylua
 sudo

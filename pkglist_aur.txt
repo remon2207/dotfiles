@@ -75,6 +75,7 @@ shellcheck
 shfmt
 silicon
 slack-desktop
+spotify-launcher
 starship
 stylua
 sudo
