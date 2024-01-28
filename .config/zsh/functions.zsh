@@ -203,6 +203,13 @@ EOF
   return
 }
 
+silicondate() {
+  [[ ! -d "${HOME}/Pictures/codes" ]] && mkdir --parents "${HOME}/Pictures/codes"
+  silicon --shadow-blur-radius=30 --output="${HOME}/Pictures/codes/${1}_$(date '+%Y-%m-%d_%H-%M-%S').png" "${1}"
+
+  return
+}
+
 fdalltype() { local type; for type in file directory symlink executable empty socket pipe; do fd "${@}" --type="${type}"; done; return; }
 lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
 stee() { sudo tee "${1}" > /dev/null; return; }
@@ -212,7 +219,6 @@ raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag=
 mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
 nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
 sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
-silicondate() { silicon --output="${HOME}/Pictures/screenshots/$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png" "${@}"; return; }
 
 # ターミナル起動時に実行
 chpwd() { la; return; }
