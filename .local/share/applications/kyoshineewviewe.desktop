@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=kevi
+Path=/home/remon/bin
+Exec=KyoshinEewViewer.sh
+Terminal=false
