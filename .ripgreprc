@@ -4,5 +4,3 @@
 --no-line-number
 --no-messages
 --glob=!{.bash_history,.zsh_history,.*cache*,*cache*,.z,.zcompdump,.git,node_modules,.local}
-
-# vim: set ft=conf :

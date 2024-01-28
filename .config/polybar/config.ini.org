@@ -173,4 +173,4 @@ label-foreground = ${colors.primary}
 screenchange-reload = true
 pseudo-transparency = true
 
-; vim: set ft=dosini :
+; vim:ft=dosini
