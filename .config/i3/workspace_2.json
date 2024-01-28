@@ -57,14 +57,14 @@
                                "y": 1612
                             },
                             "marks": [],
-                            "name": "フレンド - Discord",
+                            "name": "#なんでも雑談1 | ボカロなう - Discord",
                             "percent": 0.5,
                             "swallows": [
                                {
                                "class": "^discord$",
                                "instance": "^discord$",
                                "machine": "^archlinux$",
-                               "title": "^フレンド\\ \\-\\ Discord$",
+                               "title": "^\\#なんでも雑談1\\ \\|\\ ボカロなう\\ \\-\\ Discord$",
                                "window_role": "^browser\\-window$"
                                }
                             ],
