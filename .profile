@@ -1,6 +1,6 @@
 export PATH="${HOME}/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
 export QT_QPA_PLATFORMTHEME='qt5ct'
-export TERMINAL='kitty'
+export TERMINAL='wezterm'
 export PAGER='bat'
 export MANPAGER='sh -c "col --no-backspaces --spaces | bat --language="man" --plain"'
 export MANROFFOPT='-c'
@@ -17,6 +17,8 @@ export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export __GL_SYNC_DISPLAY_DEVICE='DP-4'
+export CLUTTER_DEFAULT_FPS=165
 export FZF_CTRL_T_COMMAND='fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--layout="default" --preview="bat --style=header-filename --color=always {}"'

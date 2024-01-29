@@ -25,14 +25,14 @@
                        "y": 1097
                     },
                     "marks": [],
-                    "name": "Slack - rss - 自分用",
+                    "name": "Slack",
                     "percent": 0.5,
                     "swallows": [
                        {
                        "class": "^Slack$",
                        "instance": "^slack$",
                        "machine": "^archlinux$",
-                       "title": "^Slack\\ \\-\\ rss\\ \\-\\ 自分用$",
+                       "title": "^Slack.*$",
                        "window_role": "^browser\\-window$"
                        }
                     ],
