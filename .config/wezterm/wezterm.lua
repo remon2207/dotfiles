@@ -6,12 +6,11 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
--- config.font = wezterm.font_with_fallback({
---   'Hack Nerd Font',
---   'Noto Sans CJK JP',
--- })
-config.font = wezterm.font('HackGen Console NF')
-config.font_size = 11.0
+config.font = wezterm.font_with_fallback({
+  'Hack Nerd Font',
+  'Noto Sans Mono CJK JP',
+})
+config.font_size = 10.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
