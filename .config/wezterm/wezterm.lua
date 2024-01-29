@@ -8,7 +8,7 @@ end
 
 config.font = wezterm.font_with_fallback({
   'Hack Nerd Font',
-  'Noto Sans Mono CJK JP',
+  'HackGen Console',
 })
 config.font_size = 10.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
