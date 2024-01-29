@@ -4,6 +4,7 @@ configuration {
   font: "sans-serif 10";
   display-window: " ";
   display-drun: " ";
+  display-combi: " ";
 }
 
 @theme "solarized"
