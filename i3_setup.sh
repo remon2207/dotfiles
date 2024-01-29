@@ -2,10 +2,9 @@
 
 set -eu
 
-CURRENT_DIR=$(cd "$(dirname "${0}")" && pwd)
-readonly CURRENT_DIR
-
 setup() {
+  local -r script_dir="$(cd "$(dirname "${0}")" && pwd)"
+
   local -r home_symbolic=(
     '.curlrc'
     '.gitconfig'
@@ -48,22 +47,27 @@ setup() {
   sudo mkdir /etc/gtk-2.0
   mkdir --parents "${HOME}/.config/systemd/user"
 
-  for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/${home}" "${HOME}"; done
-  for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${CURRENT_DIR}/.config/${conf}" "${HOME}/.config"; done
-  ln --symbolic --force --verbose "${CURRENT_DIR}/.local/share/applications" "${HOME}/.local/share"
+  for home in "${home_symbolic[@]}"; do ln --symbolic --force --verbose "${script_dir}/${home}" "${HOME}"; done
+  for conf in "${conf_symbolic[@]}"; do ln --symbolic --force --verbose "${script_dir}/.config/${conf}" "${HOME}/.config"; done
+  ln --symbolic --force --verbose "${script_dir}/.local/share/applications" "${HOME}/.local/share"
 
-  sudo ln --symbolic --force --verbose "${CURRENT_DIR}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
-  sudo ln --symbolic --force --verbose "${CURRENT_DIR}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
+  sudo ln --symbolic --force --verbose "${script_dir}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
+  sudo ln --symbolic --force --verbose "${script_dir}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
+
+  cp --archive "${script_dir}/.config/systemd/user/"* "${HOME}/.config/systemd/user"
+  systemctl --user enable --now ssh-agent.service auto-backup.timer
 }
 
-services() {
-  cp --archive "${CURRENT_DIR}/.config/systemd/user/"* "${HOME}/.config/systemd/user"
-  systemctl --user enable --now ssh-agent.service auto-backup.timer
+psd_setup() {
+  google-chrome-stable
+  psd
+  sed --in-place --expression='s/^#\(BROWSERS=\).*$/\1(google-chrome)/' "${HOME}/.config/psd/psd.conf"
+  systemctl --user enable --now psd.service
 }
 
 main() {
   setup
-  services
+  psd_setup
 
   chsh --shell "$(which zsh)"
 }

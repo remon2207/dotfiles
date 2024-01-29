@@ -1,12 +1,12 @@
 savelayout() {
-  i3-save-tree --workspace "${1}" > "${HOME}/.config/i3/workspace_${1}.json"
-  sed --in-place --expression='s|^\(\s*\)// "|\1"|g; /^\s*\/\//d' "${HOME}/.config/i3/workspace_${1}.json"
+  i3-save-tree --workspace "${1}" > "${XDG_CONFIG_HOME}/i3/workspace_${1}.json"
+  sed --in-place --expression='s|^\(\s*\)// "|\1"|g; /^\s*\/\//d' "${XDG_CONFIG_HOME}/i3/workspace_${1}.json"
 
   return
 }
 
 mgmtrepo() {
-  usage () {
+  usage() {
     bat --plain << EOF
 USAGE:
   mgmtrepo <OPTIONS>
@@ -29,7 +29,10 @@ EOF
   fi
 
   local selected
-  selected="$(gh repo list | awk '{print $1}' | sort | fzf)"
+  selected="$(gh repo list \
+    | awk '{print $1}' \
+    | sort \
+    | fzf)"
 
   if [[ ${?} -eq 0 ]]; then
     case "${1}" in
@@ -70,25 +73,25 @@ terminalspeed() {
 
 bootusb() {
   case ${#} in
-  0 | 1)
-    echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
-    return 1
-    ;;
-  2)
-    local yn
-
-    echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
-    read 'yn?実行しますか？(y/n): '
-    echo
-    case "${yn}" in
-    ['yY'])
-      sudo dd bs='4M' if="${1}" of="${2}" conv='fsync' oflag='direct' status='progress'
-      ;;
-    ['nN'])
+    0 | 1)
+      echo 'sudo dd bs=4M if=<1つ目の引数> of=<2つ目の引数> conv=fsync oflag=direct status=progress'
       return 1
       ;;
-    esac
-    ;;
+    2)
+      local yn
+
+      echo "sudo dd bs=4M if=${1} of=${2} conv=fsync oflag=direct status=progress"
+      read 'yn?実行しますか？(y/n): '
+      echo
+      case "${yn}" in
+        ['yY'])
+          sudo dd bs='4M' if="${1}" of="${2}" conv='fsync' oflag='direct' status='progress'
+          ;;
+        ['nN'])
+          return 1
+          ;;
+      esac
+      ;;
   esac
 
   return
@@ -193,7 +196,7 @@ EOF
   local selected="$(ghq list --full-path \
     | rg --invert-match '^.*/dotfiles$' \
     | sort \
-    | fzf --preview-window='50%' --preview='/usr/bin/tree {}')"
+    | fzf --preview-window='50%' --preview='tree {}')"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
   elif [[ -n "${selected}" ]] && [[ "${flag}" == '-r' ]]; then
@@ -210,54 +213,65 @@ siliconnow() {
   return
 }
 
-fdalltype() { local type; for type in file directory symlink executable empty socket pipe; do fd "${@}" --type="${type}"; done; return; }
-lzg() { cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null; return; }
-stee() { sudo tee "${1}" > /dev/null; return; }
-gcommitnow() { git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"; return; }
-gdf() { local selected; selected="$(git status --short | fzf --multi | awk '{print $2}')"; [[ -n "${selected}" ]] && tr '\n' ' ' <<< "${selected}" | xargs git diff; return; }
-raspibackup() { sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' | pv | pigz > "${1}"; return; }
-mkcd() { mkdir --parents "${1}" && cd "${_}"; return; }
-nfind() { find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \); return; }
-sfind() { sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \); return; }
+fdalltype() {
+  local type
+  for type in file directory symlink executable empty socket pipe; do fd "${@}" --type="${type}"; done
 
-# ターミナル起動時に実行
-chpwd() { la; return; }
-() {
-  # プラグインマネージャーの自動インストール
-  # =========================================
-  if [[ ! -f "${HOME}/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir --parents "${HOME}/.local/share/zinit" && command chmod g-rwX "${HOME}/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "${HOME}/.local/share/zinit/zinit.git" && \
-      print -P "%F{33} %F{34}Installation successful.%f%b" || \
-      print -P "%F{160} The clone has failed.%f%b"
-  fi
+  return
+}
 
-  . "${HOME}/.local/share/zinit/zinit.git/zinit.zsh"
-  autoload -Uz _zinit
-  (( ${+_comps} )) && _comps[zinit]=_zinit
-  # =========================================
+lzg() {
+  cd "$(readlink --canonicalize .)" &> /dev/null && lazygit "${@}" && cd - &> /dev/null
 
-  # ターミナルがAlacrittyなら自動でtmuxを起動
-  # =========================================
-  # if [[ "${TERM}" == 'alacritty' ]] || [[ "${TERM}" == 'xterm-256color' ]]; then
-  #   if [[ "${TERM_PROG}" == 'alacritty' ]]; then
-  #     if [[ -z "${TMUX}" ]]; then
-  #       ID="$(tmux ls 2> /dev/null \
-  #         | rg --invert-match --max-count=1 'attached' \
-  #         | awk --field-separator=':' '{print $1}')"
-  #       if [[ -z ${ID} ]]; then
-  #         tmux new-session
-  #       else
-  #         tmux attach-session -t ${ID}
-  #       fi
-  #     fi
-  #     exit
-  #   fi
-  # fi
-  # =========================================
+  return
+}
 
-  la
+stee() {
+  sudo tee "${1}" > /dev/null
+
+  return
+}
+
+gcommitnow() {
+  git commit --message="$(date '+%Y/%m/%d %H:%M:%S')"
+
+  return
+}
+
+gdf() {
+  local selected
+
+  selected="$(git status --short \
+    | fzf --multi \
+    | awk '{print $2}')"
+
+  [[ -n "${selected}" ]] && tr '\n' ' ' <<< "${selected}" | xargs git diff
+
+  return
+}
+
+raspibackup() {
+  sudo dd if='/dev/sde' conv='sync,noerror' iflag='nocache' oflag='nocache,dsync' \
+    | pv \
+    | pigz > "${1}"
+
+  return
+}
+
+mkcd() {
+  mkdir --parents "${1}" && cd "${_}"
+
+  return
+}
+
+nfind() {
+  find "${@}" -not \( -path '*/.cache/*' -o -path '*/.git/*' \)
+
+  return
+}
+
+sfind() {
+  sudo find "${@}" -not \( -path "*/.cache/*" -o -path '*/.git/*' -o -path '/mnt/*' -o -path '*/ccache/*' \)
 
   return
 }

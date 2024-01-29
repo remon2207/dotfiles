@@ -9,7 +9,7 @@ compinit
 
 () {
   local file
-  local files=('options' 'aliases' 'functions' 'plugins' 'styles')
+  local files=('options' 'aliases' 'functions' 'autorun' 'plugins' 'styles')
   for file in "${files[@]}"; do source "${HOME}/.config/zsh/${file}.zsh"; done
 }
 
