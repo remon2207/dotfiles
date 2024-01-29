@@ -203,9 +203,9 @@ EOF
   return
 }
 
-silicondate() {
+siliconnow() {
   [[ ! -d "${HOME}/Pictures/codes" ]] && mkdir --parents "${HOME}/Pictures/codes"
-  silicon --shadow-blur-radius=30 --output="${HOME}/Pictures/codes/${1}_$(date '+%Y-%m-%d_%H-%M-%S').png" "${1}"
+  silicon --output="${HOME}/Pictures/codes/${1}_$(date '+%Y-%m-%d_%H-%M-%S').png" "${1}"
 
   return
 }

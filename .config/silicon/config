@@ -1,2 +1,3 @@
 --theme='Solarized (dark)'
---font='monospace'
+--font='HackGen'
+--shadow-blur-radius=30
