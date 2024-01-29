@@ -13,7 +13,7 @@ main() {
   rm --recursive --force "${pkgname}"
 
   paru --sync --needed --removemake - < "${script_dir}/pkglist_aur.txt"
-  # paru --sync --needed \
+  # paru --sync --needed --removemake \
   #   ghq-bin \
   #   slack-desktop \
   #   downgrade \
