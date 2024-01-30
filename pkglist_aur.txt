@@ -26,6 +26,7 @@ github-cli
 gnome-keyring
 google-chrome
 i3-wm
+imagemagick
 intel-ucode
 inter-font
 jre-openjdk
@@ -80,12 +81,13 @@ starship
 stylua
 sudo
 tree
-ttf-font-awesome
 ttf-hack
+ttf-hack-nerd
 ttf-hackgen
 ttf-noto-nerd
 ttf-roboto
 ttf-roboto-mono-nerd
+ueberzug
 unzip
 upd72020x-fw
 vi
@@ -94,6 +96,7 @@ virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
 w3m
+wezterm
 wireplumber
 xautolock
 xcursor-breeze
