@@ -26,7 +26,6 @@ setup() {
     'gh'
     'gtk-3.0'
     'i3'
-    'kitty'
     'Kvantum'
     'lazygit'
     'mimeapps.list'
@@ -40,10 +39,11 @@ setup() {
     'rofi'
     'silicon'
     'starship.toml'
+    'wezterm'
     'zsh'
   )
 
-  rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/"{i3,kitty}
+  rm --recursive --force "${HOME}/.xinitrc" "${HOME}/.config/i3"
   sudo mkdir /etc/gtk-2.0
   mkdir --parents "${HOME}/.config/systemd/user"
 
