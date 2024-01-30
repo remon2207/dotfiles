@@ -12,8 +12,10 @@ if [[ "${1}" == 'dp2' ]]; then
 elif [[ "${1}" == 'dvi' ]]; then
   i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
 
-  (kitty --single-instance nvtop &)
-  (kitty --single-instance btop &)
+  # (kitty --single-instance nvtop &)
+  # (kitty --single-instance btop &)
+  (wezterm --config=disable_default_key_bindings=true start nvtop &)
+  (wezterm --config=disable_default_key_bindings=true start btop &)
 elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; then
   for num in 3 2 1; do i3-msg "workspace --no-auto-back-and-forth ${num}; append_layout ${XDG_CONFIG_HOME}/i3/workspace_${num}.json"; done
 
@@ -21,7 +23,10 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
   (slack &)
   (KyoshinEewViewer.sh &)
   (JQuake.sh &)
-  (kitty --single-instance nvtop &)
-  (kitty --single-instance btop &)
+  # (kitty --single-instance nvtop &)
+  # (kitty --single-instance btop &)
+  (wezterm --config=disable_default_key_bindings=true start nvtop &)
+  (wezterm --config=disable_default_key_bindings=true start btop &)
   (google-chrome-stable &)
+  (sleep 1 && for display in dp dp2 dvi hdmi; do nohup polybar "${display}" &> /dev/null & done &)
 fi

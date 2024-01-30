@@ -19,19 +19,18 @@
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 1056,
-                       "width": 1916,
+                       "height": 384,
+                       "width": 640,
                        "x": 0,
                        "y": 0
                     },
                     "marks": [],
                     "name": "nvtop",
-                    "percent": 0.25,
+                    "percent": 0.3,
                     "swallows": [
                        {
-                       "class": "^kitty$",
-                       "instance": "^kitty$",
-                       "machine": "^archlinux$",
+                       "class": "^org\\.wezfurlong\\.wezterm$",
+                       "instance": "^org\\.wezfurlong\\.wezterm$",
                        "title": "^nvtop$"
                        }
                     ],
@@ -42,19 +41,18 @@
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 1056,
-                       "width": 1916,
+                       "height": 384,
+                       "width": 640,
                        "x": 0,
                        "y": 0
                     },
                     "marks": [],
                     "name": "btop",
-                    "percent": 0.75,
+                    "percent": 0.7,
                     "swallows": [
                        {
-                       "class": "^kitty$",
-                       "instance": "^kitty$",
-                       "machine": "^archlinux$",
+                       "class": "^org\\.wezfurlong\\.wezterm$",
+                       "instance": "^org\\.wezfurlong\\.wezterm$",
                        "title": "^btop$"
                        }
                     ],
