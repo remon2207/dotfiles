@@ -16,6 +16,7 @@ fcitx5-mozc
 fcitx5-qt
 fd
 feh
+fuse2
 fzf
 git
 git-delta
