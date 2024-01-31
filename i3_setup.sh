@@ -55,7 +55,9 @@ setup() {
   sudo ln --symbolic --force --verbose "${script_dir}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
 
   cp --archive "${script_dir}/.config/systemd/user/"* "${HOME}/.config/systemd/user"
+  cp --archive "${script_dir}/etc/systemd/system/resume@.service" /etc/systemd/system
   systemctl --user enable --now ssh-agent.service auto-backup.timer
+  sudo systemctl enable --now "resume@${USER}.service"
 }
 
 psd_setup() {
