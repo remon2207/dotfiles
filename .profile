@@ -16,7 +16,7 @@ export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
-export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 export __GL_SYNC_TO_VBLANK=0
 export __GL_GSYNC_ALLOWED=1
 export __GL_SYNC_DISPLAY_DEVICE='DP-4'
