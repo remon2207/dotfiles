@@ -15,6 +15,7 @@ config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
 config.front_end = 'WebGpu'
+config.freetype_load_flags = 'NO_BITMAP|NO_AUTOHINT'
 config.use_fancy_tab_bar = false
 config.animation_fps = 165
 config.max_fps = 165

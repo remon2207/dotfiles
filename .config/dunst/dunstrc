@@ -17,4 +17,8 @@
   frame_color = "#ff0000"
   timeout = 0
 
+[youtube]
+  body = *www.youtube.com*
+  override_dbus_timeout = 10
+
 # vim: set ft=cfg :
