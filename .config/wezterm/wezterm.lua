@@ -19,6 +19,7 @@ config.freetype_load_target = 'HorizontalLcd'
 config.freetype_render_target = 'HorizontalLcd'
 -- config.front_end = 'OpenGL'
 -- config.front_end = 'WebGpu'
+config.mux_output_parser_coalesce_delay_ms = 0
 config.use_fancy_tab_bar = false
 config.animation_fps = 165
 config.max_fps = 165
