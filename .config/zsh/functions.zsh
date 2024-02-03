@@ -212,7 +212,7 @@ EOF
   local selected="$(ghq list --full-path \
     | rg --invert-match '^.*/dotfiles$' \
     | sort \
-    | fzf --preview-window='50%' --preview='tree {}')"
+    | fzf --preview-window='50%' --preview='lsd --tree {}')"
   if [[ -n "${selected}" ]] && [[ -z "${flag}" ]]; then
     cd "${selected}"
   elif [[ -n "${selected}" ]] && [[ "${flag}" == '-r' ]]; then
