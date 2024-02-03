@@ -33,14 +33,6 @@ export FZF_DEFAULT_OPTS="\
 --color='fg:#839496,header:#268bd2,info:#b58900,pointer:#2aa198' \
 --color='marker:#2aa198,fg+:#eee8d5,prompt:#b58900,hl+:#268bd2'"
 
-if [[ "$(rg '^DNS' /etc/systemd/resolved.conf.d/dns_servers.conf)" == 'DNS=192.168.1.202' ]]; then
-  export http_proxy='http://proxy.home:8080'
-  export https_proxy="${http_proxy}"
-  export ftp_proxy="${http_proxy}"
-  export rsync_proxy="${http_proxy}"
-  export no_proxy='localhost,127.0.0.1,::1'
-fi
-
 if [[ -n "${DISPLAY}" ]]; then
   export EDITOR='nvim'
   export VISUAL='nvim'

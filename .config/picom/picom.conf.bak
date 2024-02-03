@@ -1,0 +1,51 @@
+#################################
+#             Shadows           #
+#################################
+
+shadow = true;
+shadow-radius = 7;
+shadow-offset-x = -7;
+shadow-offset-y = -7;
+shadow-exclude = [
+  "name = 'Notification'",
+  "class_g = 'Conky'",
+  "class_g ?= 'Notify-osd'",
+  "class_g = 'Cairo-clock'",
+  "_GTK_FRAME_EXTENTS@:c",
+  "class_g = 'Dunst'",
+  "class_g = 'Polybar'",
+  "class_g = 'VirtualBox' && argb",
+  "class_g = 'firefox' && argb",
+];
+
+#################################
+#           Fading              #
+#################################
+
+fading = false;
+
+#################################
+#   Transparency / Opacity      #
+#################################
+
+opacity-rule = [
+  "90:class_g = 'Alacritty'",
+  "90:class_g = 'kitty'",
+  "90:class_g = 'org.wezfurlong.wezterm'",
+];
+
+#################################
+#       General Settings        #
+#################################
+
+backend = "glx";
+vsync = false;
+xrender-sync-fence = true;
+
+log-level = "warn";
+
+wintypes:
+{
+  menu = { shadow = false; };
+  dropdown_menu = { shadow = false; };
+}

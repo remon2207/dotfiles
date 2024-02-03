@@ -21,6 +21,7 @@ feh
 fuse2
 fzf
 ghq-bin
+gimp
 git
 git-delta
 github-cli
@@ -30,11 +31,14 @@ i3-wm
 imagemagick
 intel-ucode
 inter-font
+jq
 jre-openjdk
 kitty
 kvantum
 lazygit
 lbzip2
+libreoffice-fresh
+libreoffice-fresh-ja
 libva-vdpau-driver
 linux-firmware
 linux-zen
@@ -81,7 +85,6 @@ spotify-launcher
 starship
 stylua
 sudo
-tree
 ttf-hack
 ttf-hack-nerd
 ttf-hackgen

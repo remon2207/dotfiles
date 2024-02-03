@@ -14,18 +14,17 @@ config.font_size = 10.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.audible_bell = 'Disabled'
 config.scrollback_lines = 99999999
-config.freetype_load_flags = 'NO_BITMAP|NO_AUTOHINT'
-config.freetype_load_target = 'HorizontalLcd'
-config.freetype_render_target = 'HorizontalLcd'
+-- config.freetype_load_flags = 'NO_BITMAP|NO_AUTOHINT'
+-- config.freetype_load_target = 'HorizontalLcd'
+-- config.freetype_render_target = 'HorizontalLcd'
 -- config.front_end = 'OpenGL'
--- config.front_end = 'WebGpu'
+config.front_end = 'WebGpu'
 config.mux_output_parser_coalesce_delay_ms = 0
 config.use_fancy_tab_bar = false
 config.animation_fps = 165
 config.max_fps = 165
 config.hide_tab_bar_if_only_one_tab = true
 config.window_close_confirmation = 'NeverPrompt'
-config.window_background_opacity = 1.0
 config.window_padding = {
   left = 0,
   right = 0,
@@ -41,10 +40,6 @@ config.colors = {
     active_tab = {
       bg_color = '#073642',
       fg_color = '#93a1a1',
-      -- intensity = 'Normal',
-      -- underline = 'None',
-      -- italic = false,
-      -- strikethrough = false,
     },
     inactive_tab = {
       bg_color = '#002b36',
@@ -53,7 +48,6 @@ config.colors = {
     inactive_tab_hover = {
       bg_color = '#586e75',
       fg_color = '#eee8d5',
-      -- italic = false,
     },
     new_tab = {
       bg_color = '#073642',
@@ -62,7 +56,6 @@ config.colors = {
     new_tab_hover = {
       bg_color = '#586e75',
       fg_color = '#eee8d5',
-      -- italic = false,
     },
   },
 }

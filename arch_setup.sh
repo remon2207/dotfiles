@@ -12,18 +12,18 @@ main() {
   cd "${HOME}"
   rm --recursive --force "${pkgname}"
 
-  paru --sync --needed --removemake - < "${script_dir}/pkglist_aur.txt"
-  # paru --sync --needed --removemake \
-  #   ghq-bin \
-  #   slack-desktop \
-  #   downgrade \
-  #   nvm \
-  #   upd72020x-fw \
-  #   virtualbox-ext-oracle \
-  #   google-chrome \
-  #   authy \
-  #   ttf-hackgen \
-  #   xcursor-breeze
+  # paru --sync --needed --removemake - < "${script_dir}/pkglist_aur.txt"
+  paru --sync --needed --removemake \
+    ghq-bin \
+    slack-desktop \
+    downgrade \
+    nvm \
+    upd72020x-fw \
+    virtualbox-ext-oracle \
+    google-chrome \
+    authy \
+    ttf-hackgen \
+    xcursor-breeze
 }
 
 main "${@}"
