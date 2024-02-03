@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:monospace 10
+font pango:sans-serif 10
 floating_modifier $mod
 
 gaps inner 15

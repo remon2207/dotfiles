@@ -25,7 +25,7 @@ export FZF_CTRL_T_COMMAND='fd --hidden --type="file" --exclude=".{git,cache}"'
 export FZF_ALT_C_COMMAND='fd --hidden --type="directory" --exclude=".{git,cache}"'
 export FZF_CTRL_T_OPTS='--layout="default" --preview="bat --style=header-filename --color=always {}"'
 export FZF_CTRL_R_OPTS='--preview="echo {}" --preview-window="down:3"'
-export FZF_ALT_C_OPTS='--layout="default" --preview="tree {}"'
+export FZF_ALT_C_OPTS='--layout="default" --preview="lsd --tree {}"'
 export FZF_DEFAULT_OPTS="\
 --scroll-off=5 --preview-window='80%:wrap' --no-mouse --exit-0 --cycle \
 --bind='ctrl-/:change-preview-window(down|),ctrl-d:preview-half-page-down,ctrl-u:preview-half-page-up' \

@@ -1,3 +1,15 @@
+vsh() {
+  [[ ${#} -ge 2 ]] && echo '引数が多い' && return 1
+
+  nvim -- "${1}".sh
+
+  if [[ -e "$(pwd)/${1}.sh" ]]; then
+    chmod +x "${1}.sh"
+  else
+    echo 'ファイルがありません'
+  fi
+}
+
 psgrep() {
   ps aux | rg --invert-match 'rg' | rg "${@}"
 }
