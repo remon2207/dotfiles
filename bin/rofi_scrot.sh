@@ -2,11 +2,23 @@
 
 set -eu
 
+show_action() {
+  feh "${HOME}/Pictures/screenshots/${1}"
+}
+
 scrot_base() {
-  local -r current_datetime="$(date '+%Y-%m-%d_%H-%M-%S')"
+  local -r photo_file="$(date '+%Y-%m-%d_%H-%M-%S')_screenshot.png"
 
   [[ ! -d "${HOME}/Pictures/screenshots" ]] && mkdir --parents "${HOME}/Pictures/screenshots"
-  scrot "${@}" --quality=100 "${HOME}/Pictures/screenshots/${current_datetime}_screenshot.png"
+
+  scrot "${@}" --quality=100 --compression=9 "${HOME}/Pictures/screenshots/${photo_file}"
+  action="$(dunstify --action='default,show' 'スクリーンショットを保存' "${photo_file}")"
+
+  case "${action}" in
+    'default')
+      show_action "${photo_file}"
+      ;;
+  esac
 
   return
 }
