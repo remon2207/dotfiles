@@ -13,7 +13,6 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 10.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.audible_bell = 'Disabled'
-config.scrollback_lines = 99999999
 config.freetype_load_flags = 'NO_BITMAP|NO_AUTOHINT'
 config.freetype_load_target = 'HorizontalLcd'
 config.freetype_render_target = 'HorizontalLcd'
