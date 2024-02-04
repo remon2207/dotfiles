@@ -53,6 +53,7 @@ setup() {
 
   sudo ln --symbolic --force --verbose "${script_dir}/.gtkrc-2.0" /etc/gtk-2.0/gtkrc
   sudo ln --symbolic --force --verbose "${script_dir}/.config/gtk-3.0/settings.ini" /etc/gtk-3.0
+  sudo ln --symbolic --force --verbose "${script_dir}/etc/X11/xorg.conf.d/50-mouse-acceleration.conf" /etc/X11/xorg.conf.d
 
   cp --archive "${script_dir}/.config/systemd/user/"* "${HOME}/.config/systemd/user"
   sudo cp --archive "${script_dir}/etc/systemd/system/resume@.service" /etc/systemd/system
