@@ -108,13 +108,13 @@ alias cup='checkupdates'
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
-  alias ll='lsd --long --almost-all --classify'
-  alias la='lsd --almost-all --classify'
+  alias ll='lsd --long --almost-all'
+  alias la='lsd --almost-all'
   alias sl='lsd'
 else
   alias ls='ls --color="auto"'
-  alias ll='ls -l --almost-all --classify --color="auto"'
-  alias la='ls --almost-all --classify --color="auto"'
+  alias ll='ls -l --almost-all --color="auto"'
+  alias la='ls --almost-all --color="auto"'
   alias sl='ls --color="auto"'
 fi
 
