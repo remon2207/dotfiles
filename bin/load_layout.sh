@@ -7,13 +7,11 @@ if [[ "${1}" == 'dp2' ]]; then
 
   ([[ "$(ps aux | rg 'Discord' | rg --invert-match 'rg' | wc --lines)" -eq 0 ]] && discord --start-minimized &)
   (slack &)
-  (KyoshinEewViewer.sh &)
+  (kevi.sh &)
   (JQuake.sh &)
 elif [[ "${1}" == 'dvi' ]]; then
   i3-msg "workspace --no-auto-back-and-forth 3; append_layout ${XDG_CONFIG_HOME}/i3/workspace_3.json"
 
-  # (kitty --single-instance nvtop &)
-  # (kitty --single-instance btop &)
   (wezterm --config=disable_default_key_bindings=true start nvtop &)
   (wezterm --config=disable_default_key_bindings=true start btop &)
 elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; then
@@ -21,10 +19,8 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
 
   ([[ "$(ps aux | rg 'Discord' | rg --invert-match 'rg' | wc --lines)" -eq 0 ]] && discord --start-minimized &)
   (slack &)
-  (KyoshinEewViewer.sh &)
+  (kevi.sh &)
   (JQuake.sh &)
-  # (kitty --single-instance nvtop &)
-  # (kitty --single-instance btop &)
   (wezterm --config=disable_default_key_bindings=true start nvtop &)
   (wezterm --config=disable_default_key_bindings=true start btop &)
   (google-chrome-stable &)

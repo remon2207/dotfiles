@@ -2,5 +2,5 @@
 
 set -eu
 
-cd "${HOME}/src/KyoshinEewViewer"
+cd "${HOME}/src/kevi"
 ./KyoshinEewViewer
