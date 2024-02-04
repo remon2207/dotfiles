@@ -11,7 +11,7 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
-export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --ignore-case --window=-5 --tabs=4 --quit-if-one-screen'
+export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --window=-5 --tabs=4 --quit-if-one-screen'
 export PS_FORMAT='pid,user,%cpu,%mem,command'
 export PNPM_HOME="${HOME}/.local/share/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
