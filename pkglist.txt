@@ -7,7 +7,6 @@ curl
 discord
 docker
 docker-compose
-dosfstools
 dunst
 fcitx5
 fcitx5-configtool
@@ -71,7 +70,6 @@ silicon
 starship
 stylua
 sudo
-ttf-hack-nerd
 ttf-noto-nerd
 ueberzug
 unzip

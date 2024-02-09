@@ -6,17 +6,18 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.font = wezterm.font_with_fallback({
-  'Hack Nerd Font',
-  'Noto Sans Mono CJK JP',
-})
-config.font_size = 10.0
+config.font = wezterm.font('HackGen Console NF')
+-- config.font = wezterm.font_with_fallback({
+--   'HackGen Console NF',
+-- })
+config.font_size = 11.0
 config.color_scheme = 'Solarized (dark) (terminal.sexy)'
 config.audible_bell = 'Disabled'
 config.freetype_load_flags = 'NO_BITMAP|NO_AUTOHINT'
 config.freetype_load_target = 'HorizontalLcd'
 config.freetype_render_target = 'HorizontalLcd'
 config.front_end = 'OpenGL'
+-- config.front_end = 'WebGpu'
 config.mux_output_parser_coalesce_delay_ms = 0
 config.use_fancy_tab_bar = false
 config.animation_fps = 165
