@@ -35,7 +35,6 @@ o.completeopt = { 'menu', 'menuone', 'noselect' }
 o.helplang:append({ 'en' })
 -- カーソル行周囲に余裕を持たせる
 o.scrolloff = 5
-o.sidescrolloff = 5
 -- o.wildoptions:remove({ 'tagfile' })
 -- ポップアップウィンドウの背景の不透明度
 o.pumblend = 25
@@ -43,7 +42,7 @@ o.pumblend = 25
 o.signcolumn = 'yes'
 o.list = true
 o.listchars = 'tab:> ,space: '
-o.wrap = false
+o.wrap = true
 -- 終了時に確認ダイアログを表示
 o.confirm = true
 o.wildignore:append({ '*/node_modules/*' })

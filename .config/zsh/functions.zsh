@@ -10,10 +10,6 @@ vsh() {
   fi
 }
 
-psgrep() {
-  ps aux | rg --invert-match 'rg' | rg "${@}"
-}
-
 savelayout() {
   i3-save-tree --workspace "${1}" > "${XDG_CONFIG_HOME}/i3/workspace_${1}.json"
   sed --in-place --expression='s|^\(\s*\)// "|\1"|g; /^\s*\/\//d' "${XDG_CONFIG_HOME}/i3/workspace_${1}.json"

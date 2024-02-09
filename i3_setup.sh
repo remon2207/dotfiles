@@ -12,6 +12,7 @@ setup() {
     '.profile'
     '.ripgreprc'
     '.xinitrc'
+    '.Xmodmap'
     '.Xresources'
     '.zshrc'
     'bin'

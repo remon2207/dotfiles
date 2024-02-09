@@ -2,8 +2,10 @@ alias dc='cd'
 alias e='exit'
 alias :q='exit'
 alias c='clear'
-alias sudo='sudo '
 alias rm='rm --recursive --force'
+alias scp='sudo cp --interactive'
+alias srm='sudo rm --interactive'
+alias smv='sudo mv --interactive'
 alias mkdir='mkdir --parents'
 alias dot="cd ${DOTFILES}"
 alias vfont="nvim ${XDG_CONFIG_HOME}/fontconfig/fonts.conf"
@@ -105,6 +107,9 @@ alias pkglist="pacman --query --quiet --explicit --native > ${DOTFILES}/pkglist.
 alias unrequired='pacman --query --unrequired --deps --quiet'
 alias unrequiredclean='sudo pacman --remove --nosave --recursive "$(pacman --query --unrequired --deps --quiet)"'
 alias cup='checkupdates'
+alias psgrep='ps aux | rg --invert-match "rg" | rg'
+alias reipt='sudo systemctl restart ip{,6}tables.service'
+alias bcat='bat --style="plain" --paging="never"'
 
 if type lsd &> /dev/null; then
   alias ls='lsd'

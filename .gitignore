@@ -19,6 +19,7 @@
 
 # Desktop Entry
 /.local/share/applications/mimeinfo.cache
+/.local/share/applications/mimeapps.list
 /.local/share/applications/vivaldi-*.desktop
 /.local/share/applications/chrome-*.desktop
 
