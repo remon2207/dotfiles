@@ -1,4 +1,3 @@
-export PATH="${HOME}/bin:${HOME}/.local/share/pnpm:/opt:${PATH}"
 export QT_QPA_PLATFORMTHEME='qt5ct'
 export TERMINAL='wezterm'
 export PAGER='bat'
@@ -12,9 +11,10 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
 export TMPDIR='/tmp'
 export LESS='--LONG-PROMPT --RAW-CONTROL-CHARS --ignore-case --window=-5 --quit-if-one-screen'
-export PNPM_HOME="${HOME}/.local/share/pnpm"
+export PNPM_HOME="${XDG_DATA_HOME}/pnpm"
 export NODE_REPL_HISTORY="${XDG_CACHE_HOME}/node_repl_history"
 export NPM_CONFIG_CACHE="${XDG_CACHE_HOME}/npm"
+export PATH="${HOME}/bin:${XDG_DATA_HOME}/pnpm:/opt:${PATH}"
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 export __GL_SYNC_TO_VBLANK=0
 export __GL_GSYNC_ALLOWED=1
