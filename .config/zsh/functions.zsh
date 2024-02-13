@@ -118,7 +118,7 @@ pkgup() {
     echo
     read 'yn?アップグレードしますか？(y/n): '
 
-    [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade "${@}"
+    [[ "${yn}" == 'y' ]] && paru --sync --refresh --sysupgrade --removemake "${@}"
   fi
 
   return
