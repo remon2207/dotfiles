@@ -23,6 +23,6 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
   (JQuake.sh &)
   (wezterm --config=disable_default_key_bindings=true start nvtop &)
   (wezterm --config=disable_default_key_bindings=true start btop &)
-  (google-chrome-stable &)
-  (sleep 1 && for display in dp dp2 dvi hdmi; do polybar "${display}" & done &)
+  (sleep 9 && google-chrome-stable &)
+  (sleep 5 && for display in dp dp2 dvi hdmi; do polybar "${display}" & done &)
 fi

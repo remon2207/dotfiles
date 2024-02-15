@@ -62,7 +62,6 @@ pipewire-pulse
 polkit
 polybar
 profile-sync-daemon
-qt5-quickcontrols2
 qt5ct
 ranger
 reflector
