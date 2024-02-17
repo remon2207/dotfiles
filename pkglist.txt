@@ -34,7 +34,6 @@ linux-zen
 linux-zen-headers
 lsd
 man-db
-man-pages
 neofetch
 neovim
 nfs-utils
