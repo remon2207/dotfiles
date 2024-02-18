@@ -19,8 +19,8 @@
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 384,
-                       "width": 640,
+                       "height": 1056,
+                       "width": 956,
                        "x": 0,
                        "y": 0
                     },
@@ -29,8 +29,9 @@
                     "percent": 0.25,
                     "swallows": [
                        {
-                       "class": "^org\\.wezfurlong\\.wezterm$",
-                       "instance": "^org\\.wezfurlong\\.wezterm$",
+                       "class": "^kitty$",
+                       "instance": "^kitty$",
+                       "machine": "^archlinux$",
                        "title": "^nvtop$"
                        }
                     ],
@@ -41,8 +42,8 @@
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 384,
-                       "width": 640,
+                       "height": 1056,
+                       "width": 956,
                        "x": 0,
                        "y": 0
                     },
@@ -51,8 +52,9 @@
                     "percent": 0.75,
                     "swallows": [
                        {
-                       "class": "^org\\.wezfurlong\\.wezterm$",
-                       "instance": "^org\\.wezfurlong\\.wezterm$",
+                       "class": "^kitty$",
+                       "instance": "^kitty$",
+                       "machine": "^archlinux$",
                        "title": "^btop$"
                        }
                     ],

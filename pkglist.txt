@@ -21,10 +21,10 @@ git
 git-delta
 github-cli
 i3-wm
-imagemagick
 intel-ucode
 jq
 jre-openjdk
+kitty
 kvantum
 lazygit
 lbzip2
@@ -47,6 +47,8 @@ nvtop
 openssh
 papirus-icon-theme
 pavucontrol
+perl-anyevent-i3
+perl-json-xs
 picom
 pigz
 pipewire
@@ -69,14 +71,12 @@ starship
 stylua
 sudo
 ttf-noto-nerd
-ueberzug
 unzip
 vi
 virtualbox
 virtualbox-guest-iso
 virtualbox-host-dkms
 w3m
-wezterm
 wireplumber
 xautolock
 xf86-video-vesa

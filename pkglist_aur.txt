@@ -25,10 +25,10 @@ git-delta
 github-cli
 google-chrome
 i3-wm
-imagemagick
 intel-ucode
 jq
 jre-openjdk
+kitty
 kvantum
 lazygit
 lbzip2
@@ -53,6 +53,8 @@ openssh
 papirus-icon-theme
 paru-bin
 pavucontrol
+perl-anyevent-i3
+perl-json-xs
 picom
 pigz
 pipewire
@@ -77,7 +79,6 @@ stylua
 sudo
 ttf-hackgen
 ttf-noto-nerd
-ueberzug
 unzip
 upd72020x-fw
 vi
@@ -86,7 +87,6 @@ virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
 w3m
-wezterm
 wireplumber
 xautolock
 xcursor-breeze
