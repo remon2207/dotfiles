@@ -32,6 +32,8 @@ kitty
 kvantum
 lazygit
 lbzip2
+libreoffice-fresh
+libreoffice-fresh-ja
 libva-vdpau-driver
 linux-firmware
 linux-zen
@@ -74,6 +76,7 @@ shellcheck
 shfmt
 silicon
 slack-desktop
+spotify-launcher
 starship
 stylua
 sudo

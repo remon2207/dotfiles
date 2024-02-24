@@ -41,7 +41,7 @@ o.pumblend = 25
 -- 常にサインカラムを表示
 o.signcolumn = 'yes'
 o.list = true
-o.listchars = 'tab:> ,space: '
+-- o.listchars = 'tab:> ,space: '
 o.wrap = true
 -- 終了時に確認ダイアログを表示
 o.confirm = true

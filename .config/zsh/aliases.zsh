@@ -11,16 +11,16 @@ alias dot="cd ${DOTFILES}"
 alias vfont="nvim ${XDG_CONFIG_HOME}/fontconfig/fonts.conf"
 alias vwez="nvim ${XDG_CONFIG_HOME}/wezterm/wezterm.lua"
 alias vmime="nvim ${XDG_CONFIG_HOME}/mimeapps.list"
-alias vzsh="cd ${XDG_CONFIG_HOME}/zsh && nvim ."
-alias vkitty="cd ${XDG_CONFIG_HOME}/kitty/conf.d && nvim ."
-alias vconf="cd ${XDG_CONFIG_HOME}/nvim/lua && nvim ."
-alias vala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d && nvim ."
-alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d && nvim ."
 alias vrofi="nvim ${XDG_CONFIG_HOME}/rofi/config.rasi"
-alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d && nvim ."
 alias vpicom="nvim ${XDG_CONFIG_HOME}/picom/picom.conf"
-alias vranger="cd ${XDG_CONFIG_HOME}/ranger && nvim ."
-alias vdunst="cd ${XDG_CONFIG_HOME}/dunst/dunstrc.d && nvim ."
+alias vzsh="cd ${XDG_CONFIG_HOME}/zsh > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vkitty="cd ${XDG_CONFIG_HOME}/kitty/conf.d > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vconf="cd ${XDG_CONFIG_HOME}/nvim/lua > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vala="cd ${XDG_CONFIG_HOME}/alacritty/conf.d > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vi3="cd ${XDG_CONFIG_HOME}/i3/conf.d > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vpolybar="cd ${XDG_CONFIG_HOME}/polybar/conf.d > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vranger="cd ${XDG_CONFIG_HOME}/ranger > /dev/null && nvim . && cd ${HOME} > /dev/null"
+alias vdunst="cd ${XDG_CONFIG_HOME}/dunst/dunstrc.d > /dev/null && nvim . && cd ${HOME} > /dev/null"
 alias vnorc='nvim -u NORC'
 alias grep='grep --ignore-case --no-messages --color="auto" --binary-files="without-match" --exclude={.bash_history,.zsh_history,.*cache*,*cache*,.git,.z,.zcompdump,node_modules}'
 alias dexec='docker compose exec'
@@ -110,6 +110,7 @@ alias cup='checkupdates'
 alias psgrep='ps aux | rg --invert-match "rg" | rg'
 alias reipt='sudo systemctl restart ip{,6}tables.service'
 alias bcat='bat --style="plain" --paging="never"'
+alias vmssh="ssh -i '${HOME}/.ssh/ed25519_vm' -p 52904"
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
