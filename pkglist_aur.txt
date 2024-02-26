@@ -1,3 +1,4 @@
+apcupsd
 arc-gtk-theme
 authy
 base
@@ -8,6 +9,7 @@ curl
 discord
 docker
 docker-compose
+dosfstools
 downgrade
 dunst
 fcitx5
@@ -24,6 +26,8 @@ git
 git-delta
 github-cli
 google-chrome
+gparted
+gptfdisk
 i3-wm
 intel-ucode
 jq
@@ -43,6 +47,7 @@ man-db
 neofetch
 neovim
 nfs-utils
+nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -53,6 +58,7 @@ nvm
 nvtop
 openssh
 papirus-icon-theme
+parted
 paru-bin
 pavucontrol
 perl-anyevent-i3
@@ -63,6 +69,7 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 polkit
+polkit-gnome
 polybar
 profile-sync-daemon
 qt5ct
@@ -82,8 +89,10 @@ stylua
 sudo
 ttf-hackgen
 ttf-noto-nerd
+udisks2
 unzip
 upd72020x-fw
+usbutils
 vi
 virtualbox
 virtualbox-ext-oracle

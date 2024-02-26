@@ -23,5 +23,5 @@ elif [[ "${1}" == 'dp' ]] && [[ "${2}" == 'dp2' ]] && [[ "${3}" == 'dvi' ]]; the
   (JQuake.sh &)
   (kitty --override=clear_all_shortcuts=yes --single-instance nvtop &)
   (kitty --override=clear_all_shortcuts=yes --single-instance btop &)
-  (sleep 9 && google-chrome-stable &)
+  (sleep 10 && google-chrome-stable &)
 fi

@@ -1,3 +1,4 @@
+apcupsd
 arc-gtk-theme
 base
 base-devel
@@ -7,6 +8,7 @@ curl
 discord
 docker
 docker-compose
+dosfstools
 dunst
 fcitx5
 fcitx5-configtool
@@ -20,6 +22,8 @@ fzf
 git
 git-delta
 github-cli
+gparted
+gptfdisk
 i3-wm
 intel-ucode
 jq
@@ -39,6 +43,7 @@ man-db
 neofetch
 neovim
 nfs-utils
+nmap
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -48,6 +53,7 @@ nvidia-settings
 nvtop
 openssh
 papirus-icon-theme
+parted
 pavucontrol
 perl-anyevent-i3
 perl-json-xs
@@ -57,6 +63,7 @@ pipewire
 pipewire-alsa
 pipewire-pulse
 polkit
+polkit-gnome
 polybar
 profile-sync-daemon
 qt5ct
@@ -74,7 +81,9 @@ starship
 stylua
 sudo
 ttf-noto-nerd
+udisks2
 unzip
+usbutils
 vi
 virtualbox
 virtualbox-guest-iso
