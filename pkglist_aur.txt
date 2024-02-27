@@ -12,6 +12,7 @@ docker-compose
 dosfstools
 downgrade
 dunst
+exfatprogs
 fcitx5
 fcitx5-configtool
 fcitx5-gtk
@@ -28,6 +29,7 @@ github-cli
 google-chrome
 gparted
 gptfdisk
+hdparm
 i3-wm
 intel-ucode
 jq
@@ -36,6 +38,7 @@ kitty
 kvantum
 lazygit
 lbzip2
+ldns
 libreoffice-fresh
 libreoffice-fresh-ja
 libva-vdpau-driver
@@ -83,6 +86,7 @@ shellcheck
 shfmt
 silicon
 slack-desktop
+smartmontools
 spotify-launcher
 starship
 stylua
@@ -152,4 +156,5 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+zip
 zsh
