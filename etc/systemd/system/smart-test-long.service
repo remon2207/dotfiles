@@ -1,0 +1,6 @@
+[Unit]
+Description=hdparm spin down
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/smart_test_long.sh
