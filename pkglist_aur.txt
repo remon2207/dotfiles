@@ -91,6 +91,7 @@ spotify-launcher
 starship
 stylua
 sudo
+tradingview
 ttf-hackgen
 ttf-noto-nerd
 udisks2
@@ -102,6 +103,7 @@ virtualbox
 virtualbox-ext-oracle
 virtualbox-guest-iso
 virtualbox-host-dkms
+visual-studio-code-bin
 w3m
 wireplumber
 xautolock

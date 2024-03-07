@@ -112,6 +112,7 @@ alias reipt='sudo systemctl restart ip{,6}tables.service'
 alias bcat='bat --style="plain" --paging="never"'
 alias vmssh="ssh -i '${HOME}/.ssh/ed25519_vm' -p 52904"
 alias dmesg='sudo dmesg --ctime --color="always" | bat --plain'
+alias pkgi='paru --sync --removemake'
 
 if type lsd &> /dev/null; then
   alias ls='lsd'
